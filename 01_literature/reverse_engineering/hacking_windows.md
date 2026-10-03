@@ -1,0 +1,1367 @@
+[[ PAGE 1 ]]
+FIRST EDITION 
+Kevin Thomas
+Copyright © 2022 My Techno Talent
+1
+[[ PAGE 2 ]]
+Forward
+A long time ago there existed a time and space where the 6502 
+processor was everywhere.  There was no internet, there was no cell 
+phone and the personal computer was that of a creation of pure 
+majesty which had a target market of a few enthusiasts.
+On November 20, 1985, Microsoft introduced the Windows operating 
+environment which was nothing more than a graphical operating shell 
+for MS-DOS.
+I will spare you the rest of the history as we know how this game 
+played out.  Today, Windows is the most used desktop and laptop OS 
+having a 76% share followed by Apple’s macOS at 16% and the remaining
+ChromeOS and other Linux variants.
+Like it or not Windows is the major player and throughout the years I
+have focused on teaching Reverse Engineering in the Linux environment
+so that we could focus on a more thinner and efficient development 
+and communication with the processor.
+Today we begin our journey into the Win32API.  This book will take 
+you step-by-step writing very simple Win32API’s in both x86 and x64 
+platforms in C and then reversing them both very carefully using the 
+world’s most popular Hey Rays IDA Free tool which is a stripped down 
+version of the IDA Pro tool used in more professional Reverse 
+Engineering environments.
+Let’s begin... 
+ 
+2
+[[ PAGE 3 ]]
+Table Of Contents
+Chapter 1: Hello World
+Chapter 2: Debugging Hello World x86
+Chapter 3: Hacking Hello World x86
+Chapter 4: Debugging Hello World x64
+Chapter 5: Hacking Hello World x64
+Chapter 6: Directories
+Chapter 7: Debugging Directories x86
+Chapter 8: Hacking Directories x86
+Chapter 9: Debugging Directories x64
+Chapter 10: Hacking Directories x64
+Chapter 11: CopyFile
+Chapter 12: Debugging CopyFile x86
+Chapter 13: Hacking CopyFile x86
+Chapter 14: Debugging CopyFile x64
+Chapter 15: Hacking CopyFile x64
+Chapter 16: MoveFile
+Chapter 17: Debugging MoveFile x86
+Chapter 18: Hacking MoveFile x86
+Chapter 19: Debugging MoveFile x64
+Chapter 20: Hacking MoveFile x64
+Chapter 21: CreateFile
+Chapter 22: Debugging CreateFile x86
+3
+[[ PAGE 4 ]]
+Chapter 23: Hacking CreateFile x86
+Chapter 24: Debugging CreateFile x64
+Chapter 25: Hacking CreateFile x64
+Chapter 26: WriteFile
+Chapter 27: Debugging WriteFile x86
+Chapter 28: Hacking WriteFile x86
+Chapter 29: Debugging WriteFile x64
+Chapter 30: Hacking WriteFile x64
+Chapter 31: ReadFile
+Chapter 32: Debugging ReadFile x86
+Chapter 33: Hacking ReadFile x86
+4
+[[ PAGE 5 ]]
+Chapter 1: Hello World
+We begin our journey with programming a very simple hello world 
+program in Windows Assembly language.  We will ONLY write in pure 
+Assembly in this chapter as we will focus on development in C which 
+almost all Windows development occurs so you have a greater 
+understanding of how these applications are put together and THEN 
+reversing the entire app in Assembly Language both in x86 and x64.
+Let’s first download Visual Studio which we will use as our 
+integrated development environment.  Select the Visual Studio 2019 
+Community edition at the link below.  Make SURE you select all of the
+C++ and Windows options during the setup to ensure the build 
+environment has all the tools necessary.  When in doubt, check the 
+box to include it during install.
+https://visualstudio.microsoft.com/downloads 
+Once installed, let’s create a new project and get started by 
+following the below steps.
+Create a new project
+Empty Project
+Next
+Project name: 0x0001-hello_world-x86
+CHECK Place solution and project in the same directory
+Create
+RT CLICK on the 0x0001-hello_world-x86 in Solutions Explorer
+Add
+New Item…
+main.asm
+RT CLICK 0x0001-hello_world-x86
+Build Dependencies
+Build Customizations
+CHECK masm
+OK
+RT CLICK on main.asm
+Properties
+Configuration Properties
+General
+Item Type: Microsoft Macro Assembler
+OK
+Now let’s populate our main.asm file with the following.
+.686
+.model flat, stdcall
+.stack 4096
+5
+[[ PAGE 6 ]]
+extrn
+ExitProcess@4: proc        ;1 param  1x4
+extrn
+MessageBoxA@16: proc        ;4 params 4x4
+.data
+    msg_txt      db "Hello World", 0
+    msg_caption  db "Hello World App", 0
+.code
+    main:
+        push
+0
+       ;UINT uType
+        lea
+eax, msg_caption
+;LPCSTR lpCaption
+        push
+eax
+        lea
+eax, msg_txt
+;LPCSTR lpText
+        push
+eax
+        push
+0
+;HWND hWnd
+        call
+MessageBoxA@16
+        
+        push
+0
+;UINT uExitCode
+        call
+ExitProcess@4
+    end main
+Congratulations!  You just created your first hello world code in x86
+Windows Assembly.  Time for cake!
+We are going to spend the majority of our time in the Win32API 
+documentation throughout this course.
+Let’s take a moment and review.  To begin we designate a .686 which 
+means enable the assembly of non-privileged instructions for the 
+Pentium Pro+ style architecture in 32-bit MASM.
+(VISIT https://docs.microsoft.com/en-us/cpp/assembler/masm/dot-686?view=msvc-160)
+Our first Win32API that we call is the MessageBoxA which provides a 
+Windows Message Box to appear.  We then set up a flat memory model 
+which uses no combined segment or offset addressing.  We also use the
+stdcall Win32 calling convention which we push args in reverse order 
+onto the stack and then call the procedure.  The calle clears the 
+stack after the call.
+Our second Win32API that we will call is the ExitProcess which simply
+exits the application and frees up the operation to the Windows OS.
+(VISIT https://docs.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-
+processthreadsapi-exitprocess)
+We see that the function is a void function which returns nothing and
+has one param UINT uExitCode which simply retrieves the process’s 
+exit value. 
+6
+[[ PAGE 7 ]]
+You might have noticed a very strange @4 after the function.  This is
+to designate that the function has 1 param.  We multiply each param 
+by 4 to get this designation.  
+Our next Win32API is the MessageBoxA function which simply displays a
+modal dialog box with a title and a message.
+(VISIT https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-
+messageboxa)
+We have 4 params here so we know we will have an @16 at the end of 
+the function.  
+The first param is HWND hWnd which is a handle to the owner of the 
+window of the message box to be created and in our case it is NULL 
+meaning the message box has no owner.
+We then have the LPCSTR lpText which will display our text inside the
+message box.
+We then have the LPCSTR lpCaption which will be the caption text on 
+the message box.
+Finally we have the UINT uType which is simply the combo of flags 
+from the table located in the docs.  In our case it will be NULL.
+Remember in stdcall we push the params in REVERSE order onto the 
+stack as you see in the code above.
+At this point we can run our code by clicking on the green arrow next
+to the Local Windows Debugger.
+HOORAY our hello world modal dialog box pops up.
+Let’s now create our x64 version of this code.
+Create a new project
+Empty Project
+Next
+Project name: 0x0001-hello_world-x64
+CHECK Place solution and project in the same directory
+Create
+RT CLICK on the 0x0001-hello_world-x64 in Solutions Explorer
+Add
+New Item…
+main.asm
+RT CLICK 0x0001-hello_world-x64
+Build Dependencies
+7
+[[ PAGE 8 ]]
+Build Customizations
+CHECK masm
+OK
+RT CLICK on the 0x0001-hello_world-x64 in Solutions Explorer
+Properties
+Configuration Properties
+Linker
+Advanced
+Entry Point: main
+OK
+Select x64 to the right of Debug and the left of Local Windows Debugger menu bar
+Now let’s populate our main.asm file with the following.
+extrn MessageBoxA: proc
+extrn PostQuitMessage: proc
+.data
+msg_txt
+    db 'Hello World', 0
+msg_caption       db 'Hello World App', 0
+.code
+main proc
+sub
+rsp, 20h
+;shadow stack
+mov
+r9, rax
+;UINT uType
+lea
+r8, msg_caption
+;LPCSTR lpCaption
+lea
+rdx, msg_txt
+;LPCSTR lpText
+xor
+rcx, rcx
+;HWND hWnd
+call
+MessageBoxA
+add    rsp, 20h
+;restore shadow stack
+xor
+rcx, rcx
+;int nExitCode
+call   PostQuitMessage
+ret
+main endp
+end
+We also see a call to PostQuitMessage which has an int nExitCode as a
+param.
+(VISIT https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-
+postquitmessage)
+Congratulations!  You just created your first hello world code in x64
+Windows Assembly.  Time for cake, again!
+Let’s take a moment and review.  We first need to understand the x64 
+calling convention.
+8
+[[ PAGE 9 ]]
+(VISIT https://docs.microsoft.com/en-us/cpp/build/x64-calling-convention?view=msvc-
+160)
+The Microsoft x64 calling convention, fastcall, is what we use in 
+x64.  What we see here under the Parameter passing section is by 
+default, the x64 calling convention passes the first four arguments 
+to a function in registers. The registers used for these arguments 
+depend on the position and type of the argument. Remaining arguments 
+get pushed on the stack in right-to-left order.  The caller cleans up
+the stack after the call.
+Integer valued arguments in the leftmost four positions are passed in
+left-to-right order in RCX, RDX, R8, and R9, respectively. The fifth 
+and higher arguments are passed on the stack as previously described.
+All integer arguments in registers are right-justified, so the callee
+can ignore the upper bits of the register and access only the portion
+of the register necessary.
+Any floating-point and double-precision arguments in the first four 
+parameters are passed in XMM0 - XMM3, depending on position. 
+Floating-point values are only placed in the integer registers RCX, 
+RDX, R8, and R9 when there are varargs arguments. For details, see 
+Varargs. Similarly, the XMM0 - XMM3 registers are ignored when the 
+corresponding argument is an integer or pointer type.
+According to the x64 calling convention we need to provide a shadow 
+stack for memory cells for each QWORD and the stack has to be aligned
+to 16 bytes for the next instruction. 
+The shadow space is the mandatory 32 bytes (4x8 bytes) which we must 
+reserve for the called procedure. We provide 32 bytes on the stack 
+before calling. This space can be left uninitialized.
+In this calling convention, arguments after the 4th are pushed on the
+stack, which are on top of this shadow space (pushed before the 32 
+bytes).
+We then setup and call our MessageBoxA Win32API again.  We do not 
+need to review the params as we have handled this earlier in our x86 
+example.
+We then restore the shadow stack and then call ExitProcess.
+At this point we can run our code by clicking on the green arrow next
+to the Local Windows Debugger.
+9
+[[ PAGE 10 ]]
+HOORAY our hello world modal dialog box pops up.
+This will be the only example where we write in all Assembly as I 
+want to teach using the official Win32API which is natively in C 
+however I wanted to first show you EXACTLY what is going on under the
+hood when it is in fact compiled.
+10
+[[ PAGE 11 ]]
+Chapter 2: Debugging Hello World x86
+Today we debug our Hello World x86 version within Ida Free.  We first
+need to download Ida Free which is the free version of the most 
+popular Ida Pro tool.
+https://hex-rays.com/ida-free/#download 
+Once installed let’s copy our 0x0001-hello_world-x86.exe, which is 
+inside the Debug folder within 0x0001-hello_world-x86 folder to a new
+folder called 0x0001-hello_world-x86-debug.
+After loading Ida Free, click Go Work on your own and drag-and-drop 
+the 0x0001-hello_world-x86.exe into it.
+When the Load a new file modal pops up click OK.
+When The input file was linked with debug information modal pops up 
+select Yes as we will use the symbols in our reversing as we learn 
+the Win32API.
+Immediately it shows the disassembly and drops us into the _main 
+function.
+Here we see a clean disassembly of our source as we wrote it in 
+Assembly.
+Let’s first examine what is inside msg_caption so the first step is 
+to double-click on the msg_caption text which will take us into the
+.data section of the code.
+11
+[[ PAGE 12 ]]
+In the msg_text we also notice a strange db 48h at offset 4000 and 
+another at offset 4001 of db `ello World`,0.
+The first 48h is ascii.  Let’s load up an ascii table and do some 
+simple investigation.
+https://www.asciitable.com 
+Here we see 0x48 or 48h as H.  This makes sense as our msg_caption 
+begins with a capital H.
+We are currently in the IDA View-A tab.  Let’s click on the 48h value
+and the click on the Hex View-1 tab to the right of IDA View-A.
+Here we see our string represented in hex ascii.  If we refer back to
+our table we can easily see how everything matches up.  These 
+letters, each representing a byte in the .data section are in fact 
+the letters that will display in our msg_caption.
+If we click back on the IDA View-A tab we can follow the same 
+procedure and as the above images indicate we can see our msg_txt 
+section as well following the same pattern.
+Let’s his the esc button and go back to our _main function.
+Let’s click on the first push 0 instruction and hit f2 to set a 
+breakpoint.  You will notice a red box highlight that line.
+12
+[[ PAGE 13 ]]
+When we click on the green play button next to Local Windows Debugger
+it will then begin the debugging session.
+We immediately see a warning message as we are going to run the code 
+dynamically however we wrote it so we can then click Yes at the 
+bottom right.
+We see it load up our source code window which is quite handy as we 
+can see that it broke on the push 0 instruction.
+Let’s ignore this window for now and click on the IDA View-EIP window
+to the left.
+Here we see a number of different windows.  We see our Code window.
+13
+[[ PAGE 14 ]]
+There is a General registers window.
+This is only a partial view of the registers as you have to scroll 
+bars to work with.  On the right hand side you see the values of the 
+eflags register as it displays each bit.
+The next window is the Modules window which shows the application and
+all of the respective .dll libs it is using.  Like the registers 
+window you will need to scroll.
+We have our Threads window.
+We then have our Stack view window which the top of the stack is 
+highlighted in blue.  Like all of the others it is scrollable.
+We have our Hex View-1 window where if you type g within the window 
+you can seek to that given memory address within the hex.
+14
+[[ PAGE 15 ]]
+Let’s jump to 00aa101d and look at the Hex View-1.
+Finally we have our Output window.
+Let’s step through the code.  Let’s enable the debugger menu.
+View – Toolbars – Debugger commands
+Let’s click on the first blue icon with the two arrows to single-
+step.  Let’s single-step twice.
+We are now about to execute the first push eax instruction.  We see 
+msg_caption moved into eax.  Before we step take note of the Stack 
+view window as well.
+15
+[[ PAGE 16 ]]
+Now let’s step again.  Let’s now examine the stack.
+We see the msg_caption moved to the top of the stack as it was just 
+pushed from eax.
+Take immediate note of the value in esp as that is the top of the 
+stack.
+Let’s step and stop right before the call.
+At this point take careful note on the Stack view.
+16
+[[ PAGE 17 ]]
+It is CRITICAL that you take SPECIAL CARE to review the Code window 
+above and compare it to the Stack view window.
+Notice that the top of the stack, in this case 0x006ffdc0 holds the 
+value of 0 which was the LAST, most recent value pushed to the stack.
+Remember that the STACK GROWS DOWN in memory.  The value of ebp which
+is the stack base pointer is HIGHER in memory as compared to esp.  
+Please write this down.
+As we push more items onto the stack esp will continue to grow 
+DOWNWARD in memory and therefore the gap between ebp and esp grows 
+larger as esp is growing downward toward the heap until either call 
+occurs which will collapse the stack frame (ebp to esp) OR a pop 
+operation will pop the value in esp into whatever you are popping it 
+into and therefore moving esp UPWARD in memory. 
+At the +4 offset we see msg_txt which was the 2nd to the last thing 
+pushed onto the stack.
+At the +8 offset we see msg_caption was the 3rd to the last thing 
+pushed onto the stack.
+Finally at +12 or +0xc we see 0 which was the 4th to the last thing 
+pushed onto the stack.
+We can step over the call to _MessageBoxA@16 and it will load our 
+modal window.
+We can then step over the call to _ExitProcess@4 and it will 
+terminate our binary.
+If you single-step it will take you through the internal Win32API 
+functions if you wanted to get a greater appreciation of what exactly
+is happening when these functions are in fact called.
+When we continue execution we will see our program run and we now 
+have a complete idea of how this simple programs works as we did a 
+complete dynamic reversing analysis on this binary.
+17
+[[ PAGE 18 ]]
+Chapter 3: Hacking Hello World x86
+Today we hack our Hello World x86 version within Ida Free.  Let’s 
+fire up our session in Ida Free and begin.
+We start with our _main proc.
+Double-click on msg_caption.
+Click on the Hex View-1 tab.
+We noticed in the last chapter that 0x48 begins the string as we know
+in the ascii table that 0x48 is in fact ‘H’.
+https://www.asciitable.com 
+Click Edit – Patch program – Change byte …
+18
+[[ PAGE 19 ]]
+48 65 6C 6C 6F 20 57 6F 72 6C 64 20 41 70 70 00
+Let’s change the caption to ‘Hacky World’.
+48 61 63 6B 79 20 57 6F 72 6C 64 20 41 70 70 00
+Click OK.
+Click Edit – Patch program – Apply patches to input file…
+Click OK.
+Click the green play button.  We notice two warning windows which we 
+can ignore stating that the binary has changed.
+We broke on our first break point.  Let’s hit the play button again.
+19
+[[ PAGE 20 ]]
+Hooray! Time for cake!  We saw that we were able to successfully hack
+our msg_caption correctly.
+You could also take it a step further and hack the actual msg_txt if 
+you so chose.
+This is the first of many small hacks.  The purpose of this book it 
+to take SMALL steps.  Take very careful analysis on exactly what is 
+happening at the assembly level and understanding have to have 
+absolute control over the process.
+20
+[[ PAGE 21 ]]
+Chapter 4: Debugging Hello World x64
+Today we debug our Hello World x64 version within Ida Free.  
+Let’s copy our 0x0001-hello_world-x64.exe, which is inside the Debug 
+folder within 0x0001-hello_world-x64 folder to a new folder called 
+0x0001-hello_world-x64-debug.
+After loading Ida Free, click Go Work on your own and drag-and-drop 
+the 0x0001-hello_world-x64.exe into it.
+When the Load a new file modal pops up click OK.
+When The input file was linked with debug information modal pops up 
+select Yes as we will use the symbols in our reversing as we learn 
+the Win32API.
+Immediately it shows the disassembly and drops us into the main 
+function.
+Take note and re-read Chapter 2.  Unlike x86 where we push params to 
+the stack we are moving the params into rcx, rdx, r8, r9.  This is 
+how x64 handles their function calls at the Assembly level.
+Let’s first examine what is inside msg_caption so the first step is 
+to double-click on the msg_caption text which will take us into the
+.data section of the code.
+In the msg_text we also notice a strange db 48h at offset 4000 and 
+another at offset 4001 of db `ello World`,0.
+21
+[[ PAGE 22 ]]
+The first 48h is ascii.  Let’s load up an ascii table and do some 
+simple investigation.
+https://www.asciitable.com 
+Here we see 0x48 or 48h as H.  This makes sense as our msg_caption 
+begins with a capital H.
+We are currently in the IDA View-A tab.  Let’s click on the 48h value
+and the click on the Hex View-1 tab to the right of IDA View-A.
+Here we see our string represented in hex ascii.  If we refer back to
+our table we can easily see how everything matches up.  These 
+letters, each representing a byte in the .data section are in fact 
+the letters that will display in our msg_caption.
+If we click back on the IDA View-A tab we can follow the same 
+procedure and as the above images indicate we can see our msg_txt 
+section as well following the same pattern.
+Let’s his the esc button and go back to our main function.
+Let’s click on the mov r9, rax instruction and hit f2 to set a 
+breakpoint.  You will notice a red box highlight that line.
+When we click on the green play button next to Local Windows Debugger
+it will then begin the debugging session.
+We immediately see a warning message as we are going to run the code 
+dynamically however we wrote it so we can then click Yes at the 
+bottom right.
+22
+[[ PAGE 23 ]]
+We see it load up our source code window.  As with the x86 version as
+we wrote this in Assembly we can ignore and click on the IDA View-RIP
+tab.
+Enable debugger menu.
+View – Toolbars – Debugger commands
+Let’s click on the first blue icon with the two arrows to single-
+step.  Let’s single-step once.
+We see the value of rax moved into r9 which holds the value of start.
+This is the fourth param in reverse order.
+This is likely a compiler optimization as we did not code this in 
+Assembly.
+We then load the effective address of msg_caption into r8 the third 
+param in reverse order after we step again.
+We then load the effective address of msg_txt into rdx the second 
+param in reverse order after we step again.
+23
+[[ PAGE 24 ]]
+We then zero out or xor rcx, rcx to put a 0 in rcx.
+Finally we call MessageBoxA_0 and display our caption and message.
+We then called PostQuitMessage_0 and exit the program.
+24
+[[ PAGE 25 ]]
+Chapter 5: Hacking Hello World x64
+Today we hack our Hello World x64 version within Ida Free.  Let’s 
+fire up our session in Ida Free and begin.
+We start with our main proc.
+Double-click on msg_caption.
+Click on the Hex View-1 tab.
+We know from our prior chapters that 0x48 is ‘H’ and the other bytes 
+are the additional letters.
+Click Edit – Patch program – Change byte …
+25
+[[ PAGE 26 ]]
+48 65 6C 6C 6F 20 57 6F 72 6C 64 20 41 70 70 00
+Let’s change the caption to ‘Hacky World’.
+48 61 63 6B 79 20 57 6F 72 6C 64 20 41 70 70 00
+Click OK.
+Click Edit – Patch program – Apply patches to input file…
+Click OK.
+Click the green play button.  We notice two warning windows which we 
+can ignore stating that the binary has changed.
+We broke on our first break point.  Let’s hit the play button again.
+Hooray! As in the previous hacking chapter you can further hack 
+anything you wish.  We are doing nothing more than taking small bite-
+sized building blocks so you have a full understanding of the 
+Win32API.
+26
+[[ PAGE 27 ]]
+Chapter 6: Directories
+We continue with a simple app that handles Windows directory 
+manipulation by creating and removing a directory.
+Let’s create a new project
+Create a new project
+Empty Project
+Next
+Project name: 0x0006-directories
+CHECK Place solution and project in the same directory
+Create
+RT CLICK on the 0x0006-directories in Solutions Explorer
+Add
+New Item…
+main.c
+OK
+Now let’s populate our main.c file with the following.
+#include <stdio.h>
+#include <Windows.h>
+int main(void)
+{
+    BOOL bDir;
+    bDir = CreateDirectory(
+        L"C:\\mydir",
+        NULL
+    );
+    if (bDir == FALSE)
+    {
+        printf("CreateDirectory failed & error no %ul\n", GetLastError());
+    }
+    else
+    {
+        printf("CreateDirectory Success!\n");
+    }
+    bDir = RemoveDirectory(
+        L"C:\\mydir"
+    );
+    if (bDir == FALSE)
+    {
+        printf("RemoveDirectory failed & error no %ul\n", GetLastError());
+    }
+    else
+    {
+        printf("RemoveDirectory Success!\n");
+    }
+27
+[[ PAGE 28 ]]
+    return 0;
+}
+Let’s review the CreateDirectoryW API below.
+(VISIT https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-
+createdirectoryw)
+REMEMBER if you hover over CreateDirectory it expands to 
+CreateDirectoryW in Visual Studio.  This mean CreateDirectory is an 
+alias for CreateDirectoryW.
+We see we have two params which are lpPathName which is the path of 
+the directory to be created and lpSecurityAttributes which is a 
+pointer to a SECURITY_ATTRIBUTES structure.  In our case we are just 
+using NULL.
+The return value is non-zero if the function succeeds otherwise it 
+will return the code ERROR_ALREADY_EXISTS or ERROR_PATH_NOT_FOUND.
+Let’s review the RemoveDirectoryW API below.
+(VISIT https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-
+removedirectoryw)
+We see we have one param lpPathName which is the path of the 
+directory to be created.
+The return value is non-zero if the function succeeds otherwise it 
+will return 0 and any relevant error information inside GetLastError.
+When we run the program it shows the following output.
+CreateDirectory Success!
+RemoveDirectory Success!
+C:\Users\kevin\Documents\Hacking-Windows\0x0006-directories\0x0006-directories\Debug\0x0006-
+directories.exe (process 10204) exited with code 0.
+To automatically close the console when debugging stops, enable Tools->Options->Debugging-
+>Automatically close the console when debugging stops.
+Press any key to close this window . . .
+In our next chapter we will debug this program in x86.
+28
+[[ PAGE 29 ]]
+Chapter 7: Debugging Directories x86
+We are going to debug the 32-bit version of our Directories program.
+Since we have created a few projects together I assume you know what 
+you are doing in IDA at this point.  If this process is unfamiliar to
+you please re-read the prior chapters.
+In the IDA View-A text view we first see our CreateDirectoryW 
+function.
+In our last chapter we reviewed the API in C.  Here we first push the
+lpSecurityAttributes param to the stack followed by the PathName 
+param and then we call the function.
+Let’s set a breakpoint directly after the call and run the Local 
+Windows debugger.
+NOTICE we see that our mydir folder has been created.
+Let’s stop execution and delete our breakpoint.
+We then see our RemoveDirectoryW function.
+Here we see the first param of PathName and then the call.
+Let’s set a breakpoint directly after the call and run the Local 
+Windows debugger.
+NOTICE we see that our mydir folder has been deleted.
+Let’s stop execution and delete our breakpoint.
+The flow of this series now that we have a basic familiarity with IDA
+will be a simple reversing of the binary such that we continue to 
+reinforce how each Windows API looks like in both 32-bit and 64-bit 
+Assembly as this will help us get a firm grasp on what is going on 
+under the hood with any Windows binary.
+29
+[[ PAGE 30 ]]
+I won’t often keep repeating myself however I wanted to at this stage
+have a small retrospective.  
+There are TONS of good reversing resources out there however my aim 
+is to take SMALL Win32 API’s and reverse them step-by-step so that in
+the real world when you are dealing with obfuscated Windows binaries 
+which might have dynamic resolution based on a complicated hash you 
+will recognize patters that you may not have without going through 
+these exercises.
+Taking time and getting your hands dirty on these small but 
+digestible exercises will help you master the domain!
+In our next chapter we will hack this program in x86.
+30
+[[ PAGE 31 ]]
+Chapter 8: Hacking Directories x86
+We are going to hack the 32-bit version of our Directories program.
+In this chapter we will hack the directory name this will continue to
+build our experience on custom hacking binaries.
+Here we see the PathName of “C:\\mydir”.  Double-click to get to 
+the .rdata section.
+Click Edit – Patch program – Change byte …
+43 00 3A 00 5C 00 6D 00 79 00 64 00 69 00 72 00
+Let’s change the path to ‘hacky’.
+43 00 3A 00 5C 00 68 00 61 00 63 00 6b 00 79 00
+Click OK.
+Click Edit – Patch program – Apply patches to input file…
+Click OK.
+Let’s set a breakpoint on the next instruction after the call to 
+printf indicating the CreateDirectory Success! Message.
+31
+[[ PAGE 32 ]]
+Click the green play button.  We see the terminal indicating our 
+CreateDirectory has been called successfully.
+Let’s look at the root of our hard drive.
+Hooray!  We have hacked our simple program and altered the creation 
+of the directory name.
+As I have said before these are small bite-sized lessons that help 
+you to code, debug and hack in addition to researching each of the 
+Win32API functions so we have a mastery of the process.
+In our next chapter we will debug this program in x64.
+32
+[[ PAGE 33 ]]
+Chapter 9: Debugging Directories x64
+We are going to debug the 64-bit version of our Directories program.
+Since we have created a few projects together I assume you know what 
+you are doing in IDA at this point.  If this process is unfamiliar to
+you please re-read the prior chapters.
+In the IDA View-A text view we first see our CreateDirectoryW 
+function.
+Here we are simply putting the security attribute into edx, which is 
+0 and then we load the effective address of PathName into rcx and 
+call our function.
+Let’s set a breakpoint directly after the call and run the Local 
+Windows debugger.
+NOTICE we see that our mydir folder has been created.
+Let’s stop execution and delete our breakpoint.
+We then see our RemoveDirectoryW function.
+Here we see the first param of PathName and then the call.
+Let’s set a breakpoint directly after the call and run the Local 
+Windows debugger.
+NOTICE we see that our mydir folder has been deleted.
+Let’s stop execution and delete our breakpoint.
+Bingo!  Another debug victory!
+In our next chapter we will hack this program in x64.
+33
+[[ PAGE 34 ]]
+Chapter 10: Hacking Directories x64
+We are going to debug the 64-bit version of our Directories program.
+In this chapter we will hack the directory name in an x64 
+environment.
+Here we see the PathName of “C:\\mydir”.  Double-click to get to 
+the .rdata section.
+Click Edit – Patch program – Change byte …
+43 00 3A 00 5C 00 6D 00 79 00 64 00 69 00 72 00
+Let’s change the path to ‘hacky’.
+43 00 3A 00 5C 00 68 00 61 00 63 00 6b 00 79 00
+Click OK.
+Click Edit – Patch program – Apply patches to input file…
+Click OK.
+Let’s set a breakpoint on the next instruction after the call to 
+printf indicating the CreateDirectory Success! Message.
+34
+[[ PAGE 35 ]]
+Click the green play button.  We see the terminal indicating our 
+CreateDirectory has been called successfully.
+Let’s look at the root of our hard drive.
+Hooray!  We have hacked our simple program and altered the creation 
+of the directory name.
+In our next chapter we discuss CopyFile.
+35
+[[ PAGE 36 ]]
+Chapter 11: CopyFile
+We continue with a simple app that handles the Windows CopyFile API 
+which simply copies the contents of one file into a new file.
+Let’s create a new project
+Create a new project
+Empty Project
+Next
+Project name: 0x000b-copyfile
+CHECK Place solution and project in the same directory
+Create
+RT CLICK on the 0x000b-copyfile in Solutions Explorer
+Add
+New Item…
+main.c
+OK
+Now let’s populate our main.c file with the following.
+#include <stdio.h>
+#include <Windows.h>
+int main(void)
+{
+BOOL bFile;
+bFile = CopyFile(
+L"C:\\temp\\test1.txt",
+L"C:\\temp\\test2.txt",
+TRUE
+);
+if (bFile == FALSE)
+{
+printf("CopyFile failed & error no %ul\n", GetLastError());
+}
+else
+{
+printf("CopyFile Success!\n");
+}
+return 0;
+}
+Let’s review the CopyFileW API below.
+(VISIT https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-
+copyfilew)
+36
+[[ PAGE 37 ]]
+Here we see we have 3 parameters.  The first, lpExistingFileName, is 
+simply the existing file we want to copy.  The second, lpNewFileName,
+is the name of the new file to which we will create and copy the 
+contents of the original file to.  The third, bFailIfExists, is the 
+flag to indicate if the new file already exists and if it does fail 
+the operation if TRUE. 
+The return value is non-zero if the function succeeds otherwise it 
+will return 0 and any relevant error information inside GetLastError.
+We need to manually create the file test1.txt within C:\temp so you 
+can use Notepad to do so now.  Simply create the file and put any 
+contents you like inside.
+When we run the program it shows the following input.
+CopyFile Success!
+C:\Users\kevin\Documents\Hacking-Windows\0x000b-copyfile\0x000b-copyfile\Debug\0x000b-
+copyfile.exe (process 22464) exited with code 0.
+To automatically close the console when debugging stops, enable Tools->Options->Debugging-
+>Automatically close the console when debugging stops.
+Press any key to close this window . . .
+In our next chapter we will debug this program in x86.
+37
+[[ PAGE 38 ]]
+Chapter 12: Debugging CopyFile x86 
+We are going to debug the 32-bit version of our CopyFile program.
+In the IDA View-A text view we first see our CopyFileW function.
+Here we are simply pushing the bFailIfExists onto the stack followed 
+by the lpNewFileName and finally the lpExistingFileName.
+BEFORE we run make sure we delete the file test2.txt within C:\temp 
+so we can proceed as if this was being run the first time.
+Let’s set a breakpoint directly after the call and run the Local 
+Windows debugger.
+NOTICE we see that test2.text was created.
+This was a very simple debug as I have to take the time again to 
+clearly state that our objective is to take SMALL steps so you can 
+not get overwhelmed and have a full appreciation for what is going on
+at every step of these very popular Win32API calls.
+In our next chapter we will hack this program in x86.
+38
+[[ PAGE 39 ]]
+Chapter 13: Hacking CopyFile x86
+We are going to hack the 32-bit version of our CopyFile program.
+In this chapter we will hack the directory name this will continue to
+build our experience on custom hacking binaries.
+Here we see the PathName of “C:\\temp\\test2.txt”.  Double-click to 
+get to the .rdata section.
+Select the Hex View-1 tab.  Click on the 32.
+Click Edit – Patch program – Change byte …
+32 00 2E 00 74 00 78 00 74 00 00 00 00 00 00 00
+Let’s change the file to ‘test3’.
+33 00 2E 00 74 00 78 00 74 00 00 00 00 00 00 00
+Click OK.
+Click Edit – Patch program – Apply patches to input file…
+39
+[[ PAGE 40 ]]
+Click OK.
+Back in the IDA View0A tab, let’s set a breakpoint on the next 
+instruction after the call to CopyFileW.
+Let’s look at the root of our hard drive.
+Hooray!  We have hacked our simple program and altered the new file 
+name.
+In our next chapter we will debug this program in x64.
+40
+[[ PAGE 41 ]]
+Chapter 14: Debugging CopyFile x64
+We are going to debug the 64-bit version of our CopyFile program.
+In the IDA View-A text view we first see our CopyFileW function.
+Here we are simply putting the value of bFailIfExists into r8d 
+followed by the NewFileName into rdx and finally the ExistingFileName
+into rcx.
+BEFORE we run make sure we delete the file test2.txt within C:\temp 
+so we can proceed as if this was being run the first time.
+Let’s set a breakpoint directly after the call and run the Local 
+Windows debugger.
+NOTICE we see that test2.text was created.
+This was a very simple debug as I have to take the time again to 
+clearly state that our objective is to take SMALL steps so you can 
+not get overwhelmed and have a full appreciation for what is going on
+at every step of these very popular Win32API calls.
+In our next chapter we will hack this program in x64.
+41
+[[ PAGE 42 ]]
+Chapter 15: Hacking CopyFile x64
+We are going to hack the 64-bit version of our CopyFile program.
+In this chapter we will hack the directory name this will continue to
+build our experience on custom hacking binaries.
+Here we see the PathName of “C:\\temp\\test2.txt”.  Double-click to 
+get to the .rdata section.
+Select the Hex View-1 tab.  Click on the 32.
+Click Edit – Patch program – Change byte …
+32 00 2E 00 74 00 78 00 74 00 00 00 00 00 00 00
+Let’s change the file to ‘test3’.
+33 00 2E 00 74 00 78 00 74 00 00 00 00 00 00 00
+Click OK.
+Click Edit – Patch program – Apply patches to input file…
+42
+[[ PAGE 43 ]]
+Click OK.
+Back in the IDA View0A tab, let’s set a breakpoint on the next 
+instruction after the call to CopyFileW.
+Let’s look at the root of our hard drive.
+Hooray!  We have hacked our simple program and altered the new file 
+name.
+In our next chapter we discuss MoveFile.
+43
+[[ PAGE 44 ]]
+Chapter 16: MoveFile
+We continue with a simple app that handles the Windows MoveFile API 
+which simply moves (renames) one file.
+Let’s create a new project
+Create a new project
+Empty Project
+Next
+Project name: 0x0010-movefile
+CHECK Place solution and project in the same directory
+Create
+RT CLICK on the 0x0010-movefile in Solutions Explorer
+Add
+New Item…
+main.c
+OK
+Now let’s populate our main.c file with the following.
+#include <stdio.h>
+#include <Windows.h>
+int main(void)
+{
+BOOL bFile;
+bFile = MoveFile(
+L"C:\\temp\\test1.txt",
+L"C:\\temp\\test2.txt"
+);
+if (bFile == FALSE)
+{
+printf("MoveFile failed and error no %ul\n", GetLastError());
+}
+else
+{
+printf("MoveFile Success!");
+}
+}
+Let’s review the MoveFileW API below.
+(VISIT https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-
+movefilew)
+Here we see we have 2 parameters.  The first, lpExistingFileName, is 
+simply the existing file we want to copy.  The second, lpNewFileName,
+is the name of the new file to which we will move the contents of the
+44
+[[ PAGE 45 ]]
+original file to.
+The return value is non-zero if the function succeeds otherwise it 
+will return 0 and any relevant error information inside GetLastError.
+We need to manually create the file test1.txt within C:\temp so you 
+can use Notepad to do so now.  Simply create the file and put any 
+contents you like inside.
+When we run the program it shows the following input.
+MoveFile Success!
+C:\Users\kevin\Documents\Hacking-Windows\0x0010-movefile\Debug\0x0010-movefile.exe (process 
+10480) exited with code 0.
+To automatically close the console when debugging stops, enable Tools->Options->Debugging-
+>Automatically close the console when debugging stops.
+Press any key to close this window . . .
+In our next chapter we will debug this program in x86.
+45
+[[ PAGE 46 ]]
+Chapter 17: Debugging MoveFile x86
+We are going to debug the 32-bit version of our MoveFile program.
+Since we have created a few projects together I assume you know what 
+you are doing in IDA at this point.  If this process is unfamiliar to
+you please re-read the prior chapters.
+In the IDA View-A text view we first see a _KERNEL32_NULL_THUNK_DATA 
+function.
+Wait!  What?
+Let’s double-click and do more inspection.
+Here we do see this is actually calling MoveFileW as expected.
+In our last chapter we reviewed the API in C.  Here we first push the
+lpNewFileName param to the stack followed by the lpExistingFileName 
+param and then we call the function.
+Let’s set a breakpoint directly after the call and run the Local 
+Windows debugger.
+NOTICE we see that our test2.txt file has been created.
+In our next chapter we will hack this program in x86.
+46
+[[ PAGE 47 ]]
+Chapter 18: Hacking MoveFile x86
+We are going to hack the 32-bit version of our MoveFile program.
+In this chapter we will hack the file name this will continue to 
+build our experience on custom hacking binaries.
+Here we see the PathName of “C:\\temp\\test2.txt”.  Double-click to 
+get to the .rdata section.
+Select the Hex View-1 tab.  Click on the 32.
+Click Edit – Patch program – Change byte …
+32 00 2E 00 74 00 78 00 74 00 00 00 00 00 00 00
+Let’s change the file to ‘test3’.
+33 00 2E 00 74 00 78 00 74 00 00 00 00 00 00 00
+Click OK.
+Click Edit – Patch program – Apply patches to input file…
+Click OK.
+Back in the IDA View0A tab, let’s set a breakpoint on the next 
+instruction after the call to _KERNEL32_NULL_THUNK_DATA.
+47
+[[ PAGE 48 ]]
+Let’s look at the root of our hard drive.
+Hooray!  We have hacked our simple program and altered the new file 
+name.
+In our next chapter we will debug this program in x64.
+48
+[[ PAGE 49 ]]
+Chapter 19: Debugging MoveFile x64
+We are going to debug the 64-bit version of our MoveFile program.
+In the IDA View-A text view we first see our MoveFileW function.
+Here we are simply putting the value of NewFileName into rdx and the 
+ExistingFileName into rcx.
+BEFORE we run make sure we rename the file test2.txt to test1.txt 
+within C:\temp so we can proceed as if this was being run the first 
+time.
+Let’s set a breakpoint directly after the call and run the Local 
+Windows debugger.
+NOTICE we see that test2.txt was the final renamed file.
+This was a very simple debug as I have to take the time again to 
+clearly state that our objective is to take SMALL steps so you can 
+not get overwhelmed and have a full appreciation for what is going on
+at every step of these very popular Win32API calls.
+In our next chapter we will hack this program in x64.
+49
+[[ PAGE 50 ]]
+Chapter 20: Hacking MoveFile x64
+We are going to hack the 64-bit version of our MoveFile program.
+In this chapter we will hack the file name this will continue to 
+build our experience on custom hacking binaries.
+Here we see the PathName of “C:\\temp\\test2.txt”.  Double-click to 
+get to the .rdata section.
+Select the Hex View-1 tab.  Click on the 32.
+Click Edit – Patch program – Change byte …
+32 00 2E 00 74 00 78 00 74 00 00 00 00 00 00 00
+Let’s change the file to ‘test3’.
+33 00 2E 00 74 00 78 00 74 00 00 00 00 00 00 00
+Click OK.
+Click Edit – Patch program – Apply patches to input file…
+50
+[[ PAGE 51 ]]
+Click OK.
+Back in the IDA View0A tab, let’s set a breakpoint on the next 
+instruction after the call to CopyFileW.
+Let’s look at the root of our hard drive.
+Hooray!  We have hacked our simple program and altered the new file 
+name.
+In our next chapter we discuss CreateFile.
+51
+[[ PAGE 52 ]]
+Chapter 21: CreateFile
+We continue with a simple app that handles the Windows CreateFile API
+which simply creates one file.
+Let’s create a new project
+Create a new project
+Empty Project
+Next
+Project name: 0x0011-createfile
+CHECK Place solution and project in the same directory
+Create
+RT CLICK on the 0x0011-createfile in Solutions Explorer
+Add
+New Item…
+main.c
+OK
+Now let’s populate our main.c file with the following.
+#include <stdio.h>
+#include <Windows.h>
+int main(void)
+{
+    HANDLE hFile;
+    hFile = CreateFile(
+        L"C:\\temp\\test.txt",
+        GENERIC_READ | GENERIC_WRITE,
+        FILE_SHARE_READ,
+        NULL,
+        CREATE_NEW,
+        FILE_ATTRIBUTE_NORMAL,
+        NULL
+    );
+    if (hFile == INVALID_HANDLE_VALUE)
+    {
+        printf("CreateFile failed and error no %ul\n", GetLastError());
+    }
+    else
+    {
+        printf("CreateFile Success!");
+    }
+    CloseHandle(hFile);
+}
+Let’s review the CreateFileW API below.
+52
+[[ PAGE 53 ]]
+(VISIT https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-
+createfilew)
+Here we see we have 7 parameters.  The first, lpFileName, is simply 
+the file we want to create.  The second, dwDesiredAccess, is the 
+requested access to the file or device which will be read, write, 
+zero or neither zero.  The third, dwShareMode, is the requested 
+sharing mode of the file or device which is read, write, both, 
+delete, all of these or none.  The fourth, lpSecurityAttributes, is a
+pointer to a SECURITY_ATTRIBUTES structure that contains two separate
+data members, this is an optional param.  The fifth, 
+dwCreationDisposition, is an action to take on a file or device that 
+exists or does not exist.  The sixth, dwFlagsAndAttributes, is the 
+file or device attributes and flags.  The seventh, hTemplateFile, is 
+a valid handle to a template file with the GENERIC_READ access right.
+This is optional.
+The return value is an open handle to the specified file, device, 
+named pipe, or mail slot or if fails, the return value is 
+INVALID_HANDLE_VALUE which you can get with GetLastError.
+When we run the program it shows the following input.
+CreateFile Success!
+C:\Users\kevin\Documents\Hacking-Windows\0x0011-createfile\0x0011-createfile\x64\Debug\0x0011-
+createfile.exe (process 6488) exited with code 0.
+To automatically close the console when debugging stops, enable Tools->Options->Debugging-
+>Automatically close the console when debugging stops.
+Press any key to close this window . . .
+In our next chapter we will debug this program in x86.
+53
+[[ PAGE 54 ]]
+Chapter 22: Debugging CreateFile x86
+We are going to debug the 32-bit version of our CreateFile program.
+Since we have created a few projects together I assume you know what 
+you are doing in IDA at this point.  If this process is unfamiliar to
+you please re-read the prior chapters.
+In the IDA View-A text view we first see a __imp_CreateFileW@28 
+function.
+Here we do see this is actually calling CreateFileW as expected.
+In our last chapter we reviewed the API in C.  If you are not 
+familiar with the parameters please review the last chapter.
+Let’s set a breakpoint directly after the call and run the Local 
+Windows debugger.
+NOTICE we see that our test.txt file has been created.
+In our next chapter we will hack this program in x86.
+54
+[[ PAGE 55 ]]
+Chapter 23: Hacking CreateFile x86
+We are going to hack the 32-bit version of our CreateFile program.
+In this chapter we will hack the file name this will continue to 
+build our experience on custom hacking binaries.
+Here we see the PathName of “C:\\temp\\test.txt”.  Double-click to 
+get to the .rdata section.
+Select the Hex View-1 tab.  Click on the second 74.
+Click Edit – Patch program – Change byte …
+74 00 65 00 73 00 74 00 2E 00 74 00 78 00 74
+Let’s change the file to ‘hest’.
+68 00 65 00 73 00 74 00 2E 00 74 00 78 00 74
+Click OK.
+Click Edit – Patch program – Apply patches to input file…
+Click OK.
+55
+[[ PAGE 56 ]]
+Back in the IDA View0A tab, let’s set a breakpoint on the next 
+instruction after the call to CreateFileW.
+Let’s look at the root of our hard drive.
+Hooray!  We have hacked our simple program and altered the new file 
+name.
+In our next chapter we will debug this program in x64.
+56
+[[ PAGE 57 ]]
+Chapter 24: Debugging CreateFile x64
+We are going to debug the 64-bit version of our CreateFile program.
+In the IDA View-A text view we first see our CreateFileW function.
+Here we are putting the value of hTemplateFile, dwFlagsAndAttributes,
+dwCreationDisposition onto the stack and the lpSecurityAttributes 
+into r9, dwShareMode into r8, dwDesireAccess into rdx and FileName 
+into rcx.
+BEFORE we run make sure we remove the file test.txt within C:\temp so
+we can proceed as if this was being run the first time.
+Let’s set a breakpoint directly after the call and run the Local 
+Windows debugger.
+NOTICE we see that test.txt was created.
+This was a very simple debug as I have to take the time again to 
+clearly state that our objective is to take SMALL steps so you can 
+not get overwhelmed and have a full appreciation for what is going on
+at every step of these very popular Win32API calls.
+In our next chapter we will hack this program in x64.
+57
+[[ PAGE 58 ]]
+Chapter 25: Hacking CreateFile x64
+We are going to hack the 64-bit version of our CreateFile program.
+In this chapter we will hack the file name this will continue to 
+build our experience on custom hacking binaries.
+Here we see the FileName of “C:\\temp\\test.txt”.  Double-click to 
+get to the .rdata section.
+Select the Hex View-1 tab.  Click on the 2nd 74.
+Click Edit – Patch program – Change byte …
+74 00 65 00 73 00 74 00 2E 00 74 00 78 00 74 00
+Let’s change the file to ‘fest’.
+74 00 65 00 73 00 66 00 2E 00 74 00 78 00 74 00
+Click OK.
+Click Edit – Patch program – Apply patches to input file…
+58
+[[ PAGE 59 ]]
+Click OK.
+Back in the IDA View0A tab, let’s set a breakpoint on the next 
+instruction after the call to CreateFileW.
+Let’s look at the root of our hard drive.
+Hooray!  We have hacked our simple program and altered the new file 
+name.
+In our next chapter we discuss WriteFile.
+59
+[[ PAGE 60 ]]
+Chapter 26: WriteFile
+We continue with a simple app that handles the Windows WriteFile API 
+which simply populates data in one file.
+Let’s create a new project
+Create a new project
+Empty Project
+Next
+Project name: 0x0012-writefile
+CHECK Place solution and project in the same directory
+Create
+RT CLICK on the 0x0012-writefile in Solutions Explorer
+Add
+New Item…
+main.c
+OK
+Now let’s populate our main.c file with the following.
+#include <stdio.h>
+#include <Windows.h>
+int main(void)
+{
+    HANDLE hFile;
+    BOOL bFile;
+    char lpBuffer[] = "Reversing is my life!";
+    DWORD nNumberOfBytesToWrite = strlen(lpBuffer);
+    DWORD lpNumberOfBytesWritten = 0;
+    hFile = CreateFile(
+        L"C:\\temp\\test.txt",
+        GENERIC_READ | GENERIC_WRITE,
+        FILE_SHARE_READ,
+        NULL,
+        CREATE_NEW,
+        FILE_ATTRIBUTE_NORMAL,
+        NULL
+    );
+    if (hFile == INVALID_HANDLE_VALUE)
+    {
+        printf("CreateFile failed and error no %ul\n", GetLastError());
+    }
+    else
+    {
+        printf("CreateFile Success!\n");
+    }
+    bFile = WriteFile(
+        hFile,
+60
+[[ PAGE 61 ]]
+        lpBuffer,
+        nNumberOfBytesToWrite,
+        &lpNumberOfBytesWritten,
+        NULL
+    );
+    if (bFile == INVALID_HANDLE_VALUE)
+    {
+        printf("WriteFile failed and error no %ul\n", GetLastError());
+    }
+    else
+    {
+        printf("WriteFile Success!");
+    }
+    CloseHandle(hFile);
+}
+Let’s review the WriteFile API below.
+(VISIT https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-
+writefile)
+Here we see we have 5 parameters.  The first, hFile, is simply the 
+file we created.  The second, lpBuffer, is a pointer to the buffer 
+containing the data to be written to the file or device.  The third, 
+nNumberOfBytesToWrite, is the number of bytes to be written to the 
+file or device.  The fourth, lpNumberOfBytesWritten, is a pointer to 
+the variable that receives the number of bytes written when using a 
+synchronous hFile param and WriteFile sets this value to zero before 
+doing any work or error checking and use NULL for this param if this 
+is an async operation to avoid erroneous results, this is an optional
+param.  The fifth, lpOverlapped, is a pointer to an OVERLAPPED 
+structure if the hFile param was opened with FILE_FLAG_OVERLAPPED 
+otherwise NULL.  This is optional.
+The return value is nonzero TRUE or if fails, the return value is 
+INVALID_HANDLE_VALUE which you can get with GetLastError.
+When we run the program it shows the following input.
+CreateFile Success!
+WriteFile Success!
+C:\Users\kevin\Documents\Hacking-Windows\0x0012-writefile\0x0012-writefile\Debug\0x0012-
+writefile.exe (process 7964) exited with code 0.
+To automatically close the console when debugging stops, enable Tools->Options->Debugging-
+>Automatically close the console when debugging stops.
+Press any key to close this window . . .
+In our next chapter we will debug this program in x86.
+61
+[[ PAGE 62 ]]
+Chapter 27: Debugging WriteFile x86
+We are going to debug the 32-bit version of our WriteFile program.
+In the IDA View-A text view we first see a __imp_WriteFile@20 
+function.
+In our last chapter we reviewed the API in C.  Here we first push the
+lpOverlapped param to the stack followed by the 
+lpNumberOfBytesWritten param followed by the nNumberOfBytesToWrite 
+param followed by the lpBuffer param followed by the hFile param and 
+then we call the function.
+Let’s set a breakpoint directly after the call and run the Local 
+Windows debugger.
+NOTICE we see that our test.txt file has been created and populated 
+with, Reversing is my life!
+In our next chapter we will hack this program in x86.
+62
+[[ PAGE 63 ]]
+Chapter 28: Hacking WriteFile x86
+We are going to hack the 32-bit version of our WriteFile program.
+In this chapter we will hack the file name this will continue to 
+build our experience on custom hacking binaries.
+Here we see the PathName of “C:\\temp\\test.txt”.  Double-click to 
+get to the .rdata section.
+Select the Hex View-1 tab.  Click on the second 74.
+Click Edit – Patch program – Change byte …
+74 00 65 00 6D 00 70 00 5C 00 74 00 65 00 73 00
+Let’s change the file to ‘tesv’.
+75 00 65 00 6D 00 70 00 5C 00 76 00 65 00 73 00
+Click OK.
+Click Edit – Patch program – Apply patches to input file…
+Click OK.
+Back in the IDA View0A tab, let’s set a breakpoint on the next 
+instruction after the call to __imp__WriteFileW@20.
+63
+[[ PAGE 64 ]]
+Let’s look at the root of our hard drive.
+Hooray!  We have hacked our simple program and altered the new file 
+name.
+In our next chapter we will debug this program in x64.
+64
+[[ PAGE 65 ]]
+Chapter 29: Debugging WriteFile x64
+We are going to debug the 64-bit version of our WriteFile program.
+In the IDA View-A text view we first see our WriteFile function.
+Here we first putting the lpOverlapped param to the stack, an offset 
+of rsp + 1a0 + dwCreationDisposition followed by the 
+lpNumberOfBytesWritten param into r9 followed by the 
+nNumberOfBytesToWrite param into r8 followed by the lpBuffer param 
+into rdx followed by the hFile param into rcx and then we call the 
+function.
+BEFORE we run make sure we remove the file test.txt within C:\temp so
+we can proceed as if this was being run the first time.
+Let’s set a breakpoint directly after the call and run the Local 
+Windows debugger.
+NOTICE we see that test.txt was created.
+In our next chapter we will hack this program in x64.
+65
+[[ PAGE 66 ]]
+Chapter 30: Hacking WriteFile x64
+We are going to hack the 64-bit version of our WriteFile program.
+In this chapter we will hack the file name this will continue to 
+build our experience on custom hacking binaries.
+Here we see the FileName of “C:\\temp\\test.txt”.  Double-click to 
+get to the .rdata section.
+Select the Hex View-1 tab.  Click on the 2nd 74.
+Click Edit – Patch program – Change byte …
+74 00 65 00 73 00 74 00 2E 00 74 00 78 00 74 00
+Let’s change the file to ‘tesf’.
+74 00 65 00 73 00 74 00 2E 00 66 00 78 00 74 00
+Click OK.
+Click Edit – Patch program – Apply patches to input file…
+Click OK.
+Back in the IDA View0A tab, let’s set a breakpoint on the next 
+instruction after the call to CreateFileW.
+66
+[[ PAGE 67 ]]
+Let’s look at the root of our hard drive.
+Hooray!  We have hacked our simple program and altered the new file 
+name.
+I hope you have enjoyed this tutorial and have learned how to now 
+take any remaining Win32API function and reverse engineer it either 
+in x86 or x64.
+Happy Hacking!
+67

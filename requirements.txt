@@ -1,0 +1,3 @@
+# CI/CD dependencies for auto-indexing pipeline
+google-genai>=1.0.0,<2.99
+PyYAML>=6.0.1,<7.0

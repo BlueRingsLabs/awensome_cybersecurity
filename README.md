@@ -3,7 +3,7 @@
 **An open, curated and fully automated cybersecurity knowledge base.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Ingest, Classify & Index](https://github.com/BlueRingsLabs/awensome_cybersecurity/actions/workflows/ingest_and_index.yml/badge.svg)](https://github.com/BlueRingsLabs/awensome_cybersecurity/actions/workflows/ingest_and_index.yml)
+[![Ingest, Classify & Index](https://github.com/BlueRingsLabs/awensome_cybersecurity/actions/workflows/ingest_and_index.yml/badge.svg?branch=main)](https://github.com/BlueRingsLabs/awensome_cybersecurity/actions/workflows/ingest_and_index.yml)
 
 ---
 

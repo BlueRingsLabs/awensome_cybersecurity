@@ -1,0 +1,75 @@
+# Continuous integration for the awesome_cybersecurity knowledge base.
+#
+# Every push and pull request is gated on the same checks a contributor runs
+# locally: lint, format, type-check, the full test suite at 100 % coverage,
+# and the repository policy check (`cyberkb check`) which proves the committed
+# catalogs, README index and category pages are exactly what the current
+# library would generate.
+#
+# Supply-chain hardening (see docs/adr/0006-supply-chain-hardening.md):
+#   * every action is pinned to a full commit SHA, never a mutable tag;
+#   * the default GITHUB_TOKEN is read-only for the whole workflow;
+#   * jobs declare only the scopes they need.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch: {}
+
+# Least privilege by default; individual jobs widen only what they need.
+permissions:
+  contents: read
+
+# Cancel superseded runs on the same ref to save CI minutes.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    name: Lint, type-check, test and policy check
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Harden the runner
+        uses: step-security/harden-runner@e14015d583714f6e62063499dc959a02595150a1 # v2.21.1
+        with:
+          egress-policy: audit
+
+      - name: Check out the repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
+        with:
+          enable-cache: true
+
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version-file: ".python-version"
+
+      - name: Install the project
+        run: uv sync --locked --all-extras --dev
+
+      - name: Ruff (lint)
+        run: uv run ruff check --output-format=github .
+
+      - name: Ruff (format)
+        run: uv run ruff format --check .
+
+      - name: Mypy (strict type-check)
+        run: uv run mypy
+
+      - name: Pytest (100% coverage gate)
+        run: uv run pytest
+
+      - name: Lint GitHub Actions workflows (actionlint)
+        run: uv run actionlint -color
+
+      - name: Repository policy check
+        run: uv run cyberkb check

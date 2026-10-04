@@ -1,0 +1,10 @@
+# Normalise line endings; the pipeline always writes LF.
+* text=auto eol=lf
+
+# Generated artefacts: collapse in PR diffs but keep them reviewable.
+index.json  linguist-generated=true
+index.yaml  linguist-generated=true
+uv.lock     linguist-generated=true
+
+# The library is prose, not code: keep it out of language stats.
+library/**  linguist-documentation=true

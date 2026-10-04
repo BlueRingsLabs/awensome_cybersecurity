@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/BlueRingsLabs/awesome_cybersecurity/schema/catalog.schema.json",
+  "title": "awesome_cybersecurity catalog",
+  "description": "Machine-readable catalog produced by `cyberkb build` (index.json / index.yaml).",
+  "type": "object",
+  "required": ["schema_version", "generated_at", "generator", "repository", "taxonomy", "counts", "entries"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {"type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$"},
+    "generated_at": {"type": "string", "format": "date-time"},
+    "generator": {"type": "string"},
+    "repository": {
+      "type": "object",
+      "required": ["name", "organization", "url", "license", "description"],
+      "additionalProperties": false,
+      "properties": {
+        "name": {"type": "string"},
+        "organization": {"type": "string"},
+        "url": {"type": "string", "format": "uri"},
+        "license": {"type": "string"},
+        "description": {"type": "string"}
+      }
+    },
+    "taxonomy": {
+      "type": "object",
+      "required": ["version", "categories", "formats", "languages", "tags", "cybok_knowledge_areas", "nice_categories"],
+      "additionalProperties": false,
+      "properties": {
+        "version": {"type": "integer"},
+        "categories": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "name", "description", "cybok", "nice", "staging"],
+            "additionalProperties": false,
+            "properties": {
+              "id": {"type": "string"},
+              "name": {"type": "string"},
+              "description": {"type": "string"},
+              "cybok": {"type": "array", "items": {"type": "string"}},
+              "nice": {"type": "array", "items": {"type": "string"}},
+              "staging": {"type": "boolean"}
+            }
+          }
+        },
+        "formats": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "name"],
+            "additionalProperties": false,
+            "properties": {"id": {"type": "string"}, "name": {"type": "string"}}
+          }
+        },
+        "languages": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "name"],
+            "additionalProperties": false,
+            "properties": {"id": {"type": "string"}, "name": {"type": "string"}}
+          }
+        },
+        "tags": {"type": "array", "items": {"type": "string"}},
+        "cybok_knowledge_areas": {"type": "object", "additionalProperties": {"type": "string"}},
+        "nice_categories": {"type": "object", "additionalProperties": {"type": "string"}}
+      }
+    },
+    "counts": {
+      "type": "object",
+      "required": ["total", "by_category", "by_format", "by_language", "by_redistribution"],
+      "additionalProperties": false,
+      "properties": {
+        "total": {"type": "integer", "minimum": 0},
+        "by_category": {"type": "object", "additionalProperties": {"type": "integer"}},
+        "by_format": {"type": "object", "additionalProperties": {"type": "integer"}},
+        "by_language": {"type": "object", "additionalProperties": {"type": "integer"}},
+        "by_redistribution": {"type": "object", "additionalProperties": {"type": "integer"}}
+      }
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id", "title", "category", "format", "language", "path", "tags",
+          "summary", "authors", "license", "redistribution", "added",
+          "word_count", "size_bytes", "sha256", "classification"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {"type": "string", "pattern": "^ckb-[0-9a-f]{12}$"},
+          "title": {"type": "string", "minLength": 1},
+          "category": {"type": "string"},
+          "format": {"type": "string"},
+          "language": {"type": "string", "enum": ["en", "es", "pt", "und"]},
+          "path": {"type": "string", "pattern": "^library/"},
+          "tags": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+          "summary": {"type": "string"},
+          "authors": {"type": "array", "items": {"type": "string"}},
+          "source_url": {"type": "string", "format": "uri"},
+          "license": {"type": "string"},
+          "redistribution": {"type": "string", "enum": ["permitted", "noncommercial", "restricted", "unknown"]},
+          "added": {"type": "string", "format": "date"},
+          "word_count": {"type": "integer", "minimum": 0},
+          "size_bytes": {"type": "integer", "minimum": 0},
+          "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "classification": {
+            "type": "object",
+            "required": ["method", "confidence"],
+            "additionalProperties": false,
+            "properties": {
+              "method": {"type": "string", "enum": ["llm", "heuristic", "manual"]},
+              "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+              "model": {"type": "string"}
+            }
+          }
+        }
+      }
+    }
+  }
+}

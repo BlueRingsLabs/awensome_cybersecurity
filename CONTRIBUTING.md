@@ -1,118 +1,108 @@
-# Contributing to awensome_cybersecurity
+# Contributing to awesome_cybersecurity
 
-Thank you for helping build the most accessible community cybersecurity
-knowledge base. This project was designed around one principle:
+This project is built around one principle:
 
-> **Sharing knowledge must cost you nothing but the knowledge itself.**
+> **Sharing knowledge should cost you nothing but the knowledge itself.**
 
-You never have to memorize our folder tree, choose a category, or format your
-notes perfectly. You drop a raw Markdown file in the repository root; our
-automated pipeline (GitHub Actions + Gemini AI) does the rest.
+You never have to learn the folder tree, pick a category, or format your notes
+perfectly. You drop a Markdown file into `inbox/`; the `cyberkb` pipeline
+sanitises, classifies, licence-checks and files it for you.
 
 ---
 
-## The frictionless submission workflow
+## Adding a resource (the frictionless path)
 
-### 1. Write your note
+1. **Write a Markdown note.** Any structure. One resource per file. Give it a
+   clear `# Title` on the first line if you can — it makes classification better.
 
-Any Markdown content works: study notes, book summaries, tool cheat sheets,
-blog archives, paper digests. No template required. One resource per file.
+2. **Put it in `inbox/`** through a pull request:
 
-### 2. Upload it to the repository ROOT (`/`)
+   ```bash
+   git switch -c resource/my-note
+   cp my-note.md inbox/
+   git add inbox/my-note.md
+   git commit -m "docs(inbox): add my note on <topic>"
+   git push -u origin resource/my-note
+   ```
 
-Two equivalent ways:
+3. **(Optional) steer the pipeline** with front matter. Valid hints win over the
+   classifier; anything you omit is inferred:
 
-* **From the GitHub UI**: `Add file -> Upload files`, select your `.md`,
-  create a new branch (`feature/<short-description>`), open a Pull Request
-  against `main`.
-* **From the CLI**:
-  ```bash
-  git checkout -b feature/my-new-note
-  cp my-note.md .            # place it at the repository root
-  git add my-note.md
-  git commit -m "docs(ingest): add my new note"
-  git push origin feature/my-new-note
-  ```
+   ```markdown
+   ---
+   title: A practical guide to Kerberoasting
+   category: identity-and-access
+   tags: [active-directory, credential-access]
+   source_url: https://example.test/kerberoasting
+   license: CC-BY-4.0
+   ---
 
-That is all the classification you will ever have to do.
+   # A practical guide to Kerberoasting
+   ...
+   ```
 
-### 3. Open a Pull Request against `main`
+   Valid keys: `title`, `category`, `format`, `language`, `tags`, `summary`,
+   `authors`, `source_url`, `license`. Categories, formats, languages and tags
+   must come from [`schema/taxonomy.yaml`](schema/taxonomy.yaml).
 
-Use [Conventional Commits](https://www.conventionalcommits.org/) titles:
+4. **A maintainer merges.** The `Ingest and index` workflow files your note into
+   `library/<category>/…` with complete front matter and regenerates the
+   catalogs. Your resource appears in `index.json`, `index.yaml`, the README and
+   its category page within minutes.
+
+## Content rules (please read)
+
+- **Licensing.** Submit **openly licensed** (Creative Commons, public domain,
+  permissive) or **your own original** content. For an all-rights-reserved work,
+  contribute an original summary and a link — do **not** paste the full text. The
+  policy check (`cyberkb check`) blocks redistribution-restricted licences and
+  flags undetermined ones for review.
+- **Legal and ethical only.** No live credentials, no content whose purpose is
+  to harm specific real systems or people. Defensive research, CTF material and
+  responsibly disclosed PoCs with context are welcome. Payloads belong inside
+  fenced code blocks.
+- **Attribute sources.** Name the author, title and URL inside the note.
+- **One topic per file**, so the catalog and search stay useful.
+- Non-English content is welcome; language is detected automatically.
+
+## Changing the engine, taxonomy or workflows
+
+Development contributions follow a standard pull-request flow with
+[Conventional Commits](https://www.conventionalcommits.org/) titles. Everything
+CI enforces, you can run locally:
+
+```bash
+uv sync                               # set up the environment (needs uv + Python 3.12+)
+uv run ruff check . && uv run ruff format --check .
+uv run mypy                           # strict type-checking
+uv run pytest                         # tests at 100% branch coverage (hard gate)
+uv run actionlint                     # lint workflows
+uv run cyberkb check                  # repository policy gate
+
+uv run pre-commit install             # optional: run the gates on every commit
+```
+
+The taxonomy is the single source of truth in
+[`schema/taxonomy.yaml`](schema/taxonomy.yaml): add a category, format or tag
+there and everything downstream (classifier, catalog, schema, README) follows.
+After any change that affects content or the taxonomy, run `uv run cyberkb build`
+and commit the regenerated `index.json`, `index.yaml`, README block and category
+pages — CI fails if they drift.
+
+New behaviour needs tests; coverage must stay at 100%. Architectural changes
+should come with (or update) an [ADR](docs/adr/).
+
+## Commit and PR conventions
 
 | Prefix | When |
 | --- | --- |
-| `docs(ingest): ...` | new raw knowledge file added to `/` |
-| `feat(...)` | pipeline / automation changes |
-| `fix(...)` | bug fixes in scripts or workflows |
-| `chore(...)` | maintenance, index regeneration, config |
-
-### 4. A maintainer merges -- the machine takes over
-
-On merge to `main`, the `Ingest, Classify & Index` workflow automatically:
-
-1. **Sanitizes** your file (encoding cleanup, whitespace normalization,
-   tracking-URL stripping, guaranteed H1 title).
-2. **Classifies** it with Gemini 2.5 Flash into one domain
-   (`01_literature`, `02_papers`, `03_web_and_posts`) and one subdomain
-   (`blue_team`, `red_team`, `malware_analysis`, `reverse_engineering`,
-   `threat_intelligence`).
-3. **Renames** it to a clean `snake_case` filename, optionally year-prefixed.
-4. **Routes** it into its final folder and **regenerates** `index.json`,
-   `index.yaml` and the README Resource Index.
-5. Commits everything back to `main` under the Actions bot account.
-
-Your note appears in the catalog within minutes -- typically without a single
-review comment about formatting.
-
----
-
-## Content guidelines
-
-* **Legal and ethical only.** No live exploit code targeting systems you do
-  not own, no leaked credentials, no illegal content. Defensive research,
-  CTF material and published PoCs with disclosure context are welcome.
-* **Attribute sources.** If your note summarizes a book, paper or blog post,
-  mention the author/title/URL inside the file. The pipeline preserves your
-  text as-is.
-* **Original or properly licensed content only** -- remember this repository
-  is MIT-licensed and public.
-* **One topic per file** keeps the catalog and search useful.
-* Non-English content is welcome; the pipeline detects language metadata
-  automatically.
-
----
-
-## What the pipeline guarantees (and what it does not)
-
-* Files that cannot be confidently classified land in
-  `03_web_and_posts/unclassified/` and stay flagged in the catalog until a
-  maintainer reruns classification (`workflow_dispatch` on the Actions tab).
-* Filename collisions get a numeric suffix -- nothing is ever overwritten.
-* If the AI service is unavailable, deterministic heuristics route the file so
-  your contribution is never lost.
-
----
-
-## Development contributions (scripts, workflows, schema)
-
-Contributions to `.github/scripts/classify_and_index.py`,
-`.github/scripts/build_index.py` or the CI workflow follow standard Gitflow:
-feature branch, PR to `main`, Conventional Commit titles, and a description
-linking the relevant issue (`Closes #N`). Run locally before pushing:
-
-```bash
-pip install google-genai pyyaml
-python .github/scripts/build_index.py            # regenerate catalogs
-KB_DRY_RUN=true python .github/scripts/classify_and_index.py  # test ingestion
-```
-
----
+| `docs(inbox): …` | a new raw resource in `inbox/` |
+| `feat(…)` / `fix(…)` | engine, taxonomy or workflow changes |
+| `chore(…)` | maintenance, dependency bumps, regenerated catalogs |
 
 ## Code of Conduct
 
-This project and everyone participating in it are governed by the
-[Code of Conduct](CODE_OF_CONDUCT.md). Report unacceptable behavior to
-`deeprat.tec@gmail.com`.
+Everyone participating is governed by the [Code of Conduct](CODE_OF_CONDUCT.md).
+Report concerns to `deeprat.tec@gmail.com`.
 
 Happy indexing.

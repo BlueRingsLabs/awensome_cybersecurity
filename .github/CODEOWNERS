@@ -1,0 +1,7 @@
+# Default owner for everything in the repository.
+* @glromero
+
+# The engine, taxonomy and CI are especially sensitive.
+/src/            @glromero
+/schema/         @glromero
+/.github/        @glromero

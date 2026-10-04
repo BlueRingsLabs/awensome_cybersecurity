@@ -1,0 +1,39 @@
+name: Resource submission
+description: Propose a new resource for the knowledge base.
+title: "resource: <short title>"
+labels: ["resource"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The frictionless path is to drop a Markdown file in `inbox/` via a pull
+        request — the pipeline classifies and files it automatically. Use this
+        issue only to propose a resource you would like someone else to add.
+  - type: input
+    id: title
+    attributes:
+      label: Resource title
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source URL
+      description: Where the resource lives, so authorship and licence can be verified.
+    validations:
+      required: true
+  - type: dropdown
+    id: license
+    attributes:
+      label: Do you know its licence allows redistribution?
+      options:
+        - "Yes — it is openly licensed (CC-BY, public domain, permissive, ...)"
+        - "No / unsure — summary and link only"
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why it belongs here
+    validations:
+      required: true

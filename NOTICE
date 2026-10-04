@@ -1,0 +1,61 @@
+awesome_cybersecurity
+Copyright (c) 2026 Gonzalo Romero / Blue Rings Labs
+
+================================================================================
+Licensing of this repository
+================================================================================
+
+Two distinct things live here, under two distinct licences:
+
+1. THE TOOLING AND THE COMPILATION
+   The `cyberkb` engine (src/), the taxonomy and schemas (schema/), the tests,
+   the CI configuration, the documentation, and the selection/arrangement of
+   the library are released under the MIT License (see LICENSE).
+
+2. THE LIBRARY CONTENT (library/)
+   Each resource under library/ is a third-party or original work that RETAINS
+   ITS OWN UPSTREAM LICENCE. The MIT License above does NOT relicense that
+   content. Every resource records its licence in its YAML front matter, and the
+   catalog (index.json / index.yaml) exposes it as `license` together with a
+   derived `redistribution` class:
+
+     permitted      - openly redistributable (CC-BY, CC-BY-SA, CC0, OGL, GFDL,
+                      public domain, permissive)
+     noncommercial  - redistributable for non-commercial use only (CC-BY-NC*)
+     restricted     - redistribution not permitted (such works are NOT included;
+                      see docs/audit/2026-10-04-migration.md)
+     unknown        - licence undetermined (NOASSERTION); confirm before reuse
+
+================================================================================
+Non-commercial content
+================================================================================
+
+The following resources are licensed for NON-COMMERCIAL use only. Their terms
+travel with the file and are NOT widened by this repository's MIT licence.
+Anyone reusing them commercially must obtain separate permission from the
+upstream rights holder.
+
+| Resource | Licence |
+| --- | --- |
+| cryptography-and-privacy/computer-systems-security.md | CC-BY-NC-SA-4.0 |
+| cryptography-and-privacy/hackingciphers.md | CC-BY-NC-SA-3.0 |
+| foundations-and-systems/eloquent-javascript.md | CC-BY-NC-3.0 |
+| foundations-and-systems/how-to-code-in-python.md | CC-BY-NC-SA-4.0 |
+| foundations-and-systems/progit.md | CC-BY-NC-SA-3.0 |
+| foundations-and-systems/relational-databases-and-microsoft-access-365.md | CC-BY-NC-SA-4.0 |
+| general-technology/warez.md | CC-BY-NC-SA-4.0 |
+| governance-risk-and-compliance/cloud-security-guidance.md | CC-BY-NC-SA-4.0 |
+| iot-ot-and-hardware-security/iot-use-cases-and-technologies.md | CC-BY-NC-SA-4.0 |
+| offensive-security/ethical-hacking.md | CC-BY-NC-SA-4.0 |
+
+================================================================================
+Undetermined licences
+================================================================================
+
+Many resources carry `license: NOASSERTION`, meaning the upstream licence could
+not be detected automatically. These are retained as curated community notes;
+confirm the licence before any redistribution or commercial reuse. The
+remediation process is documented in docs/runbooks/content-licensing.md.
+
+If you are a rights holder and want a resource corrected, relicensed or removed,
+open an issue or email deeprat.tec@gmail.com and it will be handled promptly.

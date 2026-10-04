@@ -1,154 +1,174 @@
-# BlueRingsLabs / awesome_cybersecurity
+# awesome_cybersecurity
 
-**An open, curated and fully automated cybersecurity knowledge base.**
+**A curated, automatically indexed cybersecurity knowledge base — literature,
+papers and web resources organised by a CyBOK- and NICE-aligned taxonomy and
+published as machine-readable catalogs.**
 
+[![CI](https://github.com/BlueRingsLabs/awesome_cybersecurity/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/BlueRingsLabs/awesome_cybersecurity/actions/workflows/ci.yml)
+[![CodeQL](https://github.com/BlueRingsLabs/awesome_cybersecurity/actions/workflows/codeql.yml/badge.svg?branch=main)](https://github.com/BlueRingsLabs/awesome_cybersecurity/actions/workflows/codeql.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Ingest, Classify & Index](https://github.com/BlueRingsLabs/awesome_cybersecurity/actions/workflows/ingest_and_index.yml/badge.svg?branch=main)](https://github.com/BlueRingsLabs/awesome_cybersecurity/actions/workflows/ingest_and_index.yml)
+[![Coverage: 100%](https://img.shields.io/badge/coverage-100%25-brightgreen.svg)](#quality-gates)
 
 ---
 
-## Mission
+## What this is
 
-BlueRingsLabs builds and maintains a public repository of cybersecurity
-knowledge -- literature, research papers and web resources -- organized by
-threat subdomain (blue team, red team, malware analysis, reverse engineering
-and threat intelligence).
+A public library of cybersecurity knowledge you can both **read on GitHub** and
+**consume as data**. Every resource is a Markdown document that carries its own
+metadata in front matter — category, format, language, licence, tags, a stable
+id — and the whole collection is published as `index.json` / `index.yaml` for
+dashboards, search and agents.
 
-Our core value proposition is a **frictionless contribution workflow**: no one
-should have to learn our directory tree to share knowledge. Contributors drop
-raw Markdown notes anywhere in the repository root; an automated CI/CD
-pipeline (GitHub Actions + Gemini AI) sanitizes, classifies, renames, routes
-and indexes every submission the moment it is merged into `main`.
+Contributing is meant to cost nothing but the knowledge itself: you drop a raw
+Markdown note into [`inbox/`](inbox/), and the `cyberkb` pipeline sanitises,
+classifies, licence-checks and files it into the right place on merge. No one
+has to learn the folder tree to share something.
 
-**Vision**: become the most accessible, best-organized community security
-library -- human-readable on GitHub, machine-parsable via API-friendly
-catalogs (`index.json` / `index.yaml`).
+> **Mission.** Be the most accessible, best-organised and most trustworthy
+> community cybersecurity library — human-readable, machine-parsable, and
+> defensible enough that a Tier-1 security team or an auditor can rely on it.
 
----
+## How it is organised
 
-## Repository map
+Resources live under `library/<category>/`. The **category** is the single
+primary axis and decides the folder; everything else is an orthogonal facet in
+front matter. Categories are grounded in two public bodies of knowledge so the
+library maps onto how the field already reasons:
 
-```text
-.
-├── README.md               <- you are here (index block auto-updated by CI)
-├── LICENSE                 <- MIT, Blue Rings Labs (2026)
-├── CONTRIBUTING.md         <- frictionless /root submission workflow
-├── CODE_OF_CONDUCT.md      <- Contributor Covenant, contact: deeprat.tec@gmail.com
-├── index.json              <- machine-readable catalog (schema v1)   [auto]
-├── index.yaml              <- machine-readable catalog (YAML form)   [auto]
-│
-├── 01_literature/          <- books, summaries, theoretical notes
-│   ├── blue_team/
-│   ├── red_team/
-│   ├── malware_analysis/
-│   ├── reverse_engineering/
-│   └── threat_intelligence/
-├── 02_papers/              <- technical papers and whitepapers
-│   └── (same five subdomains)
-├── 03_web_and_posts/       <- articles, blog posts, web resources
-│   └── (five subdomains + unclassified/ staging area)
-│
-└── .github/
-    ├── scripts/
-    │   ├── classify_and_index.py   <- AI ingestion pipeline (Gemini 2.5 Flash)
-    │   └── build_index.py          <- deterministic catalog generator
-    └── workflows/
-        └── ingest_and_index.yml    <- CI/CD triggered on push to main
-```
+- the **[CyBOK](https://www.cybok.org/) v1.1** Knowledge Areas, and
+- the **[NICE Workforce Framework](https://niccs.cisa.gov/workforce-development/nice-framework)** (NIST SP 800-181r1) categories.
 
-| Axis | Values | Meaning |
+The taxonomy is defined once, in [`schema/taxonomy.yaml`](schema/taxonomy.yaml),
+and every component — classifier, catalog, validator, these pages — reads it
+from there.
+
+| Facet | Where | Values |
 | --- | --- | --- |
-| **Domain** (top level) | `01_literature`, `02_papers`, `03_web_and_posts` | Resource type / depth |
-| **Subdomain** | `blue_team`, `red_team`, `malware_analysis`, `reverse_engineering`, `threat_intelligence`, `unclassified` | Threat topic |
-
----
-
-## How automation works
-
-```text
-Contributor PR (raw .md in /)  ->  Merge to main  ->  GitHub Actions
-        -> Gemini 2.5 Flash classification (batched, rate-limited, retried)
-        -> Sanitization + snake_case renaming + routing to domain/subdomain
-        -> Regeneration of index.json, index.yaml and this AUTO-INDEX block
-        -> Bot commit back to main
-```
-
-* Structured JSON output guarantees only valid taxonomy destinations.
-* Batch processing (12 files per request) with client-side pacing respects the
-  Google AI Studio free tier (15 requests/minute); HTTP 429 triggers
-  exponential backoff with jitter.
-* If the model is unavailable, deterministic keyword heuristics route files so
-  the pipeline never blocks a merge.
-
----
+| **category** | folder + front matter | 18 topic categories + a staging area (see the table below) |
+| **format** | front matter | book, guide, article, paper, course-notes, cheatsheet, checklist, playbook, reference |
+| **language** | front matter | en, es, pt, und |
+| **tags** | front matter | a controlled vocabulary (no free-form tags) |
+| **licence** | front matter | SPDX id or `NOASSERTION`, with a derived `redistribution` class |
 
 ## Contributing
 
 Read [`CONTRIBUTING.md`](CONTRIBUTING.md). The short version:
 
-1. Create your raw Markdown note (any format, any name).
-2. Add it to the **repository root** `/` through a Pull Request.
-3. A maintainer merges. Done -- the pipeline does the rest.
+1. Add a Markdown file to [`inbox/`](inbox/) in a pull request (any name, any
+   structure; one resource per file). Optionally hint `category`, `tags`,
+   `source_url` or `license` in front matter — the pipeline honours valid hints.
+2. A maintainer merges. The `Ingest and index` workflow files it into
+   `library/<category>/…` with complete front matter and regenerates the
+   catalogs.
+3. Please only submit **openly licensed or original** content. For an
+   all-rights-reserved work, contribute a summary and a link instead — the
+   policy check blocks redistribution of restricted material.
 
-Please also honor [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md)
-(contact: `deeprat.tec@gmail.com`).
-
----
+Please also honour the [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ## Programmatic access
 
-Every resource is described in [`index.json`](index.json) /
-[`index.yaml`](index.yaml) with a stable `id`, `path`, `title`, `domain`,
-`subdomain`, `tags`, `language`, `summary` and classification `confidence`.
-Consume them from scripts, dashboards or your own agents -- they are
-regenerated atomically on every pipeline run.
+Consume [`index.json`](index.json) / [`index.yaml`](index.yaml) directly. Each
+entry has a stable `id`, `path`, `title`, `category`, `format`, `language`,
+`tags`, `summary`, `authors`, `license`, `redistribution`, `word_count`,
+`sha256` and a `classification` block. The schema is documented in
+[`docs/catalog-schema.md`](docs/catalog-schema.md) and carried inside the
+catalog itself (`schema_version`, `taxonomy`).
+
+```bash
+# Every openly redistributable red-team resource, newest first:
+jq '.entries[]
+    | select(.category=="offensive-security" and .redistribution=="permitted")
+    | {title, path, added}' index.json
+```
+
+## The `cyberkb` engine
+
+The pipeline is a small, dependency-light Python package ([`src/cyberkb/`](src/cyberkb/)).
+
+```bash
+uv sync                 # set up the environment
+uv run cyberkb build    # regenerate catalogs, README index and category pages
+uv run cyberkb check    # repository policy gate (used by CI)
+uv run cyberkb ingest   # classify and file inbox/ submissions, then build
+uv run cyberkb classify inbox/note.md   # preview a classification, write nothing
+```
+
+Classification uses Google Gemini when `GEMINI_API_KEY` is set and falls back
+to a deterministic, offline heuristic otherwise, so the pipeline never blocks on
+an unavailable service. See [`docs/architecture.md`](docs/architecture.md).
+
+## Quality gates
+
+Every pull request must pass, and these run locally too:
+
+| Gate | Command |
+| --- | --- |
+| Lint + format | `uv run ruff check . && uv run ruff format --check .` |
+| Types (strict) | `uv run mypy` |
+| Tests + 100% branch coverage | `uv run pytest` |
+| Workflow lint | `uv run actionlint` |
+| Repository policy | `uv run cyberkb check` |
+
+Supply-chain and secret scanning (CodeQL, zizmor, gitleaks, Scorecard,
+dependency review) run in [`.github/workflows/`](.github/workflows/); all
+actions are pinned to commit SHAs. See
+[`docs/threat-model.md`](docs/threat-model.md) and the
+[Architecture Decision Records](docs/adr/).
+
+## Repository map
+
+```text
+.
+├── library/            curated resources, one folder per category  [library content]
+├── inbox/              drop raw submissions here                   [contributor input]
+├── schema/
+│   ├── taxonomy.yaml   single source of truth for the taxonomy
+│   └── catalog.schema.json  JSON Schema for index.json
+├── src/cyberkb/        the ingestion / catalog / policy engine
+├── tests/              100%-covered test suite
+├── docs/               architecture, catalog schema, threat model, ADRs, runbooks, audit
+├── index.json / .yaml  machine-readable catalogs                  [generated]
+└── .github/workflows/  CI, ingestion, CodeQL, security, scorecard
+```
 
 ---
 
-## Resource Index
+## Resource index
 
-*This section is managed automatically by the CI/CD pipeline. Do not edit
-between the markers.*
+*This section is generated by `cyberkb build`. Do not edit between the markers.*
 
 <!-- BEGIN AUTO-INDEX -->
-> Catalog regenerated: **2026-10-04T01:14:32Z** | **505 resources** indexed. Machine-readable catalogs: [`index.json`](index.json) / [`index.yaml`](index.yaml).
+> Catalog regenerated **2026-10-04T19:23:59Z** | **486** resources across **19** categories. Machine-readable: [`index.json`](index.json) / [`index.yaml`](index.yaml).
 
-### 01_literature -- Literature (291 resources)
-
-| Subdomain | Count | Highlights |
+| Category | Count | Most recent additions |
 | --- | ---: | --- |
-| `blue_team` | 42 | [Send emails by local applications only](01_literature/blue_team/2018_send-emails-by-local-applications-only.md); [Pentest of an FTP Server](01_literature/blue_team/2019_ftp-testing.md); [Top security browser plugins](01_literature/blue_team/2020_top-security-browser-plugins.md) · [+39 more](/01_literature/blue_team/) |
-| `red_team` | 54 | [Website analysis](01_literature/red_team/2019_website-analysis.md); [I am not that hacker you are looking for](01_literature/red_team/2022_i-am-not.md); [Let's hack some SMB](01_literature/red_team/2022_smb-hacking.md) · [+51 more](/01_literature/red_team/) |
-| `malware_analysis` | 29 | [100 Security Operation Center Tools](01_literature/malware_analysis/100_security_operation_center_tools.md); [Malware analysis](01_literature/malware_analysis/2019_malware-analysis.md); [8BitDo gamepads](01_literature/malware_analysis/2020_8bitdo-gamepads.md) · [+26 more](/01_literature/malware_analysis/) |
-| `reverse_engineering` | 20 | [Easy GPG](01_literature/reverse_engineering/2019_easy-gpg.md); [Windows post-exploitation](01_literature/reverse_engineering/2019_windows-post-exploitation.md); [Miyoo Mini Plus](01_literature/reverse_engineering/2023_miyoo-mini-plus.md) · [+17 more](/01_literature/reverse_engineering/) |
-| `threat_intelligence` | 146 | [Debian LEMP stack](01_literature/threat_intelligence/2018_debian-lemp-stack.md); [MD5 calculator in powershell](01_literature/threat_intelligence/2018_md5-calculator-in-powershell.md); [PortSentry - stealth scan detection](01_literature/threat_intelligence/2018_portsentry-stealth-scan-detection.md) · [+143 more](/01_literature/threat_intelligence/) |
-
-### 02_papers -- Papers (41 resources)
-
-| Subdomain | Count | Highlights |
-| --- | ---: | --- |
-| `blue_team` | 12 | [Security Roadmap](02_papers/blue_team/2022_security-roadmap.md); [Cyber Security Career In 2024](02_papers/blue_team/cyber_security_career_in_2024.md); [Cyberbullying And Its Consequences](02_papers/blue_team/cyberbullying_and_its_consequences.md) · [+9 more](/02_papers/blue_team/) |
-| `red_team` | 6 | [CVE-2021-4034 - gimme root](02_papers/red_team/2022_cve-2021-4034.md); [30 Days Of Practice Pentest 2](02_papers/red_team/30_days_of_practice_pentest_2.md); [Adversary Emulation Matrix By Joas](02_papers/red_team/adversary_emulation_matrix_by_joas.md) · [+3 more](/02_papers/red_team/) |
-| `malware_analysis` | 4 | [Cybersec Certifications 2023](02_papers/malware_analysis/cybersec_certifications_2023.md); [Malware And Reverse Engineering Complete Collect](02_papers/malware_analysis/malware_and_reverse_engineering_complete_collection_by_joas.md); [Python Libs For Security Pt 1](02_papers/malware_analysis/python_libs_for_security_pt_1.md) · [+1 more](/02_papers/malware_analysis/) |
-| `reverse_engineering` | 2 | [Chatgpt For Cybersecurity 3](02_papers/reverse_engineering/chatgpt_for_cybersecurity_3.md); [Offensive Security Mac Control Bypass Notes Pt 1](02_papers/reverse_engineering/offensive_security_mac_control_bypass_notes_pt_1.md) |
-| `threat_intelligence` | 17 | [100 Free Security Tools](02_papers/threat_intelligence/100_free_security_tools.md); [12 Best Career In Cyber Security 2023](02_papers/threat_intelligence/12_best_career_in_cyber_security_2023.md); [title inside <title>](02_papers/threat_intelligence/2018_devices-search.md) · [+14 more](/02_papers/threat_intelligence/) |
-
-### 03_web_and_posts -- Web & Posts (173 resources)
-
-| Subdomain | Count | Highlights |
-| --- | ---: | --- |
-| `blue_team` | 39 | [Safe social networking](03_web_and_posts/blue_team/2018_safe-social-networking.md); [Secure email services](03_web_and_posts/blue_team/2018_secure-email-services.md); [AbuseIPDB with Fail2Ban](03_web_and_posts/blue_team/2019_abuseipdb.md) · [+36 more](/03_web_and_posts/blue_team/) |
-| `red_team` | 66 | [Ethical Hacking - How to start](03_web_and_posts/red_team/2019_ethical-hacking.md); [Runas in Powershell for Windows 10](03_web_and_posts/red_team/2019_runas-powershell.md); [CVE attack](03_web_and_posts/red_team/2021_cve-attack.md) · [+63 more](/03_web_and_posts/red_team/) |
-| `malware_analysis` | 13 | [Open Source Rats](03_web_and_posts/malware_analysis/2020_opensource-rats.md); [Hacker news](03_web_and_posts/malware_analysis/2021_hacker-news.md); [Scan a single IP](03_web_and_posts/malware_analysis/blue_team_toolkit.md) · [+10 more](/03_web_and_posts/malware_analysis/) |
-| `reverse_engineering` | 15 | [Black Friday - Cyber Monday](03_web_and_posts/reverse_engineering/2021_black-friday.md); [SMTP Hack](03_web_and_posts/reverse_engineering/2024_smtp-hack.md); [Carreira Em Desenvolvimento Mobile](03_web_and_posts/reverse_engineering/carreira_em_desenvolvimento_mobile.md) · [+12 more](/03_web_and_posts/reverse_engineering/) |
-| `threat_intelligence` | 39 | [19 Joassantos Gerenciando Sua Superficie De Ataq](03_web_and_posts/threat_intelligence/19_joassantos_gerenciando_sua_superficie_de_ataques.md); [Fail2Ban - best jail](03_web_and_posts/threat_intelligence/2018_fail2ban-best-jail.md); [Let’s Encrypt SSL Cert for Nginx](03_web_and_posts/threat_intelligence/2018_lets-encrypt-ssl-cert-for-nginx.md) · [+36 more](/03_web_and_posts/threat_intelligence/) |
-| `unclassified` | 1 | [Mining cryptocurrency - don't do it at home](03_web_and_posts/unclassified/2023_minig-cryptocurrency.md) |
-
-_Note: 1 resource(s) are pending automated classification and will be routed by the next pipeline run._
+| [Offensive Security](library/offensive-security/README.md) | 133 | [eLearnSecurity eCPPT Notes Exam](library/offensive-security/elearnsecurity-ecppt-notes-exam.md); [eLearnSecurity Ecptxv2 Notes](library/offensive-security/elearnsecurity-ecptxv2-notes.md); [Worth checking ep.3](library/offensive-security/worth-checking-ep-3.md) |
+| [Identity & Access Security](library/identity-and-access/README.md) | 5 | [Pwning the Domain Series with Credentials](library/identity-and-access/pwning-the-domain-series-with-credentials.md); [Nsa and Cisa Top 10](library/identity-and-access/nsa-and-cisa-top-10.md); [Basic access authentication bruteforce](library/identity-and-access/basic-access-authentication-bruteforce.md) |
+| [Security Operations & Defense](library/security-operations/README.md) | 22 | [Windows Event Log Analysis IR Guide](library/security-operations/windows-event-log-analysis-ir-guide.md); [Windows Defender is enough, if you harden it](library/security-operations/windows-defender-is-enough-if-you-harden-it.md); [The Purple Book on Cyber Security](library/security-operations/the-purple-book-on-cyber-security.md) |
+| [Incident Response & Forensics](library/incident-response-and-forensics/README.md) | 12 | [Threat Hunting Playbooks](library/incident-response-and-forensics/threat-hunting-playbooks.md); [Memory Forensics](library/incident-response-and-forensics/memory-forensics.md); [Incident Response Simulation 1](library/incident-response-and-forensics/incident-response-simulation-1.md) |
+| [Malware Analysis](library/malware-analysis/README.md) | 7 | [Yet Another Ridiculous Acronym](library/malware-analysis/yet-another-ridiculous-acronym.md); [Ransomware simulation](library/malware-analysis/ransomware-simulation.md); [Open Source Rats](library/malware-analysis/open-source-rats.md) |
+| [Reverse Engineering & Exploit Development](library/reverse-engineering-and-exploit-development/README.md) | 22 | [eLearnSecurity Exploit Development Student Notes by Joas](library/reverse-engineering-and-exploit-development/elearnsecurity-exploit-development-student-notes-by-joas.md); [eLearnSecurity Ecxd Preparation](library/reverse-engineering-and-exploit-development/elearnsecurity-ecxd-preparation.md); [Shellcode Development 2](library/reverse-engineering-and-exploit-development/shellcode-development-2.md) |
+| [Threat Intelligence & OSINT](library/threat-intelligence-and-osint/README.md) | 18 | [eLearnSecurity Certified Threat Hunting Introduction Pt 1](library/threat-intelligence-and-osint/elearnsecurity-certified-threat-hunting-introduction-pt-1.md); [Using OSINT to Investigate School Shooters](library/threat-intelligence-and-osint/using-osint-to-investigate-school-shooters.md); [Using OSINT to Investigate Human Trafficking and Missing Persons](library/threat-intelligence-and-osint/using-osint-to-investigate-human-trafficking-and-missing-persons.md) |
+| [Application Security](library/application-security/README.md) | 52 | [eLearnSecurity eWPTX Notes Basic by Joas](library/application-security/elearnsecurity-ewptx-notes-basic-by-joas.md); [eLearnSecurity eWPT Notes](library/application-security/elearnsecurity-ewpt-notes.md); [eLearnSecurity Mobile Application Penetration Testing](library/application-security/elearnsecurity-mobile-application-penetration-testing.md) |
+| [Cloud & Container Security](library/cloud-and-container-security/README.md) | 7 | [Understanding your EKS environment - The reconnaissance phase](library/cloud-and-container-security/understanding-your-eks-environment-the-reconnaissance-phase.md); [Kubernetes Exploitation Introduction Cheatsheet](library/cloud-and-container-security/kubernetes-exploitation-introduction-cheatsheet.md); [Google Cloud Attack Overview Pt1](library/cloud-and-container-security/google-cloud-attack-overview-pt1.md) |
+| [Network & Wireless Security](library/network-and-wireless-security/README.md) | 34 | [eLearnSecurity Certified Incident Response Ecir Guide Study to Exam](library/network-and-wireless-security/elearnsecurity-certified-incident-response-ecir-guide-study-to-exam.md); [Wireless Penetration Testing PMKID Attack](library/network-and-wireless-security/wireless-penetration-testing-pmkid-attack.md); [Wireless Penetration Testing Fluxion](library/network-and-wireless-security/wireless-penetration-testing-fluxion.md) |
+| [IoT, OT & Hardware Security](library/iot-ot-and-hardware-security/README.md) | 4 | [Pentest IoT and OT Overview](library/iot-ot-and-hardware-security/pentest-iot-and-ot-overview.md); [IoT Use Cases and Technologies](library/iot-ot-and-hardware-security/iot-use-cases-and-technologies.md); [IoT Security Guide](library/iot-ot-and-hardware-security/iot-security-guide.md) |
+| [AI Security](library/ai-security/README.md) | 12 | [The Hackers Guide to LLMs](library/ai-security/the-hackers-guide-to-llms.md); [Prompt Engineering Google](library/ai-security/prompt-engineering-google.md); [LLM AI Security and Governance Checklist](library/ai-security/llm-ai-security-and-governance-checklist.md) |
+| [Cryptography, Privacy & Anonymity](library/cryptography-and-privacy/README.md) | 22 | [Xubuntu as custom Whonix workstation](library/cryptography-and-privacy/xubuntu-as-custom-whonix-workstation.md); [Windows security and privacy](library/cryptography-and-privacy/windows-security-and-privacy.md); [Toryfikator](library/cryptography-and-privacy/toryfikator.md) |
+| [Governance, Risk & Compliance](library/governance-risk-and-compliance/README.md) | 18 | [Zero Trust Testing Checklist](library/governance-risk-and-compliance/zero-trust-testing-checklist.md); [Threats and Risk Management in the Health Sector](library/governance-risk-and-compliance/threats-and-risk-management-in-the-health-sector.md); [Threat Modeling in Modern Security Programs](library/governance-risk-and-compliance/threat-modeling-in-modern-security-programs.md) |
+| [Security Awareness & Online Safety](library/security-awareness-and-online-safety/README.md) | 19 | [Social Engineering Practical Overview](library/security-awareness-and-online-safety/social-engineering-practical-overview.md); [Segurana Na Internet para Crianas](library/security-awareness-and-online-safety/segurana-na-internet-para-crianas.md); [Segurana Infantil Um Problema Srio Mas Pouco Falado](library/security-awareness-and-online-safety/segurana-infantil-um-problema-srio-mas-pouco-falado.md) |
+| [Careers & Certifications](library/careers-and-certifications/README.md) | 22 | [The Complete Guide for Cyber Security Career English](library/careers-and-certifications/the-complete-guide-for-cyber-security-career-english.md); [The Complete Guide for Cyber Security Career](library/careers-and-certifications/the-complete-guide-for-cyber-security-career.md); [Security Roadmap](library/careers-and-certifications/security-roadmap.md) |
+| [Foundations & Systems](library/foundations-and-systems/README.md) | 64 | [Your first VPS server](library/foundations-and-systems/your-first-vps-server.md); [Windows software on Linux](library/foundations-and-systems/windows-software-on-linux.md); [Windows 11 virtual machine on KVM](library/foundations-and-systems/windows-11-virtual-machine-on-kvm.md) |
+| [General Technology (out of scope)](library/general-technology/README.md) | 12 | [Warez](library/general-technology/warez.md); [Small and powerful gaming PC](library/general-technology/small-and-powerful-gaming-pc.md); [Short story about my Steam Deck](library/general-technology/short-story-about-my-steam-deck.md) |
+| [Uncategorized (staging)](library/uncategorized/README.md) | 1 | [Sobrevivendo a Um Ataque Escolar](library/uncategorized/sobrevivendo-a-um-ataque-escolar.md) |
 <!-- END AUTO-INDEX -->
 
 ---
 
-## License
+## Licence
 
-Released under the [MIT License](LICENSE). Copyright (c) 2026 Blue Rings Labs.
+Tooling and the compilation are released under the [MIT License](LICENSE),
+© 2026 Gonzalo Romero / Blue Rings Labs. **Individual resources retain their
+upstream licences**, recorded per file and surfaced in the catalog
+(`license` / `redistribution`); see [`NOTICE`](NOTICE).

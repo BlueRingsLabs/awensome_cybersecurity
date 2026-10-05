@@ -9,7 +9,7 @@ repository:
   license: MIT
   description: Open, curated and fully automated cybersecurity knowledge base. Raw contributions land
     in the repository root and are classified, sanitized and indexed automatically on merge.
-generated_at: '2026-10-04T01:14:32Z'
+generated_at: '2026-10-05T11:44:54Z'
 generator: build_index.py (classify_and_index.py pipeline)
 taxonomy:
   domains:
@@ -87,7 +87,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 8575
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.blue_team.2019_ftp-testing
   title: Pentest of an FTP Server
@@ -101,7 +101,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 5670
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.blue_team.2020_top-security-browser-plugins
   title: Top security browser plugins
@@ -114,7 +114,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 4894
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.blue_team.2021_tls-for-onion
   title: TLS certificate for onion site
@@ -127,7 +127,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 2767
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.blue_team.2023_learning-to-hack
   title: Learning to hack
@@ -140,7 +140,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 14602
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.blue_team.2023_windows-security-and-privacy
   title: Windows security and privacy
@@ -154,7 +154,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 21001
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.blue_team.2023_worth-checking-1
   title: Worth checking ep.1
@@ -167,7 +167,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 7029
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.blue_team.2024_swap-cab
   title: Swap Cab
@@ -180,7 +180,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 9857
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.blue_team.2025_threat-modeling-in-modern-security-programs
   title: Threat Modeling in Modern Security Programs
@@ -193,7 +193,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 9355
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.blue_team.2025_toryfikator
   title: Toryfikator
@@ -206,7 +206,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 2757
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.blue_team.2026_websurface
   title: WebSurface - web attack surface discovery
@@ -220,7 +220,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 12074
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.blue_team.active_directory_assesment
   title: Active Directory Assesment
@@ -234,7 +234,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 62937
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.blue_team.chatgpt_for_cybersecurity_1
   title: Chatgpt For Cybersecurity 1
@@ -248,7 +248,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 1705
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.blue_team.cloudsecurityplaybookvol1
   title: Cloudsecurityplaybookvol1
@@ -261,7 +261,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 172035
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.blue_team.cyber_governance_code_of_practice
   title: Cyber Governance Code Of Practice
@@ -274,7 +274,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 17133
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.blue_team.cyber_security_complete_journey_red_team_1
   title: Cyber Security Complete Journey Red Team 1
@@ -288,7 +288,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 23887
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.blue_team.cybersecurity_and_cyberbullying_education_for_kids
   title: Cybersecurity And Cyberbullying Education For Kids
@@ -301,7 +301,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 2199
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.blue_team.cybersecurity_for_kids_pt_br
   title: Cybersecurity For Kids Pt Br
@@ -314,7 +314,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 9175
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.blue_team.devsec_ops_guides
   title: Devsec Ops Guides
@@ -327,7 +327,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 414379
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.blue_team.how_to_start_at_once_in_the_pentest
   title: How To Start At Once In The Pentest
@@ -341,7 +341,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 2737
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.blue_team.infosec_proeficiency_colors
   title: Infosec Proeficiency Colors
@@ -354,7 +354,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 1756
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.blue_team.instagram_social_network_security
   title: Instagram Social Network Security
@@ -367,7 +367,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 4161
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.blue_team.internet_safety_sexual_predators_and_stalkers_how_to_protect_yourself
   title: Internet Safety Sexual Predators And Stalkers How To Protect Yourself
@@ -380,7 +380,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 46122
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.blue_team.introduo_ao_mitre_att_ck_e_ao_cyber_kill_chain
   title: Introduo Ao Mitre Att Ck E Ao Cyber Kill Chain
@@ -394,7 +394,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 20876
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.blue_team.iot_security_guide
   title: Iot Security Guide
@@ -408,7 +408,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 307180
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.blue_team.low_cost_red_team_tools
   title: Low Cost Red Team Tools
@@ -422,7 +422,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 800
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.blue_team.nsa_and_cisa_top_10
   title: Nsa And Cisa Top 10
@@ -435,7 +435,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 94463
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.blue_team.password_cracking_my_sql
   title: Password Cracking My Sql
@@ -448,7 +448,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 17047
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.blue_team.password_cracking_postrgresql
   title: Password Cracking Postrgresql
@@ -461,7 +461,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 16218
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.blue_team.pentest_iot_and_ot_overview
   title: Pentest Iot And Ot Overview
@@ -476,7 +476,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 18024
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.blue_team.red_team_operations_development_pt_1
   title: Red Team Operations Development Pt 1
@@ -490,7 +490,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 13478
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.blue_team.red_team_pentest_english
   title: Red Team Pentest English
@@ -505,7 +505,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 12238
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.blue_team.red_team_tradecraft_complete_guide
   title: Red Team Tradecraft Complete Guide
@@ -519,7 +519,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 35668
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.blue_team.red_team_x_blue_team
   title: Red Team X Blue Team
@@ -534,7 +534,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 760
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.blue_team.security_operation_center_and_analysis
   title: Security Operation Center And Analysis
@@ -547,7 +547,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 30062
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.blue_team.shell_scripting
   title: This script prints a greeting and the current date
@@ -561,7 +561,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 32357
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.blue_team.tdc2021_mitre_att_ck
   title: Tdc2021 Mitre Att Ck
@@ -575,7 +575,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 2611
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.blue_team.the_complete_guide_for_cyber_security_career
   title: The Complete Guide For Cyber Security Career
@@ -588,7 +588,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 9013
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.blue_team.the_complete_guide_for_cyber_security_career_english
   title: The Complete Guide For Cyber Security Career English
@@ -601,7 +601,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 8681
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.blue_team.the_hackers_guide_to_llms
   title: The Hackers Guide To Llms
@@ -614,7 +614,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 11787
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.blue_team.the_linux_security_journey
   title: The Linux Security Journey
@@ -628,7 +628,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 104019
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.blue_team.what_it_takes_to_be_a_red_team
   title: What It Takes To Be A Red Team
@@ -642,7 +642,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 5826
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.malware_analysis.100_security_operation_center_tools
   title: 100 Security Operation Center Tools
@@ -655,7 +655,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 34851
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.malware_analysis.2019_malware-analysis
   title: Malware analysis
@@ -669,7 +669,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 23577
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.malware_analysis.2020_8bitdo-gamepads
   title: 8BitDo gamepads
@@ -682,7 +682,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 3219
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.malware_analysis.2020_test-environment
   title: Test environment
@@ -695,7 +695,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 3343
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.malware_analysis.2021_backup-your-data
   title: Backup your data
@@ -708,7 +708,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 10933
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.malware_analysis.2021_yara
   title: Yet Another Ridiculous Acronym
@@ -722,7 +722,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 8550
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.malware_analysis.2022_cms-vulnerability-scanners
   title: CMS Vulnerability Scanners
@@ -735,7 +735,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 6068
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.malware_analysis.2022_windows-defender
   title: Windows Defender is enough, if you harden it
@@ -749,7 +749,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 13436
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.malware_analysis.2023_server-upgrade
   title: Server Upgrade
@@ -762,7 +762,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 7305
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.malware_analysis.av_and_edr_bypass_techniques_for_new_hackers_update_2022
   title: Av And Edr Bypass Techniques For New Hackers Update 2022
@@ -777,7 +777,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 19664
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.malware_analysis.computer_forensic_overview_pt
   title: Computer Forensic Overview Pt
@@ -791,7 +791,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 32282
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.malware_analysis.computer_systems_security
   title: Computer Systems Security
@@ -804,7 +804,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 271162
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.malware_analysis.container_security_overview_pt_1
   title: Container Security Overview Pt 1
@@ -818,7 +818,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 8612
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.malware_analysis.cyber_security_for_kids
   title: Cyber Security For Kids
@@ -831,7 +831,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 45711
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.malware_analysis.cybersecurity_for_kids_english
   title: Cybersecurity For Kids English
@@ -844,7 +844,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 8385
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.malware_analysis.introduction_cyber_security
   title: Introduction Cyber Security
@@ -857,7 +857,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 248544
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.malware_analysis.low_cost_soc
   title: Low Cost Soc
@@ -871,7 +871,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 761
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.malware_analysis.malware_hunting_threat_hunter_overview_1
   title: Malware Hunting Threat Hunter Overview 1
@@ -886,7 +886,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 15915
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.malware_analysis.malwareanalysis_101
   title: Malwareanalysis 101
@@ -899,7 +899,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 51583
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.malware_analysis.mastering_fortigate
   title: Mastering Fortigate
@@ -912,7 +912,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 37904
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.malware_analysis.ms365_security_checklist
   title: Ms365 Security Checklist
@@ -925,7 +925,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 123610
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.malware_analysis.network_security_best_practices
   title: Network Security Best Practices
@@ -938,7 +938,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 25148
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.malware_analysis.own_your_space_teen_book
   title: Own Your Space Teen Book
@@ -951,7 +951,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 466443
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.malware_analysis.programao_c_e_c_para_segurana_ofensiva_digital
   title: Programao C E C Para Segurana Ofensiva Digital
@@ -964,7 +964,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 171846
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.malware_analysis.security_operation_center_40_tools
   title: Security Operation Center 40 Tools
@@ -977,7 +977,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 19291
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.malware_analysis.security_operation_center_operations_development
   title: Security Operation Center Operations Development
@@ -990,7 +990,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 26017
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.malware_analysis.the_purple_book_on_cyber_security
   title: The Purple Book On Cyber Security
@@ -1003,7 +1003,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 441708
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.malware_analysis.web_pentesting_checklist_by_joas
   title: Web Pentesting Checklist By Joas
@@ -1018,7 +1018,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 29623
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.malware_analysis.windows_api_for_red_team_102_english
   title: Windows Api For Red Team 102 English
@@ -1033,7 +1033,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 39017
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.red_team.2019_website-analysis
   title: Website analysis
@@ -1046,7 +1046,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 6427
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.red_team.2022_i-am-not
   title: I am not that hacker you are looking for
@@ -1059,7 +1059,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 4526
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.red_team.2022_smb-hacking
   title: Let's hack some SMB
@@ -1073,7 +1073,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 17492
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.red_team.2023_chatgpt
   title: How ChatGPT helped me to code stuff
@@ -1087,7 +1087,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 11552
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.red_team.2024_fuzz-the-world
   title: Fuzz the world
@@ -1100,7 +1100,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 11548
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.red_team.2024_syspwn-app-launcher
   title: SysPwn - App Launcher
@@ -1113,7 +1113,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 4553
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.red_team.2025_basic-onion-check
   title: Basic Onion Check
@@ -1126,7 +1126,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 21744
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.red_team.30_days_of_practice_pentest
   title: 30 Days Of Practice Pentest
@@ -1140,7 +1140,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 5715
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.red_team.a_detailed_guide_on_kerbrute
   title: A Detailed Guide On Kerbrute
@@ -1153,7 +1153,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 11419
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.red_team.activate_directory_security_guide
   title: Activate Directory Security Guide
@@ -1166,7 +1166,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 93503
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.red_team.adversary_emulation_and_cracking_the_bridge_overview
   title: Adversary Emulation And Cracking The Bridge Overview
@@ -1179,7 +1179,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 36150
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.red_team.adversary_emulation_com_cobalt_strike
   title: Adversary Emulation Com Cobalt Strike
@@ -1192,7 +1192,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 8750
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.red_team.adversary_simulation_with_caldera_and_mitre
   title: Adversary Simulation With Caldera And Mitre
@@ -1205,7 +1205,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 2685
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.red_team.anonymous_logins_for_pentester
   title: Anonymous Logins For Pentester
@@ -1219,7 +1219,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 8741
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.red_team.art_of_post_exploitation
   title: Art Of Post Exploitation
@@ -1233,7 +1233,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 6311
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.red_team.basic_knowldges_of_pentesting
   title: Basic Knowldges Of Pentesting
@@ -1247,7 +1247,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 577313
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.red_team.certified_red_team_leader_rto_ii_overview_to_study
   title: Certified Red Team Leader Rto Ii Overview To Study
@@ -1261,7 +1261,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 28347
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.red_team.certified_red_team_physical_pentest_leader_quick_training
   title: Certified Red Team Physical Pentest Leader Quick Training
@@ -1276,7 +1276,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 51850
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.red_team.como_gerenciar_um_red_team
   title: Como Gerenciar Um Red Team
@@ -1290,7 +1290,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 1331
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.red_team.competncias_essenciais_para_liderar_uma_equipe_de_pentest
   title: Competncias Essenciais Para Liderar Uma Equipe De Pentest
@@ -1304,7 +1304,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 2037
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.red_team.credential_dumping_sam
   title: Credential Dumping Sam
@@ -1317,7 +1317,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 17077
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.red_team.cyber_security_career_for_children_pt_1
   title: Cyber Security Career For Children Pt 1
@@ -1330,7 +1330,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 12860
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.red_team.elearnsecurity_ewptx_notes_basic_by_joas
   title: Elearnsecurity Ewptx Notes Basic By Joas
@@ -1343,7 +1343,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 509780
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.red_team.fundamentals_cracking_the_perimeter
   title: Fundamentals Cracking The Perimeter
@@ -1356,7 +1356,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 22799
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.red_team.genai_red_teaming_guide
   title: Genai Red Teaming Guide
@@ -1370,7 +1370,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 148550
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.red_team.hacking_beginner_to_expert_guide
   title: Hacking Beginner To Expert Guide
@@ -1383,7 +1383,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 98444
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.red_team.iniciando_sua_carreira_em_pentest
   title: Iniciando Sua Carreira Em Pentest
@@ -1397,7 +1397,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 2184
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.red_team.kubernetes_exploitation_introduction_cheatsheet
   title: Check if config map exists
@@ -1412,7 +1412,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 8147
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.red_team.linux_pentesting
   title: Linux Pentesting
@@ -1427,7 +1427,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 42559
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.red_team.linux_privilege_escalation
   title: Linux Privilege Escalation
@@ -1441,7 +1441,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 15452
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.red_team.offensive_security_labs_reference
   title: Offensive Security Labs Reference
@@ -1455,7 +1455,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 17267
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.red_team.offensive_security_materials_for_studies_and_certifications
   title: Offensive Security Materials For Studies And Certifications
@@ -1470,7 +1470,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 3529
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.red_team.offsec_certification_and_courses_2024
   title: Offsec Certification And Courses 2024
@@ -1484,7 +1484,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 977
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.red_team.oscp_labs_to_practice_2023
   title: Oscp Labs To Practice 2023
@@ -1498,7 +1498,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 1409
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.red_team.penetration_testing_guide
   title: Penetration Testing Guide
@@ -1512,7 +1512,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 104393
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.red_team.penetration_testing_report
   title: Penetration Testing Report
@@ -1526,7 +1526,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 36977
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.red_team.pentest_and_red_team_books
   title: Pentest And Red Team Books
@@ -1541,7 +1541,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 555
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.red_team.pentest_best_practice_checklist
   title: Pentest Best Practice Checklist
@@ -1555,7 +1555,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 19944
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.red_team.pentest_skills_development
   title: Pentest Skills Development
@@ -1569,7 +1569,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 2841
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.red_team.pentest_with_metasploit_overview
   title: Pentest With Metasploit Overview
@@ -1583,7 +1583,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 28552
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.red_team.privilege_escalation
   title: Privilege Escalation
@@ -1596,7 +1596,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 56204
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.red_team.pwning_the_domain_series_with_credentials
   title: Pwning The Domain Series With Credentials
@@ -1609,7 +1609,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 32814
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.red_team.python_for_hackers_bootcamp
   title: Python For Hackers Bootcamp
@@ -1623,7 +1623,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 1447
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.red_team.red_team_operations_overview_pt_2
   title: Red Team Operations Overview Pt 2
@@ -1637,7 +1637,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 23497
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.red_team.red_team_toolkit_1
   title: Red Team Toolkit 1
@@ -1651,7 +1651,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 986
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.red_team.red_team_toolkit_guide
   title: Red Team Toolkit Guide
@@ -1665,7 +1665,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 38602
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.red_team.redteam_scenarios
   title: Redteam Scenarios
@@ -1679,7 +1679,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 3608
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.red_team.remote_desktop_penetration_testing_port_3389
   title: Remote Desktop Penetration Testing Port 3389
@@ -1693,7 +1693,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 20869
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.red_team.resume_pentest_career_by_joas_a_santos
   title: Resume Pentest Career By Joas A Santos
@@ -1707,7 +1707,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 11077
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.red_team.web_security_guide
   title: Web Security Guide
@@ -1721,7 +1721,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 660955
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.red_team.windows_api_for_red_team_101_english
   title: Windows Api For Red Team 101 English
@@ -1736,7 +1736,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 31093
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.red_team.windows_api_for_red_team_101_portuguese
   title: Windows Api For Red Team 101 Portuguese
@@ -1751,7 +1751,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 34889
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.red_team.windows_privilege_escalation_server_operator_group
   title: Windows Privilege Escalation Server Operator Group
@@ -1765,7 +1765,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 11647
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.red_team.winrm_penetration_testing
   title: Winrm Penetration Testing
@@ -1780,7 +1780,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 16024
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.reverse_engineering.2019_easy-gpg
   title: Easy GPG
@@ -1793,7 +1793,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 11331
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.reverse_engineering.2019_windows-post-exploitation
   title: Windows post-exploitation
@@ -1808,7 +1808,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 14671
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.reverse_engineering.2023_miyoo-mini-plus
   title: Miyoo Mini Plus
@@ -1821,7 +1821,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 7828
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.reverse_engineering.2026_defectdojo
   title: DefectDojo – Setup, Workflow and Real Usage
@@ -1834,7 +1834,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 15045
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.reverse_engineering.2026_sopewise
   title: ScopeWise - Yet Another Recon Script
@@ -1847,7 +1847,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 4775
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.reverse_engineering.api_security_handbook
   title: Api Security Handbook
@@ -1860,7 +1860,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 10058
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.reverse_engineering.attacking_php_application
   title: Attacking Php Application
@@ -1873,7 +1873,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 35653
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.reverse_engineering.blockchain_and_smart_contract_testing_security
   title: Blockchain And Smart Contract Testing Security
@@ -1887,7 +1887,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 3220
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.reverse_engineering.buffer_overflow_for_beginners_joas
   title: Buffer Overflow For Beginners Joas
@@ -1901,7 +1901,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 3437
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.reverse_engineering.buffer_overflow_introduction
   title: Buffer Overflow Introduction
@@ -1915,7 +1915,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 40183
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.reverse_engineering.byte_of_python
   title: Byte Of Python
@@ -1929,7 +1929,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 235039
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.reverse_engineering.ceh_fundamentals
   title: Ceh Fundamentals
@@ -1943,7 +1943,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 28411
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.reverse_engineering.enumerao_de_grupos_de_ti_e_segurana_para_tech_recruiters
   title: Enumerao De Grupos De Ti E Segurana Para Tech Recruiters
@@ -1956,7 +1956,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 1861
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.reverse_engineering.game_hacking_1_anti_cheat_bypass
   title: Game Hacking 1 Anti Cheat Bypass
@@ -1970,7 +1970,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 15769
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.reverse_engineering.hacking_windows
   title: Hacking Windows
@@ -1984,7 +1984,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 53886
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.reverse_engineering.introduo_ao_desenvolvimento_de_exploits
   title: Introduo Ao Desenvolvimento De Exploits
@@ -1998,7 +1998,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 31357
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.reverse_engineering.overview_windows_api_s_and_internals_reverse_engineering
   title: Overview Windows Api S And Internals Reverse Engineering
@@ -2013,7 +2013,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 17940
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.reverse_engineering.programming_language_for_hacking_books
   title: Programming Language For Hacking Books
@@ -2026,7 +2026,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 464
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.reverse_engineering.shellcode_development_2
   title: Shellcode Development 2
@@ -2040,7 +2040,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 19227
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.reverse_engineering.wstg_web_application_security_testing_owasp_mind_map
   title: Wstg Web Application Security Testing Owasp Mind Map
@@ -2054,7 +2054,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 47559
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2018_debian-lemp-stack
   title: Debian LEMP stack
@@ -2067,7 +2067,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 8540
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2018_md5-calculator-in-powershell
   title: MD5 calculator in powershell
@@ -2081,7 +2081,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 5921
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2018_portsentry-stealth-scan-detection
   title: PortSentry - stealth scan detection
@@ -2094,7 +2094,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 3147
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2018_ufw-simple-firewall
   title: UFW - simple firewall
@@ -2108,7 +2108,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 4978
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2018_useful-powershell-commands
   title: Useful PowerShell commands
@@ -2122,7 +2122,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 3265
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2018_windows-software-on-linux
   title: Windows software on Linux
@@ -2137,7 +2137,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 5483
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2019_brave-browser-rewards-and-bat
   title: Brave browser, rewards and BAT
@@ -2150,7 +2150,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 5287
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2019_free-stellar-lumens
   title: Free Stellar Lumens
@@ -2163,7 +2163,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 4833
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2019_keep-an-eye-on-your-logs
   title: Keep an eye on your logs
@@ -2176,7 +2176,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 5858
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2019_mount-nas
   title: Mount Synology NAS in Linux
@@ -2190,7 +2190,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 5408
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2019_onionlinks
   title: Onion Links
@@ -2203,7 +2203,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 12901
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2019_server-backup
   title: Server backup
@@ -2216,7 +2216,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 5907
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2019_small-and-powerful-gaming-pc
   title: Small and powerful gaming PC
@@ -2229,7 +2229,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 16991
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2019_unattended-upgrades
   title: Unattended upgrades
@@ -2242,7 +2242,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 5439
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2019_virtualbox-tips
   title: VirtualBox Tips
@@ -2255,7 +2255,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 4176
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2019_vpn
   title: VPN - you should have one
@@ -2268,7 +2268,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 6244
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2019_web-content-scanner
   title: Web Content Scanner
@@ -2282,7 +2282,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 3924
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2020_anonabox
   title: Anonabox
@@ -2295,7 +2295,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 4196
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2020_control-smartphone
   title: Control Smartphone from PC
@@ -2308,7 +2308,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 5057
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2020_final-recon-docker
   title: FinalRecon on Docker
@@ -2321,7 +2321,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 8729
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2020_first-vps
   title: Your first VPS server
@@ -2334,7 +2334,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 8468
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2020_hacker-forums
   title: Hacker forums
@@ -2347,7 +2347,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 6349
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2020_hacker-gadgets
   title: Hacker Gadgets
@@ -2360,7 +2360,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 21231
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2020_handmade-pedalboard
   title: Homemade pedalboard
@@ -2373,7 +2373,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 4542
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2020_shodan-dorks
   title: Shodan Hacks
@@ -2386,7 +2386,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 17457
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2020_subdomain-takeover
   title: Subdomain takeover
@@ -2399,7 +2399,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 10312
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2020_tor-router
   title: Tor router on Raspberry Pi
@@ -2412,7 +2412,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 6974
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2020_vpn-on-vps
   title: Quick VPN setup on VPS
@@ -2425,7 +2425,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 3631
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2021_goaccess
   title: GoAccess and real website stats
@@ -2438,7 +2438,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 7449
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2021_how-to-report-vulnerability
   title: How to report a vulnerability and not go to jail
@@ -2451,7 +2451,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 19029
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2021_nmap
   title: A little bit about Nmap
@@ -2464,7 +2464,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 16593
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2021_privacy-and-anonymity
   title: OS, apps and services for privacy and anonymity
@@ -2477,7 +2477,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 8817
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2021_remote-connection-linux
   title: Remote connection for Linux
@@ -2491,7 +2491,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 4565
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2021_useful-linux-commands
   title: Useful Linux Commands
@@ -2505,7 +2505,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 15668
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2022_big-files-from-tor
   title: Downloading big files from Tor
@@ -2518,7 +2518,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 10859
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2022_cool-cmd-apps
   title: Cool Command Line Apps for Linux
@@ -2532,7 +2532,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 8366
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2022_end-of-the
   title: End of the...
@@ -2545,7 +2545,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 8820
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2022_ms-designer-ctrl
   title: MS Designer keyboard right control key
@@ -2558,7 +2558,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 6170
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2022_steam-deck
   title: Short story about my Steam Deck
@@ -2571,7 +2571,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 7900
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2022_xubuntu-whonix
   title: Xubuntu as custom Whonix workstation
@@ -2584,7 +2584,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 5254
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2023_analytics
   title: Ads, analytics, comments, dns, privacy ...
@@ -2597,7 +2597,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 11840
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2023_anonymous-tor-phone
   title: Anonymous Tor Phone
@@ -2610,7 +2610,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 32467
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2023_cve-2023-32784
   title: CVE-2023-32784 - KeePass
@@ -2623,7 +2623,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 6922
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2023_openssh-hardening
   title: OpenSSH hardening
@@ -2637,7 +2637,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 49284
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2023_test-web-server
   title: Test web server for VirtualBox
@@ -2651,7 +2651,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 12950
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2023_virtualenv
   title: Virtualenv
@@ -2664,7 +2664,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 5577
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2024_auto-resize-x-screen-for-kali-on-kvm
   title: Auto resize X screen for Kali on KVM
@@ -2678,7 +2678,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 8433
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2024_basic-access-authentication-bruteforce
   title: Basic access authentication bruteforce
@@ -2691,7 +2691,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 5635
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2024_fancy-presentation
   title: Fancy presentation
@@ -2704,7 +2704,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 9347
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2024_vps-offer
   title: Good VPS Offer
@@ -2717,7 +2717,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 9404
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2024_windows11-kvm
   title: Windows 11 virtual machine on KVM
@@ -2731,7 +2731,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 19445
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2025_building-local-ai-environment
   title: Building a Local AI Environment
@@ -2745,7 +2745,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 22593
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2025_cool-selfhosted-solutions
   title: Cool selfhosted solutions
@@ -2758,7 +2758,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 13955
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2025_hacker-shelf
   title: Hacker Shelf
@@ -2771,7 +2771,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 3579
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2025_rclone-backup
   title: Rclone backup
@@ -2784,7 +2784,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 21767
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2025_tor-relay
   title: Running own Tor Relay on a VPS
@@ -2797,7 +2797,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 27665
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2025_uptime-monitoring
   title: Uptime monitoring
@@ -2810,7 +2810,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 12271
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2025_whonix-for-kvm
   title: Whonix for KVM
@@ -2823,7 +2823,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 17885
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2026_gpgwrap
   title: GPGWrap - simple GUI for GPG
@@ -2836,7 +2836,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 4107
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2026_hexstrikeai-setup
   title: HexStrike AI on Kali with Roo Code
@@ -2851,7 +2851,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 19461
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.2026_reconftw
   title: Practical Recon Automation with ReconFTW
@@ -2864,7 +2864,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 8860
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.a_detailed_guide_on_log4j_penetration_testing
   title: A Detailed Guide On Log4j Penetration Testing
@@ -2878,7 +2878,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 12260
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.a_guide_of_os_command_injection
   title: A Guide Of Os Command Injection
@@ -2891,7 +2891,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 18199
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.a_practical_guide_for_building_robust
   title: A Practical Guide For Building Robust
@@ -2904,7 +2904,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 125519
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.advanced_bash_scripting_guide
   title: Advanced Bash Scripting Guide
@@ -2919,7 +2919,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 1560464
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.ai_bias_in_law_enforcement_a_practical_guide
   title: Ai Bias In Law Enforcement A Practical Guide
@@ -2933,7 +2933,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 168097
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.an_introduction_to_computer_0asecurity_the_nist_handbook
   title: 'Publication Date(s):'
@@ -2946,7 +2946,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 634266
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.application_security_introduction_overview_pt_2
   title: Application Security Introduction Overview Pt 2
@@ -2959,7 +2959,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 28589
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.assembly64
   title: Assembly64
@@ -2972,7 +2972,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 537128
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.attacking_nginx
   title: Attacking Nginx
@@ -2985,7 +2985,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 31095
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.beginners_in_open_source
   title: Beginners In Open Source
@@ -2998,7 +2998,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 94032
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.beginning_excel
   title: Beginning Excel
@@ -3011,7 +3011,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 91630
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.building_a_local_ai_environment
   title: Building A Local Ai Environment
@@ -3025,7 +3025,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 18578
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.burp_suite_for_pentester_hackbar
   title: Burp Suite For Pentester Hackbar
@@ -3039,7 +3039,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 16379
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.burp_suite_plugin_development
   title: Burp Suite Plugin Development
@@ -3052,7 +3052,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 36581
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.burpsuite_for_pentester_autorize
   title: Burpsuite For Pentester Autorize
@@ -3066,7 +3066,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 14178
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.chatgpt_for_cybersecurity_2
   title: Chatgpt For Cybersecurity 2
@@ -3080,7 +3080,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 2518
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.child_safety_a_serious_problem_but_little_talked_about_english
   title: Child Safety A Serious Problem But Little Talked About English
@@ -3093,7 +3093,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 18623
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.ciso_handbook
   title: Ciso Handbook
@@ -3106,7 +3106,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 316641
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.cloud_security_guidance
   title: Cloud Security Guidance
@@ -3120,7 +3120,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 394124
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.comprehensive_guide_on_honeypots
   title: Comprehensive Guide On Honeypots
@@ -3134,7 +3134,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 10244
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.cs_ref_architecture
   title: Cs Ref Architecture
@@ -3147,7 +3147,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 73012
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.cyber_security_incident_management_plan
   title: Cyber Security Incident Management Plan
@@ -3160,7 +3160,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 113766
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.cyberwarfare_books_1
   title: Cyberwarfare Books 1
@@ -3173,7 +3173,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 49
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.database_design
   title: Database Design
@@ -3186,7 +3186,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 215419
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.ddos_attack
   title: Ddos Attack
@@ -3199,7 +3199,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 31775
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.detailed_guide_of_html_injections
   title: Detailed Guide Of Html Injections
@@ -3212,7 +3212,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 22427
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.dns_incident_response
   title: Dns Incident Response
@@ -3226,7 +3226,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 6809
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.elearnsecurity_certified_threat_hunting_introduction_pt_1
   title: Elearnsecurity Certified Threat Hunting Introduction Pt 1
@@ -3240,7 +3240,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 35692
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.elearnsecurity_ecppt_notes_exam
   title: Elearnsecurity Ecppt Notes Exam
@@ -3253,7 +3253,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 179900
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.eloquent_javascript
   title: Eloquent Javascript
@@ -3266,7 +3266,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 783522
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.ethical_hacking
   title: Ethical hacking / Alana Maurushat.
@@ -3279,7 +3279,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 701322
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.exploiting_open_redirection
   title: Exploiting Open Redirection
@@ -3293,7 +3293,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 21260
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.faif_2_0
   title: Faif 2 0
@@ -3306,7 +3306,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 520783
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.ffuf
   title: Ffuf
@@ -3319,7 +3319,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 21571
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.file_path_traversal
   title: File Path Traversal
@@ -3332,7 +3332,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 8402
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.forensic_investigation_of_nmap_scan_using_wireshark
   title: Forensic Investigation Of Nmap Scan Using Wireshark
@@ -3346,7 +3346,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 21923
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.fortigate_firewall
   title: Fortigate Firewall
@@ -3360,7 +3360,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 116375
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.ftk_imager
   title: Ftk Imager
@@ -3373,7 +3373,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 11540
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.fundamentos_de_osint
   title: Fundamentos De Osint
@@ -3387,7 +3387,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 29919
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.gettng_started_in_ics_ot_cyber_security
   title: Gettng Started In Ics Ot Cyber Security
@@ -3401,7 +3401,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 65749
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.hackingciphers
   title: Hackingciphers
@@ -3414,7 +3414,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 991018
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.hardware_hacking_introduction_overview
   title: Hardware Hacking Introduction Overview
@@ -3427,7 +3427,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 16009
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.how_openai_uses_codex
   title: How Openai Uses Codex
@@ -3440,7 +3440,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 13113
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.how_to_code_in_python
   title: How To Code In Python
@@ -3454,7 +3454,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 427326
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.incident_response_overview
   title: Incident Response Overview
@@ -3468,7 +3468,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 4854
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.incident_response_simulation_1
   title: Incident Response Simulation 1
@@ -3482,7 +3482,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 1224
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.introduo_ao_pentest_mobile_pt_1
   title: Introduo Ao Pentest Mobile Pt 1
@@ -3496,7 +3496,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 54680
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.investigation_using_osint_with_a_focus_on_intelligence_operations_and_dark_web_operations_training
   title: Investigation Using Osint With A Focus On Intelligence Operations And Dark Web Operations Training
@@ -3511,7 +3511,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 76508
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.iot_use_cases_and_technologies
   title: Iot Use Cases And Technologies
@@ -3525,7 +3525,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 148169
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.kali_honeypot
   title: Kali Honeypot
@@ -3540,7 +3540,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 5211
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.maltego_introduction_creating_a_simple_local_transform_en
   title: Maltego Introduction Creating A Simple Local Transform En
@@ -3554,7 +3554,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 23987
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.maltego_introduction_creating_a_simple_local_transform_pt_br
   title: Maltego Introduction Creating A Simple Local Transform Pt Br
@@ -3568,7 +3568,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 26486
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.memory_forensics
   title: Memory Forensics
@@ -3582,7 +3582,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 3492
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.meterpreter_cheatsheet
   title: Meterpreter Cheatsheet
@@ -3595,7 +3595,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 10958
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.offensive_security_wireless
   title: Offensive Security Wireless
@@ -3610,7 +3610,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 79872
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.osint_overview_pt_1
   title: Osint Overview Pt 1
@@ -3624,7 +3624,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 69563
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.owasp_top_ten_vulnerabilties
   title: Owasp Top Ten Vulnerabilties
@@ -3638,7 +3638,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 4474
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.palo_alto_firewall
   title: Palo Alto Firewall
@@ -3652,7 +3652,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 89373
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.pro_git
   title: Pro Git
@@ -3665,7 +3665,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 490183
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.professional_web_accessibility_auditing_made_easy
   title: Professional Web Accessibility Auditing Made Easy
@@ -3679,7 +3679,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 307287
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.progit
   title: Progit
@@ -3692,7 +3692,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 906007
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.prompt_engineering_google
   title: Prompt Engineering Google
@@ -3705,7 +3705,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 85970
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.purple_team_lab_01_wazuh_and_win2016
   title: Purple Team Lab 01 Wazuh And Win2016
@@ -3718,7 +3718,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 42365
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.python_for_hackers_pt_1
   title: Python For Hackers Pt 1
@@ -3732,7 +3732,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 4356
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.relational_databases_and_microsoft_access_365
   title: Relational Databases And Microsoft Access 365
@@ -3745,7 +3745,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 259443
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.remote_file_inclusion
   title: Remote File Inclusion
@@ -3758,7 +3758,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 15827
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.secure_endpoints_user_guide
   title: Secure Endpoints User Guide
@@ -3771,7 +3771,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 475923
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.security_operation_center_study_and_career_2022
   title: Security Operation Center Study And Career 2022
@@ -3784,7 +3784,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 5401
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.sql_basics_cheat_sheet_a3
   title: Sql Basics Cheat Sheet A3
@@ -3797,7 +3797,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 8358
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.sql_injection
   title: Sql Injection
@@ -3811,7 +3811,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 14570
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.ssh_penetration_testing
   title: Ssh Penetration Testing
@@ -3825,7 +3825,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 14248
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.the_art_of_linux_persistence
   title: The Art Of Linux Persistence
@@ -3839,7 +3839,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 36436
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.the_linux_commands_handbook
   title: The Linux Commands Handbook
@@ -3853,7 +3853,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 63106
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.think_java
   title: Think Java
@@ -3866,7 +3866,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 486572
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.threat_hunting_playbooks
   title: Threat Hunting Playbooks
@@ -3880,7 +3880,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 37346
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.tomcat_pentesting
   title: Tomcat Pentesting
@@ -3894,7 +3894,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 10249
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.ubuntu1404server
   title: Ubuntu1404server
@@ -3907,7 +3907,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 617009
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.understanding_data_0asecurity_risk
   title: Understanding Data 0asecurity Risk
@@ -3920,7 +3920,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 44543
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.using_osint_to_investigate_human_trafficking_and_missing_persons
   title: Using Osint To Investigate Human Trafficking And Missing Persons
@@ -3934,7 +3934,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 5907
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.web_attacks
   title: This repo contains data dumps of Hackerone and Bugcrowd scopes (i.e. the domains that are
@@ -3948,7 +3948,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 72056
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.wi_fi_hacking_notes
   title: Wi Fi Hacking Notes
@@ -3961,7 +3961,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 20681
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.wireless_penetration_testing_airgeddon
   title: Wireless Penetration Testing Airgeddon
@@ -3976,7 +3976,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 13399
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.wireless_penetration_testing_fluxion
   title: Wireless Penetration Testing Fluxion
@@ -3991,7 +3991,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 18966
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.wireless_penetration_testing_pmkid_attack
   title: Wireless Penetration Testing Pmkid Attack
@@ -4006,7 +4006,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 19115
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 01_literature.threat_intelligence.wordlists_for_pentester
   title: Wordlists For Pentester
@@ -4020,7 +4020,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 20289
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 02_papers.blue_team.2022_security-roadmap
   title: Security Roadmap
@@ -4033,7 +4033,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 8405
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 02_papers.blue_team.cyber_security_career_in_2024
   title: Cyber Security Career In 2024
@@ -4046,7 +4046,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 11160
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 02_papers.blue_team.cyberbullying_and_its_consequences
   title: Cyberbullying And Its Consequences
@@ -4059,7 +4059,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 6454
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 02_papers.blue_team.cybersecurity_career_roadmap_2024
   title: Cybersecurity Career Roadmap 2024
@@ -4072,7 +4072,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 1642
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 02_papers.blue_team.incident_response_playbooks_and_workflow
   title: Incident Response Playbooks And Workflow
@@ -4086,7 +4086,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 59247
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 02_papers.blue_team.ldap_injection
   title: Ldap Injection
@@ -4099,7 +4099,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 28585
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 02_papers.blue_team.llm_ai_security_and_governance_checklist
   title: Llm Ai Security And Governance Checklist
@@ -4113,7 +4113,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 49779
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 02_papers.blue_team.priority_logs_for_0asiem_ingestion
   title: Priority Logs For 0asiem Ingestion
@@ -4126,7 +4126,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 50635
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 02_papers.blue_team.security_operation_center_open_source_pt_en
   title: Security Operation Center Open Source Pt En
@@ -4139,7 +4139,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 20636
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 02_papers.blue_team.the_coming_ai_hackers
   title: The Coming Ai Hackers
@@ -4153,7 +4153,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 99473
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 02_papers.blue_team.threats_and_risk_management_in_the_health_sector
   title: Threats And Risk Management In The Health Sector
@@ -4166,7 +4166,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 93858
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 02_papers.blue_team.zero_trust_testing_checklist
   title: Zero Trust Testing Checklist
@@ -4179,7 +4179,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 2455
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 02_papers.malware_analysis.cybersec_certifications_2023
   title: Cybersec Certifications 2023
@@ -4193,7 +4193,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 637
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 02_papers.malware_analysis.malware_and_reverse_engineering_complete_collection_by_joas
   title: Malware And Reverse Engineering Complete Collection By Joas
@@ -4208,7 +4208,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 47254
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 02_papers.malware_analysis.python_libs_for_security_pt_1
   title: Python Libs For Security Pt 1
@@ -4222,7 +4222,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 142
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 02_papers.malware_analysis.soc_open_source_tools
   title: Soc Open Source Tools
@@ -4236,7 +4236,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 1507
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 02_papers.red_team.2022_cve-2021-4034
   title: CVE-2021-4034 - gimme root
@@ -4249,7 +4249,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 4743
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 02_papers.red_team.30_days_of_practice_pentest_2
   title: 30 Days Of Practice Pentest 2
@@ -4263,7 +4263,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 2912
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 02_papers.red_team.adversary_emulation_matrix_by_joas
   title: Adversary Emulation Matrix By Joas
@@ -4276,7 +4276,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 47000
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 02_papers.red_team.penetration_testing_career_jr_to_specialist
   title: Penetration Testing Career Jr To Specialist
@@ -4290,7 +4290,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 11998
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 02_papers.red_team.red_team_career_tips_1
   title: Red Team Career Tips 1
@@ -4304,7 +4304,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 9467
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 02_papers.red_team.reverse_engineering_research_storm
   title: Reverse Engineering Research Storm
@@ -4318,7 +4318,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 13388
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 02_papers.reverse_engineering.chatgpt_for_cybersecurity_3
   title: Chatgpt For Cybersecurity 3
@@ -4332,7 +4332,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 2570
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 02_papers.reverse_engineering.offensive_security_mac_control_bypass_notes_pt_1
   title: Offensive Security Mac Control Bypass Notes Pt 1
@@ -4346,7 +4346,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 562583
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 02_papers.threat_intelligence.100_free_security_tools
   title: 100 Free Security Tools
@@ -4359,7 +4359,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 25350
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 02_papers.threat_intelligence.12_best_career_in_cyber_security_2023
   title: 12 Best Career In Cyber Security 2023
@@ -4372,7 +4372,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 4883
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 02_papers.threat_intelligence.2018_devices-search
   title: title inside <title>
@@ -4385,7 +4385,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 4772
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 02_papers.threat_intelligence.2018_starting-with-hexo_io
   title: Starting with hexo.io
@@ -4398,7 +4398,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 2910
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 02_papers.threat_intelligence.2020_linux-distros-for-hackers
   title: Linux distributions for hackers
@@ -4412,7 +4412,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 10154
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 02_papers.threat_intelligence.2025_privacy-apps-services
   title: Privacy applications and services
@@ -4425,7 +4425,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 12992
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 02_papers.threat_intelligence.25_cyber_security_frameworks
   title: 25 Cyber Security Frameworks
@@ -4438,7 +4438,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 31165
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 02_papers.threat_intelligence.bypassing_defenses_in_layers
   title: Bypassing Defenses In Layers
@@ -4451,7 +4451,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 4626
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 02_papers.threat_intelligence.comprehensive_guide_on_tshark
   title: Comprehensive Guide On Tshark
@@ -4464,7 +4464,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 38344
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 02_papers.threat_intelligence.critical_exploits_for_sale_on_the_dark_web
   title: Critical Exploits For Sale On The Dark Web
@@ -4480,7 +4480,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 23167
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 02_papers.threat_intelligence.cybok_version_1_0
   title: Cybok Version 1 0
@@ -4493,7 +4493,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 2611133
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 02_papers.threat_intelligence.elearnsecurity_certified_incident_response_ecir_guide_study_to_exam
   title: Elearnsecurity Certified Incident Response Ecir Guide Study To Exam
@@ -4507,7 +4507,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 354659
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 02_papers.threat_intelligence.mitre_att_ck_study_overview
   title: Mitre Att Ck Study Overview
@@ -4521,7 +4521,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 11310
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 02_papers.threat_intelligence.nist_storage_security_guide
   title: Nist Storage Security Guide
@@ -4534,7 +4534,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 222694
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 02_papers.threat_intelligence.ransomware_investigation_osint_and_hunting_overview_pt1
   title: Ransomware Investigation Osint And Hunting Overview Pt1
@@ -4549,7 +4549,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 26320
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 02_papers.threat_intelligence.starting_your_cybersecurity_career_complete_guide
   title: Starting Your Cybersecurity Career Complete Guide
@@ -4562,7 +4562,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 126731
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 02_papers.threat_intelligence.using_osint_techniques_to_investigate_human_trafficking_and_missing_persons_pt_1
   title: Using Osint Techniques To Investigate Human Trafficking And Missing Persons Pt 1
@@ -4576,7 +4576,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 26312
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.blue_team.2018_safe-social-networking
   title: Safe social networking
@@ -4589,7 +4589,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 4193
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.blue_team.2018_secure-email-services
   title: Secure email services
@@ -4602,7 +4602,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 4118
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.blue_team.2019_abuseipdb
   title: AbuseIPDB with Fail2Ban
@@ -4615,7 +4615,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 5381
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.blue_team.2022_ransomware-simulation
   title: Ransomware simulation
@@ -4629,7 +4629,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 18994
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.blue_team.2024_gemini-server
   title: Gemini server for 0ut3r.space
@@ -4643,7 +4643,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 15529
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.blue_team.2024_hacking-instructions
   title: Gray Hat hacking instructions
@@ -4656,7 +4656,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 42383
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.blue_team.2025_ms-teams-emoji-reaction-spammer
   title: MS Team Emoji Reaction Spammer
@@ -4669,7 +4669,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 16081
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.blue_team.aws_eks_attack_and_defend
   title: Understanding your EKS environment - The reconnaissance phase
@@ -4683,7 +4683,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 23937
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.blue_team.blue_e_red_team_mercado_de_trabalho
   title: Blue E Red Team Mercado De Trabalho
@@ -4697,7 +4697,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 7427
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.blue_team.broken_authentication
   title: Broken Authentication
@@ -4710,7 +4710,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 11910
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.blue_team.carreira_em_cyber_security_jr_ao_especialista
   title: Carreira Em Cyber Security Jr Ao Especialista
@@ -4723,7 +4723,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 3943
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.blue_team.comptia_pentest_tips_and_tricks
   title: Comptia Pentest Tips And Tricks
@@ -4738,7 +4738,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 7296
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.blue_team.cyber_security_five_challenge_2022
   title: Cyber Security Five Challenge 2022
@@ -4751,7 +4751,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 3521
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.blue_team.cyber_security_for_kids_2
   title: Cyber Security For Kids 2
@@ -4764,7 +4764,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 8863
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.blue_team.cyber_security_services
   title: Cyber Security Services
@@ -4777,7 +4777,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 14733
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.blue_team.cyberbullying_e_as_consequncias
   title: Cyberbullying E As Consequncias
@@ -4790,7 +4790,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 7218
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.blue_team.cybersecurity_flaws_in_the_metaverse_1
   title: Cybersecurity Flaws In The Metaverse 1
@@ -4803,7 +4803,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 4624
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.blue_team.dicas_básicas_para_ingressar_no_mercado_de_segurança
   title: Dicas Básicas Para Ingressar No Mercado De Segurança
@@ -4816,7 +4816,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 104
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.blue_team.dicas_como_reportar_uma_falha
   title: Dicas Como Reportar Uma Falha
@@ -4829,7 +4829,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 8146
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.blue_team.dll_hijacking_overview
   title: Dll Hijacking Overview
@@ -4842,7 +4842,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 10534
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.blue_team.email_header_analysis
   title: Email Header Analysis
@@ -4855,7 +4855,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 189
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.blue_team.fundamentos_de_firewall
   title: Fundamentos De Firewall
@@ -4869,7 +4869,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 18837
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.blue_team.golpe_do_perfil_falso_no_whatsapp_medidas_preventivas
   title: Golpe Do Perfil Falso No Whatsapp Medidas Preventivas
@@ -4882,7 +4882,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 5926
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.blue_team.how_to_report_a_vulnerability_and_generate_its_cve
   title: How To Report A Vulnerability And Generate Its Cve
@@ -4895,7 +4895,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 9808
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.blue_team.introduo_a_engenharia_social_prtica
   title: Introduo A Engenharia Social Prtica
@@ -4908,7 +4908,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 20634
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.blue_team.metaverso_e_a_inovao_tecnolgica
   title: Metaverso E A Inovao Tecnolgica
@@ -4921,7 +4921,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 12507
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.blue_team.offensive_security_and_web_exploitation_2
   title: Offensive Security And Web Exploitation 2
@@ -4937,7 +4937,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 47249
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.blue_team.offensive_security_web_exploitation_2
   title: Offensive Security Web Exploitation 2
@@ -4953,7 +4953,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 104017
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.blue_team.offensive_security_wireless_fundamentals
   title: Offensive Security Wireless Fundamentals
@@ -4968,7 +4968,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 90399
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.blue_team.pentest_com_powershell_overview
   title: Pentest Com Powershell Overview
@@ -4983,7 +4983,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 51933
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.blue_team.security_operation_center_open_source
   title: Security Operation Center Open Source
@@ -4996,7 +4996,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 23626
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.blue_team.segurana_infantil_um_problema_srio_mas_pouco_falado
   title: Segurana Infantil Um Problema Srio Mas Pouco Falado
@@ -5009,7 +5009,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 20176
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.blue_team.segurana_na_internet_para_crianas
   title: Segurana Na Internet Para Crianas
@@ -5022,7 +5022,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 19807
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.blue_team.shifting_the_balance_of_cybersecurity_risk
   title: Shifting The Balance Of Cybersecurity Risk
@@ -5035,7 +5035,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 97273
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.blue_team.sobrevivendo_a_um_ataque_escolar
   title: Sobrevivendo A Um Ataque Escolar
@@ -5048,7 +5048,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 5722
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.blue_team.the_onion_router_overview_pt_1
   title: The Onion Router Overview Pt 1
@@ -5061,7 +5061,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 22504
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.blue_team.warez
   title: Warez
@@ -5074,7 +5074,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 816996
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.blue_team.windows_api_for_red_team_102_portugues
   title: Windows Api For Red Team 102 Portugues
@@ -5089,7 +5089,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 44865
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.blue_team.windows_event_log_analysis_ir_guide
   title: Windows Event Log Analysis Ir Guide
@@ -5103,7 +5103,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 52427
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.malware_analysis.2020_opensource-rats
   title: Open Source Rats
@@ -5116,7 +5116,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 11217
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.malware_analysis.2021_hacker-news
   title: Hacker news
@@ -5129,7 +5129,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 4267
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.malware_analysis.blue_team_toolkit
   title: Scan a single IP
@@ -5143,7 +5143,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 63231
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.malware_analysis.blue_team_toolkit2
   title: Scan a single IP
@@ -5157,7 +5157,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 63231
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.malware_analysis.c_for_hackers_overview_pt
   title: C For Hackers Overview Pt
@@ -5170,7 +5170,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 5893
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.malware_analysis.cyber_security_for_kids_2_1
   title: Cyber Security For Kids 2 1
@@ -5183,7 +5183,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 12160
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.malware_analysis.diary_of_a_red_team_challenges_for_you_to_practice_your_skills_1
   title: Diary Of A Red Team Challenges For You To Practice Your Skills 1
@@ -5197,7 +5197,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 4161
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.malware_analysis.fundamentos_de_firewall_2
   title: Fundamentos De Firewall 2
@@ -5211,7 +5211,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 68766
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.malware_analysis.introduo_a_ps_explorao
   title: Introduo A Ps Explorao
@@ -5224,7 +5224,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 11181
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.malware_analysis.introduo_bsica_a_analise_de_malware_1
   title: Introduo Bsica A Analise De Malware 1
@@ -5238,7 +5238,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 63893
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.malware_analysis.low_cost_soc_tools_2
   title: Low Cost Soc Tools 2
@@ -5252,7 +5252,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 742
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.malware_analysis.microsoft_office_and_windows_remote_code_execution
   title: Microsoft Office And Windows Remote Code Execution
@@ -5266,7 +5266,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 8418
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.malware_analysis.windows_enterprise_network_pentest
   title: Windows Enterprise Network Pentest
@@ -5281,7 +5281,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 19860
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.2019_ethical-hacking
   title: Ethical Hacking - How to start
@@ -5294,7 +5294,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 8267
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.2019_runas-powershell
   title: Runas in Powershell for Windows 10
@@ -5308,7 +5308,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 2904
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.2021_cve-attack
   title: CVE attack
@@ -5321,7 +5321,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 7444
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.2021_redteam-browser-plugins
   title: Red Team browser plugins
@@ -5335,7 +5335,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 7065
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.2023_healthy-hacker
   title: Healthy mind and body of hacker
@@ -5348,7 +5348,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 8513
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.2023_pentest-report-template
   title: Penetration test report template
@@ -5362,7 +5362,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 11184
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.2023_worth-checking-2
   title: Worth checking ep.2
@@ -5375,7 +5375,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 5166
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.2024_worth-checking-3
   title: Worth checking ep.3
@@ -5388,7 +5388,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 6194
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.ad_attacks
   title: use the latest release, CME is now a binary packaged will all its dependenc
@@ -5401,7 +5401,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 151834
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.apostila_ataques_web_bsico
   title: Apostila Ataques Web Bsico
@@ -5415,7 +5415,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 18159
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.apostila_dicas_para_pentest
   title: Apostila Dicas Para Pentest
@@ -5429,7 +5429,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 5415
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.apt28_understanding_a_group_specialized_in_attacks_against_intelligence_sectors
   title: Apt28 Understanding A Group Specialized In Attacks Against Intelligence Sectors
@@ -5442,7 +5442,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 9476
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.av_edr_bypass_red_team_village_pt_br
   title: Av Edr Bypass Red Team Village Pt Br
@@ -5457,7 +5457,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 11295
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.av_edr_bypass_red_team_village_pt_br_2
   title: Av Edr Bypass Red Team Village Pt Br 2
@@ -5472,7 +5472,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 11295
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.best_alternative_of_netcat_listener
   title: Best Alternative Of Netcat Listener
@@ -5485,7 +5485,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 9387
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.brazilian_pentest_certification
   title: Brazilian Pentest Certification
@@ -5500,7 +5500,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 584
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.buffer_overflow_guide_1
   title: Buffer Overflow Guide 1
@@ -5514,7 +5514,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 20036
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.bug_bounty_career
   title: Bug Bounty Career
@@ -5527,7 +5527,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 7857
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.bug_bounty_how_to_start
   title: Bug Bounty How To Start
@@ -5540,7 +5540,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 7755
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.c_for_pentest
   title: C For Pentest
@@ -5554,7 +5554,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 281
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.communs_web_attack_reference_pt_1
   title: Communs Web Attack Reference Pt 1
@@ -5568,7 +5568,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 3597
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.conceitos_bsicos_de_ps_explorao_1
   title: Conceitos Bsicos De Ps Explorao 1
@@ -5581,7 +5581,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 25859
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.crto_notes_to_exam_preparation
   title: this is a comment
@@ -5594,7 +5594,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 102612
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.dhcp_starvation_attack
   title: Dhcp Starvation Attack
@@ -5607,7 +5607,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 1271
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.elearnsecurity_ecptxv2_notes
   title: Elearnsecurity Ecptxv2 Notes
@@ -5621,7 +5621,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 472494
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.elearnsecurity_ecxd_preparation
   title: Elearnsecurity Ecxd Preparation
@@ -5634,7 +5634,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 14737
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.elearnsecurity_exploit_development_student_notes_by_joas
   title: Elearnsecurity Exploit Development Student Notes By Joas
@@ -5648,7 +5648,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 597801
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.google_cloud_attack_overview_pt1
   title: Authentication with gcloud and retrieve info
@@ -5662,7 +5662,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 11281
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.hackthebox_e_vulnhub_dicas_e_truques
   title: Hackthebox E Vulnhub Dicas E Truques
@@ -5675,7 +5675,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 11020
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.interview_question_tips_pentest_red_team_appsec_and_blue_team
   title: Interview Question Tips Pentest Red Team Appsec And Blue Team
@@ -5691,7 +5691,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 27912
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.introduo_ao_desenvolvimento_de_exploits_2
   title: Introduo Ao Desenvolvimento De Exploits 2
@@ -5705,7 +5705,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 45010
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.javascript_for_hackers_2
   title: Javascript For Hackers 2
@@ -5718,7 +5718,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 8316
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.linux_privilege_escalation_overview
   title: Linux Privilege Escalation Overview
@@ -5732,7 +5732,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 11370
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.low_cost_red_team_tools_v2
   title: Low Cost Red Team Tools V2
@@ -5746,7 +5746,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 13
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.malicious_group_c2_automation_build
   title: Malicious Group C2 Automation Build
@@ -5759,7 +5759,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 579
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.most_critical_failure_in_corporate_environments
   title: Most Critical Failure In Corporate Environments
@@ -5772,7 +5772,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 22207
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.multi_cloud_red_team_pt_1
   title: Multi Cloud Red Team Pt 1
@@ -5787,7 +5787,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 7228
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.nmap_for_pentester_output_format_scan
   title: Nmap For Pentester Output Format Scan
@@ -5801,7 +5801,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 5891
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.offensive_security_consultant_spider_labs
   title: Offensive Security Consultant Spider Labs
@@ -5815,7 +5815,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 6797
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.offensive_security_exploit_development_windows_overview
   title: Offensive Security Exploit Development Windows Overview
@@ -5831,7 +5831,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 21090
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.offensive_security_professional_overview_survival
   title: Offensive Security Professional Overview Survival
@@ -5845,7 +5845,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 11373
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.offensive_security_web_exploitation
   title: Offensive Security Web Exploitation
@@ -5861,7 +5861,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 37940
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.pentest_and_red_teams_tools_by_joas_and_s3cur3th1ssh1t
   title: Pentest And Red Teams Tools By Joas And S3cur3th1ssh1t
@@ -5876,7 +5876,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 29888
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.pentest_in_office365_and_security
   title: Pentest In Office365 And Security
@@ -5890,7 +5890,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 8021
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.pentest_toolkit
   title: Pentest Toolkit
@@ -5904,7 +5904,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 3861
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.pentest_web_do_black_box_ao_white_box
   title: Pentest Web Do Black Box Ao White Box
@@ -5919,7 +5919,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 12671
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.pentesting_cheat_sheet
   title: Pentesting Cheat Sheet
@@ -5933,7 +5933,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 20000
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.plano_de_estudos_cyber_security_parte_1_red_team
   title: Plano De Estudos Cyber Security Parte 1 Red Team
@@ -5947,7 +5947,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 14760
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.red_team_and_blue_team_labs_and_ctf
   title: Red Team And Blue Team Labs And Ctf
@@ -5962,7 +5962,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 1906
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.red_team_interview_questions
   title: Red Team Interview Questions
@@ -5976,7 +5976,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 165383
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.red_team_macos_att_ck_overview
   title: Red Team Macos Att Ck Overview
@@ -5991,7 +5991,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 229
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.red_team_operations_concepts_1
   title: Red Team Operations Concepts 1
@@ -6005,7 +6005,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 32483
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.red_team_operations_overview_pt_1
   title: Red Team Operations Overview Pt 1
@@ -6019,7 +6019,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 11655
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.red_team_operations_simulando_um_grupo_apt_na_prtica
   title: psexec.py -hashes <NTLM_HASH> <domain>/<username>@<target_ip>
@@ -6033,7 +6033,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 10267
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.red_team_operations_simulating_an_apt_group_in_practice
   title: psexec.py -hashes <NTLM_HASH> <domain>/<username>@<target_ip>
@@ -6047,7 +6047,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 9768
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.resume_web_pentest_by_joas
   title: Resume Web Pentest By Joas
@@ -6062,7 +6062,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 8797
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.roadmap_segurana_da_informao_pt_1
   title: Roadmap Segurana Da Informao Pt 1
@@ -6075,7 +6075,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 5156
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.shellcode_development
   title: Shellcode Development
@@ -6089,7 +6089,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 20665
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.the_last_dance_with_msfvenom
   title: The Last Dance With Msfvenom
@@ -6102,7 +6102,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 1774
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.top_candc_methods
   title: Top Candc Methods
@@ -6115,7 +6115,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 369
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.wifi_hacking_handbook
   title: Wifi Hacking Handbook
@@ -6129,7 +6129,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 341
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.windows_exploitation_msbuild
   title: Windows Exploitation Msbuild
@@ -6144,7 +6144,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 9868
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.windows_exploitation_rundll32_exe
   title: Windows Exploitation Rundll32 Exe
@@ -6159,7 +6159,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 7690
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.windows_privilege_escalation_overview
   title: Windows Privilege Escalation Overview
@@ -6173,7 +6173,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 8677
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.windows_server_ad_and_o365_advanced_pentest
   title: Windows Server Ad And O365 Advanced Pentest
@@ -6188,7 +6188,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 62116
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.red_team.windows_server_and_active_directory_pentest
   title: Windows Server And Active Directory Pentest
@@ -6204,7 +6204,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 22309
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.reverse_engineering.2021_black-friday
   title: Black Friday - Cyber Monday
@@ -6217,7 +6217,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 4921
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.reverse_engineering.2024_smtp-hack
   title: SMTP Hack
@@ -6230,7 +6230,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 10518
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.reverse_engineering.carreira_em_desenvolvimento_mobile
   title: Carreira Em Desenvolvimento Mobile
@@ -6243,7 +6243,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 13370
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.reverse_engineering.chatgpt_for_cybersecurity_4
   title: Chatgpt For Cybersecurity 4
@@ -6257,7 +6257,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 4418
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.reverse_engineering.comptia_security_tips_and_tricks
   title: Comptia Security Tips And Tricks
@@ -6271,7 +6271,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 5656
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.reverse_engineering.ebook_invadindo_com_metasploit_vl_1
   title: Ebook Invadindo Com Metasploit Vl 1
@@ -6284,7 +6284,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 37105
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.reverse_engineering.fundamentos_de_desenvolvimento_de_exploits_overview
   title: Fundamentos De Desenvolvimento De Exploits Overview
@@ -6298,7 +6298,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 24668
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.reverse_engineering.information_security_training_by_joas
   title: Information Security Training By Joas
@@ -6311,7 +6311,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 967537
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.reverse_engineering.informtica_para_concurso
   title: Informtica Para Concurso
@@ -6324,7 +6324,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 92232
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.reverse_engineering.introduo_a_network_security_1_0
   title: Introduo A Network Security 1 0
@@ -6337,7 +6337,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 134285
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.reverse_engineering.introduo_a_network_security_e_firewall
   title: Introduo A Network Security E Firewall
@@ -6351,7 +6351,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 207434
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.reverse_engineering.introduo_ao_buffer_overflow_1
   title: Introduo Ao Buffer Overflow 1
@@ -6365,7 +6365,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 44565
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.reverse_engineering.offensive_security_evasion_techniques_pt_1
   title: Offensive Security Evasion Techniques Pt 1
@@ -6379,7 +6379,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 24444
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.reverse_engineering.reverse_engineering_content_study_1
   title: Reverse Engineering Content Study 1
@@ -6393,7 +6393,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 6754
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.reverse_engineering.smart_contract_security_overview_pt_1
   title: Smart Contract Security Overview Pt 1
@@ -6407,7 +6407,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 12642
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.threat_intelligence.19_joassantos_gerenciando_sua_superficie_de_ataques
   title: 19 Joassantos Gerenciando Sua Superficie De Ataques
@@ -6420,7 +6420,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 5895
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.threat_intelligence.2018_fail2ban-best-jail
   title: Fail2Ban - best jail
@@ -6433,7 +6433,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 6867
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.threat_intelligence.2018_lets-encrypt-ssl-cert-for-nginx
   title: Let’s Encrypt SSL Cert for Nginx
@@ -6446,7 +6446,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 6638
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.threat_intelligence.2019_kali-linux-website-penetration-testing
   title: Kali Linux website penetration testing
@@ -6461,7 +6461,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 11468
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.threat_intelligence.2019_nano
   title: GNU nano
@@ -6474,7 +6474,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 3974
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.threat_intelligence.2019_onion-address
   title: Add Onion domain to your website
@@ -6487,7 +6487,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 4353
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.threat_intelligence.2020_googledorks
   title: Google Hacks
@@ -6500,7 +6500,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 12589
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.threat_intelligence.2024_bloodhound-ce-and-docker
   title: Bloodhound CE and Docker
@@ -6513,7 +6513,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 15294
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.threat_intelligence.2024_synology-nas-tips
   title: Synology NAS tips
@@ -6526,7 +6526,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 8420
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.threat_intelligence.2024_tls-cert-for-onion
   title: TLS Certificate for Onion domain
@@ -6539,7 +6539,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 5593
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.threat_intelligence.2025_cheap-crypto-deal
   title: Cheap Crypto Deal
@@ -6553,7 +6553,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 12834
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.threat_intelligence.2025_encrypted-container
   title: Encrypted container
@@ -6567,7 +6567,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 20486
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.threat_intelligence.2025_ventoy
   title: One USB Drive with multiple live systems and rescue tools
@@ -6580,7 +6580,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 7347
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.threat_intelligence.adversary_emulation_services
   title: Adversary Emulation Services
@@ -6593,7 +6593,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 14390
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.threat_intelligence.apostila_a_arte_do_osint_para_pentesters
   title: Apostila A Arte Do Osint Para Pentesters
@@ -6608,7 +6608,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 6195
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.threat_intelligence.application_security_introduction_overview
   title: Application Security Introduction Overview
@@ -6621,7 +6621,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 36845
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.threat_intelligence.attacking_pfsense
   title: Check if AutoConfigBackup is enabled
@@ -6634,7 +6634,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 41850
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.threat_intelligence.aws_pentest
   title: https://github.com/RhinoSecurityLabs/pacu/wiki/Module-Details
@@ -6649,7 +6649,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 62818
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.threat_intelligence.certifications_preparation_guide
   title: Certifications Preparation Guide
@@ -6663,7 +6663,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 19638
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.threat_intelligence.complete_bug_bounty_cheat_sheet
   title: Complete Bug Bounty Cheat Sheet
@@ -6676,7 +6676,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 3377
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.threat_intelligence.credential_dumping_fake_services
   title: Credential Dumping Fake Services
@@ -6689,7 +6689,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 12642
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.threat_intelligence.credential_dumping_fakeservices
   title: Credential Dumping Fakeservices
@@ -6702,7 +6702,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 16944
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.threat_intelligence.elearnsecurity_ewpt_notes
   title: Elearnsecurity Ewpt Notes
@@ -6715,7 +6715,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 493471
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.threat_intelligence.elearnsecurity_mobile_application_penetration_testing
   title: Elearnsecurity Mobile Application Penetration Testing
@@ -6729,7 +6729,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 365498
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.threat_intelligence.hacker_guide_to_python
   title: Hacker Guide To Python
@@ -6743,7 +6743,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 366285
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.threat_intelligence.incident_response_cheat_sheet
   title: Incident Response Cheat Sheet
@@ -6757,7 +6757,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 24708
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.threat_intelligence.introduo_a_segurana_da_aplicao_uniciv
   title: Introduo A Segurana Da Aplicao Uniciv
@@ -6770,7 +6770,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 5896
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.threat_intelligence.javascript_for_hackers
   title: Javascript For Hackers
@@ -6783,7 +6783,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 9416
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.threat_intelligence.linux_for_networking_professional
   title: Linux For Networking Professional
@@ -6797,7 +6797,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 103554
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.threat_intelligence.msfvenom_cheat_sheet
   title: Msfvenom Cheat Sheet
@@ -6810,7 +6810,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 11141
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.threat_intelligence.oscp_like_vulns_machines
   title: Oscp Like Vulns Machines
@@ -6824,7 +6824,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 9038
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.threat_intelligence.pentest_em_ambientes_cloud_1
   title: Pentest Em Ambientes Cloud 1
@@ -6839,7 +6839,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 29091
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.threat_intelligence.powershell_tips_tricks_for_pentester
   title: Powershell Tips Tricks For Pentester
@@ -6854,7 +6854,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 35212
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.threat_intelligence.redes_sociais_o_lado_sombrio_do_discord
   title: Redes Sociais O Lado Sombrio Do Discord
@@ -6867,7 +6867,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 215
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.threat_intelligence.soc_analyst_career
   title: Soc Analyst Career
@@ -6881,7 +6881,7 @@ entries:
   language: pt
   summary: ''
   size_bytes: 7532
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.threat_intelligence.social_engineering_practical_overview
   title: Social Engineering Practical Overview
@@ -6895,7 +6895,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 14611
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.threat_intelligence.using_osint_to_investigate_school_shooters
   title: Using Osint To Investigate School Shooters
@@ -6909,7 +6909,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 12569
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.threat_intelligence.web_application_pentesting_checklist
   title: Web Application Pentesting Checklist
@@ -6924,7 +6924,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 22184
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.threat_intelligence.windows_persistence_techniques
   title: Windows Persistence Techniques
@@ -6938,7 +6938,7 @@ entries:
   language: en
   summary: ''
   size_bytes: 10154
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed
 - id: 03_web_and_posts.unclassified.2023_minig-cryptocurrency
   title: Mining cryptocurrency - don't do it at home
@@ -6952,5 +6952,5 @@ entries:
   language: en
   summary: ''
   size_bytes: 16098
-  modified_at: '2026-10-04T01:14:24Z'
+  modified_at: '2026-10-05T11:44:46Z'
   source: seed

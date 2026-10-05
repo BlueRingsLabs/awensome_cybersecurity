@@ -111,7 +111,7 @@ regenerated atomically on every pipeline run.
 between the markers.*
 
 <!-- BEGIN AUTO-INDEX -->
-> Catalog regenerated: **2026-10-04T01:14:32Z** | **505 resources** indexed. Machine-readable catalogs: [`index.json`](index.json) / [`index.yaml`](index.yaml).
+> Catalog regenerated: **2026-10-05T11:44:54Z** | **505 resources** indexed. Machine-readable catalogs: [`index.json`](index.json) / [`index.yaml`](index.yaml).
 
 ### 01_literature -- Literature (291 resources)
 

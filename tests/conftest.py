@@ -2,20 +2,68 @@
 
 from __future__ import annotations
 
+import json
 import shutil
 from datetime import UTC, date, datetime
 from pathlib import Path
+from typing import TYPE_CHECKING
 
 import pytest
 
 from cyberkb.build import build
 from cyberkb.frontmatter import Classification, FrontMatter, render_document
 from cyberkb.paths import RepoPaths
+from cyberkb.providers.http import HttpResponse, HttpTransportError
 from cyberkb.taxonomy import Taxonomy, load_taxonomy
+
+if TYPE_CHECKING:
+    from collections.abc import Mapping
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 REAL_TAXONOMY = PROJECT_ROOT / "schema" / "taxonomy.yaml"
 FIXED_NOW = datetime(2026, 1, 2, 3, 4, 5, tzinfo=UTC)
+
+
+def http_json(status: int, obj: object, headers: Mapping[str, str] | None = None) -> HttpResponse:
+    """Build an :class:`HttpResponse` whose body is ``obj`` serialised to JSON."""
+    return HttpResponse(status, json.dumps(obj).encode("utf-8"), dict(headers or {}))
+
+
+def http_text(status: int, body: str, headers: Mapping[str, str] | None = None) -> HttpResponse:
+    """Build an :class:`HttpResponse` with a raw (possibly non-JSON) text body."""
+    return HttpResponse(status, body.encode("utf-8"), dict(headers or {}))
+
+
+class FakeTransport:
+    """A Transport double returning queued responses or raising queued faults.
+
+    This is the project's only legitimate test double: it stands in for the real
+    network at the exact HTTP boundary a provider cannot cross in a unit test.
+    Every bit of provider logic (request building, status handling, parsing,
+    discovery, rotation) runs for real against it.
+    """
+
+    def __init__(self, *items: HttpResponse | HttpTransportError) -> None:
+        """Queue the responses/faults to hand back, in order."""
+        self._items = list(items)
+        self.calls: list[tuple[str, str, bytes | None, dict[str, str]]] = []
+
+    def request(
+        self,
+        method: str,
+        url: str,
+        *,
+        headers: Mapping[str, str],
+        body: bytes | None,
+        timeout: float,
+    ) -> HttpResponse:
+        """Record the call and return (or raise) the next queued item."""
+        _ = timeout
+        self.calls.append((method, url, body, dict(headers)))
+        item = self._items.pop(0)
+        if isinstance(item, HttpTransportError):
+            raise item
+        return item
 
 
 @pytest.fixture(scope="session")

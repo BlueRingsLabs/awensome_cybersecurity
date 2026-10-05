@@ -56,3 +56,43 @@ block and category pages.
 Delete the file under `library/`, run `uv run cyberkb build`, commit. If it was
 removed for a licensing or rights-holder reason, record it in
 `docs/audit/` and `NOTICE` as appropriate.
+
+## One-time repository settings (maintainer)
+
+These live in GitHub settings, not in the tree, so they must be set once by a
+maintainer with admin rights. They are required for CI to be fully green.
+
+- **Actions enabled.** The ingestion workflow commits regenerated catalogs, so
+  Actions must be enabled for the repository.
+- **`GEMINI_API_KEY` secret.** Optional. Without it, ingestion uses the offline
+  heuristic; with it, the Gemini classifier. Set it under
+  *Settings → Secrets and variables → Actions*.
+- **Disable CodeQL default setup.** Enabling GitHub Advanced Security turns on
+  CodeQL *default setup*, which is mutually exclusive with this repository's
+  committed, SHA-pinned advanced workflow (`.github/workflows/codeql.yml`).
+  While default setup is on, GitHub rejects the advanced workflow's results and
+  the *Analyze (python)* check fails with *"CodeQL analyses from advanced
+  configurations cannot be processed when the default setup is enabled."* Turn
+  default setup **off** under *Settings → Code security → Code scanning* so the
+  advanced workflow — the version-controlled source of truth, running the
+  `security-extended` suite — uploads its results. (If you would rather keep the
+  zero-maintenance default setup, delete `codeql.yml` instead; the two must not
+  both be active. See ADR-0006.)
+
+## Secret scanning (gitleaks)
+
+Secret scanning runs a version-pinned, checksum-verified gitleaks CLI (the
+Action requires a paid licence for organisation-owned repositories; the CLI is
+free). To reproduce a CI run locally:
+
+```bash
+uv run cyberkb check            # content/policy gate
+gitleaks dir . --config .gitleaks.toml --redact   # same scan CI runs
+```
+
+A hit inside `library/` or `docs/audit/` is expected educational content and is
+allow-listed in `.gitleaks.toml`; a hit anywhere else (code, CI, config) is a
+real finding — rotate the exposed credential and purge it from history before
+merging. To bump the pinned gitleaks version, update `GITLEAKS_VERSION` and
+`GITLEAKS_SHA256` in `.github/workflows/security.yml` together (the SHA-256 of
+the `linux_x64` tarball is published in the release's `checksums.txt`).

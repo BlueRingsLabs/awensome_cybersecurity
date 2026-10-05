@@ -32,6 +32,13 @@ Curation and test-integrity follow-up.
   100 % line+branch coverage, all genuinely behavioural.
 - The threat model documents the explicit criterion that quoted security
   payloads are a warning, never a reason to exclude a resource.
+- **Secret scanning** now runs a version-pinned, checksum-verified gitleaks CLI
+  instead of the Action (which requires a paid licence for organisation-owned
+  repositories). A new [`.gitleaks.toml`](.gitleaks.toml) keeps the full default
+  ruleset and scopes the scan to the project's own code, CI and configuration,
+  allow-listing only the curated educational corpus (`library/`) and audit prose
+  (`docs/audit/`) whose subject matter is example credentials. ADR-0006 is
+  amended with this and with the CodeQL default-setup interaction.
 
 ### Removed
 

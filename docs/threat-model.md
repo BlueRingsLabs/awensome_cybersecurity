@@ -46,8 +46,18 @@ adversary is, and which control answers each threat.
 | --- | --- |
 | Compromised or re-tagged third-party action | Every action pinned to a full commit SHA; Dependabot proposes updates; zizmor enforces pinning. |
 | Token overreach / privilege escalation | Workflow default `permissions: contents: read`; only the ingestion job gets `contents: write`; other scopes granted per-job. |
-| Secret exfiltration via a crafted workflow or committed secret | `persist-credentials: false` on checkouts except the push job; gitleaks scans history; harden-runner audits egress; CodeQL and Scorecard run on a schedule. |
+| Secret exfiltration via a crafted workflow or committed secret | `persist-credentials: false` on checkouts except the push job; a version-pinned, checksum-verified gitleaks CLI scans the working tree (scoped by `.gitleaks.toml` — see below); harden-runner audits egress; CodeQL and Scorecard run on a schedule. |
 | Dependency vulnerability | Minimal runtime surface (PyYAML only); `pip`/`uv` lockfile; dependency review on PRs. |
+
+Secret scanning keeps the full gitleaks default ruleset and scopes out only the
+curated corpus (`library/`) and the audit prose that quotes scanner output
+(`docs/audit/`). Those are third-party security write-ups whose subject matter
+*is* example credentials — Basic-auth demo strings, textbook JWTs, the
+empty-password NTLM hash, expired STS tokens copied from public reports — none
+of them live secrets of this project. The threat the control defends against is
+a real credential leaked into the project's **own** code, CI or configuration,
+all of which remain scanned in full; a hit there fails the build. See
+[`.gitleaks.toml`](../.gitleaks.toml) and ADR-0006.
 
 ### Availability
 

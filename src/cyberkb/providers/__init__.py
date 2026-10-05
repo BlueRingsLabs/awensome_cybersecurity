@@ -24,25 +24,35 @@ from cyberkb.providers.base import (
     classify_http_status,
     retry_after_seconds,
 )
+from cyberkb.providers.circuit import CircuitBreaker, CircuitState
 from cyberkb.providers.gemini import GeminiProvider
 from cyberkb.providers.huggingface import HuggingFaceProvider
 from cyberkb.providers.openai_compat import OpenAICompatProvider
 from cyberkb.providers.openrouter import OpenRouterProvider
+from cyberkb.providers.orchestrator import Orchestrator, OrchestratorSettings
 from cyberkb.providers.registry import PROVIDER_CLASSES, is_registered, provider_names
+from cyberkb.providers.selection import ModelValidation, ProviderSelection, select_models
 
 __all__ = [
     "PROVIDER_CLASSES",
+    "CircuitBreaker",
+    "CircuitState",
     "GeminiProvider",
     "HealthResult",
     "HttpProviderBase",
     "HuggingFaceProvider",
     "LLMProvider",
     "ModelCandidate",
+    "ModelValidation",
     "OpenAICompatProvider",
     "OpenRouterProvider",
+    "Orchestrator",
+    "OrchestratorSettings",
     "ProviderResult",
+    "ProviderSelection",
     "classify_http_status",
     "is_registered",
     "provider_names",
     "retry_after_seconds",
+    "select_models",
 ]

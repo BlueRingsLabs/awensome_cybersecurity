@@ -195,6 +195,11 @@ class LLMProvider(ABC):
         raise NotImplementedError
 
     @abstractmethod
+    def available(self, model: str) -> bool:
+        """Cheap pre-check that ``model`` can be called now (providers may assume yes)."""
+        raise NotImplementedError
+
+    @abstractmethod
     def health_check(self, model: str) -> HealthResult:
         """Probe ``model`` with a trivial request to confirm the key works."""
         raise NotImplementedError
@@ -224,7 +229,8 @@ class HttpProviderBase(LLMProvider):
         """Configured when an API key is present."""
         return bool(self._api_key)
 
-    def available(self, model: str) -> bool:  # noqa: ARG002
+    @override
+    def available(self, model: str) -> bool:
         """Cheap pre-check that ``model`` can be called now (default: assume yes).
 
         Providers that expose a model-status endpoint (e.g. Hugging Face) override

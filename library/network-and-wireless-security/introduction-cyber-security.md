@@ -5,6 +5,7 @@ category: network-and-wireless-security
 format: guide
 language: en
 tags: [dns, firewall, malware, networking, password-security, windows]
+authors: [unknown]
 license: CC-BY-SA-4.0
 added: 2026-10-04
 classification:

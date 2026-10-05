@@ -5,6 +5,7 @@ category: incident-response-and-forensics
 format: guide
 language: en
 tags: [dns, incident-response, linux, log-analysis, networking, threat-intelligence]
+authors: [Md. Abdullah Al Mamun]
 license: NOASSERTION
 added: 2026-10-04
 classification:

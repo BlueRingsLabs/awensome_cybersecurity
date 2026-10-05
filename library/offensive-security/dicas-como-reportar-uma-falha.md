@@ -5,6 +5,7 @@ category: offensive-security
 format: guide
 language: pt
 tags: [bug-bounty, mitre-attack, tls, vulnerability-management]
+authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:

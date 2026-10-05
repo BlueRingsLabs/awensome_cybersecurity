@@ -5,6 +5,7 @@ category: governance-risk-and-compliance
 format: book
 language: en
 tags: [compliance, governance, incident-response, nist, privacy, risk-management]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

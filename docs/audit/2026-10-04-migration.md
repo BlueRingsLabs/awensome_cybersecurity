@@ -5,28 +5,32 @@ the `library/<category>/` layout by a deterministic, reproducible pass
 (sanitise → deduplicate → classify → licence-detect → file with front matter).
 
 - **Legacy files scanned:** 505
-- **Filed into the library:** 486
-- **Excluded (with cause):** 19
+- **Filed as full resources:** 486
+- **Re-added as reference-only entries:** 5 (all rights reserved; see below)
+- **Excluded (with cause):** 14 (10 empty/broken + 4 duplicates)
+- **Removed as out of scope:** 1 (`sobrevivendo-a-um-ataque-escolar.md`, personal
+  physical-safety guidance, not cybersecurity)
 
-Every exclusion below is deliberate and recoverable from version control; none
-is a silent drop. Exclusion causes are enforced in code, not by hand:
-`cyberkb` rejects empty submissions and the policy check blocks
-redistribution-forbidden licences.
+Every decision below is deliberate and recoverable from version control; none
+is a silent drop. Causes are enforced in code, not by hand: `cyberkb` rejects
+empty submissions, and the policy check blocks redistribution of all-rights-
+reserved works unless they are reference-only stubs under a strict word cap.
 
-## Excluded: redistribution not permitted (5)
+## Follow-up decision: all-rights-reserved works kept by reference (5)
 
-These are third-party works published under an explicit "all rights reserved"
-notice. An MIT-licensed public repository may not redistribute them in full.
-The remediation is to replace each with an original summary plus a link to the
-authoritative source.
+Owner decision (2026-10-05): rather than drop these outright, keep each as a
+**reference-only entry** (`reference_only: true`) — a title, an author credit, a
+source link and a short original summary, with the full text **not** hosted. The
+policy check caps a reference stub at 400 words so the work itself cannot be
+smuggled in. Permission to host the full text is being sought from each author.
 
-| Source | Cause |
-| --- | --- |
-| `01_literature/malware_analysis/ms365_security_checklist.md` | redistribution not permitted (all rights reserved) |
-| `01_literature/red_team/activate_directory_security_guide.md` | redistribution not permitted (all rights reserved) |
-| `01_literature/red_team/penetration_testing_report.md` | redistribution not permitted (all rights reserved) |
-| `01_literature/threat_intelligence/understanding_data_0asecurity_risk.md` | redistribution not permitted (all rights reserved) |
-| `02_papers/threat_intelligence/starting_your_cybersecurity_career_complete_guide.md` | redistribution not permitted (all rights reserved) |
+| Reference entry | Author / publisher | Original legacy source |
+| --- | --- | --- |
+| Microsoft 365 Security Checklist | Paul Schnackenburg (Hornetsecurity) | `01_literature/malware_analysis/ms365_security_checklist.md` |
+| The Complete Active Directory Security Handbook | Picus Security | `01_literature/red_team/activate_directory_security_guide.md` |
+| Penetration Testing Sample Report (MegaCorp One) | Offensive Security (OffSec) | `01_literature/red_team/penetration_testing_report.md` |
+| Understanding Data Security Risk - 2025 Survey Report | Cloud Security Alliance | `01_literature/threat_intelligence/understanding_data_0asecurity_risk.md` |
+| Starting Your Cybersecurity Career - Complete Guide | Joas A. Santos / Red Team Leaders | `02_papers/threat_intelligence/starting_your_cybersecurity_career_complete_guide.md` |
 
 ## Excluded: insufficient content (10)
 

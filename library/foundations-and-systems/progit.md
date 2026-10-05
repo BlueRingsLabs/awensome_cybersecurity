@@ -5,6 +5,7 @@ category: foundations-and-systems
 format: book
 language: en
 tags: [databases, git, linux, networking, privilege-escalation, windows]
+authors: [unknown]
 license: CC-BY-NC-SA-3.0
 added: 2026-10-04
 classification:

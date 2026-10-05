@@ -5,6 +5,7 @@ category: incident-response-and-forensics
 format: playbook
 language: en
 tags: [firewall, incident-response, malware, networking, phishing, ransomware]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

@@ -5,6 +5,7 @@ category: incident-response-and-forensics
 format: guide
 language: en
 tags: [forensics, linux, networking, nmap]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

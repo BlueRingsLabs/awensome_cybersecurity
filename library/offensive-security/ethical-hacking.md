@@ -5,6 +5,7 @@ category: offensive-security
 format: book
 language: en
 tags: [anonymity, firewall, malware, networking, privacy, social-engineering]
+authors: [unknown]
 license: CC-BY-NC-SA-4.0
 added: 2026-10-04
 classification:

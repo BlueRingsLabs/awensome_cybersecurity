@@ -5,6 +5,7 @@ category: cloud-and-container-security
 format: article
 language: en
 tags: [active-directory, bash, containers, databases, linux, privilege-escalation]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

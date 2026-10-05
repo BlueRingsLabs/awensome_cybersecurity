@@ -5,6 +5,7 @@ category: foundations-and-systems
 format: reference
 language: en
 tags: [bash, linux, persistence, privilege-escalation, tls, windows]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

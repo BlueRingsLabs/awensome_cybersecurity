@@ -5,6 +5,7 @@ category: identity-and-access
 format: guide
 language: en
 tags: [active-directory, credential-access, linux, password-security, python, windows]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

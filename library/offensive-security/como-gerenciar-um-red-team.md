@@ -5,6 +5,7 @@ category: offensive-security
 format: guide
 language: pt
 tags: [mitre-attack, red-team]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

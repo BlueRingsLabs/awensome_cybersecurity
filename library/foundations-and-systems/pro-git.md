@@ -5,6 +5,7 @@ category: foundations-and-systems
 format: book
 language: en
 tags: [databases, git, linux, networking, privacy, web-security]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

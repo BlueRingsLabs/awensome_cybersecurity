@@ -5,6 +5,7 @@ category: application-security
 format: book
 language: en
 tags: [compliance, devsecops, networking, owasp, privilege-escalation, risk-management]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

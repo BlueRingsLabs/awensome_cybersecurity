@@ -5,6 +5,7 @@ category: offensive-security
 format: guide
 language: en
 tags: [evasion, malware, networking, python, red-team, windows]
+authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:

@@ -5,6 +5,7 @@ category: offensive-security
 format: guide
 language: en
 tags: [burp-suite, dns, fuzzing, linux, tls, web-security]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

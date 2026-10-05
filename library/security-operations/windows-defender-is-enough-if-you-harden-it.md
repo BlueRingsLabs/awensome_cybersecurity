@@ -5,6 +5,7 @@ category: security-operations
 format: article
 language: en
 tags: [cloud, hardening, malware, powershell, tls, windows]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

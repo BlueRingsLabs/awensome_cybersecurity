@@ -5,6 +5,7 @@ category: threat-intelligence-and-osint
 format: course-notes
 language: en
 tags: [git, mitre-attack, red-team, threat-hunting, threat-intelligence, tls]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

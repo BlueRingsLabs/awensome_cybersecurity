@@ -5,6 +5,7 @@ category: governance-risk-and-compliance
 format: guide
 language: en
 tags: [devsecops, red-team, threat-hunting]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

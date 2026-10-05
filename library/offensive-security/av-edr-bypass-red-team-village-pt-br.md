@@ -5,6 +5,7 @@ category: offensive-security
 format: guide
 language: pt
 tags: [evasion, git, mitre-attack, red-team, tls, windows]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

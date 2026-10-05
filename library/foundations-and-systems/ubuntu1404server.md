@@ -5,6 +5,7 @@ category: foundations-and-systems
 format: book
 language: en
 tags: [databases, linux, privilege-escalation, threat-intelligence, tls, web-security]
+authors: [unknown]
 license: CC-BY-SA-3.0
 added: 2026-10-04
 classification:

@@ -5,6 +5,7 @@ category: network-and-wireless-security
 format: guide
 language: pt
 tags: [compliance, dns, homelab, networking, tls, web-security]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

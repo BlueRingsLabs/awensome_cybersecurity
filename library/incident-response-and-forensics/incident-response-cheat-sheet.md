@@ -5,6 +5,7 @@ category: incident-response-and-forensics
 format: cheatsheet
 language: en
 tags: [cheatsheet, incident-response, linux, networking, powershell, windows]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

@@ -5,6 +5,7 @@ category: incident-response-and-forensics
 format: guide
 language: en
 tags: [governance, incident-response, log-analysis, networking, privacy, threat-intelligence]
+authors: [unknown]
 license: CC-BY-4.0
 added: 2026-10-04
 classification:

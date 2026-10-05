@@ -5,6 +5,7 @@ category: offensive-security
 format: guide
 language: en
 tags: [certification, linux, networking, persistence, python, windows]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

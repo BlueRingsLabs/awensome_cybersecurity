@@ -5,6 +5,7 @@ category: network-and-wireless-security
 format: guide
 language: en
 tags: [git, linux, networking, password-security, privacy, wireless]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

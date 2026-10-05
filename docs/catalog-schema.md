@@ -35,8 +35,9 @@ repository.
 | `path` | string | Repo-relative path under `library/`. |
 | `tags` | string[] | Controlled-vocabulary tags, unique. |
 | `summary` | string | One neutral sentence (may be empty for heuristic-only entries). |
-| `authors` | string[] | May be empty. |
+| `authors` | string[] | Always non-empty; `["unknown"]` when none is declared. |
 | `source_url` | string (uri) | Present only when known. |
+| `reference_only` | bool | Present and `true` when the entry is a pointer to a work not hosted here (see below). |
 | `license` | string | SPDX id, `LicenseRef-*`, or `NOASSERTION`. |
 | `redistribution` | string | `permitted` \| `noncommercial` \| `restricted` \| `unknown`. |
 | `added` | string (date) | When the resource entered the library. |
@@ -44,6 +45,16 @@ repository.
 | `size_bytes` | integer | On-disk size. |
 | `sha256` | string | SHA-256 of the sanitised body (change detection). |
 | `classification` | object | `method` (`llm`/`heuristic`/`manual`), `confidence` (0–1), optional `model`. |
+
+## Reference-only entries
+
+An entry with `reference_only: true` is a maintainer-written pointer to a work
+this repository does **not** host — typically an all-rights-reserved third-party
+work. It carries the title, an author credit, a `source_url` and a short
+summary, and nothing of the original text (the policy check caps it at 400
+words). `license` records the upstream work's licence and `redistribution` is
+`restricted`. Consumers should link out via `source_url` rather than expect a
+local body.
 
 ## Stability contract
 

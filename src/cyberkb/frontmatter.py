@@ -68,7 +68,9 @@ CONTRIBUTOR_KEYS = frozenset(
         "license",
     },
 )
-_LIBRARY_KEYS = CONTRIBUTOR_KEYS | {"id", "added", "classification"}
+# ``reference_only`` is a maintainer decision (it governs redistribution policy),
+# so it is a library key but not a contributor-settable hint.
+_LIBRARY_KEYS = CONTRIBUTOR_KEYS | {"id", "added", "classification", "reference_only"}
 _REQUIRED_KEYS = frozenset(
     {"id", "title", "category", "format", "language", "license", "added", "classification"}
 )
@@ -99,6 +101,7 @@ class FrontMatter:
     summary: str = ""
     authors: tuple[str, ...] = ()
     source_url: str | None = None
+    reference_only: bool = False
 
     def to_dict(self) -> dict[str, Any]:
         """Serialisable mapping in canonical key order; empty optionals omitted."""
@@ -117,6 +120,8 @@ class FrontMatter:
             data["authors"] = list(self.authors)
         if self.source_url:
             data["source_url"] = self.source_url
+        if self.reference_only:
+            data["reference_only"] = True
         data["license"] = self.license
         data["added"] = self.added
         cls: dict[str, Any] = {"method": self.classification.method}
@@ -343,10 +348,18 @@ def parse_front_matter(raw: Mapping[str, Any], taxonomy: Taxonomy) -> FrontMatte
         ),
         authors=_authors(raw.get("authors", []), problems),
         source_url=_source_url(raw.get("source_url"), problems),
+        reference_only=_reference_only(raw.get("reference_only", False), problems),
     )
     if problems:
         raise FrontMatterError("; ".join(problems))
     return fm
+
+
+def _reference_only(value: object, problems: list[str]) -> bool:
+    if not isinstance(value, bool):
+        problems.append("'reference_only' must be a boolean")
+        return False
+    return value
 
 
 def validate_contributor_hints(

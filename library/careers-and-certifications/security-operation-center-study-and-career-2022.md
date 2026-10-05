@@ -5,6 +5,7 @@ category: careers-and-certifications
 format: course-notes
 language: en
 tags: [career, cloud, detection-engineering, incident-response, mitre-attack, soc]
+authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:

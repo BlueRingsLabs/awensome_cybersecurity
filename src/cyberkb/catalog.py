@@ -67,7 +67,9 @@ def _entry(resource: Resource) -> dict[str, Any]:
         "path": resource.path,
         "tags": list(front_matter.tags),
         "summary": front_matter.summary,
-        "authors": list(front_matter.authors),
+        # The catalog always carries an explicit author list: "unknown" makes
+        # "searched, none declared" unambiguous versus an empty field.
+        "authors": list(front_matter.authors) or ["unknown"],
         "license": front_matter.license,
         "redistribution": redistribution_class(front_matter.license).value,
         "added": front_matter.added.isoformat(),
@@ -81,6 +83,8 @@ def _entry(resource: Resource) -> dict[str, Any]:
     }
     if front_matter.source_url:
         entry["source_url"] = front_matter.source_url
+    if front_matter.reference_only:
+        entry["reference_only"] = True
     if front_matter.classification.model:
         entry["classification"]["model"] = front_matter.classification.model
     return entry

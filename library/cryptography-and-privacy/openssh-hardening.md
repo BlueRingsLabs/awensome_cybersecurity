@@ -5,6 +5,7 @@ category: cryptography-and-privacy
 format: article
 language: en
 tags: [bash, compliance, cryptography, hardening, password-security, privilege-escalation]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

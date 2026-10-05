@@ -5,6 +5,7 @@ category: threat-intelligence-and-osint
 format: guide
 language: en
 tags: [mitre-attack, osint, tls]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

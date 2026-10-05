@@ -5,6 +5,7 @@ category: offensive-security
 format: guide
 language: en
 tags: [active-directory, c2, git, networking, red-team, tls]
+authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:

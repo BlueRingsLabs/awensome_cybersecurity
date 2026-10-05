@@ -5,6 +5,7 @@ category: offensive-security
 format: article
 language: en
 tags: [bug-bounty, compliance, git, reporting, tls]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

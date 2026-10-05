@@ -5,6 +5,7 @@ category: security-operations
 format: reference
 language: en
 tags: [forensics, git, malware, red-team, tls, windows]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

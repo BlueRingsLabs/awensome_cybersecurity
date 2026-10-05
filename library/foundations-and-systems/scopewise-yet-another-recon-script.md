@@ -5,6 +5,7 @@ category: foundations-and-systems
 format: article
 language: en
 tags: [threat-hunting]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

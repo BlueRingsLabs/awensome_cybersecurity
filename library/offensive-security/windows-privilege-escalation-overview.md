@@ -5,6 +5,7 @@ category: offensive-security
 format: guide
 language: pt
 tags: [git, metasploit, password-security, privilege-escalation, tls, windows]
+authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:

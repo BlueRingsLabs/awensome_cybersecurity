@@ -15,11 +15,25 @@ result in front matter as an SPDX-style id. The catalog derives a
 | --- | --- | --- |
 | `permitted` | openly redistributable | ship it |
 | `noncommercial` | CC-BY-NC* — non-commercial reuse only | ship it; listed in `NOTICE` |
-| `restricted` | all rights reserved | **do not ship**; summary + link instead |
+| `restricted` | all rights reserved | **do not host the work**; keep only a reference stub |
 | `unknown` | `NOASSERTION`, undetermined | ship as a curated note; confirm before commercial reuse |
 
-`cyberkb check` fails the build on any `restricted` resource and warns on every
-`NOASSERTION`.
+`cyberkb check` fails the build on any `restricted` resource that is not a
+reference stub, and warns on every `NOASSERTION`.
+
+## Keeping a restricted work by reference
+
+When a work is all-rights-reserved but worth pointing to, keep a **reference
+stub** instead of its text:
+
+1. Create `library/<category>/<slug>.md` with front matter
+   `reference_only: true`, `format: reference`, the real `license`
+   (`LicenseRef-All-Rights-Reserved`), an `authors` credit and a `source_url`.
+2. The body is your own short notice (title, what it covers, a link) — **never**
+   the original text. The policy check rejects a reference stub over 400 words
+   or without a `source_url`, so the work itself cannot slip in.
+3. `uv run cyberkb build && uv run cyberkb check`; the entry becomes a warning
+   ("included by reference only"), not an error. Record it in `NOTICE`.
 
 ## Confirming an undetermined licence
 

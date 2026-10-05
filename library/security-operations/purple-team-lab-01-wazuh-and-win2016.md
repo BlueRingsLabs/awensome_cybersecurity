@@ -5,6 +5,7 @@ category: security-operations
 format: guide
 language: en
 tags: [active-directory, credential-access, log-analysis, powershell, tls, windows]
+authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:

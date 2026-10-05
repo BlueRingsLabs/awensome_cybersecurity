@@ -5,6 +5,7 @@ category: foundations-and-systems
 format: guide
 language: en
 tags: [cryptography, detection-engineering, linux, password-security, privilege-escalation, tls]
+authors: [Dr. Shlomi Boutnaru]
 license: NOASSERTION
 added: 2026-10-04
 classification:

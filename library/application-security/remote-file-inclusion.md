@@ -5,6 +5,7 @@ category: application-security
 format: guide
 language: en
 tags: [linux, metasploit, tls, web-security, windows]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

@@ -5,6 +5,7 @@ category: offensive-security
 format: reference
 language: pt
 tags: [ctf, owasp, red-team, soc, tls, web-security]
+authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:

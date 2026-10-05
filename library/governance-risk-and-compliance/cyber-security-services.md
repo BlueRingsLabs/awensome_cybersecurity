@@ -5,6 +5,7 @@ category: governance-risk-and-compliance
 format: guide
 language: pt
 tags: [bug-bounty, compliance, mitre-attack, nist, phishing, soc]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

@@ -5,6 +5,7 @@ category: security-operations
 format: reference
 language: en
 tags: [detection-engineering, git, malware, threat-intelligence, tls, windows]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

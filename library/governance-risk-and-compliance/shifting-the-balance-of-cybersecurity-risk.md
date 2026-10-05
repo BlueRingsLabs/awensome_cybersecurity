@@ -5,6 +5,7 @@ category: governance-risk-and-compliance
 format: guide
 language: en
 tags: [detection-engineering, hardening, log-analysis, networking, nist, password-security]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

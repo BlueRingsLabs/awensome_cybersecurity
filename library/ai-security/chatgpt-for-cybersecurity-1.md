@@ -5,6 +5,7 @@ category: ai-security
 format: guide
 language: en
 tags: [ai, c2, red-team]
+authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:

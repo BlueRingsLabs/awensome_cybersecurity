@@ -5,6 +5,7 @@ category: threat-intelligence-and-osint
 format: article
 language: en
 tags: [dns, osint, password-security, tls, vulnerability-management, web-security]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

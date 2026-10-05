@@ -5,6 +5,7 @@ category: network-and-wireless-security
 format: guide
 language: en
 tags: [ics-ot, networking, nmap, osint, python, windows]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

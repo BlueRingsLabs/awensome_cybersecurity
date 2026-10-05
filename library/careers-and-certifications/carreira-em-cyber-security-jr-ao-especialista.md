@@ -5,6 +5,7 @@ category: careers-and-certifications
 format: guide
 language: pt
 tags: [aws, career, cloud, compliance, devsecops, firewall]
+authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:

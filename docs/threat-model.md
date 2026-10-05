@@ -28,7 +28,7 @@ adversary is, and which control answers each threat.
 | Path traversal / symlink to read or overwrite files outside `library/` | `fsutil.read_text` opens with `O_NOFOLLOW`, rejects symlinks and non-regular files, and `ensure_within` refuses any path that escapes the repo root. |
 | Oversized or binary "Markdown" exhausting the runner | Size cap (8 MiB) and NUL-byte rejection in `fsutil.read_text`; empty submissions rejected by `ingest`. |
 | "Trojan Source" bidi/control-character deception (CVE-2021-42574) | `textutil.strip_unsafe_chars` removes C0/C1 controls, bidi overrides and BOMs during sanitisation. |
-| Stored XSS via raw HTML/JS in a document rendered by a catalog viewer | GitHub sanitises rendered Markdown HTML; `markdown.active_content` additionally flags unfenced executable content in `cyberkb check` (advisory). Rendered README/category tables escape every interpolated value. |
+| Stored XSS via raw HTML/JS in a document rendered by a catalog viewer | GitHub sanitises rendered Markdown HTML; `markdown.active_content` additionally flags unfenced executable content in `cyberkb check`. **Criterion (deliberate):** this is a WARNING, never an error, and **never a reason to exclude a resource.** Security literature (OWASP, WSTG, XSS cheat sheets) legitimately quotes payloads; the corpus must stay complete. The warning simply nudges a maintainer to wrap a payload in a code fence, where renderers show it inertly. Rendered README/category tables additionally escape every interpolated value (title, tag, summary). A downstream viewer that renders raw Markdown is responsible for its own HTML sanitisation. |
 | YAML "billion laughs" / object-construction via front matter or taxonomy | `yamlsafe.safe_load` uses `SafeLoader` (no object construction) **and** rejects anchors/aliases; front-matter size is capped. |
 | Markdown-injection that breaks the generated tables | `render` passes every title/tag/summary through plain-text reduction and inline-Markdown escaping. |
 
@@ -37,7 +37,7 @@ adversary is, and which control answers each threat.
 | Threat | Control |
 | --- | --- |
 | LLM returns an invalid or hallucinated category/tag | Response schema is built from the live taxonomy (invalid labels impossible); every field is re-validated, and invalid/low-confidence results fall back to the heuristic. |
-| Redistributing content whose licence forbids it | `licensing.detect_license` + `cyberkb check` block `restricted` licences; `noncommercial` terms are recorded and surfaced; unknowns are flagged. |
+| Redistributing content whose licence forbids it | `licensing.detect_license` + `cyberkb check` block `restricted` licences unless kept as a capped reference stub; `noncommercial` terms are recorded and surfaced; unknowns are flagged. |
 | Prompt injection in a document steering the classifier | The model only returns a constrained label set; a successful injection cannot produce an out-of-taxonomy result or any side effect, because classification output is pure data that is re-validated. |
 
 ### CI / supply chain

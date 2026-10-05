@@ -5,6 +5,7 @@ category: careers-and-certifications
 format: article
 language: en
 tags: [career, ctf, education, soc, tls]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

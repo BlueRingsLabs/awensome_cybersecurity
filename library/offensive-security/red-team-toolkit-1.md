@@ -5,6 +5,7 @@ category: offensive-security
 format: reference
 language: und
 tags: [osint, red-team]
+authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:

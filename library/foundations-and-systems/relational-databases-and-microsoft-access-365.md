@@ -5,6 +5,7 @@ category: foundations-and-systems
 format: book
 language: en
 tags: [databases, education]
+authors: [unknown]
 license: CC-BY-NC-SA-4.0
 added: 2026-10-04
 classification:

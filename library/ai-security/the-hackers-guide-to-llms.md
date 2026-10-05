@@ -5,6 +5,7 @@ category: ai-security
 format: guide
 language: en
 tags: [ai, bug-bounty, threat-hunting, tls]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

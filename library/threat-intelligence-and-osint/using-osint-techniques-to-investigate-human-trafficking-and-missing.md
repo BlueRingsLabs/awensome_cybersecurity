@@ -5,6 +5,7 @@ category: threat-intelligence-and-osint
 format: guide
 language: en
 tags: [git, osint, password-security, privacy, social-engineering, tls]
+authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:

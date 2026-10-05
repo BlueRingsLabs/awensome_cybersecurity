@@ -5,6 +5,7 @@ category: security-operations
 format: guide
 language: en
 tags: [git, linux, networking]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

@@ -5,6 +5,7 @@ category: foundations-and-systems
 format: guide
 language: en
 tags: [cloud, education, git, linux, mobile, windows]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

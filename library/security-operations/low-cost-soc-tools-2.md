@@ -5,6 +5,7 @@ category: security-operations
 format: reference
 language: und
 tags: [git, soc, tls]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

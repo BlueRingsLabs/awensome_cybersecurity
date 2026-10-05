@@ -5,6 +5,7 @@ category: offensive-security
 format: reference
 language: en
 tags: [azure, c2, cloud, git, red-team, tls]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

@@ -5,6 +5,7 @@ category: iot-ot-and-hardware-security
 format: book
 language: en
 tags: [cloud, ics-ot, iot, networking, privacy, wireless]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

@@ -5,6 +5,7 @@ category: cryptography-and-privacy
 format: article
 language: en
 tags: [git, hardening, linux, privacy, tls, windows]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

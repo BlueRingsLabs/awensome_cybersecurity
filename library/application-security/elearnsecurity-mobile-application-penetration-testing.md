@@ -5,6 +5,7 @@ category: application-security
 format: book
 language: en
 tags: [android, databases, java, linux, mobile, wireless]
+authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:

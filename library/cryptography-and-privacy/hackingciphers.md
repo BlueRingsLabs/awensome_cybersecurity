@@ -5,6 +5,7 @@ category: cryptography-and-privacy
 format: book
 language: en
 tags: [cryptography, python, web-security]
+authors: [Al Sweigart]
 license: CC-BY-NC-SA-3.0
 added: 2026-10-04
 classification:

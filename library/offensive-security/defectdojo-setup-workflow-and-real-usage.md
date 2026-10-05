@@ -5,6 +5,7 @@ category: offensive-security
 format: article
 language: en
 tags: [bash, containers, fuzzing, nmap, tls, vulnerability-management]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

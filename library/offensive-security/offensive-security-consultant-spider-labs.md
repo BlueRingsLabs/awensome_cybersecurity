@@ -5,6 +5,7 @@ category: offensive-security
 format: reference
 language: pt
 tags: [cloud, git, ics-ot, mobile, networking, tls]
+authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:

@@ -5,6 +5,7 @@ category: security-operations
 format: reference
 language: und
 tags: [firewall, forensics, mitre-attack, soc]
+authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:

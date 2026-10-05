@@ -5,6 +5,7 @@ category: careers-and-certifications
 format: guide
 language: en
 tags: [career, certification, cloud, tls]
+authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:

@@ -5,6 +5,7 @@ category: iot-ot-and-hardware-security
 format: guide
 language: en
 tags: [detection-engineering, ics-ot, iot, mobile, networking, wireless]
+authors: [unknown]
 license: CC-BY-NC-SA-4.0
 added: 2026-10-04
 classification:

@@ -5,6 +5,7 @@ category: threat-intelligence-and-osint
 format: guide
 language: en
 tags: [anonymity, dark-web, education, git, osint, tls]
+authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:

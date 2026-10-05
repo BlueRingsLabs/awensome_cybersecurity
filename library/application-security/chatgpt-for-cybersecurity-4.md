@@ -5,6 +5,7 @@ category: application-security
 format: guide
 language: en
 tags: [ai, android, api-security, mobile, tls, web-security]
+authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:

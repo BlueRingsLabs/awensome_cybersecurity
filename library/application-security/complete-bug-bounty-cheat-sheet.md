@@ -5,6 +5,7 @@ category: application-security
 format: cheatsheet
 language: pt
 tags: [bug-bounty, cheatsheet, git, tls, web-security]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

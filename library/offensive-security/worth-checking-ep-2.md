@@ -5,6 +5,7 @@ category: offensive-security
 format: article
 language: en
 tags: [cheatsheet, incident-response, nmap, red-team, tls, web-security]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

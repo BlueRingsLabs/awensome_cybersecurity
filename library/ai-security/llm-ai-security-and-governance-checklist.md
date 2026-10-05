@@ -5,6 +5,7 @@ category: ai-security
 format: checklist
 language: en
 tags: [ai, governance, mitre-attack, owasp, privacy, red-team]
+authors: [unknown]
 license: CC-BY-SA-4.0
 added: 2026-10-04
 classification:

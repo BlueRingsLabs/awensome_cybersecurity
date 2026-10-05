@@ -5,6 +5,7 @@ category: offensive-security
 format: course-notes
 language: und
 tags: [burp-suite, python]
+authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:

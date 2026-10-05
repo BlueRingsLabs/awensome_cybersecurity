@@ -5,6 +5,7 @@ category: offensive-security
 format: guide
 language: en
 tags: [mitre-attack, networking, red-team, soc, threat-intelligence, tls]
+authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:

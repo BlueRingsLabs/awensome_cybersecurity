@@ -5,6 +5,7 @@ category: foundations-and-systems
 format: guide
 language: en
 tags: [java, linux, macos, python, tls, windows]
+authors: [unknown]
 license: CC-BY-SA-4.0
 added: 2026-10-04
 classification:

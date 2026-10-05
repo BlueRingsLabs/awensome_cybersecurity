@@ -5,6 +5,7 @@ category: cryptography-and-privacy
 format: guide
 language: pt
 tags: [anonymity, dns, git, networking, privacy, tls]
+authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:

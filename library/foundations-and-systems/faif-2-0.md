@@ -5,6 +5,7 @@ category: foundations-and-systems
 format: book
 language: en
 tags: [credential-access, linux, networking, windows]
+authors: [unknown]
 license: GFDL-1.3-or-later
 added: 2026-10-04
 classification:

@@ -5,6 +5,7 @@ category: governance-risk-and-compliance
 format: book
 language: en
 tags: [cloud, compliance, governance, networking, nist, risk-management]
+authors: [unknown]
 license: CC-BY-NC-SA-4.0
 added: 2026-10-04
 classification:

@@ -8,6 +8,7 @@ from pathlib import Path
 
 import pytest
 
+from cyberkb.build import build
 from cyberkb.frontmatter import Classification, FrontMatter, render_document
 from cyberkb.paths import RepoPaths
 from cyberkb.taxonomy import Taxonomy, load_taxonomy
@@ -78,8 +79,6 @@ def write_resource(
 @pytest.fixture
 def built_repo(repo: RepoPaths) -> RepoPaths:
     """A repository with one valid resource and freshly generated artefacts."""
-    from cyberkb.build import build
-
     write_resource(repo)
     result = build(repo, generated_at=FIXED_NOW)
     assert result.ok

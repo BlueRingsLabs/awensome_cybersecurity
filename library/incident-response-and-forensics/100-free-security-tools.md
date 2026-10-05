@@ -5,6 +5,7 @@ category: incident-response-and-forensics
 format: reference
 language: en
 tags: [forensics, git, osint, tls, web-security, windows]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

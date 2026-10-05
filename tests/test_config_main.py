@@ -10,6 +10,7 @@ from cyberkb.config import DEFAULT_MODELS, IngestConfig
 
 
 def test_config_defaults() -> None:
+    """With an empty environment, config falls back to safe defaults and no LLM."""
     config = IngestConfig.from_env({})
     assert config.api_key is None
     assert config.models == DEFAULT_MODELS
@@ -18,6 +19,7 @@ def test_config_defaults() -> None:
 
 
 def test_config_with_key_and_models() -> None:
+    """A key enables the LLM; a comma list of models is parsed and trimmed."""
     config = IngestConfig.from_env(
         {"GEMINI_API_KEY": "k", "CYBERKB_MODELS": "a, b , c", "CYBERKB_BATCH_SIZE": "5"},
     )
@@ -27,20 +29,27 @@ def test_config_with_key_and_models() -> None:
 
 
 def test_config_invalid_int_falls_back() -> None:
+    """A non-numeric integer setting falls back to its default."""
     config = IngestConfig.from_env({"CYBERKB_BATCH_SIZE": "not-a-number"})
     assert config.batch_size == 10
 
 
 def test_config_clamps_out_of_range() -> None:
+    """Out-of-range integer settings are clamped to their bounds."""
     assert IngestConfig.from_env({"CYBERKB_BATCH_SIZE": "9999"}).batch_size == 50
     assert IngestConfig.from_env({"CYBERKB_MAX_RETRIES": "0"}).max_retries == 1
 
 
 def test_config_blank_models_uses_default() -> None:
+    """A models setting that is only separators falls back to the default chain."""
     assert IngestConfig.from_env({"CYBERKB_MODELS": "  ,  "}).models == DEFAULT_MODELS
 
 
-def test_module_entry_point_runs(monkeypatch, capsys) -> None:
+def test_module_entry_point_runs(
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    """`python -m cyberkb --version` runs the CLI and exits cleanly."""
     monkeypatch.setattr("sys.argv", ["cyberkb", "--version"])
     with pytest.raises(SystemExit) as exc:
         runpy.run_module("cyberkb", run_name="__main__")

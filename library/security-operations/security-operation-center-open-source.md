@@ -5,6 +5,7 @@ category: security-operations
 format: guide
 language: pt
 tags: [detection-engineering, firewall, linux, malware, soc, web-security]
+authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:

@@ -5,6 +5,7 @@ category: iot-ot-and-hardware-security
 format: guide
 language: en
 tags: [git, hardware, linux, tls]
+authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:

@@ -5,6 +5,7 @@ category: offensive-security
 format: course-notes
 language: en
 tags: [certification, linux, networking, tls, web-security]
+authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:

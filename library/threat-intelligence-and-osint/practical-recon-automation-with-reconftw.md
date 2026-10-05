@@ -5,6 +5,7 @@ category: threat-intelligence-and-osint
 format: article
 language: en
 tags: [bash, containers, cryptography, linux, privilege-escalation, threat-intelligence]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

@@ -5,6 +5,7 @@ category: ai-security
 format: guide
 language: en
 tags: [ai, nist, owasp, red-team, reporting, risk-management]
+authors: [unknown]
 license: CC-BY-SA-4.0
 added: 2026-10-04
 classification:

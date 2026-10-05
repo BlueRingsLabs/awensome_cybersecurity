@@ -5,6 +5,7 @@ category: threat-intelligence-and-osint
 format: guide
 language: pt
 tags: [certification, git, mitre-attack, red-team, soc, tls]
+authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:

@@ -5,6 +5,7 @@ category: ai-security
 format: guide
 language: en
 tags: [ai, career, compliance, detection-engineering, privacy, risk-management]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

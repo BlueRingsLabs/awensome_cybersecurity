@@ -5,6 +5,7 @@ category: cryptography-and-privacy
 format: article
 language: en
 tags: [anonymity, git, homelab, mobile, privacy, tls]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

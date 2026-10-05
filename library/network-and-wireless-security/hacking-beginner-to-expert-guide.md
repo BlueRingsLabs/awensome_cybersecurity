@@ -5,6 +5,7 @@ category: network-and-wireless-security
 format: guide
 language: en
 tags: [credential-access, databases, networking, password-security, windows, wireless]
+authors: [James Patterson]
 license: NOASSERTION
 added: 2026-10-04
 classification:

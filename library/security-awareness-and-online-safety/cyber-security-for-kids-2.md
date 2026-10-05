@@ -5,6 +5,7 @@ category: security-awareness-and-online-safety
 format: guide
 language: en
 tags: [education, password-security, tls, wireless]
+authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:

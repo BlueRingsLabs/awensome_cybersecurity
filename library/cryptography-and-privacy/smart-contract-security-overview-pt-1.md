@@ -5,6 +5,7 @@ category: cryptography-and-privacy
 format: guide
 language: en
 tags: [blockchain, cryptography, detection-engineering, git, networking, tls]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

@@ -5,6 +5,7 @@ category: security-operations
 format: book
 language: en
 tags: [databases, dns, firewall, incident-response, malware, networking]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

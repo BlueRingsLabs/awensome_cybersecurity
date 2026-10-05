@@ -5,6 +5,7 @@ category: threat-intelligence-and-osint
 format: guide
 language: en
 tags: [databases, networking, osint, python, tls, web-security]
+authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:

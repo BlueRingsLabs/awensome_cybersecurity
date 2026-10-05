@@ -5,6 +5,7 @@ category: threat-intelligence-and-osint
 format: guide
 language: pt
 tags: [mitre-attack, red-team, web-security]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

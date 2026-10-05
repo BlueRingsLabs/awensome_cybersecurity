@@ -5,6 +5,7 @@ category: network-and-wireless-security
 format: course-notes
 language: en
 tags: [credential-access, linux, networking, password-security, privilege-escalation, wireless]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

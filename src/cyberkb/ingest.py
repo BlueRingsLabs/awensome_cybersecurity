@@ -25,6 +25,7 @@ from datetime import date
 from enum import StrEnum
 from typing import TYPE_CHECKING
 
+from cyberkb.authors import extract_authors
 from cyberkb.classify.base import Document
 from cyberkb.classify.heuristic import classify as heuristic_classify
 from cyberkb.errors import ContentRejectedError, FrontMatterError, KBError, UnsafePathError
@@ -206,7 +207,7 @@ def _file_one(
     title = str(hints.get("title", result.title))
     tags = tuple(hints["tags"]) if "tags" in hints else result.tags
     summary = str(hints.get("summary", result.summary))
-    authors = tuple(hints.get("authors", ()))
+    authors = tuple(hints["authors"]) if "authors" in hints else extract_authors(body)
     source_url = hints.get("source_url") or None
     license_id = str(hints["license"]) if "license" in hints else detect_license(body).license
     confidence = 1.0 if "category" in hints else result.confidence

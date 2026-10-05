@@ -5,6 +5,7 @@ category: general-technology
 format: book
 language: en
 tags: [governance, tls]
+authors: [unknown]
 license: CC-BY-NC-SA-4.0
 added: 2026-10-04
 classification:

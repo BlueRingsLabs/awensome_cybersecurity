@@ -42,6 +42,8 @@ if TYPE_CHECKING:
 __all__ = ["CheckReport", "Finding", "Severity", "run_checks"]
 
 _MAX_DOC_BYTES = 8 * 1024 * 1024
+#: Hard cap on a reference stub's body, so restricted content cannot be smuggled in.
+REFERENCE_STUB_MAX_WORDS = 400
 
 
 class Severity(StrEnum):
@@ -105,14 +107,7 @@ def _license_findings(resources: Iterable[Resource]) -> list[Finding]:
     for resource in resources:
         kind = redistribution_class(resource.front_matter.license)
         if kind is Redistribution.RESTRICTED:
-            findings.append(
-                Finding(
-                    Severity.ERROR,
-                    resource.path,
-                    f"licence {resource.front_matter.license!r} forbids redistribution; "
-                    "remove the resource or replace it with a summary and a source link",
-                ),
-            )
+            findings.extend(_restricted_findings(resource))
         elif resource.front_matter.license == "NOASSERTION":
             findings.append(
                 Finding(
@@ -122,6 +117,54 @@ def _license_findings(resources: Iterable[Resource]) -> list[Finding]:
                 ),
             )
     return findings
+
+
+def _restricted_findings(resource: Resource) -> list[Finding]:
+    """A redistribution-restricted work is allowed only as a small reference stub.
+
+    Setting ``reference_only: true`` asserts the file is a maintainer-written
+    pointer (title, author, source, summary) and does NOT contain the work
+    itself. The word cap makes it impossible to smuggle the full text in under
+    the flag, so an auditor sees we never republish restricted content.
+    """
+    fm = resource.front_matter
+    if not fm.reference_only:
+        return [
+            Finding(
+                Severity.ERROR,
+                resource.path,
+                f"licence {fm.license!r} forbids redistribution; replace the work with a "
+                "reference stub (set 'reference_only: true', keep only a summary and a "
+                f"source link, under {REFERENCE_STUB_MAX_WORDS} words)",
+            ),
+        ]
+    if resource.word_count > REFERENCE_STUB_MAX_WORDS:
+        return [
+            Finding(
+                Severity.ERROR,
+                resource.path,
+                f"reference stub for a restricted work must stay under "
+                f"{REFERENCE_STUB_MAX_WORDS} words (has {resource.word_count}); it must not "
+                "contain the work itself",
+            ),
+        ]
+    if not fm.source_url:
+        return [
+            Finding(
+                Severity.ERROR,
+                resource.path,
+                "reference stub for a restricted work must carry a 'source_url' crediting "
+                "the original",
+            ),
+        ]
+    return [
+        Finding(
+            Severity.WARNING,
+            resource.path,
+            f"included by reference only under {fm.license!r} (full work not redistributed); "
+            "credited to its authors pending redistribution permission",
+        ),
+    ]
 
 
 def _active_content_findings(paths: RepoPaths, resources: Iterable[Resource]) -> list[Finding]:

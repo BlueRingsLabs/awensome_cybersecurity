@@ -5,6 +5,7 @@ category: governance-risk-and-compliance
 format: checklist
 language: en
 tags: [zero-trust]
+authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:

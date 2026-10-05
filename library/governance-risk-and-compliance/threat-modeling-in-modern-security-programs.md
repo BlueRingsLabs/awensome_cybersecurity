@@ -5,6 +5,7 @@ category: governance-risk-and-compliance
 format: article
 language: en
 tags: [mitre-attack, nist, owasp, risk-management, threat-intelligence, tls]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

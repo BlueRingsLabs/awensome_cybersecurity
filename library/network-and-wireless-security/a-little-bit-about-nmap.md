@@ -5,6 +5,7 @@ category: network-and-wireless-security
 format: article
 language: en
 tags: [dns, firewall, networking, nmap, privilege-escalation, tls]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

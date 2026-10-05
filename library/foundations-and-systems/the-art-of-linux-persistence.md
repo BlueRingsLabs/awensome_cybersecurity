@@ -5,6 +5,7 @@ category: foundations-and-systems
 format: guide
 language: en
 tags: [bash, git, linux, persistence, privilege-escalation, threat-intelligence]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

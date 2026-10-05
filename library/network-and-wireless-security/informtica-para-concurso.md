@@ -5,6 +5,7 @@ category: network-and-wireless-security
 format: guide
 language: pt
 tags: [databases, dns, linux, networking, windows, wireless]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

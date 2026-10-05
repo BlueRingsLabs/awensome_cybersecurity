@@ -5,6 +5,7 @@ category: security-operations
 format: guide
 language: en
 tags: [active-directory, cloud, compliance, detection-engineering, log-analysis, windows]
+authors: [unknown]
 license: CC-BY-4.0
 added: 2026-10-04
 classification:

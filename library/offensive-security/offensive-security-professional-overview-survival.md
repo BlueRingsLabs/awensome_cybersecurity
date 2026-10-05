@@ -5,6 +5,7 @@ category: offensive-security
 format: guide
 language: pt
 tags: [buffer-overflow, certification, git, linux, metasploit, tls]
+authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:

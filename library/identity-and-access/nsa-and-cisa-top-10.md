@@ -5,6 +5,7 @@ category: identity-and-access
 format: guide
 language: en
 tags: [active-directory, mitre-attack, networking, password-security, vulnerability-management, windows]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

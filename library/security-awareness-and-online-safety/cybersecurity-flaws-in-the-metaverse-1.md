@@ -5,6 +5,7 @@ category: security-awareness-and-online-safety
 format: guide
 language: en
 tags: [blockchain, networking]
+authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:

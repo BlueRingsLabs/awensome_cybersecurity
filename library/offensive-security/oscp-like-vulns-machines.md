@@ -5,6 +5,7 @@ category: offensive-security
 format: guide
 language: pt
 tags: [certification, containers, ctf, linux, tls, windows]
+authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:

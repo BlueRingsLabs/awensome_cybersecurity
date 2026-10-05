@@ -5,6 +5,7 @@ category: foundations-and-systems
 format: guide
 language: und
 tags: [python]
+authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:

@@ -5,6 +5,7 @@ category: network-and-wireless-security
 format: article
 language: en
 tags: [ctf, homelab, networking, physical-security, tls, wireless]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

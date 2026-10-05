@@ -5,6 +5,7 @@ category: foundations-and-systems
 format: guide
 language: en
 tags: [career, education, hardware]
+authors: [unknown]
 license: CC-BY-4.0
 added: 2026-10-04
 classification:

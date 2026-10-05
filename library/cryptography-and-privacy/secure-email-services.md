@@ -5,6 +5,7 @@ category: cryptography-and-privacy
 format: article
 language: en
 tags: [cryptography, password-security, privacy, tls, vpn]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

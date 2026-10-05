@@ -5,6 +5,7 @@ category: threat-intelligence-and-osint
 format: guide
 language: pt
 tags: [firewall, git, osint, python, tls, web-security]
+authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:

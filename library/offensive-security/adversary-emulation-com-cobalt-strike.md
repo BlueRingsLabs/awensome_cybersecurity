@@ -5,6 +5,7 @@ category: offensive-security
 format: guide
 language: pt
 tags: [assembly, c2, exploit-development, red-team, tls, web-security]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

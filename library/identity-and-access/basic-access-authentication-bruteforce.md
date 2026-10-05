@@ -5,6 +5,7 @@ category: identity-and-access
 format: article
 language: en
 tags: [burp-suite, fuzzing, git, password-security, tls]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

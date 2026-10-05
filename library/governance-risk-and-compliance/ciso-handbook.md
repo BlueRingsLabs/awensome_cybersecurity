@@ -5,6 +5,7 @@ category: governance-risk-and-compliance
 format: book
 language: en
 tags: [governance, nist, privacy, reporting, risk-management, tls]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

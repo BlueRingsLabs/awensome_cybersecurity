@@ -5,6 +5,7 @@ category: offensive-security
 format: course-notes
 language: en
 tags: [c2, evasion, git, red-team, tls, windows]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

@@ -5,6 +5,7 @@ category: application-security
 format: course-notes
 language: en
 tags: [burp-suite, certification, evasion, javascript, tls, web-security]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

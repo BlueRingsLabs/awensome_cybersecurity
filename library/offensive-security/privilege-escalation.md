@@ -5,6 +5,7 @@ category: offensive-security
 format: guide
 language: en
 tags: [credential-access, metasploit, password-security, powershell, privilege-escalation, windows]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

@@ -5,6 +5,7 @@ category: application-security
 format: guide
 language: en
 tags: [credential-access, databases, password-security, phishing, privacy, web-security]
+authors: [Harsh Patel]
 license: NOASSERTION
 added: 2026-10-04
 classification:

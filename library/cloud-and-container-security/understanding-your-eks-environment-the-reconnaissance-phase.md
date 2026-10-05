@@ -5,6 +5,7 @@ category: cloud-and-container-security
 format: guide
 language: en
 tags: [aws, cloud, compliance, containers, kubernetes, networking]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

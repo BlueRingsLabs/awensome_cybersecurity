@@ -5,6 +5,7 @@ category: offensive-security
 format: guide
 language: en
 tags: [containers, git, linux, password-security, privilege-escalation, tls]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

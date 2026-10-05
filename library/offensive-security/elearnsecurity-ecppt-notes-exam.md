@@ -5,6 +5,7 @@ category: offensive-security
 format: course-notes
 language: en
 tags: [certification, metasploit, networking, nmap, tls, windows]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

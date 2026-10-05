@@ -5,6 +5,7 @@ category: application-security
 format: guide
 language: en
 tags: [active-directory, databases, networking, password-security, sql-injection, web-security]
+authors: [Chema Alonso, Rodolfo Bordón, Antonio Guzmán, Marta Beltrán]
 license: NOASSERTION
 added: 2026-10-04
 classification:

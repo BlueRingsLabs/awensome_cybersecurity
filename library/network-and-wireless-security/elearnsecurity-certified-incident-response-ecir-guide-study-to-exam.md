@@ -5,6 +5,7 @@ category: network-and-wireless-security
 format: course-notes
 language: en
 tags: [certification, incident-response, log-analysis, networking, tls, wireless]
+authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:

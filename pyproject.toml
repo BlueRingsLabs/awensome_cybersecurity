@@ -74,23 +74,13 @@ ignore = [
 ]
 
 [tool.ruff.lint.per-file-ignores]
+# Only two exceptions, and both are structural to assertion-based testing rather
+# than stylistic relaxations: pytest rewrites bare `assert` (S101), and the
+# expected values in those assertions are literals (PLR2004). Everything else is
+# linted at full strength, same as src/.
 "tests/**" = [
-  "S101",    # assert is the point of a test
-  "PLR2004", # literal values are expected in assertions
-  "D",       # test names document themselves
-  "ANN",     # fixtures/params are typed where it adds value
-  "SLF001",  # tests may reach into private helpers
-  "ARG001",  # unused fixtures are used for side effects
-  "ARG002",
-  "FBT001",
-  "E501",    # long literal strings (payloads, licence text) read better unwrapped
-  "PLC0415", # local imports keep optional/LLM paths lazy in tests
-  "EM101",   # inline exception messages are fine in test helpers
-  "ISC004",  # explicit string concatenation is clearer in multi-line test data
-  "PT018",   # composite asserts are readable in these cases
-  "PLE2502", # intentional bidi/control characters as test fixtures
-  "RUF012",  # test fakes use plain mutable class attributes
-  "S603",    # subprocess calls in tests use fixed, trusted arguments
+  "S101",
+  "PLR2004",
 ]
 
 [tool.ruff.lint.pydocstyle]
@@ -115,16 +105,6 @@ files = ["src", "tests"]
 [[tool.mypy.overrides]]
 module = ["jsonschema.*"]
 ignore_missing_imports = true
-
-# Tests are strict-checked for real type errors, but fixture-injected parameters
-# and self-documenting test functions need not carry full annotations.
-[[tool.mypy.overrides]]
-module = ["tests.*"]
-disallow_untyped_defs = false
-disallow_incomplete_defs = false
-disallow_untyped_decorators = false
-disallow_untyped_calls = false
-disallow_any_generics = false
 
 # ---------------------------------------------------------------------------
 # pytest + coverage: 100 % line *and* branch coverage is a hard gate

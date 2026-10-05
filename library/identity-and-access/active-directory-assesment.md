@@ -5,6 +5,7 @@ category: identity-and-access
 format: guide
 language: en
 tags: [active-directory, compliance, dns, networking, password-security, windows]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

@@ -5,6 +5,7 @@ category: governance-risk-and-compliance
 format: guide
 language: en
 tags: [governance, hardware, reporting, risk-management]
+authors: [unknown]
 license: OGL-UK-3.0
 added: 2026-10-04
 classification:

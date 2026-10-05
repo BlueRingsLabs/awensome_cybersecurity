@@ -5,6 +5,7 @@ category: cloud-and-container-security
 format: guide
 language: en
 tags: [cloud, containers, databases, git, privilege-escalation, tls]
+authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:

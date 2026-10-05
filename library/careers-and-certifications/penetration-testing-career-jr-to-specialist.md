@@ -5,6 +5,7 @@ category: careers-and-certifications
 format: guide
 language: pt
 tags: [career, compliance, mobile, nist, owasp, tls]
+authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:

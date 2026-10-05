@@ -5,6 +5,7 @@ category: foundations-and-systems
 format: book
 language: en
 tags: [javascript, tls, web-security]
+authors: [Thomas Palef]
 license: CC-BY-NC-3.0
 added: 2026-10-04
 classification:

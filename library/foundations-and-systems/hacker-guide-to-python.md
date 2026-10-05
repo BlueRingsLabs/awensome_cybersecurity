@@ -5,6 +5,7 @@ category: foundations-and-systems
 format: book
 language: en
 tags: [career, databases, git, linux, log-analysis, python]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

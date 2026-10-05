@@ -5,6 +5,7 @@ category: offensive-security
 format: guide
 language: pt
 tags: [android, linux, metasploit, mobile, password-security, windows]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

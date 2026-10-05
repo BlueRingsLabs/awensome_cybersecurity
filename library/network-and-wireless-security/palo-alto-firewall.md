@@ -5,6 +5,7 @@ category: network-and-wireless-security
 format: guide
 language: en
 tags: [azure, cloud, firewall, networking, tls, vpn]
+authors: [unknown]
 license: CC-BY-4.0
 added: 2026-10-04
 classification:

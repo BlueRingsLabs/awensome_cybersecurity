@@ -4,6 +4,40 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project aims to
 follow [Semantic Versioning](https://semver.org/).
 
+## [2.1.0] - 2026-10-05
+
+Curation and test-integrity follow-up.
+
+### Added
+
+- **Reference-only entries** (`reference_only` front matter): all-rights-reserved
+  works are kept as capped, source-linked pointers that credit their authors
+  without redistributing the text; the policy check enforces the cap and a
+  mandatory source link.
+- **Author extraction** (`cyberkb.authors`): bylines and LinkedIn slugs populate
+  the `authors` field on ingestion; the catalog now always carries an explicit
+  author list (`["unknown"]` when none is declared).
+- The five previously excluded copyrighted works are reinstated as reference
+  entries (Microsoft 365 Security Checklist, The Complete Active Directory
+  Security Handbook, OffSec sample report, CSA 2025 data-security-risk report,
+  Joas A. Santos career guide).
+- Per-module **test report** (`docs/audit/2026-10-05-test-report.md`).
+
+### Changed
+
+- **Test suite hardened to the same standard as `src/`**: the `tests.*` mypy
+  override and the stylistic ruff ignores were removed; every test is fully
+  type-annotated and documented. Only `S101` and `PLR2004` remain as
+  per-file exceptions (structural to assertion-based testing). 345 cases,
+  100 % line+branch coverage, all genuinely behavioural.
+- The threat model documents the explicit criterion that quoted security
+  payloads are a warning, never a reason to exclude a resource.
+
+### Removed
+
+- `library/uncategorized/sobrevivendo-a-um-ataque-escolar.md` (out of scope:
+  personal physical-safety guidance, not cybersecurity).
+
 ## [2.0.0] - 2026-10-04
 
 A ground-up overhaul of the knowledge base and its tooling.

@@ -5,6 +5,7 @@ category: careers-and-certifications
 format: guide
 language: pt
 tags: [android, career, java, javascript, mobile, tls]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

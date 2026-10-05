@@ -5,6 +5,7 @@ category: network-and-wireless-security
 format: guide
 language: en
 tags: [firewall, networking, tls, vpn, web-security, windows]
+authors: [unknown]
 license: CC-BY-4.0
 added: 2026-10-04
 classification:

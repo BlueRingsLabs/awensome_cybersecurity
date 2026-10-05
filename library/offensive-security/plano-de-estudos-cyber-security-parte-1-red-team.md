@@ -5,6 +5,7 @@ category: offensive-security
 format: guide
 language: pt
 tags: [git, linux, mitre-attack, red-team, soc, tls]
+authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:

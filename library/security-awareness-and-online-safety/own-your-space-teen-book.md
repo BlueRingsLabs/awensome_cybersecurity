@@ -5,6 +5,7 @@ category: security-awareness-and-online-safety
 format: book
 language: en
 tags: [education, firewall, malware, networking, social-engineering, web-security]
+authors: [unknown]
 license: CC-BY-SA-3.0
 added: 2026-10-04
 classification:

@@ -5,6 +5,7 @@ category: foundations-and-systems
 format: book
 language: en
 tags: [bash, java, linux]
+authors: [unknown]
 license: LicenseRef-Public-Domain
 added: 2026-10-04
 classification:

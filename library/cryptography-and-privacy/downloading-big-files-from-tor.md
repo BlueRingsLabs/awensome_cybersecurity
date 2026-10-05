@@ -5,6 +5,7 @@ category: cryptography-and-privacy
 format: article
 language: en
 tags: [anonymity, bash, malware, networking, privilege-escalation, ransomware]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

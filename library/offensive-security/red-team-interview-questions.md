@@ -5,6 +5,7 @@ category: offensive-security
 format: guide
 language: en
 tags: [active-directory, career, malware, networking, red-team, windows]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

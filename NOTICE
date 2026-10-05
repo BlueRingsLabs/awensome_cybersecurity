@@ -22,9 +22,29 @@ Two distinct things live here, under two distinct licences:
      permitted      - openly redistributable (CC-BY, CC-BY-SA, CC0, OGL, GFDL,
                       public domain, permissive)
      noncommercial  - redistributable for non-commercial use only (CC-BY-NC*)
-     restricted     - redistribution not permitted (such works are NOT included;
-                      see docs/audit/2026-10-04-migration.md)
+     restricted     - redistribution not permitted; the full work is NOT hosted
+                      here. Such works appear only as REFERENCE ENTRIES
+                      (reference_only: true) - a title, author credit, source
+                      link and short original summary, under a strict word cap -
+                      so we credit and point to them without redistributing them.
      unknown        - licence undetermined (NOASSERTION); confirm before reuse
+
+================================================================================
+Reference-only works (all rights reserved; full text not redistributed)
+================================================================================
+
+These third-party works are all rights reserved by their authors. We do NOT
+host their text; each is included only as a reference entry that credits the
+author and links to the source, pending redistribution permission. If you are a
+rights holder, contact deeprat.tec@gmail.com to amend or remove an entry.
+
+| Reference entry | Author / publisher | Source |
+| --- | --- | --- |
+| Microsoft 365 Security Checklist | Paul Schnackenburg (Hornetsecurity) | https://www.hornetsecurity.com |
+| The Complete Active Directory Security Handbook | Picus Security | https://www.picussecurity.com |
+| Penetration Testing Sample Report (MegaCorp One) | Offensive Security (OffSec) | https://www.offensive-security.com |
+| Understanding Data Security Risk - 2025 Survey Report | Cloud Security Alliance | https://cloudsecurityalliance.org |
+| Starting Your Cybersecurity Career - Complete Guide | Joas A. Santos / Red Team Leaders | https://www.linkedin.com/in/joas-antonio-dos-santos |
 
 ================================================================================
 Non-commercial content

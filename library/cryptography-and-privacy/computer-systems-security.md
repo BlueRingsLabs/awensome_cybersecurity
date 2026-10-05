@@ -5,6 +5,7 @@ category: cryptography-and-privacy
 format: book
 language: en
 tags: [compliance, cryptography, malware, networking, password-security, threat-intelligence]
+authors: [unknown]
 license: CC-BY-NC-SA-4.0
 added: 2026-10-04
 classification:

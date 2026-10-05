@@ -5,6 +5,7 @@ category: ai-security
 format: guide
 language: en
 tags: [ai, bash, cloud, education, python]
+authors: [Lee Boonstra]
 license: NOASSERTION
 added: 2026-10-04
 classification:

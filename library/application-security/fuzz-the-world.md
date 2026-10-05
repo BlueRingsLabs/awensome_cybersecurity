@@ -5,6 +5,7 @@ category: application-security
 format: article
 language: en
 tags: [bash, fuzzing, git, password-security, tls, web-security]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

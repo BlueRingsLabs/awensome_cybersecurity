@@ -5,6 +5,7 @@ category: offensive-security
 format: guide
 language: pt
 tags: [aws, azure, cloud, lateral-movement, red-team, tls]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

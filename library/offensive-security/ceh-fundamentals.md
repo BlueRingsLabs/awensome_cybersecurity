@@ -5,6 +5,7 @@ category: offensive-security
 format: guide
 language: pt
 tags: [certification, cheatsheet, malware, owasp, tls, wireless]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

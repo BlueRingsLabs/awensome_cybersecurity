@@ -5,6 +5,7 @@ category: offensive-security
 format: cheatsheet
 language: en
 tags: [cheatsheet, linux, metasploit, powershell, tls, windows]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

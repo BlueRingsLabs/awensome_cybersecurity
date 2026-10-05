@@ -5,6 +5,7 @@ category: offensive-security
 format: guide
 language: en
 tags: [lateral-movement, metasploit, password-security, powershell, tls, windows]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

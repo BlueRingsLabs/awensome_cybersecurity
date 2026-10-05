@@ -23,21 +23,27 @@ from cyberkb import textutil
     ],
 )
 def test_tokenize(raw: str, expected: list[str]) -> None:
+    """Separators, punctuation and accents all reduce to lowercase ASCII tokens."""
     assert textutil.tokenize(raw) == expected
 
 
 def test_strip_unsafe_chars_removes_controls_and_bidi() -> None:
-    text = "a\x00b\x07‮c﻿d"
+    """Control characters, a bidi override (U+202E) and a BOM (U+FEFF) are removed.
+
+    The hostile characters are built with ``chr`` so the test source itself stays
+    free of control characters.
+    """
+    text = "a" + chr(0x00) + "b" + chr(0x07) + chr(0x202E) + "c" + chr(0xFEFF) + "d"
     assert textutil.strip_unsafe_chars(text) == "abcd"
 
 
 def test_strip_unsafe_chars_keeps_tab_newline_cr() -> None:
+    """Whitespace control characters that structure text are preserved."""
     assert textutil.strip_unsafe_chars("a\tb\nc\rd") == "a\tb\nc\rd"
 
 
 def test_fold_is_ascii_lowercase() -> None:
-    # Accents fold to their base letter; characters with no ASCII base
-    # (such as the sharp s) are dropped rather than transliterated.
+    """Accents fold to their base letter; a character with no ASCII base is dropped."""
     assert textutil.fold("ÄÖÜ Ç") == "aou c"
 
 
@@ -51,22 +57,25 @@ def test_fold_is_ascii_lowercase() -> None:
     ],
 )
 def test_slugify(text: str, expected: str) -> None:
+    """Slugs are lowercase kebab-case, and an empty result falls back to 'untitled'."""
     assert textutil.slugify(text) == expected
 
 
 def test_slugify_max_len_cuts_on_word_boundary() -> None:
+    """A length-limited slug is cut at a separator and never ends with one."""
     slug = textutil.slugify("alpha beta gamma delta epsilon", max_len=14)
     assert len(slug) <= 14
     assert not slug.endswith("-")
 
 
 def test_slugify_max_len_hard_cut_when_no_boundary() -> None:
-    # No separators in the back half: a hard cut is used.
+    """With no separator in the back half, the slug is hard-cut to the limit."""
     assert textutil.slugify("aaaaaaaaaaaaaaaaaaoo", max_len=5) == "aaaaa"
 
 
 @given(st.text(), st.integers(min_value=1, max_value=80))
 def test_slugify_always_valid(text: str, max_len: int) -> None:
+    """For any input and limit, a slug is non-empty, bounded and well-formed."""
     slug = textutil.slugify(text, max_len=max_len)
     assert slug
     assert len(slug) <= max_len
@@ -76,6 +85,7 @@ def test_slugify_always_valid(text: str, max_len: int) -> None:
 
 
 def test_ngram_counts() -> None:
+    """N-grams of length 1..max_n are counted; longer spans are absent."""
     counts = textutil.ngram_counts(["a", "b", "c"], max_n=2)
     assert counts[("a",)] == 1
     assert counts[("a", "b")] == 1
@@ -85,6 +95,7 @@ def test_ngram_counts() -> None:
 
 
 def test_ngram_counts_repeats() -> None:
+    """Repeated tokens accumulate their n-gram counts."""
     counts = textutil.ngram_counts(["x", "x", "x"], max_n=2)
     assert counts[("x",)] == 3
     assert counts[("x", "x")] == 2
@@ -99,16 +110,19 @@ def test_ngram_counts_repeats() -> None:
     ],
 )
 def test_truncate(text: str, max_len: int, expected: str) -> None:
+    """Truncation keeps whole words and appends an ellipsis only when shortened."""
     assert textutil.truncate(text, max_len) == expected
 
 
 def test_truncate_hard_cut_without_boundary() -> None:
+    """A single long word is hard-cut and still bounded by the limit."""
     out = textutil.truncate("abcdefghijklmnop", 6)
     assert out.endswith("…")
     assert len(out) <= 6
 
 
 def test_plain_text_strips_markdown_and_links() -> None:
+    """Links/images keep their label, while URLs, emphasis and HTML tags are dropped."""
     raw = "See [the guide](http://x.test) and ![pic](p.png) `code` **bold** <b>x</b>"
     out = textutil.plain_text(raw)
     assert "http://x.test" not in out
@@ -118,10 +132,12 @@ def test_plain_text_strips_markdown_and_links() -> None:
 
 
 def test_plain_text_truncates() -> None:
+    """plain_text honours the optional length cap."""
     assert textutil.plain_text("a b c d e f g", max_len=5).endswith("…")
 
 
 def test_phrase_tokens() -> None:
+    """A keyword phrase tokenises to a tuple for n-gram lookups."""
     assert textutil.phrase_tokens("Active Directory") == ("active", "directory")
 
 
@@ -130,10 +146,12 @@ def test_phrase_tokens() -> None:
     [("one two three", 3), ("", 0), ("a_b c-d", 3)],
 )
 def test_word_count(text: str, expected: int) -> None:
+    """Word counting treats underscore/hyphen groups as the expected token count."""
     assert textutil.word_count(text) == expected
 
 
 @given(st.text())
 def test_strip_unsafe_chars_is_idempotent(text: str) -> None:
+    """Stripping unsafe characters twice equals stripping once, for any input."""
     once = textutil.strip_unsafe_chars(text)
     assert textutil.strip_unsafe_chars(once) == once

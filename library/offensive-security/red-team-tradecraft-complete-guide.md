@@ -5,6 +5,7 @@ category: offensive-security
 format: guide
 language: en
 tags: [active-directory, azure, c2, cloud, evasion, red-team]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

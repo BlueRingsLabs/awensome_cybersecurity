@@ -5,6 +5,7 @@ category: offensive-security
 format: guide
 language: pt
 tags: [buffer-overflow, credential-access, exploit-development, git, malware, tls]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

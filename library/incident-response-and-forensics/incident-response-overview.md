@@ -5,6 +5,7 @@ category: incident-response-and-forensics
 format: guide
 language: pt
 tags: [forensics, git, incident-response, osint, soc, tls]
+authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:

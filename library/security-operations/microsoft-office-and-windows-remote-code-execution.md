@@ -5,6 +5,7 @@ category: security-operations
 format: guide
 language: en
 tags: [firewall, log-analysis, networking, phishing, vulnerability-management, windows]
+authors: [Muhammet Donmez]
 license: NOASSERTION
 added: 2026-10-04
 classification:

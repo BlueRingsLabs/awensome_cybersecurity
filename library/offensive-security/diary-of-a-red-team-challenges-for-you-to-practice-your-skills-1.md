@@ -5,6 +5,7 @@ category: offensive-security
 format: guide
 language: en
 tags: [exploit-development, git, red-team, tls, windows]
+authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:

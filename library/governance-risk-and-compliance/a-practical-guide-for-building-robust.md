@@ -5,6 +5,7 @@ category: governance-risk-and-compliance
 format: guide
 language: en
 tags: [ai, cloud, devsecops, governance, owasp, privacy]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

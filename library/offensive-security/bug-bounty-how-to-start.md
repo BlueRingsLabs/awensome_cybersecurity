@@ -5,6 +5,7 @@ category: offensive-security
 format: guide
 language: en
 tags: [bug-bounty, certification, cloud, osint, owasp, tls]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

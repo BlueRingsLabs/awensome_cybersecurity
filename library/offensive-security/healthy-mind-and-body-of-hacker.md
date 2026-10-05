@@ -4,6 +4,7 @@ title: Healthy mind and body of hacker
 category: offensive-security
 format: article
 language: en
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

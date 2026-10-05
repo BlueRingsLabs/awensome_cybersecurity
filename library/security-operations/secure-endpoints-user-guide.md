@@ -5,6 +5,7 @@ category: security-operations
 format: book
 language: en
 tags: [firewall, linux, mobile, networking, threat-hunting, windows]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

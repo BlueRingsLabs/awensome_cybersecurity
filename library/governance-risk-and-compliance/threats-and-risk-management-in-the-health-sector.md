@@ -5,6 +5,7 @@ category: governance-risk-and-compliance
 format: guide
 language: en
 tags: [malware, phishing, ransomware, risk-management, social-engineering, threat-intelligence]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

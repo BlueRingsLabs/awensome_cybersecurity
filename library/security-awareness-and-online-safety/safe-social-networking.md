@@ -5,6 +5,7 @@ category: security-awareness-and-online-safety
 format: article
 language: en
 tags: [networking, password-security, privacy, tls]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

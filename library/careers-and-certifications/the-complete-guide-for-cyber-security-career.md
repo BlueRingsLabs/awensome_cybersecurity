@@ -5,6 +5,7 @@ category: careers-and-certifications
 format: guide
 language: pt
 tags: [career, ctf, mitre-attack, red-team, soc, tls]
+authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:

@@ -5,6 +5,7 @@ category: security-operations
 format: guide
 language: en
 tags: [detection-engineering, incident-response, log-analysis, malware, networking, soc]
+authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:

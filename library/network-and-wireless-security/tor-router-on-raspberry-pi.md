@@ -5,6 +5,7 @@ category: network-and-wireless-security
 format: article
 language: en
 tags: [anonymity, git, hardware, networking, tls, wireless]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

@@ -5,6 +5,7 @@ category: incident-response-and-forensics
 format: guide
 language: en
 tags: [forensics, git, mobile, networking, password-security, tls]
+authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:

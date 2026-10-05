@@ -5,6 +5,7 @@ category: foundations-and-systems
 format: article
 language: en
 tags: [bash, containers, linux, log-analysis, privilege-escalation, python]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

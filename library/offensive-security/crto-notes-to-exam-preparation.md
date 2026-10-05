@@ -5,6 +5,7 @@ category: offensive-security
 format: course-notes
 language: en
 tags: [active-directory, c2, certification, password-security, tls, windows]
+authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:

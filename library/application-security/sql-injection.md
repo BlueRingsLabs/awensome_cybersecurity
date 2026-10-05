@@ -5,6 +5,7 @@ category: application-security
 format: guide
 language: en
 tags: [databases, password-security, sql-injection]
+authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:

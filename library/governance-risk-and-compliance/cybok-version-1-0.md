@@ -5,6 +5,7 @@ category: governance-risk-and-compliance
 format: book
 language: en
 tags: [cryptography, forensics, governance, malware, networking, privacy]
+authors: [unknown]
 license: OGL-UK-3.0
 added: 2026-10-04
 classification:

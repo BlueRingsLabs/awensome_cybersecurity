@@ -87,6 +87,8 @@ def _entry(resource: Resource) -> dict[str, Any]:
         entry["reference_only"] = True
     if front_matter.classification.model:
         entry["classification"]["model"] = front_matter.classification.model
+    if front_matter.classified_by:
+        entry["classified_by"] = front_matter.classified_by
     return entry
 
 

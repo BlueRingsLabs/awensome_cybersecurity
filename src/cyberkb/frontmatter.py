@@ -26,6 +26,7 @@ if TYPE_CHECKING:
 
 __all__ = [
     "CLASSIFICATION_METHODS",
+    "CLASSIFIED_BY_RE",
     "CONTRIBUTOR_KEYS",
     "ID_RE",
     "LICENSE_RE",
@@ -45,11 +46,17 @@ MAX_TAGS = 10
 MAX_AUTHORS = 20
 MAX_AUTHOR_LEN = 120
 MAX_URL = 2048
+MAX_CLASSIFIED_BY = 200
 
 ID_RE = re.compile(r"^ckb-[0-9a-f]{12}$")
 LICENSE_RE = re.compile(r"^(?:NOASSERTION|LicenseRef-[A-Za-z0-9.-]+|[A-Za-z0-9][A-Za-z0-9.+-]*)$")
 _URL_RE = re.compile(r"^https?://[^\s<>\"']+$", re.IGNORECASE)
 _DELIM_RE = re.compile(r"^(?:---|\.\.\.)[ \t]*$")
+# Provenance stamp: "<provider>[:<model>]@<ISO-8601 UTC>", e.g.
+# "gemini:gemini-2.5-flash@2026-10-05T14:23:11Z" or "heuristic@2026-10-05T14:23:11Z".
+CLASSIFIED_BY_RE = re.compile(
+    r"^[a-z][a-z0-9_-]*(?::[^@\s]+)?@\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$",
+)
 
 ClassificationMethod = Literal["llm", "heuristic", "manual"]
 CLASSIFICATION_METHODS: tuple[ClassificationMethod, ...] = ("llm", "heuristic", "manual")
@@ -68,9 +75,16 @@ CONTRIBUTOR_KEYS = frozenset(
         "license",
     },
 )
-# ``reference_only`` is a maintainer decision (it governs redistribution policy),
-# so it is a library key but not a contributor-settable hint.
-_LIBRARY_KEYS = CONTRIBUTOR_KEYS | {"id", "added", "classification", "reference_only"}
+# ``reference_only`` governs redistribution policy and ``classified_by`` records
+# the provider/model provenance of the classification; both are maintainer- or
+# pipeline-set library keys, not contributor-settable hints.
+_LIBRARY_KEYS = CONTRIBUTOR_KEYS | {
+    "id",
+    "added",
+    "classification",
+    "reference_only",
+    "classified_by",
+}
 _REQUIRED_KEYS = frozenset(
     {"id", "title", "category", "format", "language", "license", "added", "classification"}
 )
@@ -102,6 +116,7 @@ class FrontMatter:
     authors: tuple[str, ...] = ()
     source_url: str | None = None
     reference_only: bool = False
+    classified_by: str | None = None
 
     def to_dict(self) -> dict[str, Any]:
         """Serialisable mapping in canonical key order; empty optionals omitted."""
@@ -129,6 +144,8 @@ class FrontMatter:
             cls["model"] = self.classification.model
         cls["confidence"] = round(self.classification.confidence, 2)
         data["classification"] = cls
+        if self.classified_by:
+            data["classified_by"] = self.classified_by
         return data
 
 
@@ -349,6 +366,7 @@ def parse_front_matter(raw: Mapping[str, Any], taxonomy: Taxonomy) -> FrontMatte
         authors=_authors(raw.get("authors", []), problems),
         source_url=_source_url(raw.get("source_url"), problems),
         reference_only=_reference_only(raw.get("reference_only", False), problems),
+        classified_by=_classified_by(raw.get("classified_by"), problems),
     )
     if problems:
         raise FrontMatterError("; ".join(problems))
@@ -360,6 +378,15 @@ def _reference_only(value: object, problems: list[str]) -> bool:
         problems.append("'reference_only' must be a boolean")
         return False
     return value
+
+
+def _classified_by(value: object, problems: list[str]) -> str | None:
+    if value is None:
+        return None
+    if isinstance(value, str) and len(value) <= MAX_CLASSIFIED_BY and CLASSIFIED_BY_RE.match(value):
+        return value
+    problems.append("'classified_by' must look like '<provider>[:<model>]@<ISO-8601 UTC>'")
+    return None
 
 
 def validate_contributor_hints(

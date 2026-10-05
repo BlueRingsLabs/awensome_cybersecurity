@@ -101,6 +101,7 @@
           "authors": {"type": "array", "items": {"type": "string"}, "minItems": 1},
           "source_url": {"type": "string", "format": "uri"},
           "reference_only": {"type": "boolean"},
+          "classified_by": {"type": "string", "pattern": "^[a-z][a-z0-9_-]*(:[^@\\s]+)?@\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$"},
           "license": {"type": "string"},
           "redistribution": {"type": "string", "enum": ["permitted", "noncommercial", "restricted", "unknown"]},
           "added": {"type": "string", "format": "date"},

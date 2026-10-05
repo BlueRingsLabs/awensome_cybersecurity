@@ -91,6 +91,33 @@ def test_reference_only_defaults_false(taxonomy: Taxonomy) -> None:
     assert "reference_only" not in fm.to_dict()
 
 
+def test_classified_by_valid_roundtrips(taxonomy: Taxonomy) -> None:
+    """A well-formed provenance stamp parses, serialises and round-trips."""
+    stamp = "gemini:gemini-2.5-flash@2026-10-05T14:23:11Z"
+    raw = _valid_raw()
+    raw["classified_by"] = stamp
+    fm = parse_front_matter(raw, taxonomy)
+    assert fm.classified_by == stamp
+    assert fm.to_dict()["classified_by"] == stamp
+    reparsed_raw, _ = split_front_matter(render_document(fm, "# b\n\nx\n"))
+    assert reparsed_raw is not None
+    assert parse_front_matter(reparsed_raw, taxonomy).classified_by == stamp
+
+
+def test_classified_by_heuristic_stamp_without_model(taxonomy: Taxonomy) -> None:
+    """A provider-only stamp (no model, e.g. the heuristic) is accepted."""
+    raw = _valid_raw()
+    raw["classified_by"] = "heuristic@2026-10-05T14:23:11Z"
+    assert parse_front_matter(raw, taxonomy).classified_by == "heuristic@2026-10-05T14:23:11Z"
+
+
+def test_classified_by_defaults_none_and_is_omitted(taxonomy: Taxonomy) -> None:
+    """Omitting classified_by yields None and no serialised key."""
+    fm = parse_front_matter(_valid_raw(), taxonomy)
+    assert fm.classified_by is None
+    assert "classified_by" not in fm.to_dict()
+
+
 @pytest.mark.parametrize(
     "mutate",
     [
@@ -109,6 +136,9 @@ def test_reference_only_defaults_false(taxonomy: Taxonomy) -> None:
         lambda d: d.update(authors=["x" * 200]),
         lambda d: d.update(source_url="ftp://x"),
         lambda d: d.update(reference_only="yes"),
+        lambda d: d.update(classified_by=123),
+        lambda d: d.update(classified_by="not-a-stamp"),
+        lambda d: d.update(classified_by="gemini:" + "m" * 250 + "@2026-10-05T14:23:11Z"),
         lambda d: d.update(classification={"method": "manual"}),
         lambda d: d.update(classification={"method": "llm", "confidence": 0.9}),
         lambda d: d.update(classification={"method": "bad", "confidence": 0.5}),

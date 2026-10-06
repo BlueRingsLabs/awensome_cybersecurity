@@ -4,19 +4,79 @@ from __future__ import annotations
 
 import io
 import json
+import re
 from typing import TYPE_CHECKING
 
 import pytest
 
-from cyberkb import cli, llm
+from cyberkb import cli
 from cyberkb.cli import EXIT_CONFIG, EXIT_OK, EXIT_POLICY, EXIT_USAGE, main
 from cyberkb.errors import TaxonomyError
+from cyberkb.frontmatter import Classification
+from cyberkb.providers.http import HttpResponse, UrllibTransport
 from tests.conftest import write_resource
 
 if TYPE_CHECKING:
+    from collections.abc import Mapping
     from pathlib import Path
 
     from cyberkb.paths import RepoPaths
+
+_GEMINI_LISTING = {
+    "models": [
+        {"name": "models/gemini-2.5-flash", "supportedGenerationMethods": ["generateContent"]},
+    ],
+}
+
+
+def _item(ref: str) -> dict[str, object]:
+    return {
+        "ref": ref,
+        "title": "LLM Title",
+        "category": "offensive-security",
+        "format": "guide",
+        "language": "en",
+        "tags": [],
+        "summary": "An LLM summary.",
+        "confidence": 0.9,
+    }
+
+
+def _fake_request(
+    _self: UrllibTransport,
+    method: str,
+    _url: str,
+    *,
+    headers: Mapping[str, str],
+    body: bytes | None,
+    timeout: float,
+) -> HttpResponse:
+    """Fake the HTTP boundary: list one Gemini model and echo each prompt's refs."""
+    _ = (headers, timeout)
+    if method == "GET":
+        return HttpResponse(200, json.dumps(_GEMINI_LISTING).encode())
+    # The prompt is embedded in a JSON body, so quotes arrive escaped (ref=\"...\").
+    refs = re.findall(r'ref=\\?"([^"\\]+)', (body or b"").decode("utf-8", "replace")) or ["probe"]
+    text = json.dumps({"classifications": [_item(ref) for ref in refs]})
+    envelope = {"candidates": [{"content": {"parts": [{"text": text}]}}]}
+    return HttpResponse(200, json.dumps(envelope).encode())
+
+
+def _fail_request(
+    _self: UrllibTransport,
+    method: str,
+    _url: str,
+    *,
+    headers: Mapping[str, str],
+    body: bytes | None,
+    timeout: float,
+) -> HttpResponse:
+    """List a model but fail every classification call, so no model validates."""
+    _ = (headers, body, timeout)
+    if method == "GET":
+        return HttpResponse(200, json.dumps(_GEMINI_LISTING).encode())
+    return HttpResponse(500, b"boom")
+
 
 NMAP_BODY = (
     "# Nmap guide\n\nNmap network scanner for penetration testing reconnaissance, "
@@ -146,38 +206,94 @@ def test_classify_uses_llm_when_key_present(
     tmp_path: Path,
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
-    """With a key set, `classify` uses the LLM transport (here faked)."""
+    """With a key set, `classify` runs the provider pre-flight (HTTP boundary faked)."""
     sample = tmp_path / "s.md"
     sample.write_text(NMAP_BODY, encoding="utf-8")
     monkeypatch.setenv("GEMINI_API_KEY", "key")
-
-    item = {
-        "ref": "0",
-        "title": "LLM Guide",
-        "category": "offensive-security",
-        "format": "guide",
-        "language": "en",
-        "tags": ["nmap"],
-        "summary": "s",
-        "confidence": 0.9,
-    }
-    payload = {
-        "candidates": [{"content": {"parts": [{"text": json.dumps({"classifications": [item]})}]}}],
-    }
-
-    def fake_post(
-        _self: llm.UrllibTransport,
-        _url: str,
-        _body: bytes,
-        _headers: object,
-        _timeout: float,
-    ) -> llm.HttpResponse:
-        return llm.HttpResponse(200, json.dumps(payload).encode())
-
-    monkeypatch.setattr(llm.UrllibTransport, "post", fake_post)
+    monkeypatch.setattr(UrllibTransport, "request", _fake_request)
     code, output = _run(["--repo", str(repo.root), "classify", str(sample)])
     assert code == EXIT_OK
-    assert "LLM Guide" in output
+    assert "provider gemini: ok" in output  # the LLM path ran and validated a model
+
+
+def test_ingest_writes_run_report_with_a_provider(
+    repo: RepoPaths,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    """`ingest` with a configured provider writes a dated run report."""
+    monkeypatch.setenv("GEMINI_API_KEY", "key")
+    monkeypatch.setattr(UrllibTransport, "request", _fake_request)
+    (repo.inbox / "nmap.md").write_text(NMAP_BODY, encoding="utf-8")
+    code, output = _run(["--repo", str(repo.root), "ingest"])
+    assert code == EXIT_OK
+    assert "Run report written to docs/audit/ingest-runs/" in output
+    assert list(repo.ingest_runs.glob("*.json"))
+
+
+def test_enrich_without_provider_is_a_noop(repo: RepoPaths) -> None:
+    """`enrich` with no provider key does nothing and exits cleanly."""
+    write_resource(repo, classification=Classification("heuristic", 0.4), summary="")
+    code, output = _run(["--repo", str(repo.root), "enrich"])
+    assert code == EXIT_OK
+    assert "Enrichment needs a configured LLM provider" in output
+
+
+def test_enrich_runs_with_a_provider(
+    repo: RepoPaths,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    """`enrich` with a provider enriches heuristic resources and skips manual ones."""
+    write_resource(
+        repo, filename="h.md", classification=Classification("heuristic", 0.4), summary=""
+    )
+    write_resource(
+        repo,
+        filename="m.md",
+        id="ckb-000000000002",
+        title="Manual Note",
+        classification=Classification("manual", 1.0),
+        body="# Manual Note\n\nA distinct manual note on defensive monitoring and SIEM.\n",
+    )
+    monkeypatch.setenv("GEMINI_API_KEY", "key")
+    monkeypatch.setattr(UrllibTransport, "request", _fake_request)
+    code, output = _run(["--repo", str(repo.root), "enrich"])
+    assert code == EXIT_OK
+    assert "enriched:" in output
+    assert "Enriched 1" in output
+    assert "skipped 1" in output
+    assert list(repo.ingest_runs.glob("*.json"))
+
+
+def test_classify_reports_no_capacity_when_models_fail(
+    repo: RepoPaths,
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    """When no model validates, the CLI reports it and falls back to the heuristic."""
+    sample = tmp_path / "s.md"
+    sample.write_text(NMAP_BODY, encoding="utf-8")
+    monkeypatch.setenv("GEMINI_API_KEY", "key")
+    monkeypatch.setattr(UrllibTransport, "request", _fail_request)
+    code, output = _run(["--repo", str(repo.root), "classify", str(sample)])
+    assert code == EXIT_OK
+    assert "unavailable" in output
+    assert "No provider validated a usable model" in output
+
+
+def test_enrich_reports_build_problem(
+    repo: RepoPaths,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    """A post-enrich build failure makes `enrich` exit non-zero."""
+    write_resource(
+        repo, filename="h.md", classification=Classification("heuristic", 0.4), summary=""
+    )
+    (repo.library / "stray.md").write_text("not a resource", encoding="utf-8")
+    monkeypatch.setenv("GEMINI_API_KEY", "key")
+    monkeypatch.setattr(UrllibTransport, "request", _fake_request)
+    code, output = _run(["--repo", str(repo.root), "enrich"])
+    assert code == EXIT_POLICY
+    assert "stray.md" in output
 
 
 def test_config_error_exit(repo: RepoPaths, monkeypatch: pytest.MonkeyPatch) -> None:

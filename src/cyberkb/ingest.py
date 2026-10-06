@@ -39,6 +39,7 @@ from cyberkb.frontmatter import (
 from cyberkb.fsutil import read_text, relpath
 from cyberkb.ids import mint_id
 from cyberkb.licensing import detect_license
+from cyberkb.provenance import classified_by
 from cyberkb.sanitize import sanitize_markdown
 from cyberkb.textutil import slugify, word_count
 
@@ -212,6 +213,7 @@ def _file_one(
     license_id = str(hints["license"]) if "license" in hints else detect_license(body).license
     confidence = 1.0 if "category" in hints else result.confidence
     method = "manual" if "category" in hints else result.method
+    stamp = classified_by(method, provider=result.provider, model=result.model)
 
     resource_id = mint_id(body, taken=frozenset(taken))
     taken.add(resource_id)
@@ -231,6 +233,7 @@ def _file_one(
             summary=summary,
             authors=authors,
             source_url=source_url if isinstance(source_url, str) else None,
+            classified_by=stamp,
         )
     except KBError as exc:  # pragma: no cover - defensive; inputs are pre-validated
         return IngestOutcome(rel, IngestStatus.REJECTED, reason=str(exc))

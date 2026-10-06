@@ -41,4 +41,5 @@ class ClassificationResult:
     tags: tuple[str, ...] = ()
     summary: str = ""
     model: str | None = None
+    provider: str | None = None
     scores: dict[str, float] = field(default_factory=dict, compare=False)

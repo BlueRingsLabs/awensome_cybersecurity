@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import io
 import json
 from datetime import date
 from typing import TYPE_CHECKING
@@ -10,10 +11,15 @@ from cyberkb.classify.llm import LLMClassifier
 from cyberkb.frontmatter import split_front_matter
 from cyberkb.ingest import IngestStatus, discover_submissions, ingest_inbox
 from cyberkb.library import load_library
-from cyberkb.llm import GeminiClient, HttpResponse
+from cyberkb.obslog import StructuredLogger
+from cyberkb.providers.gemini import GeminiProvider
+from cyberkb.providers.orchestrator import Orchestrator, OrchestratorSettings
 from cyberkb.taxonomy import load_taxonomy
+from tests.conftest import FakeTransport, http_json
 
 if TYPE_CHECKING:
+    from collections.abc import Callable
+
     from cyberkb.paths import RepoPaths
     from cyberkb.taxonomy import Taxonomy
 
@@ -174,20 +180,35 @@ def test_ingest_empty_inbox(repo: RepoPaths) -> None:
     assert report.outcomes == ()
 
 
-class _FixedTransport:
-    """A transport that always returns the same canned Gemini response."""
+def _clock() -> Callable[[], float]:
+    state = {"v": 0.0}
 
-    def __init__(self, body: bytes) -> None:
-        """Store the canned response body."""
-        self._body = body
+    def tick() -> float:
+        state["v"] += 1.0
+        return state["v"]
 
-    def post(self, *_a: object, **_k: object) -> HttpResponse:
-        """Return the canned response regardless of arguments."""
-        return HttpResponse(200, self._body)
+    return tick
+
+
+def _llm_classifier(taxonomy: Taxonomy, item: dict[str, object]) -> LLMClassifier:
+    """Build an LLM classifier over a Gemini provider returning ``item``."""
+    text = json.dumps({"classifications": [item]})
+    envelope = {"candidates": [{"content": {"parts": [{"text": text}]}}]}
+    transport = FakeTransport(http_json(200, envelope))
+    provider = GeminiProvider("key", transport=transport, clock=_clock())
+    orchestrator = Orchestrator(
+        [provider],
+        logger=StructuredLogger(io.StringIO()),
+        sleep=lambda _s: None,
+        clock=_clock(),
+        settings=OrchestratorSettings(max_retries=2),
+    )
+    orchestrator._selected = {"gemini": ("gemini-test",)}  # noqa: SLF001 - seed validated model
+    return LLMClassifier(orchestrator, taxonomy)
 
 
 def test_ingest_with_llm_classifier(repo: RepoPaths) -> None:
-    """With an LLM classifier, the model's title, method and summary are recorded."""
+    """With an LLM classifier, the model's title, method, summary and provenance stick."""
     item = {
         "ref": "0",
         "title": "LLM Titled Guide",
@@ -198,12 +219,7 @@ def test_ingest_with_llm_classifier(repo: RepoPaths) -> None:
         "summary": "An LLM summary.",
         "confidence": 0.95,
     }
-    payload = {
-        "candidates": [{"content": {"parts": [{"text": json.dumps({"classifications": [item]})}]}}],
-    }
-    transport = _FixedTransport(json.dumps(payload).encode())
-    client = GeminiClient("key", ("gemini-test",), transport=transport, sleep=lambda _s: None)
-    classifier = LLMClassifier(client, _tax(repo))
+    classifier = _llm_classifier(_tax(repo), item)
     _drop(repo, "nmap.md", NMAP_BODY)
     report = ingest_inbox(repo, _tax(repo), classifier=classifier, today=TODAY, batch_size=5)
     assert report.outcomes[0].destination is not None
@@ -212,4 +228,6 @@ def test_ingest_with_llm_classifier(repo: RepoPaths) -> None:
     assert raw is not None
     assert raw["title"] == "LLM Titled Guide"
     assert raw["classification"]["method"] == "llm"
+    assert raw["classification"]["model"] == "gemini-test"
     assert raw["summary"] == "An LLM summary."
+    assert raw["classified_by"].startswith("gemini:gemini-test@")

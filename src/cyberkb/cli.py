@@ -5,6 +5,7 @@ Commands:
 * ``build``    -- regenerate catalogs, README index and category pages.
 * ``check``    -- run repository policy checks (CI gate); exits non-zero on error.
 * ``ingest``   -- classify and file ``inbox/`` submissions, then build.
+* ``enrich``   -- re-classify heuristic resources with an LLM and backfill summaries.
 * ``classify`` -- preview classification of files without writing (debugging).
 
 Exit codes are stable so CI and scripts can branch on them:
@@ -24,7 +25,9 @@ from cyberkb.build import build
 from cyberkb.checks import Severity, run_checks
 from cyberkb.config import IngestConfig
 from cyberkb.errors import KBError
+from cyberkb.obslog import StructuredLogger
 from cyberkb.paths import RepoPaths
+from cyberkb.pipeline import build_classifier
 from cyberkb.sanitize import sanitize_markdown
 from cyberkb.taxonomy import load_taxonomy
 
@@ -33,6 +36,7 @@ if TYPE_CHECKING:
     from typing import TextIO
 
     from cyberkb.classify.llm import LLMClassifier
+    from cyberkb.providers.orchestrator import Orchestrator
     from cyberkb.taxonomy import Taxonomy
 
 __all__ = ["main"]
@@ -62,6 +66,11 @@ def _build_parser() -> argparse.ArgumentParser:
         "--heuristic", action="store_true", help="force offline heuristic classification"
     )
 
+    enrich = sub.add_parser("enrich", help="re-classify heuristic resources and backfill summaries")
+    enrich.add_argument(
+        "--force", action="store_true", help="also re-enrich resources already classified by an LLM"
+    )
+
     classify = sub.add_parser("classify", help="preview classification of files without writing")
     classify.add_argument("paths", nargs="+", type=Path, help="Markdown files to classify")
     classify.add_argument(
@@ -72,23 +81,28 @@ def _build_parser() -> argparse.ArgumentParser:
 
 def _make_classifier(
     taxonomy: Taxonomy, *, force_heuristic: bool, out: TextIO
-) -> LLMClassifier | None:
+) -> tuple[LLMClassifier | None, Orchestrator | None]:
+    """Build the LLM classifier and orchestrator, or fall back to the heuristic."""
     if force_heuristic:
-        return None
+        return None, None
     config = IngestConfig.from_env()
-    if not config.use_llm:
-        print("No GEMINI_API_KEY set; using deterministic heuristic classifier.", file=out)
-        return None
-    from cyberkb.classify.llm import LLMClassifier  # noqa: PLC0415 -- keep import local to LLM path
-    from cyberkb.llm import GeminiClient  # noqa: PLC0415
+    classifier, orchestrator = build_classifier(taxonomy, config, logger=StructuredLogger())
+    if orchestrator is None:
+        print("No provider API keys set; using the deterministic heuristic classifier.", file=out)
+        return None, None
+    for health in orchestrator.health():
+        state = "ok" if health.ok else f"unavailable ({health.detail})"
+        print(f"  provider {health.provider}: {state}", file=out)
+    if classifier is None:
+        print("No provider validated a usable model; using the heuristic.", file=out)
+    return classifier, orchestrator
 
-    client = GeminiClient(
-        config.api_key or "",
-        config.models,
-        max_retries=config.max_retries,
-        timeout=config.timeout,
-    )
-    return LLMClassifier(client, taxonomy)
+
+def _write_run_report(orchestrator: Orchestrator | None, paths: RepoPaths, out: TextIO) -> None:
+    if orchestrator is None:
+        return
+    destination = orchestrator.run_report().write(paths.ingest_runs)
+    print(f"Run report written to {destination.relative_to(paths.root).as_posix()}", file=out)
 
 
 def _cmd_build(paths: RepoPaths, out: TextIO) -> int:
@@ -128,7 +142,7 @@ def _cmd_ingest(paths: RepoPaths, args: argparse.Namespace, out: TextIO) -> int:
     from cyberkb.library import load_library  # noqa: PLC0415
 
     taxonomy = load_taxonomy(paths.root)
-    classifier = _make_classifier(taxonomy, force_heuristic=args.heuristic, out=out)
+    classifier, orchestrator = _make_classifier(taxonomy, force_heuristic=args.heuristic, out=out)
     config = IngestConfig.from_env()
     taken = frozenset(r.id for r in load_library(paths, taxonomy).resources)
     report = ingest_inbox(
@@ -140,6 +154,7 @@ def _cmd_ingest(paths: RepoPaths, args: argparse.Namespace, out: TextIO) -> int:
         else:
             print(f"  {outcome.status}: {outcome.source} ({outcome.reason})", file=out)
     print(f"Filed {report.filed}, staged {report.staged}, rejected {report.rejected}.", file=out)
+    _write_run_report(orchestrator, paths, out)
     build_result = build(paths)
     if not build_result.ok:
         for path, message in build_result.problems:
@@ -148,12 +163,37 @@ def _cmd_ingest(paths: RepoPaths, args: argparse.Namespace, out: TextIO) -> int:
     return EXIT_POLICY if report.rejected else EXIT_OK
 
 
+def _cmd_enrich(paths: RepoPaths, args: argparse.Namespace, out: TextIO) -> int:
+    from cyberkb.enrich import enrich_library  # noqa: PLC0415
+
+    taxonomy = load_taxonomy(paths.root)
+    classifier, orchestrator = _make_classifier(taxonomy, force_heuristic=False, out=out)
+    if classifier is None:
+        print("Enrichment needs a configured LLM provider; nothing to do.", file=out)
+        return EXIT_OK
+    report = enrich_library(paths, taxonomy, classifier, force=args.force)
+    for outcome in report.outcomes:
+        if outcome.destination:
+            print(f"  {outcome.status}: {outcome.path} ({outcome.detail})", file=out)
+    print(
+        f"Enriched {report.enriched}, unchanged {report.unchanged}, skipped {report.skipped}.",
+        file=out,
+    )
+    _write_run_report(orchestrator, paths, out)
+    build_result = build(paths)
+    if not build_result.ok:
+        for path, message in build_result.problems:
+            print(f"  {path}: {message}", file=out)
+        return EXIT_POLICY
+    return EXIT_OK
+
+
 def _cmd_classify(paths: RepoPaths, args: argparse.Namespace, out: TextIO) -> int:
     from cyberkb.classify.base import Document  # noqa: PLC0415
     from cyberkb.classify.heuristic import classify as heuristic_classify  # noqa: PLC0415
 
     taxonomy = load_taxonomy(paths.root)
-    classifier = _make_classifier(taxonomy, force_heuristic=args.heuristic, out=out)
+    classifier, _orchestrator = _make_classifier(taxonomy, force_heuristic=args.heuristic, out=out)
     documents = []
     for index, file_path in enumerate(args.paths):
         try:
@@ -185,14 +225,15 @@ def main(argv: Sequence[str] | None = None, *, out: TextIO | None = None) -> int
     parser = _build_parser()
     args = parser.parse_args(argv)
     paths = RepoPaths.at(args.repo)
+    dispatch = {
+        "build": lambda: _cmd_build(paths, stream),
+        "check": lambda: _cmd_check(paths, stream),
+        "ingest": lambda: _cmd_ingest(paths, args, stream),
+        "enrich": lambda: _cmd_enrich(paths, args, stream),
+        "classify": lambda: _cmd_classify(paths, args, stream),
+    }
     try:
-        if args.command == "build":
-            return _cmd_build(paths, stream)
-        if args.command == "check":
-            return _cmd_check(paths, stream)
-        if args.command == "ingest":
-            return _cmd_ingest(paths, args, stream)
-        return _cmd_classify(paths, args, stream)  # "classify"
+        return dispatch[args.command]()
     except KBError as exc:
         print(f"error: {exc}", file=stream)
         return EXIT_CONFIG

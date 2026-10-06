@@ -60,3 +60,8 @@ class RepoPaths:
     def readme(self) -> Path:
         """Repository README whose index block is generated."""
         return self.root / "README.md"
+
+    @property
+    def ingest_runs(self) -> Path:
+        """Directory holding dated ingestion/enrichment run reports."""
+        return self.root / "docs" / "audit" / "ingest-runs"

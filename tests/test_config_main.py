@@ -6,7 +6,7 @@ import runpy
 
 import pytest
 
-from cyberkb.config import DEFAULT_MODELS, IngestConfig
+from cyberkb.config import DEFAULT_MODELS, DEFAULT_PROVIDER_ORDER, IngestConfig
 
 
 def test_config_defaults() -> None:
@@ -43,6 +43,38 @@ def test_config_clamps_out_of_range() -> None:
 def test_config_blank_models_uses_default() -> None:
     """A models setting that is only separators falls back to the default chain."""
     assert IngestConfig.from_env({"CYBERKB_MODELS": "  ,  "}).models == DEFAULT_MODELS
+
+
+def test_default_provider_order() -> None:
+    """With no override the provider order is the documented default."""
+    assert IngestConfig.from_env({}).provider_order == DEFAULT_PROVIDER_ORDER
+    assert IngestConfig.from_env({}).active_providers() == ()
+
+
+def test_active_providers_orders_and_filters_by_key() -> None:
+    """Active providers follow the configured order and need their key present."""
+    config = IngestConfig.from_env(
+        {
+            "GEMINI_API_KEY": "g",
+            "HF_TOKEN": "h",
+            "LLM_PROVIDER_ORDER": "huggingface, gemini",
+        },
+    )
+    # openrouter is absent from the order; openrouter_key is unset anyway.
+    assert config.active_providers() == (("huggingface", "h"), ("gemini", "g"))
+    assert config.use_llm is True
+
+
+def test_active_providers_skips_configured_name_without_key() -> None:
+    """A provider named in the order but missing its key is skipped."""
+    config = IngestConfig.from_env({"OPENROUTER_API_KEY": "o"})
+    assert config.active_providers() == (("openrouter", "o"),)
+
+
+def test_active_providers_ignores_unknown_name() -> None:
+    """An unregistered provider name in the order is ignored."""
+    config = IngestConfig.from_env({"GEMINI_API_KEY": "g", "LLM_PROVIDER_ORDER": "bogus,gemini"})
+    assert config.active_providers() == (("gemini", "g"),)
 
 
 def test_module_entry_point_runs(

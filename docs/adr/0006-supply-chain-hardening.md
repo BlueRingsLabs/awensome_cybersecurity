@@ -54,12 +54,25 @@ rationale lives in the config header and in the threat model.
 ### CodeQL: advanced workflow is the source of truth
 
 Enabling GitHub Advanced Security switched on CodeQL **default setup** for the
-repository, which auto-scans `python` and `actions`. GitHub refuses to ingest
-results from an *advanced* configuration (this committed [`codeql.yml`](../../.github/workflows/codeql.yml))
-while default setup is enabled — the two are mutually exclusive. We keep the
-advanced workflow as the source of truth because it is version-controlled,
-SHA-pinned, least-privilege, and runs the stronger `security-extended` query
-suite — all reviewable in a PR, unlike the opaque default setup. The required
-one-time action is therefore to **disable CodeQL default setup** in
-*Settings → Code security → Code scanning* so the advanced workflow's results
-upload. This is recorded in the operations runbook as a maintainer action.
+repository. Observed on PR #16, default setup runs a single `Analyze (actions)`
+job — it covers the workflow files but **not** the Python engine. GitHub refuses
+to ingest results from an *advanced* configuration (this committed
+[`codeql.yml`](../../.github/workflows/codeql.yml)) while default setup is
+enabled; the two are mutually exclusive per repository. The advanced run
+completes the full `security-extended` Python analysis and only the final upload
+is rejected, with the verbatim error:
+
+> Code Scanning could not process the submitted SARIF file: CodeQL analyses from
+> advanced configurations cannot be processed when the default setup is enabled
+
+We keep the advanced workflow as the source of truth because it is
+version-controlled, SHA-pinned, least-privilege, and runs the stronger
+`security-extended` query suite over **both** languages present in the
+repository (`python` and `actions`, via a matrix) — all reviewable in a PR,
+unlike the opaque default setup, which here leaves Python unscanned. The
+required one-time maintainer action is therefore to **disable CodeQL default
+setup** in *Settings → Code security → Code scanning → CodeQL analysis*
+(switch it to *Advanced*, or disable it). Once disabled, this workflow's
+results upload and it covers Python and Actions with no gap. Until then its
+jobs report a *configuration error*, which is the conflict above and not a code
+defect. This is recorded in the operations runbook as a maintainer action.

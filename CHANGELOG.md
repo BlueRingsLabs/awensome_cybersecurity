@@ -38,6 +38,10 @@ Multi-provider, self-validating LLM classification.
   client; the ingestion workflow reads `GEMINI_API_KEY`, `OPENROUTER_API_KEY`
   and `HF_TOKEN` from the `awesome-cyber` deployment environment and can enrich
   existing resources on a manual run.
+- **CodeQL advanced workflow now covers both `python` and `actions`** (matrix,
+  `security-extended`), so that disabling the repository's CodeQL *default
+  setup* — the one maintainer action needed to resolve the advanced/default
+  mutual-exclusivity conflict — leaves no language unscanned. (ADR-0006)
 
 ## [2.1.0] - 2026-10-05
 

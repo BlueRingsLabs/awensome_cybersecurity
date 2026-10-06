@@ -105,13 +105,17 @@ maintainer with admin rights. They are required for CI to be fully green.
   CodeQL *default setup*, which is mutually exclusive with this repository's
   committed, SHA-pinned advanced workflow (`.github/workflows/codeql.yml`).
   While default setup is on, GitHub rejects the advanced workflow's results and
-  the *Analyze (python)* check fails with *"CodeQL analyses from advanced
-  configurations cannot be processed when the default setup is enabled."* Turn
-  default setup **off** under *Settings → Code security → Code scanning* so the
+  its *Analyze (python)* / *Analyze (actions)* checks fail with *"CodeQL
+  analyses from advanced configurations cannot be processed when the default
+  setup is enabled."* Turn default setup **off** under *Settings → Code security
+  → Code scanning → CodeQL analysis* (switch to *Advanced*, or disable) so the
   advanced workflow — the version-controlled source of truth, running the
-  `security-extended` suite — uploads its results. (If you would rather keep the
-  zero-maintenance default setup, delete `codeql.yml` instead; the two must not
-  both be active. See ADR-0006.)
+  `security-extended` suite over both `python` and `actions` — uploads its
+  results. This repository's default setup scans `actions` only, so it is the
+  advanced workflow that provides Python coverage; do **not** simply delete
+  `codeql.yml` unless you first widen default setup to include Python, or Python
+  loses CodeQL coverage entirely. The two configurations must not both be
+  active. See ADR-0006.
 
 ## Secret scanning (gitleaks)
 

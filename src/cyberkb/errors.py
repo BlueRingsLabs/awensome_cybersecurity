@@ -31,31 +31,7 @@ class ContentRejectedError(KBError):
 
 
 class LLMError(KBError):
-    """Base class for classification-service failures."""
-
-
-class LLMRetryableError(LLMError):
-    """Transient failure: rate limit, overload, timeout or network error."""
-
-    def __init__(self, message: str, *, retry_after: float | None = None) -> None:
-        """Store an optional server-provided retry delay (seconds)."""
-        super().__init__(message)
-        self.retry_after = retry_after
-
-
-class LLMModelError(LLMError):
-    """The model rejected the request (unknown model, unsupported feature).
-
-    The next model in the fallback chain may still succeed.
-    """
-
-
-class LLMFatalError(LLMError):
-    """Failure that no retry or model switch can fix (auth, exhausted daily quota)."""
-
-
-class LLMResponseError(LLMError):
-    """The model answered, but the answer is unusable (truncated, blocked, invalid JSON)."""
+    """Base class for classification-service failures (see :class:`ProviderError`)."""
 
 
 class FailureCategory(StrEnum):

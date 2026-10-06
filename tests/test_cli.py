@@ -9,9 +9,7 @@ from typing import TYPE_CHECKING
 
 import pytest
 
-from cyberkb import cli
 from cyberkb.cli import EXIT_CONFIG, EXIT_OK, EXIT_POLICY, EXIT_USAGE, main
-from cyberkb.errors import TaxonomyError
 from cyberkb.frontmatter import Classification
 from cyberkb.providers.http import HttpResponse, UrllibTransport
 from tests.conftest import write_resource
@@ -296,14 +294,9 @@ def test_enrich_reports_build_problem(
     assert "stray.md" in output
 
 
-def test_config_error_exit(repo: RepoPaths, monkeypatch: pytest.MonkeyPatch) -> None:
-    """A KBError raised during a command maps to the config exit code."""
-
-    def boom(_root: Path) -> None:
-        msg = "broken"
-        raise TaxonomyError(msg)
-
-    monkeypatch.setattr(cli, "load_taxonomy", boom)
+def test_config_error_exit(repo: RepoPaths) -> None:
+    """A real taxonomy error during a command maps to the config exit code."""
+    repo.taxonomy.write_text("version: 1\n", encoding="utf-8")  # structurally invalid
     sample = repo.root / "s.md"
     sample.write_text(NMAP_BODY, encoding="utf-8")
     code, output = _run(["--repo", str(repo.root), "classify", str(sample)])

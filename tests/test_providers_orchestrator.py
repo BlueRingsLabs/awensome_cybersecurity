@@ -139,6 +139,19 @@ def test_provider_fatal_trips_breaker_and_falls_to_next_provider() -> None:
     assert orch._breakers["openrouter"].allow() is False  # noqa: SLF001 - breaker tripped
 
 
+def test_tripped_breaker_persists_across_calls() -> None:
+    """Once a provider's breaker trips, later calls skip it without touching it."""
+    first = _provider(OpenRouterProvider, http_text(401, "invalid key"))
+    second = _provider(HuggingFaceProvider, http_json(200, _ANSWER), http_json(200, _ANSWER))
+    orch = _orch([first, second])
+    _seed(orch, {"openrouter": ("model-a",), "huggingface": ("model-b",)})
+    # First call trips openrouter (auth) and huggingface serves it.
+    assert orch.generate_json("s", "p", {}, resource_ref="r1").provider == "huggingface"  # type: ignore[union-attr]
+    # Second call must skip openrouter entirely: its transport has no second
+    # response queued, so a call to it would raise IndexError. huggingface serves.
+    assert orch.generate_json("s", "p", {}, resource_ref="r2").provider == "huggingface"  # type: ignore[union-attr]
+
+
 def test_all_failures_return_none_and_count_heuristic_fallback() -> None:
     """When every provider/model fails, the call returns None and is counted."""
     provider = _provider(OpenRouterProvider, http_text(500, "boom"))

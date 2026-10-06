@@ -4,6 +4,41 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project aims to
 follow [Semantic Versioning](https://semver.org/).
 
+## [2.2.0] - 2026-10-05
+
+Multi-provider, self-validating LLM classification.
+
+### Added
+
+- **Multi-provider LLM layer** (`cyberkb.providers`): one interface with three
+  interchangeable, hand-rolled providers — Gemini, OpenRouter and Hugging Face —
+  selected by configured key and `LLM_PROVIDER_ORDER`, behind an orchestrator
+  with per-model rotation, retry-with-backoff, a per-provider circuit breaker
+  and a guaranteed heuristic fallback. An extensible registry makes a fourth
+  provider a drop-in. (ADR-0007)
+- **Runtime model discovery and validation**: each provider discovers models
+  from its own catalog and a pre-flight pass validates the best candidates
+  against representative offensive/defensive/governance prompts, so no model is
+  used on the assumption it works; free-tier models and rate limits are handled
+  explicitly.
+- **Structured error taxonomy and run reports**: every provider attempt is
+  logged as categorised JSON (ten `FailureCategory` values, never a generic
+  "failed"), and each run writes `docs/audit/ingest-runs/<date>.json` with
+  per-provider success rates, failure breakdowns, provider health and model
+  selection.
+- **`classified_by` provenance** on every resource and catalog entry:
+  `<provider>:<model>@<ISO-8601 UTC>` (or `heuristic@…`).
+- **`cyberkb enrich`** command and workflow input: re-classify the
+  heuristically-filed corpus through the providers and backfill the empty
+  summaries, idempotently and within free-tier limits.
+
+### Changed
+
+- The classifier is driven by the orchestrator instead of a single Gemini
+  client; the ingestion workflow reads `GEMINI_API_KEY`, `OPENROUTER_API_KEY`
+  and `HF_TOKEN` from the `awesome-cyber` deployment environment and can enrich
+  existing resources on a manual run.
+
 ## [2.1.0] - 2026-10-05
 
 Curation and test-integrity follow-up.

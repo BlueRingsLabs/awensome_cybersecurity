@@ -1,12 +1,16 @@
-# Automated ingestion and catalog regeneration.
+# Automated ingestion, enrichment and catalog regeneration.
 #
-# When raw submissions land in inbox/ on the default branch (after a
-# maintainer merges a contribution), this workflow classifies and files them,
-# regenerates every derived artefact and commits the result back.
+# On a push that lands raw submissions in inbox/ (after a maintainer merges a
+# contribution) this classifies and files them, regenerates every derived
+# artefact and commits the result. Run by hand (workflow_dispatch) it can also
+# enrich existing resources: re-classify the heuristically-filed corpus through
+# the configured LLM providers and backfill summaries.
 #
-# It is intentionally separate from CI: CI gates correctness on every PR;
-# this job mutates the repository and therefore needs contents:write, which is
-# granted to this workflow alone and nothing else.
+# It is intentionally separate from CI: CI gates correctness on every PR; this
+# job mutates the repository and therefore needs contents:write, granted to this
+# workflow alone. Provider keys come from the `awesome-cyber` deployment
+# environment (and, as a fallback, repository secrets); a provider is used only
+# when its key is present, so the job never fails for a missing secret.
 name: Ingest and index
 
 on:
@@ -16,7 +20,12 @@ on:
       - "inbox/**"
       - "schema/taxonomy.yaml"
       - "src/cyberkb/**"
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      enrich:
+        description: "Also backfill summaries/classifications on existing resources"
+        type: boolean
+        default: false
 
 # Serialise runs so two ingestions never race on the catalog.
 concurrency:
@@ -30,7 +39,10 @@ jobs:
   ingest:
     name: Ingest inbox submissions and rebuild catalogs
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
+    # Consume the more restrictive environment-scoped secrets (falling back to
+    # repository secrets); future environment protection rules apply here too.
+    environment: awesome-cyber
     permissions:
       contents: write # commits the regenerated library and catalogs
     steps:
@@ -59,10 +71,24 @@ jobs:
 
       - name: Ingest inbox and rebuild catalogs
         env:
-          # Optional: when unset, classification falls back to the offline
-          # heuristic and the pipeline still completes.
+          # Any subset may be set; absent providers are simply not used. The
+          # pipeline discovers and validates models at run time and falls back to
+          # the offline heuristic when no provider is usable, so a missing or
+          # broken key never fails the run — it is recorded in the run report.
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          LLM_PROVIDER_ORDER: ${{ vars.LLM_PROVIDER_ORDER }}
         run: uv run cyberkb ingest
+
+      - name: Enrich existing resources (manual runs only)
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.enrich }}
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          LLM_PROVIDER_ORDER: ${{ vars.LLM_PROVIDER_ORDER }}
+        run: uv run cyberkb enrich
 
       - name: Verify the result passes policy
         run: uv run cyberkb check
@@ -75,6 +101,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "Nothing to commit."
           else
-            git commit -m "chore(library): ingest submissions and regenerate catalogs [skip ci]"
+            git commit -m "chore(library): ingest, enrich and regenerate catalogs [skip ci]"
             git push
           fi

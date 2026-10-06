@@ -39,15 +39,19 @@ inbox/*.md ─┐
 | `ids` | Stable content-derived resource ids (`ckb-…`) with collision avoidance. |
 | `fsutil` | Hostile-input-safe reads (symlink/size/binary guards) and atomic writes. |
 | `yamlsafe` | YAML loading that refuses object construction *and* aliases. |
-| `classify/` | `heuristic` (offline, deterministic) and `llm` (Gemini, schema-constrained) engines sharing one result type. |
-| `llm` | Dependency-free Gemini client: retries, backoff, model fallback, strict response parsing. |
+| `classify/` | `heuristic` (offline, deterministic) and `llm` (multi-provider, schema-constrained) engines sharing one result type. |
+| `providers/` | Interchangeable LLM providers (Gemini, OpenRouter, Hugging Face) behind one interface, plus discovery/validation, a circuit breaker and the orchestrator (ADR-0007). |
+| `obslog` | Structured JSON attempt logging and the end-of-run report. |
+| `pipeline` | Assemble the provider orchestrator and classifier from configuration. |
+| `provenance` | Build the `classified_by` stamp. |
 | `library` | Load and validate the on-disk library; detect duplicate ids/bodies. |
 | `catalog` | Build the deterministic catalog and serialise it (JSON/YAML). |
 | `render` | README index block and per-category pages (escaped, injection-safe). |
 | `build` | Regenerate every derived artefact, idempotently. |
 | `checks` | The repository policy gate used by CI. |
 | `ingest` | Orchestrate discovery → classify → file for `inbox/`. |
-| `cli` | `cyberkb build|check|ingest|classify` with stable exit codes. |
+| `enrich` | Backfill summaries/classification on existing resources via the LLM. |
+| `cli` | `cyberkb build|check|ingest|enrich|classify` with stable exit codes. |
 
 ## Design principles
 
@@ -66,8 +70,8 @@ inbox/*.md ─┐
 - **Hostile input by default.** Contributor content is untrusted: symlinks,
   oversized blobs, binary data, bidi/control characters, YAML aliases and
   path traversal are all refused (ADR-0001, `docs/threat-model.md`).
-- **Minimal runtime surface.** PyYAML is the only runtime dependency; the Gemini
-  client is hand-rolled on the standard library (ADR-0004).
+- **Minimal runtime surface.** PyYAML is the only runtime dependency; every LLM
+  provider is hand-rolled on the standard library (ADR-0004).
 
 ## Classification
 
@@ -77,15 +81,31 @@ A document is classified by one of two interchangeable engines:
   body, with logarithmic damping and a confidence from the margin between the
   top two categories. Fully offline, deterministic and explainable; weak
   evidence routes to the staging category rather than guessing.
-- **LLM** — Gemini with a response schema built from the live taxonomy, so a
-  hallucinated label is impossible by construction. Each result is validated;
-  anything invalid or low-confidence falls back to the heuristic for that one
-  document, so a batch can never emit an invalid classification or drop a file.
+- **LLM** — the multi-provider orchestrator, with a response schema built from
+  the live taxonomy so a hallucinated label is impossible by construction. Each
+  result is validated; anything invalid or low-confidence falls back to the
+  heuristic for that one document, so a batch can never emit an invalid
+  classification or drop a file.
 
-## Why a hand-rolled Gemini client
+## The multi-provider LLM layer
 
-The ingestion job runs in CI with repository write access and a live API key, so
-every third-party dependency is attack surface. One HTTPS POST to a documented
-JSON endpoint needs only the standard library, and an injectable transport makes
-every branch (retryable errors, model fallback, truncation, blocked responses,
-malformed JSON) testable without a network. See ADR-0004.
+`providers/` presents one interface (`LLMProvider`) with three interchangeable
+implementations — Gemini, OpenRouter and Hugging Face — selected by configured
+key and `LLM_PROVIDER_ORDER`. Before a run, each provider *discovers* models
+from its own catalog and *validates* the best candidates against representative
+cybersecurity prompts, so no model is used on the assumption it works. During a
+run the orchestrator rotates models and providers on failure, retries transient
+errors with jittered backoff, trips a circuit breaker on provider-fatal errors,
+and finally falls back to the heuristic — logging every attempt as structured
+JSON and writing a per-run audit report. Each resource records which provider
+and model classified it (`classified_by`). The full rationale, ranking and
+failure taxonomy are in ADR-0007.
+
+## Why hand-rolled provider clients
+
+The ingestion job runs in CI with repository write access and live API keys, so
+every third-party dependency is attack surface. Each provider is one HTTPS call
+to a documented JSON endpoint and needs only the standard library; an injectable
+transport makes every branch (retryable errors, rotation, truncation, blocked
+responses, malformed JSON) testable without a network. See ADR-0004 and
+ADR-0007.

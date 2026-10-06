@@ -48,6 +48,7 @@ adversary is, and which control answers each threat.
 | Token overreach / privilege escalation | Workflow default `permissions: contents: read`; only the ingestion job gets `contents: write`; other scopes granted per-job. |
 | Secret exfiltration via a crafted workflow or committed secret | `persist-credentials: false` on checkouts except the push job; a version-pinned, checksum-verified gitleaks CLI scans the working tree (scoped by `.gitleaks.toml` — see below); harden-runner audits egress; CodeQL and Scorecard run on a schedule. |
 | Dependency vulnerability | Minimal runtime surface (PyYAML only); `pip`/`uv` lockfile; dependency review on PRs. |
+| LLM provider key leakage / untrusted egress | The three provider keys (`GEMINI_API_KEY`, `OPENROUTER_API_KEY`, `HF_TOKEN`) live in the `awesome-cyber` environment, are read only by the ingestion job, and are never printed: keys go in request headers only, and the verbatim provider text retained on an error is the response body, never the request. Egress reaches only the documented provider hosts and is audited by harden-runner; the runtime stays stdlib `urllib` (ADR-0004), adding no HTTP dependency to that surface. |
 
 Secret scanning keeps the full gitleaks default ruleset and scopes out only the
 curated corpus (`library/`) and the audit prose that quotes scanner output

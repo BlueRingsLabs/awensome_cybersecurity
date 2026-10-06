@@ -16,22 +16,55 @@ Day-to-day operation of the knowledge base.
 ```bash
 uv sync
 uv run cyberkb ingest     # classify + file inbox/, then rebuild
+uv run cyberkb enrich     # backfill summaries/classification on existing resources
 uv run cyberkb build      # just regenerate catalogs/pages from library/
 uv run cyberkb check      # policy gate (what CI runs)
 uv run cyberkb classify inbox/some-note.md   # preview, write nothing
 ```
 
-With `GEMINI_API_KEY` set, ingestion uses the LLM; without it, the offline
-heuristic. Tune with `CYBERKB_MODELS`, `CYBERKB_BATCH_SIZE`, `CYBERKB_MAX_RETRIES`,
-`CYBERKB_TIMEOUT`.
+With at least one provider key set, classification uses the LLM providers;
+without any, the offline heuristic. Tune with `LLM_PROVIDER_ORDER`,
+`CYBERKB_BATCH_SIZE`, `CYBERKB_MAX_RETRIES`, `CYBERKB_TIMEOUT`.
 
-## Rotating the Gemini key or model
+## LLM providers and the `awesome-cyber` environment
 
-- Key: update the `GEMINI_API_KEY` repository secret. No code change.
-- Model: the default chain is newest-first in `src/cyberkb/config.py`; override
-  per-run with `CYBERKB_MODELS="model-a,model-b"`. The client tries each in order
-  and falls back to the heuristic if all are rejected, so a retirement never
-  breaks the pipeline — but update the default when you notice a model is gone.
+Classification is multi-provider (ADR-0007). A provider is used only when its
+key is present; the fallback order is `LLM_PROVIDER_ORDER` (default
+`gemini,openrouter,huggingface`).
+
+| Provider | Secret |
+| --- | --- |
+| Google Gemini | `GEMINI_API_KEY` |
+| OpenRouter | `OPENROUTER_API_KEY` |
+| Hugging Face | `HF_TOKEN` |
+
+The **Ingest and index** workflow declares `environment: awesome-cyber`, so it
+reads these from that deployment environment first and from repository secrets
+as a fallback — keep the values identical in both, or rely on the environment
+alone once environment protection rules are in place. To rotate a key, update
+it in the `awesome-cyber` environment (Settings → Environments → awesome-cyber)
+and/or repository secrets; no code change. Models are discovered and validated
+at run time, so a retired model never breaks the pipeline — the run report
+records which models were used or rejected.
+
+Every run writes a dated report to `docs/audit/ingest-runs/<date>.json`
+(per-provider success rates, failure categories, heuristic-fallback count,
+provider health, model selection). Structured JSON attempt logs also go to
+stdout for the workflow log.
+
+## Enriching the corpus (backfilling summaries)
+
+Most migrated resources were filed by the heuristic with an empty summary. To
+upgrade them, run `cyberkb enrich` (locally, or the **Ingest and index**
+workflow dispatched with `enrich: true`). It re-classifies each
+heuristically-filed resource through the providers, adopts the LLM category,
+tags and one-line summary, refreshes empty author lists, stamps `classified_by`,
+and moves a file when its category changes. Manual classifications (including
+the reference-only works) are never touched. It is idempotent and safe to
+re-run — important because free tiers are rate-limited (OpenRouter allows about
+20 requests/minute and 50/day on the free tier, raised to 1,000/day with
+US$10 of credit; Hugging Face gives a small monthly serverless credit), so the
+whole corpus is enriched over several runs rather than one.
 
 ## Fixing a misclassification
 
@@ -64,9 +97,10 @@ maintainer with admin rights. They are required for CI to be fully green.
 
 - **Actions enabled.** The ingestion workflow commits regenerated catalogs, so
   Actions must be enabled for the repository.
-- **`GEMINI_API_KEY` secret.** Optional. Without it, ingestion uses the offline
-  heuristic; with it, the Gemini classifier. Set it under
-  *Settings → Secrets and variables → Actions*.
+- **Provider keys in the `awesome-cyber` environment.** Optional but needed for
+  LLM classification and enrichment. Add `GEMINI_API_KEY`, `OPENROUTER_API_KEY`
+  and/or `HF_TOKEN` under *Settings → Environments → awesome-cyber* (and, for
+  parity, repository secrets). Any subset works; absent providers are skipped.
 - **Disable CodeQL default setup.** Enabling GitHub Advanced Security turns on
   CodeQL *default setup*, which is mutually exclusive with this repository's
   committed, SHA-pinned advanced workflow (`.github/workflows/codeql.yml`).

@@ -91,12 +91,16 @@ uv sync                 # set up the environment
 uv run cyberkb build    # regenerate catalogs, README index and category pages
 uv run cyberkb check    # repository policy gate (used by CI)
 uv run cyberkb ingest   # classify and file inbox/ submissions, then build
+uv run cyberkb enrich   # backfill summaries/classification on existing resources
 uv run cyberkb classify inbox/note.md   # preview a classification, write nothing
 ```
 
-Classification uses Google Gemini when `GEMINI_API_KEY` is set and falls back
-to a deterministic, offline heuristic otherwise, so the pipeline never blocks on
-an unavailable service. See [`docs/architecture.md`](docs/architecture.md).
+Classification uses whichever LLM providers are configured — Gemini, OpenRouter
+and/or Hugging Face, in `LLM_PROVIDER_ORDER` — discovering and validating models
+at run time, rotating on failure, and falling back to a deterministic, offline
+heuristic, so the pipeline never blocks on an unavailable service. See
+[`docs/architecture.md`](docs/architecture.md) and
+[ADR-0007](docs/adr/0007-multi-provider-llm.md).
 
 ## Quality gates
 

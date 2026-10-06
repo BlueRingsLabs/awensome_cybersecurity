@@ -1,0 +1,39 @@
+# Pre-commit hooks mirror the CI quality gate so problems are caught before a
+# push. Install with:  uv run pre-commit install
+# Run on demand with:  uv run pre-commit run --all-files
+minimum_pre_commit_version: "3.5.0"
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: check-added-large-files
+        args: ["--maxkb=8192"]
+      - id: check-merge-conflict
+      - id: check-yaml
+      - id: check-json
+      - id: end-of-file-fixer
+        exclude: ^(index\.(json|yaml)|library/)
+      - id: trailing-whitespace
+        exclude: ^library/
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.16.10
+    hooks:
+      - id: ruff-check
+        args: ["--fix"]
+      - id: ruff-format
+
+  - repo: local
+    hooks:
+      - id: mypy
+        name: mypy (strict)
+        entry: uv run mypy
+        language: system
+        pass_filenames: false
+        types: [python]
+      - id: cyberkb-check
+        name: cyberkb policy check
+        entry: uv run cyberkb check
+        language: system
+        pass_filenames: false
+        files: ^(library/|schema/|src/cyberkb/|README\.md)

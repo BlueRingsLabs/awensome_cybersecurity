@@ -1,0 +1,40 @@
+# Gitleaks configuration for awesome_cybersecurity.
+#
+# This repository is a curated cybersecurity *knowledge base*. The `library/`
+# tree is third-party educational content — penetration-test write-ups, CTF
+# notes and security guides — which by its very nature quotes illustrative
+# credentials: example API keys, Basic-auth demo strings ("john:secret"),
+# textbook JWTs, the empty-password NTLM hash (31d6cfe0...), expired AWS STS
+# session tokens copied from public write-ups, and placeholders such as
+# YOUR_API_KEY or USERNAME:PASSWORD. None of these are live secrets of this
+# project or its maintainer; they are the subject matter.
+#
+# Secret scanning therefore targets the project's OWN attack surface — the
+# `cyberkb` tooling, the CI/CD workflows and the configuration, where a real
+# credential leak would actually matter — and scopes out the curated corpus
+# and the audit prose that quotes scanner output verbatim. A hit inside the
+# educational corpus is noise; a hit in `src/`, `.github/`, `schema/` or a
+# root config file is a genuine finding and fails the build.
+#
+# The gitleaks default ruleset is kept in full (`useDefault = true`) and only
+# the paths below are allow-listed, so no detection rule is weakened.
+#
+# Rationale is recorded in docs/threat-model.md and
+# docs/runbooks/operations.md. Scanning is performed on the working tree of
+# the checked-out ref (`gitleaks dir`): the gate asserts that no live secret
+# is present in the tree that would merge to `main`.
+
+title = "awesome_cybersecurity gitleaks policy"
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Curated third-party educational corpus and audit prose — illustrative values, not live secrets."
+paths = [
+  # The knowledge-base corpus: third-party security write-ups that quote
+  # example credentials and payloads as their subject matter.
+  '''^library/''',
+  # Audit reports quote scanner findings and test fixtures verbatim.
+  '''^docs/audit/''',
+]

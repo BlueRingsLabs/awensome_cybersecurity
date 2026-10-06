@@ -1,0 +1,139 @@
+[project]
+name = "cyberkb"
+version = "2.2.0"
+description = "Ingestion, classification and cataloguing engine for the BlueRingsLabs awesome_cybersecurity knowledge base."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Gonzalo Romero", email = "deeprat.tec@gmail.com" }]
+maintainers = [{ name = "Gonzalo Romero", email = "deeprat.tec@gmail.com" }]
+requires-python = ">=3.12"
+# Runtime surface is deliberately tiny: the pipeline runs with a live API key
+# in CI, so every extra dependency is extra supply-chain exposure (ADR-0004).
+dependencies = ["pyyaml>=6.0.3,<7"]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Information Technology",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Topic :: Security",
+  "Typing :: Typed",
+]
+
+[project.urls]
+Repository = "https://github.com/BlueRingsLabs/awesome_cybersecurity"
+Documentation = "https://github.com/BlueRingsLabs/awesome_cybersecurity/tree/main/docs"
+Issues = "https://github.com/BlueRingsLabs/awesome_cybersecurity/issues"
+
+[project.scripts]
+cyberkb = "cyberkb.cli:main"
+
+[dependency-groups]
+dev = [
+  "actionlint-py>=1.7.12.25",
+  "coverage[toml]>=7.16.2",
+  "hypothesis>=6.168.3",
+  "jsonschema>=4.26.0",
+  "mypy>=2.4.0",
+  "pytest>=9.1.1",
+  "pytest-cov>=7.1.0",
+  "ruff>=0.16.10",
+  "types-pyyaml>=6.0.12.20260906",
+]
+
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/cyberkb"]
+
+[tool.uv]
+required-version = ">=0.8"
+
+# ---------------------------------------------------------------------------
+# Ruff: lint + format
+# ---------------------------------------------------------------------------
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+  "COM812",  # conflicts with the formatter
+  "CPY",     # no per-file copyright notices; licence lives in LICENSE
+  "D203",    # incompatible with D211
+  "D213",    # incompatible with D212
+  "ISC001",  # conflicts with the formatter
+  "TD",      # no TODO policing needed: TODOs are banned by review, not by lint
+  "FIX",
+]
+
+[tool.ruff.lint.per-file-ignores]
+# Only two exceptions, and both are structural to assertion-based testing rather
+# than stylistic relaxations: pytest rewrites bare `assert` (S101), and the
+# expected values in those assertions are literals (PLR2004). Everything else is
+# linted at full strength, same as src/.
+"tests/**" = [
+  "S101",
+  "PLR2004",
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.pylint]
+max-args = 8
+
+[tool.ruff.format]
+docstring-code-format = true
+
+# ---------------------------------------------------------------------------
+# mypy: strict everywhere
+# ---------------------------------------------------------------------------
+[tool.mypy]
+python_version = "3.12"
+strict = true
+warn_unreachable = true
+enable_error_code = ["ignore-without-code", "redundant-expr", "truthy-bool", "explicit-override"]
+files = ["src", "tests"]
+
+[[tool.mypy.overrides]]
+module = ["jsonschema.*"]
+ignore_missing_imports = true
+
+# ---------------------------------------------------------------------------
+# pytest + coverage: 100 % line *and* branch coverage is a hard gate
+# ---------------------------------------------------------------------------
+[tool.pytest.ini_options]
+minversion = "9.0"
+testpaths = ["tests"]
+addopts = [
+  "-ra",
+  "--strict-markers",
+  "--strict-config",
+  "--cov=cyberkb",
+  "--cov-branch",
+  "--cov-report=term-missing:skip-covered",
+  "--cov-fail-under=100",
+]
+filterwarnings = ["error"]
+xfail_strict = true
+
+[tool.coverage.run]
+branch = true
+source = ["cyberkb"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = true
+fail_under = 100
+exclude_also = [
+  "if TYPE_CHECKING:",
+  "raise NotImplementedError",
+  "@overload",
+]

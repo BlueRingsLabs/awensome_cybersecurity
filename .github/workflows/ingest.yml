@@ -1,0 +1,106 @@
+# Automated ingestion, enrichment and catalog regeneration.
+#
+# On a push that lands raw submissions in inbox/ (after a maintainer merges a
+# contribution) this classifies and files them, regenerates every derived
+# artefact and commits the result. Run by hand (workflow_dispatch) it can also
+# enrich existing resources: re-classify the heuristically-filed corpus through
+# the configured LLM providers and backfill summaries.
+#
+# It is intentionally separate from CI: CI gates correctness on every PR; this
+# job mutates the repository and therefore needs contents:write, granted to this
+# workflow alone. Provider keys come from the `awesome-cyber` deployment
+# environment (and, as a fallback, repository secrets); a provider is used only
+# when its key is present, so the job never fails for a missing secret.
+name: Ingest and index
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "inbox/**"
+      - "schema/taxonomy.yaml"
+      - "src/cyberkb/**"
+  workflow_dispatch:
+    inputs:
+      enrich:
+        description: "Also backfill summaries/classifications on existing resources"
+        type: boolean
+        default: false
+
+# Serialise runs so two ingestions never race on the catalog.
+concurrency:
+  group: ingest-and-index
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  ingest:
+    name: Ingest inbox submissions and rebuild catalogs
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    # Consume the more restrictive environment-scoped secrets (falling back to
+    # repository secrets); future environment protection rules apply here too.
+    environment: awesome-cyber
+    permissions:
+      contents: write # commits the regenerated library and catalogs
+    steps:
+      - name: Harden the runner
+        uses: step-security/harden-runner@e14015d583714f6e62063499dc959a02595150a1 # v2.21.1
+        with:
+          egress-policy: audit
+
+      - name: Check out the repository
+        # This job commits the regenerated catalogs, so it deliberately keeps
+        # the checkout credentials to push. No artifacts are uploaded here.
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1 # zizmor: ignore[artipacked]
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
+        with:
+          enable-cache: true
+
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version-file: ".python-version"
+
+      - name: Install the project
+        run: uv sync --locked --dev
+
+      - name: Ingest inbox and rebuild catalogs
+        env:
+          # Any subset may be set; absent providers are simply not used. The
+          # pipeline discovers and validates models at run time and falls back to
+          # the offline heuristic when no provider is usable, so a missing or
+          # broken key never fails the run — it is recorded in the run report.
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          LLM_PROVIDER_ORDER: ${{ vars.LLM_PROVIDER_ORDER }}
+        run: uv run cyberkb ingest
+
+      - name: Enrich existing resources (manual runs only)
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.enrich }}
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          LLM_PROVIDER_ORDER: ${{ vars.LLM_PROVIDER_ORDER }}
+        run: uv run cyberkb enrich
+
+      - name: Verify the result passes policy
+        run: uv run cyberkb check
+
+      - name: Commit and push regenerated catalogs
+        run: |
+          git config user.name "Gonzalo Romero"
+          git config user.email "deeprat.tec@gmail.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Nothing to commit."
+          else
+            git commit -m "chore(library): ingest, enrich and regenerate catalogs [skip ci]"
+            git push
+          fi

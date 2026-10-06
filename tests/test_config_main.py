@@ -1,0 +1,89 @@
+"""Tests for configuration parsing and the module entry point."""
+
+from __future__ import annotations
+
+import runpy
+
+import pytest
+
+from cyberkb.config import DEFAULT_MODELS, DEFAULT_PROVIDER_ORDER, IngestConfig
+
+
+def test_config_defaults() -> None:
+    """With an empty environment, config falls back to safe defaults and no LLM."""
+    config = IngestConfig.from_env({})
+    assert config.api_key is None
+    assert config.models == DEFAULT_MODELS
+    assert config.use_llm is False
+    assert config.batch_size == 10
+
+
+def test_config_with_key_and_models() -> None:
+    """A key enables the LLM; a comma list of models is parsed and trimmed."""
+    config = IngestConfig.from_env(
+        {"GEMINI_API_KEY": "k", "CYBERKB_MODELS": "a, b , c", "CYBERKB_BATCH_SIZE": "5"},
+    )
+    assert config.use_llm is True
+    assert config.models == ("a", "b", "c")
+    assert config.batch_size == 5
+
+
+def test_config_invalid_int_falls_back() -> None:
+    """A non-numeric integer setting falls back to its default."""
+    config = IngestConfig.from_env({"CYBERKB_BATCH_SIZE": "not-a-number"})
+    assert config.batch_size == 10
+
+
+def test_config_clamps_out_of_range() -> None:
+    """Out-of-range integer settings are clamped to their bounds."""
+    assert IngestConfig.from_env({"CYBERKB_BATCH_SIZE": "9999"}).batch_size == 50
+    assert IngestConfig.from_env({"CYBERKB_MAX_RETRIES": "0"}).max_retries == 1
+
+
+def test_config_blank_models_uses_default() -> None:
+    """A models setting that is only separators falls back to the default chain."""
+    assert IngestConfig.from_env({"CYBERKB_MODELS": "  ,  "}).models == DEFAULT_MODELS
+
+
+def test_default_provider_order() -> None:
+    """With no override the provider order is the documented default."""
+    assert IngestConfig.from_env({}).provider_order == DEFAULT_PROVIDER_ORDER
+    assert IngestConfig.from_env({}).active_providers() == ()
+
+
+def test_active_providers_orders_and_filters_by_key() -> None:
+    """Active providers follow the configured order and need their key present."""
+    config = IngestConfig.from_env(
+        {
+            "GEMINI_API_KEY": "g",
+            "HF_TOKEN": "h",
+            "LLM_PROVIDER_ORDER": "huggingface, gemini",
+        },
+    )
+    # openrouter is absent from the order; openrouter_key is unset anyway.
+    assert config.active_providers() == (("huggingface", "h"), ("gemini", "g"))
+    assert config.use_llm is True
+
+
+def test_active_providers_skips_configured_name_without_key() -> None:
+    """A provider named in the order but missing its key is skipped."""
+    config = IngestConfig.from_env({"OPENROUTER_API_KEY": "o"})
+    assert config.active_providers() == (("openrouter", "o"),)
+
+
+def test_active_providers_ignores_unknown_name() -> None:
+    """An unregistered provider name in the order is ignored."""
+    config = IngestConfig.from_env({"GEMINI_API_KEY": "g", "LLM_PROVIDER_ORDER": "bogus,gemini"})
+    assert config.active_providers() == (("gemini", "g"),)
+
+
+def test_module_entry_point_runs(
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    """`python -m cyberkb --version` runs the CLI and exits cleanly."""
+    monkeypatch.setattr("sys.argv", ["cyberkb", "--version"])
+    with pytest.raises(SystemExit) as exc:
+        runpy.run_module("cyberkb", run_name="__main__")
+    assert exc.value.code == 0
+    assert "cyberkb" in capsys.readouterr().out

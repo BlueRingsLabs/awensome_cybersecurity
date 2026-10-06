@@ -1,0 +1,499 @@
+# =============================================================================
+# awesome_cybersecurity -- knowledge base taxonomy (v2)
+# =============================================================================
+#
+# This file is the single source of truth for how resources are organised.
+# Every consumer reads it: the heuristic classifier, the LLM prompt and
+# response schema, the JSON Schemas under schema/, the catalog and the
+# generated README pages. Change it here and run `cyberkb build`.
+#
+# Design (see docs/adr/0002-faceted-taxonomy.md):
+#   * ONE primary `category` per resource (it decides the folder).
+#   * Orthogonal facets live in front matter: `format`, `language`, `tags`.
+#   * Categories are grounded in two public bodies of knowledge so the
+#     library maps onto how industry and academia already reason:
+#       - CyBOK v1.1 Knowledge Areas  (https://www.cybok.org/knowledgebase1_1/)
+#       - NICE Framework v1.0.0 work role categories (NIST SP 800-181r1)
+#   * Keyword weights feed the offline classifier: strong = 5, medium = 2,
+#     weak = 1. Phrases are matched as whole token sequences, case and accent
+#     insensitive, so "Active Directory", "active_directory" and
+#     "active-directory" are the same signal.
+# =============================================================================
+
+version: 2
+
+cybok_knowledge_areas:
+  AAA: Authentication, Authorisation & Accountability
+  AB: Adversarial Behaviours
+  AC: Applied Cryptography
+  C: Cryptography
+  CPS: Cyber-Physical Systems Security
+  DSS: Distributed Systems Security
+  F: Forensics
+  HF: Human Factors
+  HS: Hardware Security
+  LR: Law & Regulation
+  MAT: Malware & Attack Technologies
+  NS: Network Security
+  OSV: Operating Systems & Virtualisation Security
+  PLT: Physical Layer & Telecommunications Security
+  POR: Privacy & Online Rights
+  RMG: Risk Management & Governance
+  SOIM: Security Operations & Incident Management
+  SS: Software Security
+  SSL: Secure Software Lifecycle
+  WAM: Web & Mobile Security
+
+nice_categories:
+  CE: Cyberspace Effects
+  CI: Cyberspace Intelligence
+  DD: Design and Development
+  IN: Investigation
+  IO: Implementation and Operation
+  OG: Oversight and Governance
+  PD: Protection and Defense
+
+categories:
+  - id: offensive-security
+    name: Offensive Security
+    description: >-
+      Penetration testing, red teaming, adversary emulation, exploitation,
+      post-exploitation, command and control and evasion tradecraft.
+    cybok: [AB, MAT, NS]
+    nice: [PD, CE]
+    keywords:
+      strong: [penetration testing, pentest, pentesting, pentester, red team, red teaming,
+               redteam, adversary emulation, adversary simulation, post exploitation,
+               privilege escalation, metasploit, meterpreter, msfvenom, cobalt strike,
+               command and control, c2, oscp, crto, ecppt, ewpt, ewptx, offensive security,
+               bug bounty, ethical hacking, kerbrute, mimikatz, lateral movement]
+      medium: [exploitation, exploit, payload, reverse shell, bind shell, persistence,
+               enumeration, bypass, evasion, av evasion, edr bypass, hacking, hacker, hackers,
+               attack, attacking, brute force, password cracking, hashcat, john the ripper,
+               credential dumping, nmap, gobuster, ffuf, burp suite, kali, phishing campaign,
+               physical pentest, opsec, tradecraft, scenario, ctf]
+      weak: [vulnerability, vulnerabilities, scan, scanning, shell, target, foothold, root,
+             reconnaissance, recon]
+
+  - id: identity-and-access
+    name: Identity & Access Security
+    description: >-
+      Active Directory, Entra ID and Kerberos, authentication protocols,
+      identity attack paths and identity hardening.
+    cybok: [AAA, OSV]
+    nice: [IO, PD]
+    keywords:
+      strong: [active directory, kerberos, kerberoasting, as rep roasting, golden ticket,
+               silver ticket, ntlm, ldap, bloodhound, domain controller, entra id, azure ad,
+               identity and access management, iam, group policy, dcsync]
+      medium: [domain admin, authentication, authorization, single sign on, sso, oauth, saml,
+               mfa, multi factor, privileged access, pass the hash, pass the ticket, adcs,
+               certificate services, smb, winrm, rdp, credentials, sam]
+      weak: [domain, users, groups, password, passwords, login, account, accounts]
+
+  - id: security-operations
+    name: Security Operations & Defense
+    description: >-
+      SOC operations, SIEM, detection engineering, endpoint defense,
+      hardening, firewalls, logging and blue team practice.
+    cybok: [SOIM, NS]
+    nice: [PD]
+    keywords:
+      strong: [security operations center, soc, siem, blue team, detection engineering,
+               sigma rules, wazuh, splunk, elastic security, edr, xdr, hardening, purple team,
+               security monitoring, log analysis, use cases, defender]
+      medium: [detection, detect, monitoring, alert, alerts, logging, logs, firewall,
+               fortigate, palo alto, pfsense, fail2ban, ids, ips, intrusion detection, suricata,
+               zeek, snort, honeypot, honeypots, defense, defensive, endpoint, antivirus,
+               patching, baseline, cis benchmark, ufw, portsentry]
+      weak: [security, protect, protection, policy, rules, configuration]
+
+  - id: incident-response-and-forensics
+    name: Incident Response & Forensics
+    description: >-
+      Incident response planning and playbooks, digital forensics,
+      memory forensics, evidence handling and post-incident analysis.
+    cybok: [SOIM, F]
+    nice: [PD, IN]
+    keywords:
+      strong: [incident response, incident handling, digital forensics, computer forensics,
+               forensic, forensics, memory forensics, volatility, dfir, ftk imager, autopsy,
+               incident management, playbook, playbooks, ecir, chain of custody]
+      medium: [incident, incidents, triage, evidence, timeline, artifact, artifacts,
+               investigation, containment, eradication, recovery, wireshark, tshark, pcap,
+               disk image, acquisition, ransomware investigation]
+      weak: [analysis, response, report, logs]
+
+  - id: malware-analysis
+    name: Malware Analysis
+    description: >-
+      Static and dynamic malware analysis, sandboxes, YARA, malware
+      families, ransomware and threat hunting for malicious code.
+    cybok: [MAT]
+    nice: [PD, IN]
+    keywords:
+      strong: [malware analysis, malware, ransomware, yara, sandbox, trojan, rat, rats,
+               remote access trojan, botnet, rootkit, keylogger, malware hunting, cryptojacking]
+      medium: [static analysis, dynamic analysis, ioc, iocs, indicators of compromise, virus,
+               worm, dropper, loader, obfuscation, packer, unpacking, cuckoo, any run,
+               virustotal, threat hunter, hunting]
+      weak: [sample, samples, infection, malicious, payload]
+
+  - id: reverse-engineering-and-exploit-development
+    name: Reverse Engineering & Exploit Development
+    description: >-
+      Binary analysis, debugging, disassembly, OS internals, memory
+      corruption, shellcode and exploit development.
+    cybok: [SS, MAT, OSV]
+    nice: [PD, CE]
+    keywords:
+      strong: [reverse engineering, exploit development, buffer overflow, shellcode, assembly,
+               disassembly, disassembler, debugger, ghidra, ida pro, x64dbg, immunity debugger,
+               gdb, rop, return oriented programming, heap overflow, stack overflow,
+               format string, windows internals, game hacking, anti cheat, decompiler]
+      medium: [binary, binaries, x86, x64, arm, registers, eip, rip, seh, aslr, dep, fuzzing,
+               fuzz, crash, windows api, win32 api, pe file, elf, opcode, opcodes, kernel,
+               driver, smart contract, solidity]
+      weak: [memory, pointer, stack, heap, function, functions]
+
+  - id: threat-intelligence-and-osint
+    name: Threat Intelligence & OSINT
+    description: >-
+      Cyber threat intelligence, OSINT tradecraft, dark web research,
+      MITRE ATT&CK, threat actors and intelligence operations.
+    cybok: [AB, SOIM]
+    nice: [CI]
+    keywords:
+      strong: [threat intelligence, cyber threat intelligence, cti, osint, open source intelligence,
+               mitre att ck, att ck, threat actor, threat actors, apt, dark web, darknet,
+               maltego, shodan, google dorks, dorks, threat hunting, kill chain, socmint]
+      medium: [intelligence, reconnaissance, recon, actor, actors, campaign, ttps, ttp,
+               tactics techniques and procedures, human trafficking, missing persons,
+               investigation, geolocation, attack surface, subdomain, subdomains, reconftw,
+               hacker forums, onion]
+      weak: [threat, threats, sources, monitoring]
+
+  - id: application-security
+    name: Application Security
+    description: >-
+      Web, API and mobile application security, OWASP, secure coding,
+      DevSecOps and the secure software lifecycle.
+    cybok: [WAM, SS, SSL]
+    nice: [DD]
+    keywords:
+      strong: [application security, appsec, web application, web security, owasp, xss,
+               cross site scripting, sql injection, sqli, csrf, ssrf, xxe, idor,
+               command injection, os command injection, file inclusion, path traversal,
+               open redirect, html injection, ldap injection, api security, devsecops,
+               secure coding, sast, dast, mobile application, android, ios app, wstg,
+               broken authentication, burp suite, web pentest]
+      medium: [web, api, apis, http, https, cookie, session, javascript, php, nginx, tomcat,
+               apache, injection, deserialization, cors, jwt, oauth, cms, wordpress,
+               vulnerability scanner, code review, sdlc, pipeline]
+      weak: [application, applications, website, websites, server, request, response]
+
+  - id: cloud-and-container-security
+    name: Cloud & Container Security
+    description: >-
+      AWS, Azure, GCP and Microsoft 365 security, Kubernetes and container
+      security, cloud architecture and cloud penetration testing.
+    cybok: [DSS, OSV]
+    nice: [DD, IO]
+    keywords:
+      strong: [cloud security, aws, amazon web services, azure, gcp, google cloud, kubernetes,
+               k8s, eks, aks, gke, container security, docker, containers, microsoft 365,
+               ms365, office 365, o365, cloud security alliance, csa, iam policies, s3]
+      medium: [cloud, serverless, lambda, terraform, infrastructure as code, iac, helm,
+               container, pod, pods, tenant, saas, iaas, paas, shared responsibility]
+      weak: [virtual, instance, instances, storage, bucket]
+
+  - id: network-and-wireless-security
+    name: Network & Wireless Security
+    description: >-
+      Network protocols and attacks, network defense architecture,
+      wireless and Wi-Fi security, VPNs, DNS and service-level testing.
+    cybok: [NS, PLT]
+    nice: [IO, PD]
+    keywords:
+      strong: [network security, wireless, wifi, wi fi, wpa2, wpa3, wpa, wep, aircrack,
+               airgeddon, fluxion, pmkid, 802 11, dhcp starvation, arp spoofing, mitm,
+               man in the middle, ddos, denial of service, vpn, dns, tcp ip, port scanning,
+               ssh penetration testing, ftp, smtp]
+      medium: [network, networks, networking, protocol, protocols, packet, packets, router,
+               routing, switch, vlan, tcp, udp, ip, port, ports, ssh, telnet, snmp, firewall,
+               wireguard, openvpn, tor router, sniffing]
+      weak: [traffic, connection, connections, interface, server]
+
+  - id: iot-ot-and-hardware-security
+    name: IoT, OT & Hardware Security
+    description: >-
+      Internet of Things, industrial control systems and OT, embedded
+      devices, firmware and hardware hacking.
+    cybok: [HS, CPS]
+    nice: [DD, PD]
+    keywords:
+      strong: [iot, internet of things, ics, scada, operational technology, ot security,
+               industrial control, plc, embedded, firmware, hardware hacking, uart, jtag, spi,
+               rfid, nfc, bluetooth, ble, zigbee, sdr, software defined radio, flipper zero]
+      medium: [hardware, device, devices, sensor, sensors, raspberry pi, arduino, modbus,
+               dnp3, smart home, automotive, can bus, chip, microcontroller]
+      weak: [physical, electronics]
+
+  - id: ai-security
+    name: AI Security
+    description: >-
+      Security of AI and LLM systems (prompt injection, model abuse, AI
+      red teaming, governance) and the use of AI in security work.
+    cybok: []
+    nice: [DD, PD]
+    keywords:
+      strong: [llm, llms, large language model, large language models, prompt injection,
+               ai security, ai red teaming, genai, generative ai, chatgpt, gpt, machine learning
+               security, adversarial machine learning, jailbreak, owasp top 10 for llm,
+               ai governance, prompt engineering, gemini, codex, hexstrike]
+      medium: [ai, artificial intelligence, machine learning, ml, model, models, neural,
+               agent, agents, openai, anthropic, claude, copilot, embeddings, rag, bias]
+      weak: [automation, automated, prompt, prompts]
+
+  - id: cryptography-and-privacy
+    name: Cryptography, Privacy & Anonymity
+    description: >-
+      Cryptography and applied crypto, privacy engineering, anonymity
+      tooling such as Tor and Whonix, encryption and blockchain security.
+    cybok: [C, AC, POR]
+    nice: [DD]
+    keywords:
+      strong: [cryptography, cryptographic, encryption, cipher, ciphers, gpg, pgp, tls,
+               ssl certificate, certificate authority, privacy, anonymity, anonymous, tor,
+               onion service, whonix, tails, blockchain security, smart contract security,
+               veracrypt, encrypted container, hashing, hash functions]
+      medium: [encrypt, decrypt, key exchange, public key, private key, rsa, aes, sha256,
+               md5, certificate, certificates, lets encrypt, harica, vpn, private,
+               surveillance, tracking, metadata, password manager, signal, blockchain,
+               bitcoin, cryptocurrency, wallet]
+      weak: [secure, secret, secrets, key, keys]
+
+  - id: governance-risk-and-compliance
+    name: Governance, Risk & Compliance
+    description: >-
+      Security programmes and leadership, risk management, frameworks and
+      standards (NIST, ISO 27001, CIS), policy, compliance, threat modelling
+      and reference architectures.
+    cybok: [RMG, LR]
+    nice: [OG]
+    keywords:
+      strong: [governance, risk management, compliance, nist, iso 27001, iso 27002, cis controls,
+               cybersecurity framework, csf, gdpr, hipaa, pci dss, sox, ciso, security program,
+               security programme, threat modeling, threat modelling, zero trust, reference
+               architecture, code of practice, cybok, policy framework, audit, auditing]
+      medium: [risk, risks, framework, frameworks, standard, standards, policy, policies,
+               regulation, regulatory, controls, control, maturity, strategy, board,
+               leadership, management, budget, metrics, kpi, assessment, health sector,
+               vendor risk, third party risk, business continuity]
+      weak: [organization, organisation, organizations, business, process, processes]
+
+  - id: security-awareness-and-online-safety
+    name: Security Awareness & Online Safety
+    description: >-
+      End-user security awareness, social engineering defense, scams,
+      online safety for children and teens, cyberbullying and social media.
+    cybok: [HF, POR]
+    nice: [OG]
+    keywords:
+      strong: [security awareness, online safety, internet safety, cyberbullying, kids,
+               children, child safety, teen, teens, parents, sexual predators, stalkers,
+               social engineering, scam, scams, fraud, golpe, fake profile, social network,
+               social networks, social networking, instagram, whatsapp, discord, metaverse]
+      medium: [awareness, phishing, safe, safety, family, school, education, users,
+               victim, victims, harassment, social media, facebook]
+      weak: [online, internet, people, person]
+
+  - id: careers-and-certifications
+    name: Careers & Certifications
+    description: >-
+      Career paths and roadmaps, hiring and skills, study plans and
+      certification preparation guides.
+    cybok: []
+    nice: [OG]
+    keywords:
+      strong: [career, careers, carreira, roadmap, certification, certifications, certified,
+               comptia, security plus, ceh, cissp, oscp exam, exam preparation, job market,
+               mercado de trabalho, tech recruiters, resume, interview, study guide,
+               learning path, how to start, getting started in cybersecurity]
+      medium: [exam, study, studies, course, courses, training, skills, competencies, job,
+               jobs, hiring, junior, senior, specialist, leader, leadership, mentor,
+               beginner, beginners, learning, learn]
+      weak: [professional, professionals, team, path]
+
+  - id: foundations-and-systems
+    name: Foundations & Systems
+    description: >-
+      The technical foundations security work rests on: programming and
+      scripting, operating systems and administration, databases,
+      version control, self-hosting and lab building.
+    cybok: [OSV, NS]
+    nice: [IO]
+    keywords:
+      strong: [programming language, programming languages, version control, git, database design,
+               relational database, relational databases, excel, microsoft access, shell scripting,
+               bash scripting, command line, virtualbox, kvm, virtual machine, self hosted,
+               selfhosted, homelab, home lab, backup, backups, rclone, synology, nas,
+               system administration, sysadmin, text editor, static site generator]
+      medium: [python, bash, powershell, javascript, java, golang, c programming, linux, ubuntu,
+               debian, windows server, database, databases, sql, programming, scripting, script,
+               scripts, code, coding, developer, operating system, filesystem, server, servers,
+               vps, install, installation, configure, configuration, cron, systemd, apt, nano, vim,
+               lemp, mysql, postgresql, vm, docker compose, raspberry pi, terminal]
+      weak: [commands, command, tool, tools, tutorial]
+
+  - id: general-technology
+    name: General Technology (out of scope)
+    description: >-
+      Technology content outside the security scope of this library
+      (consumer hardware, gaming, personal finance and deals). Retained
+      for completeness and flagged for curation review.
+    cybok: []
+    nice: []
+    keywords:
+      strong: [gamepad, gamepads, gaming, steam deck, gaming pc, pedalboard, guitar,
+               black friday, cyber monday, deal, deals, offer, giveaway, airdrop, airdrops,
+               mining cryptocurrency, presentation, retro handheld, miyoo, 8bitdo, rewards]
+      medium: [game, games, console, handheld, price, prices, cheap, discount, buy, shopping,
+               lumens, stellar, coupon]
+      weak: [fun, hobby]
+
+  - id: uncategorized
+    name: Uncategorized (staging)
+    description: >-
+      Staging area for resources the pipeline could not classify with
+      enough confidence. Every entry here is waiting for maintainer review.
+    staging: true
+    cybok: []
+    nice: []
+    keywords: {}
+
+formats:
+  - id: book
+    name: Book
+    description: Long-form book or handbook, usually hundreds of pages.
+  - id: guide
+    name: Guide
+    description: Structured technical guide, tutorial or walkthrough.
+  - id: article
+    name: Article
+    description: Blog post, essay or short web article.
+  - id: paper
+    name: Paper
+    description: Research paper, whitepaper or formal report.
+  - id: course-notes
+    name: Course notes
+    description: Study notes, course or certification preparation material.
+  - id: cheatsheet
+    name: Cheat sheet
+    description: Dense quick-reference of commands, syntax or techniques.
+  - id: checklist
+    name: Checklist
+    description: Itemised checklist for assessments, audits or hardening.
+  - id: playbook
+    name: Playbook
+    description: Operational playbook or runbook for a defined process.
+  - id: reference
+    name: Reference
+    description: Curated list, tool catalogue, link collection or template.
+
+languages:
+  - id: en
+    name: English
+  - id: es
+    name: Spanish
+  - id: pt
+    name: Portuguese
+  - id: und
+    name: Undetermined
+
+# Controlled tag vocabulary. Free-form tags fragment search, so every tag must
+# come from this list; the LLM is constrained to it by the response schema.
+tags:
+  - {id: active-directory, patterns: [active directory, kerberos, kerberoasting, domain controller, bloodhound, ldap, adcs]}
+  - {id: ai, patterns: [llm, llms, large language model, chatgpt, generative ai, genai, prompt injection, machine learning, artificial intelligence, gpt]}
+  - {id: android, patterns: [android, apk]}
+  - {id: anonymity, patterns: [anonymity, anonymous, tor, onion, whonix, tails]}
+  - {id: api-security, patterns: [api security, rest api, graphql, api testing]}
+  - {id: assembly, patterns: [assembly, asm, x86 assembly, x64 assembly, nasm]}
+  - {id: aws, patterns: [aws, amazon web services, eks, s3, iam policies]}
+  - {id: azure, patterns: [azure, entra id, azure ad, microsoft 365, office 365, ms365, o365]}
+  - {id: bash, patterns: [bash, shell scripting, bash scripting]}
+  - {id: blockchain, patterns: [blockchain, smart contract, smart contracts, solidity, bitcoin, cryptocurrency, ethereum]}
+  - {id: bug-bounty, patterns: [bug bounty, bugbounty, hackerone, bugcrowd]}
+  - {id: buffer-overflow, patterns: [buffer overflow, stack overflow, heap overflow, eip, seh]}
+  - {id: burp-suite, patterns: [burp suite, burpsuite, burp]}
+  - {id: c2, patterns: [command and control, c2, cobalt strike, sliver, havoc, empire]}
+  - {id: career, patterns: [career, careers, carreira, roadmap, job market, resume, interview]}
+  - {id: certification, patterns: [certification, certifications, oscp, ceh, comptia, crto, ecppt, ewpt, ewptx, ecir, cissp, security plus]}
+  - {id: cheatsheet, patterns: [cheat sheet, cheatsheet]}
+  - {id: cloud, patterns: [cloud security, cloud, aws, azure, gcp, google cloud]}
+  - {id: compliance, patterns: [compliance, gdpr, hipaa, pci dss, iso 27001, sox, audit]}
+  - {id: containers, patterns: [docker, container, containers, container security]}
+  - {id: credential-access, patterns: [credential dumping, password cracking, hashcat, mimikatz, credential access, sam, lsass, brute force]}
+  - {id: cryptography, patterns: [cryptography, encryption, cipher, ciphers, gpg, pgp, rsa, aes]}
+  - {id: ctf, patterns: [ctf, capture the flag, hackthebox, tryhackme, vulnhub]}
+  - {id: dark-web, patterns: [dark web, darknet, darkweb, onion links, hacker forums]}
+  - {id: databases, patterns: [database, databases, sql, mysql, postgresql, relational, microsoft access]}
+  - {id: detection-engineering, patterns: [detection engineering, sigma rules, detection rules, use cases, siem]}
+  - {id: devsecops, patterns: [devsecops, ci cd, pipeline security, sast, dast, sca]}
+  - {id: dns, patterns: [dns, domain name system, subdomain takeover]}
+  - {id: education, patterns: [kids, children, students, school, teaching, teen, teens]}
+  - {id: evasion, patterns: [evasion, av evasion, edr bypass, antivirus bypass, obfuscation, amsi]}
+  - {id: exploit-development, patterns: [exploit development, shellcode, rop, return oriented programming, exploit writing]}
+  - {id: firewall, patterns: [firewall, firewalls, fortigate, palo alto, pfsense, ufw, iptables]}
+  - {id: forensics, patterns: [forensics, forensic, memory forensics, volatility, ftk imager, autopsy, dfir]}
+  - {id: fuzzing, patterns: [fuzzing, fuzz, fuzzer, ffuf, afl]}
+  - {id: git, patterns: [git, github, gitlab, version control]}
+  - {id: governance, patterns: [governance, ciso, security program, board, policy framework]}
+  - {id: hardening, patterns: [hardening, harden, cis benchmark, baseline, secure configuration]}
+  - {id: hardware, patterns: [hardware hacking, uart, jtag, firmware, embedded, raspberry pi, flipper zero]}
+  - {id: homelab, patterns: [homelab, home lab, self hosted, selfhosted, nas, synology, vps, lab environment]}
+  - {id: ics-ot, patterns: [ics, scada, operational technology, plc, modbus, industrial control]}
+  - {id: incident-response, patterns: [incident response, incident handling, incident management, ir playbook, playbook]}
+  - {id: iot, patterns: [iot, internet of things, smart home]}
+  - {id: java, patterns: [java, jvm, tomcat]}
+  - {id: javascript, patterns: [javascript, node js, nodejs, typescript]}
+  - {id: kubernetes, patterns: [kubernetes, k8s, eks, aks, gke, helm]}
+  - {id: lateral-movement, patterns: [lateral movement, pass the hash, pass the ticket, psexec, wmiexec]}
+  - {id: linux, patterns: [linux, ubuntu, debian, kali, centos, fedora, arch linux]}
+  - {id: log-analysis, patterns: [log analysis, logs, logging, goaccess, syslog]}
+  - {id: macos, patterns: [macos, mac os, osx, apple]}
+  - {id: malware, patterns: [malware, ransomware, trojan, rat, botnet, rootkit, yara]}
+  - {id: metasploit, patterns: [metasploit, meterpreter, msfvenom, msfconsole]}
+  - {id: mitre-attack, patterns: [mitre att ck, att ck, mitre]}
+  - {id: mobile, patterns: [mobile, android, ios, apk, mobile application]}
+  - {id: networking, patterns: [network, networking, tcp ip, protocols, routing, vlan, packet]}
+  - {id: nist, patterns: [nist, cybersecurity framework, sp 800]}
+  - {id: nmap, patterns: [nmap, port scanning, masscan]}
+  - {id: osint, patterns: [osint, open source intelligence, maltego, shodan, google dorks, dorks, socmint]}
+  - {id: owasp, patterns: [owasp, wstg, owasp top 10, asvs]}
+  - {id: password-security, patterns: [password, passwords, password manager, password cracking, credential stuffing]}
+  - {id: persistence, patterns: [persistence, backdoor, scheduled task, autorun, startup folder]}
+  - {id: phishing, patterns: [phishing, spear phishing, email security, email header]}
+  - {id: physical-security, patterns: [physical pentest, physical security, lock picking, badge cloning, rfid]}
+  - {id: powershell, patterns: [powershell, pwsh]}
+  - {id: privacy, patterns: [privacy, surveillance, tracking, data protection, personal data]}
+  - {id: privilege-escalation, patterns: [privilege escalation, privesc, suid, sudo, token impersonation]}
+  - {id: python, patterns: [python, python3, pip]}
+  - {id: ransomware, patterns: [ransomware]}
+  - {id: red-team, patterns: [red team, red teaming, redteam, adversary emulation, adversary simulation]}
+  - {id: reporting, patterns: [penetration testing report, pentest report, report writing, reporting]}
+  - {id: reverse-engineering, patterns: [reverse engineering, ghidra, ida pro, x64dbg, disassembly, decompiler]}
+  - {id: risk-management, patterns: [risk management, risk assessment, risk analysis, threat modeling, threat modelling]}
+  - {id: social-engineering, patterns: [social engineering, pretexting, vishing, scam, scams, fraud]}
+  - {id: soc, patterns: [security operations center, soc, soc analyst, blue team]}
+  - {id: sql-injection, patterns: [sql injection, sqli, sqlmap]}
+  - {id: threat-hunting, patterns: [threat hunting, threat hunter, hunting]}
+  - {id: threat-intelligence, patterns: [threat intelligence, cti, threat actor, threat actors, apt]}
+  - {id: tls, patterns: [tls, ssl certificate, lets encrypt, certificate authority, https]}
+  - {id: vpn, patterns: [vpn, wireguard, openvpn]}
+  - {id: vulnerability-management, patterns: [vulnerability management, vulnerability scanner, cve, cvss, patch management, defectdojo]}
+  - {id: web-security, patterns: [web application, web security, xss, csrf, ssrf, web pentest, http]}
+  - {id: windows, patterns: [windows, win32, windows server, windows api, ntfs, registry]}
+  - {id: wireless, patterns: [wireless, wifi, wi fi, wpa2, aircrack, pmkid, 802 11, bluetooth]}
+  - {id: zero-trust, patterns: [zero trust, ztna]}

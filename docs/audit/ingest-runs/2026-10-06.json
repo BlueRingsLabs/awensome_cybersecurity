@@ -1,0 +1,349 @@
+{
+  "generated_at": "2026-10-06T22:40:52Z",
+  "totals": {
+    "calls": 12,
+    "successes": 7,
+    "failures": 5,
+    "success_rate": 0.5833,
+    "heuristic_fallbacks": 0
+  },
+  "failure_categories": {
+    "inference_error": 1,
+    "model_unavailable": 3,
+    "server_error": 1
+  },
+  "per_provider": {
+    "gemini": {
+      "calls": 4,
+      "successes": 0,
+      "failures": 4,
+      "success_rate": 0.0,
+      "failure_categories": {
+        "model_unavailable": 3,
+        "server_error": 1
+      }
+    },
+    "openrouter": {
+      "calls": 8,
+      "successes": 7,
+      "failures": 1,
+      "success_rate": 0.875,
+      "failure_categories": {
+        "inference_error": 1
+      }
+    }
+  },
+  "provider_health": [
+    {
+      "provider": "gemini",
+      "model": null,
+      "ok": false,
+      "latency_s": 0.0,
+      "category": "model_unavailable",
+      "detail": "validation call failed (model_unavailable)"
+    },
+    {
+      "provider": "openrouter",
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "ok": true,
+      "latency_s": 69.971,
+      "category": null,
+      "detail": "2 model(s) validated"
+    },
+    {
+      "provider": "huggingface",
+      "model": null,
+      "ok": false,
+      "latency_s": 0.0,
+      "category": "model_unavailable",
+      "detail": "model not available"
+    }
+  ],
+  "model_selection": [
+    {
+      "provider": "gemini",
+      "discovered": 22,
+      "accepted": [],
+      "error": "",
+      "validations": [
+        {
+          "model_id": "gemini-flash-latest",
+          "accepted": false,
+          "reason": "validation call failed (model_unavailable)",
+          "samples_passed": 0,
+          "samples_total": 3,
+          "avg_latency_s": null
+        },
+        {
+          "model_id": "gemini-3.8-flash",
+          "accepted": false,
+          "reason": "validation call failed (server_error)",
+          "samples_passed": 0,
+          "samples_total": 3,
+          "avg_latency_s": null
+        },
+        {
+          "model_id": "gemini-3.7-flash",
+          "accepted": false,
+          "reason": "validation call failed (model_unavailable)",
+          "samples_passed": 0,
+          "samples_total": 3,
+          "avg_latency_s": null
+        },
+        {
+          "model_id": "gemini-3.6-flash",
+          "accepted": false,
+          "reason": "validation call failed (model_unavailable)",
+          "samples_passed": 0,
+          "samples_total": 3,
+          "avg_latency_s": null
+        }
+      ]
+    },
+    {
+      "provider": "openrouter",
+      "discovered": 21,
+      "accepted": [
+        "nvidia/nemotron-3.5-lightning:free",
+        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free"
+      ],
+      "error": "",
+      "validations": [
+        {
+          "model_id": "nvidia/nemotron-3.5-lightning:free",
+          "accepted": true,
+          "reason": "validated",
+          "samples_passed": 3,
+          "samples_total": 3,
+          "avg_latency_s": 69.971
+        },
+        {
+          "model_id": "nvidia/nemotron-3-ultra-550b-a55b:free",
+          "accepted": false,
+          "reason": "validation call failed (inference_error)",
+          "samples_passed": 1,
+          "samples_total": 3,
+          "avg_latency_s": 38.78
+        },
+        {
+          "model_id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+          "accepted": true,
+          "reason": "validated",
+          "samples_passed": 3,
+          "samples_total": 3,
+          "avg_latency_s": 24.683
+        }
+      ]
+    },
+    {
+      "provider": "huggingface",
+      "discovered": 24,
+      "accepted": [],
+      "error": "",
+      "validations": [
+        {
+          "model_id": "meta-llama/Llama-3.1-8B-Instruct",
+          "accepted": false,
+          "reason": "model not available",
+          "samples_passed": 0,
+          "samples_total": 3,
+          "avg_latency_s": null
+        },
+        {
+          "model_id": "google/gemma-3-4b-it",
+          "accepted": false,
+          "reason": "model not available",
+          "samples_passed": 0,
+          "samples_total": 3,
+          "avg_latency_s": null
+        },
+        {
+          "model_id": "google/gemma-3-12b-it",
+          "accepted": false,
+          "reason": "model not available",
+          "samples_passed": 0,
+          "samples_total": 3,
+          "avg_latency_s": null
+        },
+        {
+          "model_id": "google/gemma-3-27b-it",
+          "accepted": false,
+          "reason": "model not available",
+          "samples_passed": 0,
+          "samples_total": 3,
+          "avg_latency_s": null
+        }
+      ]
+    }
+  ],
+  "attempts": [
+    {
+      "provider": "gemini",
+      "model": "gemini-flash-latest",
+      "resource_id": "__validation__",
+      "attempt": 1,
+      "outcome": "failure",
+      "started_at": "2026-10-06T22:34:38Z",
+      "ended_at": "2026-10-06T22:34:46Z",
+      "duration_s": 8.082,
+      "category": "model_unavailable",
+      "status": 400,
+      "raw_error": "{\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"Request contains an invalid argument.\",\n    \"status\": \"INVALID_ARGUMENT\"\n  }\n}\n",
+      "fell_back": false
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-3.8-flash",
+      "resource_id": "__validation__",
+      "attempt": 1,
+      "outcome": "failure",
+      "started_at": "2026-10-06T22:34:46Z",
+      "ended_at": "2026-10-06T22:35:17Z",
+      "duration_s": 31.415,
+      "category": "server_error",
+      "status": 503,
+      "raw_error": "{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n",
+      "fell_back": false
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-3.7-flash",
+      "resource_id": "__validation__",
+      "attempt": 1,
+      "outcome": "failure",
+      "started_at": "2026-10-06T22:35:17Z",
+      "ended_at": "2026-10-06T22:35:26Z",
+      "duration_s": 8.719,
+      "category": "model_unavailable",
+      "status": 400,
+      "raw_error": "{\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"Request contains an invalid argument.\",\n    \"status\": \"INVALID_ARGUMENT\"\n  }\n}\n",
+      "fell_back": false
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "resource_id": "__validation__",
+      "attempt": 1,
+      "outcome": "failure",
+      "started_at": "2026-10-06T22:35:26Z",
+      "ended_at": "2026-10-06T22:35:27Z",
+      "duration_s": 0.317,
+      "category": "model_unavailable",
+      "status": 400,
+      "raw_error": "{\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"Request contains an invalid argument.\",\n    \"status\": \"INVALID_ARGUMENT\"\n  }\n}\n",
+      "fell_back": false
+    },
+    {
+      "provider": "openrouter",
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "resource_id": "__validation__",
+      "attempt": 1,
+      "outcome": "success",
+      "started_at": "2026-10-06T22:35:27Z",
+      "ended_at": "2026-10-06T22:37:06Z",
+      "duration_s": 99.35,
+      "category": null,
+      "status": 200,
+      "raw_error": "",
+      "fell_back": false
+    },
+    {
+      "provider": "openrouter",
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "resource_id": "__validation__",
+      "attempt": 2,
+      "outcome": "success",
+      "started_at": "2026-10-06T22:37:06Z",
+      "ended_at": "2026-10-06T22:38:21Z",
+      "duration_s": 74.775,
+      "category": null,
+      "status": 200,
+      "raw_error": "",
+      "fell_back": false
+    },
+    {
+      "provider": "openrouter",
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "resource_id": "__validation__",
+      "attempt": 3,
+      "outcome": "success",
+      "started_at": "2026-10-06T22:38:21Z",
+      "ended_at": "2026-10-06T22:38:57Z",
+      "duration_s": 35.786,
+      "category": null,
+      "status": 200,
+      "raw_error": "",
+      "fell_back": false
+    },
+    {
+      "provider": "openrouter",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "resource_id": "__validation__",
+      "attempt": 1,
+      "outcome": "success",
+      "started_at": "2026-10-06T22:38:57Z",
+      "ended_at": "2026-10-06T22:39:36Z",
+      "duration_s": 38.78,
+      "category": null,
+      "status": 200,
+      "raw_error": "",
+      "fell_back": false
+    },
+    {
+      "provider": "openrouter",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "resource_id": "__validation__",
+      "attempt": 2,
+      "outcome": "failure",
+      "started_at": "2026-10-06T22:39:36Z",
+      "ended_at": "2026-10-06T22:39:36Z",
+      "duration_s": 0.36,
+      "category": "inference_error",
+      "status": 200,
+      "raw_error": "response had no choices",
+      "fell_back": false
+    },
+    {
+      "provider": "openrouter",
+      "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+      "resource_id": "__validation__",
+      "attempt": 1,
+      "outcome": "success",
+      "started_at": "2026-10-06T22:39:36Z",
+      "ended_at": "2026-10-06T22:39:51Z",
+      "duration_s": 14.734,
+      "category": null,
+      "status": 200,
+      "raw_error": "",
+      "fell_back": false
+    },
+    {
+      "provider": "openrouter",
+      "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+      "resource_id": "__validation__",
+      "attempt": 2,
+      "outcome": "success",
+      "started_at": "2026-10-06T22:39:51Z",
+      "ended_at": "2026-10-06T22:40:03Z",
+      "duration_s": 12.36,
+      "category": null,
+      "status": 200,
+      "raw_error": "",
+      "fell_back": false
+    },
+    {
+      "provider": "openrouter",
+      "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+      "resource_id": "__validation__",
+      "attempt": 3,
+      "outcome": "success",
+      "started_at": "2026-10-06T22:40:03Z",
+      "ended_at": "2026-10-06T22:40:50Z",
+      "duration_s": 46.955,
+      "category": null,
+      "status": 200,
+      "raw_error": "",
+      "fell_back": false
+    }
+  ]
+}

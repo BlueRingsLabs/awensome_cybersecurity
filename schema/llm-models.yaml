@@ -1,0 +1,89 @@
+# Reviewed LLM model catalog: which provider models enrichment may use, in what
+# order, and under which free-tier limits.
+#
+# This file is data, not code, so changing a model or a limit is a reviewed
+# one-line diff rather than a release. It is *not* trusted blindly: at run time
+# every declared model is resolved against the provider's live `/models`
+# listing (the API id is never assumed from the display name) and validated with
+# a real call before it serves a single resource (ADR-0008).
+#
+# Rules enforced by the loader (cyberkb.providers.catalog):
+#   * `base_url` must equal the endpoint the provider adapter is built for, so a
+#     pull request editing this file can never redirect an API key elsewhere;
+#   * a model listed under a provider's `exclude` can never be declared;
+#   * limits are positive integers; priority is the order of appearance
+#     (providers first-to-last, models top-to-bottom within a provider).
+#
+# Limits are the values shown on the maintainer's dashboards (format
+# current_usage / limit, only models with limit > 0 kept). The engine paces
+# itself below them, so a 429 is the exception rather than the control loop.
+version: 1
+verified_on: 2026-10-07
+source: Google AI Studio rate-limit dashboard and Groq console limits page (free tier)
+
+providers:
+  - id: google
+    name: Google AI Studio
+    base_url: https://generativelanguage.googleapis.com/v1beta
+    api_key_env: GEMINI_API_KEY
+    docs: https://ai.google.dev/gemini-api/docs
+    # Declared names are display names; the API id is resolved from `/models`
+    # (displayName, then the id itself). `id_hints` lists ids published in the
+    # official docs, used only when the display name does not resolve.
+    match: display_name
+    # RPD quotas reset at midnight Pacific time (ai.google.dev rate-limits docs).
+    quota_timezone: America/Los_Angeles
+    # The free-tier TPM quota counts input tokens only.
+    tpm_counts_completion: false
+    exclude: []
+    models:
+      - name: Gemma 4 31B
+        id_hints: [gemma-4-31b-it]
+        limits: { rpm: 30, rpd: 14400, tpm: 16000 }
+      - name: Gemma 4 26B
+        id_hints: [gemma-4-26b-a4b-it]
+        limits: { rpm: 30, rpd: 14400, tpm: 16000 }
+      - name: Gemini 3.1 Flash Lite
+        limits: { rpm: 15, rpd: 500, tpm: 250000 }
+      - name: Gemini 3.5 Flash Lite
+        limits: { rpm: 15, rpd: 500, tpm: 250000 }
+      - name: Gemini 3.8 Flash
+        limits: { rpm: 5, rpd: 20, tpm: 250000 }
+      - name: Gemini 3.6 Flash
+        limits: { rpm: 5, rpd: 20, tpm: 250000 }
+      - name: Gemini 3.7 Flash
+        limits: { rpm: 5, rpd: 20, tpm: 250000 }
+      - name: Gemini 3.5 Flash
+        limits: { rpm: 5, rpd: 20, tpm: 250000 }
+      - name: Gemini 2.5 Flash
+        limits: { rpm: 5, rpd: 20, tpm: 250000 }
+      - name: Gemini 2.5 Flash Lite
+        limits: { rpm: 10, rpd: 20, tpm: 250000 }
+
+  - id: groq
+    name: Groq
+    base_url: https://api.groq.com/openai/v1
+    api_key_env: GROQ_API_KEY
+    docs: https://console.groq.com/docs
+    # Groq model names are API ids; they must appear verbatim and `active`.
+    match: id
+    # Groq reports its own resets in x-ratelimit-reset-* headers; the local
+    # daily ledger uses the UTC day as a conservative bound.
+    quota_timezone: UTC
+    # Groq TPM counts prompt and completion tokens.
+    tpm_counts_completion: true
+    # Safety classifiers, not generative models: they cannot classify or
+    # summarise, so they may never be declared.
+    exclude:
+      - meta-llama/llama-prompt-guard-2-22m
+      - meta-llama/llama-prompt-guard-2-86m
+      - openai/gpt-oss-safeguard-20b
+    models:
+      - name: allam-2-7b
+        limits: { rpm: 30, rpd: 7000, tpm: 6000, tpd: 500000 }
+      - name: openai/gpt-oss-120b
+        limits: { rpm: 30, rpd: 1000, tpm: 8000, tpd: 200000 }
+      - name: openai/gpt-oss-20b
+        limits: { rpm: 30, rpd: 1000, tpm: 8000, tpd: 200000 }
+      - name: qwen/qwen3.8-27b
+        limits: { rpm: 30, rpd: 1000, tpm: 8000, tpd: 200000 }

@@ -34,6 +34,14 @@ class LLMError(KBError):
     """Base class for classification-service failures (see :class:`ProviderError`)."""
 
 
+class ModelCatalogError(KBError):
+    """``schema/llm-models.yaml`` is missing, malformed or contradicts a provider."""
+
+
+class ProviderConfigError(LLMError):
+    """A required provider key is missing or rejected; the run must not start."""
+
+
 class FailureCategory(StrEnum):
     """A categorised cause for a single provider failure.
 

@@ -89,6 +89,8 @@ CATALOG_DOC: dict[str, Any] = {
 }
 
 DAY = "2026-10-07"
+# Exact hosts only: a substring match would also route look-alike hosts.
+_HOSTS = {"generativelanguage.googleapis.com": "google", "api.groq.com": "groq"}
 GEMMA = "google:gemma-t-it"
 FLASH = "google:gemini-test-flash"
 GROQ = "groq:groq-a"
@@ -168,7 +170,10 @@ class Router:
     def key(url: str, body: dict[str, Any] | None) -> str:
         """Route key for a request."""
         parsed = urllib.parse.urlsplit(url)
-        provider = "google" if parsed.netloc.endswith("googleapis.com") else "groq"
+        provider = _HOSTS.get(parsed.hostname or "")
+        if provider is None:
+            msg = f"request to an unexpected host: {parsed.hostname!r}"
+            raise AssertionError(msg)
         if parsed.path.endswith("/models"):
             return f"{provider}:list"
         if parsed.path.endswith(":generateContent"):

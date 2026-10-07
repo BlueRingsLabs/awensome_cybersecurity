@@ -415,3 +415,15 @@ def test_short_keys_are_not_redacted() -> None:
     """Placeholder keys shorter than a real secret do not mangle error text."""
     provider = GoogleProvider("key", transport=Router())
     assert provider.redact("API key not valid") == "API key not valid"
+
+
+def test_the_test_network_refuses_unknown_hosts() -> None:
+    """The HTTP double only answers the two verified provider hosts."""
+    with pytest.raises(AssertionError, match="unexpected host"):
+        Router().request(
+            "GET",
+            "https://generativelanguage.googleapis.com.evil.example/v1beta/models",
+            headers={},
+            body=None,
+            timeout=1,
+        )

@@ -171,7 +171,7 @@ def _classifier(taxonomy: Taxonomy, *responses: HttpResponse) -> LLMClassifier:
         taxonomy,
         catalog_doc=single_model_catalog(),
         validations=validated_today(),
-        settings=RotationSettings(model_retries=0, list_passes=1),
+        settings=RotationSettings(model_retries=0, list_passes=1, transient_strikes=1),
     )
     return classifier
 

@@ -45,7 +45,7 @@ def _classifier(
         taxonomy,
         catalog_doc=single_model_catalog(),
         validations=validated_today(),
-        settings=settings or RotationSettings(model_retries=0, list_passes=1),
+        settings=settings or RotationSettings(model_retries=0, list_passes=1, transient_strikes=1),
     )
     return classifier, time, router
 

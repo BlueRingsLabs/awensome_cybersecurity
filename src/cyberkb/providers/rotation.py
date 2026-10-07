@@ -128,6 +128,10 @@ class RotationSettings:
     """Consecutive rate limits without a success that mean the model is spent."""
     resource_failure_limit: int = 3
     """Consecutive requests a model failed after retries before it is retired."""
+    transient_strikes: int = 3
+    """Transient failures (overload, 5xx, timeout) outliving their retries before a
+    model is retired; each earlier one only cools it for ``transient_cooldown``."""
+    transient_cooldown: float = 300.0
     max_output_tokens: int = 4096
     headroom: float = 0.9
 
@@ -244,6 +248,7 @@ class _Slot:
     reason: str = ""
     rate_limits: int = 0
     resource_failures: int = 0
+    strikes: int = 0
     validation: list[dict[str, Any]] = field(default_factory=list)
     stats: _Stats = field(default_factory=_Stats)
 
@@ -495,9 +500,8 @@ class RotationEngine:
             if verdict is not None:
                 return verdict
         if slot.revivable:
-            return self._settle(
+            return self._strike_validation(
                 slot,
-                None,
                 FailureCategory.SERVER_ERROR,
                 "every structured-output request mode failed with an internal server error",
             )
@@ -525,6 +529,12 @@ class RotationEngine:
         slot.validation.append(
             {"mode": mode, "category": error.category.value, "detail": error.raw.strip()[:500]},
         )
+        return self._route_validation_error(slot, mode, error)
+
+    def _route_validation_error(
+        self, slot: _Slot, mode: str, error: ProviderError
+    ) -> _Verdict | None:
+        """Decide what a failed probe means; ``None`` means "try the next mode"."""
         if self._steps_down(slot, error):
             return None
         if self._route_quota(slot, error):
@@ -534,8 +544,34 @@ class RotationEngine:
                 slot.provider, f"auth_error: {error.raw.strip()[:300]}", revivable=False
             )
             return "postponed"
-        slot.revivable = error.category in _TRANSIENT
-        return self._settle(slot, mode, error.category, error.raw.strip() or error.category.value)
+        detail = error.raw.strip() or error.category.value
+        if error.category in _TRANSIENT:
+            return self._strike_validation(slot, error.category, detail)
+        return self._settle(slot, mode, error.category, detail)
+
+    def _strike_validation(self, slot: _Slot, category: FailureCategory, detail: str) -> _Verdict:
+        """A transient validation failure: cool and retry later, or fail after N strikes."""
+        if self._strike(slot):
+            slot.revivable = False
+            slot.validation.append(
+                {"result": "postponed", "category": category.value, "detail": detail[:500]}
+            )
+            return "postponed"
+        slot.revivable = True
+        return self._settle(slot, None, category, detail)
+
+    def _strike(self, slot: _Slot) -> bool:
+        """Count a transient failure; ``True`` (and a cooldown) while strikes remain.
+
+        Free-tier models flap under load (observed live: the same model answering
+        500, then 503 "high demand", then fine within minutes), so a transient
+        failure benches a model briefly instead of writing it off for the run.
+        """
+        slot.strikes += 1
+        if slot.strikes >= self._settings.transient_strikes:
+            return False
+        slot.governor.cool(self._settings.transient_cooldown)
+        return True
 
     @staticmethod
     def _steps_down(slot: _Slot, error: ProviderError) -> bool:
@@ -560,6 +596,7 @@ class RotationEngine:
         ok = category is None
         if ok:
             slot.revivable = False
+            slot.strikes = 0
         slot.status = SlotStatus.ACTIVE if ok else SlotStatus.FAILED
         slot.reason = "" if ok else f"validation failed ({category}): {detail[:300]}"
         slot.validation.append(
@@ -752,6 +789,7 @@ class RotationEngine:
                 if problem is None:
                     slot.rate_limits = 0
                     slot.resource_failures = 0
+                    slot.strikes = 0
                     return GenerationOutcome(
                         "ok", result=call.result, provider=slot.provider_id, model=slot.model_id
                     ), False
@@ -813,7 +851,13 @@ class RotationEngine:
             )
             return False
         if category in _TRANSIENT:
-            self._retire(slot, category, detail, revivable=True)
+            if not self._strike(slot):
+                self._retire(
+                    slot,
+                    category,
+                    f"{slot.strikes} transient failures without a success: {detail}",
+                    revivable=True,
+                )
             return False
         slot.resource_failures += 1
         if slot.resource_failures >= self._settings.resource_failure_limit:
@@ -868,6 +912,7 @@ class RotationEngine:
             slot.status = SlotStatus.ACTIVE if slot.mode else SlotStatus.UNVALIDATED
             slot.revivable = False
             slot.resource_failures = 0
+            slot.strikes = 0
             slot.reason = ""
         self._sleep(self._settings.list_backoff)
         return True

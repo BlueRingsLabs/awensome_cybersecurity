@@ -67,7 +67,11 @@ reviewed data in `schema/llm-models.yaml`, not code. The current order
     — 30 RPM, 1,000 RPD, 8K TPM
 
 Groq's safety classifiers (`llama-prompt-guard-2-*`, `gpt-oss-safeguard-20b`)
-are excluded and cannot be declared. To change a limit or the order, edit the
+are excluded and cannot be declared. Observed on 2026-10-07: `allam-2-7b` is
+blocked for the Groq project until enabled under *console.groq.com → Settings →
+Project → Limits*, and Google reports `gemini-2.5-flash` /
+`gemini-2.5-flash-lite` as no longer available to new users; validation retires
+them automatically and the reports say why. To change a limit or the order, edit the
 catalog and update `verified_on`; to add a model, add its display name (Google)
 or exact id (Groq). The API id is always resolved from the live `/models`
 listing, so a name the API does not list shows up as `unresolved` in the
@@ -95,7 +99,9 @@ ready now:
   midnight Pacific; counts persist across runs in the ledger).
 - **Errors** (timeout, 5xx, network, unusable answer) retry on the same model
   `CYBERKB_MODEL_RETRIES` times with jittered exponential backoff, then the
-  request moves to the next model.
+  request moves to the next model. A transient failure that outlives the
+  retries benches the model for 5 minutes (a "strike"); three strikes without
+  a success retire it until the next list pass.
 - **Rate limits** (per-minute 429) move the request on immediately; the model
   cools down for the provider's advised delay and rejoins at its priority.
 - **Daily quota** (per-day 429, or Groq reporting no requests left) retires the

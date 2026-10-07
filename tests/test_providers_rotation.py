@@ -205,11 +205,31 @@ def test_failed_validation_is_permanent_for_the_day(
     assert cached.day == DAY
 
 
-def test_transient_validation_failure_is_not_cached(taxonomy: Taxonomy) -> None:
-    """A 503 during validation skips the model now but is not remembered for the day."""
+def test_transient_validation_failure_benches_the_model_briefly(taxonomy: Taxonomy) -> None:
+    """A 503 during validation cools the model; it is probed again once the cooldown ends."""
     router = discovered_router().add("google:gemma-t-it", google_error(503, "UNAVAILABLE", "busy"))
     router.add("google:gemini-test-flash", probe_ok(), _ok())
-    classifier, _ = make_classifier(router, taxonomy)
+    classifier, time = make_classifier(router, taxonomy)
+    assert classifier.classify_one(_doc(), deadline=None).result is not None
+    assert _status(classifier, GEMMA) == "unvalidated"
+    assert _model(classifier, GEMMA)["validation"][-1]["result"] == "postponed"
+    assert GEMMA not in classifier.engine.validations()
+    time.t += 301
+    router.add("google:gemma-t-it", probe_ok(), _ok("doc-2"))
+    second = classifier.classify_one(_doc("doc-2"), deadline=None)
+    assert second.result is not None
+    assert second.result.model == "gemma-t-it"
+
+
+def test_transient_validation_failure_after_the_last_strike_fails_revivably(
+    taxonomy: Taxonomy,
+) -> None:
+    """With strikes spent, a transient validation failure is not cached for the day."""
+    router = discovered_router().add("google:gemma-t-it", google_error(503, "UNAVAILABLE", "busy"))
+    router.add("google:gemini-test-flash", probe_ok(), _ok())
+    classifier, _ = make_classifier(
+        router, taxonomy, settings=RotationSettings(transient_strikes=1)
+    )
     assert classifier.classify_one(_doc(), deadline=None).result is not None
     assert _status(classifier, GEMMA) == "failed"
     assert GEMMA not in classifier.engine.validations()
@@ -382,7 +402,7 @@ def test_server_retry_hint_overrides_backoff(taxonomy: Taxonomy) -> None:
 
 def test_exhausted_retries_retire_the_model_revivably(taxonomy: Taxonomy) -> None:
     """After X retries a transient failure moves the request to the next model."""
-    settings = RotationSettings(model_retries=1)
+    settings = RotationSettings(model_retries=1, transient_strikes=1)
     busy = google_error(500, "INTERNAL", "boom")
     router = discovered_router().add("google:gemma-t-it", probe_ok(), busy, busy)
     router.add("google:gemini-test-flash", probe_ok(), _ok())
@@ -479,7 +499,9 @@ def test_persistent_network_failure_takes_the_provider_out_until_the_next_pass(
     taxonomy: Taxonomy,
 ) -> None:
     """Network failure on Google, then Groq fails too: the list is walked again."""
-    settings = RotationSettings(model_retries=0, list_passes=2, list_backoff=45.0)
+    settings = RotationSettings(
+        model_retries=0, list_passes=2, list_backoff=45.0, transient_strikes=1
+    )
     validations = {
         GEMMA: CachedValidation(DAY, ok=True, mode="json_schema", category=None, detail=""),
         GROQ: CachedValidation(DAY, ok=True, mode="json_schema", category=None, detail=""),
@@ -498,7 +520,7 @@ def test_persistent_network_failure_takes_the_provider_out_until_the_next_pass(
 
 def test_list_passes_are_bounded_then_the_engine_is_exhausted(taxonomy: Taxonomy) -> None:
     """With no list retry allowed, a fully failed list exhausts the engine for good."""
-    settings = RotationSettings(model_retries=0, list_passes=1)
+    settings = RotationSettings(model_retries=0, list_passes=1, transient_strikes=1)
     busy = google_error(503, "UNAVAILABLE", "busy")
     router = discovered_router().add("google:gemma-t-it", busy)
     router.add("google:gemini-test-flash", busy)
@@ -796,9 +818,44 @@ def test_internal_errors_in_every_mode_leave_the_model_revivable(taxonomy: Taxon
     internal = google_error(500, "INTERNAL", "Internal error encountered.")
     router = discovered_router().add("google:gemma-t-it", internal, internal, internal)
     router.add("google:gemini-test-flash", probe_ok(), _ok())
-    classifier, _ = make_classifier(router, taxonomy)
+    classifier, _ = make_classifier(
+        router, taxonomy, settings=RotationSettings(transient_strikes=1)
+    )
     assert classifier.classify_one(_doc(), deadline=None).result is not None
     gemma = _model(classifier, GEMMA)
     assert gemma["status"] == "failed"
     assert "internal server error" in gemma["reason"]
     assert GEMMA not in classifier.engine.validations()
+
+
+def test_a_flapping_model_is_benched_then_used_again(taxonomy: Taxonomy) -> None:
+    """Live behaviour: overloaded now, fine minutes later. Strikes bench, success clears."""
+    settings = RotationSettings(model_retries=0, transient_strikes=3, transient_cooldown=120.0)
+    busy = google_error(503, "UNAVAILABLE", "high demand")
+    router = discovered_router().add("google:gemma-t-it", probe_ok(), busy)
+    router.add("google:gemini-test-flash", probe_ok(), _ok())
+    classifier, time = make_classifier(router, taxonomy, settings=settings)
+    first = classifier.classify_one(_doc(), deadline=None)
+    assert first.result is not None
+    assert first.result.model == "gemini-test-flash"
+    assert _status(classifier, GEMMA) == "active"
+    time.t += 121
+    router.add("google:gemma-t-it", _ok("doc-2"))
+    second = classifier.classify_one(_doc("doc-2"), deadline=None)
+    assert second.result is not None
+    assert second.result.model == "gemma-t-it"
+
+
+def test_strikes_run_out_and_retire_the_model(taxonomy: Taxonomy) -> None:
+    """Repeated transient failures without a success eventually retire the model."""
+    settings = RotationSettings(model_retries=0, transient_strikes=2, transient_cooldown=10.0)
+    busy = google_error(503, "UNAVAILABLE", "high demand")
+    router = discovered_router().add("google:gemma-t-it", probe_ok(), busy, busy)
+    router.add("google:gemini-test-flash", probe_ok(), _ok(), _ok("doc-2"))
+    classifier, time = make_classifier(router, taxonomy, settings=settings)
+    classifier.classify_one(_doc(), deadline=None)
+    time.t += 11
+    classifier.classify_one(_doc("doc-2"), deadline=None)
+    gemma = _model(classifier, GEMMA)
+    assert gemma["status"] == "failed"
+    assert "2 transient failures without a success" in gemma["reason"]

@@ -58,7 +58,8 @@ in the `x-goog-api-key` header (never in the URL).
   validated: `responseJsonSchema` → `responseSchema` → the schema embedded in
   the system prompt with JSON recovered from text (for models without a native
   JSON mode). A mode is abandoned only when the API rejects it as
-  `INVALID_ARGUMENT`, and every step is recorded.
+  `INVALID_ARGUMENT` (or fails with a `500 INTERNAL`, which can be specific to
+  one structured-output path), and every step is recorded.
 - Errors follow `google.rpc.Status`:
   - a 429 `RESOURCE_EXHAUSTED` whose `QuotaFailure.quotaId` contains `PerDay`
     (or whose message reports `limit: 0`) is `quota_exceeded`; otherwise it is
@@ -158,7 +159,12 @@ as it does. 429s become the exception.
 **Errors** (timeout, 5xx, network, unusable answer) are retried on the same
 model: `CYBERKB_MODEL_RETRIES` (default 3) retries, with full-jittered
 exponential backoff (base 2 s, cap 60 s, honouring server hints), never past
-the run deadline. Then the request moves to the next model. A per-request
+the run deadline. Then the request moves to the next model. A *transient*
+failure (overload, 5xx, timeout) that outlives its retries — in validation or
+in service — gives the model a strike and benches it for 5 minutes; it rejoins
+at its priority afterwards, and only three strikes without a success retire
+it (still revivable on a list pass). Free-tier models flap under load, so a
+bad minute must not cost the preferred model the whole run. A per-request
 failure (content filter, bad output) skips that model for that document only;
 three consecutive such failures retire the model.
 
@@ -217,6 +223,43 @@ The workflow enriches in 20-minute chunks within `max_seconds` (default
 `cyberkb check`. Exit 5 ("budget ended, continue") starts the next chunk. Exit
 6 ("no capacity") or an incomplete final state ends the job red, after its
 progress is committed.
+
+## Verification against the live APIs (2026-10-07)
+
+The engine was run against the `awesome-cyber` keys (`mode: preflight`)
+before merge. Discovery resolved all fourteen declared models to live ids.
+The runs found five defects, each now fixed and covered by a regression test:
+
+1. Gemini's per-minute 429 says "exceeded your current quota". ADR-0007's
+   classifier read that as billing exhaustion.
+2. Groq is fronted by Cloudflare, which refuses urllib's default
+   `Python-urllib` agent with `403 error code: 1010`. The transport now sends
+   its own `User-Agent`, and an edge block is a network failure, never a bad
+   key.
+3. Every Gemini/Gemma model rejected native JSON mode with `INVALID_ARGUMENT`.
+   A diagnostic run isolated the cause: the 80+ tag ids as an `enum` on the
+   tag array. The same schema without that enum is accepted, so tags are now
+   free strings filtered against the taxonomy after the fact (the vocabulary
+   is in the system prompt).
+4. Groq answers a model the project has not enabled with `403
+   model_permission_blocked_project`. That is scoped to the model; it no
+   longer takes all of Groq out.
+5. Gemma 4 31B answered `500 Internal error`, then `503 high demand`, across
+   runs; Gemini 3.6/3.7/3.8 Flash alternated between 503 and success within
+   minutes. Hence the mode step-down on a 500 and the strike/cooldown policy
+   above.
+
+Standing observations, recorded in the run reports:
+
+- `gemini-2.5-flash` and `gemini-2.5-flash-lite` answer *"no longer available
+  to new users"* (404). They are kept in the catalog, because that is how the
+  dashboard lists them, and are retired by validation once per day.
+- `allam-2-7b` stays unusable until it is enabled in the Groq project
+  settings (console → Settings → Project → Limits).
+
+With the fixes, the native JSON modes validate on every model that is
+currently serving: Gemma 4 26B, Gemini 3.1/3.5 Flash Lite, 3.5/3.8 Flash and
+the three remaining Groq models.
 
 ## Consequences
 

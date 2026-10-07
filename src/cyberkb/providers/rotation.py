@@ -76,6 +76,7 @@ CHARS_PER_TOKEN = 3.0
 """Conservative characters-per-token ratio used to estimate request size."""
 VALIDATION_REF = "__validation__"
 _MIN_OUTPUT_TOKENS = 512
+_INTERNAL_ERROR = 500
 _TRANSIENT = frozenset(
     {FailureCategory.TIMEOUT, FailureCategory.SERVER_ERROR, FailureCategory.NETWORK_ERROR},
 )
@@ -493,6 +494,13 @@ class RotationEngine:
             verdict = self._probe_mode(slot, probe, fit, mode)
             if verdict is not None:
                 return verdict
+        if slot.revivable:
+            return self._settle(
+                slot,
+                None,
+                FailureCategory.SERVER_ERROR,
+                "every structured-output request mode failed with an internal server error",
+            )
         return self._settle(
             slot,
             None,
@@ -517,7 +525,7 @@ class RotationEngine:
         slot.validation.append(
             {"mode": mode, "category": error.category.value, "detail": error.raw.strip()[:500]},
         )
-        if error.request_rejected:
+        if self._steps_down(slot, error):
             return None
         if self._route_quota(slot, error):
             return "postponed"
@@ -529,10 +537,29 @@ class RotationEngine:
         slot.revivable = error.category in _TRANSIENT
         return self._settle(slot, mode, error.category, error.raw.strip() or error.category.value)
 
+    @staticmethod
+    def _steps_down(slot: _Slot, error: ProviderError) -> bool:
+        """Whether a validation failure should move on to the next request mode.
+
+        A rejected request shape obviously does. So does a 500 INTERNAL: one
+        specific to a structured-output path (observed live: Gemma 4 31B in
+        native JSON mode) must not disqualify a model a simpler mode serves; if
+        every mode fails that way, the model stays revivable rather than being
+        written off for the day.
+        """
+        if error.request_rejected:
+            return True
+        if error.category is FailureCategory.SERVER_ERROR and error.status == _INTERNAL_ERROR:
+            slot.revivable = True
+            return True
+        return False
+
     def _settle(
         self, slot: _Slot, mode: str | None, category: FailureCategory | None, detail: str
     ) -> _Verdict:
         ok = category is None
+        if ok:
+            slot.revivable = False
         slot.status = SlotStatus.ACTIVE if ok else SlotStatus.FAILED
         slot.reason = "" if ok else f"validation failed ({category}): {detail[:300]}"
         slot.validation.append(

@@ -778,3 +778,27 @@ def test_a_blocked_groq_model_does_not_take_the_provider_out(taxonomy: Taxonomy)
     statuses = [m["status"] for m in classifier.engine.model_report()]
     assert statuses == ["failed", "active"]
     assert classifier.engine.provider_report()["groq"]["status"] == "up"
+
+
+def test_an_internal_error_in_one_mode_steps_down_the_ladder(taxonomy: Taxonomy) -> None:
+    """Live finding: Gemma 4 31B answered 500 in native JSON mode; a simpler mode may work."""
+    internal = google_error(500, "INTERNAL", "Internal error encountered.")
+    router = discovered_router().add("google:gemma-t-it", internal, probe_ok(), _ok())
+    classifier, _ = make_classifier(router, taxonomy)
+    assert classifier.classify_one(_doc(), deadline=None).result is not None
+    gemma = _model(classifier, GEMMA)
+    assert gemma["mode"] == "response_schema"
+    assert classifier.engine.validations()[GEMMA].ok
+
+
+def test_internal_errors_in_every_mode_leave_the_model_revivable(taxonomy: Taxonomy) -> None:
+    """If every mode fails with a 500, the model is skipped now but not written off for the day."""
+    internal = google_error(500, "INTERNAL", "Internal error encountered.")
+    router = discovered_router().add("google:gemma-t-it", internal, internal, internal)
+    router.add("google:gemini-test-flash", probe_ok(), _ok())
+    classifier, _ = make_classifier(router, taxonomy)
+    assert classifier.classify_one(_doc(), deadline=None).result is not None
+    gemma = _model(classifier, GEMMA)
+    assert gemma["status"] == "failed"
+    assert "internal server error" in gemma["reason"]
+    assert GEMMA not in classifier.engine.validations()

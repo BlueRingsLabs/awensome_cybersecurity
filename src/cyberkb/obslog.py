@@ -57,6 +57,7 @@ class AttemptLog:
     status: int | None = None
     raw_error: str = ""
     fell_back: bool = False
+    mode: str | None = None
 
     def to_json(self) -> dict[str, Any]:
         """Serialise to a flat, stable mapping for a JSON log line or the report."""
@@ -73,6 +74,7 @@ class AttemptLog:
             "status": self.status,
             "raw_error": self.raw_error,
             "fell_back": self.fell_back,
+            "mode": self.mode,
         }
 
 

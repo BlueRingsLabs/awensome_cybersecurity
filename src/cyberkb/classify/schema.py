@@ -14,10 +14,10 @@ from typing import TYPE_CHECKING, Any
 if TYPE_CHECKING:
     from cyberkb.taxonomy import Taxonomy
 
-__all__ = ["build_prompt", "response_schema", "system_instruction"]
+__all__ = ["MAX_SAMPLE_CHARS", "MAX_TAGS", "build_prompt", "response_schema", "system_instruction"]
 
 MAX_SAMPLE_CHARS = 6000
-_MAX_TAGS = 6
+MAX_TAGS = 6
 
 
 def response_schema(taxonomy: Taxonomy) -> dict[str, Any]:
@@ -33,7 +33,7 @@ def response_schema(taxonomy: Taxonomy) -> dict[str, Any]:
             "tags": {
                 "type": "array",
                 "items": {"type": "string", "enum": list(taxonomy.tag_ids)},
-                "maxItems": _MAX_TAGS,
+                "maxItems": MAX_TAGS,
             },
             "summary": {"type": "string"},
             "confidence": {"type": "number"},
@@ -79,7 +79,7 @@ def system_instruction(taxonomy: Taxonomy) -> str:
         "awesome_cybersecurity knowledge base. Classify each cybersecurity "
         "document into exactly one category and one format, detect its "
         "language, write a concise neutral one-sentence summary and choose up "
-        f"to {_MAX_TAGS} tags from the controlled vocabulary.\n\n"
+        f"to {MAX_TAGS} tags from the controlled vocabulary.\n\n"
         f"CATEGORIES:\n{categories}\n\n"
         f"FORMATS:\n{formats}\n\n"
         "RULES:\n"
@@ -94,15 +94,22 @@ def system_instruction(taxonomy: Taxonomy) -> str:
     )
 
 
-def build_prompt(documents: list[tuple[str, str, str]]) -> str:
-    """Render the user prompt for a batch of ``(ref, stem, body)`` documents."""
+def build_prompt(
+    documents: list[tuple[str, str, str]], *, max_chars: int = MAX_SAMPLE_CHARS
+) -> str:
+    """Render the user prompt for a batch of ``(ref, stem, body)`` documents.
+
+    Each body is cut to ``max_chars`` (at most :data:`MAX_SAMPLE_CHARS`), so the
+    rotation engine can shrink a request to fit a small model's limits.
+    """
+    limit = min(max_chars, MAX_SAMPLE_CHARS)
     parts = [
         "Classify these documents. Return one object per document, echoing ref exactly.",
         "",
     ]
     for ref, stem, body in documents:
         parts.append(f"<document ref={json.dumps(ref)} filename={json.dumps(stem)}>")
-        parts.append(body[:MAX_SAMPLE_CHARS])
+        parts.append(body[:limit])
         parts.append("</document>")
         parts.append("")
     return "\n".join(parts)

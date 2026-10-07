@@ -93,8 +93,15 @@ class ProviderError(LLMError):
         status: int | None = None,
         raw: str = "",
         retry_after: float | None = None,
+        request_rejected: bool = False,
     ) -> None:
-        """Store the categorised failure and its diagnostic context."""
+        """Store the categorised failure and its diagnostic context.
+
+        ``request_rejected`` marks a request the provider refused as malformed
+        for this model (e.g. a structured-output field it does not support), as
+        opposed to a model it does not serve: validation may then retry the
+        same model with a simpler request mode.
+        """
         detail = raw.strip() or category.value
         super().__init__(f"{provider}: {category.value}: {detail}")
         self.category = category
@@ -103,3 +110,4 @@ class ProviderError(LLMError):
         self.status = status
         self.raw = raw
         self.retry_after = retry_after
+        self.request_rejected = request_rejected

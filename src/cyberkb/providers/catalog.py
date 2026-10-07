@@ -153,6 +153,8 @@ class ListedModel:
     display_name: str | None = None
     input_token_limit: int | None = None
     output_token_limit: int | None = None
+    shared_context: bool = False
+    """``True`` when ``input_token_limit`` is a context window shared with the output."""
 
 
 @dataclass(frozen=True, slots=True)

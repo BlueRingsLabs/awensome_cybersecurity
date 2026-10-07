@@ -1,58 +1,63 @@
-"""Multi-provider LLM layer: interchangeable providers behind one interface.
+"""LLM provider layer: two verified adapters behind one interface, one rotation engine.
 
 Public surface:
 
-* :class:`LLMProvider` -- the contract (discover models, classify to JSON,
-  health-check); every provider is swappable behind it.
-* :class:`HttpProviderBase` / :class:`OpenAICompatProvider` -- shared REST and
-  OpenAI-dialect machinery a new provider builds on.
-* :class:`GeminiProvider`, :class:`OpenRouterProvider`,
-  :class:`HuggingFaceProvider` -- the three shipped providers.
-* :data:`PROVIDER_CLASSES` / :func:`provider_names` -- the extensible registry.
-* :class:`ModelCandidate`, :class:`ProviderResult`, :class:`HealthResult` --
-  the value types the orchestrator exchanges with providers.
+* :class:`LLMProvider` / :class:`HttpProviderBase` -- the adapter contract and
+  its shared REST machinery.
+* :class:`GoogleProvider` (Google AI Studio: Gemini and Gemma) and
+  :class:`GroqProvider` -- the two shipped adapters (ADR-0008).
+* :func:`load_model_catalog` / :func:`resolve_models` -- the reviewed model
+  catalog (``schema/llm-models.yaml``) and its mapping onto live API ids.
+* :class:`RotationEngine` -- per-model, per-provider routing with pacing,
+  cooldowns, lazy validation, retries and list passes.
+* :data:`PROVIDER_CLASSES` / :func:`build_providers` -- the adapter registry.
 """
 
 from __future__ import annotations
 
 from cyberkb.providers.base import (
-    HealthResult,
     HttpProviderBase,
     LLMProvider,
-    ModelCandidate,
     ProviderResult,
     classify_http_status,
     retry_after_seconds,
 )
-from cyberkb.providers.circuit import CircuitBreaker, CircuitState
-from cyberkb.providers.gemini import GeminiProvider
-from cyberkb.providers.huggingface import HuggingFaceProvider
-from cyberkb.providers.openai_compat import OpenAICompatProvider
-from cyberkb.providers.openrouter import OpenRouterProvider
-from cyberkb.providers.orchestrator import Orchestrator, OrchestratorSettings
-from cyberkb.providers.registry import PROVIDER_CLASSES, is_registered, provider_names
-from cyberkb.providers.selection import ModelValidation, ProviderSelection, select_models
+from cyberkb.providers.catalog import (
+    ListedModel,
+    ModelCatalog,
+    load_model_catalog,
+    resolve_models,
+)
+from cyberkb.providers.google import GoogleProvider
+from cyberkb.providers.governor import DailyUsage, ModelGovernor
+from cyberkb.providers.groq import GroqProvider
+from cyberkb.providers.registry import PROVIDER_CLASSES, build_providers, provider_names
+from cyberkb.providers.rotation import (
+    GenerationOutcome,
+    GenerationRequest,
+    RotationEngine,
+    RotationSettings,
+)
 
 __all__ = [
     "PROVIDER_CLASSES",
-    "CircuitBreaker",
-    "CircuitState",
-    "GeminiProvider",
-    "HealthResult",
+    "DailyUsage",
+    "GenerationOutcome",
+    "GenerationRequest",
+    "GoogleProvider",
+    "GroqProvider",
     "HttpProviderBase",
-    "HuggingFaceProvider",
     "LLMProvider",
-    "ModelCandidate",
-    "ModelValidation",
-    "OpenAICompatProvider",
-    "OpenRouterProvider",
-    "Orchestrator",
-    "OrchestratorSettings",
+    "ListedModel",
+    "ModelCatalog",
+    "ModelGovernor",
     "ProviderResult",
-    "ProviderSelection",
+    "RotationEngine",
+    "RotationSettings",
+    "build_providers",
     "classify_http_status",
-    "is_registered",
+    "load_model_catalog",
     "provider_names",
+    "resolve_models",
     "retry_after_seconds",
-    "select_models",
 ]

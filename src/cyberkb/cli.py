@@ -70,6 +70,19 @@ def _build_parser() -> argparse.ArgumentParser:
     enrich.add_argument(
         "--force", action="store_true", help="also re-enrich resources already classified by an LLM"
     )
+    enrich.add_argument(
+        "--limit",
+        type=int,
+        default=None,
+        help="process at most N resources this run (re-run to continue; default: no limit)",
+    )
+    enrich.add_argument(
+        "--max-seconds",
+        type=float,
+        default=None,
+        dest="max_seconds",
+        help="stop starting new work after this many seconds, so the run finishes and commits",
+    )
 
     classify = sub.add_parser("classify", help="preview classification of files without writing")
     classify.add_argument("paths", nargs="+", type=Path, help="Markdown files to classify")
@@ -138,11 +151,19 @@ def _cmd_check(paths: RepoPaths, out: TextIO) -> int:
 
 
 def _cmd_ingest(paths: RepoPaths, args: argparse.Namespace, out: TextIO) -> int:
-    from cyberkb.ingest import ingest_inbox  # noqa: PLC0415
+    from cyberkb.ingest import discover_submissions, ingest_inbox  # noqa: PLC0415
     from cyberkb.library import load_library  # noqa: PLC0415
 
     taxonomy = load_taxonomy(paths.root)
-    classifier, orchestrator = _make_classifier(taxonomy, force_heuristic=args.heuristic, out=out)
+    # Build the LLM classifier (which runs a provider pre-flight) only when there
+    # is actually something to classify, so a push that rebuilds catalogs without
+    # new submissions never spends the provider rate-limit budget.
+    if discover_submissions(paths):
+        classifier, orchestrator = _make_classifier(
+            taxonomy, force_heuristic=args.heuristic, out=out
+        )
+    else:
+        classifier, orchestrator = None, None
     config = IngestConfig.from_env()
     taken = frozenset(r.id for r in load_library(paths, taxonomy).resources)
     report = ingest_inbox(
@@ -171,14 +192,28 @@ def _cmd_enrich(paths: RepoPaths, args: argparse.Namespace, out: TextIO) -> int:
     if classifier is None:
         print("Enrichment needs a configured LLM provider; nothing to do.", file=out)
         return EXIT_OK
-    report = enrich_library(paths, taxonomy, classifier, force=args.force)
+    report = enrich_library(
+        paths,
+        taxonomy,
+        classifier,
+        force=args.force,
+        limit=args.limit,
+        max_seconds=args.max_seconds,
+    )
     for outcome in report.outcomes:
         if outcome.destination:
             print(f"  {outcome.status}: {outcome.path} ({outcome.detail})", file=out)
     print(
-        f"Enriched {report.enriched}, unchanged {report.unchanged}, skipped {report.skipped}.",
+        f"Enriched {report.enriched}, unchanged {report.unchanged}, "
+        f"skipped {report.skipped}, deferred {report.deferred}.",
         file=out,
     )
+    if report.deferred:
+        print(
+            f"{report.deferred} resource(s) deferred (run budget reached); "
+            "re-run `cyberkb enrich` to continue.",
+            file=out,
+        )
     _write_run_report(orchestrator, paths, out)
     build_result = build(paths)
     if not build_result.ok:

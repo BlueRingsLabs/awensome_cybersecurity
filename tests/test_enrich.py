@@ -188,3 +188,66 @@ def test_enrich_outcome_statuses_are_reported(repo: RepoPaths) -> None:
     write_resource(repo, filename="manual.md", classification=Classification("manual", 1.0))
     report = enrich_library(repo, taxonomy, _classifier(taxonomy))
     assert report.outcomes[0].status is EnrichStatus.SKIPPED
+
+
+def _two_heuristics(repo: RepoPaths) -> None:
+    write_resource(
+        repo,
+        category="offensive-security",
+        filename="a.md",
+        id="ckb-000000000001",
+        title="Alpha Title",
+        classification=HEURISTIC,
+        summary="",
+        body="# Alpha Title\n\nnmap host discovery and port scanning in a penetration test.\n",
+    )
+    write_resource(
+        repo,
+        category="offensive-security",
+        filename="b.md",
+        id="ckb-000000000002",
+        title="Beta Title",
+        classification=HEURISTIC,
+        summary="",
+        body="# Beta Title\n\nmore nmap scanning and exploit development for an authorized test.\n",
+    )
+
+
+def test_enrich_limit_processes_some_and_defers_the_rest(repo: RepoPaths) -> None:
+    """``limit`` caps LLM calls this run; the remainder is reported as deferred."""
+    taxonomy = load_taxonomy(repo.root)
+    _two_heuristics(repo)
+    first = load_library(repo, taxonomy).resources[0].id
+    # Exactly one envelope is supplied: a second LLM call would exhaust the
+    # transport and raise, so this also proves only one resource was processed.
+    classifier = _classifier(taxonomy, _envelope(first, "offensive-security", "Only one."))
+    report = enrich_library(repo, taxonomy, classifier, limit=1)
+    assert report.enriched == 1
+    assert report.deferred == 1
+    assert {o.status for o in report.outcomes} == {EnrichStatus.ENRICHED, EnrichStatus.DEFERRED}
+
+
+def test_enrich_limit_zero_defers_all_without_calling_a_provider(repo: RepoPaths) -> None:
+    """``limit=0`` defers every resource and never contacts a provider."""
+    taxonomy = load_taxonomy(repo.root)
+    _two_heuristics(repo)
+    # No transport items: any LLM call would raise, so passing proves none happened.
+    report = enrich_library(repo, taxonomy, _classifier(taxonomy), limit=0)
+    assert report.deferred == 2
+    assert report.enriched == 0
+
+
+def test_enrich_time_budget_defers_remaining(repo: RepoPaths) -> None:
+    """``max_seconds`` stops starting new work once the wall-clock budget is spent."""
+    taxonomy = load_taxonomy(repo.root)
+    _two_heuristics(repo)
+    first = load_library(repo, taxonomy).resources[0].id
+    classifier = _classifier(taxonomy, _envelope(first, "offensive-security", "Within budget."))
+    # start()->0, first resource check->10 (<50, processed), second check->100 (>=50, deferred);
+    # any further call returns the exhausted default, keeping the budget spent.
+    ticks = iter((0.0, 10.0, 100.0))
+    report = enrich_library(
+        repo, taxonomy, classifier, max_seconds=50.0, clock=lambda: next(ticks, 100.0)
+    )
+    assert report.enriched == 1
+    assert report.deferred == 1

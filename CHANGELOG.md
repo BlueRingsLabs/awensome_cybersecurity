@@ -4,6 +4,33 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project aims to
 follow [Semantic Versioning](https://semver.org/).
 
+## [2.2.1] - 2026-10-07
+
+Resumable, budget-bounded enrichment.
+
+### Fixed
+
+- **Enrichment can now complete.** A full backfill makes one slow LLM call per
+  resource (~485 of them), which runs for hours — far past the ingest job's
+  30-minute timeout. Because the job committed only at the very end, every run
+  was cancelled mid-pass and committed nothing. `cyberkb enrich` is now bounded
+  and resumable: `--limit N` caps resources per run and `--max-seconds S` stops
+  starting new work in time to finish and commit, with the remainder reported as
+  `deferred`; already-enriched resources are skipped, so re-running walks the
+  whole corpus while each run commits real progress.
+- **No pre-flight on content-free runs.** `cyberkb ingest` now builds the LLM
+  classifier (and its provider pre-flight) only when `inbox/` actually has
+  submissions, so a catalog-only rebuild never spends the provider rate-limit
+  budget.
+
+### Changed
+
+- The **Ingest and index** workflow gains `limit` and `max_seconds` dispatch
+  inputs (passed to `enrich` injection-safely via the environment), and its job
+  `timeout-minutes` is raised to a high backstop (350) now that `max_seconds` is
+  the real governor of a run's length. The operations runbook documents the
+  batch/resume procedure, per-provider rate limits and throughput guidance.
+
 ## [2.2.0] - 2026-10-05
 
 Multi-provider, self-validating LLM classification.

@@ -1,6 +1,8 @@
 # 7. Multi-provider LLM classification with runtime model selection
 
-- Status: accepted
+- Status: superseded in part by [ADR-0008](0008-google-groq-rotation.md) (provider set,
+  model selection, rotation and circuit breaker); the error taxonomy, attempt
+  logging and provenance below still apply
 - Date: 2026-10-05
 
 ## Context

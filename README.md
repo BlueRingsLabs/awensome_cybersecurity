@@ -91,16 +91,21 @@ uv sync                 # set up the environment
 uv run cyberkb build    # regenerate catalogs, README index and category pages
 uv run cyberkb check    # repository policy gate (used by CI)
 uv run cyberkb ingest   # classify and file inbox/ submissions, then build
-uv run cyberkb enrich   # backfill summaries/classification on existing resources
+uv run cyberkb enrich   # classify pending library resources and backfill summaries
+uv run cyberkb preflight   # verify every catalog model against the live APIs
 uv run cyberkb classify inbox/note.md   # preview a classification, write nothing
 ```
 
-Classification uses whichever LLM providers are configured — Gemini, OpenRouter
-and/or Hugging Face, in `LLM_PROVIDER_ORDER` — discovering and validating models
-at run time, rotating on failure, and falling back to a deterministic, offline
-heuristic, so the pipeline never blocks on an unavailable service. See
-[`docs/architecture.md`](docs/architecture.md) and
-[ADR-0007](docs/adr/0007-multi-provider-llm.md).
+LLM classification runs on **Google AI Studio** (Gemma and Gemini) and **Groq**,
+both free tiers, through a per-model rotation engine. Models, their priority and
+their limits are reviewed data in
+[`schema/llm-models.yaml`](schema/llm-models.yaml), resolved to live API ids and
+validated at run time. Every call is paced under each model's limits, and the
+engine rotates on rate limits, quotas and failures. Enrichment is resumable and
+commits as it goes, and every run leaves an audit report. New submissions still
+fall back to a deterministic, offline heuristic, so a merge never blocks on a
+provider. See [`docs/architecture.md`](docs/architecture.md) and
+[ADR-0008](docs/adr/0008-google-groq-rotation.md).
 
 ## Quality gates
 

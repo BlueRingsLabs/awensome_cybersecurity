@@ -39,10 +39,11 @@ inbox/*.md ─┐
 | `ids` | Stable content-derived resource ids (`ckb-…`) with collision avoidance. |
 | `fsutil` | Hostile-input-safe reads (symlink/size/binary guards) and atomic writes. |
 | `yamlsafe` | YAML loading that refuses object construction *and* aliases. |
-| `classify/` | `heuristic` (offline, deterministic) and `llm` (multi-provider, schema-constrained) engines sharing one result type. |
-| `providers/` | Interchangeable LLM providers (Gemini, OpenRouter, Hugging Face) behind one interface, plus discovery/validation, a circuit breaker and the orchestrator (ADR-0007). |
-| `obslog` | Structured JSON attempt logging and the end-of-run report. |
-| `pipeline` | Assemble the provider orchestrator and classifier from configuration. |
+| `classify/` | `heuristic` (offline, deterministic) and `llm` (rotation-engine backed, schema-constrained, answer-validating) engines sharing one result type. |
+| `providers/` | Google AI Studio and Groq adapters behind one interface; the reviewed model `catalog`, per-model pacing (`governor`) and the `rotation` engine (ADR-0008). |
+| `obslog` | Structured JSON attempt logging. |
+| `runreport` | The end-of-run audit report (`docs/audit/ingest-runs/<date>-<run-id>.json`). |
+| `pipeline` | Assemble the catalog, adapters, rotation engine and classifier; discover live models. |
 | `provenance` | Build the `classified_by` stamp. |
 | `library` | Load and validate the on-disk library; detect duplicate ids/bodies. |
 | `catalog` | Build the deterministic catalog and serialise it (JSON/YAML). |
@@ -50,8 +51,9 @@ inbox/*.md ─┐
 | `build` | Regenerate every derived artefact, idempotently. |
 | `checks` | The repository policy gate used by CI. |
 | `ingest` | Orchestrate discovery → classify → file for `inbox/`. |
-| `enrich` | Backfill summaries/classification on existing resources via the LLM. |
-| `cli` | `cyberkb build|check|ingest|enrich|classify` with stable exit codes. |
+| `enrich` | Classify pending library resources through the engine, persisting each one atomically. |
+| `enrich_state` | The enrichment ledger: progress, per-model usage and validation verdicts, write-ahead moves. |
+| `cli` | `cyberkb build|check|ingest|enrich|preflight|classify` with stable exit codes. |
 
 ## Design principles
 
@@ -81,25 +83,32 @@ A document is classified by one of two interchangeable engines:
   body, with logarithmic damping and a confidence from the margin between the
   top two categories. Fully offline, deterministic and explainable; weak
   evidence routes to the staging category rather than guessing.
-- **LLM** — the multi-provider orchestrator, with a response schema built from
+- **LLM** — the rotation engine over Google AI Studio and Groq, with a response schema built from
   the live taxonomy so a hallucinated label is impossible by construction. Each
   result is validated; anything invalid or low-confidence falls back to the
   heuristic for that one document, so a batch can never emit an invalid
   classification or drop a file.
 
-## The multi-provider LLM layer
+## The LLM layer
 
-`providers/` presents one interface (`LLMProvider`) with three interchangeable
-implementations — Gemini, OpenRouter and Hugging Face — selected by configured
-key and `LLM_PROVIDER_ORDER`. Before a run, each provider *discovers* models
-from its own catalog and *validates* the best candidates against representative
-cybersecurity prompts, so no model is used on the assumption it works. During a
-run the orchestrator rotates models and providers on failure, retries transient
-errors with jittered backoff, trips a circuit breaker on provider-fatal errors,
-and finally falls back to the heuristic — logging every attempt as structured
-JSON and writing a per-run audit report. Each resource records which provider
-and model classified it (`classified_by`). The full rationale, ranking and
-failure taxonomy are in ADR-0007.
+`providers/` presents one interface (`LLMProvider`) with two adapters, Google
+AI Studio (Gemini and Gemma) and Groq, each written against the provider's
+documented API. Which models may be used, in which order and under which
+free-tier limits is reviewed data (`schema/llm-models.yaml`). At start-up every
+declared model is resolved to its live API id from the provider's `/models`
+listing.
+
+The rotation engine then serves each request from the highest-priority model
+that is usable and ready now. Each model is validated lazily, on first use,
+with a real probe. Calls are paced under its RPM/TPM/RPD. Errors are retried in
+place; a rate limit moves the request on while the model cools down; a spent
+quota retires the model for the day; an auth failure takes the provider out.
+Every attempt is logged as structured JSON, and every run writes an audit
+report. Enrichment persists each resource atomically and records progress in a
+ledger, so any run can stop and the next one continues. Each resource records
+which provider and model classified it (`classified_by`). The rationale,
+verified API contracts and retry semantics are in ADR-0008; the failure
+taxonomy dates from ADR-0007.
 
 ## Why hand-rolled provider clients
 
@@ -108,4 +117,4 @@ every third-party dependency is attack surface. Each provider is one HTTPS call
 to a documented JSON endpoint and needs only the standard library; an injectable
 transport makes every branch (retryable errors, rotation, truncation, blocked
 responses, malformed JSON) testable without a network. See ADR-0004 and
-ADR-0007.
+ADR-0008.

@@ -75,6 +75,7 @@ __all__ = [
 CHARS_PER_TOKEN = 3.0
 """Conservative characters-per-token ratio used to estimate request size."""
 VALIDATION_REF = "__validation__"
+_MIN_OUTPUT_TOKENS = 512
 _TRANSIENT = frozenset(
     {FailureCategory.TIMEOUT, FailureCategory.SERVER_ERROR, FailureCategory.NETWORK_ERROR},
 )
@@ -275,6 +276,19 @@ class _Fit:
     max_output: int
 
 
+@dataclass(slots=True)
+class _Progress:
+    """Per-request routing memory: models to skip, the last failure, the last provider."""
+
+    skip: set[str] = field(default_factory=set)
+    last: GenerationOutcome = field(
+        default_factory=lambda: GenerationOutcome(
+            "failed", detail="no model could serve this request"
+        ),
+    )
+    provider: str | None = None
+
+
 @dataclass(frozen=True, slots=True)
 class _Call:
     result: ProviderResult | None
@@ -374,7 +388,11 @@ class RotationEngine:
         )
         if resolution.model is None:
             return _Slot(
-                provider, resolution.declared, resolution, governor, SlotStatus.UNRESOLVED,
+                provider,
+                resolution.declared,
+                resolution,
+                governor,
+                SlotStatus.UNRESOLVED,
                 reason=resolution.rule,
             )
         slot = _Slot(provider, resolution.declared, resolution, governor, SlotStatus.UNVALIDATED)
@@ -460,41 +478,56 @@ class RotationEngine:
     def _validate(self, slot: _Slot, deadline: float | None) -> _Verdict:
         """Run the probe down the provider's mode ladder."""
         probe = self._probe
-        if probe is None:
-            msg = "discover() must run before any model is validated"
-            raise RuntimeError(msg)
+        assert probe is not None  # noqa: S101 - slots exist only after discover(probe)
         fit = self._fit(slot, probe)
         if fit is None:
-            return self._settle(slot, None, FailureCategory.MODEL_UNAVAILABLE,
-                                "the validation probe does not fit the model's limits")
+            return self._settle(
+                slot,
+                None,
+                FailureCategory.MODEL_UNAVAILABLE,
+                "the validation probe does not fit the model's limits",
+            )
         for mode in slot.provider.adapter.request_modes():
             if not self._await(slot, fit.tokens, deadline):
                 return "deferred"
-            call = self._call(slot, probe, fit, mode, VALIDATION_REF, attempt=1)
-            if call.result is not None:
-                problem = probe.check(call.result.payload)
-                self._record(slot, call, mode, VALIDATION_REF, 1, problem)
-                if problem is None:
-                    slot.mode = mode
-                    return self._settle(slot, mode, None, f"validated in {mode} mode")
-                return self._settle(slot, mode, FailureCategory.INFERENCE_ERROR, problem)
-            error = call.error
-            assert error is not None  # noqa: S101 - a call yields a result or an error
-            slot.validation.append(
-                {"mode": mode, "category": error.category.value, "detail": error.raw.strip()[:500]},
+            verdict = self._probe_mode(slot, probe, fit, mode)
+            if verdict is not None:
+                return verdict
+        return self._settle(
+            slot,
+            None,
+            FailureCategory.MODEL_UNAVAILABLE,
+            "every structured-output request mode was rejected",
+        )
+
+    def _probe_mode(
+        self, slot: _Slot, probe: GenerationRequest, fit: _Fit, mode: str
+    ) -> _Verdict | None:
+        """One validation call in ``mode``; ``None`` means "try the next mode"."""
+        call = self._call(slot, probe, fit, mode, VALIDATION_REF, attempt=1)
+        if call.result is not None:
+            problem = probe.check(call.result.payload)
+            self._record(slot, call, mode, VALIDATION_REF, 1, problem)
+            if problem is None:
+                slot.mode = mode
+                return self._settle(slot, mode, None, f"validated in {mode} mode")
+            return self._settle(slot, mode, FailureCategory.INFERENCE_ERROR, problem)
+        error = call.error
+        assert error is not None  # noqa: S101 - a call yields a result or an error
+        slot.validation.append(
+            {"mode": mode, "category": error.category.value, "detail": error.raw.strip()[:500]},
+        )
+        if error.request_rejected:
+            return None
+        if self._route_quota(slot, error):
+            return "postponed"
+        if error.category is FailureCategory.AUTH_ERROR:
+            self._provider_down(
+                slot.provider, f"auth_error: {error.raw.strip()[:300]}", revivable=False
             )
-            if error.request_rejected:
-                continue
-            if self._route_quota(slot, error):
-                return "postponed"
-            if error.category is FailureCategory.AUTH_ERROR:
-                self._provider_down(slot.provider, f"auth_error: {error.raw.strip()[:300]}",
-                                    revivable=False)
-                return "postponed"
-            slot.revivable = error.category in _TRANSIENT
-            return self._settle(slot, mode, error.category, error.raw.strip() or error.category.value)
-        return self._settle(slot, None, FailureCategory.MODEL_UNAVAILABLE,
-                            "every structured-output request mode was rejected")
+            return "postponed"
+        slot.revivable = error.category in _TRANSIENT
+        return self._settle(slot, mode, error.category, error.raw.strip() or error.category.value)
 
     def _settle(
         self, slot: _Slot, mode: str | None, category: FailureCategory | None, detail: str
@@ -524,52 +557,82 @@ class RotationEngine:
 
     def generate(self, request: GenerationRequest) -> GenerationOutcome:
         """Serve ``request`` from the best available model (see the module docstring)."""
-        skip: set[str] = set()
-        last = GenerationOutcome("failed", detail="no model could serve this request")
-        provider_seen: str | None = None
+        progress = _Progress()
         while True:
-            if self._exhausted:
-                return GenerationOutcome("exhausted", detail="every model is exhausted or failed")
-            if request.deadline is not None and self._clock() >= request.deadline:
-                return GenerationOutcome("deferred", detail="run budget reached")
-            candidates = [s for s in self._slots if s.key not in skip and s.usable()]
-            if not candidates:
-                if any(s.usable() for s in self._slots):
-                    return last
-                if self._revive():
-                    continue
-                self._exhausted = True
-                return GenerationOutcome(
-                    "exhausted",
-                    category=last.category,
-                    detail=f"every model is exhausted or failed; last: {last.detail}",
-                    provider=last.provider,
-                    model=last.model,
-                )
-            choice = self._choose(candidates, request, skip)
-            if choice is None:
-                continue
-            if isinstance(choice, float):
-                if request.deadline is not None and self._clock() + choice >= request.deadline:
-                    return GenerationOutcome("deferred", detail="run budget reached while paced")
-                self._sleep(choice)
-                continue
-            slot, fit = choice
-            if slot.status is SlotStatus.UNVALIDATED:
-                if self._validate(slot, request.deadline) == "deferred":
-                    return GenerationOutcome("deferred", detail="run budget reached in validation")
-                continue
-            if provider_seen is not None and provider_seen != slot.provider_id:
-                self._retries["provider"] += 1
-            provider_seen = slot.provider_id
-            outcome, request_scoped = self._serve(slot, request, fit)
-            if outcome.status in ("ok", "deferred"):
-                if outcome.status == "ok":
-                    self._list_failures = 0
+            outcome = self._step(request, progress)
+            if outcome is not None:
                 return outcome
-            last = outcome
-            if request_scoped:
-                skip.add(slot.key)
+
+    def _step(self, request: GenerationRequest, progress: _Progress) -> GenerationOutcome | None:
+        """Advance ``request`` by one decision; ``None`` means "keep going"."""
+        stop = self._stopped(request)
+        if stop is not None:
+            return stop
+        candidates = [s for s in self._slots if s.key not in progress.skip and s.usable()]
+        if not candidates:
+            return self._out_of_candidates(progress.last)
+        choice = self._choose(candidates, request, progress.skip)
+        if choice is None:
+            return None
+        if isinstance(choice, float):
+            return self._pause(choice, request)
+        slot, fit = choice
+        if slot.status is SlotStatus.UNVALIDATED:
+            return self._validate_first(slot, request)
+        return self._dispatch(slot, request, fit, progress)
+
+    def _stopped(self, request: GenerationRequest) -> GenerationOutcome | None:
+        """The run-level reasons to stop before choosing a model, if any."""
+        if self._exhausted:
+            return GenerationOutcome("exhausted", detail="every model is exhausted or failed")
+        if request.deadline is not None and self._clock() >= request.deadline:
+            return GenerationOutcome("deferred", detail="run budget reached")
+        return None
+
+    def _validate_first(self, slot: _Slot, request: GenerationRequest) -> GenerationOutcome | None:
+        """Validate ``slot`` before it may serve; only a missed deadline ends the request."""
+        if self._validate(slot, request.deadline) == "deferred":
+            return GenerationOutcome("deferred", detail="run budget reached in validation")
+        return None
+
+    def _pause(self, wait: float, request: GenerationRequest) -> GenerationOutcome | None:
+        """Every candidate is paced: wait for the first, unless that misses the deadline."""
+        if request.deadline is not None and self._clock() + wait >= request.deadline:
+            return GenerationOutcome("deferred", detail="run budget reached while paced")
+        self._sleep(wait)
+        return None
+
+    def _dispatch(
+        self, slot: _Slot, request: GenerationRequest, fit: _Fit, progress: _Progress
+    ) -> GenerationOutcome | None:
+        """Serve the request on ``slot``; a failure updates the routing memory."""
+        if progress.provider is not None and progress.provider != slot.provider_id:
+            self._retries["provider"] += 1
+        progress.provider = slot.provider_id
+        outcome, request_scoped = self._serve(slot, request, fit)
+        if outcome.status == "ok":
+            self._list_failures = 0
+        if outcome.status in ("ok", "deferred"):
+            return outcome
+        progress.last = outcome
+        if request_scoped:
+            progress.skip.add(slot.key)
+        return None
+
+    def _out_of_candidates(self, last: GenerationOutcome) -> GenerationOutcome | None:
+        """No model is left for this request: fail it, re-walk the list, or give up."""
+        if any(s.usable() for s in self._slots):
+            return last
+        if self._revive():
+            return None
+        self._exhausted = True
+        return GenerationOutcome(
+            "exhausted",
+            category=last.category,
+            detail=f"every model is exhausted or failed; last: {last.detail}",
+            provider=last.provider,
+            model=last.model,
+        )
 
     def _choose(
         self, candidates: list[_Slot], request: GenerationRequest, skip: set[str]
@@ -577,7 +640,9 @@ class RotationEngine:
         """The best candidate callable now; else the shortest wait.
 
         A candidate the request cannot fit is skipped for this request (and
-        ``None`` returned so the caller re-evaluates).
+        ``None`` returned so the caller re-evaluates). Waits are always finite:
+        exhausted models are not candidates, and a fitted request never exceeds
+        the model's paced token window.
         """
         waits: list[float] = []
         for slot in candidates:
@@ -588,42 +653,53 @@ class RotationEngine:
             wait = slot.governor.wait_for(fit.tokens)
             if wait == 0:
                 return slot, fit
-            if not math.isfinite(wait):
-                skip.add(slot.key)
-                return None
             waits.append(wait)
         return min(waits)
 
     def _fit(self, slot: _Slot, request: GenerationRequest) -> _Fit | None:
-        """Render the prompt to fit the model's context and paced TPM, or ``None``."""
+        """Render the prompt to fit the model's context and paced TPM, or ``None``.
+
+        The answer's token reservation comes first (a quarter of a shared
+        context window, at least 512 tokens); the document text is then cut,
+        measuring the rendered prompt each time, until the request fits — or
+        would keep less than ``min_body_chars`` of the document, in which case
+        this model is not used for it.
+        """
         listed = slot.resolution.model
+        assert listed is not None  # noqa: S101 - only resolved models are ever usable
         spec = slot.provider.spec
-        settings = self._settings
-        overhead = request.system + json.dumps(dict(request.schema))
-        max_output = settings.max_output_tokens
-        if listed is not None and listed.output_token_limit:
+        max_output = self._settings.max_output_tokens
+        window: int | None = None
+        if listed.output_token_limit:
             max_output = min(max_output, listed.output_token_limit)
-        budget = slot.governor.token_capacity - (max_output if spec.tpm_counts_completion else 0)
-        if listed is not None and listed.input_token_limit:
-            shared = max_output if listed.shared_context else 0
-            budget = min(budget, listed.input_token_limit - shared)
+        if listed.input_token_limit and listed.shared_context:
+            max_output = min(max_output, max(_MIN_OUTPUT_TOKENS, listed.input_token_limit // 4))
+            window = listed.input_token_limit - max_output
+        elif listed.input_token_limit:
+            window = listed.input_token_limit
+        reserve = max_output if spec.tpm_counts_completion else 0
+        budget = slot.governor.token_capacity - reserve
+        if window is not None:
+            budget = min(budget, window)
+        overhead = request.system + json.dumps(dict(request.schema))
         prompt = request.prompt_for(request.max_body_chars)
+        limit = min(request.max_body_chars, len(prompt))
         tokens = estimate_tokens(overhead, prompt)
-        if tokens > budget:
-            excess = math.ceil((tokens - budget) * CHARS_PER_TOKEN)
-            body = request.max_body_chars - excess
-            if body < request.min_body_chars:
+        while tokens > budget:
+            limit -= math.ceil((tokens - budget) * CHARS_PER_TOKEN)
+            if limit < request.min_body_chars:
                 return None
-            prompt = request.prompt_for(body)
+            prompt = request.prompt_for(limit)
             tokens = estimate_tokens(overhead, prompt)
-        counted = tokens + (max_output if spec.tpm_counts_completion else 0)
-        return _Fit(prompt, counted, max_output)
+        return _Fit(prompt, tokens + reserve, max_output)
 
     def _await(self, slot: _Slot, tokens: int, deadline: float | None) -> bool:
         """Sleep until ``slot`` admits ``tokens``; ``False`` if that misses the deadline."""
         wait = slot.governor.wait_for(tokens)
         if wait > 0:
-            if not math.isfinite(wait) or (deadline is not None and self._clock() + wait >= deadline):
+            if not math.isfinite(wait) or (
+                deadline is not None and self._clock() + wait >= deadline
+            ):
                 return False
             self._sleep(wait)
         return True
@@ -662,13 +738,21 @@ class RotationEngine:
                 if routed is not None:
                     return self._outcome("failed", slot, category, detail), routed
             if category in _RETRYABLE and attempt <= self._settings.model_retries:
-                self._retries["model"] += 1
-                delay = retry_after if retry_after is not None else self._settings.delay(
-                    attempt, self._jitter()
+                delay = (
+                    retry_after
+                    if retry_after is not None
+                    else self._settings.delay(attempt, self._jitter())
                 )
+                if request.deadline is not None and self._clock() + delay >= request.deadline:
+                    return self._outcome(
+                        "deferred", slot, None, "run budget reached in a retry"
+                    ), False
+                self._retries["model"] += 1
                 self._sleep(delay)
                 continue
-            return self._outcome("failed", slot, category, detail), self._spent(slot, category, detail)
+            return self._outcome("failed", slot, category, detail), self._spent(
+                slot, category, detail
+            )
 
     def _route(self, slot: _Slot, error: ProviderError) -> bool | None:
         """Route a non-retryable failure; ``None`` means "retry it like an error".
@@ -679,8 +763,9 @@ class RotationEngine:
             return False
         category = error.category
         if category is FailureCategory.AUTH_ERROR:
-            self._provider_down(slot.provider, f"auth_error: {error.raw.strip()[:300]}",
-                                revivable=False)
+            self._provider_down(
+                slot.provider, f"auth_error: {error.raw.strip()[:300]}", revivable=False
+            )
             return False
         if category is FailureCategory.CONTENT_FILTER:
             return True
@@ -696,8 +781,9 @@ class RotationEngine:
     def _spent(self, slot: _Slot, category: FailureCategory, detail: str) -> bool:
         """Same-model retries are spent: take the model or provider out, or skip it."""
         if category is FailureCategory.NETWORK_ERROR:
-            self._provider_down(slot.provider, f"persistent network failure: {detail[:300]}",
-                                revivable=True)
+            self._provider_down(
+                slot.provider, f"persistent network failure: {detail[:300]}", revivable=True
+            )
             return False
         if category in _TRANSIENT:
             self._retire(slot, category, detail, revivable=True)
@@ -705,7 +791,9 @@ class RotationEngine:
         slot.resource_failures += 1
         if slot.resource_failures >= self._settings.resource_failure_limit:
             self._retire(
-                slot, category, f"failed {slot.resource_failures} consecutive requests: {detail}",
+                slot,
+                category,
+                f"failed {slot.resource_failures} consecutive requests: {detail}",
                 revivable=False,
             )
         return True
@@ -757,7 +845,9 @@ class RotationEngine:
         self._sleep(self._settings.list_backoff)
         return True
 
-    def _retire(self, slot: _Slot, category: FailureCategory, detail: str, *, revivable: bool) -> None:
+    def _retire(
+        self, slot: _Slot, category: FailureCategory, detail: str, *, revivable: bool
+    ) -> None:
         slot.status = SlotStatus.FAILED
         slot.revivable = revivable
         slot.reason = f"{category.value}: {detail[:300]}"
@@ -776,7 +866,7 @@ class RotationEngine:
 
     # -- one call ---------------------------------------------------------
 
-    def _call(  # noqa: PLR0913 - one paced, logged provider call; all context explicit
+    def _call(
         self,
         slot: _Slot,
         request: GenerationRequest,
@@ -813,7 +903,7 @@ class RotationEngine:
             slot.governor.mark_exhausted()
         return _Call(result, None, started, start)
 
-    def _record(  # noqa: PLR0913 - one logged answer; all context explicit
+    def _record(
         self,
         slot: _Slot,
         call: _Call,
@@ -826,10 +916,18 @@ class RotationEngine:
         if problem is None:
             self._log(slot, call, mode, ref, attempt, None, "", None)
         else:
-            self._log(slot, call, mode, ref, attempt, FailureCategory.INFERENCE_ERROR,
-                      f"answer rejected: {problem}", 200)
+            self._log(
+                slot,
+                call,
+                mode,
+                ref,
+                attempt,
+                FailureCategory.INFERENCE_ERROR,
+                f"answer rejected: {problem}",
+                200,
+            )
 
-    def _log(  # noqa: PLR0913 - mirrors the AttemptLog record
+    def _log(
         self,
         slot: _Slot,
         call: _Call,

@@ -6,75 +6,50 @@ import runpy
 
 import pytest
 
-from cyberkb.config import DEFAULT_MODELS, DEFAULT_PROVIDER_ORDER, IngestConfig
+from cyberkb.config import ConfigError, IngestConfig
 
 
 def test_config_defaults() -> None:
-    """With an empty environment, config falls back to safe defaults and no LLM."""
+    """With an empty environment every knob takes its documented default."""
     config = IngestConfig.from_env({})
-    assert config.api_key is None
-    assert config.models == DEFAULT_MODELS
-    assert config.use_llm is False
     assert config.batch_size == 10
+    assert config.timeout == 60.0
+    assert config.rotation.model_retries == 3
+    assert config.rotation.list_passes == 2
+    assert config.rotation.list_backoff == 60.0
 
 
-def test_config_with_key_and_models() -> None:
-    """A key enables the LLM; a comma list of models is parsed and trimmed."""
-    config = IngestConfig.from_env(
-        {"GEMINI_API_KEY": "k", "CYBERKB_MODELS": "a, b , c", "CYBERKB_BATCH_SIZE": "5"},
-    )
-    assert config.use_llm is True
-    assert config.models == ("a", "b", "c")
-    assert config.batch_size == 5
-
-
-def test_config_invalid_int_falls_back() -> None:
-    """A non-numeric integer setting falls back to its default."""
-    config = IngestConfig.from_env({"CYBERKB_BATCH_SIZE": "not-a-number"})
-    assert config.batch_size == 10
-
-
-def test_config_clamps_out_of_range() -> None:
-    """Out-of-range integer settings are clamped to their bounds."""
-    assert IngestConfig.from_env({"CYBERKB_BATCH_SIZE": "9999"}).batch_size == 50
-    assert IngestConfig.from_env({"CYBERKB_MAX_RETRIES": "0"}).max_retries == 1
-
-
-def test_config_blank_models_uses_default() -> None:
-    """A models setting that is only separators falls back to the default chain."""
-    assert IngestConfig.from_env({"CYBERKB_MODELS": "  ,  "}).models == DEFAULT_MODELS
-
-
-def test_default_provider_order() -> None:
-    """With no override the provider order is the documented default."""
-    assert IngestConfig.from_env({}).provider_order == DEFAULT_PROVIDER_ORDER
-    assert IngestConfig.from_env({}).active_providers() == ()
-
-
-def test_active_providers_orders_and_filters_by_key() -> None:
-    """Active providers follow the configured order and need their key present."""
+def test_config_reads_every_variable() -> None:
+    """Each variable overrides its knob; blank values mean the default."""
     config = IngestConfig.from_env(
         {
-            "GEMINI_API_KEY": "g",
-            "HF_TOKEN": "h",
-            "LLM_PROVIDER_ORDER": "huggingface, gemini",
+            "CYBERKB_BATCH_SIZE": "5",
+            "CYBERKB_TIMEOUT": " 90 ",
+            "CYBERKB_MODEL_RETRIES": "0",
+            "CYBERKB_LIST_PASSES": "3",
+            "CYBERKB_LIST_BACKOFF": "",
         },
     )
-    # openrouter is absent from the order; openrouter_key is unset anyway.
-    assert config.active_providers() == (("huggingface", "h"), ("gemini", "g"))
-    assert config.use_llm is True
+    assert config.batch_size == 5
+    assert config.timeout == 90.0
+    assert config.rotation.model_retries == 0
+    assert config.rotation.list_passes == 3
+    assert config.rotation.list_backoff == 60.0
 
 
-def test_active_providers_skips_configured_name_without_key() -> None:
-    """A provider named in the order but missing its key is skipped."""
-    config = IngestConfig.from_env({"OPENROUTER_API_KEY": "o"})
-    assert config.active_providers() == (("openrouter", "o"),)
-
-
-def test_active_providers_ignores_unknown_name() -> None:
-    """An unregistered provider name in the order is ignored."""
-    config = IngestConfig.from_env({"GEMINI_API_KEY": "g", "LLM_PROVIDER_ORDER": "bogus,gemini"})
-    assert config.active_providers() == (("gemini", "g"),)
+@pytest.mark.parametrize(
+    ("key", "value", "message"),
+    [
+        ("CYBERKB_BATCH_SIZE", "not-a-number", "is not an integer"),
+        ("CYBERKB_BATCH_SIZE", "9999", "outside the allowed range 1..50"),
+        ("CYBERKB_LIST_PASSES", "0", "outside the allowed range 1..5"),
+        ("CYBERKB_MODEL_RETRIES", "-1", "outside the allowed range 0..10"),
+    ],
+)
+def test_bad_values_fail_loudly(key: str, value: str, message: str) -> None:
+    """A malformed or out-of-range value stops the run instead of being clamped."""
+    with pytest.raises(ConfigError, match=message):
+        IngestConfig.from_env({key: value})
 
 
 def test_module_entry_point_runs(

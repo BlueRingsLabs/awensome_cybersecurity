@@ -48,6 +48,7 @@ GROQ_MODES: tuple[str, ...] = ("json_schema", "json_object")
 _OK = 200
 _TOO_MANY_REQUESTS = 429
 _BAD_REQUEST = 400
+_FLEX_CAPACITY = 498  # Groq-specific: "Flex tier at capacity, try again later"
 _TEMPERATURE = 0.1
 _SCHEMA_NAME = "classifications"
 _THINK_RE = re.compile(r"<think>.*?</think>", re.DOTALL | re.IGNORECASE)
@@ -135,6 +136,8 @@ class GroqProvider(HttpProviderBase):
             category = FailureCategory.INFERENCE_ERROR
         elif code in _GONE_CODES:
             category = FailureCategory.MODEL_UNAVAILABLE
+        elif response.status == _FLEX_CAPACITY:
+            category = FailureCategory.SERVER_ERROR
         else:
             category = classify_http_status(response.status, response.text())
             rejected = response.status == _BAD_REQUEST
@@ -185,7 +188,11 @@ class GroqProvider(HttpProviderBase):
         if mode == "json_schema":
             response_format: dict[str, Any] = {
                 "type": "json_schema",
-                "json_schema": {"name": _SCHEMA_NAME, "strict": True, "schema": strict_schema(schema)},
+                "json_schema": {
+                    "name": _SCHEMA_NAME,
+                    "strict": True,
+                    "schema": strict_schema(schema),
+                },
             }
             instruction = system
         elif mode == "json_object":
@@ -240,7 +247,10 @@ class GroqProvider(HttpProviderBase):
         choice = choices[0] if isinstance(choices[0], dict) else {}
         if choice.get("finish_reason") == "content_filter":
             raise self._fail(
-                FailureCategory.CONTENT_FILTER, raw="content filtered by model", model=model, status=_OK
+                FailureCategory.CONTENT_FILTER,
+                raw="content filtered by model",
+                model=model,
+                status=_OK,
             )
         message = choice.get("message")
         content = message.get("content") if isinstance(message, dict) else None

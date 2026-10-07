@@ -10,11 +10,11 @@ quietly replaced by a default.
 =========================  =======  ==========  ===============================
 Variable                   Default  Range       Meaning
 =========================  =======  ==========  ===============================
-``CYBERKB_BATCH_SIZE``     10       1–50        inbox documents per LLM request
-``CYBERKB_TIMEOUT``        60       5–300       seconds per HTTP request
-``CYBERKB_MODEL_RETRIES``  3        0–10        same-model retries after an error
-``CYBERKB_LIST_PASSES``    2        1–5         walks of the whole model list
-``CYBERKB_LIST_BACKOFF``   60       0–900       seconds before re-walking the list
+``CYBERKB_BATCH_SIZE``     10       1-50        inbox documents per LLM request
+``CYBERKB_TIMEOUT``        60       5-300       seconds per HTTP request
+``CYBERKB_MODEL_RETRIES``  3        0-10        same-model retries after an error
+``CYBERKB_LIST_PASSES``    2        1-5         walks of the whole model list
+``CYBERKB_LIST_BACKOFF``   60       0-900       seconds before re-walking the list
 =========================  =======  ==========  ===============================
 """
 

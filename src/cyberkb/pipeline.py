@@ -11,6 +11,7 @@ wants to use it (or all at once by ``cyberkb preflight``).
 
 from __future__ import annotations
 
+import time
 from typing import TYPE_CHECKING
 
 from cyberkb.classify.base import Document
@@ -20,7 +21,8 @@ from cyberkb.providers.registry import build_providers
 from cyberkb.providers.rotation import RotationEngine
 
 if TYPE_CHECKING:
-    from collections.abc import Mapping
+    from collections.abc import Callable, Mapping
+    from datetime import datetime
 
     from cyberkb.config import IngestConfig
     from cyberkb.obslog import StructuredLogger
@@ -56,6 +58,9 @@ def build_classifier(  # noqa: PLR0913 - every collaborator explicit and injecta
     usage: Mapping[str, DailyUsage] | None = None,
     validations: Mapping[str, CachedValidation] | None = None,
     transport: Transport | None = None,
+    clock: Callable[[], float] = time.monotonic,
+    sleep: Callable[[float], None] = time.sleep,
+    now: Callable[[], datetime] | None = None,
 ) -> tuple[LLMClassifier, ModelCatalog]:
     """Build the engine-backed classifier and discover the live models.
 
@@ -72,6 +77,9 @@ def build_classifier(  # noqa: PLR0913 - every collaborator explicit and injecta
         logger=logger,
         usage=usage,
         validations=validations,
+        clock=clock,
+        sleep=sleep,
+        now=now,
     )
     classifier = LLMClassifier(engine, taxonomy)
     engine.discover(classifier.request([PROBE_DOCUMENT], single=True))

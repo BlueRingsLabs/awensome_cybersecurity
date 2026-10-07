@@ -106,7 +106,7 @@ def test_parse_strips_trailing_slash_and_records_limits() -> None:
 def test_unknown_provider_lookup_is_an_error() -> None:
     """Asking for an undeclared provider fails loudly."""
     with pytest.raises(ModelCatalogError, match="not declared"):
-        parse_model_catalog(_doc()).provider("openrouter")
+        parse_model_catalog(_doc()).provider("mistral")
 
 
 def _mutate(path: list[Any], value: object) -> dict[str, Any]:

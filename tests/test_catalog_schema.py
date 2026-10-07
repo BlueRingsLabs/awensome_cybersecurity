@@ -71,7 +71,7 @@ def test_reference_only_entry_validates(taxonomy: Taxonomy) -> None:
 
 def test_classified_by_entry_validates(taxonomy: Taxonomy) -> None:
     """A provenance-stamped entry serialises classified_by and conforms."""
-    stamp = "openrouter:meta-llama/llama-3.3-70b-instruct:free@2026-10-05T14:23:11Z"
+    stamp = "groq:openai/gpt-oss-120b@2026-10-05T14:23:11Z"
     catalog = build_catalog([_resource(classified_by=stamp)], taxonomy, generated_at=FIXED_NOW)
     assert catalog["entries"][0]["classified_by"] == stamp
     jsonschema.validate(catalog, SCHEMA)

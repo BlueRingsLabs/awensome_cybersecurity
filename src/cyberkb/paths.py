@@ -65,3 +65,8 @@ class RepoPaths:
     def ingest_runs(self) -> Path:
         """Directory holding dated ingestion/enrichment run reports."""
         return self.root / "docs" / "audit" / "ingest-runs"
+
+    @property
+    def enrich_state(self) -> Path:
+        """The enrichment ledger (progress, per-model usage, last run)."""
+        return self.root / "docs" / "audit" / "enrich-state.json"

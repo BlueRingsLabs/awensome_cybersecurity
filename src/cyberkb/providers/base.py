@@ -18,7 +18,7 @@ import json
 import time
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, ClassVar, NoReturn
+from typing import TYPE_CHECKING, ClassVar, NoReturn, override
 
 from cyberkb.errors import FailureCategory, ProviderError
 from cyberkb.providers.http import HttpTransportError, UrllibTransport
@@ -159,7 +159,7 @@ class LLMProvider(ABC):
         raise NotImplementedError
 
     @abstractmethod
-    def complete_json(  # noqa: PLR0913 - the full call contract, all keyword-explicit
+    def complete_json(
         self,
         model: str,
         system: str,
@@ -194,6 +194,7 @@ class HttpProviderBase(LLMProvider):
         self._clock = clock
         self._timeout = timeout
 
+    @override
     def is_configured(self) -> bool:
         """Configured when an API key is present."""
         return bool(self._api_key)
@@ -210,7 +211,7 @@ class HttpProviderBase(LLMProvider):
             return text.replace(self._api_key, REDACTED)
         return text
 
-    def _fail(  # noqa: PLR0913 - every field of the categorised failure, keyword-only
+    def _fail(
         self,
         category: FailureCategory,
         *,

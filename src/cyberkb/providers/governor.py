@@ -21,6 +21,7 @@ between this runner and the provider's window.
 
 from __future__ import annotations
 
+import itertools
 import math
 from collections import deque
 from dataclasses import dataclass
@@ -141,14 +142,13 @@ class ModelGovernor:
         waits = [max(0.0, self._cooldown_until - now)]
         if len(self._window) >= self._rpm:
             waits.append(self._window[len(self._window) - self._rpm][0] + WINDOW_SECONDS - now)
-        used = sum(int(entry[1]) for entry in self._window)
-        if used + tokens > self._tpm:
-            freed = 0
-            for stamp, spent in self._window:
-                freed += int(spent)
-                if used - freed + tokens <= self._tpm:
-                    waits.append(stamp + WINDOW_SECONDS - now)
-                    break
+        need = sum(int(entry[1]) for entry in self._window) + tokens - self._tpm
+        if need > 0:
+            # Requests leave the window oldest first; wait for the one whose
+            # departure frees enough. ``tokens <= tpm`` guarantees one exists.
+            freed = itertools.accumulate(int(entry[1]) for entry in self._window)
+            index = next(i for i, total in enumerate(freed) if total >= need)
+            waits.append(self._window[index][0] + WINDOW_SECONDS - now)
         return max(0.0, *waits)
 
     def reserve(self, tokens: int) -> list[float]:

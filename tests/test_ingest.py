@@ -1,25 +1,26 @@
-"""Tests for the ingestion orchestrator."""
+"""Tests for inbox ingestion."""
 
 from __future__ import annotations
 
-import io
-import json
 from datetime import date
 from typing import TYPE_CHECKING
 
-from cyberkb.classify.llm import LLMClassifier
 from cyberkb.frontmatter import split_front_matter
 from cyberkb.ingest import IngestStatus, discover_submissions, ingest_inbox
 from cyberkb.library import load_library
-from cyberkb.obslog import StructuredLogger
-from cyberkb.providers.gemini import GeminiProvider
-from cyberkb.providers.orchestrator import Orchestrator, OrchestratorSettings
 from cyberkb.taxonomy import load_taxonomy
-from tests.conftest import FakeTransport, http_json
+from tests.llmfakes import (
+    Router,
+    answer,
+    default_google_listing,
+    google_answer,
+    make_classifier,
+    single_model_catalog,
+    validated_today,
+)
 
 if TYPE_CHECKING:
-    from collections.abc import Callable
-
+    from cyberkb.classify.llm import LLMClassifier
     from cyberkb.paths import RepoPaths
     from cyberkb.taxonomy import Taxonomy
 
@@ -180,31 +181,14 @@ def test_ingest_empty_inbox(repo: RepoPaths) -> None:
     assert report.outcomes == ()
 
 
-def _clock() -> Callable[[], float]:
-    state = {"v": 0.0}
-
-    def tick() -> float:
-        state["v"] += 1.0
-        return state["v"]
-
-    return tick
-
-
-def _llm_classifier(taxonomy: Taxonomy, item: dict[str, object]) -> LLMClassifier:
-    """Build an LLM classifier over a Gemini provider returning ``item``."""
-    text = json.dumps({"classifications": [item]})
-    envelope = {"candidates": [{"content": {"parts": [{"text": text}]}}]}
-    transport = FakeTransport(http_json(200, envelope))
-    provider = GeminiProvider("key", transport=transport, clock=_clock())
-    orchestrator = Orchestrator(
-        [provider],
-        logger=StructuredLogger(io.StringIO()),
-        sleep=lambda _s: None,
-        clock=_clock(),
-        settings=OrchestratorSettings(max_retries=2),
+def _llm_classifier(taxonomy: Taxonomy, answer_item: dict[str, object]) -> LLMClassifier:
+    """An LLM classifier (single validated Google model) answering ``answer_item``."""
+    router = Router().add("google:list", default_google_listing())
+    router.add("google:gemma-t-it", google_answer(answer(answer_item)))
+    classifier, _ = make_classifier(
+        router, taxonomy, catalog_doc=single_model_catalog(), validations=validated_today()
     )
-    orchestrator._selected = {"gemini": ("gemini-test",)}  # noqa: SLF001 - seed validated model
-    return LLMClassifier(orchestrator, taxonomy)
+    return classifier
 
 
 def test_ingest_with_llm_classifier(repo: RepoPaths) -> None:
@@ -228,6 +212,6 @@ def test_ingest_with_llm_classifier(repo: RepoPaths) -> None:
     assert raw is not None
     assert raw["title"] == "LLM Titled Guide"
     assert raw["classification"]["method"] == "llm"
-    assert raw["classification"]["model"] == "gemini-test"
+    assert raw["classification"]["model"] == "gemma-t-it"
     assert raw["summary"] == "An LLM summary."
-    assert raw["classified_by"].startswith("gemini:gemini-test@")
+    assert raw["classified_by"].startswith("google:gemma-t-it@")

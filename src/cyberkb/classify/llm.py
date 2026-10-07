@@ -34,7 +34,7 @@ from cyberkb.providers.rotation import GenerationRequest
 from cyberkb.textutil import plain_text, truncate
 
 if TYPE_CHECKING:
-    from collections.abc import Mapping, Sequence
+    from collections.abc import Iterator, Mapping, Sequence
 
     from cyberkb.providers.rotation import GenerationOutcome, RotationEngine
     from cyberkb.taxonomy import Taxonomy
@@ -45,12 +45,14 @@ MIN_CONFIDENCE = 0.35
 _MAX_TITLE = 200
 _MAX_SUMMARY = 300
 _MIN_DOC_CHARS = 600
-# Openings of a refusal or meta-answer instead of a summary of the document.
+# Openings of a refusal or meta-answer instead of a summary of the document
+# (matched after typographic apostrophes are folded to ASCII).
 _REFUSAL_RE = re.compile(
-    r"^\s*(i\s*(?:'|’)?m\s+sorry|i\s+am\s+sorry|sorry,|i\s+can(?:not|'t|’t)|"
-    r"i\s+(?:am|'m)\s+unable|as\s+an\s+ai\b|i\s+won(?:'|’)t)",
+    r"^\s*(i\s*'?m\s+sorry|i\s+am\s+sorry|sorry,|i\s+can(?:not|'t)|"
+    r"i\s+(?:am|'m)\s+unable|as\s+an\s+ai\b|i\s+won't)",
     re.IGNORECASE,
 )
+_APOSTROPHES = str.maketrans({"\u2019": "'", "\u2018": "'"})
 
 
 @dataclass(frozen=True, slots=True)
@@ -123,7 +125,9 @@ class LLMClassifier:
             return [heuristic.classify(d, self._taxonomy) for d in documents]
         items = outcome.result.payload.get("classifications", [])
         return [
-            self.interpret(d, _item_for(d.ref, items), outcome.result.provider, outcome.result.model)
+            self.interpret(
+                d, _item_for(d.ref, items), outcome.result.provider, outcome.result.model
+            )
             or heuristic.classify(d, self._taxonomy)
             for d in documents
         ]
@@ -141,33 +145,31 @@ class LLMClassifier:
         """Why ``item`` is not a usable classification of ``document`` (``None`` if it is)."""
         if not item:
             return f"no classification for ref {document.ref!r}"
+        return next(self._problems(item), None)
+
+    def _problems(self, item: Mapping[str, Any]) -> Iterator[str]:
+        """Every defect of ``item``, in check order (consumed lazily: first one wins)."""
         category = item.get("category")
         confidence = item.get("confidence")
-        checks = (
-            (category not in self._taxonomy.category_ids, f"unknown category {category!r}"),
-            (item.get("format") not in self._taxonomy.format_ids, "unknown format"),
-            (item.get("language") not in self._taxonomy.language_ids, "unknown language"),
-            (
-                not isinstance(confidence, (int, float)) or isinstance(confidence, bool),
-                "confidence is not a number",
-            ),
-        )
-        for failed, reason in checks:
-            if failed:
-                return reason
-        value = float(confidence)  # type: ignore[arg-type]  # checked numeric above
-        if not 0.0 <= value <= 1.0:
-            return f"confidence {value} is outside [0, 1]"
-        if value < MIN_CONFIDENCE:
-            return f"confidence {value:.2f} is below {MIN_CONFIDENCE}"
+        if category not in self._taxonomy.category_ids:
+            yield f"unknown category {category!r}"
+        if item.get("format") not in self._taxonomy.format_ids:
+            yield "unknown format"
+        if item.get("language") not in self._taxonomy.language_ids:
+            yield "unknown language"
+        if not isinstance(confidence, (int, float)) or isinstance(confidence, bool):
+            yield "confidence is not a number"
+        elif not 0.0 <= float(confidence) <= 1.0:
+            yield f"confidence {confidence} is outside [0, 1]"
+        elif float(confidence) < MIN_CONFIDENCE:
+            yield f"confidence {float(confidence):.2f} is below {MIN_CONFIDENCE}"
         if self._taxonomy.category(str(category)).staging:
-            return "the staging category is not a classification"
+            yield "the staging category is not a classification"
         summary = plain_text(str(item.get("summary", "")))
         if not summary:
-            return "empty summary"
-        if _REFUSAL_RE.match(summary):
-            return "the summary is a refusal, not a description of the document"
-        return None
+            yield "empty summary"
+        if _REFUSAL_RE.match(summary.translate(_APOSTROPHES)):
+            yield "the summary is a refusal, not a description of the document"
 
     def interpret(
         self,

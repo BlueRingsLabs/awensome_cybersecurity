@@ -155,3 +155,18 @@ def test_strip_unsafe_chars_is_idempotent(text: str) -> None:
     """Stripping unsafe characters twice equals stripping once, for any input."""
     once = textutil.strip_unsafe_chars(text)
     assert textutil.strip_unsafe_chars(once) == once
+
+
+@pytest.mark.parametrize(
+    ("text", "expected"),
+    [
+        ('{"a": 1}', '{"a": 1}'),
+        ('  ```json\n{"a": 1}\n```  ', '{"a": 1}'),
+        ('```\n{"a": 1}\n```', '{"a": 1}'),
+        ('```json\n{"a": 1}', '{"a": 1}'),
+        ("```", ""),
+    ],
+)
+def test_unfence(text: str, expected: str) -> None:
+    """A surrounding code fence is removed; a missing closing fence is tolerated."""
+    assert textutil.unfence(text) == expected

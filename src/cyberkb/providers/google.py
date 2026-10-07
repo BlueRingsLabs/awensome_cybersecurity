@@ -48,6 +48,7 @@ __all__ = ["GOOGLE_MODES", "GoogleProvider", "parse_google_error"]
 
 GOOGLE_MODES: tuple[str, ...] = ("json_schema", "response_schema", "prompt")
 _OK = 200
+_TOO_MANY_REQUESTS = 429
 _PAGE_SIZE = 1000
 _MAX_PAGES = 20
 _GENERATE = "generateContent"
@@ -92,6 +93,35 @@ def _quota_ids(details: list[Mapping[str, Any]]) -> list[str]:
     return ids
 
 
+_AUTH_STATUSES = frozenset({"PERMISSION_DENIED", "UNAUTHENTICATED", "FAILED_PRECONDITION"})
+# rpc status -> (category, request_rejected)
+_RPC_STATUS: dict[str, tuple[FailureCategory, bool]] = {
+    "INVALID_ARGUMENT": (FailureCategory.MODEL_UNAVAILABLE, True),
+    "NOT_FOUND": (FailureCategory.MODEL_UNAVAILABLE, False),
+    "DEADLINE_EXCEEDED": (FailureCategory.TIMEOUT, False),
+}
+
+
+def _retry_delay(details: list[Mapping[str, Any]]) -> float | None:
+    for detail in details:
+        if detail.get("@type") == _RETRY_INFO:
+            delay = _duration(detail.get("retryDelay"))
+            if delay is not None:
+                return delay
+    return None
+
+
+def _exhaustion(message: str, details: list[Mapping[str, Any]]) -> FailureCategory:
+    """A 429 is a daily quota when a violated quota is per-day or has no allowance."""
+    quota_ids = _quota_ids(details)
+    daily = any("perday" in q.lower() for q in quota_ids) or (
+        not quota_ids and "per day" in message.lower()
+    )
+    if daily or _ZERO_LIMIT_RE.search(message):
+        return FailureCategory.QUOTA_EXCEEDED
+    return FailureCategory.RATE_LIMIT
+
+
 def parse_google_error(status: int, body: str) -> tuple[FailureCategory, float | None, bool]:
     """Categorise a ``google.rpc.Status`` error body.
 
@@ -108,33 +138,19 @@ def parse_google_error(status: int, body: str) -> tuple[FailureCategory, float |
     rpc_status = str(error.get("status", ""))
     message = str(error.get("message", ""))
     details = _details(error)
-    retry_after = next(
-        (
-            d
-            for d in (_duration(x.get("retryDelay")) for x in details if x.get("@type") == _RETRY_INFO)
-            if d is not None
-        ),
-        None,
-    )
     reasons = {str(d.get("reason")) for d in details if d.get("@type") == _ERROR_INFO}
-    if reasons & _FATAL_REASONS or "api key not valid" in message.lower():
+    if (
+        reasons & _FATAL_REASONS
+        or "api key not valid" in message.lower()
+        or rpc_status in _AUTH_STATUSES
+    ):
         return FailureCategory.AUTH_ERROR, None, False
-    if rpc_status in {"PERMISSION_DENIED", "UNAUTHENTICATED", "FAILED_PRECONDITION"}:
-        return FailureCategory.AUTH_ERROR, None, False
-    if rpc_status == "RESOURCE_EXHAUSTED" or status == 429:  # noqa: PLR2004 - HTTP 429
-        quota_ids = _quota_ids(details)
-        daily = any("perday" in q.lower() for q in quota_ids) or (
-            not quota_ids and "per day" in message.lower()
-        )
-        if daily or _ZERO_LIMIT_RE.search(message):
-            return FailureCategory.QUOTA_EXCEEDED, retry_after, False
-        return FailureCategory.RATE_LIMIT, retry_after, False
-    if rpc_status == "INVALID_ARGUMENT":
-        return FailureCategory.MODEL_UNAVAILABLE, None, True
-    if rpc_status == "NOT_FOUND":
-        return FailureCategory.MODEL_UNAVAILABLE, None, False
-    if rpc_status == "DEADLINE_EXCEEDED":
-        return FailureCategory.TIMEOUT, retry_after, False
+    retry_after = _retry_delay(details)
+    if rpc_status == "RESOURCE_EXHAUSTED" or status == _TOO_MANY_REQUESTS:
+        return _exhaustion(message, details), retry_after, False
+    if rpc_status in _RPC_STATUS:
+        category, rejected = _RPC_STATUS[rpc_status]
+        return category, retry_after, rejected
     return classify_http_status(status, body), retry_after, False
 
 
@@ -199,9 +215,7 @@ class GoogleProvider(HttpProviderBase):
             if not isinstance(next_token, str) or not next_token:
                 return listed
             token = next_token
-        raise self._fail(
-            FailureCategory.UNKNOWN, raw=f"model listing exceeded {_MAX_PAGES} pages"
-        )
+        raise self._fail(FailureCategory.UNKNOWN, raw=f"model listing exceeded {_MAX_PAGES} pages")
 
     @override
     def complete_json(
@@ -244,7 +258,10 @@ class GoogleProvider(HttpProviderBase):
             block = feedback.get("blockReason") if isinstance(feedback, dict) else None
             category = FailureCategory.CONTENT_FILTER if block else FailureCategory.INFERENCE_ERROR
             raise self._fail(
-                category, raw=f"no candidate returned (blockReason={block})", model=model, status=_OK
+                category,
+                raw=f"no candidate returned (blockReason={block})",
+                model=model,
+                status=_OK,
             )
         candidate = candidates[0] if isinstance(candidates[0], dict) else {}
         finish = candidate.get("finishReason")
@@ -260,7 +277,9 @@ class GoogleProvider(HttpProviderBase):
         texts = [
             part["text"]
             for part in (parts if isinstance(parts, list) else [])
-            if isinstance(part, dict) and isinstance(part.get("text"), str) and not part.get("thought")
+            if isinstance(part, dict)
+            and isinstance(part.get("text"), str)
+            and not part.get("thought")
         ]
         if not texts:
             self._invalid_output("candidate had no answer text", model=model)
@@ -293,7 +312,10 @@ def _request_body(
     config: dict[str, Any] = {"temperature": _TEMPERATURE, "maxOutputTokens": max_output_tokens}
     instruction = system
     if mode == "json_schema":
-        config |= {"responseMimeType": "application/json", "responseJsonSchema": _json_schema(schema)}
+        config |= {
+            "responseMimeType": "application/json",
+            "responseJsonSchema": _json_schema(schema),
+        }
     elif mode == "response_schema":
         config |= {"responseMimeType": "application/json", "responseSchema": dict(schema)}
     elif mode == "prompt":

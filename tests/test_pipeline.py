@@ -1,129 +1,80 @@
-"""Tests for assembling the multi-provider classifier from configuration."""
+"""Tests for assembling the classifier from the catalog and the environment."""
 
 from __future__ import annotations
 
-import json
+import io
 from typing import TYPE_CHECKING
 
 import pytest
 
 from cyberkb.config import IngestConfig
-from cyberkb.pipeline import _validator, build_classifier, build_orchestrator
-from cyberkb.providers.http import HttpResponse, UrllibTransport
+from cyberkb.errors import ModelCatalogError, ProviderConfigError
+from cyberkb.obslog import StructuredLogger
+from cyberkb.pipeline import PROBE_DOCUMENT, build_classifier
+from tests.llmfakes import (
+    KEYS,
+    FakeTime,
+    answer,
+    discovered_router,
+    google_answer,
+    groq_answer,
+    item,
+    write_catalog,
+)
 
 if TYPE_CHECKING:
-    from collections.abc import Mapping
-
+    from cyberkb.paths import RepoPaths
     from cyberkb.taxonomy import Taxonomy
 
-_GEMINI_LISTING = {
-    "models": [
-        {"name": "models/gemini-2.5-flash", "supportedGenerationMethods": ["generateContent"]},
-        {"name": "models/gemini-2.5-flash-lite", "supportedGenerationMethods": ["generateContent"]},
-    ],
-}
 
-
-def _envelope_bytes() -> bytes:
-    item = {
-        "ref": "probe",
-        "title": "T",
-        "category": "offensive-security",
-        "format": "guide",
-        "language": "en",
-        "tags": [],
-        "summary": "ok",
-        "confidence": 0.9,
-    }
-    text = json.dumps({"classifications": [item]})
-    return json.dumps({"candidates": [{"content": {"parts": [{"text": text}]}}]}).encode()
-
-
-def _fake_request(
-    valid: bool,  # noqa: FBT001 - internal test helper flag
-) -> object:
-    def request(
-        _self: UrllibTransport,
-        method: str,
-        _url: str,
-        *,
-        headers: Mapping[str, str],
-        body: bytes | None,
-        timeout: float,
-    ) -> HttpResponse:
-        _ = (headers, body, timeout)
-        if method == "GET":
-            return HttpResponse(200, json.dumps(_GEMINI_LISTING).encode())
-        return HttpResponse(200, _envelope_bytes()) if valid else HttpResponse(500, b"boom")
-
-    return request
-
-
-def test_validator_accepts_a_usable_on_taxonomy_answer(taxonomy: Taxonomy) -> None:
-    """A batch answer with a real category and a non-empty summary is accepted."""
-    validate = _validator(taxonomy)
-    payload = {"classifications": [{"category": "offensive-security", "summary": "s"}]}
-    assert validate(payload) is True
-
-
-@pytest.mark.parametrize(
-    "payload",
-    [
-        {},
-        {"classifications": "nope"},
-        {"classifications": []},
-        {"classifications": ["not-a-dict"]},
-        {"classifications": [{"category": "does-not-exist", "summary": "s"}]},
-        {"classifications": [{"category": "uncategorized", "summary": "s"}]},
-        {"classifications": [{"category": "offensive-security", "summary": "  "}]},
-    ],
-)
-def test_validator_rejects_unusable_answers(taxonomy: Taxonomy, payload: dict[str, object]) -> None:
-    """Malformed, off-taxonomy, staging or empty-summary answers are rejected."""
-    assert _validator(taxonomy)(payload) is False
-
-
-def test_build_classifier_without_providers_is_heuristic(taxonomy: Taxonomy) -> None:
-    """With no provider keys the pipeline returns no classifier and no orchestrator."""
-    assert build_classifier(taxonomy, IngestConfig.from_env({})) == (None, None)
-
-
-def test_build_orchestrator_builds_providers_in_order(taxonomy: Taxonomy) -> None:
-    """Providers are constructed in the configured fallback order."""
-    _ = taxonomy
-    config = IngestConfig.from_env(
-        {
-            "GEMINI_API_KEY": "g",
-            "OPENROUTER_API_KEY": "o",
-            "LLM_PROVIDER_ORDER": "openrouter,gemini",
-        },
+def test_build_classifier_discovers_and_resolves(repo: RepoPaths, taxonomy: Taxonomy) -> None:
+    """The classifier is built from the catalog and the live listing; nothing is probed yet."""
+    write_catalog(repo.root)
+    router = discovered_router()
+    time = FakeTime()
+    classifier, catalog = build_classifier(
+        repo,
+        taxonomy,
+        IngestConfig.from_env({}),
+        logger=StructuredLogger(io.StringIO()),
+        env=KEYS,
+        transport=router,
+        clock=time.clock,
+        sleep=time.sleep,
+        now=time.now,
     )
-    orchestrator = build_orchestrator(config)
-    assert [p.name for p in orchestrator._providers] == ["openrouter", "gemini"]  # noqa: SLF001
+    assert [p.id for p in catalog.providers] == ["google", "groq"]
+    statuses = [m["status"] for m in classifier.engine.model_report()]
+    assert statuses == ["unvalidated", "unvalidated", "unvalidated"]
+    assert router.pending() == {}
+    probe = answer(item(PROBE_DOCUMENT.ref))
+    router.add("google:gemma-t-it", google_answer(probe))
+    router.add("google:gemini-test-flash", google_answer(probe))
+    router.add("groq:groq-a", groq_answer(probe))
+    classifier.engine.validate_all()
+    assert {m["status"] for m in classifier.engine.model_report()} == {"active"}
 
 
-def test_build_classifier_validates_and_reports_capacity(
-    taxonomy: Taxonomy,
-    monkeypatch: pytest.MonkeyPatch,
-) -> None:
-    """A provider whose models pass validation yields a usable classifier."""
-    monkeypatch.setattr(UrllibTransport, "request", _fake_request(valid=True))
-    config = IngestConfig.from_env({"GEMINI_API_KEY": "k"})
-    classifier, orchestrator = build_classifier(taxonomy, config)
-    assert classifier is not None
-    assert orchestrator is not None
-    assert orchestrator.has_capacity() is True
-    assert orchestrator.health()[0].ok is True
+def test_missing_keys_fail_before_any_request(repo: RepoPaths, taxonomy: Taxonomy) -> None:
+    """Both keys are required; the error names the missing variables, never values."""
+    write_catalog(repo.root)
+    with pytest.raises(ProviderConfigError, match="GROQ_API_KEY"):
+        build_classifier(
+            repo,
+            taxonomy,
+            IngestConfig.from_env({}),
+            logger=StructuredLogger(io.StringIO()),
+            env={"GEMINI_API_KEY": "x" * 20, "GROQ_API_KEY": "  "},
+        )
 
 
-def test_build_classifier_no_capacity_when_models_fail(
-    taxonomy: Taxonomy,
-    monkeypatch: pytest.MonkeyPatch,
-) -> None:
-    """When validation calls fail, no model is usable and the heuristic is used."""
-    monkeypatch.setattr(UrllibTransport, "request", _fake_request(valid=False))
-    config = IngestConfig.from_env({"GEMINI_API_KEY": "k"})
-    classifier, orchestrator = build_classifier(taxonomy, config)
-    assert classifier is None
-    assert orchestrator is not None
-    assert orchestrator.has_capacity() is False
+def test_invalid_catalog_is_a_catalog_error(repo: RepoPaths, taxonomy: Taxonomy) -> None:
+    """Without a valid catalog nothing is built."""
+    with pytest.raises(ModelCatalogError):
+        build_classifier(
+            repo,
+            taxonomy,
+            IngestConfig.from_env({}),
+            logger=StructuredLogger(io.StringIO()),
+            env=KEYS,
+        )

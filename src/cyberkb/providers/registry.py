@@ -76,7 +76,10 @@ def build_providers(
     adapters = [(_adapter(spec), spec) for spec in catalog.providers]
     missing = missing_keys(catalog, env)
     if missing:
-        msg = f"missing API key(s): {', '.join(missing)} (set them as secrets; values are never logged)"
+        msg = (
+            f"missing API key(s): {', '.join(missing)} "
+            "(set them as secrets; values are never logged)"
+        )
         raise ProviderConfigError(msg)
     return [
         cls(env[spec.api_key_env].strip(), timeout=timeout, transport=transport)

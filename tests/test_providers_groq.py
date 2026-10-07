@@ -243,3 +243,11 @@ def test_other_bad_requests_are_rejected_request_modes() -> None:
 def test_remaining_statuses(status: int, body: str, category: FailureCategory) -> None:
     """Other statuses use the provider-neutral mapping, whatever the body shape."""
     assert _error(HttpResponse(status, body.encode())).category is category
+
+
+def test_an_edge_block_is_not_a_key_rejection() -> None:
+    """Cloudflare's bare 403 (error 1010) never reached the API: network, not auth."""
+    error = _error(HttpResponse(403, b"error code: 1010\n"))
+    assert error.category is FailureCategory.NETWORK_ERROR
+    api = _error(groq_error(403, "Organization restricted", code="permission_denied"))
+    assert api.category is FailureCategory.AUTH_ERROR

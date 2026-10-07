@@ -10,7 +10,7 @@ from typing import TYPE_CHECKING, Self
 
 import pytest
 
-from cyberkb.providers.http import HttpResponse, HttpTransportError, UrllibTransport
+from cyberkb.providers.http import USER_AGENT, HttpResponse, HttpTransportError, UrllibTransport
 
 if TYPE_CHECKING:
     from collections.abc import Mapping
@@ -128,3 +128,22 @@ def test_request_oserror_is_network(monkeypatch: pytest.MonkeyPatch) -> None:
     with pytest.raises(HttpTransportError) as exc:
         UrllibTransport().request("GET", "https://x", headers={}, body=None, timeout=5)
     assert exc.value.timeout is False
+
+
+def test_request_sends_an_explicit_user_agent(monkeypatch: pytest.MonkeyPatch) -> None:
+    """An explicit agent is always sent: urllib's default is blocked by Cloudflare (1010)."""
+    seen: list[urllib.request.Request] = []
+
+    def urlopen(req: urllib.request.Request, timeout: float) -> _FakeResponse:
+        _ = timeout
+        seen.append(req)
+        return _FakeResponse(200, b"{}", {})
+
+    monkeypatch.setattr(urllib.request, "urlopen", urlopen)
+    UrllibTransport().request("GET", "https://x", headers={}, body=None, timeout=5)
+    UrllibTransport().request(
+        "GET", "https://x", headers={"User-Agent": "custom"}, body=None, timeout=5
+    )
+    assert seen[0].get_header("User-agent") == USER_AGENT
+    assert USER_AGENT.startswith("cyberkb/")
+    assert seen[1].get_header("User-agent") == "custom"

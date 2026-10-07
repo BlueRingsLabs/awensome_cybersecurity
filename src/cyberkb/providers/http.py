@@ -19,12 +19,15 @@ import urllib.request
 from dataclasses import dataclass, field
 from typing import TYPE_CHECKING, Protocol
 
+from cyberkb import __version__
+
 if TYPE_CHECKING:
     from collections.abc import Mapping
 
-__all__ = ["HttpResponse", "HttpTransportError", "Transport", "UrllibTransport"]
+__all__ = ["USER_AGENT", "HttpResponse", "HttpTransportError", "Transport", "UrllibTransport"]
 
 MAX_RESPONSE_BYTES = 8 * 1024 * 1024
+USER_AGENT = f"cyberkb/{__version__} (+https://github.com/BlueRingsLabs/awesome_cybersecurity)"
 
 
 class HttpTransportError(Exception):
@@ -81,8 +84,14 @@ class UrllibTransport:
         body: bytes | None,
         timeout: float,
     ) -> HttpResponse:
-        """Send ``method`` ``url``; non-responses become :class:`HttpTransportError`."""
-        request = urllib.request.Request(url, data=body, headers=dict(headers), method=method)  # noqa: S310
+        """Send ``method`` ``url``; non-responses become :class:`HttpTransportError`.
+
+        An explicit ``User-Agent`` is always sent. urllib's default
+        (``Python-urllib/3.x``) is refused by Cloudflare-fronted APIs such as
+        Groq with ``403 error code: 1010`` before the request reaches the API.
+        """
+        merged = {"User-Agent": USER_AGENT, **dict(headers)}
+        request = urllib.request.Request(url, data=body, headers=merged, method=method)  # noqa: S310
         try:
             with urllib.request.urlopen(request, timeout=timeout) as response:  # noqa: S310
                 return HttpResponse(

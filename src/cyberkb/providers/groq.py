@@ -48,6 +48,7 @@ GROQ_MODES: tuple[str, ...] = ("json_schema", "json_object")
 _OK = 200
 _TOO_MANY_REQUESTS = 429
 _BAD_REQUEST = 400
+_FORBIDDEN = 403
 _FLEX_CAPACITY = 498  # Groq-specific: "Flex tier at capacity, try again later"
 _TEMPERATURE = 0.1
 _SCHEMA_NAME = "classifications"
@@ -105,6 +106,15 @@ def _error_fields(body: str) -> tuple[str, str]:
     return str(error.get("code") or ""), str(error.get("message") or "")
 
 
+def _is_api_error(body: str) -> bool:
+    """Whether ``body`` is Groq's own ``{"error": {...}}`` JSON (not an edge page)."""
+    try:
+        envelope = json.loads(body)
+    except json.JSONDecodeError:
+        return False
+    return isinstance(envelope, dict) and isinstance(envelope.get("error"), dict)
+
+
 class GroqProvider(HttpProviderBase):
     """Groq chat completions in strict JSON-schema or JSON-object mode."""
 
@@ -138,6 +148,11 @@ class GroqProvider(HttpProviderBase):
             category = FailureCategory.MODEL_UNAVAILABLE
         elif response.status == _FLEX_CAPACITY:
             category = FailureCategory.SERVER_ERROR
+        elif response.status == _FORBIDDEN and not _is_api_error(response.text()):
+            # Groq's own errors are JSON. A bare 403 ("error code: 1010") comes
+            # from the Cloudflare edge in front of it: the request never reached
+            # the API, so it says nothing about the key.
+            category = FailureCategory.NETWORK_ERROR
         else:
             category = classify_http_status(response.status, response.text())
             rejected = response.status == _BAD_REQUEST

@@ -25,7 +25,12 @@ if git diff --cached --quiet; then
   echo "Nothing to commit after ${label}."
   exit 0
 fi
-git commit -q -m "chore(library): ingest, enrich and regenerate catalogs (${label}) [skip ci]"
+# On main the bot commit skips CI (CI already gated the change that produced
+# it). On any other branch - e.g. an enrichment run on a pull request - the
+# commit is left for CI to validate like any other change.
+skip=""
+if [ "${branch}" = "main" ]; then skip=" [skip ci]"; fi
+git commit -q -m "chore(library): ingest, enrich and regenerate catalogs (${label})${skip}"
 
 for attempt in 1 2 3; do
   if git push -q origin "HEAD:${branch}"; then

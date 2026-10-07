@@ -35,8 +35,8 @@ if TYPE_CHECKING:
 
     Item = HttpResponse | HttpTransportError
 
-GOOGLE_KEY = "google-test-key-0123456789"
-GROQ_KEY = "groq-test-key-0123456789"
+GOOGLE_KEY = "fake-google-key-aaaaaaaaaaaa"  # low entropy: obviously not a secret
+GROQ_KEY = "fake-groq-key-bbbbbbbbbbbb"  # low entropy: obviously not a secret
 KEYS = {"GEMINI_API_KEY": GOOGLE_KEY, "GROQ_API_KEY": GROQ_KEY}
 START = datetime(2026, 10, 7, 12, 0, 0, tzinfo=UTC)
 

@@ -1,9 +1,17 @@
 """The structured-output schema and prompt handed to the LLM classifier.
 
 Building the schema from the live taxonomy guarantees the model can only
-return categories, formats, languages and tags that actually exist, so a
+return categories, formats and languages that actually exist, so a
 hallucinated label is impossible by construction rather than caught after
 the fact.
+
+Tags are the exception, deliberately. The Gemini API rejects the schema with
+``400 INVALID_ARGUMENT`` when the tag array's items carry the full vocabulary
+as an ``enum`` (verified against the live API on 2026-10-07: the identical
+schema without that one enum is accepted, in both ``responseSchema`` and
+``responseJsonSchema``). The vocabulary is therefore given in the system
+instruction instead, and every returned tag is filtered against the taxonomy
+by the classifier, so an invented tag is still dropped, never stored.
 """
 
 from __future__ import annotations
@@ -21,7 +29,7 @@ MAX_TAGS = 6
 
 
 def response_schema(taxonomy: Taxonomy) -> dict[str, Any]:
-    """Gemini ``responseSchema`` constraining output to the taxonomy."""
+    """The JSON schema every provider is asked to answer in (see the module docstring)."""
     item = {
         "type": "object",
         "properties": {
@@ -32,7 +40,7 @@ def response_schema(taxonomy: Taxonomy) -> dict[str, Any]:
             "language": {"type": "string", "enum": list(taxonomy.language_ids)},
             "tags": {
                 "type": "array",
-                "items": {"type": "string", "enum": list(taxonomy.tag_ids)},
+                "items": {"type": "string"},
                 "maxItems": MAX_TAGS,
             },
             "summary": {"type": "string"},

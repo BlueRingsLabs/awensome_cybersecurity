@@ -757,3 +757,24 @@ def test_a_retry_that_would_wait_past_the_deadline_defers(taxonomy: Taxonomy) ->
     assert outcome.status == "deferred"
     assert outcome.detail == "run budget reached in a retry"
     assert time.sleeps == [1.0]
+
+
+def test_a_blocked_groq_model_does_not_take_the_provider_out(taxonomy: Taxonomy) -> None:
+    """Live finding: allam-2-7b was blocked for the project; the next Groq model serves."""
+    doc = copy.deepcopy(CATALOG_DOC)
+    groq = doc["providers"][1]
+    groq["models"].append(
+        {"name": "groq-b", "limits": {"rpm": 30, "rpd": 100, "tpm": 60000}},
+    )
+    doc["providers"] = [groq]
+    router = Router().add("groq:list", groq_listing("groq-a", "groq-b"))
+    router.add(
+        "groq:groq-a",
+        groq_error(403, "blocked at the project level", code="model_permission_blocked_project"),
+    )
+    router.add("groq:groq-b", groq_answer(answer(item("probe-nmap"))))
+    classifier, _ = make_classifier(router, taxonomy, catalog_doc=doc)
+    classifier.engine.validate_all()
+    statuses = [m["status"] for m in classifier.engine.model_report()]
+    assert statuses == ["failed", "active"]
+    assert classifier.engine.provider_report()["groq"]["status"] == "up"

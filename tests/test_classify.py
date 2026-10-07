@@ -134,10 +134,16 @@ def test_select_tags_empty(taxonomy: Taxonomy) -> None:
 
 
 def test_response_schema_enums(taxonomy: Taxonomy) -> None:
-    """The response schema constrains category to the taxonomy's ids."""
+    """Category, format and language are closed enums; tags are filtered after the fact."""
     schema = response_schema(taxonomy)
     item = schema["properties"]["classifications"]["items"]
     assert item["properties"]["category"]["enum"] == list(taxonomy.category_ids)
+    assert item["properties"]["format"]["enum"] == list(taxonomy.format_ids)
+    assert item["properties"]["language"]["enum"] == list(taxonomy.language_ids)
+    # Gemini rejects the schema with the 80+ tag ids as an enum (live-verified),
+    # so the vocabulary lives in the system instruction instead.
+    assert "enum" not in item["properties"]["tags"]["items"]
+    assert all(tag in system_instruction(taxonomy) for tag in taxonomy.tag_ids)
 
 
 def test_system_instruction_mentions_categories(taxonomy: Taxonomy) -> None:

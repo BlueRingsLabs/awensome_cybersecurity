@@ -251,3 +251,20 @@ def test_an_edge_block_is_not_a_key_rejection() -> None:
     assert error.category is FailureCategory.NETWORK_ERROR
     api = _error(groq_error(403, "Organization restricted", code="permission_denied"))
     assert api.category is FailureCategory.AUTH_ERROR
+
+
+@pytest.mark.parametrize(
+    "code", ["model_permission_blocked_project", "model_permission_blocked_team"]
+)
+def test_a_model_blocked_for_the_project_is_unavailable_not_an_auth_failure(code: str) -> None:
+    """A per-model permission block retires that model only; the key is fine."""
+    error = _error(
+        groq_error(
+            403,
+            "The model `allam-2-7b` is blocked at the project level. Please have a project "
+            "admin enable this model in the project settings",
+            code=code,
+        ),
+    )
+    assert error.category is FailureCategory.MODEL_UNAVAILABLE
+    assert error.request_rejected is False

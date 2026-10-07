@@ -55,7 +55,18 @@ _SCHEMA_NAME = "classifications"
 _THINK_RE = re.compile(r"<think>.*?</think>", re.DOTALL | re.IGNORECASE)
 _STRICT_DROP = frozenset({"propertyOrdering", "maxItems", "minItems"})
 _OUTPUT_ERRORS = frozenset({"json_validate_failed", "output_parse_failed"})
-_GONE_CODES = frozenset({"model_not_found", "model_decommissioned", "model_terminated"})
+# Errors about one model, not the key or the account: that model is out of
+# rotation, the rest of the provider keeps serving. Groq answers a model that a
+# project admin has not enabled with 403 `model_permission_blocked_project`.
+_MODEL_CODES = frozenset(
+    {
+        "model_not_found",
+        "model_decommissioned",
+        "model_terminated",
+        "model_permission_blocked_project",
+        "model_permission_blocked_org",
+    },
+)
 
 
 def strict_schema(schema: Mapping[str, object]) -> dict[str, Any]:
@@ -144,7 +155,7 @@ class GroqProvider(HttpProviderBase):
             category = FailureCategory.QUOTA_EXCEEDED if daily else FailureCategory.RATE_LIMIT
         elif code in _OUTPUT_ERRORS:
             category = FailureCategory.INFERENCE_ERROR
-        elif code in _GONE_CODES:
+        elif code in _MODEL_CODES or code.startswith("model_permission_blocked"):
             category = FailureCategory.MODEL_UNAVAILABLE
         elif response.status == _FLEX_CAPACITY:
             category = FailureCategory.SERVER_ERROR

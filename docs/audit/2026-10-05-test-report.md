@@ -9,7 +9,7 @@ multi-provider LLM layer added in 2.2.0 and supersedes the 2.1.0 edition.
 
 ## Headline
 
-- **474 executed cases across 26 test modules.**
+- **479 executed cases across 26 test modules.**
 - **100 % line and branch coverage**, enforced as a hard gate
   (`--cov-fail-under=100 --cov-branch`).
 - Tests are **fully type-checked** under the same strict `mypy` as `src/`, and
@@ -109,7 +109,7 @@ A critical pass for the four classic coverage-theater defects:
 
 ```bash
 uv sync
-uv run pytest                 # 474 cases, 100% line+branch coverage gate
+uv run pytest                 # 479 cases, 100% line+branch coverage gate
 uv run ruff check . && uv run ruff format --check .
 uv run mypy                   # strict, src and tests
 ```

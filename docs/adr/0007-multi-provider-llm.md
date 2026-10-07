@@ -127,3 +127,10 @@ consistency.
 - The pipeline is more moving parts than a single client; the circuit breaker,
   bounded validation and backoff keep it from hammering free tiers, and the
   100%-covered test suite exercises every rotation and fallback path.
+- Backfilling the whole corpus is one slow LLM call per resource, so it cannot
+  finish in a single CI job or a free provider's daily cap. Enrichment is
+  therefore bounded per run (`--limit` / `--max-seconds`) and resumable:
+  completed work is written and committed as it goes, deferred resources are
+  skipped on the next run, and the operation converges by simply re-running.
+  This keeps each run inside the job timeout and the rate limit while guaranteeing
+  forward progress (see 2.2.1 and the operations runbook).

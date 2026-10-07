@@ -12,6 +12,7 @@ command is safe to re-run until the whole library is enriched.
 
 from __future__ import annotations
 
+import time
 from dataclasses import dataclass, replace
 from enum import StrEnum
 from typing import TYPE_CHECKING
@@ -25,6 +26,7 @@ from cyberkb.provenance import classified_by
 from cyberkb.textutil import slugify
 
 if TYPE_CHECKING:
+    from collections.abc import Callable
     from pathlib import Path
 
     from cyberkb.classify.llm import LLMClassifier
@@ -41,6 +43,7 @@ class EnrichStatus(StrEnum):
     ENRICHED = "enriched"
     UNCHANGED = "unchanged"
     SKIPPED = "skipped"
+    DEFERRED = "deferred"
 
 
 @dataclass(frozen=True, slots=True)
@@ -75,6 +78,11 @@ class EnrichReport:
         """Count deliberately skipped (manual classifications)."""
         return sum(1 for o in self.outcomes if o.status is EnrichStatus.SKIPPED)
 
+    @property
+    def deferred(self) -> int:
+        """Count needing enrichment but left for a later run (run budget reached)."""
+        return sum(1 for o in self.outcomes if o.status is EnrichStatus.DEFERRED)
+
 
 def _unique_destination(directory: Path, slug: str) -> Path:
     candidate = directory / f"{slug}.md"
@@ -85,22 +93,75 @@ def _unique_destination(directory: Path, slug: str) -> Path:
     return candidate
 
 
+def _needs_llm(fm: FrontMatter, *, force: bool) -> bool:
+    """Whether this resource would consume an LLM call.
+
+    Mirrors the early-return guards in :func:`_enrich_one`: manual
+    classifications are preserved and already-LLM ones are left alone unless
+    ``force``. Only resources for which this is ``True`` count against the run
+    budget, so skips never consume the ``limit`` or the time budget.
+    """
+    method = fm.classification.method
+    if method == "manual":
+        return False
+    return not (method == "llm" and not force)
+
+
+def _budget_reached(
+    attempted: int,
+    *,
+    limit: int | None,
+    start: float,
+    clock: Callable[[], float],
+    max_seconds: float | None,
+) -> bool:
+    """Whether the per-run budget (resource count or wall-clock time) is spent."""
+    if limit is not None and attempted >= limit:
+        return True
+    return max_seconds is not None and clock() - start >= max_seconds
+
+
 def enrich_library(
     paths: RepoPaths,
     taxonomy: Taxonomy,
     classifier: LLMClassifier,
     *,
     force: bool = False,
+    limit: int | None = None,
+    max_seconds: float | None = None,
+    clock: Callable[[], float] = time.monotonic,
 ) -> EnrichReport:
     """Enrich heuristically-classified resources; return a per-resource report.
 
     With ``force``, resources already classified by an LLM are re-processed too;
     manual classifications are always preserved.
+
+    ``limit`` caps how many resources are sent to the LLM this run and
+    ``max_seconds`` caps the wall-clock time spent starting new work; resources
+    that still need enrichment past either budget are reported as ``DEFERRED``
+    rather than processed. Because enriched files are written as the loop runs
+    and already-classified resources are skipped, a bounded run commits real
+    progress and the command can simply be re-run to continue — which is what
+    makes backfilling the whole corpus possible within a CI time limit and a
+    provider's free-tier rate cap.
     """
     library = load_library(paths, taxonomy)
-    outcomes = [
-        _enrich_one(resource, paths, classifier, force=force) for resource in library.resources
-    ]
+    outcomes: list[EnrichOutcome] = []
+    attempted = 0
+    start = clock()
+    for resource in library.resources:
+        fm = resource.front_matter
+        needs = _needs_llm(fm, force=force)
+        if needs and _budget_reached(
+            attempted, limit=limit, start=start, clock=clock, max_seconds=max_seconds
+        ):
+            outcomes.append(
+                EnrichOutcome(fm.id, resource.path, EnrichStatus.DEFERRED, "run budget reached")
+            )
+            continue
+        outcomes.append(_enrich_one(resource, paths, classifier, force=force))
+        if needs:
+            attempted += 1
     return EnrichReport(tuple(outcomes))
 
 

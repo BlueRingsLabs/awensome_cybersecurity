@@ -26,6 +26,14 @@ on:
         description: "Also backfill summaries/classifications on existing resources"
         type: boolean
         default: false
+      limit:
+        description: "Max resources to enrich this run (blank = no limit). Re-run to continue."
+        type: string
+        default: ""
+      max_seconds:
+        description: "Stop starting new enrichment after this many seconds, so the run commits."
+        type: string
+        default: "1500"
 
 # Serialise runs so two ingestions never race on the catalog.
 concurrency:
@@ -39,7 +47,11 @@ jobs:
   ingest:
     name: Ingest inbox submissions and rebuild catalogs
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    # Enrichment makes one slow LLM call per resource, so a full backfill can run
+    # for hours and is bounded per run by the `max_seconds` input (the job stops
+    # starting new work and commits what it finished). This is only a backstop so
+    # a wedged run cannot linger; the enrich budget is the real governor.
+    timeout-minutes: 350
     # Consume the more restrictive environment-scoped secrets (falling back to
     # repository secrets); future environment protection rules apply here too.
     environment: awesome-cyber
@@ -88,7 +100,16 @@ jobs:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
           LLM_PROVIDER_ORDER: ${{ vars.LLM_PROVIDER_ORDER }}
-        run: uv run cyberkb enrich
+          # Passed via env (never interpolated into the script) so a dispatch
+          # input cannot inject shell. Blank values are simply omitted.
+          ENRICH_LIMIT: ${{ inputs.limit }}
+          ENRICH_MAX_SECONDS: ${{ inputs.max_seconds }}
+        run: |
+          set -euo pipefail
+          args=()
+          if [ -n "${ENRICH_LIMIT}" ]; then args+=(--limit "${ENRICH_LIMIT}"); fi
+          if [ -n "${ENRICH_MAX_SECONDS}" ]; then args+=(--max-seconds "${ENRICH_MAX_SECONDS}"); fi
+          uv run cyberkb enrich "${args[@]}"
 
       - name: Verify the result passes policy
         run: uv run cyberkb check

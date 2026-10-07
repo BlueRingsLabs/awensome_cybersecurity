@@ -60,11 +60,54 @@ workflow dispatched with `enrich: true`). It re-classifies each
 heuristically-filed resource through the providers, adopts the LLM category,
 tags and one-line summary, refreshes empty author lists, stamps `classified_by`,
 and moves a file when its category changes. Manual classifications (including
-the reference-only works) are never touched. It is idempotent and safe to
-re-run — important because free tiers are rate-limited (OpenRouter allows about
-20 requests/minute and 50/day on the free tier, raised to 1,000/day with
-US$10 of credit; Hugging Face gives a small monthly serverless credit), so the
-whole corpus is enriched over several runs rather than one.
+the reference-only works) are never touched.
+
+### Why it must run in batches
+
+Enrichment makes **one LLM call per resource**, and free-tier models are slow
+(tens of seconds to ~100 s each) and rate-limited. The full corpus is ~485
+heuristic resources, so a single pass would take **hours** — longer than a
+GitHub Actions job should run, and well past a free provider's daily request
+cap. `enrich` is therefore **bounded and resumable**:
+
+- `--limit N` processes at most `N` resources this run.
+- `--max-seconds S` stops starting new work after `S` seconds, so the run always
+  finishes and commits what it completed (enriched files are written as it goes).
+- Resources left for later are reported as **deferred**; already-enriched ones
+  are skipped on the next run. So you simply **re-run until `deferred` is 0**.
+
+The **Ingest and index** workflow exposes both as dispatch inputs (`limit`,
+`max_seconds`; `max_seconds` defaults to 1500 ≈ 25 min). Each dispatch commits
+its progress, so firing it repeatedly walks the whole corpus. The job
+`timeout-minutes` is a high backstop (350) — the `max_seconds` budget, not the
+timeout, is what ends a run cleanly.
+
+### Rate limits and throughput
+
+- **OpenRouter free tier:** ~20 requests/minute and **50/day**, raised to
+  **1,000/day with US$10 of credit**. The ~12 pre-flight validation calls count
+  against this, so without the credit budget on ~35–40 enrichments per day.
+- **Hugging Face:** a small monthly serverless credit (and many models are not
+  on the free serverless tier — see note below).
+
+**Recommended fastest path:** add the US$10 OpenRouter credit (lifts the daily
+cap to 1,000), then dispatch with a large budget, e.g. `max_seconds: 18000`
+(5 h). One or two such runs complete the corpus. **Free path (no credit):**
+dispatch with the default `max_seconds` (or `limit: 35`) once per day and re-run
+until `deferred` reaches 0 — roughly a dozen runs. Either way, **each run
+commits real progress**, so interruptions never lose work.
+
+### Provider availability note (observed 2026-10-06)
+
+In the first live run, OpenRouter served (two NVIDIA Nemotron free models
+validated), while **Gemini** returned `400 INVALID_ARGUMENT` / `503` on its
+top discovered models and **Hugging Face** reported its candidates as not
+available on the serverless tier. The orchestrator correctly fell over to the
+working provider — this is the designed behaviour, not a failure — but it means
+OpenRouter currently carries enrichment. If you want Gemini in the mix, confirm
+the `awesome-cyber` `GEMINI_API_KEY` is valid for the `generateContent` API; to
+drop a consistently-unavailable provider from the pre-flight entirely, set
+`LLM_PROVIDER_ORDER` (e.g. `openrouter,gemini`) in the environment.
 
 ## Fixing a misclassification
 

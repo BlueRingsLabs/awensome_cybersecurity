@@ -262,6 +262,57 @@ def test_enrich_runs_with_a_provider(
     assert list(repo.ingest_runs.glob("*.json"))
 
 
+def test_enrich_limit_defers_remaining(
+    repo: RepoPaths,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    """`enrich --limit` processes a bounded batch and reports the rest as deferred."""
+    write_resource(
+        repo,
+        filename="h1.md",
+        id="ckb-000000000001",
+        title="Doc One",
+        classification=Classification("heuristic", 0.4),
+        summary="",
+        body="# Doc One\n\nnmap recon and host discovery for an authorized penetration test.\n",
+    )
+    write_resource(
+        repo,
+        filename="h2.md",
+        id="ckb-000000000002",
+        title="Doc Two",
+        classification=Classification("heuristic", 0.4),
+        summary="",
+        body="# Doc Two\n\nmore nmap scanning and exploitation during an authorized engagement.\n",
+    )
+    monkeypatch.setenv("GEMINI_API_KEY", "key")
+    monkeypatch.setattr(UrllibTransport, "request", _fake_request)
+    code, output = _run(
+        ["--repo", str(repo.root), "enrich", "--limit", "1", "--max-seconds", "600"]
+    )
+    assert code == EXIT_OK
+    assert "deferred 1" in output
+    assert "re-run `cyberkb enrich` to continue" in output
+
+
+def test_ingest_empty_inbox_skips_provider(
+    repo: RepoPaths,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    """With no submissions, `ingest` rebuilds without contacting any provider."""
+
+    def _boom(*_args: object, **_kwargs: object) -> HttpResponse:
+        msg = "an empty inbox must not trigger a provider pre-flight"
+        raise AssertionError(msg)
+
+    monkeypatch.setenv("GEMINI_API_KEY", "key")  # a key is set but must not be used
+    monkeypatch.setattr(UrllibTransport, "request", _boom)
+    code, output = _run(["--repo", str(repo.root), "ingest"])
+    assert code == EXIT_OK
+    assert "Filed 0" in output
+    assert not list(repo.ingest_runs.glob("*.json"))  # no pre-flight => no run report
+
+
 def test_classify_reports_no_capacity_when_models_fail(
     repo: RepoPaths,
     tmp_path: Path,

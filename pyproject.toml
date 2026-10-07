@@ -1,6 +1,6 @@
 [project]
 name = "cyberkb"
-version = "2.2.0"
+version = "2.2.1"
 description = "Ingestion, classification and cataloguing engine for the BlueRingsLabs awesome_cybersecurity knowledge base."
 readme = "README.md"
 license = "MIT"

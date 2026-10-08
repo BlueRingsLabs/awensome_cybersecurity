@@ -2,15 +2,18 @@
 id: ckb-a3d4323ec770
 title: Conceitos Bsicos de Ps Explorao 1
 category: offensive-security
-format: guide
+format: book
 language: pt
-tags: [git, linux, metasploit, mitre-attack, tls, windows]
+tags: [lateral-movement, metasploit, mitre-attack, privilege-escalation, red-team]
+summary: This introductory book by Joas Antonio covers post-exploitation concepts, techniques, and the use of tools like Metasploit on Windows and Linux systems.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.93
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T00:39:29Z
 ---
 
 TÉCNICAS DE PÓS EXPLORAÇÃO

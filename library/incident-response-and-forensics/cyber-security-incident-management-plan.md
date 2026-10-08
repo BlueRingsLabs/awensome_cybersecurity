@@ -2,15 +2,18 @@
 id: ckb-f2dff9f1aadb
 title: Cyber Security Incident Management Plan
 category: incident-response-and-forensics
-format: guide
+format: playbook
 language: en
-tags: [governance, incident-response, log-analysis, networking, privacy, threat-intelligence]
+tags: [governance, incident-response, reporting]
+summary: This document provides a structured framework for the Victorian Government to manage, respond to, and recover from cyber security incidents across its departments and agencies.
 authors: [unknown]
 license: CC-BY-4.0
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.55
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 1.0
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:31:08Z
 ---
 
 Cyber Security

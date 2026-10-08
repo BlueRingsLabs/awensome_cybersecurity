@@ -4,13 +4,16 @@ title: Msfvenom Cheat Sheet
 category: offensive-security
 format: cheatsheet
 language: en
-tags: [cheatsheet, linux, metasploit, powershell, tls, windows]
+tags: [c2, cheatsheet, metasploit, powershell, red-team, windows]
+summary: This document provides a technical reference for using MsfVenom to generate various types of malicious payloads for Windows exploitation.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.87
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 1.0
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:42:08Z
 ---
 
  Page 2 of 16

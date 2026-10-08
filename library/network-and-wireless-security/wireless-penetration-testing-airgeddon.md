@@ -4,13 +4,16 @@ title: Wireless Penetration Testing Airgeddon
 category: network-and-wireless-security
 format: guide
 language: en
-tags: [credential-access, linux, networking, password-security, windows, wireless]
+tags: [linux, networking, red-team, wireless]
+summary: This guide provides a step-by-step walkthrough for using the Airgeddon framework to perform wireless penetration testing, including capturing WPA/WPA2 handshakes, launching deauthentication attacks, and conducting offline password cracking.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.79
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 1.0
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:36:49Z
 ---
 
  Page 2 of 29

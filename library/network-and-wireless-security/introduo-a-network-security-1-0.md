@@ -2,15 +2,18 @@
 id: ckb-27af0c1c36b8
 title: Introduo a Network Security 1 0
 category: network-and-wireless-security
-format: guide
+format: book
 language: pt
-tags: [compliance, dns, homelab, networking, tls, web-security]
+tags: [networking, wireless]
+summary: A theoretical introductory book covering basic computer network concepts and types of networks such as PAN, LAN, WLAN, CAN, MAN, and WAN.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.91
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.95
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:34:03Z
 ---
 
 INTRODUÇÃO A SEGURANÇA DE

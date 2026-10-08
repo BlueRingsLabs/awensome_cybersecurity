@@ -4,13 +4,16 @@ title: Ethical Hacking
 category: offensive-security
 format: book
 language: en
-tags: [anonymity, firewall, malware, networking, privacy, social-engineering]
+tags: [education, red-team, reporting, vulnerability-management]
+summary: This academic book explores the concepts, methodologies, legal frameworks, and case studies surrounding ethical hacking and hacktivism.
 authors: [unknown]
 license: CC-BY-NC-SA-4.0
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.85
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:40:33Z
 ---
 
 Ethical

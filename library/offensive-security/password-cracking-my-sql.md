@@ -4,13 +4,16 @@ title: Password Cracking My SQL
 category: offensive-security
 format: guide
 language: en
-tags: [credential-access, databases, metasploit, mitre-attack, nmap, password-security]
+tags: [credential-access, databases, metasploit, mitre-attack, nmap, red-team]
+summary: This guide provides a technical overview of brute-force attack techniques against Microsoft SQL Server instances, including offensive tooling, defensive strategies, and relevant MITRE ATT&CK mappings.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.79
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:43:45Z
 ---
 
 Password Cracking: SMB

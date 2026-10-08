@@ -2,15 +2,18 @@
 id: ckb-3e6e4341e0c6
 title: Ebook Invadindo Com Metasploit Vl 1
 category: offensive-security
-format: guide
+format: book
 language: pt
-tags: [android, linux, metasploit, mobile, password-security, windows]
+tags: [android, education, metasploit, privilege-escalation, red-team, windows]
+summary: This introductory book provides a practical guide to using the Metasploit Framework for penetration testing, covering installation, basic exploitation, and post-exploitation techniques.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.91
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:40:25Z
 ---
 
 1

@@ -4,13 +4,16 @@ title: A Detailed Guide on Log4j Penetration Testing
 category: offensive-security
 format: guide
 language: en
-tags: [active-directory, git, java, linux, log-analysis, vulnerability-management]
+tags: [exploit-development, java, vulnerability-management, web-security]
+summary: This guide provides a technical overview and practical lab instructions for exploiting the Log4Shell vulnerability (CVE-2021-44228) in Java applications.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.64
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:37:08Z
 ---
 
  Page 2 of 13

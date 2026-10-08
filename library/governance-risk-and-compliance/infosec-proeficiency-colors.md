@@ -2,15 +2,18 @@
 id: ckb-0b9c5492c5dc
 title: Infosec Proeficiency Colors
 category: governance-risk-and-compliance
-format: guide
+format: article
 language: en
-tags: [devsecops, red-team, threat-hunting]
+tags: [devsecops, governance, red-team, vulnerability-management]
+summary: A conceptual diagram mapping different cybersecurity team color models (Red, Blue, Purple, etc.) to specific skill sets and operational focus areas.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.29
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.9
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:30:24Z
 ---
 
 GREEN TEAM

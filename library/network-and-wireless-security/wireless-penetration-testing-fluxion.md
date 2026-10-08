@@ -4,13 +4,16 @@ title: Wireless Penetration Testing Fluxion
 category: network-and-wireless-security
 format: guide
 language: en
-tags: [git, linux, networking, password-security, privacy, wireless]
+tags: [networking, phishing, social-engineering, wireless]
+summary: This guide provides a technical walkthrough on using the Fluxion tool to perform wireless penetration testing through handshake capture and captive portal attacks.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.74
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 1.0
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:36:55Z
 ---
 
  Page 2 of 18

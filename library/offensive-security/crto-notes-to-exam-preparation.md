@@ -4,13 +4,16 @@ title: Crto Notes to Exam Preparation
 category: offensive-security
 format: course-notes
 language: en
-tags: [active-directory, c2, certification, password-security, tls, windows]
+tags: [active-directory, c2, certification, evasion, lateral-movement, red-team]
+summary: This document provides study notes and lab resources for preparing for the Certified Red Team Operator exam, focusing on command and control frameworks like Cobalt Strike.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.69
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 0.98
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T00:39:33Z
 ---
 
 CRTO – Notes to Exam Preparation

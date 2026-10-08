@@ -2,15 +2,18 @@
 id: ckb-d903ee5c8257
 title: Memory Forensics
 category: incident-response-and-forensics
-format: guide
+format: article
 language: en
-tags: [forensics, malware]
+tags: [forensics, malware, threat-hunting]
+summary: An introduction to the technical methodologies and tools used in memory forensics to uncover volatile data and evidence of malicious activity.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
+  method: llm
+  model: gemma-4-26b-a4b-it
   confidence: 1.0
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:31:49Z
 ---
 
 WWW.HADESS.IO

@@ -2,15 +2,18 @@
 id: ckb-c38bcc8e9f52
 title: Adversary Emulation Matrix by Joas
 category: offensive-security
-format: guide
+format: reference
 language: en
-tags: [c2, git, powershell, red-team, tls, windows]
+tags: [active-directory, mitre-attack, powershell, privilege-escalation, red-team]
+summary: A curated collection of resources, training, and tools related to adversary emulation, purple teaming, and Active Directory privilege escalation.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.92
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.95
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:38:51Z
 ---
 
  ADVERSARY

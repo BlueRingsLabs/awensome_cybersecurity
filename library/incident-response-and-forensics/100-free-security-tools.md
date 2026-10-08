@@ -4,13 +4,16 @@ title: 100 Free Security Tools
 category: incident-response-and-forensics
 format: reference
 language: en
-tags: [forensics, git, osint, tls, web-security, windows]
+tags: [forensics, incident-response, linux, windows]
+summary: This document provides a curated list of digital forensics and incident response tools for ethical hackers and investigators.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.83
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:31:06Z
 ---
 
 100 Free Security Tools

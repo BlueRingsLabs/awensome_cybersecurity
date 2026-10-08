@@ -4,13 +4,16 @@ title: FTK Imager
 category: incident-response-and-forensics
 format: guide
 language: en
-tags: [cryptography, forensics, password-security]
+tags: [credential-access, forensics, windows]
+summary: A technical guide explaining how to use FTK Imager for creating forensic images, capturing memory, and analyzing image dumps.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.87
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.95
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:31:28Z
 ---
 
 Page | 2

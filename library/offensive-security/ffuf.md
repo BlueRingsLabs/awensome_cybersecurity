@@ -4,13 +4,16 @@ title: Ffuf
 category: offensive-security
 format: guide
 language: en
-tags: [burp-suite, dns, fuzzing, linux, tls, web-security]
+tags: [bug-bounty, fuzzing, red-team, web-security]
+summary: This guide provides a comprehensive overview of using the ffuf command-line tool for web fuzzing, covering installation, input options, filtering, and output configuration.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.62
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 1.0
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:40:42Z
 ---
 
 Page | 1

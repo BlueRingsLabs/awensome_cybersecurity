@@ -2,15 +2,18 @@
 id: ckb-ac3415c71c7c
 title: Cyber Security Services
 category: governance-risk-and-compliance
-format: guide
+format: reference
 language: pt
-tags: [bug-bounty, compliance, mitre-attack, nist, phishing, soc]
+tags: [bug-bounty, compliance, phishing, red-team, soc, vulnerability-management]
+summary: This document outlines a service catalog for cybersecurity offerings including penetration testing, vulnerability assessments, phishing simulations, security awareness training, adversary emulation, bug bounty programs, and SOCaaS.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.57
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 0.9
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T00:30:16Z
 ---
 
 Cyber

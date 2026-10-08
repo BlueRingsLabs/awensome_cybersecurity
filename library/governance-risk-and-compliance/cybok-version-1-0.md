@@ -4,13 +4,16 @@ title: CyBOK Version 1 0
 category: governance-risk-and-compliance
 format: book
 language: en
-tags: [cryptography, forensics, governance, malware, networking, privacy]
+tags: [education, governance, nist]
+summary: This document outlines Version 1.0 of the Cyber Security Body of Knowledge (CyBOK), defining the scope and knowledge areas that form the foundation of cybersecurity education and professional practice.
 authors: [unknown]
 license: OGL-UK-3.0
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.79
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T00:30:21Z
 ---
 
 The Cyber Security

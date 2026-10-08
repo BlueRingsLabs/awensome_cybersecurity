@@ -4,13 +4,16 @@ title: CISO Handbook
 category: governance-risk-and-compliance
 format: book
 language: en
-tags: [governance, nist, privacy, reporting, risk-management, tls]
+tags: [compliance, governance, nist, risk-management]
+summary: This handbook provides a comprehensive guide for Chief Information Security Officers on managing cybersecurity programs, risk, and compliance within the Federal Government.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
+  method: llm
+  model: gemini-3.1-flash-lite
   confidence: 1.0
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:29:55Z
 ---
 
 CHIEF INFORMATION

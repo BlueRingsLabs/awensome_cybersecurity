@@ -4,13 +4,16 @@ title: Comprehensive Guide on Tshark
 category: network-and-wireless-security
 format: guide
 language: en
-tags: [networking, python, reporting, tls, web-security, wireless]
+tags: [forensics, networking]
+summary: This document provides a comprehensive guide on using TShark for capturing, filtering, and analyzing network traffic and packet data.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.66
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T00:32:46Z
 ---
 
 Page | 1

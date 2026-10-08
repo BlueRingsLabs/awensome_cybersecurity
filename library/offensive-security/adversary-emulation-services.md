@@ -2,15 +2,18 @@
 id: ckb-56606968d53f
 title: Adversary Emulation Services
 category: offensive-security
-format: guide
+format: article
 language: pt
-tags: [c2, git, mitre-attack, red-team, threat-intelligence, tls]
+tags: [c2, detection-engineering, mitre-attack, red-team]
+summary: This document discusses the concept and implementation of adversary emulation using MITRE ATT&CK framework to test network defenses and model adversary behavior.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.81
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.95
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:38:54Z
 ---
 
 ADVERSARY

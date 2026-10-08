@@ -2,15 +2,18 @@
 id: ckb-01819e112d29
 title: C for Hackers Overview Pt
 category: offensive-security
-format: guide
-language: pt
-tags: [buffer-overflow, credential-access, exploit-development, git, malware, tls]
+format: reference
+language: en
+tags: [buffer-overflow, evasion, exploit-development, malware, reverse-engineering]
+summary: This document provides a curated reference list of tutorials, guides, and source code repositories for using the C programming language in offensive security tasks such as socket programming, brute forcing, shellcode writing, and antivirus bypass.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.57
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T00:39:21Z
 ---
 
 C for Hackers –

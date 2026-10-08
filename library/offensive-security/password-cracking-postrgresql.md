@@ -4,13 +4,16 @@ title: Password Cracking Postrgresql
 category: offensive-security
 format: guide
 language: en
-tags: [credential-access, databases, detection-engineering, mitre-attack, nmap, password-security]
+tags: [databases, mitre-attack, nmap, password-security, red-team]
+summary: A technical guide covering enumeration and brute-force techniques against PostgreSQL databases, including defensive strategies and MITRE ATT&CK mapping.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.78
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.95
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:48:01Z
 ---
 
 Password Cracking: PostgreSQL

@@ -4,13 +4,16 @@ title: eLearnSecurity Ecptxv2 Notes
 category: offensive-security
 format: course-notes
 language: en
-tags: [active-directory, hardware, malware, phishing, social-engineering, tls]
+tags: [active-directory, persistence, powershell, privilege-escalation, red-team, social-engineering]
+summary: These study notes cover advanced penetration testing techniques including social engineering, Active Directory enumeration, and exploitation methods for the eCPTX certification.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.53
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:40:32Z
 ---
 
 eCPTX (eLearnSecurity Certified Penetration Testing

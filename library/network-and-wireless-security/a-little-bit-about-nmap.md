@@ -4,13 +4,16 @@ title: A little bit about Nmap
 category: network-and-wireless-security
 format: article
 language: en
-tags: [dns, firewall, networking, nmap, privilege-escalation, tls]
+tags: [networking, nmap, web-security]
+summary: An introduction to Nmap's functionality, covering target enumeration, host discovery, and port scanning techniques.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.72
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.95
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:32:29Z
 ---
 
 # A little bit about Nmap

@@ -2,15 +2,18 @@
 id: ckb-4bc4a6620a90
 title: Offensive Security Wireless
 category: network-and-wireless-security
-format: guide
+format: course-notes
 language: en
-tags: [cryptography, mobile, networking, password-security, tls, wireless]
+tags: [networking, wireless]
+summary: This document provides a foundational overview of IEEE 802.11 wireless standards, their historical development, and technical characteristics.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.96
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.9
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:34:07Z
 ---
 
 OFFENSIVE SECURITY WIRELESS

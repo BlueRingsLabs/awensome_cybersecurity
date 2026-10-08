@@ -2,15 +2,18 @@
 id: ckb-fe217c037742
 title: AV and EDR Bypass Techniques for New Hackers Update 2022
 category: offensive-security
-format: guide
+format: course-notes
 language: en
-tags: [evasion, git, malware, mitre-attack, tls, windows]
+tags: [evasion, mitre-attack, powershell, red-team, windows]
+summary: This document provides an introductory overview of antivirus and EDR systems, outlining various techniques for bypassing them such as obfuscation, encryption, and memory manipulation.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.55
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:39:09Z
 ---
 
 AV/EDR Bypass Techniques

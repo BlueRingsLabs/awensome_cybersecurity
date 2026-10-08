@@ -4,13 +4,16 @@ title: Brave browser, rewards and BAT
 category: general-technology
 format: article
 language: en
-tags: [android, mobile, tls, windows]
+tags: [android, blockchain, privacy]
+summary: An overview of the Brave browser's features, its built-in ad blocking, privacy-focused features, and the Brave Rewards system using Basic Attention Token (BAT).
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
+  method: llm
+  model: gemma-4-26b-a4b-it
   confidence: 0.9
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:29:17Z
 ---
 
 # Brave browser, rewards and BAT

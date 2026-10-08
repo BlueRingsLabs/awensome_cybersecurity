@@ -4,13 +4,16 @@ title: Most Critical Failure in Corporate Environments
 category: offensive-security
 format: guide
 language: en
-tags: [evasion, git, malware, mitre-attack, ransomware, tls]
+tags: [c2, evasion, exploit-development, mitre-attack, phishing, red-team]
+summary: This document provides an overview of common corporate cybersecurity threats and outlines offensive tactics, techniques, and procedures used by adversaries, including a simulation of the APT115 group.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.47
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:41:56Z
 ---
 
 most common failure in

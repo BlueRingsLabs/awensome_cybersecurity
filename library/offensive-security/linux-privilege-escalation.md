@@ -4,13 +4,16 @@ title: Linux Privilege Escalation
 category: offensive-security
 format: guide
 language: en
-tags: [bash, containers, git, linux, password-security, privilege-escalation]
+tags: [bash, exploit-development, linux, privilege-escalation, red-team]
+summary: This guide provides a comprehensive overview of manual and automated techniques for identifying and exploiting privilege escalation vulnerabilities on Linux systems.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.45
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 1.0
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:41:36Z
 ---
 
 Linux Privilege Escalation

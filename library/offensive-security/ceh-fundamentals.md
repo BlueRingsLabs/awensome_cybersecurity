@@ -2,15 +2,18 @@
 id: ckb-15b4ddba057d
 title: CEH Fundamentals
 category: offensive-security
-format: guide
+format: course-notes
 language: pt
-tags: [certification, cheatsheet, malware, owasp, tls, wireless]
+tags: [certification, education, red-team]
+summary: This document provides introductory course notes on ethical hacking fundamentals, penetration testing types, and methodologies.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.37
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T00:39:23Z
 ---
 
 CEH Fundamentals

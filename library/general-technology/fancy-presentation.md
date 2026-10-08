@@ -4,13 +4,16 @@ title: Fancy presentation
 category: general-technology
 format: article
 language: en
-tags: [git, tls]
+tags: [education]
+summary: An article discussing the philosophy of presentation design and recommending Marp as a tool for creating clean, Markdown-based presentations.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.99
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.9
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:29:22Z
 ---
 
 # Fancy presentation

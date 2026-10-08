@@ -4,13 +4,16 @@ title: Network Security Best Practices
 category: network-and-wireless-security
 format: guide
 language: en
-tags: [databases, firewall, hardening, log-analysis, malware, networking]
+tags: [detection-engineering, dns, firewall, networking]
+summary: This guide provides an overview of the OSI model, common network devices, and essential network defense solutions like firewalls, IDS, and IPS.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.81
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 1.0
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:34:06Z
 ---
 
 Network Security

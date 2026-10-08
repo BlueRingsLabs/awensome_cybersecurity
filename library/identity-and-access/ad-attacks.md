@@ -4,13 +4,16 @@ title: AD Attacks
 category: identity-and-access
 format: guide
 language: en
-tags: [active-directory, credential-access, linux, password-security, python, windows]
+tags: [active-directory, credential-access, lateral-movement, powershell, privilege-escalation, windows]
+summary: This comprehensive guide details various attack vectors, exploitation techniques, and tools used to compromise Active Directory environments.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.72
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 1.0
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:30:49Z
 ---
 
 Active Directory Attacks

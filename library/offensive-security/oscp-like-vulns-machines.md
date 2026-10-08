@@ -2,15 +2,18 @@
 id: ckb-e26ba31f2a54
 title: OSCP Like Vulns Machines
 category: offensive-security
-format: guide
-language: pt
-tags: [certification, containers, ctf, linux, tls, windows]
+format: reference
+language: en
+tags: [career, certification, ctf]
+summary: This document provides a curated list of VulnHub virtual machines recommended for individuals preparing for the Offensive Security Certified Professional (OSCP) certification.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.99
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:43:37Z
 ---
 
 OSCP Like Vulns Machines

@@ -2,15 +2,18 @@
 id: ckb-73c0a219b5da
 title: Active Directory Assesment
 category: identity-and-access
-format: guide
+format: checklist
 language: en
-tags: [active-directory, compliance, dns, networking, password-security, windows]
+tags: [active-directory, credential-access, dns, hardening, powershell, windows]
+summary: This document provides a comprehensive technical checklist and procedural guide for assessing and hardening Active Directory environments to improve security posture.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.74
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 1.0
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:30:48Z
 ---
 
  Active Directory Security Assessment - ADSA

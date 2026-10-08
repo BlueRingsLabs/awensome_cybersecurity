@@ -4,13 +4,16 @@ title: Diary of a Red Team Challenges for You to Practice Your Skills 1
 category: offensive-security
 format: guide
 language: en
-tags: [exploit-development, git, red-team, tls, windows]
+tags: [c2, evasion, exploit-development, red-team, windows]
+summary: A collection of technical challenges designed for red team professionals to practice Windows API, syscalls, shellcode runners, and process injection techniques.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.68
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.95
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:40:08Z
 ---
 
 Diary of a Red Team #1:

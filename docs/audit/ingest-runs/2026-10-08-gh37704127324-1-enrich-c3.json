@@ -1,0 +1,3953 @@
+{
+  "schema_version": 2,
+  "command": "enrich",
+  "run_id": "gh37704127324-1-enrich-c3",
+  "started_at": "2026-10-08T00:28:07Z",
+  "finished_at": "2026-10-08T00:48:09Z",
+  "final_status": {
+    "status": "partial",
+    "reason": "the run budget was reached; 131 pending, 0 failed remain (173 enriched this run)"
+  },
+  "catalog": {
+    "verified_on": "2026-10-07",
+    "source": "Google AI Studio rate-limit dashboard and Groq console limits page (free tier)"
+  },
+  "work": {
+    "eligible": 485,
+    "manual_skipped": 5,
+    "enriched": 354,
+    "pending": 131,
+    "failed": 0,
+    "this_run": {
+      "enriched": 173,
+      "failed": 0,
+      "deferred": 131
+    }
+  },
+  "attempts": {
+    "total": 194,
+    "successes": 173,
+    "failures": 21
+  },
+  "failure_breakdown": {
+    "auth_error": 0,
+    "rate_limit": 0,
+    "quota_exceeded": 0,
+    "timeout": 4,
+    "server_error": 17,
+    "network_error": 0,
+    "inference_error": 0,
+    "content_filter": 0,
+    "model_unavailable": 0,
+    "unknown": 0
+  },
+  "retries": {
+    "per_model": 18,
+    "per_provider": 0,
+    "per_list": 0
+  },
+  "providers": {
+    "google": {
+      "name": "Google AI Studio",
+      "base_url": "https://generativelanguage.googleapis.com/v1beta",
+      "status": "up",
+      "reason": "",
+      "listed_models": 45,
+      "listed_not_in_catalog": [
+        "antigravity-preview-05-2026",
+        "antigravity-preview-09-2026",
+        "antigravity-preview-latest",
+        "deep-research-max-preview-04-2026",
+        "deep-research-preview-04-2026",
+        "deep-research-pro-preview-12-2025",
+        "gemini-2.5-computer-use-preview-10-2025",
+        "gemini-2.5-flash-image",
+        "gemini-2.5-flash-preview-tts",
+        "gemini-2.5-pro",
+        "gemini-2.5-pro-preview-tts",
+        "gemini-3-flash-preview",
+        "gemini-3-pro-image",
+        "gemini-3-pro-image-preview",
+        "gemini-3.1-flash-image",
+        "gemini-3.1-flash-image-preview",
+        "gemini-3.1-flash-lite-image",
+        "gemini-3.1-flash-lite-preview",
+        "gemini-3.1-flash-tts-preview",
+        "gemini-3.1-pro-preview",
+        "gemini-3.1-pro-preview-customtools",
+        "gemini-3.5-transcribe",
+        "gemini-3.8-flash-lite-tts",
+        "gemini-3.8-flash-tts",
+        "gemini-flash-latest",
+        "gemini-flash-lite-latest",
+        "gemini-nano-banana-2.1",
+        "gemini-omni-1.1-flash",
+        "gemini-omni-flash-preview",
+        "gemini-pro-latest",
+        "gemini-robotics-er-2-preview",
+        "lyria-3-clip-preview",
+        "lyria-3-pro-preview",
+        "lyria-3.5",
+        "nano-banana-pro-preview"
+      ],
+      "attempts": 194,
+      "successes": 173,
+      "failures": 21,
+      "failure_categories": {
+        "server_error": 17,
+        "timeout": 4
+      },
+      "last_error_category": "timeout",
+      "last_error_message": "request timed out after 60.0s"
+    },
+    "groq": {
+      "name": "Groq",
+      "base_url": "https://api.groq.com/openai/v1",
+      "status": "up",
+      "reason": "",
+      "listed_models": 11,
+      "listed_not_in_catalog": [
+        "canopylabs/orpheus-arabic-saudi",
+        "canopylabs/orpheus-v1-english",
+        "meta-llama/llama-prompt-guard-2-22m",
+        "meta-llama/llama-prompt-guard-2-86m",
+        "openai/gpt-oss-safeguard-20b",
+        "whisper-large-v3",
+        "whisper-large-v3-turbo"
+      ],
+      "attempts": 0,
+      "successes": 0,
+      "failures": 0,
+      "failure_categories": {},
+      "last_error_category": null,
+      "last_error_message": ""
+    }
+  },
+  "models": [
+    {
+      "priority": 1,
+      "provider": "google",
+      "declared_name": "Gemma 4 31B",
+      "api_id": "gemma-4-31b-it",
+      "api_display_name": "Gemma 4 31B IT",
+      "rule": "documented id hint",
+      "alternatives": [],
+      "status": "active",
+      "reason": "",
+      "mode": "json_schema",
+      "limits": {
+        "rpm": 30,
+        "rpd": 14400,
+        "tpm": 16000,
+        "tpd": null
+      },
+      "usage_today": {
+        "day": "2026-10-07",
+        "requests": 78,
+        "tokens": 271833,
+        "exhausted": false
+      },
+      "validation": [
+        {
+          "result": "reused from earlier today",
+          "day": "2026-10-07",
+          "ok": true,
+          "mode": "json_schema",
+          "category": null,
+          "detail": "validated in json_schema mode"
+        }
+      ],
+      "attempts": 18,
+      "successes": 2,
+      "failures": 16,
+      "failure_categories": {
+        "server_error": 12,
+        "timeout": 4
+      },
+      "last_error_category": "timeout",
+      "last_error_message": "request timed out after 60.0s"
+    },
+    {
+      "priority": 2,
+      "provider": "google",
+      "declared_name": "Gemma 4 26B",
+      "api_id": "gemma-4-26b-a4b-it",
+      "api_display_name": "Gemma 4 26B A4B IT",
+      "rule": "documented id hint",
+      "alternatives": [],
+      "status": "active",
+      "reason": "",
+      "mode": "json_schema",
+      "limits": {
+        "rpm": 30,
+        "rpd": 14400,
+        "tpm": 16000,
+        "tpd": null
+      },
+      "usage_today": {
+        "day": "2026-10-07",
+        "requests": 93,
+        "tokens": 252364,
+        "exhausted": false
+      },
+      "validation": [
+        {
+          "result": "reused from earlier today",
+          "day": "2026-10-07",
+          "ok": true,
+          "mode": "json_schema",
+          "category": null,
+          "detail": "validated in json_schema mode"
+        }
+      ],
+      "attempts": 51,
+      "successes": 47,
+      "failures": 4,
+      "failure_categories": {
+        "server_error": 4
+      },
+      "last_error_category": "server_error",
+      "last_error_message": "{\n  \"error\": {\n    \"code\": 500,\n    \"message\": \"Internal error encountered.\",\n    \"status\": \"INTERNAL\"\n  }\n}"
+    },
+    {
+      "priority": 3,
+      "provider": "google",
+      "declared_name": "Gemini 3.1 Flash Lite",
+      "api_id": "gemini-3.1-flash-lite",
+      "api_display_name": "Gemini 3.1 Flash Lite",
+      "rule": "display name",
+      "alternatives": [],
+      "status": "active",
+      "reason": "",
+      "mode": "json_schema",
+      "limits": {
+        "rpm": 15,
+        "rpd": 500,
+        "tpm": 250000,
+        "tpd": null
+      },
+      "usage_today": {
+        "day": "2026-10-07",
+        "requests": 180,
+        "tokens": 490343,
+        "exhausted": false
+      },
+      "validation": [
+        {
+          "result": "reused from earlier today",
+          "day": "2026-10-07",
+          "ok": true,
+          "mode": "json_schema",
+          "category": null,
+          "detail": "validated in json_schema mode"
+        }
+      ],
+      "attempts": 104,
+      "successes": 104,
+      "failures": 0,
+      "failure_categories": {},
+      "last_error_category": null,
+      "last_error_message": ""
+    },
+    {
+      "priority": 4,
+      "provider": "google",
+      "declared_name": "Gemini 3.5 Flash Lite",
+      "api_id": "gemini-3.5-flash-lite",
+      "api_display_name": "Gemini 3.5 Flash Lite",
+      "rule": "display name",
+      "alternatives": [],
+      "status": "active",
+      "reason": "",
+      "mode": "json_schema",
+      "limits": {
+        "rpm": 15,
+        "rpd": 500,
+        "tpm": 250000,
+        "tpd": null
+      },
+      "usage_today": {
+        "day": "2026-10-07",
+        "requests": 56,
+        "tokens": 151834,
+        "exhausted": false
+      },
+      "validation": [
+        {
+          "result": "reused from earlier today",
+          "day": "2026-10-07",
+          "ok": true,
+          "mode": "json_schema",
+          "category": null,
+          "detail": "validated in json_schema mode"
+        }
+      ],
+      "attempts": 19,
+      "successes": 19,
+      "failures": 0,
+      "failure_categories": {},
+      "last_error_category": null,
+      "last_error_message": ""
+    },
+    {
+      "priority": 5,
+      "provider": "google",
+      "declared_name": "Gemini 3.8 Flash",
+      "api_id": "gemini-3.8-flash",
+      "api_display_name": "Gemini 3.8 Flash",
+      "rule": "display name",
+      "alternatives": [],
+      "status": "active",
+      "reason": "",
+      "mode": "json_schema",
+      "limits": {
+        "rpm": 5,
+        "rpd": 20,
+        "tpm": 250000,
+        "tpd": null
+      },
+      "usage_today": {
+        "day": "2026-10-07",
+        "requests": 6,
+        "tokens": 18813,
+        "exhausted": false
+      },
+      "validation": [
+        {
+          "result": "reused from earlier today",
+          "day": "2026-10-07",
+          "ok": true,
+          "mode": "json_schema",
+          "category": null,
+          "detail": "validated in json_schema mode"
+        }
+      ],
+      "attempts": 2,
+      "successes": 1,
+      "failures": 1,
+      "failure_categories": {
+        "server_error": 1
+      },
+      "last_error_category": "server_error",
+      "last_error_message": "{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}"
+    },
+    {
+      "priority": 6,
+      "provider": "google",
+      "declared_name": "Gemini 3.6 Flash",
+      "api_id": "gemini-3.6-flash",
+      "api_display_name": "Gemini 3.6 Flash",
+      "rule": "display name",
+      "alternatives": [],
+      "status": "unvalidated",
+      "reason": "",
+      "mode": null,
+      "limits": {
+        "rpm": 5,
+        "rpd": 20,
+        "tpm": 250000,
+        "tpd": null
+      },
+      "usage_today": {
+        "day": "2026-10-07",
+        "requests": 0,
+        "tokens": 0,
+        "exhausted": false
+      },
+      "validation": [],
+      "attempts": 0,
+      "successes": 0,
+      "failures": 0,
+      "failure_categories": {},
+      "last_error_category": null,
+      "last_error_message": ""
+    },
+    {
+      "priority": 7,
+      "provider": "google",
+      "declared_name": "Gemini 3.7 Flash",
+      "api_id": "gemini-3.7-flash",
+      "api_display_name": "Gemini 3.7 Flash",
+      "rule": "display name",
+      "alternatives": [],
+      "status": "unvalidated",
+      "reason": "",
+      "mode": null,
+      "limits": {
+        "rpm": 5,
+        "rpd": 20,
+        "tpm": 250000,
+        "tpd": null
+      },
+      "usage_today": {
+        "day": "2026-10-07",
+        "requests": 0,
+        "tokens": 0,
+        "exhausted": false
+      },
+      "validation": [],
+      "attempts": 0,
+      "successes": 0,
+      "failures": 0,
+      "failure_categories": {},
+      "last_error_category": null,
+      "last_error_message": ""
+    },
+    {
+      "priority": 8,
+      "provider": "google",
+      "declared_name": "Gemini 3.5 Flash",
+      "api_id": "gemini-3.5-flash",
+      "api_display_name": "Gemini 3.5 Flash",
+      "rule": "display name",
+      "alternatives": [],
+      "status": "unvalidated",
+      "reason": "",
+      "mode": null,
+      "limits": {
+        "rpm": 5,
+        "rpd": 20,
+        "tpm": 250000,
+        "tpd": null
+      },
+      "usage_today": {
+        "day": "2026-10-07",
+        "requests": 0,
+        "tokens": 0,
+        "exhausted": false
+      },
+      "validation": [],
+      "attempts": 0,
+      "successes": 0,
+      "failures": 0,
+      "failure_categories": {},
+      "last_error_category": null,
+      "last_error_message": ""
+    },
+    {
+      "priority": 9,
+      "provider": "google",
+      "declared_name": "Gemini 2.5 Flash",
+      "api_id": "gemini-2.5-flash",
+      "api_display_name": "Gemini 2.5 Flash",
+      "rule": "display name",
+      "alternatives": [],
+      "status": "unvalidated",
+      "reason": "",
+      "mode": null,
+      "limits": {
+        "rpm": 5,
+        "rpd": 20,
+        "tpm": 250000,
+        "tpd": null
+      },
+      "usage_today": {
+        "day": "2026-10-07",
+        "requests": 0,
+        "tokens": 0,
+        "exhausted": false
+      },
+      "validation": [],
+      "attempts": 0,
+      "successes": 0,
+      "failures": 0,
+      "failure_categories": {},
+      "last_error_category": null,
+      "last_error_message": ""
+    },
+    {
+      "priority": 10,
+      "provider": "google",
+      "declared_name": "Gemini 2.5 Flash Lite",
+      "api_id": "gemini-2.5-flash-lite",
+      "api_display_name": "Gemini 2.5 Flash-Lite",
+      "rule": "display name",
+      "alternatives": [],
+      "status": "unvalidated",
+      "reason": "",
+      "mode": null,
+      "limits": {
+        "rpm": 10,
+        "rpd": 20,
+        "tpm": 250000,
+        "tpd": null
+      },
+      "usage_today": {
+        "day": "2026-10-07",
+        "requests": 0,
+        "tokens": 0,
+        "exhausted": false
+      },
+      "validation": [],
+      "attempts": 0,
+      "successes": 0,
+      "failures": 0,
+      "failure_categories": {},
+      "last_error_category": null,
+      "last_error_message": ""
+    },
+    {
+      "priority": 11,
+      "provider": "groq",
+      "declared_name": "allam-2-7b",
+      "api_id": "allam-2-7b",
+      "api_display_name": null,
+      "rule": "exact id",
+      "alternatives": [],
+      "status": "unvalidated",
+      "reason": "",
+      "mode": null,
+      "limits": {
+        "rpm": 30,
+        "rpd": 7000,
+        "tpm": 6000,
+        "tpd": 500000
+      },
+      "usage_today": {
+        "day": "2026-10-08",
+        "requests": 0,
+        "tokens": 0,
+        "exhausted": false
+      },
+      "validation": [],
+      "attempts": 0,
+      "successes": 0,
+      "failures": 0,
+      "failure_categories": {},
+      "last_error_category": null,
+      "last_error_message": ""
+    },
+    {
+      "priority": 12,
+      "provider": "groq",
+      "declared_name": "openai/gpt-oss-120b",
+      "api_id": "openai/gpt-oss-120b",
+      "api_display_name": null,
+      "rule": "exact id",
+      "alternatives": [],
+      "status": "unvalidated",
+      "reason": "",
+      "mode": null,
+      "limits": {
+        "rpm": 30,
+        "rpd": 1000,
+        "tpm": 8000,
+        "tpd": 200000
+      },
+      "usage_today": {
+        "day": "2026-10-08",
+        "requests": 0,
+        "tokens": 0,
+        "exhausted": false
+      },
+      "validation": [],
+      "attempts": 0,
+      "successes": 0,
+      "failures": 0,
+      "failure_categories": {},
+      "last_error_category": null,
+      "last_error_message": ""
+    },
+    {
+      "priority": 13,
+      "provider": "groq",
+      "declared_name": "openai/gpt-oss-20b",
+      "api_id": "openai/gpt-oss-20b",
+      "api_display_name": null,
+      "rule": "exact id",
+      "alternatives": [],
+      "status": "unvalidated",
+      "reason": "",
+      "mode": null,
+      "limits": {
+        "rpm": 30,
+        "rpd": 1000,
+        "tpm": 8000,
+        "tpd": 200000
+      },
+      "usage_today": {
+        "day": "2026-10-08",
+        "requests": 0,
+        "tokens": 0,
+        "exhausted": false
+      },
+      "validation": [],
+      "attempts": 0,
+      "successes": 0,
+      "failures": 0,
+      "failure_categories": {},
+      "last_error_category": null,
+      "last_error_message": ""
+    },
+    {
+      "priority": 14,
+      "provider": "groq",
+      "declared_name": "qwen/qwen3.8-27b",
+      "api_id": "qwen/qwen3.8-27b",
+      "api_display_name": null,
+      "rule": "exact id",
+      "alternatives": [],
+      "status": "unvalidated",
+      "reason": "",
+      "mode": null,
+      "limits": {
+        "rpm": 30,
+        "rpd": 1000,
+        "tpm": 8000,
+        "tpd": 200000
+      },
+      "usage_today": {
+        "day": "2026-10-08",
+        "requests": 0,
+        "tokens": 0,
+        "exhausted": false
+      },
+      "validation": [],
+      "attempts": 0,
+      "successes": 0,
+      "failures": 0,
+      "failure_categories": {},
+      "last_error_category": null,
+      "last_error_message": ""
+    }
+  ],
+  "resources": [
+    {
+      "id": "ckb-4fe5cddac7a5",
+      "path": "library/general-technology/brave-browser-rewards-and-bat.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "failure_category": null,
+      "detail": "general-technology -> general-technology",
+      "destination": "library/general-technology/brave-browser-rewards-and-bat.md"
+    },
+    {
+      "id": "ckb-9898ae1a0451",
+      "path": "library/general-technology/cheap-crypto-deal.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "failure_category": null,
+      "detail": "general-technology -> ai-security",
+      "destination": "library/ai-security/cheap-crypto-deal.md"
+    },
+    {
+      "id": "ckb-bda84b88cab0",
+      "path": "library/general-technology/fancy-presentation.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "failure_category": null,
+      "detail": "general-technology -> general-technology",
+      "destination": "library/general-technology/fancy-presentation.md"
+    },
+    {
+      "id": "ckb-a72af0bbcf83",
+      "path": "library/general-technology/free-stellar-lumens.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "failure_category": null,
+      "detail": "general-technology -> general-technology",
+      "destination": "library/general-technology/free-stellar-lumens.md"
+    },
+    {
+      "id": "ckb-f6c9a9e2698c",
+      "path": "library/general-technology/homemade-pedalboard.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "failure_category": null,
+      "detail": "general-technology -> general-technology",
+      "destination": "library/general-technology/homemade-pedalboard.md"
+    },
+    {
+      "id": "ckb-89c35c772b85",
+      "path": "library/general-technology/mining-cryptocurrency-don-t-do-it-at-home.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "general-technology -> general-technology",
+      "destination": "library/general-technology/mining-cryptocurrency-don-t-do-it-at-home.md"
+    },
+    {
+      "id": "ckb-15f2cbe6b384",
+      "path": "library/general-technology/miyoo-mini-plus.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "general-technology -> general-technology",
+      "destination": "library/general-technology/miyoo-mini-plus.md"
+    },
+    {
+      "id": "ckb-eef2d39bb1a8",
+      "path": "library/general-technology/short-story-about-my-steam-deck.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "general-technology -> general-technology",
+      "destination": "library/general-technology/short-story-about-my-steam-deck.md"
+    },
+    {
+      "id": "ckb-430cb527a726",
+      "path": "library/general-technology/small-and-powerful-gaming-pc.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "general-technology -> general-technology",
+      "destination": "library/general-technology/small-and-powerful-gaming-pc.md"
+    },
+    {
+      "id": "ckb-00333680e419",
+      "path": "library/general-technology/warez.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "general-technology -> threat-intelligence-and-osint",
+      "destination": "library/threat-intelligence-and-osint/warez.md"
+    },
+    {
+      "id": "ckb-efc60ed214f8",
+      "path": "library/governance-risk-and-compliance/25-cyber-security-frameworks.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "governance-risk-and-compliance -> governance-risk-and-compliance",
+      "destination": "library/governance-risk-and-compliance/25-cyber-security-frameworks.md"
+    },
+    {
+      "id": "ckb-fcf1a747f348",
+      "path": "library/governance-risk-and-compliance/a-practical-guide-for-building-robust.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "governance-risk-and-compliance -> ai-security",
+      "destination": "library/ai-security/a-practical-guide-for-building-robust.md"
+    },
+    {
+      "id": "ckb-fb3a44f29619",
+      "path": "library/governance-risk-and-compliance/an-introduction-to-computer-0asecurity-the-nist-handbook.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "governance-risk-and-compliance -> governance-risk-and-compliance",
+      "destination": "library/governance-risk-and-compliance/an-introduction-to-computer-0asecurity-the-nist-handbook.md"
+    },
+    {
+      "id": "ckb-874eaf087b46",
+      "path": "library/governance-risk-and-compliance/ciso-handbook.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "governance-risk-and-compliance -> governance-risk-and-compliance",
+      "destination": "library/governance-risk-and-compliance/ciso-handbook.md"
+    },
+    {
+      "id": "ckb-019131cb7634",
+      "path": "library/governance-risk-and-compliance/cloud-security-guidance.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "governance-risk-and-compliance -> cloud-and-container-security",
+      "destination": "library/cloud-and-container-security/cloud-security-guidance.md"
+    },
+    {
+      "id": "ckb-62a85e139657",
+      "path": "library/governance-risk-and-compliance/cloudsecurityplaybookvol1.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "governance-risk-and-compliance -> cloud-and-container-security",
+      "destination": "library/cloud-and-container-security/cloudsecurityplaybookvol1.md"
+    },
+    {
+      "id": "ckb-74f232300b88",
+      "path": "library/governance-risk-and-compliance/cs-ref-architecture.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "governance-risk-and-compliance -> governance-risk-and-compliance",
+      "destination": "library/governance-risk-and-compliance/cs-ref-architecture.md"
+    },
+    {
+      "id": "ckb-493c73d9bd62",
+      "path": "library/governance-risk-and-compliance/cyber-governance-code-of-practice.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "governance-risk-and-compliance -> governance-risk-and-compliance",
+      "destination": "library/governance-risk-and-compliance/cyber-governance-code-of-practice.md"
+    },
+    {
+      "id": "ckb-ac3415c71c7c",
+      "path": "library/governance-risk-and-compliance/cyber-security-services.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "failure_category": null,
+      "detail": "governance-risk-and-compliance -> governance-risk-and-compliance",
+      "destination": "library/governance-risk-and-compliance/cyber-security-services.md"
+    },
+    {
+      "id": "ckb-a5431cd7548c",
+      "path": "library/governance-risk-and-compliance/cybok-version-1-0.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "failure_category": null,
+      "detail": "governance-risk-and-compliance -> governance-risk-and-compliance",
+      "destination": "library/governance-risk-and-compliance/cybok-version-1-0.md"
+    },
+    {
+      "id": "ckb-0b9c5492c5dc",
+      "path": "library/governance-risk-and-compliance/infosec-proeficiency-colors.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "failure_category": null,
+      "detail": "governance-risk-and-compliance -> governance-risk-and-compliance",
+      "destination": "library/governance-risk-and-compliance/infosec-proeficiency-colors.md"
+    },
+    {
+      "id": "ckb-18d4852b9ee0",
+      "path": "library/governance-risk-and-compliance/ms-designer-keyboard-right-control-key.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "failure_category": null,
+      "detail": "governance-risk-and-compliance -> general-technology",
+      "destination": "library/general-technology/ms-designer-keyboard-right-control-key.md"
+    },
+    {
+      "id": "ckb-02897ba606b2",
+      "path": "library/governance-risk-and-compliance/nist-storage-security-guide.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "failure_category": null,
+      "detail": "governance-risk-and-compliance -> governance-risk-and-compliance",
+      "destination": "library/governance-risk-and-compliance/nist-storage-security-guide.md"
+    },
+    {
+      "id": "ckb-f947beb71904",
+      "path": "library/governance-risk-and-compliance/professional-web-accessibility-auditing-made-easy.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "failure_category": null,
+      "detail": "governance-risk-and-compliance -> application-security",
+      "destination": "library/application-security/professional-web-accessibility-auditing-made-easy.md"
+    },
+    {
+      "id": "ckb-8dde10f84181",
+      "path": "library/governance-risk-and-compliance/shifting-the-balance-of-cybersecurity-risk.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "governance-risk-and-compliance -> governance-risk-and-compliance",
+      "destination": "library/governance-risk-and-compliance/shifting-the-balance-of-cybersecurity-risk.md"
+    },
+    {
+      "id": "ckb-13ca6fb3c5de",
+      "path": "library/governance-risk-and-compliance/threat-modeling-in-modern-security-programs.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "governance-risk-and-compliance -> governance-risk-and-compliance",
+      "destination": "library/governance-risk-and-compliance/threat-modeling-in-modern-security-programs.md"
+    },
+    {
+      "id": "ckb-5fb95cb864ae",
+      "path": "library/governance-risk-and-compliance/threats-and-risk-management-in-the-health-sector.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "governance-risk-and-compliance -> governance-risk-and-compliance",
+      "destination": "library/governance-risk-and-compliance/threats-and-risk-management-in-the-health-sector.md"
+    },
+    {
+      "id": "ckb-dce10de136e0",
+      "path": "library/governance-risk-and-compliance/zero-trust-testing-checklist.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "failure_category": null,
+      "detail": "governance-risk-and-compliance -> identity-and-access",
+      "destination": "library/identity-and-access/zero-trust-testing-checklist.md"
+    },
+    {
+      "id": "ckb-73c0a219b5da",
+      "path": "library/identity-and-access/active-directory-assesment.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "identity-and-access -> identity-and-access",
+      "destination": "library/identity-and-access/active-directory-assesment.md"
+    },
+    {
+      "id": "ckb-c00c02c4e4cf",
+      "path": "library/identity-and-access/ad-attacks.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "identity-and-access -> identity-and-access",
+      "destination": "library/identity-and-access/ad-attacks.md"
+    },
+    {
+      "id": "ckb-a2a4ecf054be",
+      "path": "library/identity-and-access/basic-access-authentication-bruteforce.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "identity-and-access -> offensive-security",
+      "destination": "library/offensive-security/basic-access-authentication-bruteforce.md"
+    },
+    {
+      "id": "ckb-4d73903d4af3",
+      "path": "library/identity-and-access/nsa-and-cisa-top-10.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "failure_category": null,
+      "detail": "identity-and-access -> security-operations",
+      "destination": "library/security-operations/nsa-and-cisa-top-10.md"
+    },
+    {
+      "id": "ckb-9fe74458d1b2",
+      "path": "library/identity-and-access/pwning-the-domain-series-with-credentials.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "identity-and-access -> identity-and-access",
+      "destination": "library/identity-and-access/pwning-the-domain-series-with-credentials.md"
+    },
+    {
+      "id": "ckb-f8326a89f226",
+      "path": "library/incident-response-and-forensics/100-free-security-tools.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "incident-response-and-forensics -> incident-response-and-forensics",
+      "destination": "library/incident-response-and-forensics/100-free-security-tools.md"
+    },
+    {
+      "id": "ckb-f9f51b8ad483",
+      "path": "library/incident-response-and-forensics/computer-forensic-overview-pt.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "incident-response-and-forensics -> incident-response-and-forensics",
+      "destination": "library/incident-response-and-forensics/computer-forensic-overview-pt.md"
+    },
+    {
+      "id": "ckb-f2dff9f1aadb",
+      "path": "library/incident-response-and-forensics/cyber-security-incident-management-plan.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "incident-response-and-forensics -> incident-response-and-forensics",
+      "destination": "library/incident-response-and-forensics/cyber-security-incident-management-plan.md"
+    },
+    {
+      "id": "ckb-bf2690d218c6",
+      "path": "library/incident-response-and-forensics/dns-incident-response.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "incident-response-and-forensics -> incident-response-and-forensics",
+      "destination": "library/incident-response-and-forensics/dns-incident-response.md"
+    },
+    {
+      "id": "ckb-2d76e16b1fb0",
+      "path": "library/incident-response-and-forensics/forensic-investigation-of-nmap-scan-using-wireshark.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "incident-response-and-forensics -> incident-response-and-forensics",
+      "destination": "library/incident-response-and-forensics/forensic-investigation-of-nmap-scan-using-wireshark.md"
+    },
+    {
+      "id": "ckb-f6023906dd84",
+      "path": "library/incident-response-and-forensics/ftk-imager.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "failure_category": null,
+      "detail": "incident-response-and-forensics -> incident-response-and-forensics",
+      "destination": "library/incident-response-and-forensics/ftk-imager.md"
+    },
+    {
+      "id": "ckb-74cb809d7934",
+      "path": "library/incident-response-and-forensics/incident-response-cheat-sheet.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "failure_category": null,
+      "detail": "incident-response-and-forensics -> incident-response-and-forensics",
+      "destination": "library/incident-response-and-forensics/incident-response-cheat-sheet.md"
+    },
+    {
+      "id": "ckb-6d34542a0c4f",
+      "path": "library/incident-response-and-forensics/incident-response-overview.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "failure_category": null,
+      "detail": "incident-response-and-forensics -> incident-response-and-forensics",
+      "destination": "library/incident-response-and-forensics/incident-response-overview.md"
+    },
+    {
+      "id": "ckb-6d2454bbb608",
+      "path": "library/incident-response-and-forensics/incident-response-playbooks-and-workflow.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "incident-response-and-forensics -> incident-response-and-forensics",
+      "destination": "library/incident-response-and-forensics/incident-response-playbooks-and-workflow.md"
+    },
+    {
+      "id": "ckb-53ae72c942bf",
+      "path": "library/incident-response-and-forensics/incident-response-simulation-1.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "failure_category": null,
+      "detail": "incident-response-and-forensics -> incident-response-and-forensics",
+      "destination": "library/incident-response-and-forensics/incident-response-simulation-1.md"
+    },
+    {
+      "id": "ckb-d903ee5c8257",
+      "path": "library/incident-response-and-forensics/memory-forensics.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "failure_category": null,
+      "detail": "incident-response-and-forensics -> incident-response-and-forensics",
+      "destination": "library/incident-response-and-forensics/memory-forensics.md"
+    },
+    {
+      "id": "ckb-4df6becaec97",
+      "path": "library/incident-response-and-forensics/threat-hunting-playbooks.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "incident-response-and-forensics -> security-operations",
+      "destination": "library/security-operations/threat-hunting-playbooks.md"
+    },
+    {
+      "id": "ckb-e6075f145ac4",
+      "path": "library/iot-ot-and-hardware-security/hardware-hacking-introduction-overview.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "iot-ot-and-hardware-security -> iot-ot-and-hardware-security",
+      "destination": "library/iot-ot-and-hardware-security/hardware-hacking-introduction-overview.md"
+    },
+    {
+      "id": "ckb-bb9521d31825",
+      "path": "library/iot-ot-and-hardware-security/iot-security-guide.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "iot-ot-and-hardware-security -> iot-ot-and-hardware-security",
+      "destination": "library/iot-ot-and-hardware-security/iot-security-guide.md"
+    },
+    {
+      "id": "ckb-41b73943b368",
+      "path": "library/iot-ot-and-hardware-security/iot-use-cases-and-technologies.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "iot-ot-and-hardware-security -> iot-ot-and-hardware-security",
+      "destination": "library/iot-ot-and-hardware-security/iot-use-cases-and-technologies.md"
+    },
+    {
+      "id": "ckb-c6cba1550e09",
+      "path": "library/iot-ot-and-hardware-security/pentest-iot-and-ot-overview.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "iot-ot-and-hardware-security -> iot-ot-and-hardware-security",
+      "destination": "library/iot-ot-and-hardware-security/pentest-iot-and-ot-overview.md"
+    },
+    {
+      "id": "ckb-f251ee71191c",
+      "path": "library/malware-analysis/introduo-bsica-a-analise-de-malware-1.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "malware-analysis -> malware-analysis",
+      "destination": "library/malware-analysis/introduo-bsica-a-analise-de-malware-1.md"
+    },
+    {
+      "id": "ckb-4c341cf910bd",
+      "path": "library/malware-analysis/malware-analysis.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "malware-analysis -> malware-analysis",
+      "destination": "library/malware-analysis/malware-analysis.md"
+    },
+    {
+      "id": "ckb-99b363e18674",
+      "path": "library/malware-analysis/malware-hunting-threat-hunter-overview-1.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "malware-analysis -> malware-analysis",
+      "destination": "library/malware-analysis/malware-hunting-threat-hunter-overview-1.md"
+    },
+    {
+      "id": "ckb-cf016ed1bb7f",
+      "path": "library/malware-analysis/malwareanalysis-101.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "malware-analysis -> malware-analysis",
+      "destination": "library/malware-analysis/malwareanalysis-101.md"
+    },
+    {
+      "id": "ckb-7e5aac1f3373",
+      "path": "library/malware-analysis/open-source-rats.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "malware-analysis -> offensive-security",
+      "destination": "library/offensive-security/open-source-rats.md"
+    },
+    {
+      "id": "ckb-77b6cdd0607c",
+      "path": "library/malware-analysis/ransomware-simulation.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "malware-analysis -> security-operations",
+      "destination": "library/security-operations/ransomware-simulation.md"
+    },
+    {
+      "id": "ckb-9ee0dd7b77ff",
+      "path": "library/malware-analysis/yet-another-ridiculous-acronym.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "malware-analysis -> malware-analysis",
+      "destination": "library/malware-analysis/yet-another-ridiculous-acronym.md"
+    },
+    {
+      "id": "ckb-da567539554f",
+      "path": "library/network-and-wireless-security/a-little-bit-about-nmap.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "failure_category": null,
+      "detail": "network-and-wireless-security -> network-and-wireless-security",
+      "destination": "library/network-and-wireless-security/a-little-bit-about-nmap.md"
+    },
+    {
+      "id": "ckb-9c0599918006",
+      "path": "library/network-and-wireless-security/anonabox.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "failure_category": null,
+      "detail": "network-and-wireless-security -> cryptography-and-privacy",
+      "destination": "library/cryptography-and-privacy/anonabox.md"
+    },
+    {
+      "id": "ckb-fe2b5fd7014f",
+      "path": "library/network-and-wireless-security/attacking-pfsense.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "failure_category": null,
+      "detail": "network-and-wireless-security -> network-and-wireless-security",
+      "destination": "library/network-and-wireless-security/attacking-pfsense.md"
+    },
+    {
+      "id": "ckb-5cde9238fba5",
+      "path": "library/network-and-wireless-security/building-a-local-ai-environment.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "network-and-wireless-security -> network-and-wireless-security",
+      "destination": "library/network-and-wireless-security/building-a-local-ai-environment.md"
+    },
+    {
+      "id": "ckb-c626cdefaa77",
+      "path": "library/network-and-wireless-security/comprehensive-guide-on-tshark.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "failure_category": null,
+      "detail": "network-and-wireless-security -> network-and-wireless-security",
+      "destination": "library/network-and-wireless-security/comprehensive-guide-on-tshark.md"
+    },
+    {
+      "id": "ckb-4036c3fc2c33",
+      "path": "library/network-and-wireless-security/control-smartphone-from-pc.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "failure_category": null,
+      "detail": "network-and-wireless-security -> general-technology",
+      "destination": "library/general-technology/control-smartphone-from-pc.md"
+    },
+    {
+      "id": "ckb-3f8c52962d89",
+      "path": "library/network-and-wireless-security/ddos-attack.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "failure_category": null,
+      "detail": "network-and-wireless-security -> network-and-wireless-security",
+      "destination": "library/network-and-wireless-security/ddos-attack.md"
+    },
+    {
+      "id": "ckb-c5b22341343f",
+      "path": "library/network-and-wireless-security/dhcp-starvation-attack.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "failure_category": null,
+      "detail": "network-and-wireless-security -> network-and-wireless-security",
+      "destination": "library/network-and-wireless-security/dhcp-starvation-attack.md"
+    },
+    {
+      "id": "ckb-2726ae3cb6f3",
+      "path": "library/network-and-wireless-security/elearnsecurity-certified-incident-response-ecir-guide-study-to-exam.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "network-and-wireless-security -> careers-and-certifications",
+      "destination": "library/careers-and-certifications/elearnsecurity-certified-incident-response-ecir-guide-study-to-exam.md"
+    },
+    {
+      "id": "ckb-bf919b2651e5",
+      "path": "library/network-and-wireless-security/fortigate-firewall.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "network-and-wireless-security -> security-operations",
+      "destination": "library/security-operations/fortigate-firewall.md"
+    },
+    {
+      "id": "ckb-24304601ab18",
+      "path": "library/network-and-wireless-security/fundamentos-de-firewall.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "network-and-wireless-security -> network-and-wireless-security",
+      "destination": "library/network-and-wireless-security/fundamentos-de-firewall.md"
+    },
+    {
+      "id": "ckb-738833e357dc",
+      "path": "library/network-and-wireless-security/fundamentos-de-firewall-2.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "network-and-wireless-security -> network-and-wireless-security",
+      "destination": "library/network-and-wireless-security/fundamentos-de-firewall-2.md"
+    },
+    {
+      "id": "ckb-d8c7cb142e7e",
+      "path": "library/network-and-wireless-security/gettng-started-in-ics-ot-cyber-security.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "network-and-wireless-security -> iot-ot-and-hardware-security",
+      "destination": "library/iot-ot-and-hardware-security/gettng-started-in-ics-ot-cyber-security.md"
+    },
+    {
+      "id": "ckb-28ada4ee1428",
+      "path": "library/network-and-wireless-security/hacker-gadgets.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "network-and-wireless-security -> iot-ot-and-hardware-security",
+      "destination": "library/iot-ot-and-hardware-security/hacker-gadgets.md"
+    },
+    {
+      "id": "ckb-3215056dac04",
+      "path": "library/network-and-wireless-security/hacking-beginner-to-expert-guide.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "network-and-wireless-security -> offensive-security",
+      "destination": "library/offensive-security/hacking-beginner-to-expert-guide.md"
+    },
+    {
+      "id": "ckb-2ad567881f92",
+      "path": "library/network-and-wireless-security/information-security-training-by-joas.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "failure_category": null,
+      "detail": "network-and-wireless-security -> foundations-and-systems",
+      "destination": "library/foundations-and-systems/information-security-training-by-joas.md"
+    },
+    {
+      "id": "ckb-31f2c66c249b",
+      "path": "library/network-and-wireless-security/informtica-para-concurso.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "failure_category": null,
+      "detail": "network-and-wireless-security -> foundations-and-systems",
+      "destination": "library/foundations-and-systems/informtica-para-concurso.md"
+    },
+    {
+      "id": "ckb-11f481a580a2",
+      "path": "library/network-and-wireless-security/introduction-cyber-security.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "network-and-wireless-security -> foundations-and-systems",
+      "destination": "library/foundations-and-systems/introduction-cyber-security.md"
+    },
+    {
+      "id": "ckb-27af0c1c36b8",
+      "path": "library/network-and-wireless-security/introduo-a-network-security-1-0.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "failure_category": null,
+      "detail": "network-and-wireless-security -> network-and-wireless-security",
+      "destination": "library/network-and-wireless-security/introduo-a-network-security-1-0.md"
+    },
+    {
+      "id": "ckb-facb80bd89b0",
+      "path": "library/network-and-wireless-security/mastering-fortigate.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "failure_category": null,
+      "detail": "network-and-wireless-security -> network-and-wireless-security",
+      "destination": "library/network-and-wireless-security/mastering-fortigate.md"
+    },
+    {
+      "id": "ckb-214058811d4c",
+      "path": "library/network-and-wireless-security/network-security-best-practices.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "network-and-wireless-security -> network-and-wireless-security",
+      "destination": "library/network-and-wireless-security/network-security-best-practices.md"
+    },
+    {
+      "id": "ckb-4bc4a6620a90",
+      "path": "library/network-and-wireless-security/offensive-security-wireless.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "network-and-wireless-security -> network-and-wireless-security",
+      "destination": "library/network-and-wireless-security/offensive-security-wireless.md"
+    },
+    {
+      "id": "ckb-fc4ceac0b821",
+      "path": "library/network-and-wireless-security/offensive-security-wireless-fundamentals.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "network-and-wireless-security -> network-and-wireless-security",
+      "destination": "library/network-and-wireless-security/offensive-security-wireless-fundamentals.md"
+    },
+    {
+      "id": "ckb-44d2bdb5ed8f",
+      "path": "library/network-and-wireless-security/palo-alto-firewall.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "network-and-wireless-security -> security-operations",
+      "destination": "library/security-operations/palo-alto-firewall.md"
+    },
+    {
+      "id": "ckb-568d400a55fb",
+      "path": "library/network-and-wireless-security/pentest-of-an-ftp-server.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "network-and-wireless-security -> offensive-security",
+      "destination": "library/offensive-security/pentest-of-an-ftp-server.md"
+    },
+    {
+      "id": "ckb-f389f777d27d",
+      "path": "library/network-and-wireless-security/quick-vpn-setup-on-vps.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "network-and-wireless-security -> network-and-wireless-security",
+      "destination": "library/network-and-wireless-security/quick-vpn-setup-on-vps.md"
+    },
+    {
+      "id": "ckb-a204ce0fd795",
+      "path": "library/network-and-wireless-security/smtp-hack.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "network-and-wireless-security -> offensive-security",
+      "destination": "library/offensive-security/smtp-hack.md"
+    },
+    {
+      "id": "ckb-cc246ea0f08b",
+      "path": "library/network-and-wireless-security/tor-router-on-raspberry-pi.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "network-and-wireless-security -> cryptography-and-privacy",
+      "destination": "library/cryptography-and-privacy/tor-router-on-raspberry-pi.md"
+    },
+    {
+      "id": "ckb-83641e3279e4",
+      "path": "library/network-and-wireless-security/ufw-simple-firewall.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemma-4-31b-it",
+      "failure_category": null,
+      "detail": "network-and-wireless-security -> security-operations",
+      "destination": "library/security-operations/ufw-simple-firewall.md"
+    },
+    {
+      "id": "ckb-0a5ff0a04bd1",
+      "path": "library/network-and-wireless-security/vpn-you-should-have-one.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemma-4-31b-it",
+      "failure_category": null,
+      "detail": "network-and-wireless-security -> security-awareness-and-online-safety",
+      "destination": "library/security-awareness-and-online-safety/vpn-you-should-have-one.md"
+    },
+    {
+      "id": "ckb-56b9c0d33174",
+      "path": "library/network-and-wireless-security/wi-fi-hacking-notes.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "failure_category": null,
+      "detail": "network-and-wireless-security -> network-and-wireless-security",
+      "destination": "library/network-and-wireless-security/wi-fi-hacking-notes.md"
+    },
+    {
+      "id": "ckb-23602a6d34a0",
+      "path": "library/network-and-wireless-security/wireless-penetration-testing-airgeddon.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "network-and-wireless-security -> network-and-wireless-security",
+      "destination": "library/network-and-wireless-security/wireless-penetration-testing-airgeddon.md"
+    },
+    {
+      "id": "ckb-ffe467501c0b",
+      "path": "library/network-and-wireless-security/wireless-penetration-testing-fluxion.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "network-and-wireless-security -> network-and-wireless-security",
+      "destination": "library/network-and-wireless-security/wireless-penetration-testing-fluxion.md"
+    },
+    {
+      "id": "ckb-c90dd51e0160",
+      "path": "library/network-and-wireless-security/wireless-penetration-testing-pmkid-attack.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "network-and-wireless-security -> network-and-wireless-security",
+      "destination": "library/network-and-wireless-security/wireless-penetration-testing-pmkid-attack.md"
+    },
+    {
+      "id": "ckb-3fae94a1887b",
+      "path": "library/offensive-security/19-joassantos-gerenciando-sua-superficie-de-ataques.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> offensive-security",
+      "destination": "library/offensive-security/19-joassantos-gerenciando-sua-superficie-de-ataques.md"
+    },
+    {
+      "id": "ckb-23cba80eaeb9",
+      "path": "library/offensive-security/30-days-of-practice-pentest-2.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> offensive-security",
+      "destination": "library/offensive-security/30-days-of-practice-pentest-2.md"
+    },
+    {
+      "id": "ckb-693c98cccc91",
+      "path": "library/offensive-security/a-detailed-guide-on-kerbrute.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> identity-and-access",
+      "destination": "library/identity-and-access/a-detailed-guide-on-kerbrute.md"
+    },
+    {
+      "id": "ckb-3b7a82137aa3",
+      "path": "library/offensive-security/a-detailed-guide-on-log4j-penetration-testing.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> offensive-security",
+      "destination": "library/offensive-security/a-detailed-guide-on-log4j-penetration-testing.md"
+    },
+    {
+      "id": "ckb-7a9a453351a4",
+      "path": "library/offensive-security/adversary-emulation-and-cracking-the-bridge-overview.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "failure_category": null,
+      "detail": "offensive-security -> offensive-security",
+      "destination": "library/offensive-security/adversary-emulation-and-cracking-the-bridge-overview.md"
+    },
+    {
+      "id": "ckb-60fbdb67ef4a",
+      "path": "library/offensive-security/adversary-emulation-com-cobalt-strike.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "failure_category": null,
+      "detail": "offensive-security -> offensive-security",
+      "destination": "library/offensive-security/adversary-emulation-com-cobalt-strike.md"
+    },
+    {
+      "id": "ckb-c38bcc8e9f52",
+      "path": "library/offensive-security/adversary-emulation-matrix-by-joas.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "failure_category": null,
+      "detail": "offensive-security -> offensive-security",
+      "destination": "library/offensive-security/adversary-emulation-matrix-by-joas.md"
+    },
+    {
+      "id": "ckb-56606968d53f",
+      "path": "library/offensive-security/adversary-emulation-services.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "failure_category": null,
+      "detail": "offensive-security -> offensive-security",
+      "destination": "library/offensive-security/adversary-emulation-services.md"
+    },
+    {
+      "id": "ckb-2a71981421b8",
+      "path": "library/offensive-security/adversary-simulation-with-caldera-and-mitre.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> offensive-security",
+      "destination": "library/offensive-security/adversary-simulation-with-caldera-and-mitre.md"
+    },
+    {
+      "id": "ckb-2558838d929c",
+      "path": "library/offensive-security/anonymous-logins-for-pentester.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> offensive-security",
+      "destination": "library/offensive-security/anonymous-logins-for-pentester.md"
+    },
+    {
+      "id": "ckb-6af15505b896",
+      "path": "library/offensive-security/apostila-dicas-para-pentest.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> careers-and-certifications",
+      "destination": "library/careers-and-certifications/apostila-dicas-para-pentest.md"
+    },
+    {
+      "id": "ckb-fba6f704f909",
+      "path": "library/offensive-security/art-of-post-exploitation.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> offensive-security",
+      "destination": "library/offensive-security/art-of-post-exploitation.md"
+    },
+    {
+      "id": "ckb-fe217c037742",
+      "path": "library/offensive-security/av-and-edr-bypass-techniques-for-new-hackers-update-2022.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> offensive-security",
+      "destination": "library/offensive-security/av-and-edr-bypass-techniques-for-new-hackers-update-2022.md"
+    },
+    {
+      "id": "ckb-4ea743c2bde6",
+      "path": "library/offensive-security/av-edr-bypass-red-team-village-pt-br.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> offensive-security",
+      "destination": "library/offensive-security/av-edr-bypass-red-team-village-pt-br.md"
+    },
+    {
+      "id": "ckb-a42da90a13b0",
+      "path": "library/offensive-security/basic-knowldges-of-pentesting.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> offensive-security",
+      "destination": "library/offensive-security/basic-knowldges-of-pentesting.md"
+    },
+    {
+      "id": "ckb-7ad65d6171f4",
+      "path": "library/offensive-security/best-alternative-of-netcat-listener.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> offensive-security",
+      "destination": "library/offensive-security/best-alternative-of-netcat-listener.md"
+    },
+    {
+      "id": "ckb-6a483fb5041f",
+      "path": "library/offensive-security/blue-e-red-team-mercado-de-trabalho.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> careers-and-certifications",
+      "destination": "library/careers-and-certifications/blue-e-red-team-mercado-de-trabalho.md"
+    },
+    {
+      "id": "ckb-146b2a41882a",
+      "path": "library/offensive-security/brazilian-pentest-certification.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> careers-and-certifications",
+      "destination": "library/careers-and-certifications/brazilian-pentest-certification.md"
+    },
+    {
+      "id": "ckb-ea3aafc4e04e",
+      "path": "library/offensive-security/bug-bounty-career.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> careers-and-certifications",
+      "destination": "library/careers-and-certifications/bug-bounty-career.md"
+    },
+    {
+      "id": "ckb-01c0269a7821",
+      "path": "library/offensive-security/bug-bounty-how-to-start.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> application-security",
+      "destination": "library/application-security/bug-bounty-how-to-start.md"
+    },
+    {
+      "id": "ckb-16d923003f73",
+      "path": "library/offensive-security/burpsuite-for-pentester-autorize.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> application-security",
+      "destination": "library/application-security/burpsuite-for-pentester-autorize.md"
+    },
+    {
+      "id": "ckb-00292bdcfc7e",
+      "path": "library/offensive-security/bypassing-defenses-in-layers.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> offensive-security",
+      "destination": "library/offensive-security/bypassing-defenses-in-layers.md"
+    },
+    {
+      "id": "ckb-01819e112d29",
+      "path": "library/offensive-security/c-for-hackers-overview-pt.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> offensive-security",
+      "destination": "library/offensive-security/c-for-hackers-overview-pt.md"
+    },
+    {
+      "id": "ckb-15b4ddba057d",
+      "path": "library/offensive-security/ceh-fundamentals.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> offensive-security",
+      "destination": "library/offensive-security/ceh-fundamentals.md"
+    },
+    {
+      "id": "ckb-794e15d510b5",
+      "path": "library/offensive-security/certified-red-team-leader-rto-ii-overview-to-study.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> offensive-security",
+      "destination": "library/offensive-security/certified-red-team-leader-rto-ii-overview-to-study.md"
+    },
+    {
+      "id": "ckb-54cfd5abc6b6",
+      "path": "library/offensive-security/certified-red-team-physical-pentest-leader-quick-training.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> offensive-security",
+      "destination": "library/offensive-security/certified-red-team-physical-pentest-leader-quick-training.md"
+    },
+    {
+      "id": "ckb-63c5474b1b71",
+      "path": "library/offensive-security/como-gerenciar-um-red-team.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> offensive-security",
+      "destination": "library/offensive-security/como-gerenciar-um-red-team.md"
+    },
+    {
+      "id": "ckb-317bd49519e0",
+      "path": "library/offensive-security/competncias-essenciais-para-liderar-uma-equipe-de-pentest.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> careers-and-certifications",
+      "destination": "library/careers-and-certifications/competncias-essenciais-para-liderar-uma-equipe-de-pentest.md"
+    },
+    {
+      "id": "ckb-632658dc497f",
+      "path": "library/offensive-security/comprehensive-guide-on-honeypots.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> security-operations",
+      "destination": "library/security-operations/comprehensive-guide-on-honeypots.md"
+    },
+    {
+      "id": "ckb-a3d4323ec770",
+      "path": "library/offensive-security/conceitos-bsicos-de-ps-explorao-1.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> offensive-security",
+      "destination": "library/offensive-security/conceitos-bsicos-de-ps-explorao-1.md"
+    },
+    {
+      "id": "ckb-328dede7793f",
+      "path": "library/offensive-security/credential-dumping-fake-services.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> offensive-security",
+      "destination": "library/offensive-security/credential-dumping-fake-services.md"
+    },
+    {
+      "id": "ckb-761c8bf5da2b",
+      "path": "library/offensive-security/credential-dumping-fakeservices.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> offensive-security",
+      "destination": "library/offensive-security/credential-dumping-fakeservices.md"
+    },
+    {
+      "id": "ckb-e946867f79a6",
+      "path": "library/offensive-security/credential-dumping-sam.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> offensive-security",
+      "destination": "library/offensive-security/credential-dumping-sam.md"
+    },
+    {
+      "id": "ckb-82d948c8a3e5",
+      "path": "library/offensive-security/crto-notes-to-exam-preparation.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> offensive-security",
+      "destination": "library/offensive-security/crto-notes-to-exam-preparation.md"
+    },
+    {
+      "id": "ckb-e92b26945f8f",
+      "path": "library/offensive-security/cve-attack.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.8-flash",
+      "failure_category": null,
+      "detail": "offensive-security -> offensive-security",
+      "destination": "library/offensive-security/cve-attack.md"
+    },
+    {
+      "id": "ckb-503a65f0e246",
+      "path": "library/offensive-security/cve-2021-4034-gimme-root.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "failure_category": null,
+      "detail": "offensive-security -> offensive-security",
+      "destination": "library/offensive-security/cve-2021-4034-gimme-root.md"
+    },
+    {
+      "id": "ckb-cbefa61f502f",
+      "path": "library/offensive-security/cyber-security-complete-journey-red-team-1.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "failure_category": null,
+      "detail": "offensive-security -> offensive-security",
+      "destination": "library/offensive-security/cyber-security-complete-journey-red-team-1.md"
+    },
+    {
+      "id": "ckb-c9479d64c5e5",
+      "path": "library/offensive-security/defectdojo-setup-workflow-and-real-usage.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "failure_category": null,
+      "detail": "offensive-security -> application-security",
+      "destination": "library/application-security/defectdojo-setup-workflow-and-real-usage.md"
+    },
+    {
+      "id": "ckb-9ed989dea385",
+      "path": "library/offensive-security/diary-of-a-red-team-challenges-for-you-to-practice-your-skills-1.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "failure_category": null,
+      "detail": "offensive-security -> offensive-security",
+      "destination": "library/offensive-security/diary-of-a-red-team-challenges-for-you-to-practice-your-skills-1.md"
+    },
+    {
+      "id": "ckb-ac697b3592a2",
+      "path": "library/offensive-security/dicas-como-reportar-uma-falha.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> offensive-security",
+      "destination": "library/offensive-security/dicas-como-reportar-uma-falha.md"
+    },
+    {
+      "id": "ckb-0e2617d57015",
+      "path": "library/offensive-security/dll-hijacking-overview.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> offensive-security",
+      "destination": "library/offensive-security/dll-hijacking-overview.md"
+    },
+    {
+      "id": "ckb-3e6e4341e0c6",
+      "path": "library/offensive-security/ebook-invadindo-com-metasploit-vl-1.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> offensive-security",
+      "destination": "library/offensive-security/ebook-invadindo-com-metasploit-vl-1.md"
+    },
+    {
+      "id": "ckb-28b52c2e8f32",
+      "path": "library/offensive-security/elearnsecurity-ecppt-notes-exam.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> careers-and-certifications",
+      "destination": "library/careers-and-certifications/elearnsecurity-ecppt-notes-exam.md"
+    },
+    {
+      "id": "ckb-1d6c7c947e70",
+      "path": "library/offensive-security/elearnsecurity-ecptxv2-notes.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> offensive-security",
+      "destination": "library/offensive-security/elearnsecurity-ecptxv2-notes.md"
+    },
+    {
+      "id": "ckb-9531510cdfb7",
+      "path": "library/offensive-security/ethical-hacking.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> offensive-security",
+      "destination": "library/offensive-security/ethical-hacking.md"
+    },
+    {
+      "id": "ckb-2ecfffb165fe",
+      "path": "library/offensive-security/ethical-hacking-how-to-start.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> careers-and-certifications",
+      "destination": "library/careers-and-certifications/ethical-hacking-how-to-start.md"
+    },
+    {
+      "id": "ckb-800ec5942674",
+      "path": "library/offensive-security/ffuf.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> offensive-security",
+      "destination": "library/offensive-security/ffuf.md"
+    },
+    {
+      "id": "ckb-a1a94eb5ea43",
+      "path": "library/offensive-security/hacker-forums.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> threat-intelligence-and-osint",
+      "destination": "library/threat-intelligence-and-osint/hacker-forums.md"
+    },
+    {
+      "id": "ckb-a4730956a3ee",
+      "path": "library/offensive-security/hacker-news.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "failure_category": null,
+      "detail": "offensive-security -> threat-intelligence-and-osint",
+      "destination": "library/threat-intelligence-and-osint/hacker-news.md"
+    },
+    {
+      "id": "ckb-d678c3cd8f19",
+      "path": "library/offensive-security/hacker-shelf.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> foundations-and-systems",
+      "destination": "library/foundations-and-systems/hacker-shelf.md"
+    },
+    {
+      "id": "ckb-4b5344f36ed1",
+      "path": "library/offensive-security/hackthebox-e-vulnhub-dicas-e-truques.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> offensive-security",
+      "destination": "library/offensive-security/hackthebox-e-vulnhub-dicas-e-truques.md"
+    },
+    {
+      "id": "ckb-b8d75616dbde",
+      "path": "library/offensive-security/healthy-mind-and-body-of-hacker.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> careers-and-certifications",
+      "destination": "library/careers-and-certifications/healthy-mind-and-body-of-hacker.md"
+    },
+    {
+      "id": "ckb-29aa18967c54",
+      "path": "library/offensive-security/how-to-report-a-vulnerability-and-generate-its-cve.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> governance-risk-and-compliance",
+      "destination": "library/governance-risk-and-compliance/how-to-report-a-vulnerability-and-generate-its-cve.md"
+    },
+    {
+      "id": "ckb-149774a9d3bc",
+      "path": "library/offensive-security/how-to-report-a-vulnerability-and-not-go-to-jail.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "failure_category": null,
+      "detail": "offensive-security -> governance-risk-and-compliance",
+      "destination": "library/governance-risk-and-compliance/how-to-report-a-vulnerability-and-not-go-to-jail.md"
+    },
+    {
+      "id": "ckb-3b11a43a01ca",
+      "path": "library/offensive-security/how-to-start-at-once-in-the-pentest.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "failure_category": null,
+      "detail": "offensive-security -> careers-and-certifications",
+      "destination": "library/careers-and-certifications/how-to-start-at-once-in-the-pentest.md"
+    },
+    {
+      "id": "ckb-c5ccfbf5ca59",
+      "path": "library/offensive-security/i-am-not-that-hacker-you-are-looking-for.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "failure_category": null,
+      "detail": "offensive-security -> security-awareness-and-online-safety",
+      "destination": "library/security-awareness-and-online-safety/i-am-not-that-hacker-you-are-looking-for.md"
+    },
+    {
+      "id": "ckb-07dabc4f2f63",
+      "path": "library/offensive-security/iniciando-sua-carreira-em-pentest.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "failure_category": null,
+      "detail": "offensive-security -> careers-and-certifications",
+      "destination": "library/careers-and-certifications/iniciando-sua-carreira-em-pentest.md"
+    },
+    {
+      "id": "ckb-983693462cef",
+      "path": "library/offensive-security/interview-question-tips-pentest-red-team-appsec-and-blue-team.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> careers-and-certifications",
+      "destination": "library/careers-and-certifications/interview-question-tips-pentest-red-team-appsec-and-blue-team.md"
+    },
+    {
+      "id": "ckb-e0316ae66575",
+      "path": "library/offensive-security/introduo-a-ps-explorao.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> offensive-security",
+      "destination": "library/offensive-security/introduo-a-ps-explorao.md"
+    },
+    {
+      "id": "ckb-0e795b25f64f",
+      "path": "library/offensive-security/introduo-ao-pentest-mobile-pt-1.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> application-security",
+      "destination": "library/application-security/introduo-ao-pentest-mobile-pt-1.md"
+    },
+    {
+      "id": "ckb-b3f97a64b279",
+      "path": "library/offensive-security/let-s-hack-some-smb.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> offensive-security",
+      "destination": "library/offensive-security/let-s-hack-some-smb.md"
+    },
+    {
+      "id": "ckb-bd03cc13b870",
+      "path": "library/offensive-security/linux-distributions-for-hackers.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> foundations-and-systems",
+      "destination": "library/foundations-and-systems/linux-distributions-for-hackers.md"
+    },
+    {
+      "id": "ckb-3086afadf226",
+      "path": "library/offensive-security/linux-privilege-escalation.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> offensive-security",
+      "destination": "library/offensive-security/linux-privilege-escalation.md"
+    },
+    {
+      "id": "ckb-64adee00f21c",
+      "path": "library/offensive-security/linux-privilege-escalation-overview.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> offensive-security",
+      "destination": "library/offensive-security/linux-privilege-escalation-overview.md"
+    },
+    {
+      "id": "ckb-e13bb74c95d4",
+      "path": "library/offensive-security/low-cost-red-team-tools.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> offensive-security",
+      "destination": "library/offensive-security/low-cost-red-team-tools.md"
+    },
+    {
+      "id": "ckb-56882ee19c0d",
+      "path": "library/offensive-security/meterpreter-cheatsheet.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> offensive-security",
+      "destination": "library/offensive-security/meterpreter-cheatsheet.md"
+    },
+    {
+      "id": "ckb-2941cc0c02f4",
+      "path": "library/offensive-security/most-critical-failure-in-corporate-environments.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> offensive-security",
+      "destination": "library/offensive-security/most-critical-failure-in-corporate-environments.md"
+    },
+    {
+      "id": "ckb-e9e0f752e660",
+      "path": "library/offensive-security/ms-team-emoji-reaction-spammer.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "failure_category": null,
+      "detail": "offensive-security -> offensive-security",
+      "destination": "library/offensive-security/ms-team-emoji-reaction-spammer.md"
+    },
+    {
+      "id": "ckb-2808098b0e98",
+      "path": "library/offensive-security/msfvenom-cheat-sheet.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> offensive-security",
+      "destination": "library/offensive-security/msfvenom-cheat-sheet.md"
+    },
+    {
+      "id": "ckb-963fbdd84020",
+      "path": "library/offensive-security/multi-cloud-red-team-pt-1.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "failure_category": null,
+      "detail": "offensive-security -> cloud-and-container-security",
+      "destination": "library/cloud-and-container-security/multi-cloud-red-team-pt-1.md"
+    },
+    {
+      "id": "ckb-a19166d86e3a",
+      "path": "library/offensive-security/nmap-for-pentester-output-format-scan.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "failure_category": null,
+      "detail": "offensive-security -> offensive-security",
+      "destination": "library/offensive-security/nmap-for-pentester-output-format-scan.md"
+    },
+    {
+      "id": "ckb-a30d9a1c8f4d",
+      "path": "library/offensive-security/offensive-security-consultant-spider-labs.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> careers-and-certifications",
+      "destination": "library/careers-and-certifications/offensive-security-consultant-spider-labs.md"
+    },
+    {
+      "id": "ckb-371bf431c283",
+      "path": "library/offensive-security/offensive-security-evasion-techniques-pt-1.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> offensive-security",
+      "destination": "library/offensive-security/offensive-security-evasion-techniques-pt-1.md"
+    },
+    {
+      "id": "ckb-ba18e5106432",
+      "path": "library/offensive-security/offensive-security-mac-control-bypass-notes-pt-1.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> reverse-engineering-and-exploit-development",
+      "destination": "library/reverse-engineering-and-exploit-development/offensive-security-mac-control-bypass-notes-pt-1.md"
+    },
+    {
+      "id": "ckb-2740a2d332b0",
+      "path": "library/offensive-security/offensive-security-materials-for-studies-and-certifications.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "failure_category": null,
+      "detail": "offensive-security -> offensive-security",
+      "destination": "library/offensive-security/offensive-security-materials-for-studies-and-certifications.md"
+    },
+    {
+      "id": "ckb-d46ef7016e08",
+      "path": "library/offensive-security/offensive-security-professional-overview-survival.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "failure_category": null,
+      "detail": "offensive-security -> careers-and-certifications",
+      "destination": "library/careers-and-certifications/offensive-security-professional-overview-survival.md"
+    },
+    {
+      "id": "ckb-11bca6960c45",
+      "path": "library/offensive-security/oscp-labs-to-practice-2023.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> careers-and-certifications",
+      "destination": "library/careers-and-certifications/oscp-labs-to-practice-2023.md"
+    },
+    {
+      "id": "ckb-e26ba31f2a54",
+      "path": "library/offensive-security/oscp-like-vulns-machines.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> offensive-security",
+      "destination": "library/offensive-security/oscp-like-vulns-machines.md"
+    },
+    {
+      "id": "ckb-9bb50d258844",
+      "path": "library/offensive-security/password-cracking-my-sql.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "failure_category": null,
+      "detail": "offensive-security -> offensive-security",
+      "destination": "library/offensive-security/password-cracking-my-sql.md"
+    },
+    {
+      "id": "ckb-f262db7706a3",
+      "path": "library/offensive-security/password-cracking-postrgresql.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "failure_category": null,
+      "detail": "offensive-security -> offensive-security",
+      "destination": "library/offensive-security/password-cracking-postrgresql.md"
+    },
+    {
+      "id": "ckb-064a2a5a33c5",
+      "path": "library/offensive-security/penetration-test-report-template.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "failure_category": null,
+      "detail": "offensive-security -> offensive-security",
+      "destination": "library/offensive-security/penetration-test-report-template.md"
+    },
+    {
+      "id": "ckb-6004a702e372",
+      "path": "library/offensive-security/pentest-and-red-team-books.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "failure_category": null,
+      "detail": "offensive-security -> offensive-security",
+      "destination": "library/offensive-security/pentest-and-red-team-books.md"
+    },
+    {
+      "id": "ckb-5484ca15e417",
+      "path": "library/offensive-security/pentest-and-red-teams-tools-by-joas-and-s3cur3th1ssh1t.md",
+      "status": "enriched",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "failure_category": null,
+      "detail": "offensive-security -> offensive-security",
+      "destination": "library/offensive-security/pentest-and-red-teams-tools-by-joas-and-s3cur3th1ssh1t.md"
+    },
+    {
+      "id": "ckb-368ca10f110a",
+      "path": "library/offensive-security/pentest-best-practice-checklist.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-5a5c721b8d0f",
+      "path": "library/offensive-security/pentest-com-powershell-overview.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-ab217360a071",
+      "path": "library/offensive-security/pentest-em-ambientes-cloud-1.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-cfdd0735fbcf",
+      "path": "library/offensive-security/pentest-in-office365-and-security.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-b75acfe77b09",
+      "path": "library/offensive-security/pentest-skills-development.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-9ec24f7f0817",
+      "path": "library/offensive-security/pentest-toolkit.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-bbe576802438",
+      "path": "library/offensive-security/pentest-with-metasploit-overview.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-898c9128b68d",
+      "path": "library/offensive-security/pentesting-cheat-sheet.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-d35a3194d0b2",
+      "path": "library/offensive-security/plano-de-estudos-cyber-security-parte-1-red-team.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-4e5307143432",
+      "path": "library/offensive-security/powershell-tips-tricks-for-pentester.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-852ad7f5ac0d",
+      "path": "library/offensive-security/privilege-escalation.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-a956d75fe63d",
+      "path": "library/offensive-security/python-for-hackers-bootcamp.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-c7cbfb50e22c",
+      "path": "library/offensive-security/python-for-hackers-pt-1.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-b8c1ac4e0f8e",
+      "path": "library/offensive-security/red-team-and-blue-team-labs-and-ctf.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-57a4634bd89b",
+      "path": "library/offensive-security/red-team-browser-plugins.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-91a9a2419d43",
+      "path": "library/offensive-security/red-team-interview-questions.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-08088d338ba8",
+      "path": "library/offensive-security/red-team-operations-concepts-1.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-fc218b6bab9e",
+      "path": "library/offensive-security/red-team-operations-development-pt-1.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-5a642030306b",
+      "path": "library/offensive-security/red-team-operations-overview-pt-1.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-591dca0a15f5",
+      "path": "library/offensive-security/red-team-operations-overview-pt-2.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-3dc46b909213",
+      "path": "library/offensive-security/red-team-operations-simulando-um-grupo-apt-na-prtica.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-02b55d58b29e",
+      "path": "library/offensive-security/red-team-operations-simulating-an-apt-group-in-practice.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-e4dccdf7576f",
+      "path": "library/offensive-security/red-team-pentest-english.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-4884a39ff2af",
+      "path": "library/offensive-security/red-team-toolkit-1.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-918865128d76",
+      "path": "library/offensive-security/red-team-toolkit-guide.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-38174e420ce2",
+      "path": "library/offensive-security/red-team-tradecraft-complete-guide.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-1621f73493f8",
+      "path": "library/offensive-security/redteam-scenarios.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-d42b2e560590",
+      "path": "library/offensive-security/remote-desktop-penetration-testing-port-3389.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-7fb67cb1856a",
+      "path": "library/offensive-security/ssh-penetration-testing.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-dcbd46f26b91",
+      "path": "library/offensive-security/the-coming-ai-hackers.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-e8a1f499875c",
+      "path": "library/offensive-security/the-last-dance-with-msfvenom.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-6501e7813850",
+      "path": "library/offensive-security/tomcat-pentesting.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-41be8c3f892e",
+      "path": "library/offensive-security/what-it-takes-to-be-a-red-team.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-d59f0589a42d",
+      "path": "library/offensive-security/windows-api-for-red-team-101-english.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-41d277205546",
+      "path": "library/offensive-security/windows-api-for-red-team-101-portuguese.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-57b51c39b2f0",
+      "path": "library/offensive-security/windows-api-for-red-team-102-english.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-b94e6210c159",
+      "path": "library/offensive-security/windows-api-for-red-team-102-portugues.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-999fa78d2243",
+      "path": "library/offensive-security/windows-enterprise-network-pentest.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-f62d05feb3c1",
+      "path": "library/offensive-security/windows-exploitation-msbuild.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-992f4276ea98",
+      "path": "library/offensive-security/windows-exploitation-rundll32-exe.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-7738d3454eaa",
+      "path": "library/offensive-security/windows-persistence-techniques.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-ebbde32faec4",
+      "path": "library/offensive-security/windows-post-exploitation.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-377637f876d6",
+      "path": "library/offensive-security/windows-privilege-escalation-overview.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-116ca16f89e3",
+      "path": "library/offensive-security/windows-privilege-escalation-server-operator-group.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-e805fa920b1b",
+      "path": "library/offensive-security/windows-server-ad-and-o365-advanced-pentest.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-0c1876147506",
+      "path": "library/offensive-security/winrm-penetration-testing.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-450aa5a701e1",
+      "path": "library/offensive-security/wordlists-for-pentester.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-d76151196d02",
+      "path": "library/offensive-security/worth-checking-ep-1.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-7db3c0d9d506",
+      "path": "library/offensive-security/worth-checking-ep-2.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-c02b2c93eafb",
+      "path": "library/offensive-security/worth-checking-ep-3.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-3ec42f155108",
+      "path": "library/reverse-engineering-and-exploit-development/assembly64.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-3a4e4ee8047d",
+      "path": "library/reverse-engineering-and-exploit-development/blockchain-and-smart-contract-testing-security.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-5c432ef266a1",
+      "path": "library/reverse-engineering-and-exploit-development/buffer-overflow-for-beginners-joas.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-1618bf453a62",
+      "path": "library/reverse-engineering-and-exploit-development/buffer-overflow-guide-1.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-e586ac061faa",
+      "path": "library/reverse-engineering-and-exploit-development/buffer-overflow-introduction.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-617a3b7b394c",
+      "path": "library/reverse-engineering-and-exploit-development/chatgpt-for-cybersecurity-3.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-09362b77c225",
+      "path": "library/reverse-engineering-and-exploit-development/elearnsecurity-ecxd-preparation.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-64b758fbf4ae",
+      "path": "library/reverse-engineering-and-exploit-development/elearnsecurity-exploit-development-student-notes-by-joas.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-cc7361d8b296",
+      "path": "library/reverse-engineering-and-exploit-development/fundamentos-de-desenvolvimento-de-exploits-overview.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-b9d19690e76d",
+      "path": "library/reverse-engineering-and-exploit-development/game-hacking-1-anti-cheat-bypass.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-f6a428362484",
+      "path": "library/reverse-engineering-and-exploit-development/hacking-windows.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-0848f16b009f",
+      "path": "library/reverse-engineering-and-exploit-development/introduo-ao-buffer-overflow-1.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-642b5fbb8645",
+      "path": "library/reverse-engineering-and-exploit-development/introduo-ao-desenvolvimento-de-exploits.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-311e797b3cf7",
+      "path": "library/reverse-engineering-and-exploit-development/introduo-ao-desenvolvimento-de-exploits-2.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-17aececd2e8f",
+      "path": "library/reverse-engineering-and-exploit-development/malware-and-reverse-engineering-complete-collection-by-joas.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-f0ee572d5835",
+      "path": "library/reverse-engineering-and-exploit-development/offensive-security-exploit-development-windows-overview.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-392c70bb4b66",
+      "path": "library/reverse-engineering-and-exploit-development/overview-windows-api-s-and-internals-reverse-engineering.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-47f2ce1b324d",
+      "path": "library/reverse-engineering-and-exploit-development/programao-c-e-c-para-segurana-ofensiva-digital.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-7de26f3ceb6e",
+      "path": "library/reverse-engineering-and-exploit-development/reverse-engineering-content-study-1.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-6d05078053b9",
+      "path": "library/reverse-engineering-and-exploit-development/reverse-engineering-research-storm.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-bc5764855e5b",
+      "path": "library/reverse-engineering-and-exploit-development/shellcode-development.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-dd99edfa0087",
+      "path": "library/reverse-engineering-and-exploit-development/shellcode-development-2.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-b5444fabf12b",
+      "path": "library/security-awareness-and-online-safety/child-safety-a-serious-problem-but-little-talked-about-english.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-98692e9d7d0c",
+      "path": "library/security-awareness-and-online-safety/cyber-security-for-kids.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-8406f7c96dfc",
+      "path": "library/security-awareness-and-online-safety/cyber-security-for-kids-2.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-e998b3379a04",
+      "path": "library/security-awareness-and-online-safety/cyber-security-for-kids-2-1.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-3a1272f0ebc7",
+      "path": "library/security-awareness-and-online-safety/cyberbullying-and-its-consequences.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-b9782dcdb0a8",
+      "path": "library/security-awareness-and-online-safety/cyberbullying-e-as-consequncias.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-e5890b9761be",
+      "path": "library/security-awareness-and-online-safety/cybersecurity-and-cyberbullying-education-for-kids.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-13ec4a8761cd",
+      "path": "library/security-awareness-and-online-safety/cybersecurity-flaws-in-the-metaverse-1.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-4b97e3c0903f",
+      "path": "library/security-awareness-and-online-safety/cybersecurity-for-kids-english.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-8bca250edb05",
+      "path": "library/security-awareness-and-online-safety/cybersecurity-for-kids-pt-br.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-248962396f28",
+      "path": "library/security-awareness-and-online-safety/golpe-do-perfil-falso-no-whatsapp-medidas-preventivas.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-3cd399dc1a1f",
+      "path": "library/security-awareness-and-online-safety/instagram-social-network-security.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-91f6204c80b0",
+      "path": "library/security-awareness-and-online-safety/internet-safety-sexual-predators-and-stalkers-how-to-protect-yourself.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-20da17a5b7d0",
+      "path": "library/security-awareness-and-online-safety/introduo-a-engenharia-social-prtica.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-ada7e4a5d1c9",
+      "path": "library/security-awareness-and-online-safety/own-your-space-teen-book.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-bfd413d242c2",
+      "path": "library/security-awareness-and-online-safety/safe-social-networking.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-61d1162cf605",
+      "path": "library/security-awareness-and-online-safety/segurana-infantil-um-problema-srio-mas-pouco-falado.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-c3735ad92856",
+      "path": "library/security-awareness-and-online-safety/segurana-na-internet-para-crianas.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-a5e81b51fd06",
+      "path": "library/security-awareness-and-online-safety/social-engineering-practical-overview.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-ac8a8f1071e9",
+      "path": "library/security-operations/100-security-operation-center-tools.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-7c3259ec9c95",
+      "path": "library/security-operations/abuseipdb-with-fail2ban.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-07605f494192",
+      "path": "library/security-operations/fail2ban-best-jail.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-6457b3b758dd",
+      "path": "library/security-operations/kali-honeypot.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-e1b2498d6fb8",
+      "path": "library/security-operations/low-cost-soc.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-b0136be60e90",
+      "path": "library/security-operations/low-cost-soc-tools-2.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-8740c017fd0e",
+      "path": "library/security-operations/microsoft-office-and-windows-remote-code-execution.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-5a7b985b2135",
+      "path": "library/security-operations/portsentry-stealth-scan-detection.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-7f857948a858",
+      "path": "library/security-operations/priority-logs-for-0asiem-ingestion.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-8c20d590f26f",
+      "path": "library/security-operations/purple-team-lab-01-wazuh-and-win2016.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-3747fa50bf1b",
+      "path": "library/security-operations/red-team-x-blue-team.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-dec90e145024",
+      "path": "library/security-operations/secure-endpoints-user-guide.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-96fc24bae92b",
+      "path": "library/security-operations/security-operation-center-40-tools.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-6cadd82ffe0b",
+      "path": "library/security-operations/security-operation-center-and-analysis.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-d0513fed26c5",
+      "path": "library/security-operations/security-operation-center-open-source.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-eb9562981c68",
+      "path": "library/security-operations/security-operation-center-open-source-pt-en.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-204b7a8b16ba",
+      "path": "library/security-operations/security-operation-center-operations-development.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-169c9955ed53",
+      "path": "library/security-operations/soc-analyst-career.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-f42d94968f8e",
+      "path": "library/security-operations/soc-open-source-tools.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-413b9724fc30",
+      "path": "library/security-operations/the-purple-book-on-cyber-security.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-315dc51b9e20",
+      "path": "library/security-operations/windows-defender-is-enough-if-you-harden-it.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-d5c3c4d59a59",
+      "path": "library/security-operations/windows-event-log-analysis-ir-guide.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-86607058e28d",
+      "path": "library/threat-intelligence-and-osint/apostila-a-arte-do-osint-para-pentesters.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-05ab81184500",
+      "path": "library/threat-intelligence-and-osint/apt28-understanding-a-group-specialized-in-attacks-against.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-0f6ca88973ee",
+      "path": "library/threat-intelligence-and-osint/critical-exploits-for-sale-on-the-dark-web.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-4d3aba79ce6c",
+      "path": "library/threat-intelligence-and-osint/elearnsecurity-certified-threat-hunting-introduction-pt-1.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-dedb6cc69a31",
+      "path": "library/threat-intelligence-and-osint/fundamentos-de-osint.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-0c6ef8f35ed5",
+      "path": "library/threat-intelligence-and-osint/introduo-ao-mitre-att-ck-e-ao-cyber-kill-chain.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-d65445c25f83",
+      "path": "library/threat-intelligence-and-osint/investigation-using-osint-with-a-focus-on-intelligence-operations-and.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-17b38901b46d",
+      "path": "library/threat-intelligence-and-osint/maltego-introduction-creating-a-simple-local-transform-en.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-00baa6b3df5a",
+      "path": "library/threat-intelligence-and-osint/maltego-introduction-creating-a-simple-local-transform-pt-br.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-8e4d13de8684",
+      "path": "library/threat-intelligence-and-osint/mitre-att-ck-study-overview.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-982c5b425723",
+      "path": "library/threat-intelligence-and-osint/osint-overview-pt-1.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-abb2c1e87c84",
+      "path": "library/threat-intelligence-and-osint/practical-recon-automation-with-reconftw.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-d765a1a92757",
+      "path": "library/threat-intelligence-and-osint/ransomware-investigation-osint-and-hunting-overview-pt1.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-2cfd5480d64e",
+      "path": "library/threat-intelligence-and-osint/shodan-hacks.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-7e34321266ed",
+      "path": "library/threat-intelligence-and-osint/tdc2021-mitre-att-ck.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-239e98512b80",
+      "path": "library/threat-intelligence-and-osint/using-osint-techniques-to-investigate-human-trafficking-and-missing.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-55794395c1a1",
+      "path": "library/threat-intelligence-and-osint/using-osint-to-investigate-human-trafficking-and-missing-persons.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    },
+    {
+      "id": "ckb-703e52a7e4a5",
+      "path": "library/threat-intelligence-and-osint/using-osint-to-investigate-school-shooters.md",
+      "status": "deferred",
+      "provider": null,
+      "model": null,
+      "failure_category": null,
+      "detail": "run budget reached",
+      "destination": null
+    }
+  ],
+  "failed_attempts": [
+    {
+      "provider": "google",
+      "model": "gemma-4-31b-it",
+      "resource_id": "ckb-4fe5cddac7a5",
+      "attempt": 1,
+      "outcome": "failure",
+      "started_at": "2026-10-08T00:28:09Z",
+      "ended_at": "2026-10-08T00:28:59Z",
+      "duration_s": 49.634,
+      "category": "server_error",
+      "status": 503,
+      "raw_error": "{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n",
+      "mode": "json_schema"
+    },
+    {
+      "provider": "google",
+      "model": "gemma-4-31b-it",
+      "resource_id": "ckb-4fe5cddac7a5",
+      "attempt": 2,
+      "outcome": "failure",
+      "started_at": "2026-10-08T00:29:01Z",
+      "ended_at": "2026-10-08T00:29:01Z",
+      "duration_s": 0.477,
+      "category": "server_error",
+      "status": 500,
+      "raw_error": "{\n  \"error\": {\n    \"code\": 500,\n    \"message\": \"Internal error encountered.\",\n    \"status\": \"INTERNAL\"\n  }\n}\n",
+      "mode": "json_schema"
+    },
+    {
+      "provider": "google",
+      "model": "gemma-4-31b-it",
+      "resource_id": "ckb-4fe5cddac7a5",
+      "attempt": 3,
+      "outcome": "failure",
+      "started_at": "2026-10-08T00:29:05Z",
+      "ended_at": "2026-10-08T00:29:06Z",
+      "duration_s": 0.649,
+      "category": "server_error",
+      "status": 500,
+      "raw_error": "{\n  \"error\": {\n    \"code\": 500,\n    \"message\": \"Internal error encountered.\",\n    \"status\": \"INTERNAL\"\n  }\n}\n",
+      "mode": "json_schema"
+    },
+    {
+      "provider": "google",
+      "model": "gemma-4-31b-it",
+      "resource_id": "ckb-4fe5cddac7a5",
+      "attempt": 4,
+      "outcome": "failure",
+      "started_at": "2026-10-08T00:29:14Z",
+      "ended_at": "2026-10-08T00:29:15Z",
+      "duration_s": 0.475,
+      "category": "server_error",
+      "status": 500,
+      "raw_error": "{\n  \"error\": {\n    \"code\": 500,\n    \"message\": \"Internal error encountered.\",\n    \"status\": \"INTERNAL\"\n  }\n}\n",
+      "mode": "json_schema"
+    },
+    {
+      "provider": "google",
+      "model": "gemma-4-31b-it",
+      "resource_id": "ckb-83641e3279e4",
+      "attempt": 1,
+      "outcome": "failure",
+      "started_at": "2026-10-08T00:34:18Z",
+      "ended_at": "2026-10-08T00:34:18Z",
+      "duration_s": 0.254,
+      "category": "server_error",
+      "status": 500,
+      "raw_error": "{\n  \"error\": {\n    \"code\": 500,\n    \"message\": \"Internal error encountered.\",\n    \"status\": \"INTERNAL\"\n  }\n}\n",
+      "mode": "json_schema"
+    },
+    {
+      "provider": "google",
+      "model": "gemma-4-31b-it",
+      "resource_id": "ckb-0a5ff0a04bd1",
+      "attempt": 1,
+      "outcome": "failure",
+      "started_at": "2026-10-08T00:35:17Z",
+      "ended_at": "2026-10-08T00:36:00Z",
+      "duration_s": 42.833,
+      "category": "server_error",
+      "status": 503,
+      "raw_error": "{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n",
+      "mode": "json_schema"
+    },
+    {
+      "provider": "google",
+      "model": "gemma-4-31b-it",
+      "resource_id": "ckb-0a5ff0a04bd1",
+      "attempt": 2,
+      "outcome": "failure",
+      "started_at": "2026-10-08T00:36:02Z",
+      "ended_at": "2026-10-08T00:36:10Z",
+      "duration_s": 8.132,
+      "category": "server_error",
+      "status": 503,
+      "raw_error": "{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n",
+      "mode": "json_schema"
+    },
+    {
+      "provider": "google",
+      "model": "gemma-4-31b-it",
+      "resource_id": "ckb-0a5ff0a04bd1",
+      "attempt": 3,
+      "outcome": "failure",
+      "started_at": "2026-10-08T00:36:14Z",
+      "ended_at": "2026-10-08T00:36:15Z",
+      "duration_s": 0.495,
+      "category": "server_error",
+      "status": 500,
+      "raw_error": "{\n  \"error\": {\n    \"code\": 500,\n    \"message\": \"Internal error encountered.\",\n    \"status\": \"INTERNAL\"\n  }\n}\n",
+      "mode": "json_schema"
+    },
+    {
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "resource_id": "ckb-56b9c0d33174",
+      "attempt": 1,
+      "outcome": "failure",
+      "started_at": "2026-10-08T00:36:38Z",
+      "ended_at": "2026-10-08T00:36:39Z",
+      "duration_s": 0.508,
+      "category": "server_error",
+      "status": 500,
+      "raw_error": "{\n  \"error\": {\n    \"code\": 500,\n    \"message\": \"Internal error encountered.\",\n    \"status\": \"INTERNAL\"\n  }\n}\n",
+      "mode": "json_schema"
+    },
+    {
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "resource_id": "ckb-56b9c0d33174",
+      "attempt": 2,
+      "outcome": "failure",
+      "started_at": "2026-10-08T00:36:41Z",
+      "ended_at": "2026-10-08T00:36:41Z",
+      "duration_s": 0.555,
+      "category": "server_error",
+      "status": 500,
+      "raw_error": "{\n  \"error\": {\n    \"code\": 500,\n    \"message\": \"Internal error encountered.\",\n    \"status\": \"INTERNAL\"\n  }\n}\n",
+      "mode": "json_schema"
+    },
+    {
+      "provider": "google",
+      "model": "gemma-4-31b-it",
+      "resource_id": "ckb-7a9a453351a4",
+      "attempt": 1,
+      "outcome": "failure",
+      "started_at": "2026-10-08T00:37:08Z",
+      "ended_at": "2026-10-08T00:38:08Z",
+      "duration_s": 60.094,
+      "category": "timeout",
+      "status": null,
+      "raw_error": "request timed out after 60.0s",
+      "mode": "json_schema"
+    },
+    {
+      "provider": "google",
+      "model": "gemma-4-31b-it",
+      "resource_id": "ckb-7a9a453351a4",
+      "attempt": 2,
+      "outcome": "failure",
+      "started_at": "2026-10-08T00:38:10Z",
+      "ended_at": "2026-10-08T00:38:11Z",
+      "duration_s": 0.528,
+      "category": "server_error",
+      "status": 500,
+      "raw_error": "{\n  \"error\": {\n    \"code\": 500,\n    \"message\": \"Internal error encountered.\",\n    \"status\": \"INTERNAL\"\n  }\n}\n",
+      "mode": "json_schema"
+    },
+    {
+      "provider": "google",
+      "model": "gemma-4-31b-it",
+      "resource_id": "ckb-7a9a453351a4",
+      "attempt": 3,
+      "outcome": "failure",
+      "started_at": "2026-10-08T00:38:15Z",
+      "ended_at": "2026-10-08T00:38:34Z",
+      "duration_s": 19.581,
+      "category": "server_error",
+      "status": 500,
+      "raw_error": "{\n  \"error\": {\n    \"code\": 500,\n    \"message\": \"Internal error encountered.\",\n    \"status\": \"INTERNAL\"\n  }\n}\n",
+      "mode": "json_schema"
+    },
+    {
+      "provider": "google",
+      "model": "gemma-4-31b-it",
+      "resource_id": "ckb-7a9a453351a4",
+      "attempt": 4,
+      "outcome": "failure",
+      "started_at": "2026-10-08T00:38:42Z",
+      "ended_at": "2026-10-08T00:38:43Z",
+      "duration_s": 0.54,
+      "category": "server_error",
+      "status": 500,
+      "raw_error": "{\n  \"error\": {\n    \"code\": 500,\n    \"message\": \"Internal error encountered.\",\n    \"status\": \"INTERNAL\"\n  }\n}\n",
+      "mode": "json_schema"
+    },
+    {
+      "provider": "google",
+      "model": "gemini-3.8-flash",
+      "resource_id": "ckb-e92b26945f8f",
+      "attempt": 1,
+      "outcome": "failure",
+      "started_at": "2026-10-08T00:39:33Z",
+      "ended_at": "2026-10-08T00:39:45Z",
+      "duration_s": 11.397,
+      "category": "server_error",
+      "status": 503,
+      "raw_error": "{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n",
+      "mode": "json_schema"
+    },
+    {
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "resource_id": "ckb-a19166d86e3a",
+      "attempt": 1,
+      "outcome": "failure",
+      "started_at": "2026-10-08T00:42:11Z",
+      "ended_at": "2026-10-08T00:42:12Z",
+      "duration_s": 0.533,
+      "category": "server_error",
+      "status": 500,
+      "raw_error": "{\n  \"error\": {\n    \"code\": 500,\n    \"message\": \"Internal error encountered.\",\n    \"status\": \"INTERNAL\"\n  }\n}\n",
+      "mode": "json_schema"
+    },
+    {
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "resource_id": "ckb-2740a2d332b0",
+      "attempt": 1,
+      "outcome": "failure",
+      "started_at": "2026-10-08T00:43:05Z",
+      "ended_at": "2026-10-08T00:43:05Z",
+      "duration_s": 0.451,
+      "category": "server_error",
+      "status": 500,
+      "raw_error": "{\n  \"error\": {\n    \"code\": 500,\n    \"message\": \"Internal error encountered.\",\n    \"status\": \"INTERNAL\"\n  }\n}\n",
+      "mode": "json_schema"
+    },
+    {
+      "provider": "google",
+      "model": "gemma-4-31b-it",
+      "resource_id": "ckb-f262db7706a3",
+      "attempt": 1,
+      "outcome": "failure",
+      "started_at": "2026-10-08T00:43:45Z",
+      "ended_at": "2026-10-08T00:44:46Z",
+      "duration_s": 60.098,
+      "category": "timeout",
+      "status": null,
+      "raw_error": "request timed out after 60.0s",
+      "mode": "json_schema"
+    },
+    {
+      "provider": "google",
+      "model": "gemma-4-31b-it",
+      "resource_id": "ckb-f262db7706a3",
+      "attempt": 2,
+      "outcome": "failure",
+      "started_at": "2026-10-08T00:44:48Z",
+      "ended_at": "2026-10-08T00:45:48Z",
+      "duration_s": 60.065,
+      "category": "timeout",
+      "status": null,
+      "raw_error": "request timed out after 60.0s",
+      "mode": "json_schema"
+    },
+    {
+      "provider": "google",
+      "model": "gemma-4-31b-it",
+      "resource_id": "ckb-f262db7706a3",
+      "attempt": 3,
+      "outcome": "failure",
+      "started_at": "2026-10-08T00:45:52Z",
+      "ended_at": "2026-10-08T00:46:50Z",
+      "duration_s": 58.603,
+      "category": "server_error",
+      "status": 503,
+      "raw_error": "{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n",
+      "mode": "json_schema"
+    },
+    {
+      "provider": "google",
+      "model": "gemma-4-31b-it",
+      "resource_id": "ckb-f262db7706a3",
+      "attempt": 4,
+      "outcome": "failure",
+      "started_at": "2026-10-08T00:46:58Z",
+      "ended_at": "2026-10-08T00:47:58Z",
+      "duration_s": 60.095,
+      "category": "timeout",
+      "status": null,
+      "raw_error": "request timed out after 60.0s",
+      "mode": "json_schema"
+    }
+  ],
+  "notes": []
+}

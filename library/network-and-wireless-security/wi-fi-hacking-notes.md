@@ -2,15 +2,18 @@
 id: ckb-56b9c0d33174
 title: Wi Fi Hacking Notes
 category: network-and-wireless-security
-format: course-notes
+format: guide
 language: en
-tags: [credential-access, linux, networking, password-security, privilege-escalation, wireless]
+tags: [linux, networking, red-team, wireless]
+summary: A technical guide covering wireless adapter configuration, monitor mode, MAC address spoofing, and basic Wi-Fi networking concepts for penetration testing.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.92
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.95
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:36:48Z
 ---
 
 1

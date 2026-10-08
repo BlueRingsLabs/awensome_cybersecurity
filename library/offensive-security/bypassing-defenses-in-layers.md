@@ -4,13 +4,16 @@ title: Bypassing Defenses in Layers
 category: offensive-security
 format: guide
 language: en
-tags: [physical-security, red-team, tls]
+tags: [burp-suite, evasion, physical-security, red-team]
+summary: This guide covers various defensive evasion techniques including DLL sideloading, indirect code execution, physical security bypasses, and WAF evasion methods.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.46
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T00:39:20Z
 ---
 
 Bypassing

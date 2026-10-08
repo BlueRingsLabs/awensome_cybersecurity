@@ -4,13 +4,16 @@ title: Wireless Penetration Testing PMKID Attack
 category: network-and-wireless-security
 format: guide
 language: en
-tags: [credential-access, cryptography, linux, networking, password-security, wireless]
+tags: [networking, red-team, wireless]
+summary: This guide explains the technical mechanics of the PMKID attack against WPA and WPA2 wireless networks and provides practical instructions for capturing and cracking PMKID hashes using various tools.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.79
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 1.0
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:36:56Z
 ---
 
  Page 2 of 20

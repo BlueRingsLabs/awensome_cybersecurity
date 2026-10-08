@@ -4,13 +4,16 @@ title: Adversary Emulation Com Cobalt Strike
 category: offensive-security
 format: guide
 language: pt
-tags: [assembly, c2, exploit-development, red-team, tls, web-security]
+tags: [c2, evasion, malware, mitre-attack, red-team, windows]
+summary: An introduction to adversary emulation using Cobalt Strike, covering C2 infrastructure design, profile configuration, and evasion techniques.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 1.0
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.95
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:38:49Z
 ---
 
 Introdução ao

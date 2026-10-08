@@ -4,13 +4,16 @@ title: Incident Response Simulation 1
 category: incident-response-and-forensics
 format: guide
 language: en
-tags: [incident-response, phishing]
+tags: [incident-response, phishing, ransomware, social-engineering]
+summary: This document outlines several incident response simulation scenarios, including ransomware, data breaches, and phishing campaigns.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 1.0
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.95
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:31:46Z
 ---
 
 Ransomware

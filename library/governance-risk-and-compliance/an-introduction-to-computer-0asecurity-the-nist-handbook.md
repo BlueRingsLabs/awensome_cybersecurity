@@ -4,13 +4,16 @@ title: An Introduction to Computer 0asecurity the NIST Handbook
 category: governance-risk-and-compliance
 format: book
 language: en
-tags: [compliance, governance, incident-response, nist, privacy, risk-management]
+tags: [governance, nist, risk-management]
+summary: This historical NIST handbook provides a foundational overview of computer security principles, policies, and management practices for federal information systems.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.97
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 1.0
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:29:53Z
 ---
 
 Archived NIST Technical Series Publication

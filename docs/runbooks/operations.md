@@ -137,6 +137,9 @@ change moves the file. Manual classifications are never touched.
   resources are never re-sent. A category move interrupted mid-way is completed
   automatically at the next start.
 - `limit` caps one chunk (the run stops after it) for a cautious first pass.
+- Dispatched on a pull-request branch, the run commits to that branch. GitHub
+  does not start workflows from the job's own `GITHUB_TOKEN` pushes, so CI
+  re-validates the enriched library on the next regular push to the branch.
 
 ### Outcomes
 

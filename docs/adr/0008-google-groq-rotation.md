@@ -261,6 +261,16 @@ With the fixes, the native JSON modes validate on every model that is
 currently serving: Gemma 4 26B, Gemini 3.1/3.5 Flash Lite, 3.5/3.8 Flash and
 the three remaining Groq models.
 
+**Backfill outcome.** One `mode: enrich` dispatch (run 37704127324) enriched
+**all 485 eligible resources, with 0 failures**, in four 20-minute chunks
+(81 minutes). The work was served by Gemini 3.1 Flash Lite (237), Gemma 4 26B
+(110), Gemini 3.5 Flash Lite (91), Gemma 4 31B (42) and Gemini 3.8 Flash (5).
+Gemma 4 31B, the top priority, flapped throughout (63 server errors and 13
+timeouts across the run); the strikes kept it in rotation instead of retiring
+it, and 68 same-model retries absorbed every transient failure. Groq was never
+needed, and every chunk was committed as it finished. Throughput was bounded by
+per-request latency (5–15 s; requests are serial), not by any quota.
+
 ## Consequences
 
 - A full backfill fits in one dispatch. Gemma alone sustains about three

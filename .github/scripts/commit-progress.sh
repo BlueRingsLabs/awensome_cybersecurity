@@ -25,9 +25,10 @@ if git diff --cached --quiet; then
   echo "Nothing to commit after ${label}."
   exit 0
 fi
-# On main the bot commit skips CI (CI already gated the change that produced
-# it). On any other branch - e.g. an enrichment run on a pull request - the
-# commit is left for CI to validate like any other change.
+# On main the bot commit says [skip ci]: CI already gated the change that
+# produced it. GitHub never starts workflows from a GITHUB_TOKEN push anyway, so
+# after an enrichment run on a pull-request branch CI is re-run by the next
+# regular push to that branch (see the operations runbook).
 skip=""
 if [ "${branch}" = "main" ]; then skip=" [skip ci]"; fi
 git commit -q -m "chore(library): ingest, enrich and regenerate catalogs (${label})${skip}"

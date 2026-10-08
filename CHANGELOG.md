@@ -67,6 +67,9 @@ resumable, self-reporting enrichment (ADR-0008).
   progress is committed.
 - Each upgraded resource is written atomically and the ledger saved before the
   next request.
+- **Library enriched:** all 485 heuristically-filed resources now carry an
+  LLM classification, tags and a one-line summary (one dispatch, 0 failures;
+  `docs/audit/enrich-state.json` and the `gh37704127324-1-enrich-c*` reports).
 
 ### Fixed
 

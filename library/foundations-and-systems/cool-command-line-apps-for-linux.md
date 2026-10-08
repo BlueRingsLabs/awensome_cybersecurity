@@ -2,15 +2,18 @@
 id: ckb-d483a9e33f57
 title: Cool Command Line Apps for Linux
 category: foundations-and-systems
-format: article
+format: reference
 language: en
-tags: [git, linux, networking, tls]
+tags: [bash, linux]
+summary: A curated collection of terminal applications for Linux covering file management, system monitoring, disk usage, text editing, and web browsing.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.99
+  method: llm
+  model: gemini-3.8-flash
+  confidence: 0.95
+classified_by: google:gemini-3.8-flash@2026-10-08T00:14:49Z
 ---
 
 # Cool Command Line Apps for Linux

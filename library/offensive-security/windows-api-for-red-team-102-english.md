@@ -4,13 +4,16 @@ title: Windows API for Red Team 102 English
 category: offensive-security
 format: guide
 language: en
-tags: [evasion, exploit-development, malware, red-team, tls, windows]
+tags: [evasion, exploit-development, privilege-escalation, red-team, windows]
+summary: A technical guide covering essential Windows APIs for offensive operations, detailing process and thread manipulation, security token privileges, and developing a shellcode runner.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.53
+  method: llm
+  model: gemini-3.8-flash
+  confidence: 0.95
+classified_by: google:gemini-3.8-flash@2026-10-08T00:58:29Z
 ---
 
 Windows API for Red Team #102

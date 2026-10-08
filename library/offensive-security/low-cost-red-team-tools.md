@@ -3,14 +3,17 @@ id: ckb-e13bb74c95d4
 title: Low Cost Red Team Tools
 category: offensive-security
 format: reference
-language: pt
-tags: [git, red-team, tls]
+language: en
+tags: [active-directory, c2, metasploit, mitre-attack, red-team]
+summary: This document provides a curated reference list of open-source and low-cost tools for structuring red team operations and adversary emulation.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 1.0
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T00:41:42Z
 ---
 
 Low Cost Red Team Tools – Structure your Red Team

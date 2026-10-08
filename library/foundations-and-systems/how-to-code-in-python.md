@@ -4,13 +4,16 @@ title: How to Code in Python
 category: foundations-and-systems
 format: book
 language: en
-tags: [linux, macos, powershell, privilege-escalation, python, windows]
+tags: [python]
+summary: This comprehensive book provides a foundational guide to learning Python 3 programming, covering installation, syntax, data types, and object-oriented concepts.
 authors: [unknown]
 license: CC-BY-NC-SA-4.0
 added: 2026-10-04
 classification:
-  method: heuristic
+  method: llm
+  model: gemini-3.1-flash-lite
   confidence: 1.0
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:15:25Z
 ---
 
 How To Code in Python 3

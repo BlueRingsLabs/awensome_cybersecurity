@@ -2,15 +2,18 @@
 id: ckb-13ca6fb3c5de
 title: Threat Modeling in Modern Security Programs
 category: governance-risk-and-compliance
-format: article
+format: guide
 language: en
-tags: [mitre-attack, nist, owasp, risk-management, threat-intelligence, tls]
+tags: [devsecops, mitre-attack, owasp, risk-management, vulnerability-management]
+summary: This guide provides a structured approach to implementing threat modeling within an organization, outlining methodologies, roles, and integration into the software development lifecycle.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.68
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:30:40Z
 ---
 
 # Threat Modeling in Modern Security Programs

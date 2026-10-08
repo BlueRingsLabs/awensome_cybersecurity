@@ -3,14 +3,17 @@ id: ckb-5a642030306b
 title: Red Team Operations Overview Pt 1
 category: offensive-security
 format: guide
-language: pt
-tags: [active-directory, c2, git, phishing, red-team, tls]
+language: en
+tags: [c2, credential-access, evasion, phishing, red-team]
+summary: This document provides an introductory overview of red team concepts, including command and control infrastructure, initial compromise techniques, and relevant tooling.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.91
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:57:33Z
 ---
 
 RED TEAM OPERATIONS –

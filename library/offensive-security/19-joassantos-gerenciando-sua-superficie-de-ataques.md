@@ -2,15 +2,18 @@
 id: ckb-3fae94a1887b
 title: 19 Joassantos Gerenciando Sua Superficie de Ataques
 category: offensive-security
-format: guide
+format: course-notes
 language: pt
-tags: [red-team]
+tags: [osint, red-team, vulnerability-management, web-security]
+summary: This presentation outlines the importance of Attack Surface Management (ASM) as a foundational step for Red Team operations, detailing methodologies and tools for identifying and monitoring organizational assets.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.24
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:36:57Z
 ---
 
 O MAIOR E MAIS QUALIFICADOEVENTO DE SEGURANÇA DA

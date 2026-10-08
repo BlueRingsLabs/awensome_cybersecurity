@@ -20,6 +20,7 @@ __all__ = [
     "strip_unsafe_chars",
     "tokenize",
     "truncate",
+    "unfence",
     "word_count",
 ]
 
@@ -141,3 +142,18 @@ def plain_text(text: str, max_len: int | None = None) -> str:
 def word_count(text: str) -> int:
     """Count Unicode word tokens (letters, digits, underscore runs)."""
     return len(_WORD_RE.findall(text))
+
+
+def unfence(text: str) -> str:
+    """Strip one surrounding Markdown code fence (```json ... ``` or ``` ... ```).
+
+    Models asked for bare JSON still often wrap it in a fence. Only a fence
+    that opens the (stripped) text is removed; the closing fence is optional
+    so a truncated answer still yields its body.
+    """
+    stripped = text.strip()
+    if not stripped.startswith("```"):
+        return stripped
+    lines = stripped.splitlines()
+    end = len(lines) - 1 if len(lines) > 1 and lines[-1].strip() == "```" else len(lines)
+    return "\n".join(lines[1:end]).strip()

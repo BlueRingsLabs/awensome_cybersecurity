@@ -4,6 +4,88 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project aims to
 follow [Semantic Versioning](https://semver.org/).
 
+## [3.0.0] - 2026-10-07
+
+Google AI Studio + Groq with per-model rotation, pre-flight verification and
+resumable, self-reporting enrichment (ADR-0008).
+
+### Breaking
+
+- **Providers are Google AI Studio and Groq only, and both keys are required.**
+  `GEMINI_API_KEY` and `GROQ_API_KEY` must be set in the `awesome-cyber`
+  environment; a missing key fails the workflow before any work starts, and a
+  rejected key fails it at model discovery. The OpenRouter and Hugging Face
+  providers are removed (their free tiers cannot carry the corpus: 50 RPD and
+  ~US$0.10/month respectively; Pollinations, Mistral and Cerebras were
+  evaluated and rejected for the same reason). `OPENROUTER_API_KEY`,
+  `HF_TOKEN`, `LLM_PROVIDER_ORDER`, `CYBERKB_MODELS` and `CYBERKB_MAX_RETRIES`
+  are no longer read.
+- **The `enrich` workflow input is replaced by `mode`** (`ingest`, `enrich`,
+  `preflight`).
+- `cyberkb ingest` and `cyberkb classify` need both keys unless `--heuristic`
+  is given. `cyberkb enrich` exits `5` (budget ended, work left) or `6` (no
+  capacity) when incomplete, instead of `0`.
+- Invalid `CYBERKB_*` values now fail the run instead of being clamped.
+
+### Added
+
+- **Reviewed model catalog** (`schema/llm-models.yaml`): fourteen models in
+  priority order — Gemma 4 31B/26B, Gemini 3.1/3.5 Flash Lite, Gemini
+  3.8/3.6/3.7/3.5/2.5 Flash, Gemini 2.5 Flash Lite, then Groq `allam-2-7b`,
+  `openai/gpt-oss-120b`, `openai/gpt-oss-20b`, `qwen/qwen3.8-27b` — with the
+  free-tier RPM/RPD/TPM(/TPD) limits verified on 2026-10-07. API ids are never
+  assumed: each name is resolved against the live `/models` listing and the
+  rule used is reported. Groq's safety classifiers are excluded.
+- **Rotation engine** (`cyberkb.providers.rotation`):
+  - highest-priority ready model first, with client-side RPM/TPM pacing and
+    RPD/TPD accounting per quota day;
+  - errors retried in place with jittered backoff; rate limits move on at once
+    and the model rejoins after its cooldown; daily quotas retire the model;
+    auth failures take the provider out;
+  - bounded list passes;
+  - each prompt fitted to the model's context and token window.
+- **Pre-flight verification:** lazy per-model validation with a real
+  classification probe and a structured-output mode ladder, cached for the
+  quota day; `cyberkb preflight` and `mode: preflight` validate everything and
+  report declared name → API id, verdict and mode.
+- **Enrichment ledger** (`docs/audit/enrich-state.json`): per-resource
+  status/provider/model/failure cause, per-model usage and validation verdicts,
+  last run, and write-ahead recovery of interrupted category moves.
+- **Run reports** at `docs/audit/ingest-runs/<date>-<run-id>.json` for every
+  run: final status and reason, per-provider and per-model statistics, the
+  ten-category failure breakdown, retries per model/provider/list, and
+  per-resource outcomes.
+- `--run-id` and `--summary` (Markdown job summary) on `ingest`, `enrich`,
+  `preflight`.
+
+### Changed
+
+- The workflow enriches in 20-minute chunks inside a 5.5-hour budget and
+  commits and pushes after every chunk (`.github/scripts/commit-progress.sh`
+  refuses to commit a library failing `cyberkb check`, and rebases and retries
+  if the branch moved). An incomplete enrichment ends the job red, after its
+  progress is committed.
+- Each upgraded resource is written atomically and the ledger saved before the
+  next request.
+- **Library enriched:** all 485 heuristically-filed resources now carry an
+  LLM classification, tags and a one-line summary (one dispatch, 0 failures;
+  `docs/audit/enrich-state.json` and the `gh37704127324-1-enrich-c*` reports).
+
+### Fixed
+
+- **Gemini rate limits were treated as exhausted billing.** Gemini's
+  per-minute 429 says "exceeded your current quota"; it is now classified from
+  `QuotaFailure.quotaId` (per-minute vs per-day) with `RetryInfo.retryDelay`
+  as the cooldown, instead of tripping the provider.
+- **Groq was unreachable from urllib.** Cloudflare refuses urllib's default
+  `Python-urllib` User-Agent with `403 error code: 1010`; the transport now
+  sends `cyberkb/<version>`, and an edge block is reported as a network
+  failure, never as a rejected key.
+- Gemini model discovery now follows `nextPageToken`; thought parts are never
+  parsed as the answer.
+- Every captured provider error is redacted against its API key before it is
+  logged or written to a committed report.
+
 ## [2.2.1] - 2026-10-07
 
 Resumable, budget-bounded enrichment.

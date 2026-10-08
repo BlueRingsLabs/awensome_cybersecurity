@@ -4,13 +4,16 @@ title: Penetration test report template
 category: offensive-security
 format: article
 language: en
-tags: [bug-bounty, compliance, git, reporting, tls]
+tags: [bug-bounty, red-team, reporting, vulnerability-management]
+summary: An article discussing the importance of professional penetration testing and bug bounty reporting and providing a downloadable template for findings documentation.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.68
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.95
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:48:04Z
 ---
 
 # Penetration test report template

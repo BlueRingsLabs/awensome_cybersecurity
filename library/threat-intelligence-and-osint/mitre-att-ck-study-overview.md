@@ -2,15 +2,18 @@
 id: ckb-8e4d13de8684
 title: MITRE Att Ck Study Overview
 category: threat-intelligence-and-osint
-format: course-notes
+format: reference
 language: en
-tags: [git, mitre-attack, red-team, threat-hunting, threat-intelligence, tls]
+tags: [mitre-attack, threat-intelligence]
+summary: A curated list of links and resources for studying and implementing the MITRE ATT&CK framework.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
+  method: llm
+  model: gemma-4-31b-it
   confidence: 0.95
+classified_by: google:gemma-4-31b-it@2026-10-08T01:03:59Z
 ---
 
 Mitre Att&ck

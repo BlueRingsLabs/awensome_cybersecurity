@@ -2,15 +2,18 @@
 id: ckb-2ea9960b7358
 title: Beginners in Open Source
 category: foundations-and-systems
-format: guide
+format: book
 language: en
-tags: [cloud, education, git, linux, mobile, windows]
+tags: [education]
+summary: This introductory eBook provides guidance and real-world stories on adopting open source software and alternatives for individuals and businesses.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.67
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 0.6
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T00:14:31Z
 ---
 
 How to get started with open source

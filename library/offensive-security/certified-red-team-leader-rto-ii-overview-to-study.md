@@ -4,13 +4,16 @@ title: Certified Red Team Leader RTO Ii Overview to Study
 category: offensive-security
 format: course-notes
 language: en
-tags: [c2, evasion, git, red-team, tls, windows]
+tags: [c2, evasion, persistence, red-team]
+summary: This document provides study notes for the Certified Red Team Leader course focusing on command and control infrastructure setup, redirectors, and Malleable C2 configuration.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.7
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 0.98
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T00:39:24Z
 ---
 
 CERTIFIED

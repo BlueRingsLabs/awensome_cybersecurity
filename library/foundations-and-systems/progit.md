@@ -4,13 +4,16 @@ title: Progit
 category: foundations-and-systems
 format: book
 language: en
-tags: [databases, git, linux, networking, privilege-escalation, windows]
+tags: [git]
+summary: This comprehensive book covers everything from the basics of version control to advanced Git branching and server administration workflows.
 authors: [unknown]
 license: CC-BY-NC-SA-3.0
 added: 2026-10-04
 classification:
-  method: heuristic
+  method: llm
+  model: gemini-3.5-flash-lite
   confidence: 1.0
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T00:15:48Z
 ---
 
 Pro Git

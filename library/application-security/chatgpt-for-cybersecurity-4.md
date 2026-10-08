@@ -2,15 +2,18 @@
 id: ckb-c6e5570da730
 title: ChatGPT for Cybersecurity 4
 category: application-security
-format: guide
+format: reference
 language: en
-tags: [ai, android, api-security, mobile, tls, web-security]
+tags: [ai, android, api-security, reverse-engineering, web-security]
+summary: This document provides a comprehensive list of practical examples and exercises for using ChatGPT to generate payloads and scripts for web, API, and Android application penetration testing.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.77
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:01:20Z
 ---
 
 ChatGPT for Cybersecurity #4

@@ -2,15 +2,18 @@
 id: ckb-f9f51b8ad483
 title: Computer Forensic Overview Pt
 category: incident-response-and-forensics
-format: guide
+format: article
 language: en
-tags: [forensics, git, mobile, networking, password-security, tls]
+tags: [forensics, incident-response, reporting]
+summary: This document provides a foundational overview of computer forensics, outlining the core processes of identification, preservation, collection, analysis, and reporting of digital evidence.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.97
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 1.0
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:31:07Z
 ---
 
 z

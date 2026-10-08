@@ -2,15 +2,18 @@
 id: ckb-7a9a453351a4
 title: Adversary Emulation and Cracking the Bridge Overview
 category: offensive-security
-format: guide
+format: reference
 language: en
-tags: [c2, git, phishing, powershell, red-team, tls]
+tags: [active-directory, mitre-attack, red-team]
+summary: An overview of adversary emulation concepts, the Cracking The Bridge framework, and a curated collection of resources and tools for domain escalation and Active Directory security testing.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.92
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.95
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:38:46Z
 ---
 
 Adversary Emulation and

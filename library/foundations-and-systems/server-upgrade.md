@@ -2,15 +2,18 @@
 id: ckb-ce34774049b6
 title: Server Upgrade
 category: foundations-and-systems
-format: article
+format: guide
 language: en
-tags: [bash, linux, log-analysis, privilege-escalation, threat-intelligence, tls]
+tags: [bash, hardening, linux]
+summary: This guide provides step-by-step instructions for upgrading a Debian server across multiple major versions while maintaining backups and configurations.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.93
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T00:16:12Z
 ---
 
 # Server Upgrade

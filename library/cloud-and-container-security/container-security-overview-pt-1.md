@@ -2,15 +2,18 @@
 id: ckb-361a9748cc06
 title: Container Security Overview Pt 1
 category: cloud-and-container-security
-format: guide
-language: pt
-tags: [cloud, containers, git, kubernetes, owasp, tls]
+format: reference
+language: en
+tags: [cloud, containers, kubernetes, mitre-attack, owasp]
+summary: This document provides a comprehensive curated list of resources covering container concepts, security, threat modeling, attack vectors, and penetration testing tools.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.99
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:12:35Z
 ---
 
 CONTAINER SECURITY –

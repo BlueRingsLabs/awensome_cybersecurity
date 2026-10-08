@@ -2,15 +2,18 @@
 id: ckb-377637f876d6
 title: Windows Privilege Escalation Overview
 category: offensive-security
-format: guide
-language: pt
-tags: [git, metasploit, password-security, privilege-escalation, tls, windows]
+format: reference
+language: en
+tags: [metasploit, powershell, privilege-escalation, red-team, windows]
+summary: This document provides a curated collection of resources and techniques for performing local privilege escalation on Windows systems.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 1.0
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:58:44Z
 ---
 
 Windows Privilege Escalation

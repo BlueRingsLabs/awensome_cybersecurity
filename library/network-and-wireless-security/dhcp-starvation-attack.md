@@ -4,13 +4,16 @@ title: DHCP Starvation Attack
 category: network-and-wireless-security
 format: guide
 language: en
-tags: [linux, networking]
+tags: [dns, networking, red-team]
+summary: A technical walkthrough of performing a DHCP starvation attack using the yersinia tool in Kali Linux.
 authors: [Ahmed Allam 42950622b]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.82
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.9
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:33:01Z
 ---
 
 Attack

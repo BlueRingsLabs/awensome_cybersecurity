@@ -2,15 +2,18 @@
 id: ckb-371bf431c283
 title: Offensive Security Evasion Techniques Pt 1
 category: offensive-security
-format: guide
+format: reference
 language: en
-tags: [evasion, exploit-development, git, metasploit, tls, windows]
+tags: [evasion, malware, mitre-attack, powershell, red-team, windows]
+summary: This document provides a curated collection of resources and concepts related to offensive security evasion techniques, including Windows internals, shellcode execution, and phishing methods.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.96
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:43:03Z
 ---
 
 OFFENSIVE SECURITY

@@ -4,89 +4,73 @@ from __future__ import annotations
 
 import io
 import json
-import re
 from typing import TYPE_CHECKING
 
 import pytest
 
-from cyberkb.cli import EXIT_CONFIG, EXIT_OK, EXIT_POLICY, EXIT_USAGE, main
+from cyberkb.cli import (
+    EXIT_CONFIG,
+    EXIT_INCOMPLETE,
+    EXIT_NO_CAPACITY,
+    EXIT_OK,
+    EXIT_POLICY,
+    EXIT_USAGE,
+    Runtime,
+    main,
+)
+from cyberkb.enrich_state import EnrichState, InFlightMove, load_state, save_state
 from cyberkb.frontmatter import Classification
-from cyberkb.providers.http import HttpResponse, UrllibTransport
 from tests.conftest import write_resource
+from tests.llmfakes import KEYS, EchoNetwork, FakeTime, write_catalog
 
 if TYPE_CHECKING:
-    from collections.abc import Mapping
     from pathlib import Path
 
     from cyberkb.paths import RepoPaths
-
-_GEMINI_LISTING = {
-    "models": [
-        {"name": "models/gemini-2.5-flash", "supportedGenerationMethods": ["generateContent"]},
-    ],
-}
-
-
-def _item(ref: str) -> dict[str, object]:
-    return {
-        "ref": ref,
-        "title": "LLM Title",
-        "category": "offensive-security",
-        "format": "guide",
-        "language": "en",
-        "tags": [],
-        "summary": "An LLM summary.",
-        "confidence": 0.9,
-    }
-
-
-def _fake_request(
-    _self: UrllibTransport,
-    method: str,
-    _url: str,
-    *,
-    headers: Mapping[str, str],
-    body: bytes | None,
-    timeout: float,
-) -> HttpResponse:
-    """Fake the HTTP boundary: list one Gemini model and echo each prompt's refs."""
-    _ = (headers, timeout)
-    if method == "GET":
-        return HttpResponse(200, json.dumps(_GEMINI_LISTING).encode())
-    # The prompt is embedded in a JSON body, so quotes arrive escaped (ref=\"...\").
-    refs = re.findall(r'ref=\\?"([^"\\]+)', (body or b"").decode("utf-8", "replace")) or ["probe"]
-    text = json.dumps({"classifications": [_item(ref) for ref in refs]})
-    envelope = {"candidates": [{"content": {"parts": [{"text": text}]}}]}
-    return HttpResponse(200, json.dumps(envelope).encode())
-
-
-def _fail_request(
-    _self: UrllibTransport,
-    method: str,
-    _url: str,
-    *,
-    headers: Mapping[str, str],
-    body: bytes | None,
-    timeout: float,
-) -> HttpResponse:
-    """List a model but fail every classification call, so no model validates."""
-    _ = (headers, body, timeout)
-    if method == "GET":
-        return HttpResponse(200, json.dumps(_GEMINI_LISTING).encode())
-    return HttpResponse(500, b"boom")
-
 
 NMAP_BODY = (
     "# Nmap guide\n\nNmap network scanner for penetration testing reconnaissance, "
     "host discovery, port scanning and service detection in an authorized pentest engagement.\n"
 )
+HEURISTIC = Classification("heuristic", 0.4)
 
 
-def _run(args: list[str]) -> tuple[int, str]:
+def _run(args: list[str], runtime: Runtime | None = None) -> tuple[int, str]:
     """Run the CLI capturing its exit code and output."""
     out = io.StringIO()
-    code = main(args, out=out)
+    code = main(args, out=out, runtime=runtime or Runtime(env={}))
     return code, out.getvalue()
+
+
+def _llm(repo: RepoPaths, network: EchoNetwork | None = None) -> Runtime:
+    """A runtime with both keys, the echo network and a fake clock; writes the catalog."""
+    write_catalog(repo.root)
+    time = FakeTime()
+    return Runtime(
+        env=KEYS,
+        transport=network or EchoNetwork(),
+        now=time.now,
+        clock=time.clock,
+        sleep=time.sleep,
+    )
+
+
+def _pending(repo: RepoPaths, *names: str) -> None:
+    for index, name in enumerate(names, start=1):
+        write_resource(
+            repo,
+            filename=f"{name}.md",
+            id=f"ckb-{index:012x}",
+            classification=HEURISTIC,
+            summary="",
+            body=f"# {name}\n\nNotes {name} about nmap scanning and service detection.\n",
+        )
+
+
+def _report(repo: RepoPaths) -> dict[str, object]:
+    (path,) = sorted(repo.ingest_runs.glob("*.json"))
+    data: dict[str, object] = json.loads(path.read_text(encoding="utf-8"))
+    return data
 
 
 def test_version(capsys: pytest.CaptureFixture[str]) -> None:
@@ -149,36 +133,73 @@ def test_check_invalid_taxonomy(repo: RepoPaths) -> None:
     assert code == EXIT_POLICY
 
 
-def test_ingest_command(repo: RepoPaths) -> None:
-    """`ingest` files a submission using the heuristic when no key is set."""
+def test_ingest_heuristic_flag(repo: RepoPaths) -> None:
+    """`--heuristic` files submissions offline, without keys or a report."""
     (repo.inbox / "nmap.md").write_text(NMAP_BODY, encoding="utf-8")
-    code, output = _run(["--repo", str(repo.root), "ingest"])
+    code, output = _run(["--repo", str(repo.root), "ingest", "--heuristic"])
     assert code == EXIT_OK
     assert "Filed 1" in output
-    assert "heuristic" in output
+    assert not repo.ingest_runs.exists()
+
+
+def test_ingest_with_submissions_requires_the_keys(repo: RepoPaths) -> None:
+    """Classifying new submissions with an LLM needs both keys: fail fast, clearly."""
+    write_catalog(repo.root)
+    (repo.inbox / "nmap.md").write_text(NMAP_BODY, encoding="utf-8")
+    code, output = _run(["--repo", str(repo.root), "ingest"])
+    assert code == EXIT_CONFIG
+    assert "missing API key(s): GEMINI_API_KEY, GROQ_API_KEY" in output
+    assert (repo.inbox / "nmap.md").exists()
+
+
+def test_ingest_with_providers_writes_a_report_and_summary(repo: RepoPaths, tmp_path: Path) -> None:
+    """With keys, ingest classifies through the engine and reports the run."""
+    (repo.inbox / "nmap.md").write_text(NMAP_BODY, encoding="utf-8")
+    summary = tmp_path / "summary.md"
+    code, output = _run(
+        ["--repo", str(repo.root), "ingest", "--run-id", "gh7-1-ingest", "--summary", str(summary)],
+        _llm(repo),
+    )
+    assert code == EXIT_OK
+    assert "Filed 1" in output
+    report = _report(repo)
+    assert report["command"] == "ingest"
+    assert report["run_id"] == "gh7-1-ingest"
+    assert "`gemma-t-it`" in summary.read_text(encoding="utf-8")
+    assert load_state(repo).usage["google:gemma-t-it"].requests == 2
+
+
+def test_ingest_without_submissions_needs_no_keys(repo: RepoPaths) -> None:
+    """A catalog-only rebuild never touches a provider."""
+    code, _ = _run(["--repo", str(repo.root), "ingest"])
+    assert code == EXIT_OK
 
 
 def test_ingest_command_rejects(repo: RepoPaths) -> None:
     """`ingest` exits non-zero when a submission is rejected."""
     (repo.inbox / "empty.md").write_text("[[ PAGE 1 ]]\n", encoding="utf-8")
-    code, output = _run(["--repo", str(repo.root), "ingest"])
+    code, output = _run(["--repo", str(repo.root), "ingest", "--heuristic"])
     assert code == EXIT_POLICY
     assert "rejected" in output
 
 
-def test_ingest_heuristic_flag(repo: RepoPaths, monkeypatch: pytest.MonkeyPatch) -> None:
-    """`--heuristic` forces offline classification even when a key is set."""
-    monkeypatch.setenv("GEMINI_API_KEY", "should-be-ignored")
+def test_ingest_rejection_is_reported_as_partial(repo: RepoPaths) -> None:
+    """With providers, a rejected submission makes the run report partial."""
+    (repo.inbox / "empty.md").write_text("[[ PAGE 1 ]]\n", encoding="utf-8")
     (repo.inbox / "nmap.md").write_text(NMAP_BODY, encoding="utf-8")
-    code, _output = _run(["--repo", str(repo.root), "ingest", "--heuristic"])
-    assert code == EXIT_OK
+    code, _ = _run(["--repo", str(repo.root), "ingest"], _llm(repo))
+    assert code == EXIT_POLICY
+    assert _report(repo)["final_status"] == {
+        "status": "partial",
+        "reason": "Filed 1, staged 0, rejected 1.",
+    }
 
 
 def test_ingest_build_problem(repo: RepoPaths) -> None:
     """A post-ingest build failure makes `ingest` exit non-zero."""
     (repo.library / "stray.md").write_text("x", encoding="utf-8")
     (repo.inbox / "nmap.md").write_text(NMAP_BODY, encoding="utf-8")
-    code, _output = _run(["--repo", str(repo.root), "ingest"])
+    code, _output = _run(["--repo", str(repo.root), "ingest", "--heuristic"])
     assert code == EXIT_POLICY
 
 
@@ -186,7 +207,7 @@ def test_classify_command(repo: RepoPaths, tmp_path: Path) -> None:
     """`classify` previews a classification without writing."""
     sample = tmp_path / "sample.md"
     sample.write_text(NMAP_BODY, encoding="utf-8")
-    code, output = _run(["--repo", str(repo.root), "classify", str(sample)])
+    code, output = _run(["--repo", str(repo.root), "classify", "--heuristic", str(sample)])
     assert code == EXIT_OK
     assert "offensive-security" in output
     assert "title:" in output
@@ -194,155 +215,165 @@ def test_classify_command(repo: RepoPaths, tmp_path: Path) -> None:
 
 def test_classify_missing_file(repo: RepoPaths) -> None:
     """`classify` on a missing file is a usage error."""
-    code, output = _run(["--repo", str(repo.root), "classify", "/no/such/file.md"])
+    code, output = _run(["--repo", str(repo.root), "classify", "--heuristic", "/no/such/file.md"])
     assert code == EXIT_USAGE
     assert "cannot read" in output
 
 
-def test_classify_uses_llm_when_key_present(
-    repo: RepoPaths,
-    tmp_path: Path,
-    monkeypatch: pytest.MonkeyPatch,
-) -> None:
-    """With a key set, `classify` runs the provider pre-flight (HTTP boundary faked)."""
-    sample = tmp_path / "s.md"
+def test_classify_uses_the_engine_by_default(repo: RepoPaths, tmp_path: Path) -> None:
+    """Without --heuristic, classify previews the LLM answer."""
+    sample = tmp_path / "sample.md"
     sample.write_text(NMAP_BODY, encoding="utf-8")
-    monkeypatch.setenv("GEMINI_API_KEY", "key")
-    monkeypatch.setattr(UrllibTransport, "request", _fake_request)
-    code, output = _run(["--repo", str(repo.root), "classify", str(sample)])
+    code, output = _run(["--repo", str(repo.root), "classify", str(sample)], _llm(repo))
     assert code == EXIT_OK
-    assert "provider gemini: ok" in output  # the LLM path ran and validated a model
+    assert "via llm" in output
 
 
-def test_ingest_writes_run_report_with_a_provider(
-    repo: RepoPaths,
-    monkeypatch: pytest.MonkeyPatch,
-) -> None:
-    """`ingest` with a configured provider writes a dated run report."""
-    monkeypatch.setenv("GEMINI_API_KEY", "key")
-    monkeypatch.setattr(UrllibTransport, "request", _fake_request)
-    (repo.inbox / "nmap.md").write_text(NMAP_BODY, encoding="utf-8")
-    code, output = _run(["--repo", str(repo.root), "ingest"])
-    assert code == EXIT_OK
-    assert "Run report written to docs/audit/ingest-runs/" in output
-    assert list(repo.ingest_runs.glob("*.json"))
-
-
-def test_enrich_without_provider_is_a_noop(repo: RepoPaths) -> None:
-    """`enrich` with no provider key does nothing and exits cleanly."""
-    write_resource(repo, classification=Classification("heuristic", 0.4), summary="")
-    code, output = _run(["--repo", str(repo.root), "enrich"])
-    assert code == EXIT_OK
-    assert "Enrichment needs a configured LLM provider" in output
-
-
-def test_enrich_runs_with_a_provider(
-    repo: RepoPaths,
-    monkeypatch: pytest.MonkeyPatch,
-) -> None:
-    """`enrich` with a provider enriches heuristic resources and skips manual ones."""
-    write_resource(
-        repo, filename="h.md", classification=Classification("heuristic", 0.4), summary=""
-    )
-    write_resource(
-        repo,
-        filename="m.md",
-        id="ckb-000000000002",
-        title="Manual Note",
-        classification=Classification("manual", 1.0),
-        body="# Manual Note\n\nA distinct manual note on defensive monitoring and SIEM.\n",
-    )
-    monkeypatch.setenv("GEMINI_API_KEY", "key")
-    monkeypatch.setattr(UrllibTransport, "request", _fake_request)
-    code, output = _run(["--repo", str(repo.root), "enrich"])
-    assert code == EXIT_OK
-    assert "enriched:" in output
-    assert "Enriched 1" in output
-    assert "skipped 1" in output
-    assert list(repo.ingest_runs.glob("*.json"))
-
-
-def test_enrich_limit_defers_remaining(
-    repo: RepoPaths,
-    monkeypatch: pytest.MonkeyPatch,
-) -> None:
-    """`enrich --limit` processes a bounded batch and reports the rest as deferred."""
-    write_resource(
-        repo,
-        filename="h1.md",
-        id="ckb-000000000001",
-        title="Doc One",
-        classification=Classification("heuristic", 0.4),
-        summary="",
-        body="# Doc One\n\nnmap recon and host discovery for an authorized penetration test.\n",
-    )
-    write_resource(
-        repo,
-        filename="h2.md",
-        id="ckb-000000000002",
-        title="Doc Two",
-        classification=Classification("heuristic", 0.4),
-        summary="",
-        body="# Doc Two\n\nmore nmap scanning and exploitation during an authorized engagement.\n",
-    )
-    monkeypatch.setenv("GEMINI_API_KEY", "key")
-    monkeypatch.setattr(UrllibTransport, "request", _fake_request)
+def test_enrich_requires_both_keys(repo: RepoPaths) -> None:
+    """Enrichment never starts without both keys."""
+    write_catalog(repo.root)
+    _pending(repo, "a")
     code, output = _run(
-        ["--repo", str(repo.root), "enrich", "--limit", "1", "--max-seconds", "600"]
+        ["--repo", str(repo.root), "enrich"], Runtime(env={"GEMINI_API_KEY": "x" * 20})
+    )
+    assert code == EXIT_CONFIG
+    assert "GROQ_API_KEY" in output
+    assert "x" * 20 not in output
+
+
+def test_enrich_completes_and_records_everything(repo: RepoPaths, tmp_path: Path) -> None:
+    """A complete run exits 0 and leaves the ledger, the report and the catalogs."""
+    _pending(repo, "a", "b")
+    summary = tmp_path / "summary.md"
+    code, output = _run(
+        [
+            "--repo",
+            str(repo.root),
+            "enrich",
+            "--run-id",
+            "gh9-1-enrich-c1",
+            "--summary",
+            str(summary),
+        ],
+        _llm(repo),
     )
     assert code == EXIT_OK
-    assert "deferred 1" in output
-    assert "re-run `cyberkb enrich` to continue" in output
+    assert "Final status: complete" in output
+    state = load_state(repo)
+    assert state.counts() == {"pending": 0, "enriched": 2, "failed": 0}
+    assert state.last_run is not None
+    assert state.last_run["status"] == "complete"
+    assert state.validations["google:gemma-t-it"].ok
+    report = _report(repo)
+    assert report["final_status"]["status"] == "complete"  # type: ignore[index]
+    assert report["work"]["enriched"] == 2  # type: ignore[index]
+    assert {r["status"] for r in report["resources"]} == {"enriched"}  # type: ignore[attr-defined]
+    assert "Final status: complete" in summary.read_text(encoding="utf-8")
+    assert (repo.root / "index.json").exists()
 
 
-def test_ingest_empty_inbox_skips_provider(
-    repo: RepoPaths,
-    monkeypatch: pytest.MonkeyPatch,
-) -> None:
-    """With no submissions, `ingest` rebuilds without contacting any provider."""
-
-    def _boom(*_args: object, **_kwargs: object) -> HttpResponse:
-        msg = "an empty inbox must not trigger a provider pre-flight"
-        raise AssertionError(msg)
-
-    monkeypatch.setenv("GEMINI_API_KEY", "key")  # a key is set but must not be used
-    monkeypatch.setattr(UrllibTransport, "request", _boom)
-    code, output = _run(["--repo", str(repo.root), "ingest"])
-    assert code == EXIT_OK
-    assert "Filed 0" in output
-    assert not list(repo.ingest_runs.glob("*.json"))  # no pre-flight => no run report
+def test_enrich_limit_is_partial_with_the_incomplete_exit(repo: RepoPaths) -> None:
+    """A budget-bounded run exits 5 so the workflow knows to continue."""
+    _pending(repo, "a", "b")
+    code, output = _run(
+        ["--repo", str(repo.root), "enrich", "--limit", "1", "--max-seconds", "3600"], _llm(repo)
+    )
+    assert code == EXIT_INCOMPLETE
+    assert "partial" in output
+    assert load_state(repo).counts()["pending"] == 1
 
 
-def test_classify_reports_no_capacity_when_models_fail(
-    repo: RepoPaths,
-    tmp_path: Path,
-    monkeypatch: pytest.MonkeyPatch,
-) -> None:
-    """When no model validates, the CLI reports it and falls back to the heuristic."""
-    sample = tmp_path / "s.md"
-    sample.write_text(NMAP_BODY, encoding="utf-8")
-    monkeypatch.setenv("GEMINI_API_KEY", "key")
-    monkeypatch.setattr(UrllibTransport, "request", _fail_request)
-    code, output = _run(["--repo", str(repo.root), "classify", str(sample)])
-    assert code == EXIT_OK
-    assert "unavailable" in output
-    assert "No provider validated a usable model" in output
+def test_enrich_with_every_quota_spent_exits_no_capacity(repo: RepoPaths) -> None:
+    """When every model is exhausted the run exits 6 and says why."""
+    _pending(repo, "a")
+    code, output = _run(
+        ["--repo", str(repo.root), "enrich"], _llm(repo, EchoNetwork(google="daily", groq="daily"))
+    )
+    assert code == EXIT_NO_CAPACITY
+    assert "every model is exhausted or failed" in output
+    report = _report(repo)
+    assert report["failure_breakdown"]["quota_exceeded"] == 3  # type: ignore[index]
 
 
-def test_enrich_reports_build_problem(
-    repo: RepoPaths,
-    monkeypatch: pytest.MonkeyPatch,
-) -> None:
-    """A post-enrich build failure makes `enrich` exit non-zero."""
+def test_enrich_reports_a_recovered_move(repo: RepoPaths) -> None:
+    """An interrupted move from a previous run is completed and noted."""
+    _pending(repo, "a")
     write_resource(
-        repo, filename="h.md", classification=Classification("heuristic", 0.4), summary=""
+        repo,
+        category="incident-response-and-forensics",
+        filename="a.md",
+        id="ckb-000000000001",
+        classification=HEURISTIC,
+        summary="",
     )
+    save_state(
+        repo,
+        EnrichState(
+            in_flight=InFlightMove(
+                "ckb-000000000001",
+                "library/offensive-security/a.md",
+                "library/incident-response-and-forensics/a.md",
+            )
+        ),
+        now_iso="2026-10-07T00:00:00Z",
+    )
+    code, output = _run(["--repo", str(repo.root), "enrich"], _llm(repo))
+    assert code == EXIT_OK
+    assert "completed interrupted move" in output
+    assert _report(repo)["notes"]
+
+
+def test_enrich_reports_build_problem(repo: RepoPaths) -> None:
+    """A post-enrich build failure makes `enrich` exit non-zero."""
+    _pending(repo, "a")
     (repo.library / "stray.md").write_text("not a resource", encoding="utf-8")
-    monkeypatch.setenv("GEMINI_API_KEY", "key")
-    monkeypatch.setattr(UrllibTransport, "request", _fake_request)
-    code, output = _run(["--repo", str(repo.root), "enrich"])
+    code, output = _run(["--repo", str(repo.root), "enrich"], _llm(repo))
     assert code == EXIT_POLICY
     assert "stray.md" in output
+
+
+def test_enrich_rejects_an_unsafe_run_id(repo: RepoPaths) -> None:
+    """The run id becomes a file name and is validated up front."""
+    code, output = _run(["--repo", str(repo.root), "enrich", "--run-id", "../x"], _llm(repo))
+    assert code == EXIT_CONFIG
+    assert "run id" in output
+
+
+@pytest.mark.parametrize("bad", ["0", "-1"])
+def test_enrich_budgets_must_be_positive(repo: RepoPaths, bad: str) -> None:
+    """A zero or negative budget is a usage error."""
+    with pytest.raises(SystemExit) as exc:
+        _run(["--repo", str(repo.root), "enrich", "--limit", bad])
+    assert exc.value.code == EXIT_USAGE
+    with pytest.raises(SystemExit):
+        _run(["--repo", str(repo.root), "enrich", "--max-seconds", bad])
+
+
+def test_preflight_validates_every_model(repo: RepoPaths, tmp_path: Path) -> None:
+    """Preflight probes the whole catalog, prints each verdict and changes no content."""
+    _pending(repo, "a")
+    summary = tmp_path / "summary.md"
+    code, output = _run(
+        ["--repo", str(repo.root), "preflight", "--summary", str(summary)], _llm(repo)
+    )
+    assert code == EXIT_OK
+    assert "3 of 3 catalog models are usable" in output
+    assert "-> gemma-t-it [active, json_schema]" in output
+    assert "| 3 | groq | groq-a | `groq-a` | exact id | active |" in summary.read_text(
+        encoding="utf-8"
+    )
+    assert _report(repo)["command"] == "preflight"
+    assert load_state(repo).counts()["pending"] == 0
+
+
+def test_preflight_without_any_usable_model(repo: RepoPaths) -> None:
+    """No usable model is the no-capacity exit."""
+    code, output = _run(
+        ["--repo", str(repo.root), "preflight"],
+        _llm(repo, EchoNetwork(google="error", groq="error")),
+    )
+    assert code == EXIT_NO_CAPACITY
+    assert "0 of 3" in output
 
 
 def test_config_error_exit(repo: RepoPaths) -> None:
@@ -362,6 +393,6 @@ def test_classify_without_tags(repo: RepoPaths, tmp_path: Path) -> None:
         "# Plain Note\n\n" + " ".join(["lorem ipsum dolor"] * 15) + "\n",
         encoding="utf-8",
     )
-    code, output = _run(["--repo", str(repo.root), "classify", str(sample)])
+    code, output = _run(["--repo", str(repo.root), "classify", "--heuristic", str(sample)])
     assert code == EXIT_OK
     assert "tags:" not in output

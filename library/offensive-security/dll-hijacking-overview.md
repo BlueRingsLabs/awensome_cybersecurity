@@ -2,15 +2,18 @@
 id: ckb-0e2617d57015
 title: DLL Hijacking Overview
 category: offensive-security
-format: guide
-language: pt
-tags: [git, mitre-attack, privilege-escalation, tls, vulnerability-management, windows]
+format: reference
+language: en
+tags: [mitre-attack, persistence, privilege-escalation, red-team, windows]
+summary: This document provides a comprehensive curated collection of resources, tutorials, and tools related to DLL hijacking and DLL injection techniques on Windows systems.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.48
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:40:20Z
 ---
 
 DLL Hijacking Overview

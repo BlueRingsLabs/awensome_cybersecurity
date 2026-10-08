@@ -2,15 +2,18 @@
 id: ckb-b19861ae804e
 title: Ubuntu1404server
 category: foundations-and-systems
-format: book
+format: guide
 language: en
-tags: [databases, linux, privilege-escalation, threat-intelligence, tls, web-security]
+tags: [linux, networking]
+summary: A step-by-step technical guide for installing and configuring various server applications on Ubuntu 14.04 LTS.
 authors: [unknown]
 license: CC-BY-SA-3.0
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.91
+  method: llm
+  model: gemma-4-31b-it
+  confidence: 1.0
+classified_by: google:gemma-4-31b-it@2026-10-08T00:18:02Z
 ---
 
 Ubuntu&Server&Guide&14.04&LTS&

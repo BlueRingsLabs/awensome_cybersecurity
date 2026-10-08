@@ -4,13 +4,16 @@ title: Hacker Guide to Python
 category: foundations-and-systems
 format: book
 language: en
-tags: [career, databases, git, linux, log-analysis, python]
+tags: [python]
+summary: This book provides a comprehensive guide to advanced Python development, covering project structure, testing, performance optimization, and architectural patterns.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.95
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.9
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:15:24Z
 ---
 
 Contents

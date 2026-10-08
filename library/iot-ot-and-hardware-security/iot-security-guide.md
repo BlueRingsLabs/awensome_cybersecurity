@@ -4,13 +4,16 @@ title: IoT Security Guide
 category: iot-ot-and-hardware-security
 format: book
 language: en
-tags: [cloud, ics-ot, iot, networking, privacy, wireless]
+tags: [hardware, ics-ot, iot, networking, risk-management]
+summary: This comprehensive guide provides a structured overview of IoT security, covering threat modeling, communication protocols, industrial control systems, and design recommendations for secure IoT deployments.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.56
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 1.0
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:32:00Z
 ---
 
 AUGUST 2 0 2 2

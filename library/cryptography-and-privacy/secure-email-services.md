@@ -2,15 +2,18 @@
 id: ckb-0708b4d4e1e7
 title: Secure email services
 category: cryptography-and-privacy
-format: article
+format: reference
 language: en
-tags: [cryptography, password-security, privacy, tls, vpn]
+tags: [cryptography, privacy, vpn]
+summary: This document provides a curated list of email service providers that prioritize user privacy and encryption, alongside general recommendations for maintaining secure email communication.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.92
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:14:05Z
 ---
 
 # Secure email services

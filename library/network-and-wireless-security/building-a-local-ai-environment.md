@@ -4,13 +4,16 @@ title: Building a Local AI Environment
 category: network-and-wireless-security
 format: guide
 language: en
-tags: [credential-access, linux, networking, password-security, windows, wireless]
+tags: [linux, networking, red-team, wireless]
+summary: This guide provides a technical walkthrough on using the Airgeddon framework for wireless penetration testing, including handshake capture, deauthentication attacks, and Evil Twin deployment.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.76
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 1.0
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:32:35Z
 ---
 
 Wireless PenetraƟon TesƟng: Airgeddon

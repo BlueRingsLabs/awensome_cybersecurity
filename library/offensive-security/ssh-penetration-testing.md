@@ -4,13 +4,16 @@ title: SSH Penetration Testing
 category: offensive-security
 format: guide
 language: en
-tags: [credential-access, cryptography, linux, metasploit, password-security, persistence]
+tags: [credential-access, metasploit, nmap, persistence, red-team]
+summary: This technical guide covers SSH penetration testing methodologies including port scanning, connection methods, port redirection, key-based authentication, exploitation via Metasploit, and post-exploitation key theft.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.55
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T00:57:50Z
 ---
 
  Page 2 of 25

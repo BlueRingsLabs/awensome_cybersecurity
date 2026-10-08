@@ -2,15 +2,18 @@
 id: ckb-41b73943b368
 title: IoT Use Cases and Technologies
 category: iot-ot-and-hardware-security
-format: guide
+format: book
 language: en
-tags: [detection-engineering, ics-ot, iot, mobile, networking, wireless]
+tags: [education, iot]
+summary: This textbook provides an introduction to the fundamental concepts, practical use cases, and communication technologies that enable the Internet of Things.
 authors: [unknown]
 license: CC-BY-NC-SA-4.0
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.75
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.9
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:32:01Z
 ---
 
 IoT Use Cases and Technologies

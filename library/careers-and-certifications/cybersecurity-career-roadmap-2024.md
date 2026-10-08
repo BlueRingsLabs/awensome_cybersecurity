@@ -2,15 +2,18 @@
 id: ckb-38714470d7ff
 title: Cybersecurity Career Roadmap 2024
 category: careers-and-certifications
-format: guide
-language: und
-tags: [career, mobile]
+format: reference
+language: en
+tags: [career, education]
+summary: A comprehensive roadmap outlining various specialized roles and career paths within offensive, defensive, and research-oriented cybersecurity domains for 2024.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
+  method: llm
+  model: gemma-4-31b-it
   confidence: 1.0
+classified_by: google:gemma-4-31b-it@2026-10-08T00:06:33Z
 ---
 
 Cybersecurity

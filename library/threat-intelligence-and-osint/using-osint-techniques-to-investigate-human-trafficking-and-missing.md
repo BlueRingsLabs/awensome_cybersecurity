@@ -2,15 +2,18 @@
 id: ckb-239e98512b80
 title: Using OSINT Techniques to Investigate Human Trafficking and Missing Persons Pt 1
 category: threat-intelligence-and-osint
-format: guide
+format: article
 language: en
-tags: [git, osint, password-security, privacy, social-engineering, tls]
+tags: [osint, social-engineering]
+summary: This document explores various OSINT and GEOINT techniques, such as search engines and sock puppets, for investigating human trafficking and missing persons.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.77
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.95
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T01:07:36Z
 ---
 
 Using OSINT

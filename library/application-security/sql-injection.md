@@ -4,13 +4,16 @@ title: SQL Injection
 category: application-security
 format: guide
 language: en
-tags: [databases, password-security, sql-injection]
+tags: [api-security, sql-injection, vulnerability-management, web-security]
+summary: This document provides an overview of SQL injection vulnerabilities, explaining the different attack classes, potential impacts, and various testing techniques used to identify them.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.84
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 1.0
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:02:27Z
 ---
 
 SQL Injection

@@ -2,15 +2,18 @@
 id: ckb-55d73df7b642
 title: Smart Contract Security Overview Pt 1
 category: cryptography-and-privacy
-format: guide
+format: article
 language: en
-tags: [blockchain, cryptography, detection-engineering, git, networking, tls]
+tags: [blockchain, cryptography, web-security]
+summary: This document provides an introductory overview of common smart contract hacking techniques and the fundamental cryptographic principles used to secure blockchain networks.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.93
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:14:06Z
 ---
 
 Smart

@@ -2,15 +2,18 @@
 id: ckb-91a9a2419d43
 title: Red Team Interview Questions
 category: offensive-security
-format: guide
+format: reference
 language: en
-tags: [active-directory, career, malware, networking, red-team, windows]
+tags: [active-directory, career, evasion, powershell, red-team, windows]
+summary: This document provides a comprehensive list of technical interview questions and topics relevant to red teaming, covering areas such as initial access, Windows internals, and Active Directory.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.57
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:57:29Z
 ---
 
 WWW.HADESS.IO

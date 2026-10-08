@@ -4,13 +4,16 @@ title: Incident Response Playbooks and Workflow
 category: incident-response-and-forensics
 format: playbook
 language: en
-tags: [firewall, incident-response, malware, networking, phishing, ransomware]
+tags: [incident-response, nist, reporting, soc, threat-intelligence]
+summary: This document provides a structured framework for incident response playbooks based on the NIST 800-61 r2 standard, covering preparation, detection, analysis, containment, and post-incident activities.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.63
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 1.0
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:31:44Z
 ---
 
 INCIDENT

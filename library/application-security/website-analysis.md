@@ -2,15 +2,18 @@
 id: ckb-c0e1a24515d1
 title: Website analysis
 category: application-security
-format: article
+format: reference
 language: en
-tags: [homelab, linux, tls]
+tags: [tls, vulnerability-management, web-security]
+summary: This document provides a curated list of free online tools and web services used to analyze website performance, track statistics, and check server security configurations.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.41
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 0.85
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T00:02:39Z
 ---
 
 # Website analysis

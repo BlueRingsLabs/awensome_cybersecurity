@@ -2,15 +2,18 @@
 id: ckb-14ebe4e81361
 title: Introduo a Segurana da Aplicao Uniciv
 category: application-security
-format: guide
+format: course-notes
 language: pt
-tags: [databases, devsecops, firewall, sql-injection, tls, web-security]
+tags: [devsecops, education, owasp, sql-injection, web-security]
+summary: This document provides an introductory overview of application security concepts, including common vulnerabilities like SQL injection and XSS, testing methodologies such as SAST and DAST, and secure development lifecycle frameworks.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
+  method: llm
+  model: gemini-3.1-flash-lite
   confidence: 1.0
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:02:02Z
 ---
 
 INTRODUÇÃO A SEGURANÇA DA

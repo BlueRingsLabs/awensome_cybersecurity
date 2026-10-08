@@ -4,13 +4,16 @@ title: Kali Honeypot
 category: security-operations
 format: guide
 language: en
-tags: [git, linux, networking]
+tags: [detection-engineering, linux, log-analysis]
+summary: This guide provides step-by-step instructions for installing and configuring the PentBox tool on Kali Linux to deploy a basic honeypot for detecting network intrusion attempts.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.37
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T01:01:02Z
 ---
 
 Guide: Installing and Configuring a Honeypot with PentBox on Kali Linux

@@ -4,13 +4,16 @@ title: Adversary Simulation with Caldera and MITRE
 category: offensive-security
 format: guide
 language: en
-tags: [mitre-attack, red-team]
+tags: [c2, evasion, mitre-attack, red-team, threat-intelligence]
+summary: This guide provides an overview of using the MITRE Caldera framework to conduct automated adversary emulation and security control testing.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.77
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:38:55Z
 ---
 
 Adversary Simulation

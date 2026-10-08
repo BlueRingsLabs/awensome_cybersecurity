@@ -4,13 +4,16 @@ title: Internet Safety Sexual Predators and Stalkers How to Protect Yourself
 category: security-awareness-and-online-safety
 format: guide
 language: en
-tags: [education, homelab, networking, privacy, tls]
+tags: [education, privacy, social-engineering]
+summary: An awareness guide detailing behavioral patterns and manipulation tactics to help recognize and prevent abuse by sexual predators and stalkers.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 1.0
+  method: llm
+  model: gemini-3.8-flash
+  confidence: 0.98
+classified_by: google:gemini-3.8-flash@2026-10-08T01:00:37Z
 ---
 
 Internet Safety: Sexual

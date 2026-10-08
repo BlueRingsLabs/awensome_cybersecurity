@@ -2,15 +2,18 @@
 id: ckb-3dc46b909213
 title: Red Team Operations Simulando Um Grupo APT Na Prtica
 category: offensive-security
-format: guide
+format: course-notes
 language: pt
-tags: [evasion, malware, red-team, threat-intelligence, tls, windows]
+tags: [evasion, malware, mitre-attack, powershell, red-team, windows]
+summary: This document provides an overview of red team operations by analyzing the tactics, techniques, and procedures used by APT groups, including evasion methods like AMSI bypass and direct syscalls.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.42
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:57:35Z
 ---
 
 Red Team Operations –

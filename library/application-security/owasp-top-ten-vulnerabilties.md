@@ -2,15 +2,18 @@
 id: ckb-c143e1f43cf9
 title: OWASP Top Ten Vulnerabilties
 category: application-security
-format: guide
+format: cheatsheet
 language: en
-tags: [log-analysis, owasp]
+tags: [api-security, owasp, sql-injection, vulnerability-management, web-security]
+summary: This document provides a concise overview of the OWASP Top Ten web application security risks, explaining each vulnerability with a brief description and practical example.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.94
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 1.0
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:02:23Z
 ---
 
 EXPLAINED EASY

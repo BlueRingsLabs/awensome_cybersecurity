@@ -4,13 +4,16 @@ title: Dicas Como Reportar Uma Falha
 category: offensive-security
 format: guide
 language: pt
-tags: [bug-bounty, mitre-attack, tls, vulnerability-management]
+tags: [bug-bounty, reporting, vulnerability-management]
+summary: Este guia fornece orientações práticas para pesquisadores de segurança sobre como identificar vulnerabilidades e realizar o processo de reporte para obtenção de IDs CVE.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.31
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:40:17Z
 ---
 
 Dicas: Como reportar uma

@@ -2,15 +2,18 @@
 id: ckb-fc4ceac0b821
 title: Offensive Security Wireless Fundamentals
 category: network-and-wireless-security
-format: guide
+format: book
 language: pt
-tags: [certification, cryptography, networking, tls, web-security, wireless]
+tags: [networking, wireless]
+summary: This book provides an introductory overview of wireless security fundamentals, covering the history and technical standards of IEEE 802.11 networks.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
+  method: llm
+  model: gemini-3.1-flash-lite
   confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:34:08Z
 ---
 
 OFFENSIVE SECURITY WIRELESS

@@ -4,13 +4,16 @@ title: Security Operation Center and Analysis
 category: security-operations
 format: guide
 language: en
-tags: [cloud, git, networking, soc, tls, windows]
+tags: [detection-engineering, hardening, incident-response, log-analysis, soc]
+summary: This document outlines the core functions, responsibilities, and operational workflow of a Security Operations Center (SOC).
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.63
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T01:01:32Z
 ---
 
 Security Operation

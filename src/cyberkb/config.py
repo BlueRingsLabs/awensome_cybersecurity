@@ -1,11 +1,21 @@
 """Runtime configuration from environment variables.
 
-Classification is multi-provider and entirely optional: a provider is active
-only when its key is present, and with no keys the pipeline classifies with the
-deterministic heuristic, so the CI job never fails for a missing secret. The
-fallback order is configurable (``LLM_PROVIDER_ORDER``); models are no longer
-hard-coded but discovered and validated per provider at run time (ADR-0007),
-with ``CYBERKB_MODELS`` kept only as an optional Gemini-preference hint.
+Which providers and models exist, in what order and under which limits is not
+configuration but reviewed data (``schema/llm-models.yaml``, ADR-0008). This
+module only resolves the operational knobs, each with a documented default and
+a hard range. A value that is not an integer or falls outside its range is a
+:class:`ConfigError` — a typo in a workflow variable must stop the run, not be
+quietly replaced by a default.
+
+=========================  =======  ==========  ===============================
+Variable                   Default  Range       Meaning
+=========================  =======  ==========  ===============================
+``CYBERKB_BATCH_SIZE``     10       1-50        inbox documents per LLM request
+``CYBERKB_TIMEOUT``        60       5-300       seconds per HTTP request
+``CYBERKB_MODEL_RETRIES``  3        0-10        same-model retries after an error
+``CYBERKB_LIST_PASSES``    2        1-5         walks of the whole model list
+``CYBERKB_LIST_BACKOFF``   60       0-900       seconds before re-walking the list
+=========================  =======  ==========  ===============================
 """
 
 from __future__ import annotations
@@ -14,89 +24,57 @@ import os
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
-from cyberkb.providers.registry import is_registered
+from cyberkb.errors import KBError
+from cyberkb.providers.rotation import RotationSettings
 
 if TYPE_CHECKING:
     from collections.abc import Mapping
 
-__all__ = ["DEFAULT_MODELS", "DEFAULT_PROVIDER_ORDER", "IngestConfig"]
+__all__ = ["ConfigError", "IngestConfig"]
 
-# A Gemini-preference hint retained for backward compatibility; discovery is
-# dynamic, so this only nudges Gemini model choice when the API lists them.
-DEFAULT_MODELS: tuple[str, ...] = (
-    "gemini-flash-latest",
-    "gemini-2.5-flash",
-    "gemini-2.0-flash",
-)
-DEFAULT_PROVIDER_ORDER: tuple[str, ...] = ("gemini", "openrouter", "huggingface")
-_MIN_BATCH = 1
-_MAX_BATCH = 50
-_DEFAULT_BATCH = 10
+
+class ConfigError(KBError):
+    """An operational setting is malformed or out of range."""
 
 
 def _int(env: Mapping[str, str], key: str, default: int, low: int, high: int) -> int:
-    try:
-        value = int(env.get(key, str(default)))
-    except ValueError:
+    raw = (env.get(key) or "").strip()
+    if not raw:
         return default
-    return max(low, min(high, value))
-
-
-def _csv(env: Mapping[str, str], key: str, default: tuple[str, ...]) -> tuple[str, ...]:
-    parsed = tuple(item.strip() for item in (env.get(key) or "").split(",") if item.strip())
-    return parsed or default
-
-
-def _clean(value: str | None) -> str | None:
-    return (value or "").strip() or None
+    try:
+        value = int(raw)
+    except ValueError as exc:
+        msg = f"{key}={raw!r} is not an integer"
+        raise ConfigError(msg) from exc
+    if not low <= value <= high:
+        msg = f"{key}={value} is outside the allowed range {low}..{high}"
+        raise ConfigError(msg)
+    return value
 
 
 @dataclass(frozen=True, slots=True)
 class IngestConfig:
-    """Resolved ingestion configuration."""
+    """Resolved operational configuration."""
 
-    api_key: str | None
-    openrouter_key: str | None
-    hf_key: str | None
-    models: tuple[str, ...]
-    provider_order: tuple[str, ...]
     batch_size: int
-    max_retries: int
     timeout: float
-
-    @property
-    def use_llm(self) -> bool:
-        """``True`` when at least one provider is configured with a key."""
-        return bool(self.active_providers())
-
-    def active_providers(self) -> tuple[tuple[str, str], ...]:
-        """Configured providers as ``(name, api_key)`` in fallback order.
-
-        Only names that are registered *and* have a key are included, so the
-        order can safely name providers whose keys are absent this run.
-        """
-        keys: dict[str, str | None] = {
-            "gemini": self.api_key,
-            "openrouter": self.openrouter_key,
-            "huggingface": self.hf_key,
-        }
-        return tuple(
-            (name, key)
-            for name in self.provider_order
-            if is_registered(name) and (key := keys.get(name)) is not None
-        )
+    rotation: RotationSettings
 
     @classmethod
     def from_env(cls, env: Mapping[str, str] | None = None) -> IngestConfig:
-        """Build configuration from ``env`` (defaults to :data:`os.environ`)."""
+        """Build configuration from ``env`` (defaults to :data:`os.environ`).
+
+        Raises:
+            ConfigError: a variable is malformed or out of range.
+        """
         env = os.environ if env is None else env
+        rotation = RotationSettings(
+            model_retries=_int(env, "CYBERKB_MODEL_RETRIES", 3, 0, 10),
+            list_passes=_int(env, "CYBERKB_LIST_PASSES", 2, 1, 5),
+            list_backoff=float(_int(env, "CYBERKB_LIST_BACKOFF", 60, 0, 900)),
+        )
         return cls(
-            api_key=_clean(env.get("GEMINI_API_KEY")),
-            openrouter_key=_clean(env.get("OPENROUTER_API_KEY")),
-            hf_key=_clean(env.get("HF_TOKEN")),
-            models=_csv(env, "CYBERKB_MODELS", DEFAULT_MODELS),
-            provider_order=_csv(env, "LLM_PROVIDER_ORDER", DEFAULT_PROVIDER_ORDER),
-            batch_size=_int(env, "CYBERKB_BATCH_SIZE", _DEFAULT_BATCH, _MIN_BATCH, _MAX_BATCH),
-            max_retries=_int(env, "CYBERKB_MAX_RETRIES", 5, 1, 10),
+            batch_size=_int(env, "CYBERKB_BATCH_SIZE", 10, 1, 50),
             timeout=float(_int(env, "CYBERKB_TIMEOUT", 60, 5, 300)),
+            rotation=rotation,
         )

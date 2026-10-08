@@ -2,15 +2,18 @@
 id: ckb-c7cbfb50e22c
 title: Python for Hackers Pt 1
 category: offensive-security
-format: guide
-language: pt
-tags: [buffer-overflow, cryptography, git, password-security, python, tls]
+format: reference
+language: en
+tags: [buffer-overflow, c2, exploit-development, fuzzing, python, red-team]
+summary: This document provides a curated collection of Python scripts for various offensive security tasks, including network scanning, exploitation, and post-exploitation activities.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.7
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:57:18Z
 ---
 
 PYTHON FOR HACKERS

@@ -2,15 +2,18 @@
 id: ckb-4ea743c2bde6
 title: AV EDR Bypass Red Team Village Pt Br
 category: offensive-security
-format: guide
+format: course-notes
 language: pt
-tags: [evasion, git, mitre-attack, red-team, tls, windows]
+tags: [c2, evasion, malware, mitre-attack, powershell, windows]
+summary: Este documento apresenta uma introdução técnica sobre conceitos de antivírus e EDR, abordando métodos de evasão como ofuscação, criptografia e manipulação de memória para contornar defesas de endpoint.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.71
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:39:10Z
 ---
 
 AV/EDR Bypass Técnicas

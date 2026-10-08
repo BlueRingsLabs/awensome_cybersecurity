@@ -4,13 +4,16 @@ title: OS, apps and services for privacy and anonymity
 category: cryptography-and-privacy
 format: article
 language: en
-tags: [anonymity, career, networking, privacy, tls]
+tags: [anonymity, privacy]
+summary: This article discusses the importance of user awareness, software selection, and online behavior in maintaining personal privacy and anonymity in an era of pervasive data collection.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 1.0
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:14:02Z
 ---
 
 # OS, apps and services for privacy and anonymity

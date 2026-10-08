@@ -4,13 +4,16 @@ title: Red Team Operations Simulating an APT Group in Practice
 category: offensive-security
 format: guide
 language: en
-tags: [evasion, malware, red-team, threat-intelligence, tls, windows]
+tags: [evasion, mitre-attack, persistence, privilege-escalation, red-team, windows]
+summary: This document provides an overview of red teaming operations by detailing common APT tactics, techniques, and procedures, including specific methods for AMSI bypass, persistence, and defense evasion via syscall manipulation.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.52
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:57:36Z
 ---
 
 Translated from Portuguese to English - www.onlinedoctranslator.com

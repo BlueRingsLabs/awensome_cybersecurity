@@ -4,13 +4,16 @@ title: WebSurface - web attack surface discovery
 category: application-security
 format: article
 language: en
-tags: [assembly, git, nmap, tls]
+tags: [api-security, cloud, osint, vulnerability-management, web-security]
+summary: An article discussing the importance of Attack Surface Management (ASM) and the introduction of a tool called WebSurface for discovering web-based exposures.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.34
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.9
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:02:47Z
 ---
 
 # WebSurface - web attack surface discovery

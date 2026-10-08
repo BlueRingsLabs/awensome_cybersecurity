@@ -4,13 +4,16 @@ title: DNS Incident Response
 category: incident-response-and-forensics
 format: guide
 language: en
-tags: [dns, incident-response, linux, log-analysis, networking, threat-intelligence]
+tags: [detection-engineering, dns, incident-response, log-analysis, malware]
+summary: This guide provides technical detection strategies and incident response actions for identifying malicious DNS activity, including tunneling, payload delivery, and reconnaissance.
 authors: [Md. Abdullah Al Mamun]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.46
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:31:21Z
 ---
 
 DNS

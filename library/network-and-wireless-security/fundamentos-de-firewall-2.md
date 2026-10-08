@@ -4,13 +4,16 @@ title: Fundamentos de Firewall 2
 category: network-and-wireless-security
 format: guide
 language: pt
-tags: [firewall, hardening, linux, networking, tls, web-security]
+tags: [firewall, networking]
+summary: Este documento fornece uma visão geral dos conceitos fundamentais de firewalls, explicando seu funcionamento, tipos e as vantagens e desvantagens de diferentes abordagens de filtragem de tráfego.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.81
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 1.0
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:33:13Z
 ---
 
 FUNDAMENTOS DE

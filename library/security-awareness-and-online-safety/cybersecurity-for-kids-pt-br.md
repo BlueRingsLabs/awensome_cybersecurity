@@ -2,15 +2,18 @@
 id: ckb-8bca250edb05
 title: Cybersecurity for Kids Pt Br
 category: security-awareness-and-online-safety
-format: guide
+format: book
 language: pt
-tags: [education, malware, phishing]
+tags: [education, malware, password-security, phishing]
+summary: This educational book provides fundamental cybersecurity guidance for children and parents, covering topics like malware, safe browsing, email security, and password hygiene.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.95
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 1.0
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T01:00:12Z
 ---
 
 Cybersecurity

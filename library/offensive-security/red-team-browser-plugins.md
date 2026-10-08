@@ -2,15 +2,18 @@
 id: ckb-57a4634bd89b
 title: Red Team browser plugins
 category: offensive-security
-format: article
+format: reference
 language: en
-tags: [git, red-team, tls, web-security]
+tags: [burp-suite, osint, red-team, sql-injection, web-security]
+summary: This article provides a curated list of browser extensions useful for web application penetration testing and reconnaissance.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.44
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:57:21Z
 ---
 
 # Red Team browser plugins

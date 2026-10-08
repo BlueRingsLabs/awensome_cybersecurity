@@ -2,15 +2,18 @@
 id: ckb-b8db591bfd6b
 title: Windows software on Linux
 category: foundations-and-systems
-format: article
+format: guide
 language: en
-tags: [bash, linux, privilege-escalation, threat-intelligence, tls, windows]
+tags: [linux, windows]
+summary: A guide explaining how to use the Wine compatibility layer to run Windows applications and games on Linux systems.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 1.0
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.9
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:24:31Z
 ---
 
 # Windows software on Linux

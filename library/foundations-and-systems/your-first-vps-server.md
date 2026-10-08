@@ -4,13 +4,16 @@ title: Your first VPS server
 category: foundations-and-systems
 format: article
 language: en
-tags: [bash, firewall, homelab, linux, privilege-escalation, tls]
+tags: [bash, hardening, homelab, linux, windows]
+summary: A beginner's guide to setting up and configuring a secure Linux VPS, covering basic administration, user management, and SSH hardening.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.89
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.95
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:24:34Z
 ---
 
 # Your first VPS server

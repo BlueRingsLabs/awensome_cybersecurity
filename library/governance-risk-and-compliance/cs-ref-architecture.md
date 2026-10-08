@@ -2,15 +2,18 @@
 id: ckb-74f232300b88
 title: Cs Ref Architecture
 category: governance-risk-and-compliance
-format: guide
+format: paper
 language: en
-tags: [ai, cloud, lateral-movement, mitre-attack, networking, nist]
+tags: [governance, networking, nist, risk-management, zero-trust]
+summary: This document outlines the Department of Defense's strategic cybersecurity reference architecture, detailing operational activities for identifying, managing, controlling, protecting, detecting, and analyzing security events.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.75
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 1.0
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:30:11Z
 ---
 
 UNCLASSIFIED

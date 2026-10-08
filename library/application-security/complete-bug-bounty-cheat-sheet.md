@@ -2,15 +2,18 @@
 id: ckb-4e73eb933cc4
 title: Complete Bug Bounty Cheat Sheet
 category: application-security
-format: cheatsheet
-language: pt
-tags: [bug-bounty, cheatsheet, git, tls, web-security]
+format: reference
+language: en
+tags: [bug-bounty, cheatsheet, owasp, sql-injection, web-security]
+summary: This document provides a curated collection of links to various web vulnerability payloads and testing techniques for bug bounty hunters.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.53
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 1.0
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:01:23Z
 ---
 
 Complete Bug Bounty Cheat

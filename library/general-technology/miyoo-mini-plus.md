@@ -2,15 +2,17 @@
 id: ckb-15f2cbe6b384
 title: Miyoo Mini Plus
 category: general-technology
-format: article
+format: reference
 language: en
-tags: [anonymity, git, tls]
+summary: This article provides a collection of resources, links, and personal observations regarding the Miyoo Mini Plus handheld gaming console.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
+  method: llm
+  model: gemini-3.1-flash-lite
   confidence: 1.0
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:29:34Z
 ---
 
 # Miyoo Mini Plus

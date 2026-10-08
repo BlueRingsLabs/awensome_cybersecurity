@@ -2,15 +2,18 @@
 id: ckb-8838582bd485
 title: TLS Certificate for Onion domain
 category: cryptography-and-privacy
-format: article
+format: guide
 language: en
-tags: [anonymity, bash, cryptography, password-security, tls]
+tags: [anonymity, dark-web, hardening, networking, privacy, tls]
+summary: This guide explains how to acquire and configure a TLS certificate from HARICA for a Tor onion service using Nginx and Tor.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.99
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T00:14:12Z
 ---
 
 # TLS Certificate for Onion domain

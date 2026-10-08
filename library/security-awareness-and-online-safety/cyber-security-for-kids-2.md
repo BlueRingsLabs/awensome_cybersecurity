@@ -4,13 +4,16 @@ title: Cyber Security for Kids 2
 category: security-awareness-and-online-safety
 format: guide
 language: en
-tags: [education, password-security, tls, wireless]
+tags: [education, malware, password-security, social-engineering]
+summary: This educational guide provides fundamental cybersecurity advice for children and teenagers, covering topics like password hygiene, safe browsing, and protecting personal devices.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
+  method: llm
+  model: gemini-3.1-flash-lite
   confidence: 1.0
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:59:58Z
 ---
 
 C Y B E R

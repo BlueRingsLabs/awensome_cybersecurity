@@ -2,15 +2,18 @@
 id: ckb-facb80bd89b0
 title: Mastering FortiGate
 category: network-and-wireless-security
-format: guide
+format: book
 language: en
-tags: [dns, firewall, hardware, log-analysis, networking, vpn]
+tags: [firewall, log-analysis, networking, vpn, windows]
+summary: A comprehensive guide to configuring and managing FortiGate Next-Generation Firewalls, covering setup, policies, security profiles, NAT, and VPNs.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.66
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.95
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:34:05Z
 ---
 
 1

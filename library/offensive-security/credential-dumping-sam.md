@@ -2,15 +2,18 @@
 id: ckb-e946867f79a6
 title: Credential Dumping SAM
 category: offensive-security
-format: guide
+format: article
 language: en
-tags: [active-directory, credential-access, metasploit, password-security, powershell, windows]
+tags: [credential-access, lateral-movement, metasploit, powershell, windows]
+summary: This document explores credential dumping from the Windows Security Account Manager database using various post-exploitation tools and techniques.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.6
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 1.0
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T00:39:32Z
 ---
 
 Credential Dumping: SAM

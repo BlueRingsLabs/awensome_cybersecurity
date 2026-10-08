@@ -4,13 +4,16 @@ title: AI Bias in Law Enforcement a Practical Guide
 category: ai-security
 format: guide
 language: en
-tags: [ai, career, compliance, detection-engineering, privacy, risk-management]
+tags: [ai, governance]
+summary: A practical guide from the Europol Innovation Lab addressing AI bias in law enforcement, covering bias types, fairness metrics, and methods to achieve model fairness.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.36
+  method: llm
+  model: gemma-4-31b-it
+  confidence: 0.95
+classified_by: google:gemma-4-31b-it@2026-10-07T23:47:58Z
 ---
 
 An Observatory Report from the Europol Innovation Lab

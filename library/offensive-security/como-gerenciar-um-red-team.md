@@ -4,13 +4,16 @@ title: Como Gerenciar Um Red Team
 category: offensive-security
 format: guide
 language: pt
-tags: [mitre-attack, red-team]
+tags: [mitre-attack, red-team, reporting, vulnerability-management]
+summary: This guide provides an overview of how to manage a red team operation, focusing on processes, people, technology, and reporting.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.97
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T00:39:26Z
 ---
 
 W W W . L I F E 4 S E C . C O M . B R

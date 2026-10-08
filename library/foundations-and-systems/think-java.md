@@ -4,13 +4,16 @@ title: Think Java
 category: foundations-and-systems
 format: book
 language: en
-tags: [education, git, java, tls]
+tags: [education, java]
+summary: An introductory book on computer science and programming using the Java language, focusing on basic concepts and object-oriented design.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.9
+  method: llm
+  model: gemma-4-31b-it
+  confidence: 1.0
+classified_by: google:gemma-4-31b-it@2026-10-08T00:17:26Z
 ---
 
 Think Java

@@ -2,15 +2,18 @@
 id: ckb-24304601ab18
 title: Fundamentos de Firewall
 category: network-and-wireless-security
-format: guide
+format: course-notes
 language: pt
-tags: [firewall, networking, tls, vpn]
+tags: [firewall, networking, vpn]
+summary: These course notes provide an introductory overview of firewall concepts, including types of firewalls, packet filtering, and the differences between stateless and stateful inspection.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.72
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 1.0
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:33:11Z
 ---
 
 FUNDAMENTOS DE

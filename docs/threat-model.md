@@ -1,14 +1,18 @@
 # Threat model
 
 This knowledge base ingests **untrusted contributor content** and processes it in
-**CI that holds a write token and (optionally) an API key**. The model below
+**CI that holds a write token and two LLM provider keys**. The model below
 follows roughly the STRIDE prompts and states what is in scope, who the
 adversary is, and which control answers each threat.
 
 ## Assets
 
 - The integrity of `library/` and the generated catalogs.
-- The CI write credential (`GITHUB_TOKEN`) and the `GEMINI_API_KEY` secret.
+- The CI write credential (`GITHUB_TOKEN`) and the `GEMINI_API_KEY` /
+  `GROQ_API_KEY` secrets.
+- The free-tier quotas those keys buy (an attacker who burns them stalls
+  enrichment for a day).
+- The enrichment ledger (`docs/audit/enrich-state.json`) and the run reports.
 - The reputation of the catalog as a trustworthy, legally clean source.
 
 ## Trust boundaries
@@ -16,8 +20,13 @@ adversary is, and which control answers each threat.
 1. **Contributor → repository.** A pull request can contain arbitrary file
    content, filenames, front matter and symlinks.
 2. **Repository → CI runner.** Workflows execute with tokens and secrets.
-3. **CI → Gemini API.** Outbound requests carry the API key; responses are
-   untrusted input.
+3. **CI → LLM providers.** Outbound HTTPS to exactly two hosts,
+   `generativelanguage.googleapis.com` (key in the `x-goog-api-key` header) and
+   `api.groq.com` (`Authorization: Bearer`). Requests carry a key; responses —
+   model listings, answers and error bodies — are untrusted input.
+4. **Repository → pipeline configuration.** `schema/llm-models.yaml` and the
+   ledger are committed files a pull request can edit, so the pipeline treats
+   them as data to validate, not as trusted configuration.
 
 ## Threats and controls
 
@@ -48,7 +57,11 @@ adversary is, and which control answers each threat.
 | Token overreach / privilege escalation | Workflow default `permissions: contents: read`; only the ingestion job gets `contents: write`; other scopes granted per-job. |
 | Secret exfiltration via a crafted workflow or committed secret | `persist-credentials: false` on checkouts except the push job; a version-pinned, checksum-verified gitleaks CLI scans the working tree (scoped by `.gitleaks.toml` — see below); harden-runner audits egress; CodeQL and Scorecard run on a schedule. |
 | Dependency vulnerability | Minimal runtime surface (PyYAML only); `pip`/`uv` lockfile; dependency review on PRs. |
-| LLM provider key leakage / untrusted egress | The three provider keys (`GEMINI_API_KEY`, `OPENROUTER_API_KEY`, `HF_TOKEN`) live in the `awesome-cyber` environment, are read only by the ingestion job, and are never printed: keys go in request headers only, and the verbatim provider text retained on an error is the response body, never the request. Egress reaches only the documented provider hosts and is audited by harden-runner; the runtime stays stdlib `urllib` (ADR-0004), adding no HTTP dependency to that surface. |
+| LLM provider key leakage / untrusted egress | `GEMINI_API_KEY` and `GROQ_API_KEY` live in the `awesome-cyber` environment and reach only the steps that call a provider. They are never printed (the presence check reports names only). Keys travel in request headers, never URLs. The provider text kept on an error is the response body, and every adapter additionally redacts its own key from that text before it is logged or written to a committed report. Egress is audited by harden-runner; the runtime stays stdlib `urllib` (ADR-0004). |
+| A pull request redirecting a key via the model catalog | Adapters hard-code their verified endpoint; building a provider refuses a catalog whose `base_url` differs, so editing `schema/llm-models.yaml` cannot send a key to another host. The catalog loader rejects unknown keys, non-positive limits, duplicate models and the excluded safety-classifier models. |
+| A tampered ledger deleting files through move recovery | Recovery acts only on `library/**.md` paths inside the repository (symlinks refused), and only when both documents carry the recorded resource id; anything else is an error or a no-op. A malformed ledger stops the run instead of resetting progress. |
+| Path traversal through a run id | `--run-id` becomes part of a report file name, so it is restricted to 1–64 characters of `[A-Za-z0-9._-]` with no `..`. |
+| Shell injection through workflow inputs | Dispatch inputs reach scripts only through environment variables; `limit`/`max_seconds` are validated as positive integers before use. |
 
 Secret scanning keeps the full gitleaks default ruleset and scopes out only the
 curated corpus (`library/`) and the audit prose that quotes scanner output
@@ -64,7 +77,11 @@ all of which remain scanned in full; a hit there fails the build. See
 
 | Threat | Control |
 | --- | --- |
-| Gemini unavailable or rate-limited blocks merges | Deterministic offline heuristic is a guaranteed fallback; the client retries with jittered backoff and falls through a model chain. |
+| A provider is down, rate-limited or out of quota | Per-model pacing keeps calls under each declared RPM/TPM/RPD. A rate limit moves the request to the next model while the limited one cools down; a spent daily quota retires the model; auth or persistent network failure takes the provider out; transient failures are revived on a bounded second list pass. New inbox submissions always fall back to the heuristic, so a merge is never blocked. Enrichment leaves unprocessed resources `pending` and the job ends red with the reason. |
+| A missing or rejected key silently degrading every run | Fail fast: the workflow's first step requires both secrets, and a key rejected at model discovery stops the run before any content is touched. An edge block (Cloudflare `403 error code: 1010`) is reported as a network failure, not as a bad key. |
+| Quota burnt by retries or probes | Rate limits are never retried in place. Validation probes run once per model per quota day (cached in the ledger). Retries are capped per model and per list pass, and never sleep past the run deadline. |
+| A long run lost to a timeout or cancellation | Each resource is written atomically and the ledger saved immediately; the workflow commits after every 20-minute chunk, so at most one chunk of work can be lost. |
+| A model answering garbage, off-taxonomy labels or a refusal | Answers are schema-constrained where the model supports it, re-validated field by field, and refusals are detected; such an answer is an `inference_error`, retried and then routed to another model, and never written. |
 | A single malformed document fails the whole build | `library` records per-document problems and continues; `build` refuses to write only when the library as a whole is invalid, with precise messages. |
 
 ## Residual risk / explicitly out of scope

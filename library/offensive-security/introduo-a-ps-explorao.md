@@ -2,15 +2,18 @@
 id: ckb-e0316ae66575
 title: Introduo a Ps Explorao
 category: offensive-security
-format: guide
+format: course-notes
 language: pt
-tags: [certification, git, linux, metasploit, tls, windows]
+tags: [evasion, linux, metasploit, powershell, privilege-escalation, windows]
+summary: This document provides an introductory overview of post-exploitation techniques, covering privilege escalation on Windows and Linux, shell management, and antivirus evasion methods.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.94
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:41:22Z
 ---
 
 INTRODUÇÃO A

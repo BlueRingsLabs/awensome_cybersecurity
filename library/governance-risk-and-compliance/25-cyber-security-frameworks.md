@@ -2,15 +2,18 @@
 id: ckb-efc60ed214f8
 title: 25 Cyber Security Frameworks
 category: governance-risk-and-compliance
-format: guide
+format: reference
 language: en
-tags: [compliance, governance, ics-ot, networking, nist, risk-management]
+tags: [cloud, compliance, governance, nist, risk-management]
+summary: This document provides an overview of various cybersecurity frameworks, including ASD Essential 8, CIS Controls, CSA CCM, COBIT, and CMMC, to assist organizations in building their security programs.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.94
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 1.0
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:29:50Z
 ---
 
 Top 25

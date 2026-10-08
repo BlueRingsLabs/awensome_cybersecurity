@@ -4,13 +4,15 @@ title: 8BitDo gamepads
 category: general-technology
 format: article
 language: en
-tags: [tls, wireless]
+summary: The author shares their personal experience and recommendations for 8BitDo retro-style gamepads across various platforms.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
+  method: llm
+  model: gemma-4-31b-it
   confidence: 1.0
+classified_by: google:gemma-4-31b-it@2026-10-08T00:25:14Z
 ---
 
 # 8BitDo gamepads

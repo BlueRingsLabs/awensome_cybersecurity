@@ -2,15 +2,18 @@
 id: ckb-9b2b6a607f5b
 title: Certifications Preparation Guide
 category: careers-and-certifications
-format: guide
+format: reference
 language: en
-tags: [certification, ctf, git, mobile, tls, wireless]
+tags: [career, certification, education]
+summary: A collection of study resources and preparation tips for various cybersecurity certifications including CEH, Security+, and others.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.65
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 1.0
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:03:40Z
 ---
 
 Certifications Preparation

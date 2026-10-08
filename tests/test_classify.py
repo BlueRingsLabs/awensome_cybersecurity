@@ -2,8 +2,6 @@
 
 from __future__ import annotations
 
-import io
-import json
 from typing import TYPE_CHECKING, Any
 
 import pytest
@@ -17,17 +15,23 @@ from cyberkb.classify.heuristic import (
     score_categories,
     select_tags,
 )
-from cyberkb.classify.llm import LLMClassifier
 from cyberkb.classify.schema import build_prompt, response_schema, system_instruction
-from cyberkb.obslog import StructuredLogger
-from cyberkb.providers.gemini import GeminiProvider
-from cyberkb.providers.orchestrator import Orchestrator, OrchestratorSettings
-from tests.conftest import FakeTransport, http_json, http_text
+from cyberkb.providers.rotation import RotationSettings
+from tests.llmfakes import (
+    Router,
+    answer,
+    default_google_listing,
+    google_answer,
+    google_error,
+    item,
+    make_classifier,
+    single_model_catalog,
+    validated_today,
+)
 
 if TYPE_CHECKING:
-    from collections.abc import Callable
-
-    from cyberkb.providers.http import HttpResponse, HttpTransportError
+    from cyberkb.classify.llm import LLMClassifier
+    from cyberkb.providers.http import HttpResponse
     from cyberkb.taxonomy import Taxonomy
 
 
@@ -130,10 +134,16 @@ def test_select_tags_empty(taxonomy: Taxonomy) -> None:
 
 
 def test_response_schema_enums(taxonomy: Taxonomy) -> None:
-    """The response schema constrains category to the taxonomy's ids."""
+    """Category, format and language are closed enums; tags are filtered after the fact."""
     schema = response_schema(taxonomy)
     item = schema["properties"]["classifications"]["items"]
     assert item["properties"]["category"]["enum"] == list(taxonomy.category_ids)
+    assert item["properties"]["format"]["enum"] == list(taxonomy.format_ids)
+    assert item["properties"]["language"]["enum"] == list(taxonomy.language_ids)
+    # Gemini rejects the schema with the 80+ tag ids as an enum (live-verified),
+    # so the vocabulary lives in the system instruction instead.
+    assert "enum" not in item["properties"]["tags"]["items"]
+    assert all(tag in system_instruction(taxonomy) for tag in taxonomy.tag_ids)
 
 
 def test_system_instruction_mentions_categories(taxonomy: Taxonomy) -> None:
@@ -149,59 +159,33 @@ def test_build_prompt() -> None:
     assert "body text" in prompt
 
 
-# --- LLM classifier over the orchestrator (faked HTTP boundary) -----------
+# --- LLM classifier over the rotation engine (faked HTTP boundary) --------
 
 
-def _clock() -> Callable[[], float]:
-    state = {"v": 0.0}
-
-    def tick() -> float:
-        state["v"] += 1.0
-        return state["v"]
-
-    return tick
-
-
-def _envelope(items: list[dict[str, Any]]) -> dict[str, object]:
-    """Wrap classification items in a well-formed Gemini success envelope."""
-    text = json.dumps({"classifications": items})
-    return {"candidates": [{"content": {"parts": [{"text": text}]}}]}
-
-
-def _classifier(taxonomy: Taxonomy, *items: HttpResponse | HttpTransportError) -> LLMClassifier:
-    """Build an LLM classifier over a Gemini provider with a faked transport."""
-    provider = GeminiProvider("key", transport=FakeTransport(*items), clock=_clock())
-    orchestrator = Orchestrator(
-        [provider],
-        logger=StructuredLogger(io.StringIO()),
-        sleep=lambda _s: None,
-        jitter=lambda: 1.0,
-        clock=_clock(),
-        settings=OrchestratorSettings(max_retries=2),
+def _classifier(taxonomy: Taxonomy, *responses: HttpResponse) -> LLMClassifier:
+    """A classifier whose first model is already validated, answering ``responses``."""
+    router = Router().add("google:list", default_google_listing())
+    router.add("google:gemma-t-it", *responses)
+    classifier, _ = make_classifier(
+        router,
+        taxonomy,
+        catalog_doc=single_model_catalog(),
+        validations=validated_today(),
+        settings=RotationSettings(model_retries=0, list_passes=1, transient_strikes=1),
     )
-    orchestrator._selected = {"gemini": ("gemini-test",)}  # noqa: SLF001 - seed validated model
-    return LLMClassifier(orchestrator, taxonomy)
+    return classifier
 
 
 def test_llm_classifier_valid(taxonomy: Taxonomy) -> None:
     """A valid LLM response is used as the classification, with provenance."""
-    item = {
-        "ref": "0",
-        "title": "Nmap Guide",
-        "category": "offensive-security",
-        "format": "guide",
-        "language": "en",
-        "tags": ["nmap"],
-        "summary": "A guide.",
-        "confidence": 0.9,
-    }
-    classifier = _classifier(taxonomy, http_json(200, _envelope([item])))
+    classifier = _classifier(taxonomy, google_answer(answer(item("0", title="Nmap Guide"))))
     results = classifier.classify_batch([Document("0", "nmap", "body about nmap scanning")])
     assert results[0].category == "offensive-security"
     assert results[0].method == "llm"
-    assert results[0].model == "gemini-test"
-    assert results[0].provider == "gemini"
+    assert results[0].model == "gemma-t-it"
+    assert results[0].provider == "google"
     assert results[0].tags == ("nmap",)
+    assert results[0].title == "Nmap Guide"
 
 
 def test_llm_classifier_empty_input(taxonomy: Taxonomy) -> None:
@@ -212,65 +196,75 @@ def test_llm_classifier_empty_input(taxonomy: Taxonomy) -> None:
 
 def test_llm_classifier_falls_back_on_missing_doc(taxonomy: Taxonomy) -> None:
     """A document the model omitted falls back to the heuristic."""
-    classifier = _classifier(taxonomy, http_json(200, _envelope([])))
+    classifier = _classifier(taxonomy, google_answer(answer(item("someone-else"))))
     body = "red team exploitation and metasploit payloads for penetration testing"
     results = classifier.classify_batch([Document("0", "pentest", body)])
     assert results[0].method == "heuristic"
 
 
-def _item(**overrides: Any) -> dict[str, Any]:  # noqa: ANN401 -- heterogeneous LLM-item fields
-    """A valid LLM classification item with the given fields overridden."""
-    base = {
-        "ref": "0",
-        "category": "offensive-security",
-        "format": "guide",
-        "language": "en",
-        "tags": [],
-        "summary": "s",
-        "confidence": 0.9,
-    }
-    return {**base, **overrides}
+def test_llm_classifier_ignores_non_list_answers(taxonomy: Taxonomy) -> None:
+    """A malformed classifications value is an unusable answer for every document."""
+    classifier = _classifier(taxonomy)
+    assert classifier.problem(Document("0", "s", "b"), None) == "no classification for ref '0'"
 
 
 @pytest.mark.parametrize(
-    "bad_item",
+    ("overrides", "reason"),
     [
-        pytest.param(_item(category="nonexistent"), id="unknown-category"),
-        pytest.param(_item(format="bad"), id="unknown-format"),
-        pytest.param(_item(language="xx"), id="unknown-language"),
-        pytest.param(_item(confidence=0.1), id="below-confidence-floor"),
-        pytest.param(_item(confidence="x"), id="non-numeric-confidence"),
-        pytest.param(_item(category="uncategorized"), id="staging-category"),
+        pytest.param({"category": "nonexistent"}, "unknown category", id="unknown-category"),
+        pytest.param({"format": "bad"}, "unknown format", id="unknown-format"),
+        pytest.param({"language": "xx"}, "unknown language", id="unknown-language"),
+        pytest.param({"confidence": 0.1}, "below", id="below-confidence-floor"),
+        pytest.param({"confidence": 1.5}, "outside", id="confidence-above-one"),
+        pytest.param({"confidence": "x"}, "not a number", id="non-numeric-confidence"),
+        pytest.param({"confidence": True}, "not a number", id="boolean-confidence"),
+        pytest.param({"category": "uncategorized"}, "staging", id="staging-category"),
+        pytest.param({"summary": "  "}, "empty summary", id="empty-summary"),
+        pytest.param(
+            {"summary": "I\u2019m sorry, but I can\u2019t do that."}, "refusal", id="refusal"
+        ),
+        pytest.param({"summary": "As an AI model I won't."}, "refusal", id="as-an-ai"),
     ],
 )
-def test_llm_classifier_rejects_invalid_item(taxonomy: Taxonomy, bad_item: dict[str, Any]) -> None:
-    """Any invalid field in an LLM item forces that document to the heuristic."""
-    classifier = _classifier(taxonomy, http_json(200, _envelope([bad_item])))
-    body = "red team exploitation metasploit payload penetration testing privilege escalation"
-    results = classifier.classify_batch([Document("0", "pentest", body)])
-    assert results[0].method == "heuristic"
+def test_llm_classifier_rejects_invalid_item(
+    taxonomy: Taxonomy, overrides: dict[str, Any], reason: str
+) -> None:
+    """Any invalid field makes the item unusable, with a precise reason."""
+    classifier = _classifier(taxonomy, google_answer(answer(item("0", **overrides))))
+    document = Document("0", "pentest", "red team exploitation metasploit penetration testing")
+    problem = classifier.problem(document, item("0", **overrides))
+    assert problem is not None
+    assert reason in problem
+    assert classifier.classify_batch([document])[0].method == "heuristic"
 
 
 def test_llm_classifier_fallback_on_llm_error(taxonomy: Taxonomy) -> None:
-    """When the service keeps failing, the whole batch falls back to the heuristic."""
-    classifier = _classifier(taxonomy, http_text(500, "err"), http_text(500, "err"))
+    """When the service fails, the whole batch falls back to the heuristic."""
+    classifier = _classifier(taxonomy, google_error(500, "INTERNAL", "err"))
     body = "red team exploitation metasploit penetration testing"
     results = classifier.classify_batch([Document("0", "pentest", body)])
     assert results[0].method == "heuristic"
 
 
-def test_llm_classifier_missing_title_uses_inferred(taxonomy: Taxonomy) -> None:
-    """An empty LLM title is replaced by the document's inferred title."""
-    item = {
-        "ref": "0",
-        "title": "",
-        "category": "offensive-security",
-        "format": "guide",
-        "language": "en",
-        "tags": [],
-        "summary": "s",
-        "confidence": 0.9,
-    }
-    classifier = _classifier(taxonomy, http_json(200, _envelope([item])))
-    results = classifier.classify_batch([Document("0", "my-pentest-notes", "# Real H1\n\nbody")])
-    assert results[0].title == "Real H1"
+def test_llm_classifier_missing_title_and_odd_tags(taxonomy: Taxonomy) -> None:
+    """An empty title is inferred; unknown or non-list tags are dropped and capped."""
+    many = ["nmap", "metasploit", "burp-suite", "wireshark", "osint", "phishing", "yara", "bogus"]
+    classifier = _classifier(
+        taxonomy,
+        google_answer(answer(item("0", title="", tags=many))),
+        google_answer(answer(item("1", tags="nmap"))),
+    )
+    first = classifier.classify_batch([Document("0", "my-pentest-notes", "# Real H1\n\nbody")])[0]
+    assert first.title == "Real H1"
+    assert len(first.tags) <= 6
+    assert "bogus" not in first.tags
+    second = classifier.classify_batch([Document("1", "notes", "body")])[0]
+    assert second.tags == ()
+
+
+def test_classify_one_reports_why_nothing_was_produced(taxonomy: Taxonomy) -> None:
+    """A single-document request carries the engine's outcome when it fails."""
+    classifier = _classifier(taxonomy, google_error(500, "INTERNAL", "err"))
+    single = classifier.classify_one(Document("0", "s", "body"), deadline=None)
+    assert single.result is None
+    assert single.outcome.status == "exhausted"

@@ -2,15 +2,18 @@
 id: ckb-02897ba606b2
 title: NIST Storage Security Guide
 category: governance-risk-and-compliance
-format: guide
+format: paper
 language: en
-tags: [cloud, containers, databases, networking, nist, tls]
+tags: [hardening, nist, risk-management, vulnerability-management]
+summary: This NIST publication provides security guidelines and recommendations for protecting storage infrastructure across various architectures.
 authors: [unknown]
 license: LicenseRef-Public-Domain
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.68
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.95
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:30:29Z
 ---
 
 NIST Special Publication 800-209

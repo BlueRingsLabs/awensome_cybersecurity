@@ -4,13 +4,16 @@ title: Apt28 Understanding a Group Specialized in Attacks Against Intelligence S
 category: threat-intelligence-and-osint
 format: guide
 language: en
-tags: [certification, mitre-attack, password-security, phishing, tls, windows]
+tags: [evasion, mitre-attack, phishing, red-team, threat-intelligence]
+summary: This document provides an overview of the APT28 threat group, detailing their tactics, techniques, and procedures such as spear-phishing and defense evasion based on the MITRE ATT&CK framework.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.6
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T01:01:48Z
 ---
 
 APT28: Understanding a

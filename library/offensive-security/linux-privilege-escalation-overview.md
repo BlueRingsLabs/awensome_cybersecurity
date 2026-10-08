@@ -2,15 +2,18 @@
 id: ckb-64adee00f21c
 title: Linux Privilege Escalation Overview
 category: offensive-security
-format: guide
+format: checklist
 language: en
-tags: [containers, git, linux, password-security, privilege-escalation, tls]
+tags: [bash, linux, privilege-escalation, red-team, vulnerability-management]
+summary: This document provides a comprehensive overview and technical checklist for identifying and exploiting privilege escalation vulnerabilities on Linux systems.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.72
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 1.0
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:41:40Z
 ---
 
 Linux Privilege Escalation –

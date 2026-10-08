@@ -4,13 +4,16 @@ title: Detailed Guide of HTML Injections
 category: application-security
 format: guide
 language: en
-tags: [burp-suite, tls, web-security]
+tags: [owasp, web-security]
+summary: This guide provides an overview of HTML injection, explaining the underlying mechanics, types of injection such as stored and reflected, and mitigation strategies.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.75
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 1.0
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:01:25Z
 ---
 
 Comprehensive Guide on HTML Injection

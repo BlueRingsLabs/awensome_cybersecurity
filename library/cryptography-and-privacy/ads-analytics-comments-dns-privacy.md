@@ -4,13 +4,16 @@ title: Ads, analytics, comments, dns, privacy ...
 category: cryptography-and-privacy
 format: article
 language: en
-tags: [anonymity, databases, dns, git, privacy, tls]
+tags: [dns, privacy]
+summary: The author discusses the transition from Google Analytics to the self-hosted Umami analytics solution to improve visitor privacy.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.48
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.85
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:13:44Z
 ---
 
 # Ads, analytics, comments, dns, privacy ...

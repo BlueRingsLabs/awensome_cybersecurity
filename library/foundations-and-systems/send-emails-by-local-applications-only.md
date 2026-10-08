@@ -2,15 +2,18 @@
 id: ckb-1a8ada14ac83
 title: Send emails by local applications only
 category: foundations-and-systems
-format: article
+format: guide
 language: en
-tags: [bash, password-security, privilege-escalation, threat-intelligence, tls]
+tags: [hardening, homelab, linux]
+summary: This guide demonstrates how to configure and harden local mail transfer agents like Postfix and SSMTP for sending system notifications securely.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.64
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T00:16:09Z
 ---
 
 # Send emails by local applications only

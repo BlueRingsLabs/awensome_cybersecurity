@@ -4,13 +4,16 @@ title: Red Team Toolkit Guide
 category: offensive-security
 format: reference
 language: en
-tags: [azure, c2, cloud, git, red-team, tls]
+tags: [credential-access, evasion, lateral-movement, osint, persistence, red-team]
+summary: This document provides a curated reference collection of open-source security tools used in adversary simulation, reconnaissance, initial access, and payload development.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.88
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 1.0
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T00:57:40Z
 ---
 
 Red Teaming Toolkit

@@ -2,15 +2,18 @@
 id: ckb-2740a2d332b0
 title: Offensive Security Materials for Studies and Certifications
 category: offensive-security
-format: course-notes
+format: reference
 language: en
-tags: [certification, linux, networking, tls, web-security]
+tags: [certification, education, red-team]
+summary: A curated list of offensive security training resources, covering fundamental networking, Linux, and various penetration testing paths from basic to basic-to-intermediate to advanced.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.45
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.9
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:43:11Z
 ---
 
 ESSENTIALS

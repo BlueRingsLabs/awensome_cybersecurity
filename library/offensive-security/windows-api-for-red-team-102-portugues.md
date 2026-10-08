@@ -4,13 +4,16 @@ title: Windows API for Red Team 102 Portugues
 category: offensive-security
 format: guide
 language: pt
-tags: [exploit-development, malware, metasploit, red-team, tls, windows]
+tags: [evasion, malware, privilege-escalation, red-team, windows]
+summary: A technical guide in Portuguese exploring essential Windows APIs used for process manipulation, memory management, and privilege escalation in offensive security contexts.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.51
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.95
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:58:31Z
 ---
 
 Windows API for Red Team #102

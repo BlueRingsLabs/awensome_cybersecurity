@@ -2,15 +2,18 @@
 id: ckb-3376e9403d44
 title: Google Cloud Attack Overview Pt1
 category: cloud-and-container-security
-format: guide
+format: reference
 language: en
-tags: [cloud, containers, databases, git, privilege-escalation, tls]
+tags: [cloud, phishing, red-team]
+summary: This document provides a technical overview of Google Cloud Platform security, covering IAM structures, authentication methods, common phishing vectors, and post-compromise enumeration techniques.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.79
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:12:38Z
 ---
 
 GOOGLE CLOUD

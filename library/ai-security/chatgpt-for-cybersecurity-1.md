@@ -2,15 +2,18 @@
 id: ckb-f0728c946580
 title: ChatGPT for Cybersecurity 1
 category: ai-security
-format: guide
+format: reference
 language: en
-tags: [ai, c2, red-team]
+tags: [ai, c2, incident-response, malware, persistence, red-team]
+summary: A collection of prompts and use cases for applying ChatGPT to incident response and red teaming tasks.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.85
+  method: llm
+  model: gemma-4-31b-it
+  confidence: 0.95
+classified_by: google:gemma-4-31b-it@2026-10-07T23:49:48Z
 ---
 
 ChatGPT for CyberSecurity

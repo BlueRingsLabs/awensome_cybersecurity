@@ -2,15 +2,18 @@
 id: ckb-fe062c55d555
 title: Server backup
 category: foundations-and-systems
-format: article
+format: guide
 language: en
-tags: [bash, cloud, databases, password-security, privilege-escalation, tls]
+tags: [bash, databases, homelab, linux]
+summary: This guide provides step-by-step instructions on how to automate server backups for databases and website files using shell scripts, cron, and rclone.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 1.0
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T00:16:11Z
 ---
 
 # Server backup

@@ -4,13 +4,16 @@ title: Red Team Tradecraft Complete Guide
 category: offensive-security
 format: guide
 language: en
-tags: [active-directory, azure, c2, cloud, evasion, red-team]
+tags: [active-directory, c2, credential-access, evasion, persistence, red-team]
+summary: A comprehensive guide detailing advanced red team tradecraft, covering operational security, infrastructure design, evasion, persistence, and stealth operations.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.74
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 1.0
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T00:57:45Z
 ---
 
 RED TEAM

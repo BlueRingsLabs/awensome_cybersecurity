@@ -2,15 +2,18 @@
 id: ckb-20da17a5b7d0
 title: Introduo a Engenharia Social Prtica
 category: security-awareness-and-online-safety
-format: guide
+format: book
 language: pt
-tags: [git, malware, phishing, social-engineering, tls, windows]
+tags: [malware, phishing, physical-security, social-engineering]
+summary: An introductory ebook in Portuguese regarding the practical application and types of social engineering attacks such as phishing, baiting, and tailgating.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.33
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.95
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T01:00:40Z
 ---
 
 INTRODUÇÃO A ENGENHARIA

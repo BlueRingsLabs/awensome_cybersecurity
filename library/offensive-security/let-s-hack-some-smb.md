@@ -4,13 +4,16 @@ title: Let's hack some SMB
 category: offensive-security
 format: article
 language: en
-tags: [bash, credential-access, networking, password-security, tls, windows]
+tags: [active-directory, networking, red-team, windows]
+summary: This article discusses the security risks associated with misconfigured SMB shares in corporate environments and how penetration testers can leverage these weaknesses for reconnaissance and privilege escalation.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.47
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:41:34Z
 ---
 
 # Let's hack some SMB

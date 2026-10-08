@@ -2,15 +2,18 @@
 id: ckb-e9d841c9b454
 title: Windows 11 virtual machine on KVM
 category: foundations-and-systems
-format: article
+format: guide
 language: en
-tags: [bash, linux, networking, privilege-escalation, tls, windows]
+tags: [homelab, linux, windows]
+summary: A technical guide on setting up a Windows 11 virtual machine using VirtManager and KVM on a Linux host.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 1.0
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.95
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:24:29Z
 ---
 
 # Windows 11 virtual machine on KVM

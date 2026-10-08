@@ -2,15 +2,18 @@
 id: ckb-7e34321266ed
 title: Tdc2021 MITRE Att Ck
 category: threat-intelligence-and-osint
-format: guide
+format: article
 language: pt
-tags: [mitre-attack, red-team, web-security]
+tags: [mitre-attack, red-team]
+summary: An introduction to the MITRE ATT&CK framework and the Cyber Kill Chain to facilitate communication between Red and Blue Teams.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.96
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.9
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T01:07:33Z
 ---
 
 Globalcode – Open4education

@@ -4,13 +4,16 @@ title: Mining cryptocurrency - don't do it at home
 category: general-technology
 format: article
 language: en
-tags: [blockchain, networking, tls]
+tags: [blockchain]
+summary: A personal reflection on the history and profitability of cryptocurrency mining, concluding that small-scale mining is generally not worth the effort.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.81
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.9
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:29:27Z
 ---
 
 # Mining cryptocurrency - don't do it at home

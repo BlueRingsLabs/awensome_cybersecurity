@@ -2,15 +2,18 @@
 id: ckb-cd05e9e3d51d
 title: Cyber Security Five Challenge 2022
 category: careers-and-certifications
-format: guide
+format: article
 language: en
-tags: [career, certification, cloud, tls]
+tags: [career, certification, ctf, education]
+summary: A roadmap for cybersecurity professionals in 2022 covering fundamentals, career paths, certifications, and job hunting strategies.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.85
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.95
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:03:47Z
 ---
 
 Cyber Security - Five

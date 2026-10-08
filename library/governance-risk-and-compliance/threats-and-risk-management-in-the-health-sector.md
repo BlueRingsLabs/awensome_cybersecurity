@@ -2,15 +2,18 @@
 id: ckb-5fb95cb864ae
 title: Threats and Risk Management in the Health Sector
 category: governance-risk-and-compliance
-format: guide
+format: paper
 language: en
-tags: [malware, phishing, ransomware, risk-management, social-engineering, threat-intelligence]
+tags: [compliance, incident-response, nist, ransomware, risk-management]
+summary: This report provides a comprehensive overview of cybersecurity threats, incident trends, and risk management recommendations specifically tailored for the healthcare sector under the NIS Directive.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.83
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:30:43Z
 ---
 
 1

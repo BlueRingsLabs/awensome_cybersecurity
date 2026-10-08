@@ -4,13 +4,16 @@ title: TLS certificate for onion site
 category: cryptography-and-privacy
 format: article
 language: en
-tags: [anonymity, tls]
+tags: [anonymity, dark-web, privacy, tls]
+summary: This article discusses the availability and benefits of obtaining affordable TLS certificates for Tor onion services.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
+  method: llm
+  model: gemini-3.5-flash-lite
   confidence: 0.95
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T00:14:20Z
 ---
 
 # TLS certificate for onion site

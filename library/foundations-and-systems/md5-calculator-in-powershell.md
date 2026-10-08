@@ -2,15 +2,18 @@
 id: ckb-0f3ab1b3b4f8
 title: MD5 calculator in powershell
 category: foundations-and-systems
-format: article
+format: guide
 language: en
-tags: [powershell, tls]
+tags: [cryptography, powershell]
+summary: This guide provides a PowerShell script designed to calculate MD5 hash values for individual files or entire directories.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.28
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.9
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:15:30Z
 ---
 
 # MD5 calculator in powershell

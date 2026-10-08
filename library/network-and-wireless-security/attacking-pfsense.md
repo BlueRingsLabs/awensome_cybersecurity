@@ -4,13 +4,16 @@ title: Attacking pfSense
 category: network-and-wireless-security
 format: guide
 language: en
-tags: [compliance, dns, firewall, networking, password-security, tls]
+tags: [dns, firewall, hardening, networking, vulnerability-management, windows]
+summary: A technical guide detailing various attack scenarios and remediation procedures for securing pfSense firewall and router configurations.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.6
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.9
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:32:34Z
 ---
 
 WWW.DEVSECOPSGUIDES.COM

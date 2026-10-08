@@ -4,13 +4,16 @@ title: Forensic Investigation of Nmap Scan Using Wireshark
 category: incident-response-and-forensics
 format: guide
 language: en
-tags: [forensics, linux, networking, nmap]
+tags: [forensics, log-analysis, networking, nmap]
+summary: This guide provides a technical walkthrough on identifying various Nmap scanning techniques by analyzing network packet captures and hexadecimal headers in Wireshark.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.47
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:31:26Z
 ---
 
  Page 2 of 28

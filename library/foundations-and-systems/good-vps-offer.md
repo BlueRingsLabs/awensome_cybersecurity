@@ -4,13 +4,16 @@ title: Good VPS Offer
 category: foundations-and-systems
 format: article
 language: en
-tags: [homelab, linux, networking, tls]
+tags: [homelab, linux]
+summary: This article provides personal advice and recommendations on selecting and managing virtual private servers for hosting projects and lab environments.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.53
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.9
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:15:23Z
 ---
 
 # Good VPS Offer

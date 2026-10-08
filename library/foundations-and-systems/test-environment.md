@@ -2,15 +2,18 @@
 id: ckb-a20f2d903602
 title: Test environment
 category: foundations-and-systems
-format: article
+format: guide
 language: en
-tags: [linux, networking, tls, windows]
+tags: [homelab, linux, windows]
+summary: This guide explains the importance of using virtual machines to create a safe, isolated test environment for security research and experimentation.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.77
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:16:36Z
 ---
 
 # Test environment

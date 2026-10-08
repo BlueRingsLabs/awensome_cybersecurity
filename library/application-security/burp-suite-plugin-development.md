@@ -4,13 +4,16 @@ title: Burp Suite Plugin Development
 category: application-security
 format: guide
 language: en
-tags: [burp-suite, cloud, java, python, tls, web-security]
+tags: [burp-suite, java, python, web-security]
+summary: This document provides a structured guide for developing custom extensions for Burp Suite using Java and Python, detailing the necessary environment configuration and key API interfaces.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.9
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:01:14Z
 ---
 
 Burp Suite Plugins/Extender

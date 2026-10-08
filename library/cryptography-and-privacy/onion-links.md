@@ -4,13 +4,16 @@ title: Onion Links
 category: cryptography-and-privacy
 format: reference
 language: en
-tags: [anonymity, dark-web, networking, privacy, tls, web-security]
+tags: [anonymity, dark-web, privacy]
+summary: This article provides an introduction to the Tor network and a curated list of onion services while emphasizing the importance of operational security and anonymity.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.62
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.9
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:13:59Z
 ---
 
 # Onion Links

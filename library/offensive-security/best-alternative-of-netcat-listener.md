@@ -2,15 +2,18 @@
 id: ckb-7ad65d6171f4
 title: Best Alternative of Netcat Listener
 category: offensive-security
-format: guide
+format: article
 language: en
-tags: [certification, linux, networking, persistence, python, windows]
+tags: [c2, linux, red-team, windows]
+summary: This article evaluates various command-line listener tools such as Rlwrap, Rustcat, and Pwncat as functional alternatives to Netcat for managing reverse shells during security assessments.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.69
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:39:13Z
 ---
 
 Contents

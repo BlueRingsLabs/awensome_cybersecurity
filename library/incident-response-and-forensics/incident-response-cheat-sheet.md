@@ -4,13 +4,16 @@ title: Incident Response Cheat Sheet
 category: incident-response-and-forensics
 format: cheatsheet
 language: en
-tags: [cheatsheet, incident-response, linux, networking, powershell, windows]
+tags: [forensics, incident-response, linux, log-analysis, powershell, windows]
+summary: A technical quick-reference guide containing Linux and Windows commands for performing live forensics and incident response investigations.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.76
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 1.0
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:31:31Z
 ---
 
 Page | 1

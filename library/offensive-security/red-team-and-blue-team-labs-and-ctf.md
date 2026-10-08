@@ -3,14 +3,17 @@ id: ckb-b8c1ac4e0f8e
 title: Red Team and Blue Team Labs and CTF
 category: offensive-security
 format: reference
-language: pt
-tags: [ctf, owasp, red-team, soc, tls, web-security]
+language: en
+tags: [ctf, education, exploit-development, red-team, soc, web-security]
+summary: This document provides a curated list of online platforms and resources for practicing offensive and defensive cybersecurity skills through labs and capture-the-flag challenges.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.66
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:57:19Z
 ---
 
 · Attack-Defense - https://attackdefense.com

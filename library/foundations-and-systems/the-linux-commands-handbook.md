@@ -2,15 +2,18 @@
 id: ckb-b3ee98d43f25
 title: The Linux Commands Handbook
 category: foundations-and-systems
-format: guide
+format: book
 language: en
-tags: [bash, linux, macos, networking, password-security, privilege-escalation]
+tags: [bash, linux]
+summary: This handbook provides a concise overview of essential Linux command-line tools and shell operations for users of Unix-like systems.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.94
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 1.0
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:16:40Z
 ---
 
 1

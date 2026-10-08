@@ -2,15 +2,18 @@
 id: ckb-8dde10f84181
 title: Shifting the Balance of Cybersecurity Risk
 category: governance-risk-and-compliance
-format: guide
+format: paper
 language: en
-tags: [detection-engineering, hardening, log-analysis, networking, nist, password-security]
+tags: [devsecops, governance, risk-management, web-security]
+summary: This joint international guidance outlines principles for software manufacturers to prioritize security by design and default to reduce systemic cybersecurity risks.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.69
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:30:35Z
 ---
 
 PRINCIPLES AND APPROACHES FOR

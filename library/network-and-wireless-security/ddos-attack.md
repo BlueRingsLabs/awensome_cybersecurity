@@ -4,13 +4,16 @@ title: Ddos Attack
 category: network-and-wireless-security
 format: guide
 language: en
-tags: [git, linux, networking, privilege-escalation, tls, web-security]
+tags: [dns, networking]
+summary: This document provides a technical guide on performing various types of denial-of-service and distributed denial-of-service attacks using different tools and methods.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.74
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T00:32:58Z
 ---
 
 Original Author: Rahul Virmani

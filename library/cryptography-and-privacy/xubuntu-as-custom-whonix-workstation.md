@@ -2,15 +2,18 @@
 id: ckb-53beb549ee44
 title: Xubuntu as custom Whonix workstation
 category: cryptography-and-privacy
-format: article
+format: guide
 language: en
-tags: [anonymity, bash, hardening, networking, privilege-escalation, tls]
+tags: [anonymity, hardening, linux, networking, privacy]
+summary: This guide details how to configure Xubuntu 22.04 as a custom Whonix workstation with network routing through the Whonix Gateway and provides basic browser hardening steps.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.89
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T00:14:24Z
 ---
 
 # Xubuntu as custom Whonix workstation

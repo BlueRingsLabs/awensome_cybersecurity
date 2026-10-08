@@ -4,13 +4,16 @@ title: Red Team Career Tips 1
 category: careers-and-certifications
 format: guide
 language: en
-tags: [career, certification, networking, red-team, social-engineering, tls]
+tags: [career, certification, ctf, red-team, social-engineering]
+summary: A guide providing professional advice for red teamers on soft skills, hard skills, burnout prevention, continuous learning, and financial management.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.73
+  method: llm
+  model: gemma-4-31b-it
+  confidence: 1.0
+classified_by: google:gemma-4-31b-it@2026-10-08T00:09:54Z
 ---
 
 Red

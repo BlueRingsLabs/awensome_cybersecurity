@@ -4,13 +4,16 @@ title: Genai Red Teaming Guide
 category: ai-security
 format: guide
 language: en
-tags: [ai, nist, owasp, red-team, reporting, risk-management]
+tags: [ai, owasp, red-team, threat-intelligence]
+summary: A practical guide by OWASP providing a structured approach to evaluating vulnerabilities and mitigating risks in Generative AI and Large Language Model systems.
 authors: [unknown]
 license: CC-BY-SA-4.0
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.68
+  method: llm
+  model: gemma-4-31b-it
+  confidence: 1.0
+classified_by: google:gemma-4-31b-it@2026-10-07T23:51:38Z
 ---
 
 GenAI Red Teaming Guide

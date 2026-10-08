@@ -4,13 +4,16 @@ title: Relational Databases and Microsoft Access 365
 category: foundations-and-systems
 format: book
 language: en
-tags: [databases, education]
+tags: [databases, sql-injection]
+summary: An introductory text covering relational database design, Microsoft Access 365, and SQL concepts.
 authors: [unknown]
 license: CC-BY-NC-SA-4.0
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 1.0
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.9
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:15:58Z
 ---
 
 Relational Databases and Microsoft Access 365

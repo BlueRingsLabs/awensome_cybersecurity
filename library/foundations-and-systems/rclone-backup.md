@@ -4,13 +4,16 @@ title: Rclone backup
 category: foundations-and-systems
 format: article
 language: en
-tags: [bash, cloud, cryptography, homelab, password-security, tls]
+tags: [bash, cloud, homelab, linux]
+summary: A technical guide on using rclone to implement a 3-2-1 backup strategy with SMB and cloud storage.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.94
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.9
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:15:56Z
 ---
 
 # Rclone backup

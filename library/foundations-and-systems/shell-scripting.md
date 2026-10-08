@@ -4,13 +4,16 @@ title: Shell Scripting
 category: foundations-and-systems
 format: guide
 language: en
-tags: [bash, linux, macos]
+tags: [bash, linux]
+summary: This document provides an introduction to shell scripting fundamentals, including variables, arrays, string manipulation, and basic process control in a Linux environment.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 1.0
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T00:16:18Z
 ---
 
 SHELL SCRIPTING

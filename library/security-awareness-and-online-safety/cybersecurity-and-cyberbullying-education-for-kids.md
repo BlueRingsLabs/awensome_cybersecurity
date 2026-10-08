@@ -2,15 +2,18 @@
 id: ckb-e5890b9761be
 title: Cybersecurity and Cyberbullying Education for Kids
 category: security-awareness-and-online-safety
-format: guide
+format: article
 language: en
-tags: [education]
+tags: [anonymity, password-security, social-engineering]
+summary: A guide for parents to teach children about internet risks, including scams, malicious software, strong passwords, and cyberbullying.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 1.0
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.95
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T01:00:05Z
 ---
 
 CYBERSECURITY AND

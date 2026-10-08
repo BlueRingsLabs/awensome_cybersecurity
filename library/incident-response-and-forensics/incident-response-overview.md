@@ -2,15 +2,18 @@
 id: ckb-6d34542a0c4f
 title: Incident Response Overview
 category: incident-response-and-forensics
-format: guide
-language: pt
-tags: [forensics, git, incident-response, osint, soc, tls]
+format: reference
+language: en
+tags: [forensics, incident-response, mitre-attack, osint, soc]
+summary: A curated collection of resources and links covering incident response processes, digital forensics, incident response planning, and SOC/CSIRT operations.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
+  method: llm
+  model: gemma-4-26b-a4b-it
   confidence: 1.0
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:31:33Z
 ---
 
 INCIDENT RESPONSE -

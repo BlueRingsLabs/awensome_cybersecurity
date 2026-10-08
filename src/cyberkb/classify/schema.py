@@ -1,9 +1,17 @@
 """The structured-output schema and prompt handed to the LLM classifier.
 
 Building the schema from the live taxonomy guarantees the model can only
-return categories, formats, languages and tags that actually exist, so a
+return categories, formats and languages that actually exist, so a
 hallucinated label is impossible by construction rather than caught after
 the fact.
+
+Tags are the exception, deliberately. The Gemini API rejects the schema with
+``400 INVALID_ARGUMENT`` when the tag array's items carry the full vocabulary
+as an ``enum`` (verified against the live API on 2026-10-07: the identical
+schema without that one enum is accepted, in both ``responseSchema`` and
+``responseJsonSchema``). The vocabulary is therefore given in the system
+instruction instead, and every returned tag is filtered against the taxonomy
+by the classifier, so an invented tag is still dropped, never stored.
 """
 
 from __future__ import annotations
@@ -14,14 +22,14 @@ from typing import TYPE_CHECKING, Any
 if TYPE_CHECKING:
     from cyberkb.taxonomy import Taxonomy
 
-__all__ = ["build_prompt", "response_schema", "system_instruction"]
+__all__ = ["MAX_SAMPLE_CHARS", "MAX_TAGS", "build_prompt", "response_schema", "system_instruction"]
 
 MAX_SAMPLE_CHARS = 6000
-_MAX_TAGS = 6
+MAX_TAGS = 6
 
 
 def response_schema(taxonomy: Taxonomy) -> dict[str, Any]:
-    """Gemini ``responseSchema`` constraining output to the taxonomy."""
+    """The JSON schema every provider is asked to answer in (see the module docstring)."""
     item = {
         "type": "object",
         "properties": {
@@ -32,8 +40,8 @@ def response_schema(taxonomy: Taxonomy) -> dict[str, Any]:
             "language": {"type": "string", "enum": list(taxonomy.language_ids)},
             "tags": {
                 "type": "array",
-                "items": {"type": "string", "enum": list(taxonomy.tag_ids)},
-                "maxItems": _MAX_TAGS,
+                "items": {"type": "string"},
+                "maxItems": MAX_TAGS,
             },
             "summary": {"type": "string"},
             "confidence": {"type": "number"},
@@ -79,7 +87,7 @@ def system_instruction(taxonomy: Taxonomy) -> str:
         "awesome_cybersecurity knowledge base. Classify each cybersecurity "
         "document into exactly one category and one format, detect its "
         "language, write a concise neutral one-sentence summary and choose up "
-        f"to {_MAX_TAGS} tags from the controlled vocabulary.\n\n"
+        f"to {MAX_TAGS} tags from the controlled vocabulary.\n\n"
         f"CATEGORIES:\n{categories}\n\n"
         f"FORMATS:\n{formats}\n\n"
         "RULES:\n"
@@ -94,15 +102,22 @@ def system_instruction(taxonomy: Taxonomy) -> str:
     )
 
 
-def build_prompt(documents: list[tuple[str, str, str]]) -> str:
-    """Render the user prompt for a batch of ``(ref, stem, body)`` documents."""
+def build_prompt(
+    documents: list[tuple[str, str, str]], *, max_chars: int = MAX_SAMPLE_CHARS
+) -> str:
+    """Render the user prompt for a batch of ``(ref, stem, body)`` documents.
+
+    Each body is cut to ``max_chars`` (at most :data:`MAX_SAMPLE_CHARS`), so the
+    rotation engine can shrink a request to fit a small model's limits.
+    """
+    limit = min(max_chars, MAX_SAMPLE_CHARS)
     parts = [
         "Classify these documents. Return one object per document, echoing ref exactly.",
         "",
     ]
     for ref, stem, body in documents:
         parts.append(f"<document ref={json.dumps(ref)} filename={json.dumps(stem)}>")
-        parts.append(body[:MAX_SAMPLE_CHARS])
+        parts.append(body[:limit])
         parts.append("</document>")
         parts.append("")
     return "\n".join(parts)

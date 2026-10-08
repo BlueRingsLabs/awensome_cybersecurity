@@ -4,13 +4,16 @@ title: Redteam Scenarios
 category: offensive-security
 format: guide
 language: en
-tags: [active-directory, networking, red-team]
+tags: [active-directory, c2, credential-access, lateral-movement, red-team]
+summary: This document outlines a collection of twenty-six red team attack scenarios detailing various multi-step enterprise exploitation paths.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.84
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T00:57:48Z
 ---
 
 WWW.HADESS.IO

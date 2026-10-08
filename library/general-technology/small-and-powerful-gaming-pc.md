@@ -4,13 +4,16 @@ title: Small and powerful gaming PC
 category: general-technology
 format: article
 language: en
-tags: [linux, tls, windows, wireless]
+tags: [homelab]
+summary: This article outlines a personal project to build a compact, high-performance desktop computer intended for gaming and password cracking experiments.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.93
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 1.0
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:29:48Z
 ---
 
 # Small and powerful gaming PC

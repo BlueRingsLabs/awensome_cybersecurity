@@ -2,15 +2,18 @@
 id: ckb-e6075f145ac4
 title: Hardware Hacking Introduction Overview
 category: iot-ot-and-hardware-security
-format: guide
+format: reference
 language: en
-tags: [git, hardware, linux, tls]
+tags: [hardware, ics-ot, iot]
+summary: This document provides a curated list of introductory resources and concepts for hardware hacking, covering topics such as digital electronics, PCB design, communication protocols, and firmware analysis.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.94
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 1.0
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:31:56Z
 ---
 
 Hardware Hacking

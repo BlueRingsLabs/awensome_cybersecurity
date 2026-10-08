@@ -4,13 +4,16 @@ title: The Complete Guide for Cyber Security Career
 category: careers-and-certifications
 format: guide
 language: pt
-tags: [career, ctf, mitre-attack, red-team, soc, tls]
+tags: [career, certification, education, linux, mitre-attack, windows]
+summary: A comprehensive guide in Portuguese describing the foundational technical skills, Blue Team and Red Team specializations, and necessary knowledge areas for a cybersecurity career path.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.76
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.95
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:12:31Z
 ---
 
 GUIA DE CARREIRA

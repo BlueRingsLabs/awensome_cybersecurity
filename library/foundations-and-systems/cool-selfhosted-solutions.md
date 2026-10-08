@@ -4,13 +4,16 @@ title: Cool selfhosted solutions
 category: foundations-and-systems
 format: article
 language: en
-tags: [containers, git, homelab, mobile, tls, vpn]
+tags: [containers, homelab, linux, zero-trust]
+summary: An overview of various open-source self-hosted solutions for media management, photo organization, and document management using Docker containers on a NAS.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.99
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.9
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:14:51Z
 ---
 
 # Cool selfhosted solutions

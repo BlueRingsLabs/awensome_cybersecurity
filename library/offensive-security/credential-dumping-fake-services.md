@@ -4,13 +4,16 @@ title: Credential Dumping Fake Services
 category: offensive-security
 format: guide
 language: en
-tags: [credential-access, databases, networking, nmap, password-security, web-security]
+tags: [credential-access, metasploit, red-team]
+summary: This guide demonstrates how to use Metasploit auxiliary modules to set up fake network services such as FTP, Telnet, VNC, and SMB to capture user authentication credentials and password hashes.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.47
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 0.98
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T00:39:30Z
 ---
 
  Page 2 of 18

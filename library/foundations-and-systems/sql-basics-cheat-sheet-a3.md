@@ -4,13 +4,16 @@ title: SQL Basics Cheat Sheet A3
 category: foundations-and-systems
 format: cheatsheet
 language: en
-tags: [cheatsheet, databases]
+tags: [databases]
+summary: This document provides a concise reference for fundamental SQL syntax, including joins, filtering, and aggregate functions.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.57
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.9
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:16:19Z
 ---
 
 Try out the interactive SQL Basics course at LearnSQL.com, and check out our other SQL courses.

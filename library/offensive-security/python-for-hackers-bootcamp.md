@@ -3,14 +3,17 @@ id: ckb-a956d75fe63d
 title: Python for Hackers Bootcamp
 category: offensive-security
 format: course-notes
-language: und
-tags: [burp-suite, python]
+language: en
+tags: [exploit-development, fuzzing, malware, networking, python, web-security]
+summary: This course outline covers the application of Python programming for various offensive security tasks including network scanning, exploit development, and web application testing.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.33
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:57:17Z
 ---
 
 Python for

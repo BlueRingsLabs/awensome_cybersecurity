@@ -1,0 +1,269 @@
+---
+id: ckb-7e5aac1f3373
+title: Open Source Rats
+category: offensive-security
+format: article
+language: en
+tags: [c2, evasion, malware, red-team]
+summary: This article provides an overview of Remote Access Trojans (RATs), explaining their functionality, how they are built using crypters and binders, and lists several open-source tools for educational testing purposes.
+authors: [unknown]
+license: NOASSERTION
+added: 2026-10-04
+classification:
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:32:25Z
+---
+
+# Open Source Rats
+
+My last article was about preparing [Test environment](../../../08/20/test-environment/index.html). I wrote it with this article in mind. Anyone wishing to gain access to someone’s computer has to tempt their victim to install malicious software. Apart from social engineering tricks, methods of preparing such files so that they are undetectable by antivirus programs, methods of planting them and other more complex actions, today we will focus on the programs themselves to take control of our victim’s computer.
+
+![Open Source Rats](opensourcerats.png)
+
+A group of programs used to control a computer from a distance is called Remote Administration Software, the program that we do it without the user’s knowledge is RAT (Remote Administration Tool or Remote Access Trojan or Remote Access Tool).
+
+> A **remote access trojan** (**RAT**, sometimes called **creepware**) is a type of malware that controls a system through a remote network connection. While desktop sharing and remote administration have many legal uses, “RAT” connotes criminal or malicious activity. A RAT is typically installed without the victim’s knowledge, often as payload of a Trojan horse, and will try to hide its operation from the victim and from security software and other anti-virus software.
+>
+> –Wikipedia
+
+On many underground forums, there is a lot of offers for RAT’s. There are cheap ones and some really expensive. Some of them are sold as service with monthly/yearly subscription. In most cases they do the same. Here are some example features:
+
+- Task Manager
+- File Manager
+- Startup Manager
+- Remote Desktop
+- Remote Shell
+- Remote Execution
+- System Information
+- Registry Editor
+- System Power Commands (Restart, Shutdown, Standby)
+- Keylogger (Unicode Support)
+- Reverse Proxy (SOCKS5)
+- Password Recovery (Common Browsers and FTP Clients)
+- Clipboard Text
+
+and many many more. In short, you can do almost anything you could physically do while sitting in front of your computer.
+
+The competition between providers of RAT’s solutions consists in offering a program that is undetectable by antivirus programs and updating it so that it cannot be detected in the near future. Such a solution makes our actions undetectable and that we have a better chance of success and remain undetected.
+
+## How RAT is built
+
+RATs are typically client-server programs. Server part is located on hacker computer/server and client part is installed on victim computer. On the server, we can view the list of infected clients and manage them and perform all functions offered by RAT.
+
+In server software you have option to build client with all your parameters, like server address, process name, option to detect virtual environment and sandboxes etc. Some of the RATs offer also **crypters** and binders. Crypters and binders can be also found as separate software.
+
+A **crypter** is a software that is used to hide malware so that it is not easily detected by antivirus software. To perform its function, it can use encryption techniques and sometimes obfuscation. The crypter takes the executable file and obtains a new executable file which, when run, decrypts the encrypted code it contains and obtains the old original executable file.
+
+File **binders** are utility software that allow a user to “bind” multiple files together resulting in a single executable. For example, you can merge your encrypted client file to a 7zip installation file, or an image, sound file etc.
+
+RATs are written in various programming languages, offer different functions and are prepared for specific platforms.
+
+Before you decide to buy RAT, check the possibilities of those available for free. See how they work, what options they have. Learn how to use them. Configure them and generate client files with different parameters. Try to bind and encrypt them in order to hide malicious code.
+
+## Checking for detection
+
+Before sending an infected file, make sure that it is not detectable by the victim’s antivirus program. Never use anti-virus software or a website like VirusTotal for this. Each file detected in this way will be sent to third parties, making antivirus programs ready for your attack.
+
+Use websites like [NoDistribute](https://nodistribute.com/) or [AntiScan.Me](https://antiscan.me/).
+
+Test everything on virtual test environment. One machine should be server and second one client. If something doesn’t work always remember to check firewall options or [port forwarding](https://portforward.com/) if you have live test network environment.
+
+Also do not use static IP in your client configuration. For testing it is not a problem but in let say “production” environment, use services like [DuckDNS](https://www.duckdns.org/), [FreeDNS](https://freedns.afraid.org/) or [No-IP](https://www.noip.com/).
+
+## Open source RATs
+
+Ok folks, here is the list of open source RATs you can use for learning purpose. I tried to choose those that are not much outdated. Happy testing and good luck. If you know any other interesting open source RATs, binder or cypters, please let me know, I am happy to test them and add to the list.
+
+### TheFatRat
+
+![TheFatRat](thefatrat.png)
+
+TheFatRat is an exploiting tool which compiles a malware with famous payload, and then the compiled malware can be executed on Linux, Windows, Mac and Android. TheFatRat Provides An Easy way to create Backdoors and Payload which can bypass most anti-virus.
+
+<https://github.com/Screetsec/TheFatRat>
+
+### Quasar
+
+![Quasar](quasar.png)
+
+Quasar is a fast and light-weight remote administration tool coded in C#. The usage ranges from user support through day-to-day administrative work to employee monitoring. Providing high stability and an easy-to-use user interface, Quasar is the perfect remote administration solution for you.
+
+<https://github.com/quasar/Quasar>
+
+### Stitch
+
+![Stitch](stitch.png)
+
+A Cross Platform Python Remote Administration Tool: This is a cross platform python framework which allows you to build custom payloads for Windows, Mac OSX and Linux as well. You are able to select whether the payload binds to a specific IP and port, listens for a connection on a port, option to send an email of system info when the system boots, and option to start keylogger on boot. Payloads created can only run on the OS that they were created on.
+
+<https://github.com/nathanlopez/Stitch>
+
+### EvilOSX
+
+![EvilOSX](EvilOSX.png)
+
+An evil RAT (Remote Administration Tool) for macOS/OS X.
+
+<https://github.com/Marten4n6/EvilOSX>
+
+### Rat
+
+![Rat](Rat.gif)
+
+Rat was developed as part of an effort to build a tig-like application with very little opinionated UI logic, delegating instead to the capabilities of shell commands like git log with its –pretty and –graph options. Shell commands are executed and the output is captured and displayed in pagers. Configurable annotators parse through the output, adding annotations that can be acted upon to run other shell commands.
+
+<https://github.com/ericfreese/rat>
+
+### ghost
+
+![ghost](ghost.png)
+
+Ghost Framework is an Android post-exploitation framework that exploits the Android Debug Bridge to remotely access an Android device. Ghost Framework gives you the power and convenience of remote Android device administration.
+
+<https://github.com/entynetproject/ghost>
+
+### Lime-RAT
+
+![Lime-RAT](limerat.gif)
+
+Simple yet powerful RAT for Windows machines. This project is simple and easy to understand, It should give you a general knowledge about dotNET malwares and how it behaves.
+
+<https://github.com/NYAN-x-CAT/Lime-RAT>
+
+### AsyncRAT
+
+![AsyncRAT](asyncrat.png)
+
+AsyncRAT is a Remote Access Tool (RAT) designed to remotely monitor and control other computers through a secure encrypted connection.
+
+<https://github.com/NYAN-x-CAT/AsyncRAT-C-Sharp>
+
+### BlackNET
+
+![BlackNET](blacknet.png)
+
+Free advanced and modern Windows botnet with a nice and secure PHP panel developed using VB.NET.
+
+<https://github.com/FarisCode511/BlackNET>
+
+### AndroRAT
+
+![AndroRAT](androrat.png)
+
+Remote Administration Tool for Android. Androrat is a client/server application developed in Java Android for the client side and in Java/Swing for the Server. The name Androrat is a mix of Android and RAT (Remote Access Tool). It has been developed in a team of 4 for a university project. It has been realised in one month. The goal of the application is to give the control of the android system remotely and retrieve informations from it.
+
+<https://github.com/The404Hacking/AndroRAT>
+
+### Caesar
+
+Caesar is an HTTP-based RAT that allows you to remotely control devices directly from your browser.
+
+<https://github.com/0blio/Caesar>
+
+### VanillaRAT
+
+![VanillaRAT](VanillaRat.gif)
+
+VanillaRat is an advanced remote administration tool coded in C#. VanillaRat uses the Telepathy TCP networking library, dnlib module reading and writing library, and Costura. Fody dll embedding library.
+
+<https://github.com/DannyTheSloth/VanillaRAT>
+
+### technowhorse
+
+![technowhorse](technowhorse.png)
+
+TechNowHorse is a RAT (Remote Administrator Trojan) Generator for Windows/Linux systems written in Python 3.
+
+<https://github.com/PushpenderIndia/technowhorse>
+
+### Telegram-RAT
+
+![Telegram RAT](telegram-rat.png)
+
+Control computer via Telegram!
+
+<https://github.com/Bainky/Telegram-RAT>
+
+### Mass-RAT
+
+![Mass RAT](massrat.png)
+
+Basic Multiplatform (Android phones + Windows PC) Remote Administration Tool.
+
+This is my first attempt to learn xamarin.android. The project is experimental and may have errors. The project is for educational purposes only.
+
+<https://github.com/NYAN-x-CAT/Mass-RAT>
+
+### TeleShadow3
+
+![TeleShadow3](teleshadow.png)
+
+Advanced Telegram Desktop Session Hijacker!
+
+<https://github.com/EternalC0der/TeleShadow3>
+
+### RAT-Hodin
+
+![Hodin](RAT-Hodin.png)
+
+A Remote Administration Tool for Linux
+
+<https://github.com/Thibault-69/RAT-Hodin-v2.9>
+
+### BlackRAT
+
+![BlackRAT](blackrat.png)
+
+Java Based Remote Administrator Tool.
+
+<https://github.com/FarisCode511/BlackRAT>
+
+### Droidjack
+
+![DroidJack](droidjack.jpg)
+
+Android Remote Administration Tool
+
+<https://github.com/Pericena/Droidjack>
+
+### Arbitrium-RAT
+
+![Arbitrium](arbitrium.png)
+
+Arbitrium is a cross-platform, fully undetectable remote access trojan, to control Android, Windows and Linux and doesn’t require any firewall exceptions or port forwarding rules.
+
+<https://github.com/BenChaliah/Arbitrium-RAT>
+
+### Pupy
+
+![Pupy](pupy.png)
+
+Pupy is an opensource, cross-platform (Windows, Linux, OSX, Android) remote administration and post-exploitation tool mainly written in python.
+
+<https://github.com/n1nj4sec/pupy>
+
+### Reptile
+
+![Reptile](reptile.png)
+
+LKM Linux rootkit
+
+<https://github.com/f0rb1dd3n/Reptile>
+
+## Binder and Crypter
+
+Standalone binder and crypter example.
+
+### PE-Union
+
+PEunion bundles multiple executables (or any other file type) into a single file. Each file can be configured individually to be compressed, encrypted, etc. In addition, an URL can be provided for a download to be executed.
+
+<https://github.com/bytecode77/pe-union>
+
+### hCrypt
+
+hCrypt is an open-source C++ Crypter. Stub coded in Visual Studio. Builder coded in Qt.
+
+<https://github.com/Include-sys/hCrypt>

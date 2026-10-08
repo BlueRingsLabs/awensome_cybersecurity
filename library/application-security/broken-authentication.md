@@ -4,13 +4,16 @@ title: Broken Authentication
 category: application-security
 format: guide
 language: en
-tags: [credential-access, databases, password-security, phishing, privacy, web-security]
+tags: [api-security, owasp, password-security, phishing, web-security]
+summary: This document provides an overview of broken authentication vulnerabilities in web applications, covering common attack vectors like credential stuffing, password spraying, and phishing.
 authors: [Harsh Patel]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.75
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:01:12Z
 ---
 
 SP.27

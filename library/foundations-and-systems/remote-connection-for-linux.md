@@ -2,15 +2,18 @@
 id: ckb-0709c6efe1e5
 title: Remote connection for Linux
 category: foundations-and-systems
-format: article
+format: guide
 language: en
-tags: [bash, homelab, linux, password-security, privilege-escalation, tls]
+tags: [bash, homelab, linux, networking]
+summary: A guide on setting up x11vnc to enable remote desktop connections for Linux systems within a local network.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.76
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.9
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:16:01Z
 ---
 
 # Remote connection for Linux

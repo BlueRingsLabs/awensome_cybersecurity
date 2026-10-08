@@ -2,15 +2,18 @@
 id: ckb-dec90e145024
 title: Secure Endpoints User Guide
 category: security-operations
-format: book
+format: guide
 language: en
-tags: [firewall, linux, mobile, networking, threat-hunting, windows]
+tags: [detection-engineering, hardening, vulnerability-management]
+summary: This document provides a comprehensive user guide for configuring and managing the Cisco Secure Endpoint platform, covering dashboard operations, outbreak control, device management, and policy settings.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.47
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T01:01:30Z
 ---
 
 Cisco Systems, Inc.

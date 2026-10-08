@@ -2,15 +2,18 @@
 id: ckb-974cedf07ba3
 title: Web Content Scanner
 category: application-security
-format: article
+format: guide
 language: en
-tags: [bash, dns, tls, web-security]
+tags: [api-security, bash, owasp, python, web-security]
+summary: A guide explaining the process of scanning web server content for hidden files and directories using tools like DIRB, Gobuster, and Konan.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.77
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.95
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:02:34Z
 ---
 
 # Web Content Scanner

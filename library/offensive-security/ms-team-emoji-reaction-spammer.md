@@ -4,13 +4,16 @@ title: MS Team Emoji Reaction Spammer
 category: offensive-security
 format: article
 language: en
-tags: [powershell, red-team, soc, tls]
+tags: [powershell, red-team]
+summary: A red teamer explores an automation script using PowerShell and Microsoft Graph to automate emoji reactions in Microsoft Teams to demonstrate a minor nuisance-based attack vector.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.26
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.85
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:41:59Z
 ---
 
 # MS Team Emoji Reaction Spammer

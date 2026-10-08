@@ -4,13 +4,16 @@ title: Black Friday - Cyber Monday
 category: general-technology
 format: article
 language: en
-tags: [git, tls]
+tags: [education]
+summary: The author provides tips on how to avoid fake discounts and find genuine bargains on cybersecurity tools and services during Black Friday and Cyber Monday sales.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 1.0
+  method: llm
+  model: gemma-4-31b-it
+  confidence: 0.9
+classified_by: google:gemma-4-31b-it@2026-10-08T00:26:06Z
 ---
 
 # Black Friday - Cyber Monday

@@ -4,13 +4,16 @@ title: Windows Defender is enough, if you harden it
 category: security-operations
 format: article
 language: en
-tags: [cloud, hardening, malware, powershell, tls, windows]
+tags: [hardening, windows]
+summary: An article discussing the effectiveness of Windows Defender and providing methods to harden it using Local Group Policy and PowerShell.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.91
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.95
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T01:01:43Z
 ---
 
 # Windows Defender is enough, if you harden it

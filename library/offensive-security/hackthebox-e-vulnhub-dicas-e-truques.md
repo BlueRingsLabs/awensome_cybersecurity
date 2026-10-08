@@ -4,13 +4,16 @@ title: Hackthebox e Vulnhub Dicas e Truques
 category: offensive-security
 format: guide
 language: pt
-tags: [certification, ctf, git, linux, privilege-escalation, tls]
+tags: [ctf, education, linux, privilege-escalation, web-security, windows]
+summary: This guide provides tips and methodology for beginners participating in CTF platforms like HackTheBox and VulnHub, covering enumeration, exploitation, and privilege escalation techniques.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.9
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:40:55Z
 ---
 
 Hackthebox and Vulnhub –

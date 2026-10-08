@@ -2,15 +2,18 @@
 id: ckb-b7ec924168db
 title: Running own Tor Relay on a VPS
 category: cryptography-and-privacy
-format: article
+format: guide
 language: en
-tags: [anonymity, bash, firewall, homelab, privilege-escalation, tls]
+tags: [anonymity, bash, linux, networking, privacy]
+summary: This guide provides technical instructions for deploying a Tor middle or guard relay on a Debian-based virtual private server to support network capacity and user privacy.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.37
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:14:04Z
 ---
 
 # Running own Tor Relay on a VPS

@@ -4,13 +4,16 @@ title: Meterpreter Cheatsheet
 category: offensive-security
 format: cheatsheet
 language: en
-tags: [cheatsheet, linux, metasploit]
+tags: [c2, cheatsheet, metasploit]
+summary: This document provides a reference guide for the file system commands available within the Meterpreter payload of the Metasploit framework.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
+  method: llm
+  model: gemini-3.1-flash-lite
   confidence: 1.0
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:41:49Z
 ---
 
 Meterpreter File System Commands Cheatsheet

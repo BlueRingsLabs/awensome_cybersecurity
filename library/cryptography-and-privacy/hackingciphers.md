@@ -4,13 +4,16 @@ title: Hackingciphers
 category: cryptography-and-privacy
 format: book
 language: en
-tags: [cryptography, python, web-security]
+tags: [cryptography, education, python]
+summary: This introductory book teaches beginners how to write Python programs to break historical ciphers while explaining fundamental programming and cryptographic concepts.
 authors: [Al Sweigart]
 license: CC-BY-NC-SA-3.0
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.81
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:13:58Z
 ---
 
 Hacking Secret

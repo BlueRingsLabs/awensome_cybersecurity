@@ -2,15 +2,18 @@
 id: ckb-8879134a8671
 title: Security Operation Center Study and Career 2022
 category: careers-and-certifications
-format: course-notes
+format: guide
 language: en
-tags: [career, cloud, detection-engineering, incident-response, mitre-attack, soc]
+tags: [certification, education, incident-response, mitre-attack, soc]
+summary: A guide outlining the knowledge, responsibilities, and career progression for SOC analysts across different tiers.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.52
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.95
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:12:03Z
 ---
 
 S E C U R I T Y  O P E R A T I O N C E N T E R  –

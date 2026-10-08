@@ -4,13 +4,16 @@ title: Privacy applications and services
 category: cryptography-and-privacy
 format: article
 language: en
-tags: [anonymity, git, homelab, mobile, privacy, tls]
+tags: [privacy]
+summary: This article discusses the importance of personal responsibility and critical thinking when selecting software and services, advocating for privacy-conscious choices and supporting open-source projects.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.82
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.9
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:14:03Z
 ---
 
 # Privacy applications and services

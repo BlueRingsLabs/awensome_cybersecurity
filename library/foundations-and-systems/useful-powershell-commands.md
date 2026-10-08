@@ -2,15 +2,18 @@
 id: ckb-d8d2fbcb09c4
 title: Useful PowerShell commands
 category: foundations-and-systems
-format: article
+format: cheatsheet
 language: en
-tags: [powershell, tls]
+tags: [powershell, windows]
+summary: A collection of useful PowerShell commands for file management, network statistics, and execution policy bypasses.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.89
+  method: llm
+  model: gemma-4-31b-it
+  confidence: 0.95
+classified_by: google:gemma-4-31b-it@2026-10-08T00:22:09Z
 ---
 
 # Useful PowerShell commands

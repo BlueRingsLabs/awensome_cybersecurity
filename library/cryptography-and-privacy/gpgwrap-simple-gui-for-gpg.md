@@ -4,13 +4,16 @@ title: GPGWrap - simple GUI for GPG
 category: cryptography-and-privacy
 format: article
 language: en
-tags: [cryptography, git, tls]
+tags: [cryptography, privacy]
+summary: This article introduces GPGWrap, a Python-based graphical user interface designed to simplify common GPG operations without altering the underlying cryptographic processes.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.98
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:13:56Z
 ---
 
 # GPGWrap - simple GUI for GPG

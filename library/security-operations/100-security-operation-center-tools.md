@@ -4,13 +4,16 @@ title: 100 Security Operation Center Tools
 category: security-operations
 format: reference
 language: en
-tags: [forensics, git, malware, red-team, tls, windows]
+tags: [detection-engineering, forensics, incident-response, malware, red-team, soc]
+summary: This document provides a curated list of various tools used in Security Operations Centers, covering areas such as log analysis, incident response, malware analysis, and adversary emulation.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.64
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T01:00:54Z
 ---
 
 Security Operation

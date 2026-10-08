@@ -4,13 +4,15 @@ title: Homemade pedalboard
 category: general-technology
 format: article
 language: en
-tags: [tls, web-security]
+summary: The author describes the process of building a custom wooden guitar pedalboard as a personal hobby project.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
+  method: llm
+  model: gemma-4-26b-a4b-it
   confidence: 1.0
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:29:26Z
 ---
 
 # Homemade pedalboard

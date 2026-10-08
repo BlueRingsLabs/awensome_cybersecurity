@@ -2,15 +2,18 @@
 id: ckb-cbefa61f502f
 title: Cyber Security Complete Journey Red Team 1
 category: offensive-security
-format: guide
+format: article
 language: en
-tags: [c2, career, certification, mitre-attack, red-team, tls]
+tags: [mitre-attack, red-team]
+summary: An introductory overview of red teaming concepts, including definitions of TTPs, the MITRE ATT&CK framework, and the differences between penetration testing and red teaming.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.74
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.9
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:40:03Z
 ---
 
 Cyber Security

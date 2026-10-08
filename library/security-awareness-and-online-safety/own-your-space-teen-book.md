@@ -4,13 +4,16 @@ title: Own Your Space Teen Book
 category: security-awareness-and-online-safety
 format: book
 language: en
-tags: [education, firewall, malware, networking, social-engineering, web-security]
+tags: [malware, phishing, social-engineering]
+summary: A guide for teenagers and families on maintaining online safety, covering topics such as malware, phishing, and social media security.
 authors: [unknown]
 license: CC-BY-SA-3.0
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.78
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.95
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T01:00:43Z
 ---
 
 Compliments of

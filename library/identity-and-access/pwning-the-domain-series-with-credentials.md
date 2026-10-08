@@ -2,15 +2,18 @@
 id: ckb-9fe74458d1b2
 title: Pwning the Domain Series with Credentials
 category: identity-and-access
-format: guide
+format: article
 language: en
-tags: [active-directory, credential-access, networking, password-security, python, windows]
+tags: [active-directory, credential-access, lateral-movement, privilege-escalation, windows]
+summary: This article series provides a comprehensive overview of Active Directory exploitation techniques, covering domain account enumeration, coercion methods, specific vulnerabilities, and privilege escalation strategies.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.69
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 1.0
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:31:04Z
 ---
 
 WWW.HADESS.IO

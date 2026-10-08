@@ -4,13 +4,16 @@ title: Cyber Governance Code of Practice
 category: governance-risk-and-compliance
 format: guide
 language: en
-tags: [governance, hardware, reporting, risk-management]
+tags: [governance, nist, risk-management]
+summary: This document provides a structured code of practice for boards and directors to effectively govern cybersecurity risks and integrate them into broader organizational strategy.
 authors: [unknown]
 license: OGL-UK-3.0
 added: 2026-10-04
 classification:
-  method: heuristic
+  method: llm
+  model: gemini-3.1-flash-lite
   confidence: 1.0
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:30:12Z
 ---
 
 Cyber Governance

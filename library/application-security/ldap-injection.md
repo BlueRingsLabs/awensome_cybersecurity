@@ -2,15 +2,18 @@
 id: ckb-9ea1619fdd12
 title: LDAP Injection
 category: application-security
-format: guide
+format: paper
 language: en
-tags: [active-directory, databases, networking, password-security, sql-injection, web-security]
+tags: [active-directory, web-security]
+summary: This paper presents an in-depth analysis of LDAP injection and blind LDAP injection vulnerabilities in web applications, detailing exploitation techniques and prevention strategies.
 authors: [Chema Alonso, Rodolfo Bordón, Antonio Guzmán, Marta Beltrán]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.64
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T00:02:07Z
 ---
 
 INFORMÁTICA 64

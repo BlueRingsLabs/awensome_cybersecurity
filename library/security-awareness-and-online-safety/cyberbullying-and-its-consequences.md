@@ -2,15 +2,18 @@
 id: ckb-3a1272f0ebc7
 title: Cyberbullying and Its Consequences
 category: security-awareness-and-online-safety
-format: guide
+format: article
 language: en
-tags: [education, tls]
+tags: [social-engineering]
+summary: This document provides an overview of cyberbullying, detailing its various forms, psychological consequences for victims and aggressors, notable real-world cases, and guidance on prevention and reporting.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
+  method: llm
+  model: gemini-3.1-flash-lite
   confidence: 1.0
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T01:00:01Z
 ---
 
 Cyberbullying and

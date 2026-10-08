@@ -1,16 +1,19 @@
 ---
 id: ckb-0c6ef8f35ed5
 title: Introduo Ao MITRE Att Ck e Ao Cyber Kill Chain
-category: threat-intelligence-and-osint
-format: guide
+category: offensive-security
+format: course-notes
 language: pt
-tags: [certification, git, mitre-attack, red-team, soc, tls]
+tags: [mitre-attack, red-team]
+summary: This course material introduces the concepts of Red, Blue, and Purple teaming, as well as the Mitre ATT&CK framework and the Cyber Kill Chain.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.7
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.95
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T01:01:57Z
 ---
 
 Introdução ao Mitre Att&ck e

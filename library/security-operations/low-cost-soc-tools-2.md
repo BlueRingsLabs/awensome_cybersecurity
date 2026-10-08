@@ -3,14 +3,17 @@ id: ckb-b0136be60e90
 title: Low Cost SOC Tools 2
 category: security-operations
 format: reference
-language: und
-tags: [git, soc, tls]
+language: en
+tags: [log-analysis, soc, threat-intelligence]
+summary: A curated list of various open-source and low-cost security operations center ( security operations center ( SOC ) ) tools, including threat intelligence platforms, threat intelligence platforms, threat intelligence platforms, and SIEM/XDR/EDR/Nهم, and vulnerability-management, and…
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 1.0
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.95
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T01:01:07Z
 ---
 
 https://www.opencti.io/en/

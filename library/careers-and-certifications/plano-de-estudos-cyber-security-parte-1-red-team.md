@@ -1,16 +1,19 @@
 ---
 id: ckb-d35a3194d0b2
 title: Plano de Estudos Cyber Security Parte 1 Red Team
-category: offensive-security
+category: careers-and-certifications
 format: guide
 language: pt
-tags: [git, linux, mitre-attack, red-team, soc, tls]
+tags: [certification, education, linux, mitre-attack, red-team, windows]
+summary: A study plan for individuals starting in Red Team and Blue Team cybersecurity roles, providing a list of resources and fundamental knowledge requirements.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
+  method: llm
+  model: gemma-4-26b-a4b-it
   confidence: 0.95
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:57:14Z
 ---
 
 Plano de Estudos Cyber Security -

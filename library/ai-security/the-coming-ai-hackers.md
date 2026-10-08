@@ -1,16 +1,19 @@
 ---
 id: ckb-dcbd46f26b91
 title: The Coming AI Hackers
-category: offensive-security
-format: guide
+category: ai-security
+format: paper
 language: en
-tags: [ai, education, mobile, phishing, social-engineering, tls]
+tags: [ai, governance, threat-intelligence]
+summary: This essay by Bruce Schneier examines the implications of artificial intelligence systems acting as hackers to find and exploit vulnerabilities in social, economic, and political systems at scale.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.36
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T00:57:57Z
 ---
 
 E S S AY

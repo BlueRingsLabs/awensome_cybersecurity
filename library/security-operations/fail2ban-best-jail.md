@@ -2,15 +2,18 @@
 id: ckb-07605f494192
 title: Fail2Ban - best jail
 category: security-operations
-format: article
+format: guide
 language: en
-tags: [bash, linux, log-analysis, privilege-escalation, tls, web-security]
+tags: [firewall, hardening, linux, log-analysis]
+summary: This guide provides instructions on installing, configuring, and customizing Fail2Ban to protect servers by automatically banning IP addresses that exhibit malicious behavior.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.35
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T01:01:00Z
 ---
 
 # Fail2Ban - best jail

@@ -2,15 +2,18 @@
 id: ckb-b5444fabf12b
 title: Child Safety a Serious Problem But Little Talked About English
 category: security-awareness-and-online-safety
-format: guide
+format: article
 language: en
-tags: [education, privacy, social-engineering]
+tags: [education, social-engineering]
+summary: This document outlines the various digital risks children and teenagers face online, including cyberbullying, exposure to inappropriate content, and online predators, while providing guidance for parents on mitigation strategies.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
+  method: llm
+  model: gemini-3.1-flash-lite
   confidence: 1.0
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:59:56Z
 ---
 
 Child Safety - A

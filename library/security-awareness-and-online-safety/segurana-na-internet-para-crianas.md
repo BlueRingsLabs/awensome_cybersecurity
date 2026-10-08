@@ -2,15 +2,18 @@
 id: ckb-c3735ad92856
 title: Segurana Na Internet para Crianas
 category: security-awareness-and-online-safety
-format: guide
+format: book
 language: pt
-tags: [homelab, tls]
+tags: [education]
+summary: This book provides an educational overview of internet safety, risks, and best practices tailored for children, parents, and classroom environments.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.85
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 1.0
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T01:00:52Z
 ---
 
 SEGURANÇA NA INTERNET

@@ -4,13 +4,16 @@ title: Social Engineering Practical Overview
 category: security-awareness-and-online-safety
 format: guide
 language: en
-tags: [git, password-security, phishing, physical-security, social-engineering, tls]
+tags: [credential-access, iot, malware, phishing, social-engineering]
+summary: This document provides a practical overview of various social engineering tactics, including phishing, baiting, pretexting, and hardware-based attacks like BadUSB.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.77
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T01:00:53Z
 ---
 
 SOCIAL

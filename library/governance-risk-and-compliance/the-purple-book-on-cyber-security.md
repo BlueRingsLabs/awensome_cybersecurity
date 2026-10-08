@@ -1,16 +1,19 @@
 ---
 id: ckb-413b9724fc30
 title: The Purple Book on Cyber Security
-category: security-operations
+category: governance-risk-and-compliance
 format: book
 language: en
-tags: [databases, dns, firewall, incident-response, malware, networking]
+tags: [education, governance, hardening, malware, mobile, soc]
+summary: A comprehensive introductory guide for sales, pre-sales, and delivery professionals regarding cybersecurity, endpoint security, and mobile security solutions.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.68
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.85
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T01:01:40Z
 ---
 
 Sudhansu M Nayak & OpenAI

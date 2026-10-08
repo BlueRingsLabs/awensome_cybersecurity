@@ -1,16 +1,19 @@
 ---
 id: ckb-13ec4a8761cd
 title: Cybersecurity Flaws in the Metaverse 1
-category: security-awareness-and-online-safety
-format: guide
+category: application-security
+format: article
 language: en
-tags: [blockchain, networking]
+tags: [ai, blockchain, iot, privacy, social-engineering, web-security]
+summary: This document provides an overview of potential cybersecurity risks associated with the metaverse, covering physical, network, system, application, and user-centric threats.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.94
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.9
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T01:00:07Z
 ---
 
 Cybersecurity flaws in the

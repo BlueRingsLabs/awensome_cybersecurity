@@ -4,13 +4,16 @@ title: Security Operation Center 40 Tools
 category: security-operations
 format: reference
 language: en
-tags: [detection-engineering, git, malware, threat-intelligence, tls, windows]
+tags: [detection-engineering, forensics, incident-response, malware, red-team, soc]
+summary: This document provides a curated reference catalog of various security tools utilized by SOC analysts, incident responders, and security researchers.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.6
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T01:01:31Z
 ---
 
 Security Operation

@@ -4,13 +4,16 @@ title: Priority Logs for 0asiem Ingestion
 category: security-operations
 format: guide
 language: en
-tags: [active-directory, cloud, compliance, detection-engineering, log-analysis, windows]
+tags: [cloud, detection-engineering, linux, log-analysis, soc, windows]
+summary: This guide provides technical recommendations for security practitioners on prioritizing log sources for ingestion into a SIEM platform based on organizational risk profiles.
 authors: [unknown]
 license: CC-BY-4.0
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.48
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 1.0
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T01:01:13Z
 ---
 
 Priority logs for

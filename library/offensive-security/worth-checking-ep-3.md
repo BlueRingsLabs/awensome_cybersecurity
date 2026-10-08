@@ -2,15 +2,18 @@
 id: ckb-c02b2c93eafb
 title: Worth checking ep.3
 category: offensive-security
-format: article
+format: reference
 language: en
-tags: [anonymity, career, git, linux, networking, tls]
+tags: [education, linux, osint, red-team, web-security, windows]
+summary: This blog post provides a curated collection of cybersecurity resources, including documents, articles, tools, and reference materials for penetration testers and security professionals.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.81
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.9
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:59:05Z
 ---
 
 # Worth checking ep.3

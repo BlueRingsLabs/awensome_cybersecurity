@@ -2,15 +2,18 @@
 id: ckb-61d1162cf605
 title: Segurana Infantil Um Problema Srio Mas Pouco Falado
 category: security-awareness-and-online-safety
-format: guide
+format: article
 language: pt
-tags: [homelab]
+tags: [education, social-engineering]
+summary: This document discusses the digital risks faced by children and adolescents, including cyberbullying, online predators, and identity theft, while providing guidance for parents on how to mitigate these threats.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
+  method: llm
+  model: gemini-3.1-flash-lite
   confidence: 1.0
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T01:00:50Z
 ---
 
 Segurança

@@ -2,15 +2,18 @@
 id: ckb-98692e9d7d0c
 title: Cyber Security for Kids
 category: security-awareness-and-online-safety
-format: guide
+format: article
 language: en
-tags: [education, malware, networking, phishing, social-engineering, tls]
+tags: [education, malware, phishing]
+summary: This document provides a foundational overview of cybersecurity and internet safety concepts, including common threats like viruses and phishing, presented in both English and Portuguese.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 1.0
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:59:57Z
 ---
 
 Cyber ​security for kids

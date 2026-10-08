@@ -1,16 +1,19 @@
 ---
 id: ckb-3a4e4ee8047d
 title: Blockchain and Smart Contract Testing Security
-category: reverse-engineering-and-exploit-development
-format: guide
+category: cryptography-and-privacy
+format: checklist
 language: en
-tags: [blockchain]
+tags: [blockchain, fuzzing, web-security]
+summary: This document provides a comprehensive checklist of security testing methodologies and common vulnerability areas for blockchain smart contracts.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.35
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:59:08Z
 ---
 
 1. Code review: Conduct thorough manual reviews of your smart contract code to identify potential vulnerabilities.

@@ -4,13 +4,16 @@ title: Windows API for Red Team 101 Portuguese
 category: offensive-security
 format: guide
 language: pt
-tags: [evasion, malware, python, red-team, tls, windows]
+tags: [evasion, red-team, windows]
+summary: Este guia em português introduz os conceitos básicos da API do Windows para profissionais de red team, explicando seus principais componentes e formas de utilização.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.57
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T00:58:02Z
 ---
 
 Windows API for Red Team #101

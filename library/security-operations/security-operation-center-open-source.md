@@ -4,13 +4,16 @@ title: Security Operation Center Open Source
 category: security-operations
 format: guide
 language: pt
-tags: [detection-engineering, firewall, linux, malware, soc, web-security]
+tags: [detection-engineering, incident-response, nist, soc, threat-intelligence, vulnerability-management]
+summary: Este guia aborda os fundamentos de um Centro de Operações de Segurança, detalhando pessoas, processos, tecnologia e o ciclo de vida de resposta a incidentes do NIST.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.71
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T01:01:33Z
 ---
 
 https://www.linkedin.com/in/joas-antonio-dos-santos

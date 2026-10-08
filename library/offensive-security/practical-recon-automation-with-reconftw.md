@@ -1,16 +1,19 @@
 ---
 id: ckb-abb2c1e87c84
 title: Practical Recon Automation with ReconFTW
-category: threat-intelligence-and-osint
-format: article
+category: offensive-security
+format: guide
 language: en
-tags: [bash, containers, cryptography, linux, privilege-escalation, threat-intelligence]
+tags: [bug-bounty, linux, osint, red-team]
+summary: A technical guide on setting up and using the ReconFTW automation tool within a Docker container on Debian to streamline reconnaissance for bug bounty hunting.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.49
+  method: llm
+  model: gemma-4-31b-it
+  confidence: 0.95
+classified_by: google:gemma-4-31b-it@2026-10-08T01:05:36Z
 ---
 
 # Practical Recon Automation with ReconFTW

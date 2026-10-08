@@ -4,13 +4,16 @@ title: Investigation Using OSINT with a Focus on Intelligence Operations and Dar
 category: threat-intelligence-and-osint
 format: course-notes
 language: en
-tags: [anonymity, dark-web, networking, osint, tls, vpn]
+tags: [dark-web, education, osint, threat-intelligence]
+summary: These training notes provide an introduction to Open Source Intelligence (OSINT) concepts, the intelligence cycle, and resources for gathering information from public sources.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.82
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 1.0
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T01:01:59Z
 ---
 
 Investigation using

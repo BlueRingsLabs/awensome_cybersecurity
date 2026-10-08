@@ -1,16 +1,19 @@
 ---
 id: ckb-8740c017fd0e
 title: Microsoft Office and Windows Remote Code Execution
-category: security-operations
-format: guide
+category: incident-response-and-forensics
+format: playbook
 language: en
-tags: [firewall, log-analysis, networking, phishing, vulnerability-management, windows]
+tags: [incident-response, log-analysis, malware, mitre-attack, phishing]
+summary: This document provides a step-by-step incident response walkthrough for investigating a spear-phishing attack exploiting the CVE-2023-36884 vulnerability in Microsoft Office.
 authors: [Muhammet Donmez]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.38
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T01:01:08Z
 ---
 
 CVE-2023-36884

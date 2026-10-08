@@ -4,13 +4,16 @@ title: Maltego Introduction Creating a Simple Local Transform En
 category: threat-intelligence-and-osint
 format: guide
 language: en
-tags: [databases, networking, osint, python, tls, web-security]
+tags: [osint, threat-intelligence]
+summary: This guide provides an introduction to Maltego, explaining its architecture, server components like iTDS and CTAS, and the process for creating custom local transforms for data analysis.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.52
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T01:02:03Z
 ---
 
 Maltego Introduction –

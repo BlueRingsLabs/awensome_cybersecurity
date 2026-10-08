@@ -4,13 +4,16 @@ title: WinRM Penetration Testing
 category: offensive-security
 format: guide
 language: en
-tags: [lateral-movement, metasploit, password-security, powershell, tls, windows]
+tags: [lateral-movement, metasploit, powershell, red-team, windows]
+summary: This guide provides a technical walkthrough for configuring and performing penetration testing against Windows Remote Management (WinRM) services to achieve remote shell access and lateral movement.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.8
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 1.0
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:58:53Z
 ---
 
 WinRM Penetration Testing

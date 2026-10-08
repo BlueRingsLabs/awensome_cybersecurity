@@ -3,14 +3,17 @@ id: ckb-4884a39ff2af
 title: Red Team Toolkit 1
 category: offensive-security
 format: reference
-language: und
-tags: [osint, red-team]
+language: en
+tags: [c2, credential-access, evasion, osint, phishing, red-team]
+summary: This reference guide provides a curated list of popular tools used during red team engagements across various domains such as reconnaissance, credential dumping, and command and control.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.92
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T00:57:39Z
 ---
 
 Bloodhound / ElevateKit / Watson /

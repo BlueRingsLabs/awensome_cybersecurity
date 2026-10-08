@@ -4,13 +4,16 @@ title: Security Operation Center Open Source Pt En
 category: security-operations
 format: guide
 language: en
-tags: [detection-engineering, incident-response, log-analysis, malware, networking, soc]
+tags: [compliance, incident-response, nist, soc, threat-intelligence, vulnerability-management]
+summary: This document provides an overview of Security Operations Center functions, including people, processes, technology, incident response lifecycles, and relevant frameworks like NIST and GDPR.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.69
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T01:01:34Z
 ---
 
 SOC OPEN SOURCE

@@ -1,16 +1,19 @@
 ---
 id: ckb-7db3c0d9d506
 title: Worth checking ep.2
-category: offensive-security
-format: article
+category: general-technology
+format: reference
 language: en
-tags: [cheatsheet, incident-response, nmap, red-team, tls, web-security]
+tags: [education, incident-response, malware, osint, red-team, web-security]
+summary: This is a curated collection of cybersecurity documents, articles, tools, and illustrations covering various topics from penetration testing to risk management.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.56
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.9
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:59:04Z
 ---
 
 # Worth checking ep.2

@@ -1,16 +1,19 @@
 ---
 id: ckb-d76151196d02
 title: Worth checking ep.1
-category: offensive-security
-format: article
+category: foundations-and-systems
+format: reference
 language: en
-tags: [career, firewall, soc, tls]
+tags: [education]
+summary: This article serves as the inaugural entry in a recurring series that curates various cybersecurity resources, tools, and articles for professional development.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.46
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.9
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:58:55Z
 ---
 
 # Worth checking ep.1

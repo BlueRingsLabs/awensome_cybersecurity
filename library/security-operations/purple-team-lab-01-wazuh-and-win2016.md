@@ -2,15 +2,18 @@
 id: ckb-8c20d590f26f
 title: Purple Team Lab 01 Wazuh and Win2016
 category: security-operations
-format: guide
+format: course-notes
 language: en
-tags: [active-directory, credential-access, log-analysis, powershell, tls, windows]
+tags: [active-directory, detection-engineering, homelab, soc, windows]
+summary: This document provides an introductory overview of the Wazuh security monitoring platform and fundamental Active Directory concepts for a purple team laboratory environment.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.59
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T01:01:16Z
 ---
 
 Joas A Santos

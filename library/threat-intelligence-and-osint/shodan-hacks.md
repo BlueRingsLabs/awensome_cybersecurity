@@ -4,13 +4,16 @@ title: Shodan Hacks
 category: threat-intelligence-and-osint
 format: article
 language: en
-tags: [dns, osint, password-security, tls, vulnerability-management, web-security]
+tags: [iot, networking, nmap, osint]
+summary: An overview of Shodan search queries and dorks for reconnaissance and intelligence gathering on internet-connected devices.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.81
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.95
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T01:07:30Z
 ---
 
 # Shodan Hacks

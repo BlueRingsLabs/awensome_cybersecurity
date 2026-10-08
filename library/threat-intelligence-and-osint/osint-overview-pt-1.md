@@ -2,15 +2,18 @@
 id: ckb-982c5b425723
 title: OSINT Overview Pt 1
 category: threat-intelligence-and-osint
-format: guide
+format: book
 language: en
-tags: [anonymity, dark-web, git, networking, osint, tls]
+tags: [osint, threat-intelligence]
+summary: An introductory overview of Open Source Intelligence (OSINT) and its relationship to other intelligence disciplines like HUMINT, SIGINT, and IMINT.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.52
+  method: llm
+  model: gemma-4-31b-it
+  confidence: 1.0
+classified_by: google:gemma-4-31b-it@2026-10-08T01:05:06Z
 ---
 
 OSINT (Open

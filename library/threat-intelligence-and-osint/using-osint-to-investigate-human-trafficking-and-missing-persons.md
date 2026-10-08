@@ -2,15 +2,18 @@
 id: ckb-55794395c1a1
 title: Using OSINT to Investigate Human Trafficking and Missing Persons
 category: threat-intelligence-and-osint
-format: guide
+format: course-notes
 language: en
-tags: [mitre-attack, osint, tls]
+tags: [osint]
+summary: This presentation provides an overview of OSINT techniques and tools used to investigate human trafficking and missing persons cases.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.88
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T01:07:42Z
 ---
 
 Usando OSINT para

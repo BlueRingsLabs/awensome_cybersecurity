@@ -2,15 +2,18 @@
 id: ckb-703e52a7e4a5
 title: Using OSINT to Investigate School Shooters
 category: threat-intelligence-and-osint
-format: guide
+format: reference
 language: en
-tags: [anonymity, dark-web, education, git, osint, tls]
+tags: [ai, dark-web, osint]
+summary: This document provides a curated collection of tools and techniques for conducting open-source intelligence investigations, covering social media analysis, geolocation, and dark web research.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.88
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T01:07:47Z
 ---
 
 Using OSINT to Investigate School Shooters

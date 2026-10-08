@@ -2,15 +2,18 @@
 id: ckb-fc218b6bab9e
 title: Red Team Operations Development Pt 1
 category: offensive-security
-format: guide
+format: book
 language: en
-tags: [active-directory, git, networking, red-team, threat-intelligence, tls]
+tags: [incident-response, mitre-attack, red-team, reporting, threat-hunting]
+summary: This document provides an overview of red team operations, defining the roles, goals, and methodologies used to emulate real-world threats and measure an organization's defensive capabilities.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.85
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 1.0
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:57:31Z
 ---
 
 RED TEAM OPERATIONS –

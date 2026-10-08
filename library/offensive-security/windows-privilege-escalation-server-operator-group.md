@@ -4,13 +4,16 @@ title: Windows Privilege Escalation Server Operator Group
 category: offensive-security
 format: guide
 language: en
-tags: [active-directory, linux, metasploit, networking, privilege-escalation, windows]
+tags: [active-directory, c2, privilege-escalation, windows]
+summary: This guide demonstrates how membership in the Windows Server Operator group can be leveraged to escalate privileges to the system level.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.85
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 1.0
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:58:45Z
 ---
 
 Page 1 of 11

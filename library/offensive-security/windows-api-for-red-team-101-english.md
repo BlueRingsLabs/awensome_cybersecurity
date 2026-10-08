@@ -4,13 +4,16 @@ title: Windows API for Red Team 101 English
 category: offensive-security
 format: guide
 language: en
-tags: [evasion, malware, networking, python, red-team, windows]
+tags: [assembly, red-team, windows]
+summary: This document introduces the Windows API and its components for red team operators looking to understand operating system interaction.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.54
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T00:58:01Z
 ---
 
 Windows API for Red Team #101

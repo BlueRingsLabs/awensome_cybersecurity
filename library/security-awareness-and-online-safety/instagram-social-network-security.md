@@ -4,13 +4,16 @@ title: Instagram Social Network Security
 category: security-awareness-and-online-safety
 format: guide
 language: pt
-tags: [networking, phishing]
+tags: [hardening, password-security, phishing, social-engineering]
+summary: This document outlines common attack vectors against Instagram accounts, such as phishing and credential stuffing, and provides guidance on account recovery and security best practices.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.67
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T01:00:15Z
 ---
 
 INSTAGRAM –

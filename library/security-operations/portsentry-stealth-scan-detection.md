@@ -2,15 +2,18 @@
 id: ckb-5a7b985b2135
 title: PortSentry - stealth scan detection
 category: security-operations
-format: article
+format: guide
 language: en
-tags: [bash, linux]
+tags: [hardening, linux, networking]
+summary: This guide provides instructions on installing and configuring PortSentry to detect and block TCP and UDP port scans on a server.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.75
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.9
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T01:01:12Z
 ---
 
 # PortSentry - stealth scan detection

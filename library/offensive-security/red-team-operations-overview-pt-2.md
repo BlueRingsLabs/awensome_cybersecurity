@@ -2,15 +2,18 @@
 id: ckb-591dca0a15f5
 title: Red Team Operations Overview Pt 2
 category: offensive-security
-format: guide
+format: book
 language: en
-tags: [active-directory, c2, git, networking, red-team, tls]
+tags: [incident-response, mitre-attack, physical-security, red-team, social-engineering, threat-hunting]
+summary: This book provides an overview of Red Team concepts, methodologies, and objectives, focusing on how adversary emulation helps organizations measure and improve their defensive capabilities.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.94
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 1.0
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:57:34Z
 ---
 
 RED TEAM OPERATIONS –

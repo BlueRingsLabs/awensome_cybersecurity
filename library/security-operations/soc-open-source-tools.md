@@ -3,14 +3,17 @@ id: ckb-f42d94968f8e
 title: SOC Open Source Tools
 category: security-operations
 format: reference
-language: und
-tags: [firewall, forensics, mitre-attack, soc]
+language: en
+tags: [incident-response, log-analysis, malware, mitre-attack, soc, threat-intelligence]
+summary: This document provides a categorized compilation of open-source and near-open-source tools used in security operation centers.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.91
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T01:01:37Z
 ---
 
 SECURITY OPERATION

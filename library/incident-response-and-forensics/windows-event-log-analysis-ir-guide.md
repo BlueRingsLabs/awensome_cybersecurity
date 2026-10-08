@@ -1,16 +1,19 @@
 ---
 id: ckb-d5c3c4d59a59
 title: Windows Event Log Analysis IR Guide
-category: security-operations
+category: incident-response-and-forensics
 format: guide
 language: en
-tags: [compliance, incident-response, log-analysis, networking, password-security, windows]
+tags: [incident-response, log-analysis, mitre-attack, powershell, windows]
+summary: A technical guide covering Windows Event Log analysis for incident response, including specific event IDs for account management, logon events, and process tracking.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.69
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.95
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T01:01:45Z
 ---
 
 Windows Event Log Analysis & Incident

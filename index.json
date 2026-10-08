@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "generated_at": "2026-10-08T00:48:12Z",
+  "generated_at": "2026-10-08T01:07:49Z",
   "generator": "cyberkb",
   "repository": {
     "name": "awesome_cybersecurity",
@@ -432,42 +432,42 @@
   "counts": {
     "total": 490,
     "by_category": {
-      "offensive-security": 128,
-      "identity-and-access": 7,
-      "security-operations": 35,
-      "incident-response-and-forensics": 11,
-      "malware-analysis": 5,
-      "reverse-engineering-and-exploit-development": 23,
-      "threat-intelligence-and-osint": 23,
-      "application-security": 43,
-      "cloud-and-container-security": 9,
+      "offensive-security": 121,
+      "identity-and-access": 8,
+      "security-operations": 31,
+      "incident-response-and-forensics": 13,
+      "malware-analysis": 8,
+      "reverse-engineering-and-exploit-development": 19,
+      "threat-intelligence-and-osint": 19,
+      "application-security": 44,
+      "cloud-and-container-security": 11,
       "network-and-wireless-security": 18,
       "iot-ot-and-hardware-security": 6,
-      "ai-security": 11,
-      "cryptography-and-privacy": 22,
-      "governance-risk-and-compliance": 15,
-      "security-awareness-and-online-safety": 22,
-      "careers-and-certifications": 37,
-      "foundations-and-systems": 58,
-      "general-technology": 17,
+      "ai-security": 12,
+      "cryptography-and-privacy": 23,
+      "governance-risk-and-compliance": 16,
+      "security-awareness-and-online-safety": 21,
+      "careers-and-certifications": 41,
+      "foundations-and-systems": 61,
+      "general-technology": 18,
       "uncategorized": 0
     },
     "by_format": {
-      "book": 47,
-      "guide": 226,
-      "article": 81,
-      "paper": 8,
-      "course-notes": 28,
-      "cheatsheet": 12,
-      "checklist": 8,
-      "playbook": 4,
-      "reference": 76
+      "book": 57,
+      "guide": 180,
+      "article": 84,
+      "paper": 9,
+      "course-notes": 32,
+      "cheatsheet": 14,
+      "checklist": 9,
+      "playbook": 5,
+      "reference": 100
     },
     "by_language": {
-      "en": 407,
+      "en": 424,
       "es": 0,
-      "pt": 79,
-      "und": 4
+      "pt": 66,
+      "und": 0
     },
     "by_redistribution": {
       "noncommercial": 10,
@@ -767,6 +767,35 @@
         "model": "gemma-4-31b-it"
       },
       "classified_by": "google:gemma-4-31b-it@2026-10-07T23:57:24Z"
+    },
+    {
+      "id": "ckb-dcbd46f26b91",
+      "title": "The Coming AI Hackers",
+      "category": "ai-security",
+      "format": "paper",
+      "language": "en",
+      "path": "library/ai-security/the-coming-ai-hackers.md",
+      "tags": [
+        "ai",
+        "governance",
+        "threat-intelligence"
+      ],
+      "summary": "This essay by Bruce Schneier examines the implications of artificial intelligence systems acting as hackers to find and exploit vulnerabilities in social, economic, and political systems at scale.",
+      "authors": [
+        "unknown"
+      ],
+      "license": "NOASSERTION",
+      "redistribution": "unknown",
+      "added": "2026-10-04",
+      "word_count": 16083,
+      "size_bytes": 98304,
+      "sha256": "459eaefb57132fca30a8f0aa054a1b3144ce1ddb99ea9040f90dfdb57fedca51",
+      "classification": {
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.5-flash-lite"
+      },
+      "classified_by": "google:gemini-3.5-flash-lite@2026-10-08T00:57:57Z"
     },
     {
       "id": "ckb-01f066d7568e",
@@ -1277,6 +1306,38 @@
         "model": "gemini-3.1-flash-lite"
       },
       "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T00:01:23Z"
+    },
+    {
+      "id": "ckb-13ec4a8761cd",
+      "title": "Cybersecurity Flaws in the Metaverse 1",
+      "category": "application-security",
+      "format": "article",
+      "language": "en",
+      "path": "library/application-security/cybersecurity-flaws-in-the-metaverse-1.md",
+      "tags": [
+        "ai",
+        "blockchain",
+        "iot",
+        "privacy",
+        "social-engineering",
+        "web-security"
+      ],
+      "summary": "This document provides an overview of potential cybersecurity risks associated with the metaverse, covering physical, network, system, application, and user-centric threats.",
+      "authors": [
+        "Joas Antonio Dos Santos"
+      ],
+      "license": "NOASSERTION",
+      "redistribution": "unknown",
+      "added": "2026-10-04",
+      "word_count": 642,
+      "size_bytes": 4990,
+      "sha256": "434d8b2e9787b9247d5acb434231bc26f1fa5c42f113afa5e594015989f3c271",
+      "classification": {
+        "method": "llm",
+        "confidence": 0.9,
+        "model": "gemini-3.1-flash-lite"
+      },
+      "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T01:00:07Z"
     },
     {
       "id": "ckb-c9479d64c5e5",
@@ -2966,6 +3027,70 @@
       "classified_by": "google:gemma-4-31b-it@2026-10-08T00:09:34Z"
     },
     {
+      "id": "ckb-b75acfe77b09",
+      "title": "Pentest Skills Development",
+      "category": "careers-and-certifications",
+      "format": "reference",
+      "language": "en",
+      "path": "library/careers-and-certifications/pentest-skills-development.md",
+      "tags": [
+        "career",
+        "certification",
+        "education",
+        "red-team",
+        "reporting",
+        "vulnerability-management"
+      ],
+      "summary": "A comprehensive roadmap of skills, technical foundations, and certifications required for penetration testing professionals.",
+      "authors": [
+        "Joas Antonio Dos Santos"
+      ],
+      "license": "NOASSERTION",
+      "redistribution": "unknown",
+      "added": "2026-10-04",
+      "word_count": 352,
+      "size_bytes": 3319,
+      "sha256": "4396d6972d3cd93eaa42338f63a059cc4dfdcb5f4d84f31a0c26c7739bfd9612",
+      "classification": {
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemma-4-31b-it"
+      },
+      "classified_by": "google:gemma-4-31b-it@2026-10-08T00:55:20Z"
+    },
+    {
+      "id": "ckb-d35a3194d0b2",
+      "title": "Plano de Estudos Cyber Security Parte 1 Red Team",
+      "category": "careers-and-certifications",
+      "format": "guide",
+      "language": "pt",
+      "path": "library/careers-and-certifications/plano-de-estudos-cyber-security-parte-1-red-team.md",
+      "tags": [
+        "certification",
+        "education",
+        "linux",
+        "mitre-attack",
+        "red-team",
+        "windows"
+      ],
+      "summary": "A study plan for individuals starting in Red Team and Blue Team cybersecurity roles, providing a list of resources and fundamental knowledge requirements.",
+      "authors": [
+        "Joas Antonio Dos Santos"
+      ],
+      "license": "NOASSERTION",
+      "redistribution": "unknown",
+      "added": "2026-10-04",
+      "word_count": 2016,
+      "size_bytes": 14971,
+      "sha256": "4803c3eca57ea2046c198c6df00f17d38dcfc54a780e0d441c2fea533e1e0cbc",
+      "classification": {
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemma-4-26b-a4b-it"
+      },
+      "classified_by": "google:gemma-4-26b-a4b-it@2026-10-08T00:57:14Z"
+    },
+    {
       "id": "ckb-9f661057fa75",
       "title": "Red Team Career Tips 1",
       "category": "careers-and-certifications",
@@ -3119,6 +3244,38 @@
       "classified_by": "google:gemma-4-26b-a4b-it@2026-10-08T00:12:06Z"
     },
     {
+      "id": "ckb-169c9955ed53",
+      "title": "SOC Analyst Career",
+      "category": "careers-and-certifications",
+      "format": "guide",
+      "language": "pt",
+      "path": "library/careers-and-certifications/soc-analyst-career.md",
+      "tags": [
+        "career",
+        "certification",
+        "incident-response",
+        "log-analysis",
+        "soc",
+        "threat-intelligence"
+      ],
+      "summary": "This document outlines the required skills, responsibilities, and recommended certifications for SOC analysts across levels I, III, and III.",
+      "authors": [
+        "Joas Antonio Dos Santos"
+      ],
+      "license": "NOASSERTION",
+      "redistribution": "unknown",
+      "added": "2026-10-04",
+      "word_count": 986,
+      "size_bytes": 7934,
+      "sha256": "cb05e8b79adbf3543bdbb57b44f1a5a8c04bdad87903a49f313cd9c314188c10",
+      "classification": {
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.5-flash-lite"
+      },
+      "classified_by": "google:gemini-3.5-flash-lite@2026-10-08T01:01:36Z"
+    },
+    {
       "id": "ckb-aea1659d90aa",
       "title": "Starting Your Cybersecurity Career - Complete Guide",
       "category": "careers-and-certifications",
@@ -3209,6 +3366,37 @@
         "model": "gemini-3.1-flash-lite"
       },
       "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T00:12:32Z"
+    },
+    {
+      "id": "ckb-41be8c3f892e",
+      "title": "What IT Takes to Be a Red Team",
+      "category": "careers-and-certifications",
+      "format": "article",
+      "language": "en",
+      "path": "library/careers-and-certifications/what-it-takes-to-be-a-red-team.md",
+      "tags": [
+        "career",
+        "governance",
+        "mitre-attack",
+        "red-team",
+        "reporting"
+      ],
+      "summary": "This article outlines the core responsibilities, technical knowledge, soft skills, and leadership duties required to become an effective Red Team Leader in cybersecurity.",
+      "authors": [
+        "Joas Antonio Dos Santos"
+      ],
+      "license": "NOASSERTION",
+      "redistribution": "unknown",
+      "added": "2026-10-04",
+      "word_count": 855,
+      "size_bytes": 6282,
+      "sha256": "1f34912d227627862d238998cbf06d6ba357452c8c2f75b4680bd9be9be0ffd0",
+      "classification": {
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.5-flash-lite"
+      },
+      "classified_by": "google:gemini-3.5-flash-lite@2026-10-08T00:58:00Z"
     },
     {
       "id": "ckb-b4484f841ac2",
@@ -3456,6 +3644,67 @@
       "classified_by": "google:gemma-4-26b-a4b-it@2026-10-08T00:42:11Z"
     },
     {
+      "id": "ckb-ab217360a071",
+      "title": "Pentest em Ambientes Cloud 1",
+      "category": "cloud-and-container-security",
+      "format": "guide",
+      "language": "pt",
+      "path": "library/cloud-and-container-security/pentest-em-ambientes-cloud-1.md",
+      "tags": [
+        "aws",
+        "azure",
+        "cloud",
+        "containers"
+      ],
+      "summary": "A Portuguese language guide introducing basic cloud computing concepts and penetration testing in AWS and Azure environments.",
+      "authors": [
+        "unknown"
+      ],
+      "license": "NOASSERTION",
+      "redistribution": "unknown",
+      "added": "2026-10-04",
+      "word_count": 4035,
+      "size_bytes": 28925,
+      "sha256": "12b28c382c191d9a8733f1ca233f36b1477323d1eacd75366c256f0d2ce9c6ca",
+      "classification": {
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemma-4-31b-it"
+      },
+      "classified_by": "google:gemma-4-31b-it@2026-10-08T00:53:52Z"
+    },
+    {
+      "id": "ckb-cfdd0735fbcf",
+      "title": "Pentest in Office365 and Security",
+      "category": "cloud-and-container-security",
+      "format": "reference",
+      "language": "en",
+      "path": "library/cloud-and-container-security/pentest-in-office365-and-security.md",
+      "tags": [
+        "azure",
+        "cloud",
+        "credential-access",
+        "phishing",
+        "red-team"
+      ],
+      "summary": "A curated collection of links and resources for performing penetration testing and security assessments within Microsoft Office 365 environments.",
+      "authors": [
+        "Joas Antonio Dos Santos"
+      ],
+      "license": "NOASSERTION",
+      "redistribution": "unknown",
+      "added": "2026-10-04",
+      "word_count": 1062,
+      "size_bytes": 8450,
+      "sha256": "c236f0f807de21c781427ed816495648d4eeb4ee3cceb4b956788ae82c2ae8d6",
+      "classification": {
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemma-4-31b-it"
+      },
+      "classified_by": "google:gemma-4-31b-it@2026-10-08T00:54:25Z"
+    },
+    {
       "id": "ckb-40aa1a066978",
       "title": "Understanding your EKS environment - The reconnaissance phase",
       "category": "cloud-and-container-security",
@@ -3603,6 +3852,35 @@
         "model": "gemma-4-26b-a4b-it"
       },
       "classified_by": "google:gemma-4-26b-a4b-it@2026-10-08T00:13:47Z"
+    },
+    {
+      "id": "ckb-3a4e4ee8047d",
+      "title": "Blockchain and Smart Contract Testing Security",
+      "category": "cryptography-and-privacy",
+      "format": "checklist",
+      "language": "en",
+      "path": "library/cryptography-and-privacy/blockchain-and-smart-contract-testing-security.md",
+      "tags": [
+        "blockchain",
+        "fuzzing",
+        "web-security"
+      ],
+      "summary": "This document provides a comprehensive checklist of security testing methodologies and common vulnerability areas for blockchain smart contracts.",
+      "authors": [
+        "Joas Antonio Dos Santos"
+      ],
+      "license": "NOASSERTION",
+      "redistribution": "unknown",
+      "added": "2026-10-04",
+      "word_count": 456,
+      "size_bytes": 3758,
+      "sha256": "5264e2e6463289347c32f80f7b0efb00e03aba9560ca833963b3d876d6ff4afc",
+      "classification": {
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.1-flash-lite"
+      },
+      "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T00:59:08Z"
     },
     {
       "id": "ckb-1bf54f941bc3",
@@ -4158,6 +4436,34 @@
         "model": "gemini-3.5-flash-lite"
       },
       "classified_by": "google:gemini-3.5-flash-lite@2026-10-08T00:14:25Z"
+    },
+    {
+      "id": "ckb-3ec42f155108",
+      "title": "Assembly64",
+      "category": "foundations-and-systems",
+      "format": "book",
+      "language": "en",
+      "path": "library/foundations-and-systems/assembly64.md",
+      "tags": [
+        "assembly",
+        "linux"
+      ],
+      "summary": "This textbook provides a comprehensive introduction to x86-64 assembly language programming within the Ubuntu environment, covering architecture, data representation, and CPU operations.",
+      "authors": [
+        "unknown"
+      ],
+      "license": "NOASSERTION",
+      "redistribution": "unknown",
+      "added": "2026-10-04",
+      "word_count": 80020,
+      "size_bytes": 528418,
+      "sha256": "fd2852b2084e7997c3b9c4c7861608d27b606574da81bcc36e887900f2d1a8d8",
+      "classification": {
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.1-flash-lite"
+      },
+      "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T00:59:07Z"
     },
     {
       "id": "ckb-8ec07f28dfbb",
@@ -4929,6 +5235,34 @@
         "model": "gemini-3.5-flash-lite"
       },
       "classified_by": "google:gemini-3.5-flash-lite@2026-10-08T00:15:42Z"
+    },
+    {
+      "id": "ckb-5a5c721b8d0f",
+      "title": "Pentest Com PowerShell Overview",
+      "category": "foundations-and-systems",
+      "format": "reference",
+      "language": "en",
+      "path": "library/foundations-and-systems/pentest-com-powershell-overview.md",
+      "tags": [
+        "powershell",
+        "windows"
+      ],
+      "summary": "A curated collection of links to PowerShell tutorials, cheat sheets, and scripts for administration and network scanning.",
+      "authors": [
+        "unknown"
+      ],
+      "license": "NOASSERTION",
+      "redistribution": "unknown",
+      "added": "2026-10-04",
+      "word_count": 4249,
+      "size_bytes": 51989,
+      "sha256": "c5c4100fd6823cc1f4a2d6751179700a71f23909dd54d40895a466e962014642",
+      "classification": {
+        "method": "llm",
+        "confidence": 0.9,
+        "model": "gemma-4-31b-it"
+      },
+      "classified_by": "google:gemma-4-31b-it@2026-10-08T00:52:07Z"
     },
     {
       "id": "ckb-da576b6113ab",
@@ -5760,6 +6094,33 @@
       "classified_by": "google:gemma-4-26b-a4b-it@2026-10-08T00:24:31Z"
     },
     {
+      "id": "ckb-d76151196d02",
+      "title": "Worth checking ep.1",
+      "category": "foundations-and-systems",
+      "format": "reference",
+      "language": "en",
+      "path": "library/foundations-and-systems/worth-checking-ep-1.md",
+      "tags": [
+        "education"
+      ],
+      "summary": "This article serves as the inaugural entry in a recurring series that curates various cybersecurity resources, tools, and articles for professional development.",
+      "authors": [
+        "unknown"
+      ],
+      "license": "NOASSERTION",
+      "redistribution": "unknown",
+      "added": "2026-10-04",
+      "word_count": 1104,
+      "size_bytes": 7527,
+      "sha256": "a79a83a66c996ff9105a78b7f197d060a829e7ea03b087e2f097e5e45edfe6ec",
+      "classification": {
+        "method": "llm",
+        "confidence": 0.9,
+        "model": "gemini-3.1-flash-lite"
+      },
+      "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T00:58:55Z"
+    },
+    {
       "id": "ckb-674c71e87b58",
       "title": "Your first VPS server",
       "category": "foundations-and-systems",
@@ -6247,6 +6608,38 @@
       "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T00:29:48Z"
     },
     {
+      "id": "ckb-7db3c0d9d506",
+      "title": "Worth checking ep.2",
+      "category": "general-technology",
+      "format": "reference",
+      "language": "en",
+      "path": "library/general-technology/worth-checking-ep-2.md",
+      "tags": [
+        "education",
+        "incident-response",
+        "malware",
+        "osint",
+        "red-team",
+        "web-security"
+      ],
+      "summary": "This is a curated collection of cybersecurity documents, articles, tools, and illustrations covering various topics from penetration testing to risk management.",
+      "authors": [
+        "unknown"
+      ],
+      "license": "NOASSERTION",
+      "redistribution": "unknown",
+      "added": "2026-10-04",
+      "word_count": 695,
+      "size_bytes": 5718,
+      "sha256": "acbb4f5a4781b5dd725cb654edbf29fc85aaef9b8183d44bacaab13bb51e270f",
+      "classification": {
+        "method": "llm",
+        "confidence": 0.9,
+        "model": "gemini-3.1-flash-lite"
+      },
+      "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T00:59:04Z"
+    },
+    {
       "id": "ckb-efc60ed214f8",
       "title": "25 Cyber Security Frameworks",
       "category": "governance-risk-and-compliance",
@@ -6606,6 +6999,38 @@
       "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T00:30:35Z"
     },
     {
+      "id": "ckb-413b9724fc30",
+      "title": "The Purple Book on Cyber Security",
+      "category": "governance-risk-and-compliance",
+      "format": "book",
+      "language": "en",
+      "path": "library/governance-risk-and-compliance/the-purple-book-on-cyber-security.md",
+      "tags": [
+        "education",
+        "governance",
+        "hardening",
+        "malware",
+        "mobile",
+        "soc"
+      ],
+      "summary": "A comprehensive introductory guide for sales, pre-sales, and delivery professionals regarding cybersecurity, endpoint security, and mobile security solutions.",
+      "authors": [
+        "unknown"
+      ],
+      "license": "NOASSERTION",
+      "redistribution": "unknown",
+      "added": "2026-10-04",
+      "word_count": 63434,
+      "size_bytes": 431543,
+      "sha256": "e47ff60422abca3d230af54155cda6301879d5c4ca07aaa79197259042d40b47",
+      "classification": {
+        "method": "llm",
+        "confidence": 0.85,
+        "model": "gemma-4-26b-a4b-it"
+      },
+      "classified_by": "google:gemma-4-26b-a4b-it@2026-10-08T01:01:40Z"
+    },
+    {
       "id": "ckb-13ca6fb3c5de",
       "title": "Threat Modeling in Modern Security Programs",
       "category": "governance-risk-and-compliance",
@@ -6875,6 +7300,38 @@
       },
       "source_url": "https://www.picussecurity.com",
       "reference_only": true
+    },
+    {
+      "id": "ckb-e805fa920b1b",
+      "title": "Windows Server AD and O365 Advanced Pentest",
+      "category": "identity-and-access",
+      "format": "reference",
+      "language": "en",
+      "path": "library/identity-and-access/windows-server-ad-and-o365-advanced-pentest.md",
+      "tags": [
+        "active-directory",
+        "credential-access",
+        "lateral-movement",
+        "powershell",
+        "red-team",
+        "windows"
+      ],
+      "summary": "This document provides a curated collection of external resources, articles, and videos focused on enumeration and exploitation techniques within Windows Server and Active Directory environments.",
+      "authors": [
+        "Joas Antonio Dos Santos"
+      ],
+      "license": "NOASSERTION",
+      "redistribution": "unknown",
+      "added": "2026-10-04",
+      "word_count": 7932,
+      "size_bytes": 60995,
+      "sha256": "3a8d29b2ffddfa8fbd2939b8806a8ab12ff9d29130a31a36ec4b04bed24ad243",
+      "classification": {
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.1-flash-lite"
+      },
+      "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T00:58:51Z"
     },
     {
       "id": "ckb-dce10de136e0",
@@ -7237,6 +7694,68 @@
       "classified_by": "google:gemma-4-26b-a4b-it@2026-10-08T00:31:49Z"
     },
     {
+      "id": "ckb-8740c017fd0e",
+      "title": "Microsoft Office and Windows Remote Code Execution",
+      "category": "incident-response-and-forensics",
+      "format": "playbook",
+      "language": "en",
+      "path": "library/incident-response-and-forensics/microsoft-office-and-windows-remote-code-execution.md",
+      "tags": [
+        "incident-response",
+        "log-analysis",
+        "malware",
+        "mitre-attack",
+        "phishing"
+      ],
+      "summary": "This document provides a step-by-step incident response walkthrough for investigating a spear-phishing attack exploiting the CVE-2023-36884 vulnerability in Microsoft Office.",
+      "authors": [
+        "Muhammet Donmez"
+      ],
+      "license": "NOASSERTION",
+      "redistribution": "unknown",
+      "added": "2026-10-04",
+      "word_count": 1387,
+      "size_bytes": 8803,
+      "sha256": "966923f64c09336110fa2aedd843ec51e3c1f444596138be49b8e1b627299b6e",
+      "classification": {
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.1-flash-lite"
+      },
+      "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T01:01:08Z"
+    },
+    {
+      "id": "ckb-d5c3c4d59a59",
+      "title": "Windows Event Log Analysis IR Guide",
+      "category": "incident-response-and-forensics",
+      "format": "guide",
+      "language": "en",
+      "path": "library/incident-response-and-forensics/windows-event-log-analysis-ir-guide.md",
+      "tags": [
+        "incident-response",
+        "log-analysis",
+        "mitre-attack",
+        "powershell",
+        "windows"
+      ],
+      "summary": "A technical guide covering Windows Event Log analysis for incident response, including specific event IDs for account management, logon events, and process tracking.",
+      "authors": [
+        "unknown"
+      ],
+      "license": "NOASSERTION",
+      "redistribution": "unknown",
+      "added": "2026-10-04",
+      "word_count": 7971,
+      "size_bytes": 51403,
+      "sha256": "cd9329d0e5db36da80580473aadd83195d375092ab7f28770ddcc70b68b6b2e2",
+      "classification": {
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemma-4-26b-a4b-it"
+      },
+      "classified_by": "google:gemma-4-26b-a4b-it@2026-10-08T01:01:45Z"
+    },
+    {
       "id": "ckb-d8c7cb142e7e",
       "title": "Gettng Started in ICS OT Cyber Security",
       "category": "iot-ot-and-hardware-security",
@@ -7418,6 +7937,38 @@
       "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T00:32:03Z"
     },
     {
+      "id": "ckb-617a3b7b394c",
+      "title": "ChatGPT for Cybersecurity 3",
+      "category": "malware-analysis",
+      "format": "article",
+      "language": "en",
+      "path": "library/malware-analysis/chatgpt-for-cybersecurity-3.md",
+      "tags": [
+        "assembly",
+        "c2",
+        "malware",
+        "python",
+        "reverse-engineering",
+        "windows"
+      ],
+      "summary": "A collection of technical topics and prompts related to malware analysis, reverse engineering, and C++ programming for cybersecurity professionals.",
+      "authors": [
+        "Joas Antonio Dos Santos"
+      ],
+      "license": "NOASSERTION",
+      "redistribution": "unknown",
+      "added": "2026-10-04",
+      "word_count": 298,
+      "size_bytes": 2553,
+      "sha256": "89bb7aafd945cc0a33cd1d5996ee71e2effe0674d67fb32b2a36c7d96c116fc7",
+      "classification": {
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemma-4-26b-a4b-it"
+      },
+      "classified_by": "google:gemma-4-26b-a4b-it@2026-10-08T00:59:22Z"
+    },
+    {
       "id": "ckb-f251ee71191c",
       "title": "Introduo Bsica a Analise de Malware 1",
       "category": "malware-analysis",
@@ -7474,6 +8025,36 @@
         "model": "gemini-3.1-flash-lite"
       },
       "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T00:32:13Z"
+    },
+    {
+      "id": "ckb-17aececd2e8f",
+      "title": "Malware and Reverse Engineering Complete Collection by Joas",
+      "category": "malware-analysis",
+      "format": "reference",
+      "language": "en",
+      "path": "library/malware-analysis/malware-and-reverse-engineering-complete-collection-by-joas.md",
+      "tags": [
+        "forensics",
+        "malware",
+        "reverse-engineering",
+        "threat-intelligence"
+      ],
+      "summary": "This document provides a curated reference list of malware analysis resources, tools, honeypots, malware corpora, and open-source threat intelligence platforms.",
+      "authors": [
+        "unknown"
+      ],
+      "license": "NOASSERTION",
+      "redistribution": "unknown",
+      "added": "2026-10-04",
+      "word_count": 6399,
+      "size_bytes": 47290,
+      "sha256": "25dda1d5f6f0c5d2f1d90975099f454de0f8095c77b00c47eb24d65f349e142e",
+      "classification": {
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.5-flash-lite"
+      },
+      "classified_by": "google:gemini-3.5-flash-lite@2026-10-08T00:59:31Z"
     },
     {
       "id": "ckb-99b363e18674",
@@ -7533,6 +8114,36 @@
         "model": "gemini-3.1-flash-lite"
       },
       "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T00:32:23Z"
+    },
+    {
+      "id": "ckb-d765a1a92757",
+      "title": "Ransomware Investigation OSINT and Hunting Overview Pt1",
+      "category": "malware-analysis",
+      "format": "article",
+      "language": "en",
+      "path": "library/malware-analysis/ransomware-investigation-osint-and-hunting-overview-pt1.md",
+      "tags": [
+        "malware",
+        "mitre-attack",
+        "osint",
+        "ransomware"
+      ],
+      "summary": "An overview of ransomware types, common ransomware families, APT groups, and the role of OSINT in investigation and hunting.",
+      "authors": [
+        "unknown"
+      ],
+      "license": "NOASSERTION",
+      "redistribution": "unknown",
+      "added": "2026-10-04",
+      "word_count": 3680,
+      "size_bytes": 25965,
+      "sha256": "0274a9146dd8448fa379e77aeaf9eb37c9ad31e1894239ee40463b26d9b0699d",
+      "classification": {
+        "method": "llm",
+        "confidence": 0.9,
+        "model": "gemma-4-26b-a4b-it"
+      },
+      "classified_by": "google:gemma-4-26b-a4b-it@2026-10-08T01:07:27Z"
     },
     {
       "id": "ckb-9ee0dd7b77ff",
@@ -9554,6 +10165,34 @@
       "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T00:41:22Z"
     },
     {
+      "id": "ckb-0c6ef8f35ed5",
+      "title": "Introduo Ao MITRE Att Ck e Ao Cyber Kill Chain",
+      "category": "offensive-security",
+      "format": "course-notes",
+      "language": "pt",
+      "path": "library/offensive-security/introduo-ao-mitre-att-ck-e-ao-cyber-kill-chain.md",
+      "tags": [
+        "mitre-attack",
+        "red-team"
+      ],
+      "summary": "This course material introduces the concepts of Red, Blue, and Purple teaming, as well as the Mitre ATT&CK framework and the Cyber Kill Chain.",
+      "authors": [
+        "Joas Antonio Dos Santos"
+      ],
+      "license": "NOASSERTION",
+      "redistribution": "unknown",
+      "added": "2026-10-04",
+      "word_count": 3072,
+      "size_bytes": 20689,
+      "sha256": "fdf5daaf4f66b288f179bb19b0f10cba3a7d8a28e8c56e08ebad9a3246a4bdb4",
+      "classification": {
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemma-4-26b-a4b-it"
+      },
+      "classified_by": "google:gemma-4-26b-a4b-it@2026-10-08T01:01:57Z"
+    },
+    {
       "id": "ckb-41846fe8587a",
       "title": "JavaScript for Hackers 2",
       "category": "offensive-security",
@@ -10290,14 +10929,11 @@
       "language": "en",
       "path": "library/offensive-security/pentest-best-practice-checklist.md",
       "tags": [
-        "governance",
-        "incident-response",
-        "log-analysis",
-        "networking",
+        "red-team",
         "reporting",
-        "web-security"
+        "vulnerability-management"
       ],
-      "summary": "",
+      "summary": "A checklist of best practices for planning and executing penetration tests, covering scope, budget, environment preparation, and expertise.",
       "authors": [
         "unknown"
       ],
@@ -10305,102 +10941,14 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 3112,
-      "size_bytes": 19732,
+      "size_bytes": 19922,
       "sha256": "799d6c67282527762d7b9f4109fd41ebc1b7ed455d0f61137872827fd6be8999",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.74
-      }
-    },
-    {
-      "id": "ckb-5a5c721b8d0f",
-      "title": "Pentest Com PowerShell Overview",
-      "category": "offensive-security",
-      "format": "guide",
-      "language": "pt",
-      "path": "library/offensive-security/pentest-com-powershell-overview.md",
-      "tags": [
-        "c2",
-        "git",
-        "lateral-movement",
-        "powershell",
-        "tls",
-        "windows"
-      ],
-      "summary": "",
-      "authors": [
-        "unknown"
-      ],
-      "license": "NOASSERTION",
-      "redistribution": "unknown",
-      "added": "2026-10-04",
-      "word_count": 4249,
-      "size_bytes": 51806,
-      "sha256": "c5c4100fd6823cc1f4a2d6751179700a71f23909dd54d40895a466e962014642",
-      "classification": {
-        "method": "heuristic",
-        "confidence": 0.83
-      }
-    },
-    {
-      "id": "ckb-ab217360a071",
-      "title": "Pentest em Ambientes Cloud 1",
-      "category": "offensive-security",
-      "format": "guide",
-      "language": "pt",
-      "path": "library/offensive-security/pentest-em-ambientes-cloud-1.md",
-      "tags": [
-        "aws",
-        "azure",
-        "cloud",
-        "git",
-        "tls",
-        "web-security"
-      ],
-      "summary": "",
-      "authors": [
-        "unknown"
-      ],
-      "license": "NOASSERTION",
-      "redistribution": "unknown",
-      "added": "2026-10-04",
-      "word_count": 4035,
-      "size_bytes": 28715,
-      "sha256": "12b28c382c191d9a8733f1ca233f36b1477323d1eacd75366c256f0d2ce9c6ca",
-      "classification": {
-        "method": "heuristic",
-        "confidence": 0.4
-      }
-    },
-    {
-      "id": "ckb-cfdd0735fbcf",
-      "title": "Pentest in Office365 and Security",
-      "category": "offensive-security",
-      "format": "guide",
-      "language": "pt",
-      "path": "library/offensive-security/pentest-in-office365-and-security.md",
-      "tags": [
-        "azure",
-        "cloud",
-        "compliance",
-        "git",
-        "phishing",
-        "tls"
-      ],
-      "summary": "",
-      "authors": [
-        "Joas Antonio Dos Santos"
-      ],
-      "license": "NOASSERTION",
-      "redistribution": "unknown",
-      "added": "2026-10-04",
-      "word_count": 1062,
-      "size_bytes": 8198,
-      "sha256": "c236f0f807de21c781427ed816495648d4eeb4ee3cceb4b956788ae82c2ae8d6",
-      "classification": {
-        "method": "heuristic",
-        "confidence": 0.51
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemma-4-31b-it"
+      },
+      "classified_by": "google:gemma-4-31b-it@2026-10-08T00:51:44Z"
     },
     {
       "id": "ckb-568d400a55fb",
@@ -10434,49 +10982,21 @@
       "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T00:34:11Z"
     },
     {
-      "id": "ckb-b75acfe77b09",
-      "title": "Pentest Skills Development",
-      "category": "offensive-security",
-      "format": "guide",
-      "language": "en",
-      "path": "library/offensive-security/pentest-skills-development.md",
-      "tags": [
-        "certification",
-        "networking",
-        "tls",
-        "windows"
-      ],
-      "summary": "",
-      "authors": [
-        "Joas Antonio Dos Santos"
-      ],
-      "license": "NOASSERTION",
-      "redistribution": "unknown",
-      "added": "2026-10-04",
-      "word_count": 352,
-      "size_bytes": 3056,
-      "sha256": "4396d6972d3cd93eaa42338f63a059cc4dfdcb5f4d84f31a0c26c7739bfd9612",
-      "classification": {
-        "method": "heuristic",
-        "confidence": 0.9
-      }
-    },
-    {
       "id": "ckb-9ec24f7f0817",
       "title": "Pentest Toolkit",
       "category": "offensive-security",
       "format": "reference",
-      "language": "pt",
+      "language": "en",
       "path": "library/offensive-security/pentest-toolkit.md",
       "tags": [
-        "git",
-        "linux",
+        "metasploit",
         "mitre-attack",
+        "nmap",
+        "osint",
         "powershell",
-        "red-team",
-        "tls"
+        "red-team"
       ],
-      "summary": "",
+      "summary": "A comprehensive collection of tools and resources for penetration testing, red teaming, and post-exploitation phases.",
       "authors": [
         "unknown"
       ],
@@ -10484,12 +11004,14 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 426,
-      "size_bytes": 4089,
+      "size_bytes": 4309,
       "sha256": "e528d01719110b8cb32d4e76bb14eeaa8da5b376c99cdbff587b62ea6052db53",
       "classification": {
-        "method": "heuristic",
-        "confidence": 1.0
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemma-4-26b-a4b-it"
+      },
+      "classified_by": "google:gemma-4-26b-a4b-it@2026-10-08T00:57:05Z"
     },
     {
       "id": "ckb-bbe576802438",
@@ -10499,14 +11021,12 @@
       "language": "en",
       "path": "library/offensive-security/pentest-with-metasploit-overview.md",
       "tags": [
-        "lateral-movement",
-        "linux",
+        "c2",
+        "exploit-development",
         "metasploit",
-        "persistence",
-        "tls",
-        "windows"
+        "red-team"
       ],
-      "summary": "",
+      "summary": "An overview of the Metasploit Framework, covering its core components, penetration testing methodology, penetration testing steps, and key glossary terms.",
       "authors": [
         "Joas Antonio Dos Santos"
       ],
@@ -10514,12 +11034,14 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 3852,
-      "size_bytes": 28242,
+      "size_bytes": 28473,
       "sha256": "dfaef97d20ae7bb4892714effc7db9e4011fb85090774ce21dd7c285d93049cc",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.99
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemma-4-26b-a4b-it"
+      },
+      "classified_by": "google:gemma-4-26b-a4b-it@2026-10-08T00:57:08Z"
     },
     {
       "id": "ckb-898c9128b68d",
@@ -10529,14 +11051,9 @@
       "language": "en",
       "path": "library/offensive-security/pentesting-cheat-sheet.md",
       "tags": [
-        "cheatsheet",
-        "databases",
-        "nmap",
-        "sql-injection",
-        "tls",
-        "web-security"
+        "nmap"
       ],
-      "summary": "",
+      "summary": "A collection of code snippets and commands for various penetration testing tasks including reconnaissance, exploitation, and post-exploitation.",
       "authors": [
         "unknown"
       ],
@@ -10544,59 +11061,31 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 3425,
-      "size_bytes": 19913,
+      "size_bytes": 20093,
       "sha256": "8a058778df7406b7cda17c0cf13f9427d43298aa962427f9b639483a7da409fe",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.66
-      }
-    },
-    {
-      "id": "ckb-d35a3194d0b2",
-      "title": "Plano de Estudos Cyber Security Parte 1 Red Team",
-      "category": "offensive-security",
-      "format": "guide",
-      "language": "pt",
-      "path": "library/offensive-security/plano-de-estudos-cyber-security-parte-1-red-team.md",
-      "tags": [
-        "git",
-        "linux",
-        "mitre-attack",
-        "red-team",
-        "soc",
-        "tls"
-      ],
-      "summary": "",
-      "authors": [
-        "Joas Antonio Dos Santos"
-      ],
-      "license": "NOASSERTION",
-      "redistribution": "unknown",
-      "added": "2026-10-04",
-      "word_count": 2016,
-      "size_bytes": 14695,
-      "sha256": "4803c3eca57ea2046c198c6df00f17d38dcfc54a780e0d441c2fea533e1e0cbc",
-      "classification": {
-        "method": "heuristic",
-        "confidence": 0.95
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemma-4-26b-a4b-it"
+      },
+      "classified_by": "google:gemma-4-26b-a4b-it@2026-10-08T00:57:11Z"
     },
     {
       "id": "ckb-4e5307143432",
       "title": "PowerShell Tips Tricks for Pentester",
       "category": "offensive-security",
-      "format": "guide",
+      "format": "cheatsheet",
       "language": "en",
       "path": "library/offensive-security/powershell-tips-tricks-for-pentester.md",
       "tags": [
+        "credential-access",
         "evasion",
-        "networking",
-        "password-security",
         "persistence",
         "powershell",
+        "red-team",
         "windows"
       ],
-      "summary": "",
+      "summary": "This document provides a collection of PowerShell commands and techniques commonly used by red teamers for system enumeration, credential harvesting, evasion, and post-exploitation activities.",
       "authors": [
         "unknown"
       ],
@@ -10604,12 +11093,44 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 4638,
-      "size_bytes": 35279,
+      "size_bytes": 35573,
       "sha256": "e1ac8ad42d7f0d0836d2aadc776897e34f6c9f4fc375b9b7dd82a479671beccb",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.43
-      }
+        "method": "llm",
+        "confidence": 1.0,
+        "model": "gemini-3.1-flash-lite"
+      },
+      "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T00:57:15Z"
+    },
+    {
+      "id": "ckb-abb2c1e87c84",
+      "title": "Practical Recon Automation with ReconFTW",
+      "category": "offensive-security",
+      "format": "guide",
+      "language": "en",
+      "path": "library/offensive-security/practical-recon-automation-with-reconftw.md",
+      "tags": [
+        "bug-bounty",
+        "linux",
+        "osint",
+        "red-team"
+      ],
+      "summary": "A technical guide on setting up and using the ReconFTW automation tool within a Docker container on Debian to streamline reconnaissance for bug bounty hunting.",
+      "authors": [
+        "unknown"
+      ],
+      "license": "NOASSERTION",
+      "redistribution": "unknown",
+      "added": "2026-10-04",
+      "word_count": 1344,
+      "size_bytes": 9381,
+      "sha256": "55cd1dece2a12c848e999d1b9f6e2e8f20e5658604bf87bf7a4ae54a68a3d27d",
+      "classification": {
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemma-4-31b-it"
+      },
+      "classified_by": "google:gemma-4-31b-it@2026-10-08T01:05:36Z"
     },
     {
       "id": "ckb-852ad7f5ac0d",
@@ -10621,12 +11142,12 @@
       "tags": [
         "credential-access",
         "metasploit",
-        "password-security",
+        "persistence",
         "powershell",
         "privilege-escalation",
         "windows"
       ],
-      "summary": "",
+      "summary": "This guide outlines various techniques for escalating privileges on Windows systems, including credential harvesting, exploiting scheduled tasks, and abusing service misconfigurations.",
       "authors": [
         "unknown"
       ],
@@ -10634,25 +11155,31 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 8130,
-      "size_bytes": 55633,
+      "size_bytes": 55911,
       "sha256": "5279147dfa0d23ab652bffa1fc8d3b081183d973f8bd7a4c80f9e28b9063cea6",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.7
-      }
+        "method": "llm",
+        "confidence": 1.0,
+        "model": "gemini-3.1-flash-lite"
+      },
+      "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T00:57:16Z"
     },
     {
       "id": "ckb-a956d75fe63d",
       "title": "Python for Hackers Bootcamp",
       "category": "offensive-security",
       "format": "course-notes",
-      "language": "und",
+      "language": "en",
       "path": "library/offensive-security/python-for-hackers-bootcamp.md",
       "tags": [
-        "burp-suite",
-        "python"
+        "exploit-development",
+        "fuzzing",
+        "malware",
+        "networking",
+        "python",
+        "web-security"
       ],
-      "summary": "",
+      "summary": "This course outline covers the application of Python programming for various offensive security tasks including network scanning, exploit development, and web application testing.",
       "authors": [
         "Joas Antonio Dos Santos"
       ],
@@ -10660,29 +11187,31 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 124,
-      "size_bytes": 1095,
+      "size_bytes": 1426,
       "sha256": "c0a945a91cc4165b54babcbdb30da1ec2fff4c49179bb6eb39faeab21681081d",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.33
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.1-flash-lite"
+      },
+      "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T00:57:17Z"
     },
     {
       "id": "ckb-c7cbfb50e22c",
       "title": "Python for Hackers Pt 1",
       "category": "offensive-security",
-      "format": "guide",
-      "language": "pt",
+      "format": "reference",
+      "language": "en",
       "path": "library/offensive-security/python-for-hackers-pt-1.md",
       "tags": [
         "buffer-overflow",
-        "cryptography",
-        "git",
-        "password-security",
+        "c2",
+        "exploit-development",
+        "fuzzing",
         "python",
-        "tls"
+        "red-team"
       ],
-      "summary": "",
+      "summary": "This document provides a curated collection of Python scripts for various offensive security tasks, including network scanning, exploitation, and post-exploitation activities.",
       "authors": [
         "Joas Antonio Dos Santos"
       ],
@@ -10690,29 +11219,31 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 582,
-      "size_bytes": 4206,
+      "size_bytes": 4487,
       "sha256": "fe08284fd29d426fd0c82442c823cd7c6f353a5d59ef1dcc6d7173a44adc369c",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.7
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.1-flash-lite"
+      },
+      "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T00:57:18Z"
     },
     {
       "id": "ckb-b8c1ac4e0f8e",
       "title": "Red Team and Blue Team Labs and CTF",
       "category": "offensive-security",
       "format": "reference",
-      "language": "pt",
+      "language": "en",
       "path": "library/offensive-security/red-team-and-blue-team-labs-and-ctf.md",
       "tags": [
         "ctf",
-        "owasp",
+        "education",
+        "exploit-development",
         "red-team",
         "soc",
-        "tls",
         "web-security"
       ],
-      "summary": "",
+      "summary": "This document provides a curated list of online platforms and resources for practicing offensive and defensive cybersecurity skills through labs and capture-the-flag challenges.",
       "authors": [
         "Joas Antonio Dos Santos"
       ],
@@ -10720,27 +11251,30 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 246,
-      "size_bytes": 2208,
+      "size_bytes": 2505,
       "sha256": "936909c6341b67cc7e680bc5d14ecf059c937fc3f8eb95bf93deebecb64c153a",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.66
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.1-flash-lite"
+      },
+      "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T00:57:19Z"
     },
     {
       "id": "ckb-57a4634bd89b",
       "title": "Red Team browser plugins",
       "category": "offensive-security",
-      "format": "article",
+      "format": "reference",
       "language": "en",
       "path": "library/offensive-security/red-team-browser-plugins.md",
       "tags": [
-        "git",
+        "burp-suite",
+        "osint",
         "red-team",
-        "tls",
+        "sql-injection",
         "web-security"
       ],
-      "summary": "",
+      "summary": "This article provides a curated list of browser extensions useful for web application penetration testing and reconnaissance.",
       "authors": [
         "unknown"
       ],
@@ -10748,29 +11282,31 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 1075,
-      "size_bytes": 7323,
+      "size_bytes": 7574,
       "sha256": "56a9eb65402dbf45bdecedb9a9cb3b4dd75b14a335067f28f94d122bbd85d370",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.44
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.1-flash-lite"
+      },
+      "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T00:57:21Z"
     },
     {
       "id": "ckb-91a9a2419d43",
       "title": "Red Team Interview Questions",
       "category": "offensive-security",
-      "format": "guide",
+      "format": "reference",
       "language": "en",
       "path": "library/offensive-security/red-team-interview-questions.md",
       "tags": [
         "active-directory",
         "career",
-        "malware",
-        "networking",
+        "evasion",
+        "powershell",
         "red-team",
         "windows"
       ],
-      "summary": "",
+      "summary": "This document provides a comprehensive list of technical interview questions and topics relevant to red teaming, covering areas such as initial access, Windows internals, and Active Directory.",
       "authors": [
         "unknown"
       ],
@@ -10778,12 +11314,14 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 23131,
-      "size_bytes": 164533,
+      "size_bytes": 164829,
       "sha256": "1b262bacf31218e209b788080b01764b7ed82b3fa5b67dc4a159ebb18629036a",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.57
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.1-flash-lite"
+      },
+      "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T00:57:29Z"
     },
     {
       "id": "ckb-08088d338ba8",
@@ -10793,14 +11331,12 @@
       "language": "en",
       "path": "library/offensive-security/red-team-operations-concepts-1.md",
       "tags": [
+        "education",
         "mitre-attack",
-        "networking",
         "red-team",
-        "soc",
-        "threat-intelligence",
-        "tls"
+        "threat-intelligence"
       ],
-      "summary": "",
+      "summary": "This document provides an introductory overview of red teaming, adversary emulation, and the use of the MITRE ATT&CK framework for security assessments.",
       "authors": [
         "Joas Antonio Dos Santos"
       ],
@@ -10808,29 +11344,30 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 4373,
-      "size_bytes": 32167,
+      "size_bytes": 32407,
       "sha256": "00a816cc1343c99b49a340c617f5df531647ebf29ee5cf599ec97f1dff658b6d",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.72
-      }
+        "method": "llm",
+        "confidence": 1.0,
+        "model": "gemini-3.1-flash-lite"
+      },
+      "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T00:57:30Z"
     },
     {
       "id": "ckb-fc218b6bab9e",
       "title": "Red Team Operations Development Pt 1",
       "category": "offensive-security",
-      "format": "guide",
+      "format": "book",
       "language": "en",
       "path": "library/offensive-security/red-team-operations-development-pt-1.md",
       "tags": [
-        "active-directory",
-        "git",
-        "networking",
+        "incident-response",
+        "mitre-attack",
         "red-team",
-        "threat-intelligence",
-        "tls"
+        "reporting",
+        "threat-hunting"
       ],
-      "summary": "",
+      "summary": "This document provides an overview of red team operations, defining the roles, goals, and methodologies used to emulate real-world threats and measure an organization's defensive capabilities.",
       "authors": [
         "Joas Antonio Dos Santos"
       ],
@@ -10838,29 +11375,30 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 1942,
-      "size_bytes": 13403,
+      "size_bytes": 13692,
       "sha256": "a66b05fe95446302c2edb6ec5f6602de24e004dd5fc44ca8cd83b961d26cbaf9",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.85
-      }
+        "method": "llm",
+        "confidence": 1.0,
+        "model": "gemini-3.1-flash-lite"
+      },
+      "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T00:57:31Z"
     },
     {
       "id": "ckb-5a642030306b",
       "title": "Red Team Operations Overview Pt 1",
       "category": "offensive-security",
       "format": "guide",
-      "language": "pt",
+      "language": "en",
       "path": "library/offensive-security/red-team-operations-overview-pt-1.md",
       "tags": [
-        "active-directory",
         "c2",
-        "git",
+        "credential-access",
+        "evasion",
         "phishing",
-        "red-team",
-        "tls"
+        "red-team"
       ],
-      "summary": "",
+      "summary": "This document provides an introductory overview of red team concepts, including command and control infrastructure, initial compromise techniques, and relevant tooling.",
       "authors": [
         "unknown"
       ],
@@ -10868,29 +11406,31 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 1568,
-      "size_bytes": 11544,
+      "size_bytes": 11812,
       "sha256": "ef1ebcbea066da874bf112c562add09c058a2a01672dd8c85268c5727334d325",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.91
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.1-flash-lite"
+      },
+      "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T00:57:33Z"
     },
     {
       "id": "ckb-591dca0a15f5",
       "title": "Red Team Operations Overview Pt 2",
       "category": "offensive-security",
-      "format": "guide",
+      "format": "book",
       "language": "en",
       "path": "library/offensive-security/red-team-operations-overview-pt-2.md",
       "tags": [
-        "active-directory",
-        "c2",
-        "git",
-        "networking",
+        "incident-response",
+        "mitre-attack",
+        "physical-security",
         "red-team",
-        "tls"
+        "social-engineering",
+        "threat-hunting"
       ],
-      "summary": "",
+      "summary": "This book provides an overview of Red Team concepts, methodologies, and objectives, focusing on how adversary emulation helps organizations measure and improve their defensive capabilities.",
       "authors": [
         "Joas Antonio Dos Santos"
       ],
@@ -10898,29 +11438,31 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 3335,
-      "size_bytes": 23161,
+      "size_bytes": 23492,
       "sha256": "d979355a0704daf484377cf096feca6aadf7844afc678e09c7a72c1024bdc6e7",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.94
-      }
+        "method": "llm",
+        "confidence": 1.0,
+        "model": "gemini-3.1-flash-lite"
+      },
+      "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T00:57:34Z"
     },
     {
       "id": "ckb-3dc46b909213",
       "title": "Red Team Operations Simulando Um Grupo APT Na Prtica",
       "category": "offensive-security",
-      "format": "guide",
+      "format": "course-notes",
       "language": "pt",
       "path": "library/offensive-security/red-team-operations-simulando-um-grupo-apt-na-prtica.md",
       "tags": [
         "evasion",
         "malware",
+        "mitre-attack",
+        "powershell",
         "red-team",
-        "threat-intelligence",
-        "tls",
         "windows"
       ],
-      "summary": "",
+      "summary": "This document provides an overview of red team operations by analyzing the tactics, techniques, and procedures used by APT groups, including evasion methods like AMSI bypass and direct syscalls.",
       "authors": [
         "unknown"
       ],
@@ -10928,12 +11470,14 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 1417,
-      "size_bytes": 10000,
+      "size_bytes": 10301,
       "sha256": "23106ef00c7b5bf01f9188760df10d5ad0c298b302432307b6b459dd938d838f",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.42
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.1-flash-lite"
+      },
+      "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T00:57:35Z"
     },
     {
       "id": "ckb-02b55d58b29e",
@@ -10944,13 +11488,13 @@
       "path": "library/offensive-security/red-team-operations-simulating-an-apt-group-in-practice.md",
       "tags": [
         "evasion",
-        "malware",
+        "mitre-attack",
+        "persistence",
+        "privilege-escalation",
         "red-team",
-        "threat-intelligence",
-        "tls",
         "windows"
       ],
-      "summary": "",
+      "summary": "This document provides an overview of red teaming operations by detailing common APT tactics, techniques, and procedures, including specific methods for AMSI bypass, persistence, and defense evasion via syscall manipulation.",
       "authors": [
         "unknown"
       ],
@@ -10958,12 +11502,14 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 1336,
-      "size_bytes": 9519,
+      "size_bytes": 9857,
       "sha256": "f6f324b6bdec7b2f5caeab782e393cb2fd45b173d4b763a1d392eb28ca15b93a",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.52
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.1-flash-lite"
+      },
+      "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T00:57:36Z"
     },
     {
       "id": "ckb-e4dccdf7576f",
@@ -10974,12 +11520,11 @@
       "path": "library/offensive-security/red-team-pentest-english.md",
       "tags": [
         "mitre-attack",
+        "osint",
         "red-team",
-        "soc",
-        "threat-intelligence",
-        "tls"
+        "reporting"
       ],
-      "summary": "",
+      "summary": "This document compares the concepts, methodologies, and roles associated with penetration testing versus red teaming operations.",
       "authors": [
         "unknown"
       ],
@@ -10987,25 +11532,31 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 1755,
-      "size_bytes": 12035,
+      "size_bytes": 12250,
       "sha256": "41d84a66ca4122f2cc54a85583417c178afdb4d51feef7ba61500841e75bb364",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.87
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.5-flash-lite"
+      },
+      "classified_by": "google:gemini-3.5-flash-lite@2026-10-08T00:57:37Z"
     },
     {
       "id": "ckb-4884a39ff2af",
       "title": "Red Team Toolkit 1",
       "category": "offensive-security",
       "format": "reference",
-      "language": "und",
+      "language": "en",
       "path": "library/offensive-security/red-team-toolkit-1.md",
       "tags": [
+        "c2",
+        "credential-access",
+        "evasion",
         "osint",
+        "phishing",
         "red-team"
       ],
-      "summary": "",
+      "summary": "This reference guide provides a curated list of popular tools used during red team engagements across various domains such as reconnaissance, credential dumping, and command and control.",
       "authors": [
         "Joas Antonio Dos Santos"
       ],
@@ -11013,12 +11564,14 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 106,
-      "size_bytes": 1227,
+      "size_bytes": 1554,
       "sha256": "41ce6607be74df4c72237e3c79aea238a0bf352d1bf4029b2cee0ca880ebe5a9",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.92
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.5-flash-lite"
+      },
+      "classified_by": "google:gemini-3.5-flash-lite@2026-10-08T00:57:39Z"
     },
     {
       "id": "ckb-918865128d76",
@@ -11028,14 +11581,14 @@
       "language": "en",
       "path": "library/offensive-security/red-team-toolkit-guide.md",
       "tags": [
-        "azure",
-        "c2",
-        "cloud",
-        "git",
-        "red-team",
-        "tls"
+        "credential-access",
+        "evasion",
+        "lateral-movement",
+        "osint",
+        "persistence",
+        "red-team"
       ],
-      "summary": "",
+      "summary": "This document provides a curated reference collection of open-source security tools used in adversary simulation, reconnaissance, initial access, and payload development.",
       "authors": [
         "unknown"
       ],
@@ -11043,12 +11596,14 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 5596,
-      "size_bytes": 38371,
+      "size_bytes": 38678,
       "sha256": "45f465bf7d958707dd9d0f0807606468497de2a3a9abc113c7545e9e978b4934",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.88
-      }
+        "method": "llm",
+        "confidence": 1.0,
+        "model": "gemini-3.5-flash-lite"
+      },
+      "classified_by": "google:gemini-3.5-flash-lite@2026-10-08T00:57:40Z"
     },
     {
       "id": "ckb-38174e420ce2",
@@ -11059,13 +11614,13 @@
       "path": "library/offensive-security/red-team-tradecraft-complete-guide.md",
       "tags": [
         "active-directory",
-        "azure",
         "c2",
-        "cloud",
+        "credential-access",
         "evasion",
+        "persistence",
         "red-team"
       ],
-      "summary": "",
+      "summary": "A comprehensive guide detailing advanced red team tradecraft, covering operational security, infrastructure design, evasion, persistence, and stealth operations.",
       "authors": [
         "unknown"
       ],
@@ -11073,12 +11628,44 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 4936,
-      "size_bytes": 35660,
+      "size_bytes": 35938,
       "sha256": "2fb30898008c2e6f97a2b1c338946af540ee44efd94903878ddbc49743dc4d13",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.74
-      }
+        "method": "llm",
+        "confidence": 1.0,
+        "model": "gemini-3.5-flash-lite"
+      },
+      "classified_by": "google:gemini-3.5-flash-lite@2026-10-08T00:57:45Z"
+    },
+    {
+      "id": "ckb-3747fa50bf1b",
+      "title": "Red Team X Blue Team",
+      "category": "offensive-security",
+      "format": "course-notes",
+      "language": "pt",
+      "path": "library/offensive-security/red-team-x-blue-team.md",
+      "tags": [
+        "education",
+        "mitre-attack",
+        "red-team",
+        "soc"
+      ],
+      "summary": "This presentation outlines the roles, objectives, and employability of Red Team and Blue Team operations within corporate environments, including a brief introduction to Purple Teaming.",
+      "authors": [
+        "unknown"
+      ],
+      "license": "NOASSERTION",
+      "redistribution": "unknown",
+      "added": "2026-10-04",
+      "word_count": 82,
+      "size_bytes": 1150,
+      "sha256": "16158a8b5cbf52ae0b3866f7a3cc6c23a048465c6d8e70e344af11cc8c001218",
+      "classification": {
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.1-flash-lite"
+      },
+      "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T01:01:29Z"
     },
     {
       "id": "ckb-1621f73493f8",
@@ -11089,10 +11676,12 @@
       "path": "library/offensive-security/redteam-scenarios.md",
       "tags": [
         "active-directory",
-        "networking",
+        "c2",
+        "credential-access",
+        "lateral-movement",
         "red-team"
       ],
-      "summary": "",
+      "summary": "This document outlines a collection of twenty-six red team attack scenarios detailing various multi-step enterprise exploitation paths.",
       "authors": [
         "unknown"
       ],
@@ -11100,12 +11689,14 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 463,
-      "size_bytes": 3076,
+      "size_bytes": 3340,
       "sha256": "6e966b402ea6379a12875ad1681061740da22e117bd505b9b0b823d0daabe87c",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.84
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.5-flash-lite"
+      },
+      "classified_by": "google:gemini-3.5-flash-lite@2026-10-08T00:57:48Z"
     },
     {
       "id": "ckb-d42b2e560590",
@@ -11116,13 +11707,12 @@
       "path": "library/offensive-security/remote-desktop-penetration-testing-port-3389.md",
       "tags": [
         "credential-access",
-        "log-analysis",
+        "exploit-development",
         "metasploit",
-        "networking",
-        "password-security",
+        "persistence",
         "windows"
       ],
-      "summary": "",
+      "summary": "This technical guide walks through enumerating, attacking, exploiting, and hardening the Remote Desktop Protocol (RDP) on Windows environments.",
       "authors": [
         "unknown"
       ],
@@ -11130,12 +11720,14 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 3249,
-      "size_bytes": 20269,
+      "size_bytes": 20501,
       "sha256": "9f8cc54879bff24684ae070ebb747f51e20d67640f994e052957ba1f08cc0a01",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.78
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.5-flash-lite"
+      },
+      "classified_by": "google:gemini-3.5-flash-lite@2026-10-08T00:57:49Z"
     },
     {
       "id": "ckb-c58b14df2fd2",
@@ -11238,13 +11830,12 @@
       "path": "library/offensive-security/ssh-penetration-testing.md",
       "tags": [
         "credential-access",
-        "cryptography",
-        "linux",
         "metasploit",
-        "password-security",
-        "persistence"
+        "nmap",
+        "persistence",
+        "red-team"
       ],
-      "summary": "",
+      "summary": "This technical guide covers SSH penetration testing methodologies including port scanning, connection methods, port redirection, key-based authentication, exploitation via Metasploit, and post-exploitation key theft.",
       "authors": [
         "unknown"
       ],
@@ -11252,12 +11843,14 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 2123,
-      "size_bytes": 13669,
+      "size_bytes": 13961,
       "sha256": "186216cf5e7e14fafe7243a1a3193f680c635816323a87ee65f8467d5f4c38b8",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.55
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.5-flash-lite"
+      },
+      "classified_by": "google:gemini-3.5-flash-lite@2026-10-08T00:57:50Z"
     },
     {
       "id": "ckb-1f15a69fd5ef",
@@ -11320,46 +11913,16 @@
       "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T00:16:39Z"
     },
     {
-      "id": "ckb-dcbd46f26b91",
-      "title": "The Coming AI Hackers",
-      "category": "offensive-security",
-      "format": "guide",
-      "language": "en",
-      "path": "library/offensive-security/the-coming-ai-hackers.md",
-      "tags": [
-        "ai",
-        "education",
-        "mobile",
-        "phishing",
-        "social-engineering",
-        "tls"
-      ],
-      "summary": "",
-      "authors": [
-        "unknown"
-      ],
-      "license": "NOASSERTION",
-      "redistribution": "unknown",
-      "added": "2026-10-04",
-      "word_count": 16083,
-      "size_bytes": 98036,
-      "sha256": "459eaefb57132fca30a8f0aa054a1b3144ce1ddb99ea9040f90dfdb57fedca51",
-      "classification": {
-        "method": "heuristic",
-        "confidence": 0.36
-      }
-    },
-    {
       "id": "ckb-e8a1f499875c",
       "title": "The Last Dance with Msfvenom",
       "category": "offensive-security",
-      "format": "guide",
+      "format": "article",
       "language": "en",
       "path": "library/offensive-security/the-last-dance-with-msfvenom.md",
       "tags": [
         "metasploit"
       ],
-      "summary": "",
+      "summary": "This document is a brief promotional article from Hadess titled The Last Dance with msfvenom.",
       "authors": [
         "unknown"
       ],
@@ -11367,12 +11930,14 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 249,
-      "size_bytes": 1755,
+      "size_bytes": 1950,
       "sha256": "bbf7465505cb434668615485d8f9005aa60dd3c2b5df082fc8787ee1ad3669a8",
       "classification": {
-        "method": "heuristic",
-        "confidence": 1.0
-      }
+        "method": "llm",
+        "confidence": 0.6,
+        "model": "gemini-3.5-flash-lite"
+      },
+      "classified_by": "google:gemini-3.5-flash-lite@2026-10-08T00:57:58Z"
     },
     {
       "id": "ckb-6501e7813850",
@@ -11382,14 +11947,13 @@
       "language": "en",
       "path": "library/offensive-security/tomcat-pentesting.md",
       "tags": [
+        "exploit-development",
         "java",
-        "linux",
         "metasploit",
-        "networking",
-        "password-security",
+        "nmap",
         "web-security"
       ],
-      "summary": "",
+      "summary": "This guide covers setting up an Apache Tomcat lab environment, performing enumeration with Nmap, and exploiting file upload vulnerabilities both manually and using Metasploit.",
       "authors": [
         "unknown"
       ],
@@ -11397,38 +11961,14 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 1497,
-      "size_bytes": 9975,
+      "size_bytes": 10239,
       "sha256": "ea878401b468af8702bae1ee4af36456e5faa60c672334edfa4def861f585d68",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.72
-      }
-    },
-    {
-      "id": "ckb-41be8c3f892e",
-      "title": "What IT Takes to Be a Red Team",
-      "category": "offensive-security",
-      "format": "guide",
-      "language": "en",
-      "path": "library/offensive-security/what-it-takes-to-be-a-red-team.md",
-      "tags": [
-        "compliance",
-        "red-team"
-      ],
-      "summary": "",
-      "authors": [
-        "Joas Antonio Dos Santos"
-      ],
-      "license": "NOASSERTION",
-      "redistribution": "unknown",
-      "added": "2026-10-04",
-      "word_count": 855,
-      "size_bytes": 5969,
-      "sha256": "1f34912d227627862d238998cbf06d6ba357452c8c2f75b4680bd9be9be0ffd0",
-      "classification": {
-        "method": "heuristic",
-        "confidence": 0.81
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.5-flash-lite"
+      },
+      "classified_by": "google:gemini-3.5-flash-lite@2026-10-08T00:57:59Z"
     },
     {
       "id": "ckb-d59f0589a42d",
@@ -11438,14 +11978,11 @@
       "language": "en",
       "path": "library/offensive-security/windows-api-for-red-team-101-english.md",
       "tags": [
-        "evasion",
-        "malware",
-        "networking",
-        "python",
+        "assembly",
         "red-team",
         "windows"
       ],
-      "summary": "",
+      "summary": "This document introduces the Windows API and its components for red team operators looking to understand operating system interaction.",
       "authors": [
         "Joas Antonio Dos Santos"
       ],
@@ -11453,12 +11990,14 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 4815,
-      "size_bytes": 30305,
+      "size_bytes": 30511,
       "sha256": "349517a9e5160579cf86a31e5c807ed38fd090532c24458259c1c6176f992c5d",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.54
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.5-flash-lite"
+      },
+      "classified_by": "google:gemini-3.5-flash-lite@2026-10-08T00:58:01Z"
     },
     {
       "id": "ckb-41d277205546",
@@ -11469,13 +12008,10 @@
       "path": "library/offensive-security/windows-api-for-red-team-101-portuguese.md",
       "tags": [
         "evasion",
-        "malware",
-        "python",
         "red-team",
-        "tls",
         "windows"
       ],
-      "summary": "",
+      "summary": "Este guia em português introduz os conceitos básicos da API do Windows para profissionais de red team, explicando seus principais componentes e formas de utilização.",
       "authors": [
         "Joas Antonio Dos Santos"
       ],
@@ -11483,12 +12019,14 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 5218,
-      "size_bytes": 34000,
+      "size_bytes": 34247,
       "sha256": "48f56bcc360fdc8f5bd78e3944178568dfba23b2791ef7f9625be60cfc551fc4",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.57
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.5-flash-lite"
+      },
+      "classified_by": "google:gemini-3.5-flash-lite@2026-10-08T00:58:02Z"
     },
     {
       "id": "ckb-57b51c39b2f0",
@@ -11500,12 +12038,11 @@
       "tags": [
         "evasion",
         "exploit-development",
-        "malware",
+        "privilege-escalation",
         "red-team",
-        "tls",
         "windows"
       ],
-      "summary": "",
+      "summary": "A technical guide covering essential Windows APIs for offensive operations, detailing process and thread manipulation, security token privileges, and developing a shellcode runner.",
       "authors": [
         "Joas Antonio Dos Santos"
       ],
@@ -11513,12 +12050,14 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 5414,
-      "size_bytes": 37901,
+      "size_bytes": 38179,
       "sha256": "83a5da6f5784cc4d52f0bff28105641e98b9e3d8f00e58037b75993d5b72c7cb",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.53
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.8-flash"
+      },
+      "classified_by": "google:gemini-3.8-flash@2026-10-08T00:58:29Z"
     },
     {
       "id": "ckb-b94e6210c159",
@@ -11528,14 +12067,13 @@
       "language": "pt",
       "path": "library/offensive-security/windows-api-for-red-team-102-portugues.md",
       "tags": [
-        "exploit-development",
+        "evasion",
         "malware",
-        "metasploit",
+        "privilege-escalation",
         "red-team",
-        "tls",
         "windows"
       ],
-      "summary": "",
+      "summary": "A technical guide in Portuguese exploring essential Windows APIs used for process manipulation, memory management, and privilege escalation in offensive security contexts.",
       "authors": [
         "Joas Antonio Dos Santos"
       ],
@@ -11543,12 +12081,14 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 5823,
-      "size_bytes": 43653,
+      "size_bytes": 43911,
       "sha256": "53d5085e5be4dfeba7ce26f2118e02f585564e30a9b007292e1e07688e085491",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.51
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemma-4-26b-a4b-it"
+      },
+      "classified_by": "google:gemma-4-26b-a4b-it@2026-10-08T00:58:31Z"
     },
     {
       "id": "ckb-999fa78d2243",
@@ -11558,14 +12098,9 @@
       "language": "en",
       "path": "library/offensive-security/windows-enterprise-network-pentest.md",
       "tags": [
-        "git",
-        "malware",
-        "networking",
-        "powershell",
-        "tls",
         "windows"
       ],
-      "summary": "",
+      "summary": "A technical overview of Windows features including AMSI, COM, UAC, AppLocker, and Windows Sandbox for penetration testing contexts.",
       "authors": [
         "unknown"
       ],
@@ -11573,12 +12108,14 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 2757,
-      "size_bytes": 19725,
+      "size_bytes": 19906,
       "sha256": "9a9a47b96d9cd56d844dedf8d1403de07ac8d2e8aedb7f6f0ec4b03621bb0367",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.82
-      }
+        "method": "llm",
+        "confidence": 0.9,
+        "model": "gemma-4-26b-a4b-it"
+      },
+      "classified_by": "google:gemma-4-26b-a4b-it@2026-10-08T00:58:34Z"
     },
     {
       "id": "ckb-f62d05feb3c1",
@@ -11588,14 +12125,10 @@
       "language": "en",
       "path": "library/offensive-security/windows-exploitation-msbuild.md",
       "tags": [
-        "c2",
-        "exploit-development",
-        "git",
         "metasploit",
-        "powershell",
         "windows"
       ],
-      "summary": "",
+      "summary": "A technical guide demonstrating how to exploit MSBuild.exe to obtain a reverse shell on a Windows target using MSFvenom, custom XML payloads, and PowerShell Empire.",
       "authors": [
         "unknown"
       ],
@@ -11603,12 +12136,14 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 1489,
-      "size_bytes": 9566,
+      "size_bytes": 9782,
       "sha256": "1cb71eb83ed8a4f78ec42c6b94c68782d5513502f14db5a31a17884e1ce9c1c9",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.96
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemma-4-26b-a4b-it"
+      },
+      "classified_by": "google:gemma-4-26b-a4b-it@2026-10-08T00:58:37Z"
     },
     {
       "id": "ckb-992f4276ea98",
@@ -11619,11 +12154,12 @@
       "path": "library/offensive-security/windows-exploitation-rundll32-exe.md",
       "tags": [
         "c2",
-        "linux",
+        "exploit-development",
         "metasploit",
+        "red-team",
         "windows"
       ],
-      "summary": "",
+      "summary": "A technical guide demonstrating various methods to exploit Windows systems using rundll32.exe, including SMB delivery, MSFVenom payloads, Koadic, and JSRat.",
       "authors": [
         "unknown"
       ],
@@ -11631,29 +12167,30 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 1084,
-      "size_bytes": 7433,
+      "size_bytes": 7707,
       "sha256": "76fe7519e09c9b0916e5ffac7ae895b59b09166af9287ecd753ef0d38c1a76e6",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.93
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemma-4-26b-a4b-it"
+      },
+      "classified_by": "google:gemma-4-26b-a4b-it@2026-10-08T00:58:40Z"
     },
     {
       "id": "ckb-7738d3454eaa",
       "title": "Windows Persistence Techniques",
       "category": "offensive-security",
-      "format": "guide",
+      "format": "reference",
       "language": "en",
       "path": "library/offensive-security/windows-persistence-techniques.md",
       "tags": [
-        "git",
-        "metasploit",
+        "mitre-attack",
         "persistence",
         "privilege-escalation",
-        "tls",
+        "red-team",
         "windows"
       ],
-      "summary": "",
+      "summary": "This document provides a curated collection of external resources and links detailing various Windows persistence and privilege escalation techniques.",
       "authors": [
         "Joas Antonio Dos Santos"
       ],
@@ -11661,29 +12198,30 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 1350,
-      "size_bytes": 10177,
+      "size_bytes": 10434,
       "sha256": "caf182908c5ff096ecf8f279772f6f3ca09ee0ee0910492e85687eb530124d99",
       "classification": {
-        "method": "heuristic",
-        "confidence": 1.0
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.1-flash-lite"
+      },
+      "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T00:58:41Z"
     },
     {
       "id": "ckb-ebbde32faec4",
       "title": "Windows post-exploitation",
       "category": "offensive-security",
-      "format": "article",
+      "format": "cheatsheet",
       "language": "en",
       "path": "library/offensive-security/windows-post-exploitation.md",
       "tags": [
         "credential-access",
-        "firewall",
-        "password-security",
+        "persistence",
         "powershell",
-        "web-security",
+        "privilege-escalation",
         "windows"
       ],
-      "summary": "",
+      "summary": "This document provides a collection of Windows command-line and PowerShell techniques for post-exploitation activities, including system enumeration, credential harvesting, and file extraction.",
       "authors": [
         "unknown"
       ],
@@ -11691,29 +12229,30 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 2047,
-      "size_bytes": 14981,
+      "size_bytes": 15268,
       "sha256": "4be06107419d5c8381b8fcb2ab21d2d7fe5e50f91df2473c4d0bb122bf06816f",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.66
-      }
+        "method": "llm",
+        "confidence": 1.0,
+        "model": "gemini-3.1-flash-lite"
+      },
+      "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T00:58:42Z"
     },
     {
       "id": "ckb-377637f876d6",
       "title": "Windows Privilege Escalation Overview",
       "category": "offensive-security",
-      "format": "guide",
-      "language": "pt",
+      "format": "reference",
+      "language": "en",
       "path": "library/offensive-security/windows-privilege-escalation-overview.md",
       "tags": [
-        "git",
         "metasploit",
-        "password-security",
+        "powershell",
         "privilege-escalation",
-        "tls",
+        "red-team",
         "windows"
       ],
-      "summary": "",
+      "summary": "This document provides a curated collection of resources and techniques for performing local privilege escalation on Windows systems.",
       "authors": [
         "Joas Antonio Dos Santos"
       ],
@@ -11721,12 +12260,14 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 1075,
-      "size_bytes": 8739,
+      "size_bytes": 8970,
       "sha256": "661b6c5029d967b287662ceb83680de3de38c8e91758958918eabcf98b13913b",
       "classification": {
-        "method": "heuristic",
-        "confidence": 1.0
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.1-flash-lite"
+      },
+      "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T00:58:44Z"
     },
     {
       "id": "ckb-116ca16f89e3",
@@ -11737,13 +12278,11 @@
       "path": "library/offensive-security/windows-privilege-escalation-server-operator-group.md",
       "tags": [
         "active-directory",
-        "linux",
-        "metasploit",
-        "networking",
+        "c2",
         "privilege-escalation",
         "windows"
       ],
-      "summary": "",
+      "summary": "This guide demonstrates how membership in the Windows Server Operator group can be leveraged to escalate privileges to the system level.",
       "authors": [
         "unknown"
       ],
@@ -11751,42 +12290,14 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 1741,
-      "size_bytes": 11605,
+      "size_bytes": 11813,
       "sha256": "69fb105b2bf6798972fe6e922bd1a1212ba561384ac773f084bc0d2d8df964c4",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.85
-      }
-    },
-    {
-      "id": "ckb-e805fa920b1b",
-      "title": "Windows Server AD and O365 Advanced Pentest",
-      "category": "offensive-security",
-      "format": "guide",
-      "language": "pt",
-      "path": "library/offensive-security/windows-server-ad-and-o365-advanced-pentest.md",
-      "tags": [
-        "azure",
-        "git",
-        "powershell",
-        "privilege-escalation",
-        "tls",
-        "windows"
-      ],
-      "summary": "",
-      "authors": [
-        "Joas Antonio Dos Santos"
-      ],
-      "license": "NOASSERTION",
-      "redistribution": "unknown",
-      "added": "2026-10-04",
-      "word_count": 7932,
-      "size_bytes": 60669,
-      "sha256": "3a8d29b2ffddfa8fbd2939b8806a8ab12ff9d29130a31a36ec4b04bed24ad243",
-      "classification": {
-        "method": "heuristic",
-        "confidence": 0.83
-      }
+        "method": "llm",
+        "confidence": 1.0,
+        "model": "gemini-3.1-flash-lite"
+      },
+      "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T00:58:45Z"
     },
     {
       "id": "ckb-0c1876147506",
@@ -11798,12 +12309,11 @@
       "tags": [
         "lateral-movement",
         "metasploit",
-        "password-security",
         "powershell",
-        "tls",
+        "red-team",
         "windows"
       ],
-      "summary": "",
+      "summary": "This guide provides a technical walkthrough for configuring and performing penetration testing against Windows Remote Management (WinRM) services to achieve remote shell access and lateral movement.",
       "authors": [
         "unknown"
       ],
@@ -11811,12 +12321,14 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 1783,
-      "size_bytes": 15680,
+      "size_bytes": 15964,
       "sha256": "24bb7d90f61c53ed3c7753e2705c491a97b96a2c17621a51e5ada183456eb3d6",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.8
-      }
+        "method": "llm",
+        "confidence": 1.0,
+        "model": "gemini-3.1-flash-lite"
+      },
+      "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T00:58:53Z"
     },
     {
       "id": "ckb-450aa5a701e1",
@@ -11827,13 +12339,13 @@
       "path": "library/offensive-security/wordlists-for-pentester.md",
       "tags": [
         "credential-access",
-        "fuzzing",
-        "git",
-        "linux",
-        "networking",
-        "password-security"
+        "metasploit",
+        "nmap",
+        "red-team",
+        "sql-injection",
+        "web-security"
       ],
-      "summary": "",
+      "summary": "This guide provides an overview of wordlists used in penetration testing, covering their importance in brute-force attacks, their locations in Kali Linux, and various tools for generating and managing them.",
       "authors": [
         "unknown"
       ],
@@ -11841,87 +12353,31 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 3236,
-      "size_bytes": 19726,
+      "size_bytes": 20037,
       "sha256": "2e7aa9d215650717f5af236a6118742b737e1a706a637ec22dafe9d412deeafb",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.89
-      }
-    },
-    {
-      "id": "ckb-d76151196d02",
-      "title": "Worth checking ep.1",
-      "category": "offensive-security",
-      "format": "article",
-      "language": "en",
-      "path": "library/offensive-security/worth-checking-ep-1.md",
-      "tags": [
-        "career",
-        "firewall",
-        "soc",
-        "tls"
-      ],
-      "summary": "",
-      "authors": [
-        "unknown"
-      ],
-      "license": "NOASSERTION",
-      "redistribution": "unknown",
-      "added": "2026-10-04",
-      "word_count": 1104,
-      "size_bytes": 7278,
-      "sha256": "a79a83a66c996ff9105a78b7f197d060a829e7ea03b087e2f097e5e45edfe6ec",
-      "classification": {
-        "method": "heuristic",
-        "confidence": 0.46
-      }
-    },
-    {
-      "id": "ckb-7db3c0d9d506",
-      "title": "Worth checking ep.2",
-      "category": "offensive-security",
-      "format": "article",
-      "language": "en",
-      "path": "library/offensive-security/worth-checking-ep-2.md",
-      "tags": [
-        "cheatsheet",
-        "incident-response",
-        "nmap",
-        "red-team",
-        "tls",
-        "web-security"
-      ],
-      "summary": "",
-      "authors": [
-        "unknown"
-      ],
-      "license": "NOASSERTION",
-      "redistribution": "unknown",
-      "added": "2026-10-04",
-      "word_count": 695,
-      "size_bytes": 5453,
-      "sha256": "acbb4f5a4781b5dd725cb654edbf29fc85aaef9b8183d44bacaab13bb51e270f",
-      "classification": {
-        "method": "heuristic",
-        "confidence": 0.56
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.1-flash-lite"
+      },
+      "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T00:58:54Z"
     },
     {
       "id": "ckb-c02b2c93eafb",
       "title": "Worth checking ep.3",
       "category": "offensive-security",
-      "format": "article",
+      "format": "reference",
       "language": "en",
       "path": "library/offensive-security/worth-checking-ep-3.md",
       "tags": [
-        "anonymity",
-        "career",
-        "git",
+        "education",
         "linux",
-        "networking",
-        "tls"
+        "osint",
+        "red-team",
+        "web-security",
+        "windows"
       ],
-      "summary": "",
+      "summary": "This blog post provides a curated collection of cybersecurity resources, including documents, articles, tools, and reference materials for penetration testers and security professionals.",
       "authors": [
         "unknown"
       ],
@@ -11929,80 +12385,30 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 738,
-      "size_bytes": 6463,
+      "size_bytes": 6760,
       "sha256": "78106d85cc914ff27f219632bff2ea6ea24eba54f9cb18cbf9658099bfb2da2d",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.81
-      }
-    },
-    {
-      "id": "ckb-3ec42f155108",
-      "title": "Assembly64",
-      "category": "reverse-engineering-and-exploit-development",
-      "format": "book",
-      "language": "en",
-      "path": "library/reverse-engineering-and-exploit-development/assembly64.md",
-      "tags": [
-        "assembly",
-        "bash",
-        "linux",
-        "web-security"
-      ],
-      "summary": "",
-      "authors": [
-        "unknown"
-      ],
-      "license": "NOASSERTION",
-      "redistribution": "unknown",
-      "added": "2026-10-04",
-      "word_count": 80020,
-      "size_bytes": 528172,
-      "sha256": "fd2852b2084e7997c3b9c4c7861608d27b606574da81bcc36e887900f2d1a8d8",
-      "classification": {
-        "method": "heuristic",
-        "confidence": 0.48
-      }
-    },
-    {
-      "id": "ckb-3a4e4ee8047d",
-      "title": "Blockchain and Smart Contract Testing Security",
-      "category": "reverse-engineering-and-exploit-development",
-      "format": "guide",
-      "language": "en",
-      "path": "library/reverse-engineering-and-exploit-development/blockchain-and-smart-contract-testing-security.md",
-      "tags": [
-        "blockchain"
-      ],
-      "summary": "",
-      "authors": [
-        "Joas Antonio Dos Santos"
-      ],
-      "license": "NOASSERTION",
-      "redistribution": "unknown",
-      "added": "2026-10-04",
-      "word_count": 456,
-      "size_bytes": 3505,
-      "sha256": "5264e2e6463289347c32f80f7b0efb00e03aba9560ca833963b3d876d6ff4afc",
-      "classification": {
-        "method": "heuristic",
-        "confidence": 0.35
-      }
+        "method": "llm",
+        "confidence": 0.9,
+        "model": "gemini-3.1-flash-lite"
+      },
+      "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T00:59:05Z"
     },
     {
       "id": "ckb-5c432ef266a1",
       "title": "Buffer Overflow for Beginners Joas",
       "category": "reverse-engineering-and-exploit-development",
-      "format": "guide",
-      "language": "pt",
+      "format": "reference",
+      "language": "en",
       "path": "library/reverse-engineering-and-exploit-development/buffer-overflow-for-beginners-joas.md",
       "tags": [
         "assembly",
         "buffer-overflow",
-        "cheatsheet",
-        "tls"
+        "ctf",
+        "education",
+        "exploit-development"
       ],
-      "summary": "",
+      "summary": "This document provides a curated collection of resources, tutorials, and laboratory exercises focused on understanding and exploiting buffer overflow vulnerabilities.",
       "authors": [
         "unknown"
       ],
@@ -12010,12 +12416,14 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 457,
-      "size_bytes": 3735,
+      "size_bytes": 4026,
       "sha256": "fc1d079549b2462c4e03697ab9c8b1939d955636631cd2638f2fd49d46a3247d",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.9
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.1-flash-lite"
+      },
+      "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T00:59:17Z"
     },
     {
       "id": "ckb-1618bf453a62",
@@ -12025,14 +12433,12 @@
       "language": "en",
       "path": "library/reverse-engineering-and-exploit-development/buffer-overflow-guide-1.md",
       "tags": [
+        "assembly",
         "buffer-overflow",
         "exploit-development",
-        "git",
-        "reverse-engineering",
-        "tls",
-        "windows"
+        "reverse-engineering"
       ],
-      "summary": "",
+      "summary": "This guide provides an overview of exploit development concepts, including stack-based buffer overflows, shellcode creation, heap corruption, and integer overflows.",
       "authors": [
         "Joas Antonio Dos Santos"
       ],
@@ -12040,12 +12446,14 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 2687,
-      "size_bytes": 19892,
+      "size_bytes": 20147,
       "sha256": "62d34c2440e24f119fde805a93ebcbe0f978c82a50424d58c932367645a1a7ae",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.94
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.5-flash-lite"
+      },
+      "classified_by": "google:gemini-3.5-flash-lite@2026-10-08T00:59:18Z"
     },
     {
       "id": "ckb-e586ac061faa",
@@ -12055,14 +12463,11 @@
       "language": "en",
       "path": "library/reverse-engineering-and-exploit-development/buffer-overflow-introduction.md",
       "tags": [
-        "assembly",
         "buffer-overflow",
         "exploit-development",
-        "metasploit",
-        "tls",
-        "windows"
+        "reverse-engineering"
       ],
-      "summary": "",
+      "summary": "This document provides an introduction to buffer overflow concepts, types, causes, and basic exploitation methods for penetration testers and reverse engineers.",
       "authors": [
         "Joas Antonio Dos Santos"
       ],
@@ -12070,59 +12475,30 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 6184,
-      "size_bytes": 39299,
+      "size_bytes": 39545,
       "sha256": "c37b85a4c240ea9af326035107b8691beec5e42a1dc8df8fcf73d7eef59fb861",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.8
-      }
-    },
-    {
-      "id": "ckb-617a3b7b394c",
-      "title": "ChatGPT for Cybersecurity 3",
-      "category": "reverse-engineering-and-exploit-development",
-      "format": "guide",
-      "language": "en",
-      "path": "library/reverse-engineering-and-exploit-development/chatgpt-for-cybersecurity-3.md",
-      "tags": [
-        "ai",
-        "assembly",
-        "malware",
-        "python",
-        "reverse-engineering",
-        "windows"
-      ],
-      "summary": "",
-      "authors": [
-        "Joas Antonio Dos Santos"
-      ],
-      "license": "NOASSERTION",
-      "redistribution": "unknown",
-      "added": "2026-10-04",
-      "word_count": 298,
-      "size_bytes": 2337,
-      "sha256": "89bb7aafd945cc0a33cd1d5996ee71e2effe0674d67fb32b2a36c7d96c116fc7",
-      "classification": {
-        "method": "heuristic",
-        "confidence": 0.51
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.5-flash-lite"
+      },
+      "classified_by": "google:gemini-3.5-flash-lite@2026-10-08T00:59:19Z"
     },
     {
       "id": "ckb-09362b77c225",
       "title": "eLearnSecurity Ecxd Preparation",
       "category": "reverse-engineering-and-exploit-development",
-      "format": "guide",
-      "language": "pt",
+      "format": "reference",
+      "language": "en",
       "path": "library/reverse-engineering-and-exploit-development/elearnsecurity-ecxd-preparation.md",
       "tags": [
-        "assembly",
         "buffer-overflow",
+        "evasion",
         "exploit-development",
-        "git",
-        "linux",
-        "tls"
+        "fuzzing",
+        "reverse-engineering"
       ],
-      "summary": "",
+      "summary": "This reference collection provides links to resources, tutorials, and tools for exploit development preparation, covering topics such as shellcode, fuzzing, and ASLR bypass.",
       "authors": [
         "unknown"
       ],
@@ -12130,12 +12506,14 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 2047,
-      "size_bytes": 15053,
+      "size_bytes": 15342,
       "sha256": "90dcfcba0fd8136ba8308442e040b1efb7c9911eacab1d3e67e39d7d678dbc31",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.63
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.5-flash-lite"
+      },
+      "classified_by": "google:gemini-3.5-flash-lite@2026-10-08T00:59:23Z"
     },
     {
       "id": "ckb-64b758fbf4ae",
@@ -12145,14 +12523,14 @@
       "language": "en",
       "path": "library/reverse-engineering-and-exploit-development/elearnsecurity-exploit-development-student-notes-by-joas.md",
       "tags": [
+        "assembly",
         "buffer-overflow",
+        "education",
         "exploit-development",
         "linux",
-        "python",
-        "tls",
         "windows"
       ],
-      "summary": "",
+      "summary": "These student notes cover Linux and Windows exploit development concepts, including stack overflows, ROP, shellcode, and debugging techniques.",
       "authors": [
         "Joas Antonio Dos Santos"
       ],
@@ -12160,12 +12538,14 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 93983,
-      "size_bytes": 571723,
+      "size_bytes": 571973,
       "sha256": "c18fb0e05bdb0a3e98f77ee144243573aa603e5c87221d14d9e167725426e4e1",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.9
-      }
+        "method": "llm",
+        "confidence": 1.0,
+        "model": "gemini-3.5-flash-lite"
+      },
+      "classified_by": "google:gemini-3.5-flash-lite@2026-10-08T00:59:24Z"
     },
     {
       "id": "ckb-cc7361d8b296",
@@ -12178,11 +12558,10 @@
         "assembly",
         "buffer-overflow",
         "exploit-development",
-        "git",
-        "tls",
-        "windows"
+        "metasploit",
+        "reverse-engineering"
       ],
-      "summary": "",
+      "summary": "Este guia apresenta uma visão geral sobre os principais conceitos e fundamentos de desenvolvimento de exploits, incluindo shellcodes, buffer overflow e manipulação de memória.",
       "authors": [
         "Joas Antonio Dos Santos"
       ],
@@ -12190,29 +12569,27 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 3247,
-      "size_bytes": 24416,
+      "size_bytes": 24709,
       "sha256": "9f104c505f53f55aa6d39f08e0371aed506968f8339d12c9ef0957dea6aa688c",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.79
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.5-flash-lite"
+      },
+      "classified_by": "google:gemini-3.5-flash-lite@2026-10-08T00:59:25Z"
     },
     {
       "id": "ckb-b9d19690e76d",
       "title": "Game Hacking 1 Anti Cheat Bypass",
       "category": "reverse-engineering-and-exploit-development",
-      "format": "guide",
+      "format": "reference",
       "language": "en",
       "path": "library/reverse-engineering-and-exploit-development/game-hacking-1-anti-cheat-bypass.md",
       "tags": [
         "assembly",
-        "python",
-        "reverse-engineering",
-        "tls",
-        "web-security",
-        "windows"
+        "reverse-engineering"
       ],
-      "summary": "",
+      "summary": "This document provides a curated collection of programming resources, tutorials, and references for assembly, C, and C++ to support game hacking and anti-cheat bypass techniques.",
       "authors": [
         "unknown"
       ],
@@ -12220,27 +12597,29 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 2319,
-      "size_bytes": 15807,
+      "size_bytes": 16053,
       "sha256": "80924ce8f774bb891624382f8c897516da382069440dcf5510d5da9c4ab77a2a",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.87
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.5-flash-lite"
+      },
+      "classified_by": "google:gemini-3.5-flash-lite@2026-10-08T00:59:26Z"
     },
     {
       "id": "ckb-f6a428362484",
       "title": "Hacking Windows",
       "category": "reverse-engineering-and-exploit-development",
-      "format": "guide",
+      "format": "book",
       "language": "en",
       "path": "library/reverse-engineering-and-exploit-development/hacking-windows.md",
       "tags": [
         "assembly",
+        "exploit-development",
         "reverse-engineering",
-        "tls",
         "windows"
       ],
-      "summary": "",
+      "summary": "This book provides a step-by-step introduction to writing simple Win32 API programs in C and Assembly for x86 and x64 platforms, and reversing them using IDA Free.",
       "authors": [
         "unknown"
       ],
@@ -12248,12 +12627,14 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 9317,
-      "size_bytes": 52942,
+      "size_bytes": 53220,
       "sha256": "9eed17af7b6676a405dfaf5315b90190f5f80b74fbc296fad81cf544cd2424e9",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.94
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.5-flash-lite"
+      },
+      "classified_by": "google:gemini-3.5-flash-lite@2026-10-08T00:59:27Z"
     },
     {
       "id": "ckb-0848f16b009f",
@@ -12266,11 +12647,9 @@
         "assembly",
         "buffer-overflow",
         "exploit-development",
-        "metasploit",
-        "tls",
-        "windows"
+        "reverse-engineering"
       ],
-      "summary": "",
+      "summary": "This document provides an introductory guide to buffer overflow vulnerabilities, memory structures, and exploit development concepts for pentesters.",
       "authors": [
         "Joas Antonio Dos Santos"
       ],
@@ -12278,29 +12657,30 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 6621,
-      "size_bytes": 43677,
+      "size_bytes": 43921,
       "sha256": "e5c99c05f4bc75dd5d9616d8c414492d4b47764fcd618cc0ba680ac6438fcc59",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.8
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.5-flash-lite"
+      },
+      "classified_by": "google:gemini-3.5-flash-lite@2026-10-08T00:59:28Z"
     },
     {
       "id": "ckb-642b5fbb8645",
       "title": "Introduo Ao Desenvolvimento de Exploits",
       "category": "reverse-engineering-and-exploit-development",
-      "format": "guide",
+      "format": "book",
       "language": "pt",
       "path": "library/reverse-engineering-and-exploit-development/introduo-ao-desenvolvimento-de-exploits.md",
       "tags": [
+        "assembly",
         "buffer-overflow",
-        "exploit-development",
-        "tls",
-        "vulnerability-management",
-        "web-security",
-        "windows"
+        "bug-bounty",
+        "education",
+        "exploit-development"
       ],
-      "summary": "",
+      "summary": "This introductory Portuguese e-book covers the fundamental concepts of exploit development, including zero-days, proof-of-concepts, shellcode, and buffer overflows.",
       "authors": [
         "unknown"
       ],
@@ -12308,29 +12688,27 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 4579,
-      "size_bytes": 30682,
+      "size_bytes": 30924,
       "sha256": "1d53e393dfb94032c87dddcb5bcec5206bd999d888959ca371114237f9b1d94b",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.87
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.5-flash-lite"
+      },
+      "classified_by": "google:gemini-3.5-flash-lite@2026-10-08T00:59:29Z"
     },
     {
       "id": "ckb-311e797b3cf7",
       "title": "Introduo Ao Desenvolvimento de Exploits 2",
       "category": "reverse-engineering-and-exploit-development",
-      "format": "guide",
+      "format": "book",
       "language": "pt",
       "path": "library/reverse-engineering-and-exploit-development/introduo-ao-desenvolvimento-de-exploits-2.md",
       "tags": [
-        "exploit-development",
-        "git",
-        "linux",
-        "reverse-engineering",
-        "tls",
-        "windows"
+        "education",
+        "exploit-development"
       ],
-      "summary": "",
+      "summary": "This introductory Portuguese e-book covers fundamental programming logic, systems concepts, and algorithms as a foundation for exploit development.",
       "authors": [
         "unknown"
       ],
@@ -12338,59 +12716,30 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 6242,
-      "size_bytes": 43554,
+      "size_bytes": 43764,
       "sha256": "3d37fe938250d7861c6121a16295f6f963905b1a74205febfd4ab93932ae8131",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.86
-      }
-    },
-    {
-      "id": "ckb-17aececd2e8f",
-      "title": "Malware and Reverse Engineering Complete Collection by Joas",
-      "category": "reverse-engineering-and-exploit-development",
-      "format": "reference",
-      "language": "en",
-      "path": "library/reverse-engineering-and-exploit-development/malware-and-reverse-engineering-complete-collection-by-joas.md",
-      "tags": [
-        "malware",
-        "networking",
-        "python",
-        "reverse-engineering",
-        "tls",
-        "windows"
-      ],
-      "summary": "",
-      "authors": [
-        "unknown"
-      ],
-      "license": "NOASSERTION",
-      "redistribution": "unknown",
-      "added": "2026-10-04",
-      "word_count": 6399,
-      "size_bytes": 47059,
-      "sha256": "25dda1d5f6f0c5d2f1d90975099f454de0f8095c77b00c47eb24d65f349e142e",
-      "classification": {
-        "method": "heuristic",
-        "confidence": 0.38
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.5-flash-lite"
+      },
+      "classified_by": "google:gemini-3.5-flash-lite@2026-10-08T00:59:30Z"
     },
     {
       "id": "ckb-f0ee572d5835",
       "title": "Offensive Security Exploit Development Windows Overview",
       "category": "reverse-engineering-and-exploit-development",
-      "format": "guide",
-      "language": "pt",
+      "format": "reference",
+      "language": "en",
       "path": "library/reverse-engineering-and-exploit-development/offensive-security-exploit-development-windows-overview.md",
       "tags": [
+        "assembly",
         "buffer-overflow",
         "exploit-development",
-        "git",
         "reverse-engineering",
-        "tls",
         "windows"
       ],
-      "summary": "",
+      "summary": "A content guide and resource collection for the OSED certification, covering Windows exploit development topics such as buffer overflows, SEH exploitation, and WinDbg.",
       "authors": [
         "Joas Antonio Dos Santos"
       ],
@@ -12398,12 +12747,14 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 2885,
-      "size_bytes": 21121,
+      "size_bytes": 21386,
       "sha256": "f6565e6009c562ef9620c45ef224552d0dd82f50a6ad7d56d26e15fdca48db36",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.67
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemma-4-26b-a4b-it"
+      },
+      "classified_by": "google:gemma-4-26b-a4b-it@2026-10-08T00:59:34Z"
     },
     {
       "id": "ckb-ba18e5106432",
@@ -12438,18 +12789,16 @@
       "id": "ckb-392c70bb4b66",
       "title": "Overview Windows API S and Internals Reverse Engineering",
       "category": "reverse-engineering-and-exploit-development",
-      "format": "guide",
+      "format": "reference",
       "language": "pt",
       "path": "library/reverse-engineering-and-exploit-development/overview-windows-api-s-and-internals-reverse-engineering.md",
       "tags": [
-        "git",
+        "api-security",
         "malware",
         "reverse-engineering",
-        "tls",
-        "web-security",
         "windows"
       ],
-      "summary": "",
+      "summary": "A collection of curated resources and an overview of Windows internals, APIs, and concepts relevant to reverse engineering and malware analysis.",
       "authors": [
         "Joas Antonio Dos Santos"
       ],
@@ -12457,26 +12806,31 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 2398,
-      "size_bytes": 17888,
+      "size_bytes": 18119,
       "sha256": "6ae242711dd629c817d3608cc2b3631c019556bcbe5b5f39dd4eeeb206d28ca7",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.78
-      }
+        "method": "llm",
+        "confidence": 0.9,
+        "model": "gemma-4-26b-a4b-it"
+      },
+      "classified_by": "google:gemma-4-26b-a4b-it@2026-10-08T00:59:37Z"
     },
     {
       "id": "ckb-47f2ce1b324d",
       "title": "Programao C e C para Segurana Ofensiva Digital",
       "category": "reverse-engineering-and-exploit-development",
-      "format": "guide",
+      "format": "book",
       "language": "pt",
       "path": "library/reverse-engineering-and-exploit-development/programao-c-e-c-para-segurana-ofensiva-digital.md",
       "tags": [
+        "assembly",
         "buffer-overflow",
         "exploit-development",
+        "malware",
+        "reverse-engineering",
         "windows"
       ],
-      "summary": "",
+      "summary": "A technical handbook on C/C++ programming for offensive security, covering Windows API, kernel development, malware development, and exploit development.",
       "authors": [
         "unknown"
       ],
@@ -12484,29 +12838,29 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 20811,
-      "size_bytes": 165738,
+      "size_bytes": 166024,
       "sha256": "0100a0a4d5400d0d18bedd2046bec4c19a535e813306a2ce2eb123b2c8fb7e51",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.78
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemma-4-26b-a4b-it"
+      },
+      "classified_by": "google:gemma-4-26b-a4b-it@2026-10-08T00:59:40Z"
     },
     {
       "id": "ckb-7de26f3ceb6e",
       "title": "Reverse Engineering Content Study 1",
       "category": "reverse-engineering-and-exploit-development",
-      "format": "course-notes",
+      "format": "reference",
       "language": "en",
       "path": "library/reverse-engineering-and-exploit-development/reverse-engineering-content-study-1.md",
       "tags": [
         "assembly",
-        "git",
+        "education",
         "reverse-engineering",
-        "tls",
-        "web-security",
         "windows"
       ],
-      "summary": "",
+      "summary": "This document provides a curated collection of educational resources covering x86 and x64 architectures, kernel-level reverse engineering, debugging techniques, Windows API, memory management, and C programming.",
       "authors": [
         "Joas Antonio Dos Santos"
       ],
@@ -12514,29 +12868,29 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 934,
-      "size_bytes": 6970,
+      "size_bytes": 7265,
       "sha256": "655ba9494f3a7046d5ceef59a5d310ea783c01f787b4d9b39e1bdb3ad37c169a",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.94
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.1-flash-lite"
+      },
+      "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T00:59:41Z"
     },
     {
       "id": "ckb-6d05078053b9",
       "title": "Reverse Engineering Research Storm",
       "category": "reverse-engineering-and-exploit-development",
-      "format": "paper",
-      "language": "pt",
+      "format": "reference",
+      "language": "en",
       "path": "library/reverse-engineering-and-exploit-development/reverse-engineering-research-storm.md",
       "tags": [
         "assembly",
-        "git",
+        "exploit-development",
         "hardware",
-        "reverse-engineering",
-        "tls",
-        "web-security"
+        "reverse-engineering"
       ],
-      "summary": "",
+      "summary": "This curated reference list compiles study materials on memory management, computer architecture, hardware and firmware hacking, and reverse engineering.",
       "authors": [
         "Joas Antonio Dos Santos"
       ],
@@ -12544,12 +12898,14 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 1743,
-      "size_bytes": 13481,
+      "size_bytes": 13735,
       "sha256": "c1874ab7986aef742d01de0673028fb96bdf928a7261ceed73c51aa3f280beb1",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.81
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.5-flash-lite"
+      },
+      "classified_by": "google:gemini-3.5-flash-lite@2026-10-08T00:59:42Z"
     },
     {
       "id": "ckb-bc5764855e5b",
@@ -12559,14 +12915,12 @@
       "language": "en",
       "path": "library/reverse-engineering-and-exploit-development/shellcode-development.md",
       "tags": [
-        "assembly",
-        "exploit-development",
-        "git",
-        "metasploit",
-        "tls",
-        "web-security"
+        "buffer-overflow",
+        "c2",
+        "evasion",
+        "exploit-development"
       ],
-      "summary": "",
+      "summary": "This document provides an introductory overview of shellcode types, including local, remote, staged, and encoding techniques used in exploit development.",
       "authors": [
         "Joas Antonio Dos Santos"
       ],
@@ -12574,29 +12928,29 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 2874,
-      "size_bytes": 20492,
+      "size_bytes": 20729,
       "sha256": "4f1c1b69be67b85c6d9c55afc9f09ae1f4e27e2b3bb5c3e535cf905f56f42053",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.72
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.1-flash-lite"
+      },
+      "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T00:59:44Z"
     },
     {
       "id": "ckb-dd99edfa0087",
       "title": "Shellcode Development 2",
       "category": "reverse-engineering-and-exploit-development",
-      "format": "guide",
+      "format": "reference",
       "language": "en",
       "path": "library/reverse-engineering-and-exploit-development/shellcode-development-2.md",
       "tags": [
         "assembly",
         "buffer-overflow",
         "exploit-development",
-        "git",
-        "metasploit",
-        "tls"
+        "reverse-engineering"
       ],
-      "summary": "",
+      "summary": "This document provides an overview of shellcode development and testing methodologies, accompanied by a curated list of resources for binary exploitation, buffer overflows, and return-oriented programming (ROP).",
       "authors": [
         "Joas Antonio Dos Santos"
       ],
@@ -12604,26 +12958,27 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 2931,
-      "size_bytes": 19018,
+      "size_bytes": 19332,
       "sha256": "18cc6382daa0a5e8fd1004059ad15bfc514013cebee0b38dbd7a17e52cb97aed",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.89
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.1-flash-lite"
+      },
+      "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T00:59:45Z"
     },
     {
       "id": "ckb-b5444fabf12b",
       "title": "Child Safety a Serious Problem But Little Talked About English",
       "category": "security-awareness-and-online-safety",
-      "format": "guide",
+      "format": "article",
       "language": "en",
       "path": "library/security-awareness-and-online-safety/child-safety-a-serious-problem-but-little-talked-about-english.md",
       "tags": [
         "education",
-        "privacy",
         "social-engineering"
       ],
-      "summary": "",
+      "summary": "This document outlines the various digital risks children and teenagers face online, including cyberbullying, exposure to inappropriate content, and online predators, while providing guidance for parents on mitigation strategies.",
       "authors": [
         "unknown"
       ],
@@ -12631,29 +12986,28 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 2629,
-      "size_bytes": 18359,
+      "size_bytes": 18681,
       "sha256": "8129b06387391a9fd8be4988f78e632abda3961905f4f452c3892ef9de95cd58",
       "classification": {
-        "method": "heuristic",
-        "confidence": 1.0
-      }
+        "method": "llm",
+        "confidence": 1.0,
+        "model": "gemini-3.1-flash-lite"
+      },
+      "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T00:59:56Z"
     },
     {
       "id": "ckb-98692e9d7d0c",
       "title": "Cyber Security for Kids",
       "category": "security-awareness-and-online-safety",
-      "format": "guide",
+      "format": "article",
       "language": "en",
       "path": "library/security-awareness-and-online-safety/cyber-security-for-kids.md",
       "tags": [
         "education",
         "malware",
-        "networking",
-        "phishing",
-        "social-engineering",
-        "tls"
+        "phishing"
       ],
-      "summary": "",
+      "summary": "This document provides a foundational overview of cybersecurity and internet safety concepts, including common threats like viruses and phishing, presented in both English and Portuguese.",
       "authors": [
         "Joas Antonio Dos Santos"
       ],
@@ -12661,12 +13015,14 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 6959,
-      "size_bytes": 44865,
+      "size_bytes": 45118,
       "sha256": "fe4b27030844f93fb7b8a7c5dc09494e5ed805fd415484b5b94287746b803caa",
       "classification": {
-        "method": "heuristic",
-        "confidence": 1.0
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.1-flash-lite"
+      },
+      "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T00:59:57Z"
     },
     {
       "id": "ckb-8406f7c96dfc",
@@ -12677,11 +13033,11 @@
       "path": "library/security-awareness-and-online-safety/cyber-security-for-kids-2.md",
       "tags": [
         "education",
+        "malware",
         "password-security",
-        "tls",
-        "wireless"
+        "social-engineering"
       ],
-      "summary": "",
+      "summary": "This educational guide provides fundamental cybersecurity advice for children and teenagers, covering topics like password hygiene, safe browsing, and protecting personal devices.",
       "authors": [
         "Joas Antonio Dos Santos"
       ],
@@ -12689,12 +13045,14 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 1581,
-      "size_bytes": 8848,
+      "size_bytes": 9141,
       "sha256": "4a0d9fb524d4a525516ef5e7b89e40b452c531de61ee0d676711aea1d8441433",
       "classification": {
-        "method": "heuristic",
-        "confidence": 1.0
-      }
+        "method": "llm",
+        "confidence": 1.0,
+        "model": "gemini-3.1-flash-lite"
+      },
+      "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T00:59:58Z"
     },
     {
       "id": "ckb-e998b3379a04",
@@ -12706,12 +13064,10 @@
       "tags": [
         "education",
         "malware",
-        "networking",
         "password-security",
-        "tls",
-        "wireless"
+        "social-engineering"
       ],
-      "summary": "",
+      "summary": "This educational guide provides fundamental cybersecurity concepts and practical safety tips for children and teenagers to protect their devices and online accounts.",
       "authors": [
         "Joas Antonio Dos Santos"
       ],
@@ -12719,25 +13075,26 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 2080,
-      "size_bytes": 12077,
+      "size_bytes": 12334,
       "sha256": "e32c72700ae6049899342b0de000946a80baa81f72b8c1acb495c351f4a02588",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.76
-      }
+        "method": "llm",
+        "confidence": 1.0,
+        "model": "gemini-3.1-flash-lite"
+      },
+      "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T00:59:59Z"
     },
     {
       "id": "ckb-3a1272f0ebc7",
       "title": "Cyberbullying and Its Consequences",
       "category": "security-awareness-and-online-safety",
-      "format": "guide",
+      "format": "article",
       "language": "en",
       "path": "library/security-awareness-and-online-safety/cyberbullying-and-its-consequences.md",
       "tags": [
-        "education",
-        "tls"
+        "social-engineering"
       ],
-      "summary": "",
+      "summary": "This document provides an overview of cyberbullying, detailing its various forms, psychological consequences for victims and aggressors, notable real-world cases, and guidance on prevention and reporting.",
       "authors": [
         "unknown"
       ],
@@ -12745,12 +13102,14 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 924,
-      "size_bytes": 6191,
+      "size_bytes": 6501,
       "sha256": "7c6628335d46af5fa13f5c363fffa533f335c970002ca94f12ff8be63bc38950",
       "classification": {
-        "method": "heuristic",
-        "confidence": 1.0
-      }
+        "method": "llm",
+        "confidence": 1.0,
+        "model": "gemini-3.1-flash-lite"
+      },
+      "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T01:00:01Z"
     },
     {
       "id": "ckb-b9782dcdb0a8",
@@ -12760,9 +13119,10 @@
       "language": "pt",
       "path": "library/security-awareness-and-online-safety/cyberbullying-e-as-consequncias.md",
       "tags": [
-        "tls"
+        "education",
+        "social-engineering"
       ],
-      "summary": "",
+      "summary": "This educational document defines cyberbullying, outlines its various forms and psychological consequences, and provides guidance on prevention and reporting procedures.",
       "authors": [
         "unknown"
       ],
@@ -12770,24 +13130,28 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 1021,
-      "size_bytes": 6892,
+      "size_bytes": 7187,
       "sha256": "76a824ebd97724a4e203eff7aeb7d94f165d61964dc97f46e3511237db3a8764",
       "classification": {
-        "method": "heuristic",
-        "confidence": 1.0
-      }
+        "method": "llm",
+        "confidence": 1.0,
+        "model": "gemini-3.1-flash-lite"
+      },
+      "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T01:00:02Z"
     },
     {
       "id": "ckb-e5890b9761be",
       "title": "Cybersecurity and Cyberbullying Education for Kids",
       "category": "security-awareness-and-online-safety",
-      "format": "guide",
+      "format": "article",
       "language": "en",
       "path": "library/security-awareness-and-online-safety/cybersecurity-and-cyberbullying-education-for-kids.md",
       "tags": [
-        "education"
+        "anonymity",
+        "password-security",
+        "social-engineering"
       ],
-      "summary": "",
+      "summary": "A guide for parents to teach children about internet risks, including scams, malicious software, strong passwords, and cyberbullying.",
       "authors": [
         "Joas Antonio Dos Santos"
       ],
@@ -12795,54 +13159,29 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 336,
-      "size_bytes": 2458,
+      "size_bytes": 2727,
       "sha256": "d9e6ead9380e2faa6759794fc7938ac7831424cb363873bb7751e29e650b7f32",
       "classification": {
-        "method": "heuristic",
-        "confidence": 1.0
-      }
-    },
-    {
-      "id": "ckb-13ec4a8761cd",
-      "title": "Cybersecurity Flaws in the Metaverse 1",
-      "category": "security-awareness-and-online-safety",
-      "format": "guide",
-      "language": "en",
-      "path": "library/security-awareness-and-online-safety/cybersecurity-flaws-in-the-metaverse-1.md",
-      "tags": [
-        "blockchain",
-        "networking"
-      ],
-      "summary": "",
-      "authors": [
-        "Joas Antonio Dos Santos"
-      ],
-      "license": "NOASSERTION",
-      "redistribution": "unknown",
-      "added": "2026-10-04",
-      "word_count": 642,
-      "size_bytes": 4692,
-      "sha256": "434d8b2e9787b9247d5acb434231bc26f1fa5c42f113afa5e594015989f3c271",
-      "classification": {
-        "method": "heuristic",
-        "confidence": 0.94
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemma-4-26b-a4b-it"
+      },
+      "classified_by": "google:gemma-4-26b-a4b-it@2026-10-08T01:00:05Z"
     },
     {
       "id": "ckb-4b97e3c0903f",
       "title": "Cybersecurity for Kids English",
       "category": "security-awareness-and-online-safety",
-      "format": "guide",
+      "format": "book",
       "language": "en",
       "path": "library/security-awareness-and-online-safety/cybersecurity-for-kids-english.md",
       "tags": [
         "education",
         "malware",
         "password-security",
-        "phishing",
-        "privacy"
+        "phishing"
       ],
-      "summary": "",
+      "summary": "This educational book provides fundamental cybersecurity guidance for children and parents, covering topics like malware, password hygiene, and safe internet browsing practices.",
       "authors": [
         "Joas Antonio Dos Santos"
       ],
@@ -12850,26 +13189,29 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 1371,
-      "size_bytes": 8426,
+      "size_bytes": 8692,
       "sha256": "d51c45dd00cba60523886d306b286d924cd70003fb5f893de615b9ff2aa633fa",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.91
-      }
+        "method": "llm",
+        "confidence": 1.0,
+        "model": "gemini-3.1-flash-lite"
+      },
+      "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T01:00:08Z"
     },
     {
       "id": "ckb-8bca250edb05",
       "title": "Cybersecurity for Kids Pt Br",
       "category": "security-awareness-and-online-safety",
-      "format": "guide",
+      "format": "book",
       "language": "pt",
       "path": "library/security-awareness-and-online-safety/cybersecurity-for-kids-pt-br.md",
       "tags": [
         "education",
         "malware",
+        "password-security",
         "phishing"
       ],
-      "summary": "",
+      "summary": "This educational book provides fundamental cybersecurity guidance for children and parents, covering topics like malware, safe browsing, email security, and password hygiene.",
       "authors": [
         "Joas Antonio Dos Santos"
       ],
@@ -12877,12 +13219,14 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 1386,
-      "size_bytes": 9162,
+      "size_bytes": 9453,
       "sha256": "216d21f0e52e8c2d890a911755a711d91081dfb00d178c6e0641020c1f0d4a15",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.95
-      }
+        "method": "llm",
+        "confidence": 1.0,
+        "model": "gemini-3.1-flash-lite"
+      },
+      "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T01:00:12Z"
     },
     {
       "id": "ckb-248962396f28",
@@ -12892,9 +13236,10 @@
       "language": "pt",
       "path": "library/security-awareness-and-online-safety/golpe-do-perfil-falso-no-whatsapp-medidas-preventivas.md",
       "tags": [
-        "tls"
+        "phishing",
+        "social-engineering"
       ],
-      "summary": "",
+      "summary": "This guide explains the mechanics of WhatsApp impersonation scams and provides actionable advice for users to protect their accounts and avoid financial fraud.",
       "authors": [
         "Joas Antonio Dos Santos"
       ],
@@ -12902,12 +13247,14 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 903,
-      "size_bytes": 6092,
+      "size_bytes": 6376,
       "sha256": "712b0878338c27026a8e11fa38f49571eddd9094f6103ec1be37ea4981006bfe",
       "classification": {
-        "method": "heuristic",
-        "confidence": 1.0
-      }
+        "method": "llm",
+        "confidence": 1.0,
+        "model": "gemini-3.1-flash-lite"
+      },
+      "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T01:00:14Z"
     },
     {
       "id": "ckb-c5ccfbf5ca59",
@@ -12948,10 +13295,12 @@
       "language": "pt",
       "path": "library/security-awareness-and-online-safety/instagram-social-network-security.md",
       "tags": [
-        "networking",
-        "phishing"
+        "hardening",
+        "password-security",
+        "phishing",
+        "social-engineering"
       ],
-      "summary": "",
+      "summary": "This document outlines common attack vectors against Instagram accounts, such as phishing and credential stuffing, and provides guidance on account recovery and security best practices.",
       "authors": [
         "unknown"
       ],
@@ -12959,12 +13308,14 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 630,
-      "size_bytes": 4246,
+      "size_bytes": 4569,
       "sha256": "88c611ca4d041a9822e276ae2bab0cb575012cd74ed5441c7ea73740f3065a3c",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.67
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.5-flash-lite"
+      },
+      "classified_by": "google:gemini-3.5-flash-lite@2026-10-08T01:00:15Z"
     },
     {
       "id": "ckb-91f6204c80b0",
@@ -12975,12 +13326,10 @@
       "path": "library/security-awareness-and-online-safety/internet-safety-sexual-predators-and-stalkers-how-to-protect-yourself.md",
       "tags": [
         "education",
-        "homelab",
-        "networking",
         "privacy",
-        "tls"
+        "social-engineering"
       ],
-      "summary": "",
+      "summary": "An awareness guide detailing behavioral patterns and manipulation tactics to help recognize and prevent abuse by sexual predators and stalkers.",
       "authors": [
         "Joas Antonio Dos Santos"
       ],
@@ -12988,29 +13337,29 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 7162,
-      "size_bytes": 45324,
+      "size_bytes": 45552,
       "sha256": "d86715743f30afedf4b6e26f1bb1cf6e6827865eafd387ed479bd4a51a707940",
       "classification": {
-        "method": "heuristic",
-        "confidence": 1.0
-      }
+        "method": "llm",
+        "confidence": 0.98,
+        "model": "gemini-3.8-flash"
+      },
+      "classified_by": "google:gemini-3.8-flash@2026-10-08T01:00:37Z"
     },
     {
       "id": "ckb-20da17a5b7d0",
       "title": "Introduo a Engenharia Social Prtica",
       "category": "security-awareness-and-online-safety",
-      "format": "guide",
+      "format": "book",
       "language": "pt",
       "path": "library/security-awareness-and-online-safety/introduo-a-engenharia-social-prtica.md",
       "tags": [
-        "git",
         "malware",
         "phishing",
-        "social-engineering",
-        "tls",
-        "windows"
+        "physical-security",
+        "social-engineering"
       ],
-      "summary": "",
+      "summary": "An introductory ebook in Portuguese regarding the practical application and types of social engineering attacks such as phishing, baiting, and tailgating.",
       "authors": [
         "unknown"
       ],
@@ -13018,12 +13367,14 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 3051,
-      "size_bytes": 20195,
+      "size_bytes": 20442,
       "sha256": "a7f518f83c5b41d0c1a13574cfc01c6add0efd894273a441ced9f8cd1734ba66",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.33
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemma-4-26b-a4b-it"
+      },
+      "classified_by": "google:gemma-4-26b-a4b-it@2026-10-08T01:00:40Z"
     },
     {
       "id": "ckb-ada7e4a5d1c9",
@@ -13033,14 +13384,11 @@
       "language": "en",
       "path": "library/security-awareness-and-online-safety/own-your-space-teen-book.md",
       "tags": [
-        "education",
-        "firewall",
         "malware",
-        "networking",
-        "social-engineering",
-        "web-security"
+        "phishing",
+        "social-engineering"
       ],
-      "summary": "",
+      "summary": "A guide for teenagers and families on maintaining online safety, covering topics such as malware, phishing, and social media security.",
       "authors": [
         "unknown"
       ],
@@ -13048,12 +13396,14 @@
       "redistribution": "permitted",
       "added": "2026-10-04",
       "word_count": 77035,
-      "size_bytes": 457591,
+      "size_bytes": 457782,
       "sha256": "ed4d3d918b7ef24b3a6a7d7916fc09b020d813ebbc854f130ccce60ed4cba788",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.78
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemma-4-26b-a4b-it"
+      },
+      "classified_by": "google:gemma-4-26b-a4b-it@2026-10-08T01:00:43Z"
     },
     {
       "id": "ckb-bfd413d242c2",
@@ -13063,12 +13413,11 @@
       "language": "en",
       "path": "library/security-awareness-and-online-safety/safe-social-networking.md",
       "tags": [
-        "networking",
         "password-security",
         "privacy",
-        "tls"
+        "social-engineering"
       ],
-      "summary": "",
+      "summary": "An article providing tips for safe social media usage and suggesting alternative privacy-focused social networking platforms.",
       "authors": [
         "unknown"
       ],
@@ -13076,24 +13425,27 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 681,
-      "size_bytes": 4462,
+      "size_bytes": 4684,
       "sha256": "276ee8eebca85ddb455626786d49006b5a7a492ca000b6dfa51f62a4e5b9b698",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.92
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemma-4-26b-a4b-it"
+      },
+      "classified_by": "google:gemma-4-26b-a4b-it@2026-10-08T01:00:45Z"
     },
     {
       "id": "ckb-61d1162cf605",
       "title": "Segurana Infantil Um Problema Srio Mas Pouco Falado",
       "category": "security-awareness-and-online-safety",
-      "format": "guide",
+      "format": "article",
       "language": "pt",
       "path": "library/security-awareness-and-online-safety/segurana-infantil-um-problema-srio-mas-pouco-falado.md",
       "tags": [
-        "homelab"
+        "education",
+        "social-engineering"
       ],
-      "summary": "",
+      "summary": "This document discusses the digital risks faced by children and adolescents, including cyberbullying, online predators, and identity theft, while providing guidance for parents on how to mitigate these threats.",
       "authors": [
         "unknown"
       ],
@@ -13101,25 +13453,26 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 2776,
-      "size_bytes": 19856,
+      "size_bytes": 20190,
       "sha256": "74f23c52e36265d6569696f590d91dc7d456a0f6e6e178a79ba62aed15810d23",
       "classification": {
-        "method": "heuristic",
-        "confidence": 1.0
-      }
+        "method": "llm",
+        "confidence": 1.0,
+        "model": "gemini-3.1-flash-lite"
+      },
+      "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T01:00:50Z"
     },
     {
       "id": "ckb-c3735ad92856",
       "title": "Segurana Na Internet para Crianas",
       "category": "security-awareness-and-online-safety",
-      "format": "guide",
+      "format": "book",
       "language": "pt",
       "path": "library/security-awareness-and-online-safety/segurana-na-internet-para-crianas.md",
       "tags": [
-        "homelab",
-        "tls"
+        "education"
       ],
-      "summary": "",
+      "summary": "This book provides an educational overview of internet safety, risks, and best practices tailored for children, parents, and classroom environments.",
       "authors": [
         "unknown"
       ],
@@ -13127,12 +13480,14 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 3020,
-      "size_bytes": 19390,
+      "size_bytes": 19633,
       "sha256": "64af6b13ca359e013d52d7257580de54ba194488866f499b9aa6f087b833f375",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.85
-      }
+        "method": "llm",
+        "confidence": 1.0,
+        "model": "gemini-3.1-flash-lite"
+      },
+      "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T01:00:52Z"
     },
     {
       "id": "ckb-a5e81b51fd06",
@@ -13142,14 +13497,13 @@
       "language": "en",
       "path": "library/security-awareness-and-online-safety/social-engineering-practical-overview.md",
       "tags": [
-        "git",
-        "password-security",
+        "credential-access",
+        "iot",
+        "malware",
         "phishing",
-        "physical-security",
-        "social-engineering",
-        "tls"
+        "social-engineering"
       ],
-      "summary": "",
+      "summary": "This document provides a practical overview of various social engineering tactics, including phishing, baiting, pretexting, and hardware-based attacks like BadUSB.",
       "authors": [
         "unknown"
       ],
@@ -13157,12 +13511,14 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 2154,
-      "size_bytes": 14459,
+      "size_bytes": 14707,
       "sha256": "6ac04086dad7e19b2bcfaeb4865557ecb25badd19e2875ee7896a20f88f6e9d1",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.77
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.1-flash-lite"
+      },
+      "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T01:00:53Z"
     },
     {
       "id": "ckb-127383dec657",
@@ -13230,14 +13586,14 @@
       "language": "en",
       "path": "library/security-operations/100-security-operation-center-tools.md",
       "tags": [
+        "detection-engineering",
         "forensics",
-        "git",
+        "incident-response",
         "malware",
         "red-team",
-        "tls",
-        "windows"
+        "soc"
       ],
-      "summary": "",
+      "summary": "This document provides a curated list of various tools used in Security Operations Centers, covering areas such as log analysis, incident response, malware analysis, and adversary emulation.",
       "authors": [
         "unknown"
       ],
@@ -13245,27 +13601,29 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 4857,
-      "size_bytes": 33436,
+      "size_bytes": 33754,
       "sha256": "8e4847556d878f3e797ef2eff4beb074582849baf30742843627119849f17b5f",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.64
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.1-flash-lite"
+      },
+      "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T01:00:54Z"
     },
     {
       "id": "ckb-7c3259ec9c95",
       "title": "AbuseIPDB with Fail2Ban",
       "category": "security-operations",
-      "format": "article",
+      "format": "guide",
       "language": "en",
       "path": "library/security-operations/abuseipdb-with-fail2ban.md",
       "tags": [
-        "bash",
-        "git",
-        "privilege-escalation",
-        "tls"
+        "hardening",
+        "log-analysis",
+        "soc",
+        "vulnerability-management"
       ],
-      "summary": "",
+      "summary": "A technical guide on integrating AbuseIPDB with Fail2Ban to automatically report and block malicious IP addresses.",
       "authors": [
         "unknown"
       ],
@@ -13273,12 +13631,14 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 820,
-      "size_bytes": 5642,
+      "size_bytes": 5866,
       "sha256": "93a4578b5a72f0e2da62c5834a64d4df8ec5d063705fdba66b06059c7b62814b",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.31
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemma-4-26b-a4b-it"
+      },
+      "classified_by": "google:gemma-4-26b-a4b-it@2026-10-08T01:00:57Z"
     },
     {
       "id": "ckb-5dce951798a9",
@@ -13344,21 +13704,50 @@
       "classified_by": "google:gemini-3.5-flash-lite@2026-10-08T00:39:28Z"
     },
     {
+      "id": "ckb-4d3aba79ce6c",
+      "title": "eLearnSecurity Certified Threat Hunting Introduction Pt 1",
+      "category": "security-operations",
+      "format": "course-notes",
+      "language": "en",
+      "path": "library/security-operations/elearnsecurity-certified-threat-hunting-introduction-pt-1.md",
+      "tags": [
+        "detection-engineering",
+        "mitre-attack",
+        "soc",
+        "threat-hunting",
+        "threat-intelligence"
+      ],
+      "summary": "This document introduces threat hunting concepts, methodologies, and types of hunts such as intel-based and hypothesis-driven hunting.",
+      "authors": [
+        "Joas Antonio Dos Santos"
+      ],
+      "license": "NOASSERTION",
+      "redistribution": "unknown",
+      "added": "2026-10-04",
+      "word_count": 5084,
+      "size_bytes": 35177,
+      "sha256": "133a97171af16322bf1e61e2b7682ba9abc3831c8c4f59e37754d3592fa584ed",
+      "classification": {
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.5-flash-lite"
+      },
+      "classified_by": "google:gemini-3.5-flash-lite@2026-10-08T01:01:53Z"
+    },
+    {
       "id": "ckb-07605f494192",
       "title": "Fail2Ban - best jail",
       "category": "security-operations",
-      "format": "article",
+      "format": "guide",
       "language": "en",
       "path": "library/security-operations/fail2ban-best-jail.md",
       "tags": [
-        "bash",
+        "firewall",
+        "hardening",
         "linux",
-        "log-analysis",
-        "privilege-escalation",
-        "tls",
-        "web-security"
+        "log-analysis"
       ],
-      "summary": "",
+      "summary": "This guide provides instructions on installing, configuring, and customizing Fail2Ban to protect servers by automatically banning IP addresses that exhibit malicious behavior.",
       "authors": [
         "unknown"
       ],
@@ -13366,12 +13755,14 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 1096,
-      "size_bytes": 7158,
+      "size_bytes": 7405,
       "sha256": "eb87081d91d24ac54b4472a2e9f7372c9cf26aff42ea7e4d48f8188a7ab6a8ab",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.35
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.1-flash-lite"
+      },
+      "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T01:01:00Z"
     },
     {
       "id": "ckb-bf919b2651e5",
@@ -13442,11 +13833,11 @@
       "language": "en",
       "path": "library/security-operations/kali-honeypot.md",
       "tags": [
-        "git",
+        "detection-engineering",
         "linux",
-        "networking"
+        "log-analysis"
       ],
-      "summary": "",
+      "summary": "This guide provides step-by-step instructions for installing and configuring the PentBox tool on Kali Linux to deploy a basic honeypot for detecting network intrusion attempts.",
       "authors": [
         "unknown"
       ],
@@ -13454,12 +13845,14 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 832,
-      "size_bytes": 5346,
+      "size_bytes": 5642,
       "sha256": "12fdf4801a804b86aeaf93b1f5916621376de79ef18daa97a10d890039ace130",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.37
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.1-flash-lite"
+      },
+      "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T01:01:02Z"
     },
     {
       "id": "ckb-733010125309",
@@ -13495,15 +13888,17 @@
       "id": "ckb-e1b2498d6fb8",
       "title": "Low Cost SOC",
       "category": "security-operations",
-      "format": "guide",
-      "language": "pt",
+      "format": "reference",
+      "language": "en",
       "path": "library/security-operations/low-cost-soc.md",
       "tags": [
-        "git",
+        "detection-engineering",
+        "log-analysis",
+        "nist",
         "soc",
-        "tls"
+        "vulnerability-management"
       ],
-      "summary": "",
+      "summary": "This document provides a curated list of open-source tools and resources for building and maintaining a cost-effective Security Operations Center.",
       "authors": [
         "Joas Antonio Dos Santos"
       ],
@@ -13511,26 +13906,28 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 118,
-      "size_bytes": 1004,
+      "size_bytes": 1314,
       "sha256": "439f7fda86a983803de0496709f7da57e438b35e92ca0d6e2341756ef36b39f6",
       "classification": {
-        "method": "heuristic",
-        "confidence": 1.0
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.1-flash-lite"
+      },
+      "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T01:01:03Z"
     },
     {
       "id": "ckb-b0136be60e90",
       "title": "Low Cost SOC Tools 2",
       "category": "security-operations",
       "format": "reference",
-      "language": "und",
+      "language": "en",
       "path": "library/security-operations/low-cost-soc-tools-2.md",
       "tags": [
-        "git",
+        "log-analysis",
         "soc",
-        "tls"
+        "threat-intelligence"
       ],
-      "summary": "",
+      "summary": "A curated list of various open-source and low-cost security operations center ( security operations center ( SOC ) ) tools, including threat intelligence platforms, threat intelligence platforms, threat intelligence platforms, and SIEM/XDR/EDR/Nهم, and vulnerability-management, and…",
       "authors": [
         "unknown"
       ],
@@ -13538,42 +13935,14 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 111,
-      "size_bytes": 983,
+      "size_bytes": 1389,
       "sha256": "8a52c070758ee16a5e1e2219a7f984ee9fc7b0397b38afc32c1ec1facdbb9cc5",
       "classification": {
-        "method": "heuristic",
-        "confidence": 1.0
-      }
-    },
-    {
-      "id": "ckb-8740c017fd0e",
-      "title": "Microsoft Office and Windows Remote Code Execution",
-      "category": "security-operations",
-      "format": "guide",
-      "language": "en",
-      "path": "library/security-operations/microsoft-office-and-windows-remote-code-execution.md",
-      "tags": [
-        "firewall",
-        "log-analysis",
-        "networking",
-        "phishing",
-        "vulnerability-management",
-        "windows"
-      ],
-      "summary": "",
-      "authors": [
-        "Muhammet Donmez"
-      ],
-      "license": "NOASSERTION",
-      "redistribution": "unknown",
-      "added": "2026-10-04",
-      "word_count": 1387,
-      "size_bytes": 8529,
-      "sha256": "966923f64c09336110fa2aedd843ec51e3c1f444596138be49b8e1b627299b6e",
-      "classification": {
-        "method": "heuristic",
-        "confidence": 0.38
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemma-4-26b-a4b-it"
+      },
+      "classified_by": "google:gemma-4-26b-a4b-it@2026-10-08T01:01:07Z"
     },
     {
       "id": "ckb-4d73903d4af3",
@@ -13672,14 +14041,15 @@
       "id": "ckb-5a7b985b2135",
       "title": "PortSentry - stealth scan detection",
       "category": "security-operations",
-      "format": "article",
+      "format": "guide",
       "language": "en",
       "path": "library/security-operations/portsentry-stealth-scan-detection.md",
       "tags": [
-        "bash",
-        "linux"
+        "hardening",
+        "linux",
+        "networking"
       ],
-      "summary": "",
+      "summary": "This guide provides instructions on installing and configuring PortSentry to detect and block TCP and UDP port scans on a server.",
       "authors": [
         "unknown"
       ],
@@ -13687,12 +14057,14 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 506,
-      "size_bytes": 3398,
+      "size_bytes": 3641,
       "sha256": "fc20b6742a4fd3355e504ad08bb01d812d931d3b9fa57b40922eb58ccb369173",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.75
-      }
+        "method": "llm",
+        "confidence": 0.9,
+        "model": "gemini-3.1-flash-lite"
+      },
+      "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T01:01:12Z"
     },
     {
       "id": "ckb-7f857948a858",
@@ -13702,14 +14074,14 @@
       "language": "en",
       "path": "library/security-operations/priority-logs-for-0asiem-ingestion.md",
       "tags": [
-        "active-directory",
         "cloud",
-        "compliance",
         "detection-engineering",
+        "linux",
         "log-analysis",
+        "soc",
         "windows"
       ],
-      "summary": "",
+      "summary": "This guide provides technical recommendations for security practitioners on prioritizing log sources for ingestion into a SIEM platform based on organizational risk profiles.",
       "authors": [
         "unknown"
       ],
@@ -13717,29 +14089,30 @@
       "redistribution": "permitted",
       "added": "2026-10-04",
       "word_count": 7326,
-      "size_bytes": 49503,
+      "size_bytes": 49758,
       "sha256": "02aa7b1f9c9c9029451df6ab775a039c77861c83c38a3e8487ee65c5142a42a6",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.48
-      }
+        "method": "llm",
+        "confidence": 1.0,
+        "model": "gemini-3.1-flash-lite"
+      },
+      "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T01:01:13Z"
     },
     {
       "id": "ckb-8c20d590f26f",
       "title": "Purple Team Lab 01 Wazuh and Win2016",
       "category": "security-operations",
-      "format": "guide",
+      "format": "course-notes",
       "language": "en",
       "path": "library/security-operations/purple-team-lab-01-wazuh-and-win2016.md",
       "tags": [
         "active-directory",
-        "credential-access",
-        "log-analysis",
-        "powershell",
-        "tls",
+        "detection-engineering",
+        "homelab",
+        "soc",
         "windows"
       ],
-      "summary": "",
+      "summary": "This document provides an introductory overview of the Wazuh security monitoring platform and fundamental Active Directory concepts for a purple team laboratory environment.",
       "authors": [
         "Joas Antonio Dos Santos"
       ],
@@ -13747,12 +14120,14 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 5985,
-      "size_bytes": 40933,
+      "size_bytes": 41200,
       "sha256": "4bc07920c23e4a79511ae33f0b6252642a7cc2e8494921ef50eac5d42b452a22",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.59
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.1-flash-lite"
+      },
+      "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T01:01:16Z"
     },
     {
       "id": "ckb-77b6cdd0607c",
@@ -13787,47 +14162,18 @@
       "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T00:32:26Z"
     },
     {
-      "id": "ckb-3747fa50bf1b",
-      "title": "Red Team X Blue Team",
-      "category": "security-operations",
-      "format": "guide",
-      "language": "pt",
-      "path": "library/security-operations/red-team-x-blue-team.md",
-      "tags": [
-        "red-team",
-        "soc"
-      ],
-      "summary": "",
-      "authors": [
-        "unknown"
-      ],
-      "license": "NOASSERTION",
-      "redistribution": "unknown",
-      "added": "2026-10-04",
-      "word_count": 82,
-      "size_bytes": 833,
-      "sha256": "16158a8b5cbf52ae0b3866f7a3cc6c23a048465c6d8e70e344af11cc8c001218",
-      "classification": {
-        "method": "heuristic",
-        "confidence": 0.5
-      }
-    },
-    {
       "id": "ckb-dec90e145024",
       "title": "Secure Endpoints User Guide",
       "category": "security-operations",
-      "format": "book",
+      "format": "guide",
       "language": "en",
       "path": "library/security-operations/secure-endpoints-user-guide.md",
       "tags": [
-        "firewall",
-        "linux",
-        "mobile",
-        "networking",
-        "threat-hunting",
-        "windows"
+        "detection-engineering",
+        "hardening",
+        "vulnerability-management"
       ],
-      "summary": "",
+      "summary": "This document provides a comprehensive user guide for configuring and managing the Cisco Secure Endpoint platform, covering dashboard operations, outbreak control, device management, and policy settings.",
       "authors": [
         "unknown"
       ],
@@ -13835,12 +14181,14 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 72020,
-      "size_bytes": 468948,
+      "size_bytes": 469250,
       "sha256": "bd306917d3a453be746cc95dcfa648885477ce6a64e713f7655ba8c73b66001c",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.47
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.1-flash-lite"
+      },
+      "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T01:01:30Z"
     },
     {
       "id": "ckb-96fc24bae92b",
@@ -13851,13 +14199,13 @@
       "path": "library/security-operations/security-operation-center-40-tools.md",
       "tags": [
         "detection-engineering",
-        "git",
+        "forensics",
+        "incident-response",
         "malware",
-        "threat-intelligence",
-        "tls",
-        "windows"
+        "red-team",
+        "soc"
       ],
-      "summary": "",
+      "summary": "This document provides a curated reference catalog of various security tools utilized by SOC analysts, incident responders, and security researchers.",
       "authors": [
         "unknown"
       ],
@@ -13865,12 +14213,14 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 2817,
-      "size_bytes": 18872,
+      "size_bytes": 19127,
       "sha256": "8a3ddf09129eba2a089558fc55e0772ba879251d34449ad21f5f24e025b2f9c7",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.6
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.5-flash-lite"
+      },
+      "classified_by": "google:gemini-3.5-flash-lite@2026-10-08T01:01:31Z"
     },
     {
       "id": "ckb-6cadd82ffe0b",
@@ -13880,14 +14230,13 @@
       "language": "en",
       "path": "library/security-operations/security-operation-center-and-analysis.md",
       "tags": [
-        "cloud",
-        "git",
-        "networking",
-        "soc",
-        "tls",
-        "windows"
+        "detection-engineering",
+        "hardening",
+        "incident-response",
+        "log-analysis",
+        "soc"
       ],
-      "summary": "",
+      "summary": "This document outlines the core functions, responsibilities, and operational workflow of a Security Operations Center (SOC).",
       "authors": [
         "Joas Antonio Dos Santos"
       ],
@@ -13895,12 +14244,14 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 4234,
-      "size_bytes": 29819,
+      "size_bytes": 30072,
       "sha256": "920b857ec64105cae0fc6a318e06fcc0f797894d8cd96227fbb32c7f2f53d430",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.63
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.5-flash-lite"
+      },
+      "classified_by": "google:gemini-3.5-flash-lite@2026-10-08T01:01:32Z"
     },
     {
       "id": "ckb-d0513fed26c5",
@@ -13911,13 +14262,13 @@
       "path": "library/security-operations/security-operation-center-open-source.md",
       "tags": [
         "detection-engineering",
-        "firewall",
-        "linux",
-        "malware",
+        "incident-response",
+        "nist",
         "soc",
-        "web-security"
+        "threat-intelligence",
+        "vulnerability-management"
       ],
-      "summary": "",
+      "summary": "Este guia aborda os fundamentos de um Centro de Operações de Segurança, detalhando pessoas, processos, tecnologia e o ciclo de vida de resposta a incidentes do NIST.",
       "authors": [
         "Joas Antonio Dos Santos"
       ],
@@ -13925,12 +14276,14 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 3377,
-      "size_bytes": 23232,
+      "size_bytes": 23532,
       "sha256": "2801a6443855983bc82d5a79cfded6a90d4db6748fec856dccecbaaa267f01ad",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.71
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.5-flash-lite"
+      },
+      "classified_by": "google:gemini-3.5-flash-lite@2026-10-08T01:01:33Z"
     },
     {
       "id": "ckb-eb9562981c68",
@@ -13940,14 +14293,14 @@
       "language": "en",
       "path": "library/security-operations/security-operation-center-open-source-pt-en.md",
       "tags": [
-        "detection-engineering",
+        "compliance",
         "incident-response",
-        "log-analysis",
-        "malware",
-        "networking",
-        "soc"
+        "nist",
+        "soc",
+        "threat-intelligence",
+        "vulnerability-management"
       ],
-      "summary": "",
+      "summary": "This document provides an overview of Security Operations Center functions, including people, processes, technology, incident response lifecycles, and relevant frameworks like NIST and GDPR.",
       "authors": [
         "Joas Antonio Dos Santos"
       ],
@@ -13955,29 +14308,31 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 3012,
-      "size_bytes": 20542,
+      "size_bytes": 20839,
       "sha256": "47284dd6fe27042740261df57f7e3400c9541fdc52f21c3c4668cb7a0807703f",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.69
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.5-flash-lite"
+      },
+      "classified_by": "google:gemini-3.5-flash-lite@2026-10-08T01:01:34Z"
     },
     {
       "id": "ckb-204b7a8b16ba",
       "title": "Security Operation Center Operations Development",
       "category": "security-operations",
-      "format": "guide",
+      "format": "reference",
       "language": "en",
       "path": "library/security-operations/security-operation-center-operations-development.md",
       "tags": [
-        "git",
+        "detection-engineering",
+        "forensics",
         "incident-response",
         "malware",
-        "soc",
-        "tls",
-        "windows"
+        "red-team",
+        "soc"
       ],
-      "summary": "",
+      "summary": "This document provides a curated reference catalog of essential security tools utilized in security operations centers, covering monitoring, incident response, malware analysis, and adversary emulation.",
       "authors": [
         "Joas Antonio Dos Santos"
       ],
@@ -13985,55 +14340,31 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 3736,
-      "size_bytes": 25125,
+      "size_bytes": 25456,
       "sha256": "709e386c2cfe1c66664a3ec2f751fa024eb9e6bf0ba8448913ce03baf079ddb7",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.69
-      }
-    },
-    {
-      "id": "ckb-169c9955ed53",
-      "title": "SOC Analyst Career",
-      "category": "security-operations",
-      "format": "guide",
-      "language": "pt",
-      "path": "library/security-operations/soc-analyst-career.md",
-      "tags": [
-        "career",
-        "certification",
-        "mitre-attack",
-        "soc"
-      ],
-      "summary": "",
-      "authors": [
-        "Joas Antonio Dos Santos"
-      ],
-      "license": "NOASSERTION",
-      "redistribution": "unknown",
-      "added": "2026-10-04",
-      "word_count": 986,
-      "size_bytes": 7647,
-      "sha256": "cb05e8b79adbf3543bdbb57b44f1a5a8c04bdad87903a49f313cd9c314188c10",
-      "classification": {
-        "method": "heuristic",
-        "confidence": 0.39
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.5-flash-lite"
+      },
+      "classified_by": "google:gemini-3.5-flash-lite@2026-10-08T01:01:35Z"
     },
     {
       "id": "ckb-f42d94968f8e",
       "title": "SOC Open Source Tools",
       "category": "security-operations",
       "format": "reference",
-      "language": "und",
+      "language": "en",
       "path": "library/security-operations/soc-open-source-tools.md",
       "tags": [
-        "firewall",
-        "forensics",
+        "incident-response",
+        "log-analysis",
+        "malware",
         "mitre-attack",
-        "soc"
+        "soc",
+        "threat-intelligence"
       ],
-      "summary": "",
+      "summary": "This document provides a categorized compilation of open-source and near-open-source tools used in security operation centers.",
       "authors": [
         "Joas Antonio Dos Santos"
       ],
@@ -14041,42 +14372,14 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 177,
-      "size_bytes": 1723,
+      "size_bytes": 1990,
       "sha256": "a74d74e7b59cd20e04c952bc7cd97d24ebacd49203767980d11e8f34c8ce6e2a",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.91
-      }
-    },
-    {
-      "id": "ckb-413b9724fc30",
-      "title": "The Purple Book on Cyber Security",
-      "category": "security-operations",
-      "format": "book",
-      "language": "en",
-      "path": "library/security-operations/the-purple-book-on-cyber-security.md",
-      "tags": [
-        "databases",
-        "dns",
-        "firewall",
-        "incident-response",
-        "malware",
-        "networking"
-      ],
-      "summary": "",
-      "authors": [
-        "unknown"
-      ],
-      "license": "NOASSERTION",
-      "redistribution": "unknown",
-      "added": "2026-10-04",
-      "word_count": 63434,
-      "size_bytes": 431290,
-      "sha256": "e47ff60422abca3d230af54155cda6301879d5c4ca07aaa79197259042d40b47",
-      "classification": {
-        "method": "heuristic",
-        "confidence": 0.68
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.5-flash-lite"
+      },
+      "classified_by": "google:gemini-3.5-flash-lite@2026-10-08T01:01:37Z"
     },
     {
       "id": "ckb-4df6becaec97",
@@ -14176,14 +14479,10 @@
       "language": "en",
       "path": "library/security-operations/windows-defender-is-enough-if-you-harden-it.md",
       "tags": [
-        "cloud",
         "hardening",
-        "malware",
-        "powershell",
-        "tls",
         "windows"
       ],
-      "summary": "",
+      "summary": "An article discussing the effectiveness of Windows Defender and providing methods to harden it using Local Group Policy and PowerShell.",
       "authors": [
         "unknown"
       ],
@@ -14191,42 +14490,14 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 2136,
-      "size_bytes": 13736,
+      "size_bytes": 13932,
       "sha256": "20a2139ef2f98b2ab74a0a1501e08d33a95339cc48c3f8bf71242bb4428cfe28",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.91
-      }
-    },
-    {
-      "id": "ckb-d5c3c4d59a59",
-      "title": "Windows Event Log Analysis IR Guide",
-      "category": "security-operations",
-      "format": "guide",
-      "language": "en",
-      "path": "library/security-operations/windows-event-log-analysis-ir-guide.md",
-      "tags": [
-        "compliance",
-        "incident-response",
-        "log-analysis",
-        "networking",
-        "password-security",
-        "windows"
-      ],
-      "summary": "",
-      "authors": [
-        "unknown"
-      ],
-      "license": "NOASSERTION",
-      "redistribution": "unknown",
-      "added": "2026-10-04",
-      "word_count": 7971,
-      "size_bytes": 51149,
-      "sha256": "cd9329d0e5db36da80580473aadd83195d375092ab7f28770ddcc70b68b6b2e2",
-      "classification": {
-        "method": "heuristic",
-        "confidence": 0.69
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemma-4-26b-a4b-it"
+      },
+      "classified_by": "google:gemma-4-26b-a4b-it@2026-10-08T01:01:43Z"
     },
     {
       "id": "ckb-28e18648660c",
@@ -14267,11 +14538,11 @@
       "language": "pt",
       "path": "library/threat-intelligence-and-osint/apostila-a-arte-do-osint-para-pentesters.md",
       "tags": [
-        "git",
+        "education",
         "osint",
-        "tls"
+        "red-team"
       ],
-      "summary": "",
+      "summary": "This guide provides an introduction to Open Source Intelligence (OSINT) methodologies and tools specifically tailored for penetration testers to improve their reconnaissance phase.",
       "authors": [
         "unknown"
       ],
@@ -14279,12 +14550,14 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 908,
-      "size_bytes": 6203,
+      "size_bytes": 6494,
       "sha256": "5d0b25c8fd9f17516f6adc24f3932d6db9e8ebe990f899a76cedc6481dde8de4",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.94
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.1-flash-lite"
+      },
+      "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T01:01:47Z"
     },
     {
       "id": "ckb-05ab81184500",
@@ -14294,14 +14567,13 @@
       "language": "en",
       "path": "library/threat-intelligence-and-osint/apt28-understanding-a-group-specialized-in-attacks-against.md",
       "tags": [
-        "certification",
+        "evasion",
         "mitre-attack",
-        "password-security",
         "phishing",
-        "tls",
-        "windows"
+        "red-team",
+        "threat-intelligence"
       ],
-      "summary": "",
+      "summary": "This document provides an overview of the APT28 threat group, detailing their tactics, techniques, and procedures such as spear-phishing and defense evasion based on the MITRE ATT&CK framework.",
       "authors": [
         "unknown"
       ],
@@ -14309,29 +14581,30 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 1363,
-      "size_bytes": 9441,
+      "size_bytes": 9727,
       "sha256": "9412442229fe4c47eb0774aec57d52338a6973bf1130e6befc9f1b1f105fda42",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.6
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.5-flash-lite"
+      },
+      "classified_by": "google:gemini-3.5-flash-lite@2026-10-08T01:01:48Z"
     },
     {
       "id": "ckb-0f6ca88973ee",
       "title": "Critical Exploits for Sale on the Dark Web",
       "category": "threat-intelligence-and-osint",
-      "format": "guide",
+      "format": "paper",
       "language": "en",
       "path": "library/threat-intelligence-and-osint/critical-exploits-for-sale-on-the-dark-web.md",
       "tags": [
         "dark-web",
-        "malware",
+        "mitre-attack",
         "ransomware",
         "threat-intelligence",
-        "vulnerability-management",
-        "windows"
+        "vulnerability-management"
       ],
-      "summary": "",
+      "summary": "This intelligence report analyzes critical vulnerabilities and exploits traded on underground forums and dark web channels by ransomware groups and threat actors.",
       "authors": [
         "unknown"
       ],
@@ -14339,12 +14612,14 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 3295,
-      "size_bytes": 22440,
+      "size_bytes": 22698,
       "sha256": "3d6ef018eba4b627c5762bf3fa34c1331155da275e2cb4726c0e08c98e164948",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.85
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.5-flash-lite"
+      },
+      "classified_by": "google:gemini-3.5-flash-lite@2026-10-08T01:01:50Z"
     },
     {
       "id": "ckb-78ea9c3dd9b8",
@@ -14407,36 +14682,6 @@
       "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T00:13:53Z"
     },
     {
-      "id": "ckb-4d3aba79ce6c",
-      "title": "eLearnSecurity Certified Threat Hunting Introduction Pt 1",
-      "category": "threat-intelligence-and-osint",
-      "format": "guide",
-      "language": "en",
-      "path": "library/threat-intelligence-and-osint/elearnsecurity-certified-threat-hunting-introduction-pt-1.md",
-      "tags": [
-        "detection-engineering",
-        "incident-response",
-        "malware",
-        "networking",
-        "threat-hunting",
-        "tls"
-      ],
-      "summary": "",
-      "authors": [
-        "Joas Antonio Dos Santos"
-      ],
-      "license": "NOASSERTION",
-      "redistribution": "unknown",
-      "added": "2026-10-04",
-      "word_count": 5084,
-      "size_bytes": 34951,
-      "sha256": "133a97171af16322bf1e61e2b7682ba9abc3831c8c4f59e37754d3592fa584ed",
-      "classification": {
-        "method": "heuristic",
-        "confidence": 0.57
-      }
-    },
-    {
       "id": "ckb-dedb6cc69a31",
       "title": "Fundamentos de OSINT",
       "category": "threat-intelligence-and-osint",
@@ -14444,14 +14689,11 @@
       "language": "pt",
       "path": "library/threat-intelligence-and-osint/fundamentos-de-osint.md",
       "tags": [
-        "dark-web",
-        "git",
-        "networking",
+        "education",
         "osint",
-        "tls",
-        "web-security"
+        "threat-intelligence"
       ],
-      "summary": "",
+      "summary": "Este guia introdutório aborda os conceitos fundamentais de inteligência de fontes abertas (OSINT), incluindo sua história, metodologia e relação com outras disciplinas de inteligência como HUMINT e IMINT.",
       "authors": [
         "unknown"
       ],
@@ -14459,12 +14701,14 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 4544,
-      "size_bytes": 28708,
+      "size_bytes": 29003,
       "sha256": "77841ee011fa91b4f67f90004a07a4daee3a34f0a2fece5d4b4aa9962ba64109",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.98
-      }
+        "method": "llm",
+        "confidence": 1.0,
+        "model": "gemini-3.1-flash-lite"
+      },
+      "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T01:01:54Z"
     },
     {
       "id": "ckb-a1a94eb5ea43",
@@ -14527,36 +14771,6 @@
       "classified_by": "google:gemma-4-26b-a4b-it@2026-10-08T00:40:53Z"
     },
     {
-      "id": "ckb-0c6ef8f35ed5",
-      "title": "Introduo Ao MITRE Att Ck e Ao Cyber Kill Chain",
-      "category": "threat-intelligence-and-osint",
-      "format": "guide",
-      "language": "pt",
-      "path": "library/threat-intelligence-and-osint/introduo-ao-mitre-att-ck-e-ao-cyber-kill-chain.md",
-      "tags": [
-        "certification",
-        "git",
-        "mitre-attack",
-        "red-team",
-        "soc",
-        "tls"
-      ],
-      "summary": "",
-      "authors": [
-        "Joas Antonio Dos Santos"
-      ],
-      "license": "NOASSERTION",
-      "redistribution": "unknown",
-      "added": "2026-10-04",
-      "word_count": 3072,
-      "size_bytes": 20486,
-      "sha256": "fdf5daaf4f66b288f179bb19b0f10cba3a7d8a28e8c56e08ebad9a3246a4bdb4",
-      "classification": {
-        "method": "heuristic",
-        "confidence": 0.7
-      }
-    },
-    {
       "id": "ckb-d65445c25f83",
       "title": "Investigation Using OSINT with a Focus on Intelligence Operations and Dark Web Operations Training",
       "category": "threat-intelligence-and-osint",
@@ -14564,14 +14778,12 @@
       "language": "en",
       "path": "library/threat-intelligence-and-osint/investigation-using-osint-with-a-focus-on-intelligence-operations-and.md",
       "tags": [
-        "anonymity",
         "dark-web",
-        "networking",
+        "education",
         "osint",
-        "tls",
-        "vpn"
+        "threat-intelligence"
       ],
-      "summary": "",
+      "summary": "These training notes provide an introduction to Open Source Intelligence (OSINT) concepts, the intelligence cycle, and resources for gathering information from public sources.",
       "authors": [
         "unknown"
       ],
@@ -14579,12 +14791,14 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 10559,
-      "size_bytes": 74487,
+      "size_bytes": 74760,
       "sha256": "e7a361d965b235e37cef01649fb5fea45137cc9221b46adc61cdfa7acf1e760d",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.82
-      }
+        "method": "llm",
+        "confidence": 1.0,
+        "model": "gemini-3.1-flash-lite"
+      },
+      "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T01:01:59Z"
     },
     {
       "id": "ckb-17b38901b46d",
@@ -14594,14 +14808,10 @@
       "language": "en",
       "path": "library/threat-intelligence-and-osint/maltego-introduction-creating-a-simple-local-transform-en.md",
       "tags": [
-        "databases",
-        "networking",
         "osint",
-        "python",
-        "tls",
-        "web-security"
+        "threat-intelligence"
       ],
-      "summary": "",
+      "summary": "This guide provides an introduction to Maltego, explaining its architecture, server components like iTDS and CTAS, and the process for creating custom local transforms for data analysis.",
       "authors": [
         "Joas Antonio Dos Santos"
       ],
@@ -14609,12 +14819,14 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 3607,
-      "size_bytes": 23508,
+      "size_bytes": 23765,
       "sha256": "e93d063ae8b1e49da5d7b8d12fe3b9baa0e4fb3d9da633e48cba7d06bd1be6f6",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.52
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.1-flash-lite"
+      },
+      "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T01:02:03Z"
     },
     {
       "id": "ckb-00baa6b3df5a",
@@ -14624,14 +14836,10 @@
       "language": "pt",
       "path": "library/threat-intelligence-and-osint/maltego-introduction-creating-a-simple-local-transform-pt-br.md",
       "tags": [
-        "firewall",
-        "git",
         "osint",
-        "python",
-        "tls",
-        "web-security"
+        "threat-intelligence"
       ],
-      "summary": "",
+      "summary": "An introduction to Maltego, explaining its core concepts, architecture, and how to create custom local transforms for cyber investigations.",
       "authors": [
         "Joas Antonio Dos Santos"
       ],
@@ -14639,29 +14847,27 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 3792,
-      "size_bytes": 25964,
+      "size_bytes": 26168,
       "sha256": "7aa3b2d82cb5eca0a3cd97b6af8465cda2b4f2bbb5979200abe0d397bcd06298",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.75
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemma-4-31b-it"
+      },
+      "classified_by": "google:gemma-4-31b-it@2026-10-08T01:02:36Z"
     },
     {
       "id": "ckb-8e4d13de8684",
       "title": "MITRE Att Ck Study Overview",
       "category": "threat-intelligence-and-osint",
-      "format": "course-notes",
+      "format": "reference",
       "language": "en",
       "path": "library/threat-intelligence-and-osint/mitre-att-ck-study-overview.md",
       "tags": [
-        "git",
         "mitre-attack",
-        "red-team",
-        "threat-hunting",
-        "threat-intelligence",
-        "tls"
+        "threat-intelligence"
       ],
-      "summary": "",
+      "summary": "A curated list of links and resources for studying and implementing the MITRE ATT&CK framework.",
       "authors": [
         "unknown"
       ],
@@ -14669,29 +14875,27 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 1556,
-      "size_bytes": 11480,
+      "size_bytes": 11622,
       "sha256": "2183908318caba16813ba9102d1cfecc2ca9b0a308b73b32c05766cfe0af6ca2",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.95
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemma-4-31b-it"
+      },
+      "classified_by": "google:gemma-4-31b-it@2026-10-08T01:03:59Z"
     },
     {
       "id": "ckb-982c5b425723",
       "title": "OSINT Overview Pt 1",
       "category": "threat-intelligence-and-osint",
-      "format": "guide",
+      "format": "book",
       "language": "en",
       "path": "library/threat-intelligence-and-osint/osint-overview-pt-1.md",
       "tags": [
-        "anonymity",
-        "dark-web",
-        "git",
-        "networking",
         "osint",
-        "tls"
+        "threat-intelligence"
       ],
-      "summary": "",
+      "summary": "An introductory overview of Open Source Intelligence (OSINT) and its relationship to other intelligence disciplines like HUMINT, SIGINT, and IMINT.",
       "authors": [
         "Joas Antonio Dos Santos"
       ],
@@ -14699,72 +14903,14 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 9533,
-      "size_bytes": 65480,
+      "size_bytes": 65689,
       "sha256": "d40c52fd938c2e172c38bd8d809915af6ed0dfe12d0c37876348e3f91f828ada",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.52
-      }
-    },
-    {
-      "id": "ckb-abb2c1e87c84",
-      "title": "Practical Recon Automation with ReconFTW",
-      "category": "threat-intelligence-and-osint",
-      "format": "article",
-      "language": "en",
-      "path": "library/threat-intelligence-and-osint/practical-recon-automation-with-reconftw.md",
-      "tags": [
-        "bash",
-        "containers",
-        "cryptography",
-        "linux",
-        "privilege-escalation",
-        "threat-intelligence"
-      ],
-      "summary": "",
-      "authors": [
-        "unknown"
-      ],
-      "license": "NOASSERTION",
-      "redistribution": "unknown",
-      "added": "2026-10-04",
-      "word_count": 1344,
-      "size_bytes": 9195,
-      "sha256": "55cd1dece2a12c848e999d1b9f6e2e8f20e5658604bf87bf7a4ae54a68a3d27d",
-      "classification": {
-        "method": "heuristic",
-        "confidence": 0.49
-      }
-    },
-    {
-      "id": "ckb-d765a1a92757",
-      "title": "Ransomware Investigation OSINT and Hunting Overview Pt1",
-      "category": "threat-intelligence-and-osint",
-      "format": "guide",
-      "language": "en",
-      "path": "library/threat-intelligence-and-osint/ransomware-investigation-osint-and-hunting-overview-pt1.md",
-      "tags": [
-        "blockchain",
-        "malware",
-        "osint",
-        "ransomware",
-        "threat-hunting",
-        "tls"
-      ],
-      "summary": "",
-      "authors": [
-        "unknown"
-      ],
-      "license": "NOASSERTION",
-      "redistribution": "unknown",
-      "added": "2026-10-04",
-      "word_count": 3680,
-      "size_bytes": 25778,
-      "sha256": "0274a9146dd8448fa379e77aeaf9eb37c9ad31e1894239ee40463b26d9b0699d",
-      "classification": {
-        "method": "heuristic",
-        "confidence": 0.62
-      }
+        "method": "llm",
+        "confidence": 1.0,
+        "model": "gemma-4-31b-it"
+      },
+      "classified_by": "google:gemma-4-31b-it@2026-10-08T01:05:06Z"
     },
     {
       "id": "ckb-2cfd5480d64e",
@@ -14774,14 +14920,12 @@
       "language": "en",
       "path": "library/threat-intelligence-and-osint/shodan-hacks.md",
       "tags": [
-        "dns",
-        "osint",
-        "password-security",
-        "tls",
-        "vulnerability-management",
-        "web-security"
+        "iot",
+        "networking",
+        "nmap",
+        "osint"
       ],
-      "summary": "",
+      "summary": "An overview of Shodan search queries and dorks for reconnaissance and intelligence gathering on internet-connected devices.",
       "authors": [
         "unknown"
       ],
@@ -14789,26 +14933,27 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 2612,
-      "size_bytes": 17752,
+      "size_bytes": 17923,
       "sha256": "7529724b73d2e1fe14983701d1e4f4f81f312b5dbdd091d35c40bf21cdd3a9d4",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.81
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemma-4-26b-a4b-it"
+      },
+      "classified_by": "google:gemma-4-26b-a4b-it@2026-10-08T01:07:30Z"
     },
     {
       "id": "ckb-7e34321266ed",
       "title": "Tdc2021 MITRE Att Ck",
       "category": "threat-intelligence-and-osint",
-      "format": "guide",
+      "format": "article",
       "language": "pt",
       "path": "library/threat-intelligence-and-osint/tdc2021-mitre-att-ck.md",
       "tags": [
         "mitre-attack",
-        "red-team",
-        "web-security"
+        "red-team"
       ],
-      "summary": "",
+      "summary": "An introduction to the MITRE ATT&CK framework and the Cyber Kill Chain to facilitate communication between Red and Blue Teams.",
       "authors": [
         "unknown"
       ],
@@ -14816,29 +14961,27 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 328,
-      "size_bytes": 2640,
+      "size_bytes": 2847,
       "sha256": "bee74104fad270e427c58419fe972139c1e3561df843b99e9f8a500e6fa2a5ee",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.96
-      }
+        "method": "llm",
+        "confidence": 0.9,
+        "model": "gemma-4-26b-a4b-it"
+      },
+      "classified_by": "google:gemma-4-26b-a4b-it@2026-10-08T01:07:33Z"
     },
     {
       "id": "ckb-239e98512b80",
       "title": "Using OSINT Techniques to Investigate Human Trafficking and Missing Persons Pt 1",
       "category": "threat-intelligence-and-osint",
-      "format": "guide",
+      "format": "article",
       "language": "en",
       "path": "library/threat-intelligence-and-osint/using-osint-techniques-to-investigate-human-trafficking-and-missing.md",
       "tags": [
-        "git",
         "osint",
-        "password-security",
-        "privacy",
-        "social-engineering",
-        "tls"
+        "social-engineering"
       ],
-      "summary": "",
+      "summary": "This document explores various OSINT and GEOINT techniques, such as search engines and sock puppets, for investigating human trafficking and missing persons.",
       "authors": [
         "Joas Antonio Dos Santos"
       ],
@@ -14846,26 +14989,26 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 3969,
-      "size_bytes": 26001,
+      "size_bytes": 26216,
       "sha256": "59b1cf31c7634bace98f81021e476112286a33e0d89ae84eb343c630947c2223",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.77
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemma-4-26b-a4b-it"
+      },
+      "classified_by": "google:gemma-4-26b-a4b-it@2026-10-08T01:07:36Z"
     },
     {
       "id": "ckb-55794395c1a1",
       "title": "Using OSINT to Investigate Human Trafficking and Missing Persons",
       "category": "threat-intelligence-and-osint",
-      "format": "guide",
+      "format": "course-notes",
       "language": "en",
       "path": "library/threat-intelligence-and-osint/using-osint-to-investigate-human-trafficking-and-missing-persons.md",
       "tags": [
-        "mitre-attack",
-        "osint",
-        "tls"
+        "osint"
       ],
-      "summary": "",
+      "summary": "This presentation provides an overview of OSINT techniques and tools used to investigate human trafficking and missing persons cases.",
       "authors": [
         "unknown"
       ],
@@ -14873,29 +15016,28 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 794,
-      "size_bytes": 5758,
+      "size_bytes": 5979,
       "sha256": "e95627d4c8f8319937442262aed509b4f3aa61cac3a81b5178ffd6a3c1106a16",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.88
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.1-flash-lite"
+      },
+      "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T01:07:42Z"
     },
     {
       "id": "ckb-703e52a7e4a5",
       "title": "Using OSINT to Investigate School Shooters",
       "category": "threat-intelligence-and-osint",
-      "format": "guide",
+      "format": "reference",
       "language": "en",
       "path": "library/threat-intelligence-and-osint/using-osint-to-investigate-school-shooters.md",
       "tags": [
-        "anonymity",
+        "ai",
         "dark-web",
-        "education",
-        "git",
-        "osint",
-        "tls"
+        "osint"
       ],
-      "summary": "",
+      "summary": "This document provides a curated collection of tools and techniques for conducting open-source intelligence investigations, covering social media analysis, geolocation, and dark web research.",
       "authors": [
         "Joas Antonio Dos Santos"
       ],
@@ -14903,12 +15045,14 @@
       "redistribution": "unknown",
       "added": "2026-10-04",
       "word_count": 1708,
-      "size_bytes": 12413,
+      "size_bytes": 12680,
       "sha256": "0bb3ee3b78b871dd9c2333efe82f3334e4f87ffa44eea3f968ca9272b14c6a72",
       "classification": {
-        "method": "heuristic",
-        "confidence": 0.88
-      }
+        "method": "llm",
+        "confidence": 0.95,
+        "model": "gemini-3.1-flash-lite"
+      },
+      "classified_by": "google:gemini-3.1-flash-lite@2026-10-08T01:07:47Z"
     },
     {
       "id": "ckb-00333680e419",

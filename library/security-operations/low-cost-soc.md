@@ -2,15 +2,18 @@
 id: ckb-e1b2498d6fb8
 title: Low Cost SOC
 category: security-operations
-format: guide
-language: pt
-tags: [git, soc, tls]
+format: reference
+language: en
+tags: [detection-engineering, log-analysis, nist, soc, vulnerability-management]
+summary: This document provides a curated list of open-source tools and resources for building and maintaining a cost-effective Security Operations Center.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 1.0
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T01:01:03Z
 ---
 
 https://www.opencti.io/en/

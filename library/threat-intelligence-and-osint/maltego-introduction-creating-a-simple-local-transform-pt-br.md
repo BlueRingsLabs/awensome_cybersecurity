@@ -4,13 +4,16 @@ title: Maltego Introduction Creating a Simple Local Transform Pt Br
 category: threat-intelligence-and-osint
 format: guide
 language: pt
-tags: [firewall, git, osint, python, tls, web-security]
+tags: [osint, threat-intelligence]
+summary: An introduction to Maltego, explaining its core concepts, architecture, and how to create custom local transforms for cyber investigations.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.75
+  method: llm
+  model: gemma-4-31b-it
+  confidence: 0.95
+classified_by: google:gemma-4-31b-it@2026-10-08T01:02:36Z
 ---
 
 Maltego Introduction –

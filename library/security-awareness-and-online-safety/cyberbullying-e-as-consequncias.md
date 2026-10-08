@@ -4,13 +4,16 @@ title: Cyberbullying e as Consequncias
 category: security-awareness-and-online-safety
 format: guide
 language: pt
-tags: [tls]
+tags: [education, social-engineering]
+summary: This educational document defines cyberbullying, outlines its various forms and psychological consequences, and provides guidance on prevention and reporting procedures.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
+  method: llm
+  model: gemini-3.1-flash-lite
   confidence: 1.0
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T01:00:02Z
 ---
 
 Cyberbullying e as

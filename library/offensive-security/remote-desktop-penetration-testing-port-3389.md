@@ -4,13 +4,16 @@ title: Remote Desktop Penetration Testing Port 3389
 category: offensive-security
 format: guide
 language: en
-tags: [credential-access, log-analysis, metasploit, networking, password-security, windows]
+tags: [credential-access, exploit-development, metasploit, persistence, windows]
+summary: This technical guide walks through enumerating, attacking, exploiting, and hardening the Remote Desktop Protocol (RDP) on Windows environments.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.78
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T00:57:49Z
 ---
 
  Page 2 of 27

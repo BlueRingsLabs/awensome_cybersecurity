@@ -1,19 +1,19 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-08T00:48:09Z",
+  "updated_at": "2026-10-08T01:07:47Z",
   "summary": {
-    "pending": 131,
-    "enriched": 354,
+    "pending": 0,
+    "enriched": 485,
     "failed": 0
   },
   "last_run": {
-    "run_id": "gh37704127324-1-enrich-c3",
-    "started_at": "2026-10-08T00:28:07Z",
-    "finished_at": "2026-10-08T00:48:09Z",
-    "status": "partial",
-    "reason": "the run budget was reached; 131 pending, 0 failed remain (173 enriched this run)",
+    "run_id": "gh37704127324-1-enrich-c4",
+    "started_at": "2026-10-08T00:48:21Z",
+    "finished_at": "2026-10-08T01:07:47Z",
+    "status": "complete",
+    "reason": "all 485 eligible resources are enriched",
     "retries": {
-      "per_model": 18,
+      "per_model": 20,
       "per_provider": 0,
       "per_list": 0
     }
@@ -41,8 +41,8 @@
     "google:gemini-3.1-flash-lite": {
       "usage": {
         "day": "2026-10-07",
-        "requests": 180,
-        "tokens": 490343,
+        "requests": 238,
+        "tokens": 647866,
         "exhausted": false
       },
       "validation": {
@@ -65,8 +65,8 @@
     "google:gemini-3.5-flash-lite": {
       "usage": {
         "day": "2026-10-07",
-        "requests": 56,
-        "tokens": 151834,
+        "requests": 92,
+        "tokens": 248421,
         "exhausted": false
       },
       "validation": {
@@ -98,8 +98,8 @@
     "google:gemini-3.8-flash": {
       "usage": {
         "day": "2026-10-07",
-        "requests": 6,
-        "tokens": 18813,
+        "requests": 11,
+        "tokens": 37325,
         "exhausted": false
       },
       "validation": {
@@ -113,8 +113,8 @@
     "google:gemma-4-26b-a4b-it": {
       "usage": {
         "day": "2026-10-07",
-        "requests": 93,
-        "tokens": 252364,
+        "requests": 119,
+        "tokens": 322829,
         "exhausted": false
       },
       "validation": {
@@ -128,8 +128,8 @@
     "google:gemma-4-31b-it": {
       "usage": {
         "day": "2026-10-07",
-        "requests": 78,
-        "tokens": 271833,
+        "requests": 106,
+        "tokens": 378472,
         "exhausted": false
       },
       "validation": {
@@ -209,12 +209,12 @@
       "last_error": ""
     },
     "ckb-00baa6b3df5a": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/threat-intelligence-and-osint/maltego-introduction-creating-a-simple-local-transform-pt-br.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemma-4-31b-it",
+      "updated_at": "2026-10-08T01:02:36Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -269,12 +269,12 @@
       "last_error": ""
     },
     "ckb-02b55d58b29e": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/offensive-security/red-team-operations-simulating-an-apt-group-in-practice.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:57:36Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -289,12 +289,12 @@
       "last_error": ""
     },
     "ckb-05ab81184500": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/threat-intelligence-and-osint/apt28-understanding-a-group-specialized-in-attacks-against.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "updated_at": "2026-10-08T01:01:48Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -339,12 +339,12 @@
       "last_error": ""
     },
     "ckb-07605f494192": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/security-operations/fail2ban-best-jail.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T01:01:00Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -359,12 +359,12 @@
       "last_error": ""
     },
     "ckb-08088d338ba8": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/offensive-security/red-team-operations-concepts-1.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:57:30Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -379,12 +379,12 @@
       "last_error": ""
     },
     "ckb-0848f16b009f": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/reverse-engineering-and-exploit-development/introduo-ao-buffer-overflow-1.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "updated_at": "2026-10-08T00:59:28Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -399,12 +399,12 @@
       "last_error": ""
     },
     "ckb-09362b77c225": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/reverse-engineering-and-exploit-development/elearnsecurity-ecxd-preparation.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "updated_at": "2026-10-08T00:59:23Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -459,22 +459,22 @@
       "last_error": ""
     },
     "ckb-0c1876147506": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/offensive-security/winrm-penetration-testing.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:58:53Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
     "ckb-0c6ef8f35ed5": {
-      "status": "pending",
-      "path": "library/threat-intelligence-and-osint/introduo-ao-mitre-att-ck-e-ao-cyber-kill-chain.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "status": "enriched",
+      "path": "library/offensive-security/introduo-ao-mitre-att-ck-e-ao-cyber-kill-chain.md",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "updated_at": "2026-10-08T01:01:57Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -509,12 +509,12 @@
       "last_error": ""
     },
     "ckb-0f6ca88973ee": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/threat-intelligence-and-osint/critical-exploits-for-sale-on-the-dark-web.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "updated_at": "2026-10-08T01:01:50Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -549,12 +549,12 @@
       "last_error": ""
     },
     "ckb-116ca16f89e3": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/offensive-security/windows-privilege-escalation-server-operator-group.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:58:45Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -609,12 +609,12 @@
       "last_error": ""
     },
     "ckb-13ec4a8761cd": {
-      "status": "pending",
-      "path": "library/security-awareness-and-online-safety/cybersecurity-flaws-in-the-metaverse-1.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "status": "enriched",
+      "path": "library/application-security/cybersecurity-flaws-in-the-metaverse-1.md",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T01:00:07Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -679,32 +679,32 @@
       "last_error": ""
     },
     "ckb-1618bf453a62": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/reverse-engineering-and-exploit-development/buffer-overflow-guide-1.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "updated_at": "2026-10-08T00:59:18Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
     "ckb-1621f73493f8": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/offensive-security/redteam-scenarios.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "updated_at": "2026-10-08T00:57:48Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
     "ckb-169c9955ed53": {
-      "status": "pending",
-      "path": "library/security-operations/soc-analyst-career.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "status": "enriched",
+      "path": "library/careers-and-certifications/soc-analyst-career.md",
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "updated_at": "2026-10-08T01:01:36Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -719,22 +719,22 @@
       "last_error": ""
     },
     "ckb-17aececd2e8f": {
-      "status": "pending",
-      "path": "library/reverse-engineering-and-exploit-development/malware-and-reverse-engineering-complete-collection-by-joas.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "status": "enriched",
+      "path": "library/malware-analysis/malware-and-reverse-engineering-complete-collection-by-joas.md",
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "updated_at": "2026-10-08T00:59:32Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
     "ckb-17b38901b46d": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/threat-intelligence-and-osint/maltego-introduction-creating-a-simple-local-transform-en.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T01:02:03Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -849,12 +849,12 @@
       "last_error": ""
     },
     "ckb-204b7a8b16ba": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/security-operations/security-operation-center-operations-development.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "updated_at": "2026-10-08T01:01:35Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -869,12 +869,12 @@
       "last_error": ""
     },
     "ckb-20da17a5b7d0": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/security-awareness-and-online-safety/introduo-a-engenharia-social-prtica.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "updated_at": "2026-10-08T01:00:40Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -919,12 +919,12 @@
       "last_error": ""
     },
     "ckb-239e98512b80": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/threat-intelligence-and-osint/using-osint-techniques-to-investigate-human-trafficking-and-missing.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "updated_at": "2026-10-08T01:07:36Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -959,12 +959,12 @@
       "last_error": ""
     },
     "ckb-248962396f28": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/security-awareness-and-online-safety/golpe-do-perfil-falso-no-whatsapp-medidas-preventivas.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T01:00:14Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -1109,12 +1109,12 @@
       "last_error": ""
     },
     "ckb-2cfd5480d64e": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/threat-intelligence-and-osint/shodan-hacks.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "updated_at": "2026-10-08T01:07:30Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -1189,22 +1189,22 @@
       "last_error": ""
     },
     "ckb-311e797b3cf7": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/reverse-engineering-and-exploit-development/introduo-ao-desenvolvimento-de-exploits-2.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "updated_at": "2026-10-08T00:59:30Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
     "ckb-315dc51b9e20": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/security-operations/windows-defender-is-enough-if-you-harden-it.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "updated_at": "2026-10-08T01:01:43Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -1309,12 +1309,12 @@
       "last_error": ""
     },
     "ckb-368ca10f110a": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/offensive-security/pentest-best-practice-checklist.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemma-4-31b-it",
+      "updated_at": "2026-10-08T00:51:44Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -1329,12 +1329,12 @@
       "last_error": ""
     },
     "ckb-3747fa50bf1b": {
-      "status": "pending",
-      "path": "library/security-operations/red-team-x-blue-team.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "status": "enriched",
+      "path": "library/offensive-security/red-team-x-blue-team.md",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T01:01:29Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -1349,22 +1349,22 @@
       "last_error": ""
     },
     "ckb-377637f876d6": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/offensive-security/windows-privilege-escalation-overview.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:58:44Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
     "ckb-38174e420ce2": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/offensive-security/red-team-tradecraft-complete-guide.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "updated_at": "2026-10-08T00:57:45Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -1379,12 +1379,12 @@
       "last_error": ""
     },
     "ckb-392c70bb4b66": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/reverse-engineering-and-exploit-development/overview-windows-api-s-and-internals-reverse-engineering.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "updated_at": "2026-10-08T00:59:37Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -1409,22 +1409,22 @@
       "last_error": ""
     },
     "ckb-3a1272f0ebc7": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/security-awareness-and-online-safety/cyberbullying-and-its-consequences.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T01:00:01Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
     "ckb-3a4e4ee8047d": {
-      "status": "pending",
-      "path": "library/reverse-engineering-and-exploit-development/blockchain-and-smart-contract-testing-security.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "status": "enriched",
+      "path": "library/cryptography-and-privacy/blockchain-and-smart-contract-testing-security.md",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:59:08Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -1459,22 +1459,22 @@
       "last_error": ""
     },
     "ckb-3cd399dc1a1f": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/security-awareness-and-online-safety/instagram-social-network-security.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "updated_at": "2026-10-08T01:00:15Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
     "ckb-3dc46b909213": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/offensive-security/red-team-operations-simulando-um-grupo-apt-na-prtica.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:57:35Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -1499,12 +1499,12 @@
       "last_error": ""
     },
     "ckb-3ec42f155108": {
-      "status": "pending",
-      "path": "library/reverse-engineering-and-exploit-development/assembly64.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "status": "enriched",
+      "path": "library/foundations-and-systems/assembly64.md",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:59:07Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -1589,12 +1589,12 @@
       "last_error": ""
     },
     "ckb-413b9724fc30": {
-      "status": "pending",
-      "path": "library/security-operations/the-purple-book-on-cyber-security.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "status": "enriched",
+      "path": "library/governance-risk-and-compliance/the-purple-book-on-cyber-security.md",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "updated_at": "2026-10-08T01:01:40Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -1619,22 +1619,22 @@
       "last_error": ""
     },
     "ckb-41be8c3f892e": {
-      "status": "pending",
-      "path": "library/offensive-security/what-it-takes-to-be-a-red-team.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "status": "enriched",
+      "path": "library/careers-and-certifications/what-it-takes-to-be-a-red-team.md",
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "updated_at": "2026-10-08T00:58:00Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
     "ckb-41d277205546": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/offensive-security/windows-api-for-red-team-101-portuguese.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "updated_at": "2026-10-08T00:58:02Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -1659,32 +1659,32 @@
       "last_error": ""
     },
     "ckb-450aa5a701e1": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/offensive-security/wordlists-for-pentester.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:58:54Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
     "ckb-47f2ce1b324d": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/reverse-engineering-and-exploit-development/programao-c-e-c-para-segurana-ofensiva-digital.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "updated_at": "2026-10-08T00:59:40Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
     "ckb-4884a39ff2af": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/offensive-security/red-team-toolkit-1.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "updated_at": "2026-10-08T00:57:39Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -1709,12 +1709,12 @@
       "last_error": ""
     },
     "ckb-4b97e3c0903f": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/security-awareness-and-online-safety/cybersecurity-for-kids-english.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T01:00:08Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -1749,12 +1749,12 @@
       "last_error": ""
     },
     "ckb-4d3aba79ce6c": {
-      "status": "pending",
-      "path": "library/threat-intelligence-and-osint/elearnsecurity-certified-threat-hunting-introduction-pt-1.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "status": "enriched",
+      "path": "library/security-operations/elearnsecurity-certified-threat-hunting-introduction-pt-1.md",
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "updated_at": "2026-10-08T01:01:53Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -1779,12 +1779,12 @@
       "last_error": ""
     },
     "ckb-4e5307143432": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/offensive-security/powershell-tips-tricks-for-pentester.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:57:15Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -1879,12 +1879,12 @@
       "last_error": ""
     },
     "ckb-55794395c1a1": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/threat-intelligence-and-osint/using-osint-to-investigate-human-trafficking-and-missing-persons.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T01:07:42Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -1969,72 +1969,72 @@
       "last_error": ""
     },
     "ckb-57a4634bd89b": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/offensive-security/red-team-browser-plugins.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:57:21Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
     "ckb-57b51c39b2f0": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/offensive-security/windows-api-for-red-team-102-english.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.8-flash",
+      "updated_at": "2026-10-08T00:58:29Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
     "ckb-591dca0a15f5": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/offensive-security/red-team-operations-overview-pt-2.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:57:34Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
     "ckb-5a5c721b8d0f": {
-      "status": "pending",
-      "path": "library/offensive-security/pentest-com-powershell-overview.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "status": "enriched",
+      "path": "library/foundations-and-systems/pentest-com-powershell-overview.md",
+      "provider": "google",
+      "model": "gemma-4-31b-it",
+      "updated_at": "2026-10-08T00:52:07Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
     "ckb-5a642030306b": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/offensive-security/red-team-operations-overview-pt-1.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:57:33Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
     "ckb-5a7b985b2135": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/security-operations/portsentry-stealth-scan-detection.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T01:01:12Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
     "ckb-5c432ef266a1": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/reverse-engineering-and-exploit-development/buffer-overflow-for-beginners-joas.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:59:17Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -2129,22 +2129,22 @@
       "last_error": ""
     },
     "ckb-617a3b7b394c": {
-      "status": "pending",
-      "path": "library/reverse-engineering-and-exploit-development/chatgpt-for-cybersecurity-3.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "status": "enriched",
+      "path": "library/malware-analysis/chatgpt-for-cybersecurity-3.md",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "updated_at": "2026-10-08T00:59:22Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
     "ckb-61d1162cf605": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/security-awareness-and-online-safety/segurana-infantil-um-problema-srio-mas-pouco-falado.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T01:00:50Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -2189,22 +2189,22 @@
       "last_error": ""
     },
     "ckb-642b5fbb8645": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/reverse-engineering-and-exploit-development/introduo-ao-desenvolvimento-de-exploits.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "updated_at": "2026-10-08T00:59:29Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
     "ckb-6457b3b758dd": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/security-operations/kali-honeypot.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T01:01:02Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -2219,22 +2219,22 @@
       "last_error": ""
     },
     "ckb-64b758fbf4ae": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/reverse-engineering-and-exploit-development/elearnsecurity-exploit-development-student-notes-by-joas.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "updated_at": "2026-10-08T00:59:24Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
     "ckb-6501e7813850": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/offensive-security/tomcat-pentesting.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "updated_at": "2026-10-08T00:57:59Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -2309,22 +2309,22 @@
       "last_error": ""
     },
     "ckb-6cadd82ffe0b": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/security-operations/security-operation-center-and-analysis.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "updated_at": "2026-10-08T01:01:32Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
     "ckb-6d05078053b9": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/reverse-engineering-and-exploit-development/reverse-engineering-research-storm.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "updated_at": "2026-10-08T00:59:42Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -2359,12 +2359,12 @@
       "last_error": ""
     },
     "ckb-703e52a7e4a5": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/threat-intelligence-and-osint/using-osint-to-investigate-school-shooters.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T01:07:47Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -2449,12 +2449,12 @@
       "last_error": ""
     },
     "ckb-7738d3454eaa": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/offensive-security/windows-persistence-techniques.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:58:41Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -2539,12 +2539,12 @@
       "last_error": ""
     },
     "ckb-7c3259ec9c95": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/security-operations/abuseipdb-with-fail2ban.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "updated_at": "2026-10-08T01:00:57Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -2559,32 +2559,32 @@
       "last_error": ""
     },
     "ckb-7db3c0d9d506": {
-      "status": "pending",
-      "path": "library/offensive-security/worth-checking-ep-2.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "status": "enriched",
+      "path": "library/general-technology/worth-checking-ep-2.md",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:59:04Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
     "ckb-7de26f3ceb6e": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/reverse-engineering-and-exploit-development/reverse-engineering-content-study-1.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:59:41Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
     "ckb-7e34321266ed": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/threat-intelligence-and-osint/tdc2021-mitre-att-ck.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "updated_at": "2026-10-08T01:07:33Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -2609,22 +2609,22 @@
       "last_error": ""
     },
     "ckb-7f857948a858": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/security-operations/priority-logs-for-0asiem-ingestion.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T01:01:13Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
     "ckb-7fb67cb1856a": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/offensive-security/ssh-penetration-testing.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "updated_at": "2026-10-08T00:57:50Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -2659,12 +2659,12 @@
       "last_error": ""
     },
     "ckb-8406f7c96dfc": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/security-awareness-and-online-safety/cyber-security-for-kids-2.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:59:58Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -2679,32 +2679,32 @@
       "last_error": ""
     },
     "ckb-852ad7f5ac0d": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/offensive-security/privilege-escalation.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:57:16Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
     "ckb-86607058e28d": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/threat-intelligence-and-osint/apostila-a-arte-do-osint-para-pentesters.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T01:01:47Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
     "ckb-8740c017fd0e": {
-      "status": "pending",
-      "path": "library/security-operations/microsoft-office-and-windows-remote-code-execution.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "status": "enriched",
+      "path": "library/incident-response-and-forensics/microsoft-office-and-windows-remote-code-execution.md",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T01:01:08Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -2749,12 +2749,12 @@
       "last_error": ""
     },
     "ckb-898c9128b68d": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/offensive-security/pentesting-cheat-sheet.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "updated_at": "2026-10-08T00:57:11Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -2789,22 +2789,22 @@
       "last_error": ""
     },
     "ckb-8bca250edb05": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/security-awareness-and-online-safety/cybersecurity-for-kids-pt-br.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T01:00:12Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
     "ckb-8c20d590f26f": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/security-operations/purple-team-lab-01-wazuh-and-win2016.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T01:01:16Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -2829,12 +2829,12 @@
       "last_error": ""
     },
     "ckb-8e4d13de8684": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/threat-intelligence-and-osint/mitre-att-ck-study-overview.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemma-4-31b-it",
+      "updated_at": "2026-10-08T01:03:59Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -2879,32 +2879,32 @@
       "last_error": ""
     },
     "ckb-918865128d76": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/offensive-security/red-team-toolkit-guide.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "updated_at": "2026-10-08T00:57:40Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
     "ckb-91a9a2419d43": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/offensive-security/red-team-interview-questions.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:57:29Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
     "ckb-91f6204c80b0": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/security-awareness-and-online-safety/internet-safety-sexual-predators-and-stalkers-how-to-protect-yourself.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.8-flash",
+      "updated_at": "2026-10-08T01:00:37Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -2959,12 +2959,12 @@
       "last_error": ""
     },
     "ckb-96fc24bae92b": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/security-operations/security-operation-center-40-tools.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "updated_at": "2026-10-08T01:01:31Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -2979,12 +2979,12 @@
       "last_error": ""
     },
     "ckb-982c5b425723": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/threat-intelligence-and-osint/osint-overview-pt-1.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemma-4-31b-it",
+      "updated_at": "2026-10-08T01:05:06Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -2999,12 +2999,12 @@
       "last_error": ""
     },
     "ckb-98692e9d7d0c": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/security-awareness-and-online-safety/cyber-security-for-kids.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:59:57Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -3019,22 +3019,22 @@
       "last_error": ""
     },
     "ckb-992f4276ea98": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/offensive-security/windows-exploitation-rundll32-exe.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "updated_at": "2026-10-08T00:58:40Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
     "ckb-999fa78d2243": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/offensive-security/windows-enterprise-network-pentest.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "updated_at": "2026-10-08T00:58:34Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -3099,12 +3099,12 @@
       "last_error": ""
     },
     "ckb-9ec24f7f0817": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/offensive-security/pentest-toolkit.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "updated_at": "2026-10-08T00:57:05Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -3269,12 +3269,12 @@
       "last_error": ""
     },
     "ckb-a5e81b51fd06": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/security-awareness-and-online-safety/social-engineering-practical-overview.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T01:00:53Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -3339,12 +3339,12 @@
       "last_error": ""
     },
     "ckb-a956d75fe63d": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/offensive-security/python-for-hackers-bootcamp.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:57:17Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -3369,22 +3369,22 @@
       "last_error": ""
     },
     "ckb-ab217360a071": {
-      "status": "pending",
-      "path": "library/offensive-security/pentest-em-ambientes-cloud-1.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "status": "enriched",
+      "path": "library/cloud-and-container-security/pentest-em-ambientes-cloud-1.md",
+      "provider": "google",
+      "model": "gemma-4-31b-it",
+      "updated_at": "2026-10-08T00:53:52Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
     "ckb-abb2c1e87c84": {
-      "status": "pending",
-      "path": "library/threat-intelligence-and-osint/practical-recon-automation-with-reconftw.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "status": "enriched",
+      "path": "library/offensive-security/practical-recon-automation-with-reconftw.md",
+      "provider": "google",
+      "model": "gemma-4-31b-it",
+      "updated_at": "2026-10-08T01:05:36Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -3409,22 +3409,22 @@
       "last_error": ""
     },
     "ckb-ac8a8f1071e9": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/security-operations/100-security-operation-center-tools.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T01:00:54Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
     "ckb-ada7e4a5d1c9": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/security-awareness-and-online-safety/own-your-space-teen-book.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "updated_at": "2026-10-08T01:00:43Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -3439,12 +3439,12 @@
       "last_error": ""
     },
     "ckb-b0136be60e90": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/security-operations/low-cost-soc-tools-2.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "updated_at": "2026-10-08T01:01:07Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -3519,12 +3519,12 @@
       "last_error": ""
     },
     "ckb-b5444fabf12b": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/security-awareness-and-online-safety/child-safety-a-serious-problem-but-little-talked-about-english.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:59:56Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -3539,12 +3539,12 @@
       "last_error": ""
     },
     "ckb-b75acfe77b09": {
-      "status": "pending",
-      "path": "library/offensive-security/pentest-skills-development.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "status": "enriched",
+      "path": "library/careers-and-certifications/pentest-skills-development.md",
+      "provider": "google",
+      "model": "gemma-4-31b-it",
+      "updated_at": "2026-10-08T00:55:20Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -3569,12 +3569,12 @@
       "last_error": ""
     },
     "ckb-b8c1ac4e0f8e": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/offensive-security/red-team-and-blue-team-labs-and-ctf.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:57:19Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -3599,32 +3599,32 @@
       "last_error": ""
     },
     "ckb-b94e6210c159": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/offensive-security/windows-api-for-red-team-102-portugues.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "updated_at": "2026-10-08T00:58:31Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
     "ckb-b9782dcdb0a8": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/security-awareness-and-online-safety/cyberbullying-e-as-consequncias.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T01:00:02Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
     "ckb-b9d19690e76d": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/reverse-engineering-and-exploit-development/game-hacking-1-anti-cheat-bypass.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "updated_at": "2026-10-08T00:59:26Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -3659,22 +3659,22 @@
       "last_error": ""
     },
     "ckb-bbe576802438": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/offensive-security/pentest-with-metasploit-overview.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "updated_at": "2026-10-08T00:57:08Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
     "ckb-bc5764855e5b": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/reverse-engineering-and-exploit-development/shellcode-development.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:59:44Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -3729,12 +3729,12 @@
       "last_error": ""
     },
     "ckb-bfd413d242c2": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/security-awareness-and-online-safety/safe-social-networking.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "updated_at": "2026-10-08T01:00:45Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -3769,12 +3769,12 @@
       "last_error": ""
     },
     "ckb-c02b2c93eafb": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/offensive-security/worth-checking-ep-3.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:59:05Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -3809,12 +3809,12 @@
       "last_error": ""
     },
     "ckb-c3735ad92856": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/security-awareness-and-online-safety/segurana-na-internet-para-crianas.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T01:00:52Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -3909,12 +3909,12 @@
       "last_error": ""
     },
     "ckb-c7cbfb50e22c": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/offensive-security/python-for-hackers-pt-1.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:57:18Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -3969,12 +3969,12 @@
       "last_error": ""
     },
     "ckb-cc7361d8b296": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/reverse-engineering-and-exploit-development/fundamentos-de-desenvolvimento-de-exploits-overview.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "updated_at": "2026-10-08T00:59:25Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -4039,22 +4039,22 @@
       "last_error": ""
     },
     "ckb-cfdd0735fbcf": {
-      "status": "pending",
-      "path": "library/offensive-security/pentest-in-office365-and-security.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "status": "enriched",
+      "path": "library/cloud-and-container-security/pentest-in-office365-and-security.md",
+      "provider": "google",
+      "model": "gemma-4-31b-it",
+      "updated_at": "2026-10-08T00:54:25Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
     "ckb-d0513fed26c5": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/security-operations/security-operation-center-open-source.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "updated_at": "2026-10-08T01:01:33Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -4069,22 +4069,22 @@
       "last_error": ""
     },
     "ckb-d35a3194d0b2": {
-      "status": "pending",
-      "path": "library/offensive-security/plano-de-estudos-cyber-security-parte-1-red-team.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "status": "enriched",
+      "path": "library/careers-and-certifications/plano-de-estudos-cyber-security-parte-1-red-team.md",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "updated_at": "2026-10-08T00:57:14Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
     "ckb-d42b2e560590": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/offensive-security/remote-desktop-penetration-testing-port-3389.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "updated_at": "2026-10-08T00:57:49Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -4139,32 +4139,32 @@
       "last_error": ""
     },
     "ckb-d59f0589a42d": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/offensive-security/windows-api-for-red-team-101-english.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "updated_at": "2026-10-08T00:58:01Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
     "ckb-d5c3c4d59a59": {
-      "status": "pending",
-      "path": "library/security-operations/windows-event-log-analysis-ir-guide.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "status": "enriched",
+      "path": "library/incident-response-and-forensics/windows-event-log-analysis-ir-guide.md",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "updated_at": "2026-10-08T01:01:45Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
     "ckb-d65445c25f83": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/threat-intelligence-and-osint/investigation-using-osint-with-a-focus-on-intelligence-operations-and.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T01:01:59Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -4179,22 +4179,22 @@
       "last_error": ""
     },
     "ckb-d76151196d02": {
-      "status": "pending",
-      "path": "library/offensive-security/worth-checking-ep-1.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "status": "enriched",
+      "path": "library/foundations-and-systems/worth-checking-ep-1.md",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:58:55Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
     "ckb-d765a1a92757": {
-      "status": "pending",
-      "path": "library/threat-intelligence-and-osint/ransomware-investigation-osint-and-hunting-overview-pt1.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "status": "enriched",
+      "path": "library/malware-analysis/ransomware-investigation-osint-and-hunting-overview-pt1.md",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "updated_at": "2026-10-08T01:07:27Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -4279,12 +4279,12 @@
       "last_error": ""
     },
     "ckb-dcbd46f26b91": {
-      "status": "pending",
-      "path": "library/offensive-security/the-coming-ai-hackers.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "status": "enriched",
+      "path": "library/ai-security/the-coming-ai-hackers.md",
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "updated_at": "2026-10-08T00:57:57Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -4299,12 +4299,12 @@
       "last_error": ""
     },
     "ckb-dd99edfa0087": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/reverse-engineering-and-exploit-development/shellcode-development-2.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:59:45Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -4319,22 +4319,22 @@
       "last_error": ""
     },
     "ckb-dec90e145024": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/security-operations/secure-endpoints-user-guide.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T01:01:30Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
     "ckb-dedb6cc69a31": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/threat-intelligence-and-osint/fundamentos-de-osint.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T01:01:54Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -4379,12 +4379,12 @@
       "last_error": ""
     },
     "ckb-e1b2498d6fb8": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/security-operations/low-cost-soc.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T01:01:03Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -4439,32 +4439,32 @@
       "last_error": ""
     },
     "ckb-e4dccdf7576f": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/offensive-security/red-team-pentest-english.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "updated_at": "2026-10-08T00:57:37Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
     "ckb-e586ac061faa": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/reverse-engineering-and-exploit-development/buffer-overflow-introduction.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "updated_at": "2026-10-08T00:59:19Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
     "ckb-e5890b9761be": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/security-awareness-and-online-safety/cybersecurity-and-cyberbullying-education-for-kids.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "updated_at": "2026-10-08T01:00:05Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -4529,22 +4529,22 @@
       "last_error": ""
     },
     "ckb-e805fa920b1b": {
-      "status": "pending",
-      "path": "library/offensive-security/windows-server-ad-and-o365-advanced-pentest.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "status": "enriched",
+      "path": "library/identity-and-access/windows-server-ad-and-o365-advanced-pentest.md",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:58:51Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
     "ckb-e8a1f499875c": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/offensive-security/the-last-dance-with-msfvenom.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "updated_at": "2026-10-08T00:57:58Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -4569,12 +4569,12 @@
       "last_error": ""
     },
     "ckb-e998b3379a04": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/security-awareness-and-online-safety/cyber-security-for-kids-2-1.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:59:59Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -4639,22 +4639,22 @@
       "last_error": ""
     },
     "ckb-eb9562981c68": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/security-operations/security-operation-center-open-source-pt-en.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "updated_at": "2026-10-08T01:01:34Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
     "ckb-ebbde32faec4": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/offensive-security/windows-post-exploitation.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:58:42Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -4699,12 +4699,12 @@
       "last_error": ""
     },
     "ckb-f0ee572d5835": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/reverse-engineering-and-exploit-development/offensive-security-exploit-development-windows-overview.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "updated_at": "2026-10-08T00:59:34Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -4769,12 +4769,12 @@
       "last_error": ""
     },
     "ckb-f42d94968f8e": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/security-operations/soc-open-source-tools.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "updated_at": "2026-10-08T01:01:37Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -4819,22 +4819,22 @@
       "last_error": ""
     },
     "ckb-f62d05feb3c1": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/offensive-security/windows-exploitation-msbuild.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "updated_at": "2026-10-08T00:58:37Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
     "ckb-f6a428362484": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/reverse-engineering-and-exploit-development/hacking-windows.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "updated_at": "2026-10-08T00:59:27Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },
@@ -4949,12 +4949,12 @@
       "last_error": ""
     },
     "ckb-fc218b6bab9e": {
-      "status": "pending",
+      "status": "enriched",
       "path": "library/offensive-security/red-team-operations-development-pt-1.md",
-      "provider": null,
-      "model": null,
-      "updated_at": null,
-      "attempts": 0,
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:57:31Z",
+      "attempts": 1,
       "last_error_category": null,
       "last_error": ""
     },

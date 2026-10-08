@@ -1,16 +1,19 @@
 ---
 id: ckb-3ec42f155108
 title: Assembly64
-category: reverse-engineering-and-exploit-development
+category: foundations-and-systems
 format: book
 language: en
-tags: [assembly, bash, linux, web-security]
+tags: [assembly, linux]
+summary: This textbook provides a comprehensive introduction to x86-64 assembly language programming within the Ubuntu environment, covering architecture, data representation, and CPU operations.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.48
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:59:07Z
 ---
 
 x86-64

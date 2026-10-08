@@ -4,13 +4,16 @@ title: Red Team Operations Concepts 1
 category: offensive-security
 format: guide
 language: en
-tags: [mitre-attack, networking, red-team, soc, threat-intelligence, tls]
+tags: [education, mitre-attack, red-team, threat-intelligence]
+summary: This document provides an introductory overview of red teaming, adversary emulation, and the use of the MITRE ATT&CK framework for security assessments.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.72
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 1.0
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:57:30Z
 ---
 
 Red Team Operations –

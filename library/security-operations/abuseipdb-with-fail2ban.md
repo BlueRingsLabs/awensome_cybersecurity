@@ -2,15 +2,18 @@
 id: ckb-7c3259ec9c95
 title: AbuseIPDB with Fail2Ban
 category: security-operations
-format: article
+format: guide
 language: en
-tags: [bash, git, privilege-escalation, tls]
+tags: [hardening, log-analysis, soc, vulnerability-management]
+summary: A technical guide on integrating AbuseIPDB with Fail2Ban to automatically report and block malicious IP addresses.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.31
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.95
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T01:00:57Z
 ---
 
 # AbuseIPDB with Fail2Ban

@@ -2,15 +2,18 @@
 id: ckb-204b7a8b16ba
 title: Security Operation Center Operations Development
 category: security-operations
-format: guide
+format: reference
 language: en
-tags: [git, incident-response, malware, soc, tls, windows]
+tags: [detection-engineering, forensics, incident-response, malware, red-team, soc]
+summary: This document provides a curated reference catalog of essential security tools utilized in security operations centers, covering monitoring, incident response, malware analysis, and adversary emulation.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.69
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T01:01:35Z
 ---
 
 Security Operation Center –

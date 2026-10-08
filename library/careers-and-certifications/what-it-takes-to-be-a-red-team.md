@@ -1,16 +1,19 @@
 ---
 id: ckb-41be8c3f892e
 title: What IT Takes to Be a Red Team
-category: offensive-security
-format: guide
+category: careers-and-certifications
+format: article
 language: en
-tags: [compliance, red-team]
+tags: [career, governance, mitre-attack, red-team, reporting]
+summary: This article outlines the core responsibilities, technical knowledge, soft skills, and leadership duties required to become an effective Red Team Leader in cybersecurity.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.81
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T00:58:00Z
 ---
 
 What it takes to be a Red

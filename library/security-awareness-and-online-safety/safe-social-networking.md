@@ -4,13 +4,16 @@ title: Safe social networking
 category: security-awareness-and-online-safety
 format: article
 language: en
-tags: [networking, password-security, privacy, tls]
+tags: [password-security, privacy, social-engineering]
+summary: An article providing tips for safe social media usage and suggesting alternative privacy-focused social networking platforms.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.92
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.95
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T01:00:45Z
 ---
 
 # Safe social networking

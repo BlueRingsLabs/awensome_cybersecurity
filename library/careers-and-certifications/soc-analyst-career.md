@@ -1,16 +1,19 @@
 ---
 id: ckb-169c9955ed53
 title: SOC Analyst Career
-category: security-operations
+category: careers-and-certifications
 format: guide
 language: pt
-tags: [career, certification, mitre-attack, soc]
+tags: [career, certification, incident-response, log-analysis, soc, threat-intelligence]
+summary: This document outlines the required skills, responsibilities, and recommended certifications for SOC analysts across levels I, III, and III.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.39
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T01:01:36Z
 ---
 
 SOC Analyst - Career

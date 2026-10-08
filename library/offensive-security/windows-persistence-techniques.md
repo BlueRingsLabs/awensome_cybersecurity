@@ -2,15 +2,18 @@
 id: ckb-7738d3454eaa
 title: Windows Persistence Techniques
 category: offensive-security
-format: guide
+format: reference
 language: en
-tags: [git, metasploit, persistence, privilege-escalation, tls, windows]
+tags: [mitre-attack, persistence, privilege-escalation, red-team, windows]
+summary: This document provides a curated collection of external resources and links detailing various Windows persistence and privilege escalation techniques.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 1.0
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:58:41Z
 ---
 
 Windows

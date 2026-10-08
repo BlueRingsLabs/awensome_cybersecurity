@@ -4,13 +4,16 @@ title: Fundamentos de OSINT
 category: threat-intelligence-and-osint
 format: guide
 language: pt
-tags: [dark-web, git, networking, osint, tls, web-security]
+tags: [education, osint, threat-intelligence]
+summary: Este guia introdutório aborda os conceitos fundamentais de inteligência de fontes abertas (OSINT), incluindo sua história, metodologia e relação com outras disciplinas de inteligência como HUMINT e IMINT.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.98
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 1.0
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T01:01:54Z
 ---
 
 FABRIKAM

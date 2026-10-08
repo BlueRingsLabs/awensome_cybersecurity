@@ -1,16 +1,19 @@
 ---
 id: ckb-4d3aba79ce6c
 title: eLearnSecurity Certified Threat Hunting Introduction Pt 1
-category: threat-intelligence-and-osint
-format: guide
+category: security-operations
+format: course-notes
 language: en
-tags: [detection-engineering, incident-response, malware, networking, threat-hunting, tls]
+tags: [detection-engineering, mitre-attack, soc, threat-hunting, threat-intelligence]
+summary: This document introduces threat hunting concepts, methodologies, and types of hunts such as intel-based and hypothesis-driven hunting.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.57
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T01:01:53Z
 ---
 
 ThreatHunting

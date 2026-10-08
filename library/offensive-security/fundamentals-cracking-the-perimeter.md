@@ -1,16 +1,19 @@
 ---
 id: ckb-1ed95c68f0c0
 title: Fundamentals Cracking the Perimeter
-category: application-security
-format: guide
+category: offensive-security
+format: book
 language: pt
-tags: [networking, owasp, persistence, tls, web-security, windows]
+tags: [buffer-overflow, education, exploit-development, reverse-engineering, web-security]
+summary: This introductory book covers advanced penetration testing concepts, including web application security, exploit development, and reverse engineering, based on the Offensive Security CTP curriculum.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.7
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:01:57Z
 ---
 
 Fundamentals Cracking the

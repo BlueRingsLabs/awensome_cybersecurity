@@ -2,15 +2,18 @@
 id: ckb-8a55edc89e59
 title: Devsec Ops Guides
 category: application-security
-format: book
+format: reference
 language: en
-tags: [compliance, devsecops, networking, owasp, privilege-escalation, risk-management]
+tags: [compliance, devsecops, hardening, owasp, sql-injection, web-security]
+summary: A comprehensive resource for integrating security into the software development lifecycle, covering topics from secure coding to compliance and incident response.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.41
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.95
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:01:33Z
 ---
 
 WWW.DEVSECOPSGUIDES.COM

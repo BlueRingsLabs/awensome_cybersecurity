@@ -1,16 +1,18 @@
 ---
 id: ckb-356b0112d88d
 title: Metaverso e a Inovao Tecnolgica
-category: application-security
-format: guide
+category: general-technology
+format: article
 language: pt
-tags: [mobile, tls]
+summary: This article explores the concept, history, challenges, and technological implications of the metaverse, including applications in gaming, business events, and virtual reality.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.12
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T00:02:08Z
 ---
 
 METAVERSO

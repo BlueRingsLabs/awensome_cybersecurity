@@ -1,16 +1,19 @@
 ---
 id: ckb-410882aa3aa3
 title: Gray Hat hacking instructions
-category: application-security
+category: offensive-security
 format: article
 language: en
-tags: [bash, git, osint, python, tls, web-security]
+tags: [bug-bounty, linux, red-team]
+summary: This personal article outlines the author's practical workflow, tools, and methodologies for penetration testing and bug bounty hunting.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.47
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T00:02:01Z
 ---
 
 # Gray Hat hacking instructions

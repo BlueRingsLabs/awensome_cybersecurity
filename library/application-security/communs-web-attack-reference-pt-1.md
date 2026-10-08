@@ -2,15 +2,18 @@
 id: ckb-1011a51e2f9b
 title: Communs Web Attack Reference Pt 1
 category: application-security
-format: guide
-language: pt
-tags: [databases, git, owasp, sql-injection, tls, web-security]
+format: reference
+language: en
+tags: [bug-bounty, owasp, sql-injection, web-security]
+summary: This document provides a curated collection of external resources, guides, and tools for testing common web vulnerabilities including XSS, IDOR, SQL injection, XXE, and SSRF.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.97
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:01:22Z
 ---
 
 COMMUNS WEB

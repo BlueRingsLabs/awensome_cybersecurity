@@ -2,15 +2,18 @@
 id: ckb-f599172e3c9f
 title: Application Security Introduction Overview Pt 2
 category: application-security
-format: guide
+format: course-notes
 language: en
-tags: [cryptography, databases, owasp, password-security, tls, web-security]
+tags: [api-security, cryptography, owasp, web-security]
+summary: This document provides an introductory overview of common application security vulnerabilities, including input validation issues, insecure cryptographic storage, and broken authentication.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.57
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 1.0
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:00:54Z
 ---
 
 Application

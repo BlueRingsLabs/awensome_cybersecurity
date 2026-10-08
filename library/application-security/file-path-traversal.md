@@ -4,13 +4,16 @@ title: File Path Traversal
 category: application-security
 format: guide
 language: en
-tags: [burp-suite, owasp, tls, web-security]
+tags: [vulnerability-management, web-security]
+summary: This guide explains the mechanics of file path traversal vulnerabilities, including how to identify, exploit, and prevent them through secure coding practices.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
+  method: llm
+  model: gemini-3.1-flash-lite
   confidence: 1.0
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:01:56Z
 ---
 
 FILE PATH TRAVERSAL

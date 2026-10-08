@@ -2,15 +2,18 @@
 id: ckb-41275e994e30
 title: Enumerao de Grupos de Ti e Segurana para Tech Recruiters
 category: careers-and-certifications
-format: guide
+format: reference
 language: pt
-tags: [tls]
+tags: [career]
+summary: A curated list of Telegram, Discord, LinkedIn, and Facebook groups focused on IT and security job opportunities for technical recruiters.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.94
+  method: llm
+  model: gemma-4-31b-it
+  confidence: 1.0
+classified_by: google:gemma-4-31b-it@2026-10-08T00:07:05Z
 ---
 
  Enumeração de

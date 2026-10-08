@@ -2,15 +2,18 @@
 id: ckb-154f70838f77
 title: Wstg Web Application Security Testing OWASP Mind Map
 category: application-security
-format: guide
+format: checklist
 language: en
-tags: [databases, git, owasp, password-security, tls, web-security]
+tags: [bug-bounty, owasp, web-security]
+summary: A mind map and checklist based on the OWASP Web Application Security Testing Guide (WSTG) covering reconnaissance, registration, session management, and authentication testing.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.98
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.95
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:02:51Z
 ---
 
  WSTG (Web

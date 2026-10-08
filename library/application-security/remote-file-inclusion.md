@@ -4,13 +4,16 @@ title: Remote File Inclusion
 category: application-security
 format: guide
 language: en
-tags: [linux, metasploit, tls, web-security, windows]
+tags: [metasploit, owasp, web-security]
+summary: This guide explains the mechanics of Remote File Inclusion (RFI) vulnerabilities in PHP applications, detailing how they occur due to insecure configurations and providing practical examples of exploitation and mitigation.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.6
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 1.0
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:02:25Z
 ---
 
 Comprehensive Guide on Remote File Inclusion (RFI)

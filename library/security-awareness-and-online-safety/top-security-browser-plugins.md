@@ -1,16 +1,19 @@
 ---
 id: ckb-127383dec657
 title: Top security browser plugins
-category: application-security
-format: article
+category: security-awareness-and-online-safety
+format: reference
 language: en
-tags: [cloud, git, privacy, tls]
+tags: [privacy, tls, web-security]
+summary: This article provides a curated list of browser extensions designed to enhance user privacy and security by blocking trackers, malicious scripts, and unwanted advertisements.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.18
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.9
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:02:28Z
 ---
 
 # Top security browser plugins

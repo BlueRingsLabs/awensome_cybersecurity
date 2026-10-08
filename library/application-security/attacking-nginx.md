@@ -4,13 +4,16 @@ title: Attacking Nginx
 category: application-security
 format: guide
 language: en
-tags: [aws, devsecops, dns, networking, tls, web-security]
+tags: [hardening, vulnerability-management, web-security]
+summary: This guide details common Nginx configuration vulnerabilities, such as improper path restrictions and header handling, and provides mitigation strategies to secure web server deployments.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.53
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:00:55Z
 ---
 
 WWW.DEVSECOPSGUIDES.COM

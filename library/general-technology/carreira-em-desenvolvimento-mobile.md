@@ -1,16 +1,19 @@
 ---
 id: ckb-68fd30ebca71
 title: Carreira em Desenvolvimento Mobile
-category: careers-and-certifications
+category: general-technology
 format: guide
 language: pt
-tags: [android, career, java, javascript, mobile, tls]
+tags: [android, java]
+summary: This document provides an overview of mobile application development, covering native versus hybrid development approaches and common programming languages like Java and C .
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.58
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.9
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:03:37Z
 ---
 
 Carreira em

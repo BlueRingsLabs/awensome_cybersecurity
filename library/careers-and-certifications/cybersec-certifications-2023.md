@@ -2,15 +2,18 @@
 id: ckb-eac2221f8e59
 title: Cybersec Certifications 2023
 category: careers-and-certifications
-format: guide
+format: reference
 language: en
-tags: [certification]
+tags: [api-security, career, certification, credential-access, malware, red-team]
+summary: A list of various cybersecurity certifications and providers for 2023, including offensive and defensive security tracks.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.94
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.95
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:05:56Z
 ---
 
 CyberSec Certifications to put on your radar in 2023 (Cost Benefit)

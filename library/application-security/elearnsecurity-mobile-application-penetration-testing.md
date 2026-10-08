@@ -2,15 +2,18 @@
 id: ckb-b85af08dc6b5
 title: eLearnSecurity Mobile Application Penetration Testing
 category: application-security
-format: book
+format: course-notes
 language: en
-tags: [android, databases, java, linux, mobile, wireless]
+tags: [android, burp-suite, java, mobile, red-team]
+summary: A set of study notes for the eMAPT certification covering Android architecture, testing environments, and mobile application penetration testing techniques.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.65
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.95
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:01:42Z
 ---
 
 eLearnSecurity Mobile Application Penetration

@@ -1,16 +1,19 @@
 ---
 id: ckb-612d1919aaab
 title: Offensive Security Labs Reference
-category: application-security
+category: offensive-security
 format: reference
 language: en
-tags: [cloud, ctf, git, owasp, tls, web-security]
+tags: [active-directory, api-security, ctf, red-team, web-security]
+summary: This document is a curated reference collection of intentionally vulnerable applications, CTF platforms, and practice environments for penetration testing.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.62
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 1.0
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T00:02:10Z
 ---
 
 OFFENSIVE

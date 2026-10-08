@@ -4,13 +4,16 @@ title: Application Security Introduction Overview
 category: application-security
 format: guide
 language: en
-tags: [databases, owasp, risk-management, sql-injection, tls, web-security]
+tags: [api-security, owasp, sql-injection, web-security]
+summary: This document provides an introductory overview of common web application vulnerabilities, including cross-site scripting (XSS), injection attacks, and unvalidated redirects.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.97
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 1.0
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:00:40Z
 ---
 
 APPLICATION

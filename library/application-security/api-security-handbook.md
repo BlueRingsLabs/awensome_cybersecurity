@@ -4,13 +4,16 @@ title: API Security Handbook
 category: application-security
 format: guide
 language: en
-tags: [api-security, devsecops, password-security, tls, web-security]
+tags: [api-security, owasp, web-security]
+summary: A technical guide covering the fundamentals of API testing, REST vs SOAP, HTTP methods, and authentication concepts.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
+  method: llm
+  model: gemma-4-26b-a4b-it
   confidence: 0.95
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:00:35Z
 ---
 
 Table of Contents

@@ -1,16 +1,19 @@
 ---
 id: ckb-a837a69bac4f
 title: ChatGPT for Cybersecurity 2
-category: ai-security
-format: guide
+category: offensive-security
+format: reference
 language: en
-tags: [ai, bug-bounty, git, osint, tls, web-security]
+tags: [bug-bounty, nmap, osint, owasp, red-team]
+summary: A collection of one-liners and tool combinations for bug bounty hunting, focusing on reconnaissance, subdomain discovery, and vulnerability scanning.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.56
+  method: llm
+  model: gemma-4-31b-it
+  confidence: 0.95
+classified_by: google:gemma-4-31b-it@2026-10-07T23:50:20Z
 ---
 
 Bug Bounty Tips and Tricks

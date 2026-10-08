@@ -2,15 +2,18 @@
 id: ckb-d59c217c614a
 title: 12 Best Career in Cyber Security 2023
 category: careers-and-certifications
-format: guide
+format: article
 language: en
-tags: [career, cloud, malware, red-team, soc]
+tags: [career, cloud, devsecops, malware, threat-intelligence]
+summary: An overview of twelve promising cybersecurity career paths, including cloud security, DevSecOps, and SOC analysis, for professionals looking to specialize.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.83
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 1.0
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:02:54Z
 ---
 
 12 Best Career in Cyber

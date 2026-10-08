@@ -2,15 +2,18 @@
 id: ckb-1ddf2e7b4fd0
 title: Kali Linux website penetration testing
 category: application-security
-format: article
+format: guide
 language: en
-tags: [bash, databases, linux, password-security, tls, web-security]
+tags: [bug-bounty, linux, owasp, sql-injection, web-security]
+summary: This article provides a guide on using various web penetration testing and vulnerability scanning tools available in Kali Linux.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.5
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T00:02:06Z
 ---
 
 # Kali Linux website penetration testing

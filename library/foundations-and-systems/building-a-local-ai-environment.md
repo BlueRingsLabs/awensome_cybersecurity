@@ -1,16 +1,19 @@
 ---
 id: ckb-90301446009f
 title: Building a Local AI Environment
-category: ai-security
-format: article
+category: foundations-and-systems
+format: guide
 language: en
-tags: [ai, bash, git, python, tls]
+tags: [ai, homelab, linux]
+summary: A technical guide on setting up and running open-source large language models locally using tools like Ollama and Open WebUI.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.53
+  method: llm
+  model: gemma-4-31b-it
+  confidence: 0.9
+classified_by: google:gemma-4-31b-it@2026-10-07T23:49:09Z
 ---
 
 # Building a Local AI Environment

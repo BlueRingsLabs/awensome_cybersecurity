@@ -2,15 +2,18 @@
 id: ckb-d82afea52b0d
 title: How Openai Uses Codex
 category: ai-security
-format: guide
+format: article
 language: en
 tags: [ai]
+summary: A report detailing how OpenAI engineers use the Codex model to accelerate software engineering tasks such as code understanding, refactoring, and performance optimization.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 1.0
+  method: llm
+  model: gemma-4-31b-it
+  confidence: 0.9
+classified_by: google:gemma-4-31b-it@2026-10-07T23:55:12Z
 ---
 
 How OpenAI

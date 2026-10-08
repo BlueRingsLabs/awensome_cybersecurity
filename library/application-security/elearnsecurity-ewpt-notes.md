@@ -4,13 +4,16 @@ title: eLearnSecurity eWPT Notes
 category: application-security
 format: course-notes
 language: en
-tags: [certification, databases, javascript, sql-injection, tls, web-security]
+tags: [burp-suite, certification, osint, owasp, sql-injection, web-security]
+summary: A set of of study notes for the eWPT certification, covering web application testing methodologies, tools, and vulnerabilities.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.79
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.95
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:01:36Z
 ---
 
 eLearnSecurity Web Application Testing (eWPT) Notes

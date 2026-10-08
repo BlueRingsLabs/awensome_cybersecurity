@@ -1,16 +1,19 @@
 ---
 id: ckb-231a0d73109a
 title: Fuzz the world
-category: application-security
+category: offensive-security
 format: article
 language: en
-tags: [bash, fuzzing, git, password-security, tls, web-security]
+tags: [burp-suite, fuzzing, sql-injection, vulnerability-management, web-security]
+summary: This article provides an introductory overview of fuzzing techniques, explaining the concept of automated input testing to identify vulnerabilities in applications and network protocols.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.54
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:01:58Z
 ---
 
 # Fuzz the world

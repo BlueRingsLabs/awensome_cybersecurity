@@ -2,15 +2,18 @@
 id: ckb-e2d14081c2d9
 title: Prompt Engineering Google
 category: ai-security
-format: guide
+format: paper
 language: en
-tags: [ai, bash, cloud, education, python]
+tags: [ai]
+summary: A whitepaper by Google detailing various prompt engineering techniques, configurations, and best practices for large language models like Gemini.
 authors: [Lee Boonstra]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.92
+  method: llm
+  model: gemma-4-31b-it
+  confidence: 0.9
+classified_by: google:gemma-4-31b-it@2026-10-07T23:57:24Z
 ---
 
 Prompt

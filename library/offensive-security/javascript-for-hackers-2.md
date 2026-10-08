@@ -1,16 +1,19 @@
 ---
 id: ckb-41846fe8587a
 title: JavaScript for Hackers 2
-category: application-security
-format: guide
+category: offensive-security
+format: reference
 language: en
-tags: [databases, git, javascript, owasp, tls, web-security]
+tags: [exploit-development, javascript, owasp, red-team, web-security]
+summary: This document provides a curated list of JavaScript tools, XSS payloads, and resources for penetration testing and offensive security operations.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.73
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T00:02:04Z
 ---
 
 JavaScript for Hackers

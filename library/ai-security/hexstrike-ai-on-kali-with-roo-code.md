@@ -2,15 +2,18 @@
 id: ckb-df7171bc8e9a
 title: HexStrike AI on Kali with Roo Code
 category: ai-security
-format: article
+format: guide
 language: en
-tags: [bash, git, linux, privilege-escalation, python, tls]
+tags: [ai, linux, red-team]
+summary: A step-by-step guide to setting up HexStrike AI on a Kali Linux VM and integrating it with Roo Code and DeepSeek for automated security testing.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.46
+  method: llm
+  model: gemma-4-31b-it
+  confidence: 0.95
+classified_by: google:gemma-4-31b-it@2026-10-07T23:53:13Z
 ---
 
 # HexStrike AI on Kali with Roo Code

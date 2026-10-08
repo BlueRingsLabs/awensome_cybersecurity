@@ -4,13 +4,16 @@ title: The Hackers Guide to LLMs
 category: ai-security
 format: guide
 language: en
-tags: [ai, bug-bounty, threat-hunting, tls]
+tags: [ai, bug-bounty]
+summary: A guide exploring the practical application of Large Language Models for vulnerability detection and attack simulation in bug bounty hunting.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.67
+  method: llm
+  model: gemma-4-31b-it
+  confidence: 0.95
+classified_by: google:gemma-4-31b-it@2026-10-07T23:58:02Z
 ---
 
 The Hacker's Guide

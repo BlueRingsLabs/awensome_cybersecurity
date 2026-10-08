@@ -4,13 +4,16 @@ title: A Guide of Os Command Injection
 category: application-security
 format: guide
 language: en
-tags: [burp-suite, fuzzing, linux, metasploit, tls, web-security]
+tags: [api-security, burp-suite, fuzzing, metasploit, owasp, web-security]
+summary: A technical guide explaining the mechanics, types, and exploitation techniques of OS command injection vulnerabilities in web applications.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.78
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.95
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:00:31Z
 ---
 
 Page | 2

@@ -1,0 +1,5032 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-10-08T00:07:05Z",
+  "summary": {
+    "pending": 409,
+    "enriched": 76,
+    "failed": 0
+  },
+  "last_run": {
+    "run_id": "gh37704127324-1-enrich-c1",
+    "started_at": "2026-10-07T23:46:50Z",
+    "finished_at": "2026-10-08T00:07:05Z",
+    "status": "partial",
+    "reason": "the run budget was reached; 409 pending, 0 failed remain (76 enriched this run)",
+    "retries": {
+      "per_model": 14,
+      "per_provider": 0,
+      "per_list": 0
+    }
+  },
+  "in_flight": null,
+  "models": {
+    "google:gemini-2.5-flash": {
+      "usage": {
+        "day": "2026-10-07",
+        "requests": 0,
+        "tokens": 0,
+        "exhausted": false
+      },
+      "validation": null
+    },
+    "google:gemini-2.5-flash-lite": {
+      "usage": {
+        "day": "2026-10-07",
+        "requests": 0,
+        "tokens": 0,
+        "exhausted": false
+      },
+      "validation": null
+    },
+    "google:gemini-3.1-flash-lite": {
+      "usage": {
+        "day": "2026-10-07",
+        "requests": 32,
+        "tokens": 83909,
+        "exhausted": false
+      },
+      "validation": {
+        "day": "2026-10-07",
+        "ok": true,
+        "mode": "json_schema",
+        "category": null,
+        "detail": "validated in json_schema mode"
+      }
+    },
+    "google:gemini-3.5-flash": {
+      "usage": {
+        "day": "2026-10-07",
+        "requests": 0,
+        "tokens": 0,
+        "exhausted": false
+      },
+      "validation": null
+    },
+    "google:gemini-3.5-flash-lite": {
+      "usage": {
+        "day": "2026-10-07",
+        "requests": 14,
+        "tokens": 39732,
+        "exhausted": false
+      },
+      "validation": {
+        "day": "2026-10-07",
+        "ok": true,
+        "mode": "json_schema",
+        "category": null,
+        "detail": "validated in json_schema mode"
+      }
+    },
+    "google:gemini-3.6-flash": {
+      "usage": {
+        "day": "2026-10-07",
+        "requests": 0,
+        "tokens": 0,
+        "exhausted": false
+      },
+      "validation": null
+    },
+    "google:gemini-3.7-flash": {
+      "usage": {
+        "day": "2026-10-07",
+        "requests": 0,
+        "tokens": 0,
+        "exhausted": false
+      },
+      "validation": null
+    },
+    "google:gemini-3.8-flash": {
+      "usage": {
+        "day": "2026-10-07",
+        "requests": 1,
+        "tokens": 1327,
+        "exhausted": false
+      },
+      "validation": {
+        "day": "2026-10-07",
+        "ok": true,
+        "mode": "json_schema",
+        "category": null,
+        "detail": "validated in json_schema mode"
+      }
+    },
+    "google:gemma-4-26b-a4b-it": {
+      "usage": {
+        "day": "2026-10-07",
+        "requests": 20,
+        "tokens": 49130,
+        "exhausted": false
+      },
+      "validation": {
+        "day": "2026-10-07",
+        "ok": true,
+        "mode": "json_schema",
+        "category": null,
+        "detail": "validated in json_schema mode"
+      }
+    },
+    "google:gemma-4-31b-it": {
+      "usage": {
+        "day": "2026-10-07",
+        "requests": 29,
+        "tokens": 95500,
+        "exhausted": false
+      },
+      "validation": {
+        "day": "2026-10-07",
+        "ok": true,
+        "mode": "json_schema",
+        "category": null,
+        "detail": "validated in json_schema mode"
+      }
+    },
+    "groq:allam-2-7b": {
+      "usage": {
+        "day": "2026-10-08",
+        "requests": 0,
+        "tokens": 0,
+        "exhausted": false
+      },
+      "validation": null
+    },
+    "groq:openai/gpt-oss-120b": {
+      "usage": {
+        "day": "2026-10-08",
+        "requests": 0,
+        "tokens": 0,
+        "exhausted": false
+      },
+      "validation": null
+    },
+    "groq:openai/gpt-oss-20b": {
+      "usage": {
+        "day": "2026-10-08",
+        "requests": 0,
+        "tokens": 0,
+        "exhausted": false
+      },
+      "validation": null
+    },
+    "groq:qwen/qwen3.8-27b": {
+      "usage": {
+        "day": "2026-10-08",
+        "requests": 0,
+        "tokens": 0,
+        "exhausted": false
+      },
+      "validation": null
+    }
+  },
+  "resources": {
+    "ckb-0015c4d01b1f": {
+      "status": "pending",
+      "path": "library/cryptography-and-privacy/the-onion-router-overview-pt-1.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-00292bdcfc7e": {
+      "status": "pending",
+      "path": "library/offensive-security/bypassing-defenses-in-layers.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-00333680e419": {
+      "status": "pending",
+      "path": "library/general-technology/warez.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-00baa6b3df5a": {
+      "status": "pending",
+      "path": "library/threat-intelligence-and-osint/maltego-introduction-creating-a-simple-local-transform-pt-br.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-01819e112d29": {
+      "status": "pending",
+      "path": "library/offensive-security/c-for-hackers-overview-pt.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-019131cb7634": {
+      "status": "pending",
+      "path": "library/governance-risk-and-compliance/cloud-security-guidance.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-01c0269a7821": {
+      "status": "pending",
+      "path": "library/offensive-security/bug-bounty-how-to-start.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-01f066d7568e": {
+      "status": "enriched",
+      "path": "library/ai-security/the-hackers-guide-to-llms.md",
+      "provider": "google",
+      "model": "gemma-4-31b-it",
+      "updated_at": "2026-10-07T23:58:02Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-02897ba606b2": {
+      "status": "pending",
+      "path": "library/governance-risk-and-compliance/nist-storage-security-guide.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-02b55d58b29e": {
+      "status": "pending",
+      "path": "library/offensive-security/red-team-operations-simulating-an-apt-group-in-practice.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-0361192a9beb": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/linux-for-networking-professional.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-05ab81184500": {
+      "status": "pending",
+      "path": "library/threat-intelligence-and-osint/apt28-understanding-a-group-specialized-in-attacks-against.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-064a2a5a33c5": {
+      "status": "pending",
+      "path": "library/offensive-security/penetration-test-report-template.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-068a3fa975da": {
+      "status": "pending",
+      "path": "library/cryptography-and-privacy/toryfikator.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-0708b4d4e1e7": {
+      "status": "pending",
+      "path": "library/cryptography-and-privacy/secure-email-services.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-0709c6efe1e5": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/remote-connection-for-linux.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-07605f494192": {
+      "status": "pending",
+      "path": "library/security-operations/fail2ban-best-jail.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-07dabc4f2f63": {
+      "status": "pending",
+      "path": "library/offensive-security/iniciando-sua-carreira-em-pentest.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-08088d338ba8": {
+      "status": "pending",
+      "path": "library/offensive-security/red-team-operations-concepts-1.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-083a949cfac4": {
+      "status": "enriched",
+      "path": "library/offensive-security/google-hacks.md",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:02:00Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-0848f16b009f": {
+      "status": "pending",
+      "path": "library/reverse-engineering-and-exploit-development/introduo-ao-buffer-overflow-1.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-0904da697ac8": {
+      "status": "pending",
+      "path": "library/cryptography-and-privacy/downloading-big-files-from-tor.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-09362b77c225": {
+      "status": "pending",
+      "path": "library/reverse-engineering-and-exploit-development/elearnsecurity-ecxd-preparation.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-09b569a96393": {
+      "status": "enriched",
+      "path": "library/application-security/burp-suite-for-pentester-hackbar.md",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:01:13Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-0a5ff0a04bd1": {
+      "status": "pending",
+      "path": "library/network-and-wireless-security/vpn-you-should-have-one.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-0ab67105c01e": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/progit.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-0b0d6c1a51c8": {
+      "status": "enriched",
+      "path": "library/application-security/elearnsecurity-ewpt-notes.md",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "updated_at": "2026-10-08T00:01:36Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-0b9c5492c5dc": {
+      "status": "pending",
+      "path": "library/governance-risk-and-compliance/infosec-proeficiency-colors.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-0c1876147506": {
+      "status": "pending",
+      "path": "library/offensive-security/winrm-penetration-testing.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-0c6ef8f35ed5": {
+      "status": "pending",
+      "path": "library/threat-intelligence-and-osint/introduo-ao-mitre-att-ck-e-ao-cyber-kill-chain.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-0e2617d57015": {
+      "status": "pending",
+      "path": "library/offensive-security/dll-hijacking-overview.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-0e795b25f64f": {
+      "status": "pending",
+      "path": "library/offensive-security/introduo-ao-pentest-mobile-pt-1.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-0f3ab1b3b4f8": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/md5-calculator-in-powershell.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-0f6ca88973ee": {
+      "status": "pending",
+      "path": "library/threat-intelligence-and-osint/critical-exploits-for-sale-on-the-dark-web.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-1011a51e2f9b": {
+      "status": "enriched",
+      "path": "library/application-security/communs-web-attack-reference-pt-1.md",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:01:22Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-10a8dcd0c415": {
+      "status": "enriched",
+      "path": "library/application-security/pentest-web-do-black-box-ao-white-box.md",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:02:24Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-111ec2e499f9": {
+      "status": "pending",
+      "path": "library/careers-and-certifications/roadmap-segurana-da-informao-pt-1.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-116ca16f89e3": {
+      "status": "pending",
+      "path": "library/offensive-security/windows-privilege-escalation-server-operator-group.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-11b84ebf6d1c": {
+      "status": "pending",
+      "path": "library/cryptography-and-privacy/ads-analytics-comments-dns-privacy.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-11bca6960c45": {
+      "status": "pending",
+      "path": "library/offensive-security/oscp-labs-to-practice-2023.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-11f481a580a2": {
+      "status": "pending",
+      "path": "library/network-and-wireless-security/introduction-cyber-security.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-127383dec657": {
+      "status": "enriched",
+      "path": "library/security-awareness-and-online-safety/top-security-browser-plugins.md",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:02:28Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-13ca6fb3c5de": {
+      "status": "pending",
+      "path": "library/governance-risk-and-compliance/threat-modeling-in-modern-security-programs.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-13ec4a8761cd": {
+      "status": "pending",
+      "path": "library/security-awareness-and-online-safety/cybersecurity-flaws-in-the-metaverse-1.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-146b2a41882a": {
+      "status": "pending",
+      "path": "library/offensive-security/brazilian-pentest-certification.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-149774a9d3bc": {
+      "status": "pending",
+      "path": "library/offensive-security/how-to-report-a-vulnerability-and-not-go-to-jail.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-14ebe4e81361": {
+      "status": "enriched",
+      "path": "library/application-security/introduo-a-segurana-da-aplicao-uniciv.md",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:02:02Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-154f70838f77": {
+      "status": "enriched",
+      "path": "library/application-security/wstg-web-application-security-testing-owasp-mind-map.md",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "updated_at": "2026-10-08T00:02:51Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-15b4ddba057d": {
+      "status": "pending",
+      "path": "library/offensive-security/ceh-fundamentals.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-15f2cbe6b384": {
+      "status": "pending",
+      "path": "library/general-technology/miyoo-mini-plus.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-1618bf453a62": {
+      "status": "pending",
+      "path": "library/reverse-engineering-and-exploit-development/buffer-overflow-guide-1.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-1621f73493f8": {
+      "status": "pending",
+      "path": "library/offensive-security/redteam-scenarios.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-169c9955ed53": {
+      "status": "pending",
+      "path": "library/security-operations/soc-analyst-career.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-16d923003f73": {
+      "status": "pending",
+      "path": "library/offensive-security/burpsuite-for-pentester-autorize.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-17aececd2e8f": {
+      "status": "pending",
+      "path": "library/reverse-engineering-and-exploit-development/malware-and-reverse-engineering-complete-collection-by-joas.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-17b38901b46d": {
+      "status": "pending",
+      "path": "library/threat-intelligence-and-osint/maltego-introduction-creating-a-simple-local-transform-en.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-17c9a61dd4fb": {
+      "status": "enriched",
+      "path": "library/application-security/web-application-pentesting-checklist.md",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:02:30Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-18d4852b9ee0": {
+      "status": "pending",
+      "path": "library/governance-risk-and-compliance/ms-designer-keyboard-right-control-key.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-1a8ada14ac83": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/send-emails-by-local-applications-only.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-1aabb601ef70": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/how-to-code-in-python.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-1bf54f941bc3": {
+      "status": "pending",
+      "path": "library/cryptography-and-privacy/easy-gpg.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-1d6c7c947e70": {
+      "status": "pending",
+      "path": "library/offensive-security/elearnsecurity-ecptxv2-notes.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-1ddf2e7b4fd0": {
+      "status": "enriched",
+      "path": "library/application-security/kali-linux-website-penetration-testing.md",
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "updated_at": "2026-10-08T00:02:06Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-1ed95c68f0c0": {
+      "status": "enriched",
+      "path": "library/offensive-security/fundamentals-cracking-the-perimeter.md",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:01:57Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-1eea3251048d": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/hacker-guide-to-python.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-1f15a69fd5ef": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/subdomain-takeover.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-204b2d29c14c": {
+      "status": "enriched",
+      "path": "library/foundations-and-systems/gemini-server-for-0ut3r-space.md",
+      "provider": "google",
+      "model": "gemma-4-31b-it",
+      "updated_at": "2026-10-07T23:50:57Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-204b7a8b16ba": {
+      "status": "pending",
+      "path": "library/security-operations/security-operation-center-operations-development.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-20c699789c1a": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/eloquent-javascript.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-20da17a5b7d0": {
+      "status": "pending",
+      "path": "library/security-awareness-and-online-safety/introduo-a-engenharia-social-prtica.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-214058811d4c": {
+      "status": "pending",
+      "path": "library/network-and-wireless-security/network-security-best-practices.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-2244e1a72f18": {
+      "status": "enriched",
+      "path": "library/application-security/web-pentesting-checklist-by-joas.md",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "updated_at": "2026-10-08T00:02:37Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-231a0d73109a": {
+      "status": "enriched",
+      "path": "library/offensive-security/fuzz-the-world.md",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:01:58Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-23602a6d34a0": {
+      "status": "pending",
+      "path": "library/network-and-wireless-security/wireless-penetration-testing-airgeddon.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-239e98512b80": {
+      "status": "pending",
+      "path": "library/threat-intelligence-and-osint/using-osint-techniques-to-investigate-human-trafficking-and-missing.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-23cba80eaeb9": {
+      "status": "pending",
+      "path": "library/offensive-security/30-days-of-practice-pentest-2.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-24304601ab18": {
+      "status": "pending",
+      "path": "library/network-and-wireless-security/fundamentos-de-firewall.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-24689106a5e2": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/advanced-bash-scripting-guide.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-248962396f28": {
+      "status": "pending",
+      "path": "library/security-awareness-and-online-safety/golpe-do-perfil-falso-no-whatsapp-medidas-preventivas.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-2558838d929c": {
+      "status": "pending",
+      "path": "library/offensive-security/anonymous-logins-for-pentester.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-256c3329c9c3": {
+      "status": "enriched",
+      "path": "library/application-security/attacking-php-application.md",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:01:00Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-2726ae3cb6f3": {
+      "status": "pending",
+      "path": "library/network-and-wireless-security/elearnsecurity-certified-incident-response-ecir-guide-study-to-exam.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-2740a2d332b0": {
+      "status": "pending",
+      "path": "library/offensive-security/offensive-security-materials-for-studies-and-certifications.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-27af0c1c36b8": {
+      "status": "pending",
+      "path": "library/network-and-wireless-security/introduo-a-network-security-1-0.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-2808098b0e98": {
+      "status": "pending",
+      "path": "library/offensive-security/msfvenom-cheat-sheet.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-28ada4ee1428": {
+      "status": "pending",
+      "path": "library/network-and-wireless-security/hacker-gadgets.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-28b52c2e8f32": {
+      "status": "pending",
+      "path": "library/offensive-security/elearnsecurity-ecppt-notes-exam.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-28d5f6214788": {
+      "status": "enriched",
+      "path": "library/application-security/exploiting-open-redirection.md",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:01:45Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-28e18648660c": {
+      "status": "pending",
+      "path": "library/cryptography-and-privacy/windows-security-and-privacy.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-2941cc0c02f4": {
+      "status": "pending",
+      "path": "library/offensive-security/most-critical-failure-in-corporate-environments.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-29aa18967c54": {
+      "status": "pending",
+      "path": "library/offensive-security/how-to-report-a-vulnerability-and-generate-its-cve.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-2a71981421b8": {
+      "status": "pending",
+      "path": "library/offensive-security/adversary-simulation-with-caldera-and-mitre.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-2ad567881f92": {
+      "status": "pending",
+      "path": "library/network-and-wireless-security/information-security-training-by-joas.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-2cfd5480d64e": {
+      "status": "pending",
+      "path": "library/threat-intelligence-and-osint/shodan-hacks.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-2d1a2945c9a6": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/syspwn-app-launcher.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-2d76e16b1fb0": {
+      "status": "pending",
+      "path": "library/incident-response-and-forensics/forensic-investigation-of-nmap-scan-using-wireshark.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-2e3c159cf87d": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/cool-selfhosted-solutions.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-2ea9960b7358": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/beginners-in-open-source.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-2ecfffb165fe": {
+      "status": "pending",
+      "path": "library/offensive-security/ethical-hacking-how-to-start.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-2ee7c89c0e96": {
+      "status": "pending",
+      "path": "library/cryptography-and-privacy/onion-links.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-3086afadf226": {
+      "status": "pending",
+      "path": "library/offensive-security/linux-privilege-escalation.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-311e797b3cf7": {
+      "status": "pending",
+      "path": "library/reverse-engineering-and-exploit-development/introduo-ao-desenvolvimento-de-exploits-2.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-315dc51b9e20": {
+      "status": "pending",
+      "path": "library/security-operations/windows-defender-is-enough-if-you-harden-it.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-317bd49519e0": {
+      "status": "pending",
+      "path": "library/offensive-security/competncias-essenciais-para-liderar-uma-equipe-de-pentest.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-31f2c66c249b": {
+      "status": "pending",
+      "path": "library/network-and-wireless-security/informtica-para-concurso.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-3215056dac04": {
+      "status": "pending",
+      "path": "library/network-and-wireless-security/hacking-beginner-to-expert-guide.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-328dede7793f": {
+      "status": "pending",
+      "path": "library/offensive-security/credential-dumping-fake-services.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-331015566dbd": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/goaccess-and-real-website-stats.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-335da84b7ace": {
+      "status": "pending",
+      "path": "library/cryptography-and-privacy/openssh-hardening.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-3376e9403d44": {
+      "status": "pending",
+      "path": "library/cloud-and-container-security/google-cloud-attack-overview-pt1.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-34334b39e600": {
+      "status": "pending",
+      "path": "library/general-technology/8bitdo-gamepads.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-356b0112d88d": {
+      "status": "enriched",
+      "path": "library/general-technology/metaverso-e-a-inovao-tecnolgica.md",
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "updated_at": "2026-10-08T00:02:08Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-361a9748cc06": {
+      "status": "pending",
+      "path": "library/cloud-and-container-security/container-security-overview-pt-1.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-368ca10f110a": {
+      "status": "pending",
+      "path": "library/offensive-security/pentest-best-practice-checklist.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-371bf431c283": {
+      "status": "pending",
+      "path": "library/offensive-security/offensive-security-evasion-techniques-pt-1.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-3747fa50bf1b": {
+      "status": "pending",
+      "path": "library/security-operations/red-team-x-blue-team.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-3769af0a75fe": {
+      "status": "pending",
+      "path": "library/cloud-and-container-security/kubernetes-exploitation-introduction-cheatsheet.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-377637f876d6": {
+      "status": "pending",
+      "path": "library/offensive-security/windows-privilege-escalation-overview.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-38174e420ce2": {
+      "status": "pending",
+      "path": "library/offensive-security/red-team-tradecraft-complete-guide.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-38714470d7ff": {
+      "status": "enriched",
+      "path": "library/careers-and-certifications/cybersecurity-career-roadmap-2024.md",
+      "provider": "google",
+      "model": "gemma-4-31b-it",
+      "updated_at": "2026-10-08T00:06:33Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-392c70bb4b66": {
+      "status": "pending",
+      "path": "library/reverse-engineering-and-exploit-development/overview-windows-api-s-and-internals-reverse-engineering.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-399cd1de13bc": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/faif-2-0.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-39eaca706175": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/test-web-server-for-virtualbox.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-3a1272f0ebc7": {
+      "status": "pending",
+      "path": "library/security-awareness-and-online-safety/cyberbullying-and-its-consequences.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-3a4e4ee8047d": {
+      "status": "pending",
+      "path": "library/reverse-engineering-and-exploit-development/blockchain-and-smart-contract-testing-security.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-3b11a43a01ca": {
+      "status": "pending",
+      "path": "library/offensive-security/how-to-start-at-once-in-the-pentest.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-3b7a82137aa3": {
+      "status": "pending",
+      "path": "library/offensive-security/a-detailed-guide-on-log4j-penetration-testing.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-3b865545a518": {
+      "status": "enriched",
+      "path": "library/ai-security/ai-bias-in-law-enforcement-a-practical-guide.md",
+      "provider": "google",
+      "model": "gemma-4-31b-it",
+      "updated_at": "2026-10-07T23:47:58Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-3cd399dc1a1f": {
+      "status": "pending",
+      "path": "library/security-awareness-and-online-safety/instagram-social-network-security.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-3dc46b909213": {
+      "status": "pending",
+      "path": "library/offensive-security/red-team-operations-simulando-um-grupo-apt-na-prtica.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-3dc5e4275fbc": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/cve-2023-32784-keepass.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-3e6e4341e0c6": {
+      "status": "pending",
+      "path": "library/offensive-security/ebook-invadindo-com-metasploit-vl-1.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-3ec42f155108": {
+      "status": "pending",
+      "path": "library/reverse-engineering-and-exploit-development/assembly64.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-3f8c52962d89": {
+      "status": "pending",
+      "path": "library/network-and-wireless-security/ddos-attack.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-3fa1cb585ebb": {
+      "status": "pending",
+      "path": "library/cryptography-and-privacy/swap-cab.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-3fae94a1887b": {
+      "status": "pending",
+      "path": "library/offensive-security/19-joassantos-gerenciando-sua-superficie-de-ataques.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-4036c3fc2c33": {
+      "status": "pending",
+      "path": "library/network-and-wireless-security/control-smartphone-from-pc.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-40aa1a066978": {
+      "status": "pending",
+      "path": "library/cloud-and-container-security/understanding-your-eks-environment-the-reconnaissance-phase.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-40fa49ebb2ba": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/byte-of-python.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-410882aa3aa3": {
+      "status": "enriched",
+      "path": "library/offensive-security/gray-hat-hacking-instructions.md",
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "updated_at": "2026-10-08T00:02:01Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-41275e994e30": {
+      "status": "enriched",
+      "path": "library/careers-and-certifications/enumerao-de-grupos-de-ti-e-segurana-para-tech-recruiters.md",
+      "provider": "google",
+      "model": "gemma-4-31b-it",
+      "updated_at": "2026-10-08T00:07:05Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-413b9724fc30": {
+      "status": "pending",
+      "path": "library/security-operations/the-purple-book-on-cyber-security.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-41846fe8587a": {
+      "status": "enriched",
+      "path": "library/offensive-security/javascript-for-hackers-2.md",
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "updated_at": "2026-10-08T00:02:04Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-41b73943b368": {
+      "status": "pending",
+      "path": "library/iot-ot-and-hardware-security/iot-use-cases-and-technologies.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-41be8c3f892e": {
+      "status": "pending",
+      "path": "library/offensive-security/what-it-takes-to-be-a-red-team.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-41d277205546": {
+      "status": "pending",
+      "path": "library/offensive-security/windows-api-for-red-team-101-portuguese.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-430cb527a726": {
+      "status": "pending",
+      "path": "library/general-technology/small-and-powerful-gaming-pc.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-44d2bdb5ed8f": {
+      "status": "pending",
+      "path": "library/network-and-wireless-security/palo-alto-firewall.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-450aa5a701e1": {
+      "status": "pending",
+      "path": "library/offensive-security/wordlists-for-pentester.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-47f2ce1b324d": {
+      "status": "pending",
+      "path": "library/reverse-engineering-and-exploit-development/programao-c-e-c-para-segurana-ofensiva-digital.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-4884a39ff2af": {
+      "status": "pending",
+      "path": "library/offensive-security/red-team-toolkit-1.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-493c73d9bd62": {
+      "status": "pending",
+      "path": "library/governance-risk-and-compliance/cyber-governance-code-of-practice.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-4b5344f36ed1": {
+      "status": "pending",
+      "path": "library/offensive-security/hackthebox-e-vulnhub-dicas-e-truques.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-4b97e3c0903f": {
+      "status": "pending",
+      "path": "library/security-awareness-and-online-safety/cybersecurity-for-kids-english.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-4bc4a6620a90": {
+      "status": "pending",
+      "path": "library/network-and-wireless-security/offensive-security-wireless.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-4c225ffb53f6": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/backup-your-data.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-4c341cf910bd": {
+      "status": "pending",
+      "path": "library/malware-analysis/malware-analysis.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-4d3aba79ce6c": {
+      "status": "pending",
+      "path": "library/threat-intelligence-and-osint/elearnsecurity-certified-threat-hunting-introduction-pt-1.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-4d73903d4af3": {
+      "status": "pending",
+      "path": "library/identity-and-access/nsa-and-cisa-top-10.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-4df6becaec97": {
+      "status": "pending",
+      "path": "library/incident-response-and-forensics/threat-hunting-playbooks.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-4e5307143432": {
+      "status": "pending",
+      "path": "library/offensive-security/powershell-tips-tricks-for-pentester.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-4e734e91afaf": {
+      "status": "enriched",
+      "path": "library/ai-security/llm-ai-security-and-governance-checklist.md",
+      "provider": "google",
+      "model": "gemma-4-31b-it",
+      "updated_at": "2026-10-07T23:56:50Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-4e73eb933cc4": {
+      "status": "enriched",
+      "path": "library/application-security/complete-bug-bounty-cheat-sheet.md",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:01:23Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-4ea743c2bde6": {
+      "status": "pending",
+      "path": "library/offensive-security/av-edr-bypass-red-team-village-pt-br.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-4fe5cddac7a5": {
+      "status": "pending",
+      "path": "library/general-technology/brave-browser-rewards-and-bat.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-503a65f0e246": {
+      "status": "pending",
+      "path": "library/offensive-security/cve-2021-4034-gimme-root.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-53ae72c942bf": {
+      "status": "pending",
+      "path": "library/incident-response-and-forensics/incident-response-simulation-1.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-53beb549ee44": {
+      "status": "pending",
+      "path": "library/cryptography-and-privacy/xubuntu-as-custom-whonix-workstation.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-5484ca15e417": {
+      "status": "pending",
+      "path": "library/offensive-security/pentest-and-red-teams-tools-by-joas-and-s3cur3th1ssh1t.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-54cfd5abc6b6": {
+      "status": "pending",
+      "path": "library/offensive-security/certified-red-team-physical-pentest-leader-quick-training.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-55794395c1a1": {
+      "status": "pending",
+      "path": "library/threat-intelligence-and-osint/using-osint-to-investigate-human-trafficking-and-missing-persons.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-55d371a9fc85": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/starting-with-hexo-io.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-55d73df7b642": {
+      "status": "pending",
+      "path": "library/cryptography-and-privacy/smart-contract-security-overview-pt-1.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-56606968d53f": {
+      "status": "pending",
+      "path": "library/offensive-security/adversary-emulation-services.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-56882ee19c0d": {
+      "status": "pending",
+      "path": "library/offensive-security/meterpreter-cheatsheet.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-568d400a55fb": {
+      "status": "pending",
+      "path": "library/network-and-wireless-security/pentest-of-an-ftp-server.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-56b9c0d33174": {
+      "status": "pending",
+      "path": "library/network-and-wireless-security/wi-fi-hacking-notes.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-570f23a5149b": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/gnu-nano.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-57622e9eaed3": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/programming-language-for-hacking-books.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-57a4634bd89b": {
+      "status": "pending",
+      "path": "library/offensive-security/red-team-browser-plugins.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-57b51c39b2f0": {
+      "status": "pending",
+      "path": "library/offensive-security/windows-api-for-red-team-102-english.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-591dca0a15f5": {
+      "status": "pending",
+      "path": "library/offensive-security/red-team-operations-overview-pt-2.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-5a5c721b8d0f": {
+      "status": "pending",
+      "path": "library/offensive-security/pentest-com-powershell-overview.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-5a642030306b": {
+      "status": "pending",
+      "path": "library/offensive-security/red-team-operations-overview-pt-1.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-5a7b985b2135": {
+      "status": "pending",
+      "path": "library/security-operations/portsentry-stealth-scan-detection.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-5c432ef266a1": {
+      "status": "pending",
+      "path": "library/reverse-engineering-and-exploit-development/buffer-overflow-for-beginners-joas.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-5cadf6ae8df1": {
+      "status": "pending",
+      "path": "library/cryptography-and-privacy/computer-systems-security.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-5cde9238fba5": {
+      "status": "pending",
+      "path": "library/network-and-wireless-security/building-a-local-ai-environment.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-5dce951798a9": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/blue-team-toolkit.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-5f1fa2f9d505": {
+      "status": "pending",
+      "path": "library/careers-and-certifications/penetration-testing-career-jr-to-specialist.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-5fb95cb864ae": {
+      "status": "pending",
+      "path": "library/governance-risk-and-compliance/threats-and-risk-management-in-the-health-sector.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-6004a702e372": {
+      "status": "pending",
+      "path": "library/offensive-security/pentest-and-red-team-books.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-60d18bd45e2d": {
+      "status": "pending",
+      "path": "library/cryptography-and-privacy/os-apps-and-services-for-privacy-and-anonymity.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-60fbdb67ef4a": {
+      "status": "pending",
+      "path": "library/offensive-security/adversary-emulation-com-cobalt-strike.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-612d1919aaab": {
+      "status": "enriched",
+      "path": "library/offensive-security/offensive-security-labs-reference.md",
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "updated_at": "2026-10-08T00:02:10Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-617a3b7b394c": {
+      "status": "pending",
+      "path": "library/reverse-engineering-and-exploit-development/chatgpt-for-cybersecurity-3.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-61d1162cf605": {
+      "status": "pending",
+      "path": "library/security-awareness-and-online-safety/segurana-infantil-um-problema-srio-mas-pouco-falado.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-62a85e139657": {
+      "status": "pending",
+      "path": "library/governance-risk-and-compliance/cloudsecurityplaybookvol1.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-62ee331ce7f1": {
+      "status": "pending",
+      "path": "library/cryptography-and-privacy/tls-certificate-for-onion-site.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-632658dc497f": {
+      "status": "pending",
+      "path": "library/offensive-security/comprehensive-guide-on-honeypots.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-63c5474b1b71": {
+      "status": "pending",
+      "path": "library/offensive-security/como-gerenciar-um-red-team.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-642b5fbb8645": {
+      "status": "pending",
+      "path": "library/reverse-engineering-and-exploit-development/introduo-ao-desenvolvimento-de-exploits.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-6457b3b758dd": {
+      "status": "pending",
+      "path": "library/security-operations/kali-honeypot.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-64adee00f21c": {
+      "status": "pending",
+      "path": "library/offensive-security/linux-privilege-escalation-overview.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-64b758fbf4ae": {
+      "status": "pending",
+      "path": "library/reverse-engineering-and-exploit-development/elearnsecurity-exploit-development-student-notes-by-joas.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-6501e7813850": {
+      "status": "pending",
+      "path": "library/offensive-security/tomcat-pentesting.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-664f500960f4": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/runas-in-powershell-for-windows-10.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-674c71e87b58": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/your-first-vps-server.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-68fd30ebca71": {
+      "status": "enriched",
+      "path": "library/general-technology/carreira-em-desenvolvimento-mobile.md",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:03:37Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-693c98cccc91": {
+      "status": "pending",
+      "path": "library/offensive-security/a-detailed-guide-on-kerbrute.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-6a483fb5041f": {
+      "status": "pending",
+      "path": "library/offensive-security/blue-e-red-team-mercado-de-trabalho.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-6af15505b896": {
+      "status": "pending",
+      "path": "library/offensive-security/apostila-dicas-para-pentest.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-6c80dc64af03": {
+      "status": "pending",
+      "path": "library/cryptography-and-privacy/hackingciphers.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-6cadd82ffe0b": {
+      "status": "pending",
+      "path": "library/security-operations/security-operation-center-and-analysis.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-6d05078053b9": {
+      "status": "pending",
+      "path": "library/reverse-engineering-and-exploit-development/reverse-engineering-research-storm.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-6d2454bbb608": {
+      "status": "pending",
+      "path": "library/incident-response-and-forensics/incident-response-playbooks-and-workflow.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-6d34542a0c4f": {
+      "status": "pending",
+      "path": "library/incident-response-and-forensics/incident-response-overview.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-6de3ec5b8923": {
+      "status": "pending",
+      "path": "library/careers-and-certifications/resume-pentest-career-by-joas-a-santos.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-703e52a7e4a5": {
+      "status": "pending",
+      "path": "library/threat-intelligence-and-osint/using-osint-to-investigate-school-shooters.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-715e70830782": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/encrypted-container.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-733010125309": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/keep-an-eye-on-your-logs.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-738833e357dc": {
+      "status": "pending",
+      "path": "library/network-and-wireless-security/fundamentos-de-firewall-2.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-73c0a219b5da": {
+      "status": "pending",
+      "path": "library/identity-and-access/active-directory-assesment.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-74cb809d7934": {
+      "status": "pending",
+      "path": "library/incident-response-and-forensics/incident-response-cheat-sheet.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-74f232300b88": {
+      "status": "pending",
+      "path": "library/governance-risk-and-compliance/cs-ref-architecture.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-752b785f61ca": {
+      "status": "enriched",
+      "path": "library/careers-and-certifications/cyber-security-career-in-2024.md",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:03:45Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-761c8bf5da2b": {
+      "status": "pending",
+      "path": "library/offensive-security/credential-dumping-fakeservices.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-7738d3454eaa": {
+      "status": "pending",
+      "path": "library/offensive-security/windows-persistence-techniques.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-77b6cdd0607c": {
+      "status": "pending",
+      "path": "library/malware-analysis/ransomware-simulation.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-78ea9c3dd9b8": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/device-search-engine.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-794e15d510b5": {
+      "status": "pending",
+      "path": "library/offensive-security/certified-red-team-leader-rto-ii-overview-to-study.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-7a3b9ba60007": {
+      "status": "enriched",
+      "path": "library/application-security/offensive-security-web-exploitation-2.md",
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "updated_at": "2026-10-08T00:02:12Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-7a9a453351a4": {
+      "status": "pending",
+      "path": "library/offensive-security/adversary-emulation-and-cracking-the-bridge-overview.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-7ad65d6171f4": {
+      "status": "pending",
+      "path": "library/offensive-security/best-alternative-of-netcat-listener.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-7b02d8b42ce5": {
+      "status": "pending",
+      "path": "library/careers-and-certifications/the-complete-guide-for-cyber-security-career-english.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-7b3acff5f124": {
+      "status": "enriched",
+      "path": "library/application-security/web-security-guide.md",
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "updated_at": "2026-10-08T00:02:38Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-7c3259ec9c95": {
+      "status": "pending",
+      "path": "library/security-operations/abuseipdb-with-fail2ban.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-7c68868caa50": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/scopewise-yet-another-recon-script.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-7db3c0d9d506": {
+      "status": "pending",
+      "path": "library/offensive-security/worth-checking-ep-2.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-7de26f3ceb6e": {
+      "status": "pending",
+      "path": "library/reverse-engineering-and-exploit-development/reverse-engineering-content-study-1.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-7e34321266ed": {
+      "status": "pending",
+      "path": "library/threat-intelligence-and-osint/tdc2021-mitre-att-ck.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-7e5aac1f3373": {
+      "status": "pending",
+      "path": "library/malware-analysis/open-source-rats.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-7eb657af967e": {
+      "status": "pending",
+      "path": "library/cloud-and-container-security/bloodhound-ce-and-docker.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-7f857948a858": {
+      "status": "pending",
+      "path": "library/security-operations/priority-logs-for-0asiem-ingestion.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-7fb67cb1856a": {
+      "status": "pending",
+      "path": "library/offensive-security/ssh-penetration-testing.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-800ec5942674": {
+      "status": "pending",
+      "path": "library/offensive-security/ffuf.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-82d948c8a3e5": {
+      "status": "pending",
+      "path": "library/offensive-security/crto-notes-to-exam-preparation.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-83641e3279e4": {
+      "status": "pending",
+      "path": "library/network-and-wireless-security/ufw-simple-firewall.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-8406f7c96dfc": {
+      "status": "pending",
+      "path": "library/security-awareness-and-online-safety/cyber-security-for-kids-2.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-84ac66320df7": {
+      "status": "enriched",
+      "path": "library/offensive-security/offensive-security-and-web-exploitation-2.md",
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "updated_at": "2026-10-08T00:02:09Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-852ad7f5ac0d": {
+      "status": "pending",
+      "path": "library/offensive-security/privilege-escalation.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-86607058e28d": {
+      "status": "pending",
+      "path": "library/threat-intelligence-and-osint/apostila-a-arte-do-osint-para-pentesters.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-8740c017fd0e": {
+      "status": "pending",
+      "path": "library/security-operations/microsoft-office-and-windows-remote-code-execution.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-874eaf087b46": {
+      "status": "pending",
+      "path": "library/governance-risk-and-compliance/ciso-handbook.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-8838582bd485": {
+      "status": "pending",
+      "path": "library/cryptography-and-privacy/tls-certificate-for-onion-domain.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-8879134a8671": {
+      "status": "pending",
+      "path": "library/careers-and-certifications/security-operation-center-study-and-career-2022.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-88f069f01485": {
+      "status": "pending",
+      "path": "library/careers-and-certifications/learning-to-hack.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-898c9128b68d": {
+      "status": "pending",
+      "path": "library/offensive-security/pentesting-cheat-sheet.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-89c35c772b85": {
+      "status": "pending",
+      "path": "library/general-technology/mining-cryptocurrency-don-t-do-it-at-home.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-8a55edc89e59": {
+      "status": "enriched",
+      "path": "library/application-security/devsec-ops-guides.md",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "updated_at": "2026-10-08T00:01:33Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-8ae226ed1105": {
+      "status": "enriched",
+      "path": "library/ai-security/how-chatgpt-helped-me-to-code-stuff.md",
+      "provider": "google",
+      "model": "gemma-4-31b-it",
+      "updated_at": "2026-10-07T23:53:50Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-8bca250edb05": {
+      "status": "pending",
+      "path": "library/security-awareness-and-online-safety/cybersecurity-for-kids-pt-br.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-8c20d590f26f": {
+      "status": "pending",
+      "path": "library/security-operations/purple-team-lab-01-wazuh-and-win2016.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-8ce21d6abb6a": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/linux-pentesting.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-8dde10f84181": {
+      "status": "pending",
+      "path": "library/governance-risk-and-compliance/shifting-the-balance-of-cybersecurity-risk.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-8e4d13de8684": {
+      "status": "pending",
+      "path": "library/threat-intelligence-and-osint/mitre-att-ck-study-overview.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-8ec07f28dfbb": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/auto-resize-x-screen-for-kali-on-kvm.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-8f7629d07dd0": {
+      "status": "enriched",
+      "path": "library/general-technology/end-of-the.md",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "updated_at": "2026-10-08T00:01:44Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-8f7ae0fad95d": {
+      "status": "enriched",
+      "path": "library/application-security/burp-suite-plugin-development.md",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:01:14Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-90301446009f": {
+      "status": "enriched",
+      "path": "library/foundations-and-systems/building-a-local-ai-environment.md",
+      "provider": "google",
+      "model": "gemma-4-31b-it",
+      "updated_at": "2026-10-07T23:49:09Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-918865128d76": {
+      "status": "pending",
+      "path": "library/offensive-security/red-team-toolkit-guide.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-91a9a2419d43": {
+      "status": "pending",
+      "path": "library/offensive-security/red-team-interview-questions.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-91f6204c80b0": {
+      "status": "pending",
+      "path": "library/security-awareness-and-online-safety/internet-safety-sexual-predators-and-stalkers-how-to-protect-yourself.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-9245cefeff3f": {
+      "status": "pending",
+      "path": "library/cryptography-and-privacy/anonymous-tor-phone.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-9312423166c3": {
+      "status": "enriched",
+      "path": "library/careers-and-certifications/comptia-security-tips-and-tricks.md",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:03:43Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-950907dbc3f0": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/the-linux-security-journey.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-9531510cdfb7": {
+      "status": "pending",
+      "path": "library/offensive-security/ethical-hacking.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-963fbdd84020": {
+      "status": "pending",
+      "path": "library/offensive-security/multi-cloud-red-team-pt-1.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-96fc24bae92b": {
+      "status": "pending",
+      "path": "library/security-operations/security-operation-center-40-tools.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-974cedf07ba3": {
+      "status": "enriched",
+      "path": "library/application-security/web-content-scanner.md",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "updated_at": "2026-10-08T00:02:34Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-982c5b425723": {
+      "status": "pending",
+      "path": "library/threat-intelligence-and-osint/osint-overview-pt-1.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-983693462cef": {
+      "status": "pending",
+      "path": "library/offensive-security/interview-question-tips-pentest-red-team-appsec-and-blue-team.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-98692e9d7d0c": {
+      "status": "pending",
+      "path": "library/security-awareness-and-online-safety/cyber-security-for-kids.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-9898ae1a0451": {
+      "status": "pending",
+      "path": "library/general-technology/cheap-crypto-deal.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-992f4276ea98": {
+      "status": "pending",
+      "path": "library/offensive-security/windows-exploitation-rundll32-exe.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-999fa78d2243": {
+      "status": "pending",
+      "path": "library/offensive-security/windows-enterprise-network-pentest.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-99b363e18674": {
+      "status": "pending",
+      "path": "library/malware-analysis/malware-hunting-threat-hunter-overview-1.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-9b2b6a607f5b": {
+      "status": "enriched",
+      "path": "library/careers-and-certifications/certifications-preparation-guide.md",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "updated_at": "2026-10-08T00:03:40Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-9bb50d258844": {
+      "status": "pending",
+      "path": "library/offensive-security/password-cracking-my-sql.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-9c0599918006": {
+      "status": "pending",
+      "path": "library/network-and-wireless-security/anonabox.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-9c225a27218c": {
+      "status": "enriched",
+      "path": "library/application-security/api-security-handbook.md",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "updated_at": "2026-10-08T00:00:35Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-9ea1619fdd12": {
+      "status": "enriched",
+      "path": "library/application-security/ldap-injection.md",
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "updated_at": "2026-10-08T00:02:07Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-9ec24f7f0817": {
+      "status": "pending",
+      "path": "library/offensive-security/pentest-toolkit.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-9ed989dea385": {
+      "status": "pending",
+      "path": "library/offensive-security/diary-of-a-red-team-challenges-for-you-to-practice-your-skills-1.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-9ee0dd7b77ff": {
+      "status": "pending",
+      "path": "library/malware-analysis/yet-another-ridiculous-acronym.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-9f661057fa75": {
+      "status": "pending",
+      "path": "library/careers-and-certifications/red-team-career-tips-1.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-9fe74458d1b2": {
+      "status": "pending",
+      "path": "library/identity-and-access/pwning-the-domain-series-with-credentials.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-a05b51181aeb": {
+      "status": "enriched",
+      "path": "library/offensive-security/offensive-security-web-exploitation.md",
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "updated_at": "2026-10-08T00:02:11Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-a19166d86e3a": {
+      "status": "pending",
+      "path": "library/offensive-security/nmap-for-pentester-output-format-scan.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-a1a94eb5ea43": {
+      "status": "pending",
+      "path": "library/offensive-security/hacker-forums.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-a204ce0fd795": {
+      "status": "pending",
+      "path": "library/network-and-wireless-security/smtp-hack.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-a20f2d903602": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/test-environment.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-a2a4ecf054be": {
+      "status": "pending",
+      "path": "library/identity-and-access/basic-access-authentication-bruteforce.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-a30d9a1c8f4d": {
+      "status": "pending",
+      "path": "library/offensive-security/offensive-security-consultant-spider-labs.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-a3d4323ec770": {
+      "status": "pending",
+      "path": "library/offensive-security/conceitos-bsicos-de-ps-explorao-1.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-a42da90a13b0": {
+      "status": "pending",
+      "path": "library/offensive-security/basic-knowldges-of-pentesting.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-a4730956a3ee": {
+      "status": "pending",
+      "path": "library/offensive-security/hacker-news.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-a5431cd7548c": {
+      "status": "pending",
+      "path": "library/governance-risk-and-compliance/cybok-version-1-0.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-a5b043b326d2": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/virtualenv.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-a5e81b51fd06": {
+      "status": "pending",
+      "path": "library/security-awareness-and-online-safety/social-engineering-practical-overview.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-a68b25d45885": {
+      "status": "enriched",
+      "path": "library/application-security/broken-authentication.md",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:01:12Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-a6d5d8e68136": {
+      "status": "enriched",
+      "path": "library/application-security/remote-file-inclusion.md",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:02:25Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-a72af0bbcf83": {
+      "status": "pending",
+      "path": "library/general-technology/free-stellar-lumens.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-a76161af7f65": {
+      "status": "enriched",
+      "path": "library/application-security/a-guide-of-os-command-injection.md",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "updated_at": "2026-10-08T00:00:31Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-a7c0b8d66cef": {
+      "status": "pending",
+      "path": "library/cloud-and-container-security/finalrecon-on-docker.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-a837a69bac4f": {
+      "status": "enriched",
+      "path": "library/offensive-security/chatgpt-for-cybersecurity-2.md",
+      "provider": "google",
+      "model": "gemma-4-31b-it",
+      "updated_at": "2026-10-07T23:50:20Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-a956d75fe63d": {
+      "status": "pending",
+      "path": "library/offensive-security/python-for-hackers-bootcamp.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-aab0161196cf": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/virtualbox-tips.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-ab05b19e44f0": {
+      "status": "enriched",
+      "path": "library/application-security/apostila-ataques-web-bsico.md",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "updated_at": "2026-10-08T00:00:38Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-ab217360a071": {
+      "status": "pending",
+      "path": "library/offensive-security/pentest-em-ambientes-cloud-1.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-abb2c1e87c84": {
+      "status": "pending",
+      "path": "library/threat-intelligence-and-osint/practical-recon-automation-with-reconftw.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-ac3415c71c7c": {
+      "status": "pending",
+      "path": "library/governance-risk-and-compliance/cyber-security-services.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-ac697b3592a2": {
+      "status": "pending",
+      "path": "library/offensive-security/dicas-como-reportar-uma-falha.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-ac8a8f1071e9": {
+      "status": "pending",
+      "path": "library/security-operations/100-security-operation-center-tools.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-ada7e4a5d1c9": {
+      "status": "pending",
+      "path": "library/security-awareness-and-online-safety/own-your-space-teen-book.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-af919741fa16": {
+      "status": "enriched",
+      "path": "library/offensive-security/30-days-of-practice-pentest.md",
+      "provider": "google",
+      "model": "gemma-4-31b-it",
+      "updated_at": "2026-10-07T23:58:55Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-b0136be60e90": {
+      "status": "pending",
+      "path": "library/security-operations/low-cost-soc-tools-2.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-b0b00d75fdbe": {
+      "status": "enriched",
+      "path": "library/application-security/javascript-for-hackers.md",
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "updated_at": "2026-10-08T00:02:03Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-b19861ae804e": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/ubuntu1404server.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-b284c04241ca": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/basic-onion-check.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-b3ee98d43f25": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/the-linux-commands-handbook.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-b3f97a64b279": {
+      "status": "pending",
+      "path": "library/offensive-security/let-s-hack-some-smb.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-b42da521f450": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/mount-synology-nas-in-linux.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-b4484f841ac2": {
+      "status": "pending",
+      "path": "library/cloud-and-container-security/aws-pentest.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-b5444fabf12b": {
+      "status": "pending",
+      "path": "library/security-awareness-and-online-safety/child-safety-a-serious-problem-but-little-talked-about-english.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-b5e25d1246af": {
+      "status": "enriched",
+      "path": "library/application-security/detailed-guide-of-html-injections.md",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:01:25Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-b75acfe77b09": {
+      "status": "pending",
+      "path": "library/offensive-security/pentest-skills-development.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-b7ec924168db": {
+      "status": "pending",
+      "path": "library/cryptography-and-privacy/running-own-tor-relay-on-a-vps.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-b85af08dc6b5": {
+      "status": "enriched",
+      "path": "library/application-security/elearnsecurity-mobile-application-penetration-testing.md",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "updated_at": "2026-10-08T00:01:42Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-b8c1ac4e0f8e": {
+      "status": "pending",
+      "path": "library/offensive-security/red-team-and-blue-team-labs-and-ctf.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-b8d75616dbde": {
+      "status": "pending",
+      "path": "library/offensive-security/healthy-mind-and-body-of-hacker.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-b8db591bfd6b": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/windows-software-on-linux.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-b94e6210c159": {
+      "status": "pending",
+      "path": "library/offensive-security/windows-api-for-red-team-102-portugues.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-b9782dcdb0a8": {
+      "status": "pending",
+      "path": "library/security-awareness-and-online-safety/cyberbullying-e-as-consequncias.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-b9d19690e76d": {
+      "status": "pending",
+      "path": "library/reverse-engineering-and-exploit-development/game-hacking-1-anti-cheat-bypass.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-ba18e5106432": {
+      "status": "pending",
+      "path": "library/offensive-security/offensive-security-mac-control-bypass-notes-pt-1.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-bb9521d31825": {
+      "status": "pending",
+      "path": "library/iot-ot-and-hardware-security/iot-security-guide.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-bbc7f0316dbc": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/database-design.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-bbe576802438": {
+      "status": "pending",
+      "path": "library/offensive-security/pentest-with-metasploit-overview.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-bc5764855e5b": {
+      "status": "pending",
+      "path": "library/reverse-engineering-and-exploit-development/shellcode-development.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-bd03cc13b870": {
+      "status": "pending",
+      "path": "library/offensive-security/linux-distributions-for-hackers.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-bda84b88cab0": {
+      "status": "pending",
+      "path": "library/general-technology/fancy-presentation.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-bdf8cecdcffc": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/relational-databases-and-microsoft-access-365.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-bf2690d218c6": {
+      "status": "pending",
+      "path": "library/incident-response-and-forensics/dns-incident-response.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-bf919b2651e5": {
+      "status": "pending",
+      "path": "library/network-and-wireless-security/fortigate-firewall.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-bfd413d242c2": {
+      "status": "pending",
+      "path": "library/security-awareness-and-online-safety/safe-social-networking.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-bfe7cd85edaa": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/good-vps-offer.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-c00c02c4e4cf": {
+      "status": "pending",
+      "path": "library/identity-and-access/ad-attacks.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-c00d3e6e4578": {
+      "status": "enriched",
+      "path": "library/cryptography-and-privacy/add-onion-domain-to-your-website.md",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "updated_at": "2026-10-08T00:00:33Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-c02b2c93eafb": {
+      "status": "pending",
+      "path": "library/offensive-security/worth-checking-ep-3.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-c0e1a24515d1": {
+      "status": "enriched",
+      "path": "library/application-security/website-analysis.md",
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "updated_at": "2026-10-08T00:02:39Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-c143e1f43cf9": {
+      "status": "enriched",
+      "path": "library/application-security/owasp-top-ten-vulnerabilties.md",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:02:23Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-c2f621a61b79": {
+      "status": "enriched",
+      "path": "library/application-security/sql-injection.md",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:02:27Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-c3735ad92856": {
+      "status": "pending",
+      "path": "library/security-awareness-and-online-safety/segurana-na-internet-para-crianas.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-c38bcc8e9f52": {
+      "status": "pending",
+      "path": "library/offensive-security/adversary-emulation-matrix-by-joas.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-c3a1ec0401b6": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/python-libs-for-security-pt-1.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-c56ae68499da": {
+      "status": "pending",
+      "path": "library/careers-and-certifications/the-complete-guide-for-cyber-security-career.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-c58b14df2fd2": {
+      "status": "enriched",
+      "path": "library/offensive-security/resume-web-pentest-by-joas.md",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:02:26Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-c5b22341343f": {
+      "status": "pending",
+      "path": "library/network-and-wireless-security/dhcp-starvation-attack.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-c5ccfbf5ca59": {
+      "status": "pending",
+      "path": "library/offensive-security/i-am-not-that-hacker-you-are-looking-for.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-c626cdefaa77": {
+      "status": "pending",
+      "path": "library/network-and-wireless-security/comprehensive-guide-on-tshark.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-c6cba1550e09": {
+      "status": "pending",
+      "path": "library/iot-ot-and-hardware-security/pentest-iot-and-ot-overview.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-c6e5570da730": {
+      "status": "enriched",
+      "path": "library/application-security/chatgpt-for-cybersecurity-4.md",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:01:20Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-c7cbfb50e22c": {
+      "status": "pending",
+      "path": "library/offensive-security/python-for-hackers-pt-1.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-c7ef9f7eb533": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/debian-lemp-stack.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-c90dd51e0160": {
+      "status": "pending",
+      "path": "library/network-and-wireless-security/wireless-penetration-testing-pmkid-attack.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-c9479d64c5e5": {
+      "status": "pending",
+      "path": "library/offensive-security/defectdojo-setup-workflow-and-real-usage.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-cbefa61f502f": {
+      "status": "pending",
+      "path": "library/offensive-security/cyber-security-complete-journey-red-team-1.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-cc246ea0f08b": {
+      "status": "pending",
+      "path": "library/network-and-wireless-security/tor-router-on-raspberry-pi.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-cc7361d8b296": {
+      "status": "pending",
+      "path": "library/reverse-engineering-and-exploit-development/fundamentos-de-desenvolvimento-de-exploits-overview.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-cc7dba98af92": {
+      "status": "enriched",
+      "path": "library/application-security/attacking-nginx.md",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:00:55Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-cd05e9e3d51d": {
+      "status": "enriched",
+      "path": "library/careers-and-certifications/cyber-security-five-challenge-2022.md",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "updated_at": "2026-10-08T00:03:47Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-ce34774049b6": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/server-upgrade.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-cf016ed1bb7f": {
+      "status": "pending",
+      "path": "library/malware-analysis/malwareanalysis-101.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-cfb9d6c84201": {
+      "status": "pending",
+      "path": "library/cryptography-and-privacy/privacy-applications-and-services.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-cfbf3d7fe1b9": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/beginning-excel.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-cfdd0735fbcf": {
+      "status": "pending",
+      "path": "library/offensive-security/pentest-in-office365-and-security.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-d0513fed26c5": {
+      "status": "pending",
+      "path": "library/security-operations/security-operation-center-open-source.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-d0f6e90e3bfc": {
+      "status": "pending",
+      "path": "library/cryptography-and-privacy/gpgwrap-simple-gui-for-gpg.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-d35a3194d0b2": {
+      "status": "pending",
+      "path": "library/offensive-security/plano-de-estudos-cyber-security-parte-1-red-team.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-d42b2e560590": {
+      "status": "pending",
+      "path": "library/offensive-security/remote-desktop-penetration-testing-port-3389.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-d46ef7016e08": {
+      "status": "pending",
+      "path": "library/offensive-security/offensive-security-professional-overview-survival.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-d483a9e33f57": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/cool-command-line-apps-for-linux.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-d528c3bffdd1": {
+      "status": "enriched",
+      "path": "library/application-security/application-security-introduction-overview.md",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:00:40Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-d58576abb992": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/useful-linux-commands.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-d59c217c614a": {
+      "status": "enriched",
+      "path": "library/careers-and-certifications/12-best-career-in-cyber-security-2023.md",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "updated_at": "2026-10-08T00:02:54Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-d59f0589a42d": {
+      "status": "pending",
+      "path": "library/offensive-security/windows-api-for-red-team-101-english.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-d5c3c4d59a59": {
+      "status": "pending",
+      "path": "library/security-operations/windows-event-log-analysis-ir-guide.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-d65445c25f83": {
+      "status": "pending",
+      "path": "library/threat-intelligence-and-osint/investigation-using-osint-with-a-focus-on-intelligence-operations-and.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-d678c3cd8f19": {
+      "status": "pending",
+      "path": "library/offensive-security/hacker-shelf.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-d76151196d02": {
+      "status": "pending",
+      "path": "library/offensive-security/worth-checking-ep-1.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-d765a1a92757": {
+      "status": "pending",
+      "path": "library/threat-intelligence-and-osint/ransomware-investigation-osint-and-hunting-overview-pt1.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-d82afea52b0d": {
+      "status": "enriched",
+      "path": "library/ai-security/how-openai-uses-codex.md",
+      "provider": "google",
+      "model": "gemma-4-31b-it",
+      "updated_at": "2026-10-07T23:55:12Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-d8542bc9c3f7": {
+      "status": "enriched",
+      "path": "library/careers-and-certifications/carreira-em-cyber-security-jr-ao-especialista.md",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:02:55Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-d8c7cb142e7e": {
+      "status": "pending",
+      "path": "library/network-and-wireless-security/gettng-started-in-ics-ot-cyber-security.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-d8d2fbcb09c4": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/useful-powershell-commands.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-d903ee5c8257": {
+      "status": "pending",
+      "path": "library/incident-response-and-forensics/memory-forensics.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-da2c225840a2": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/unattended-upgrades.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-da567539554f": {
+      "status": "pending",
+      "path": "library/network-and-wireless-security/a-little-bit-about-nmap.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-da576b6113ab": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/pro-git.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-dcbd46f26b91": {
+      "status": "pending",
+      "path": "library/offensive-security/the-coming-ai-hackers.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-dce10de136e0": {
+      "status": "pending",
+      "path": "library/governance-risk-and-compliance/zero-trust-testing-checklist.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-dd99edfa0087": {
+      "status": "pending",
+      "path": "library/reverse-engineering-and-exploit-development/shellcode-development-2.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-de4698ceca73": {
+      "status": "enriched",
+      "path": "library/application-security/file-path-traversal.md",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:01:56Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-dec90e145024": {
+      "status": "pending",
+      "path": "library/security-operations/secure-endpoints-user-guide.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-dedb6cc69a31": {
+      "status": "pending",
+      "path": "library/threat-intelligence-and-osint/fundamentos-de-osint.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-df7171bc8e9a": {
+      "status": "enriched",
+      "path": "library/ai-security/hexstrike-ai-on-kali-with-roo-code.md",
+      "provider": "google",
+      "model": "gemma-4-31b-it",
+      "updated_at": "2026-10-07T23:53:13Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-e0105b6ab5e5": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/think-java.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-e0316ae66575": {
+      "status": "pending",
+      "path": "library/offensive-security/introduo-a-ps-explorao.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-e13bb74c95d4": {
+      "status": "pending",
+      "path": "library/offensive-security/low-cost-red-team-tools.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-e1b2498d6fb8": {
+      "status": "pending",
+      "path": "library/security-operations/low-cost-soc.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-e23cb886e3d6": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/uptime-monitoring.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-e26ba31f2a54": {
+      "status": "pending",
+      "path": "library/offensive-security/oscp-like-vulns-machines.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-e2d14081c2d9": {
+      "status": "enriched",
+      "path": "library/ai-security/prompt-engineering-google.md",
+      "provider": "google",
+      "model": "gemma-4-31b-it",
+      "updated_at": "2026-10-07T23:57:24Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-e38517ebc005": {
+      "status": "pending",
+      "path": "library/cryptography-and-privacy/lets-encrypt-ssl-cert-for-nginx.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-e3bed45381db": {
+      "status": "enriched",
+      "path": "library/application-security/elearnsecurity-ewptx-notes-basic-by-joas.md",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "updated_at": "2026-10-08T00:01:39Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-e4dccdf7576f": {
+      "status": "pending",
+      "path": "library/offensive-security/red-team-pentest-english.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-e586ac061faa": {
+      "status": "pending",
+      "path": "library/reverse-engineering-and-exploit-development/buffer-overflow-introduction.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-e5890b9761be": {
+      "status": "pending",
+      "path": "library/security-awareness-and-online-safety/cybersecurity-and-cyberbullying-education-for-kids.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-e5ace1f0079d": {
+      "status": "enriched",
+      "path": "library/careers-and-certifications/cyber-security-career-for-children-pt-1.md",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:03:44Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-e6075f145ac4": {
+      "status": "pending",
+      "path": "library/iot-ot-and-hardware-security/hardware-hacking-introduction-overview.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-e610a8cb2733": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/synology-nas-tips.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-e6338ab61b50": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/the-art-of-linux-persistence.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-e63530ae7a86": {
+      "status": "enriched",
+      "path": "library/careers-and-certifications/comptia-pentest-tips-and-tricks.md",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:03:41Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-e68ce128a791": {
+      "status": "enriched",
+      "path": "library/application-security/cms-vulnerability-scanners.md",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:01:21Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-e805fa920b1b": {
+      "status": "pending",
+      "path": "library/offensive-security/windows-server-ad-and-o365-advanced-pentest.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-e8a1f499875c": {
+      "status": "pending",
+      "path": "library/offensive-security/the-last-dance-with-msfvenom.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-e92b26945f8f": {
+      "status": "pending",
+      "path": "library/offensive-security/cve-attack.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-e946867f79a6": {
+      "status": "pending",
+      "path": "library/offensive-security/credential-dumping-sam.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-e998b3379a04": {
+      "status": "pending",
+      "path": "library/security-awareness-and-online-safety/cyber-security-for-kids-2-1.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-e9d841c9b454": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/windows-11-virtual-machine-on-kvm.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-e9e0f752e660": {
+      "status": "pending",
+      "path": "library/offensive-security/ms-team-emoji-reaction-spammer.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-ea3aafc4e04e": {
+      "status": "pending",
+      "path": "library/offensive-security/bug-bounty-career.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-eaa526c68fb6": {
+      "status": "enriched",
+      "path": "library/ai-security/genai-red-teaming-guide.md",
+      "provider": "google",
+      "model": "gemma-4-31b-it",
+      "updated_at": "2026-10-07T23:51:38Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-eac2221f8e59": {
+      "status": "enriched",
+      "path": "library/careers-and-certifications/cybersec-certifications-2023.md",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "updated_at": "2026-10-08T00:05:56Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-eb0488026792": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/shell-scripting.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-eb9562981c68": {
+      "status": "pending",
+      "path": "library/security-operations/security-operation-center-open-source-pt-en.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-ebbde32faec4": {
+      "status": "pending",
+      "path": "library/offensive-security/windows-post-exploitation.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-ede2dd9478c5": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/one-usb-drive-with-multiple-live-systems-and-rescue-tools.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-eef2d39bb1a8": {
+      "status": "pending",
+      "path": "library/general-technology/short-story-about-my-steam-deck.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-efc60ed214f8": {
+      "status": "pending",
+      "path": "library/governance-risk-and-compliance/25-cyber-security-frameworks.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-f0728c946580": {
+      "status": "enriched",
+      "path": "library/ai-security/chatgpt-for-cybersecurity-1.md",
+      "provider": "google",
+      "model": "gemma-4-31b-it",
+      "updated_at": "2026-10-07T23:49:48Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-f0ee572d5835": {
+      "status": "pending",
+      "path": "library/reverse-engineering-and-exploit-development/offensive-security-exploit-development-windows-overview.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-f1bc440b3b08": {
+      "status": "pending",
+      "path": "library/careers-and-certifications/offsec-certification-and-courses-2024.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-f22b0838b592": {
+      "status": "enriched",
+      "path": "library/application-security/web-attacks.md",
+      "provider": "google",
+      "model": "gemini-3.5-flash-lite",
+      "updated_at": "2026-10-08T00:02:32Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-f251ee71191c": {
+      "status": "pending",
+      "path": "library/malware-analysis/introduo-bsica-a-analise-de-malware-1.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-f262db7706a3": {
+      "status": "pending",
+      "path": "library/offensive-security/password-cracking-postrgresql.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-f2dff9f1aadb": {
+      "status": "pending",
+      "path": "library/incident-response-and-forensics/cyber-security-incident-management-plan.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-f389f777d27d": {
+      "status": "pending",
+      "path": "library/network-and-wireless-security/quick-vpn-setup-on-vps.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-f42d94968f8e": {
+      "status": "pending",
+      "path": "library/security-operations/soc-open-source-tools.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-f44940a2e9be": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/sql-basics-cheat-sheet-a3.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-f4fea8a593ba": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/rclone-backup.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-f599172e3c9f": {
+      "status": "enriched",
+      "path": "library/application-security/application-security-introduction-overview-pt-2.md",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "updated_at": "2026-10-08T00:00:54Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-f6023906dd84": {
+      "status": "pending",
+      "path": "library/incident-response-and-forensics/ftk-imager.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-f62d05feb3c1": {
+      "status": "pending",
+      "path": "library/offensive-security/windows-exploitation-msbuild.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-f6a428362484": {
+      "status": "pending",
+      "path": "library/reverse-engineering-and-exploit-development/hacking-windows.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-f6c9a9e2698c": {
+      "status": "pending",
+      "path": "library/general-technology/homemade-pedalboard.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-f737ba33feff": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/whonix-for-kvm.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-f8326a89f226": {
+      "status": "pending",
+      "path": "library/incident-response-and-forensics/100-free-security-tools.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-f947beb71904": {
+      "status": "pending",
+      "path": "library/governance-risk-and-compliance/professional-web-accessibility-auditing-made-easy.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-f9ae70c5ccf1": {
+      "status": "pending",
+      "path": "library/general-technology/black-friday-cyber-monday.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-f9f51b8ad483": {
+      "status": "pending",
+      "path": "library/incident-response-and-forensics/computer-forensic-overview-pt.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-facb80bd89b0": {
+      "status": "pending",
+      "path": "library/network-and-wireless-security/mastering-fortigate.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-fb06e3862f8c": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/penetration-testing-guide.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-fb3a44f29619": {
+      "status": "pending",
+      "path": "library/governance-risk-and-compliance/an-introduction-to-computer-0asecurity-the-nist-handbook.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-fba6f704f909": {
+      "status": "pending",
+      "path": "library/offensive-security/art-of-post-exploitation.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-fbedef182c2d": {
+      "status": "pending",
+      "path": "library/careers-and-certifications/security-roadmap.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-fc218b6bab9e": {
+      "status": "pending",
+      "path": "library/offensive-security/red-team-operations-development-pt-1.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-fc4ceac0b821": {
+      "status": "pending",
+      "path": "library/network-and-wireless-security/offensive-security-wireless-fundamentals.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-fcf1a747f348": {
+      "status": "pending",
+      "path": "library/governance-risk-and-compliance/a-practical-guide-for-building-robust.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-fe062c55d555": {
+      "status": "pending",
+      "path": "library/foundations-and-systems/server-backup.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-fe217c037742": {
+      "status": "pending",
+      "path": "library/offensive-security/av-and-edr-bypass-techniques-for-new-hackers-update-2022.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-fe2b5fd7014f": {
+      "status": "pending",
+      "path": "library/network-and-wireless-security/attacking-pfsense.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-ff8fff25b2c9": {
+      "status": "enriched",
+      "path": "library/application-security/websurface-web-attack-surface-discovery.md",
+      "provider": "google",
+      "model": "gemma-4-26b-a4b-it",
+      "updated_at": "2026-10-08T00:02:47Z",
+      "attempts": 1,
+      "last_error_category": null,
+      "last_error": ""
+    },
+    "ckb-ffe467501c0b": {
+      "status": "pending",
+      "path": "library/network-and-wireless-security/wireless-penetration-testing-fluxion.md",
+      "provider": null,
+      "model": null,
+      "updated_at": null,
+      "attempts": 0,
+      "last_error_category": null,
+      "last_error": ""
+    }
+  }
+}

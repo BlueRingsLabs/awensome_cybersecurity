@@ -4,13 +4,16 @@ title: How ChatGPT helped me to code stuff
 category: ai-security
 format: article
 language: en
-tags: [ai, git, malware, ransomware, tls]
+tags: [ai]
+summary: The author describes their experience using ChatGPT to assist with coding modifications for a Hexo-based website theme.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.91
+  method: llm
+  model: gemma-4-31b-it
+  confidence: 0.9
+classified_by: google:gemma-4-31b-it@2026-10-07T23:53:50Z
 ---
 
 # How ChatGPT helped me to code stuff

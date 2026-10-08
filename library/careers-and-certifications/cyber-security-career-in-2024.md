@@ -2,15 +2,18 @@
 id: ckb-752b785f61ca
 title: Cyber Security Career in 2024
 category: careers-and-certifications
-format: guide
+format: reference
 language: en
-tags: [career, certification, cloud, networking, red-team, tls]
+tags: [career, certification, education]
+summary: This document provides an overview of various cybersecurity career paths, outlining key responsibilities, recommended certifications, and essential hard and soft skills for each role.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.84
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 1.0
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:03:45Z
 ---
 
 Cyber Security Career in 2024

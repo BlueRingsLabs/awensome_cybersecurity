@@ -4,13 +4,16 @@ title: eLearnSecurity eWPTX Notes Basic by Joas
 category: application-security
 format: course-notes
 language: en
-tags: [burp-suite, certification, evasion, javascript, tls, web-security]
+tags: [burp-suite, javascript, owasp, red-team, sql-injection, web-security]
+summary: This document contains study notes for the eWPTX certification, covering various web application penetration testing techniques including XSS, CSRF, and SQL injection.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.67
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.95
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:01:39Z
 ---
 
 eLearnSecurity Web Application Penetration Testing

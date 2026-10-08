@@ -1,16 +1,19 @@
 ---
 id: ckb-8f7629d07dd0
 title: End of the...
-category: application-security
+category: general-technology
 format: article
 language: en
-tags: [tls, windows]
+tags: [web-security]
+summary: A personal blog post reflecting on the year 2022, website statistics, and future plans for the content creator.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.3
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.8
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:01:44Z
 ---
 
 # End of the...

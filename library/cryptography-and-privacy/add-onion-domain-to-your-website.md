@@ -1,16 +1,19 @@
 ---
 id: ckb-c00d3e6e4578
 title: Add Onion domain to your website
-category: application-security
-format: article
+category: cryptography-and-privacy
+format: guide
 language: en
-tags: [anonymity, bash, privilege-escalation, threat-intelligence, tls, web-security]
+tags: [anonymity, web-security]
+summary: A technical guide on how to configure an onion service for a website using Tor, Nginx, and Apache.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.3
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.95
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:00:33Z
 ---
 
 # Add Onion domain to your website

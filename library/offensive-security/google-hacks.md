@@ -1,16 +1,19 @@
 ---
 id: ckb-083a949cfac4
 title: Google Hacks
-category: application-security
-format: article
+category: offensive-security
+format: guide
 language: en
-tags: [databases, git, macos, osint, tls, web-security]
+tags: [osint, web-security]
+summary: This guide explains the concept of Google Hacking, providing examples of search operators and dorks used to identify sensitive information and vulnerabilities on the web.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.43
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:02:00Z
 ---
 
 # Google Hacks

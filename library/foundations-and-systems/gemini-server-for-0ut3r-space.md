@@ -1,16 +1,19 @@
 ---
 id: ckb-204b2d29c14c
 title: Gemini server for 0ut3r.space
-category: ai-security
+category: foundations-and-systems
 format: article
 language: en
-tags: [bash, cryptography, git, networking, privilege-escalation, tls]
+tags: [networking]
+summary: The author describes setting up a Gemini protocol server using Agate to serve a text-based alternative to the traditional web.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.52
+  method: llm
+  model: gemma-4-31b-it
+  confidence: 0.9
+classified_by: google:gemma-4-31b-it@2026-10-07T23:50:57Z
 ---
 
 # Gemini server for 0ut3r.space

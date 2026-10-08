@@ -4,13 +4,16 @@ title: LLM AI Security and Governance Checklist
 category: ai-security
 format: checklist
 language: en
-tags: [ai, governance, mitre-attack, owasp, privacy, red-team]
+tags: [ai, governance, owasp, risk-management]
+summary: A comprehensive checklist from the OWASP Top 10 for LLM Applications Team providing guidance on the security and governance of Large Language Model implementations.
 authors: [unknown]
 license: CC-BY-SA-4.0
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.63
+  method: llm
+  model: gemma-4-31b-it
+  confidence: 1.0
+classified_by: google:gemma-4-31b-it@2026-10-07T23:56:50Z
 ---
 
 LLM AI Cybersecurity &

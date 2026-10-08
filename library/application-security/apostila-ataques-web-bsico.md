@@ -4,13 +4,16 @@ title: Apostila Ataques Web Bsico
 category: application-security
 format: guide
 language: pt
-tags: [databases, owasp, sql-injection, tls, web-security, windows]
+tags: [owasp, sql-injection, web-security]
+summary: A practical guide in Portuguese covering basic web attacks such as HTML injection, XSS, and SQL injection.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.99
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.95
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:00:38Z
 ---
 
 ATAQUES WEB - BÁSICO

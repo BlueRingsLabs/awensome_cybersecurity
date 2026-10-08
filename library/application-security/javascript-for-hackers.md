@@ -4,13 +4,16 @@ title: JavaScript for Hackers
 category: application-security
 format: guide
 language: en
-tags: [bug-bounty, git, javascript, tls, web-security]
+tags: [evasion, javascript, owasp, web-security]
+summary: This guide provides a collection of JavaScript-based penetration testing scripts, payloads, and techniques for client-side attacks and exploitation.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.58
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T00:02:03Z
 ---
 
 JavaScript for Hackers

@@ -4,13 +4,16 @@ title: Cyber Security Career for Children Pt 1
 category: careers-and-certifications
 format: guide
 language: en
-tags: [career, certification, education, networking, tls]
+tags: [career, education]
+summary: This guide provides parents with foundational resources and a roadmap to introduce children and teenagers to cybersecurity career paths.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.74
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:03:44Z
 ---
 
 Cyber Security

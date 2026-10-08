@@ -4,13 +4,16 @@ title: Carreira em Cyber Security Jr Ao Especialista
 category: careers-and-certifications
 format: guide
 language: pt
-tags: [aws, career, cloud, compliance, devsecops, firewall]
+tags: [career, certification, education]
+summary: This document outlines the expected skills and responsibilities for cybersecurity professionals at junior, mid-level, senior, and specialist career stages.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.62
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 1.0
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:02:55Z
 ---
 
 Carreira em Cyber Security Jr

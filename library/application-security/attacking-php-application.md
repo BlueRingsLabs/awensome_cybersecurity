@@ -2,15 +2,18 @@
 id: ckb-256c3329c9c3
 title: Attacking PHP Application
 category: application-security
-format: guide
+format: article
 language: en
-tags: [cloud, databases, log-analysis, password-security, sql-injection, web-security]
+tags: [api-security, devsecops, owasp, web-security]
+summary: This article provides a technical overview of various vulnerabilities in PHP applications, including authentication bypass, code injection, and deserialization flaws, along with corresponding mitigation strategies.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.83
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:01:00Z
 ---
 
 WWW.DEVSECOPSGUIDES.COM

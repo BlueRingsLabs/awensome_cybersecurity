@@ -4,13 +4,16 @@ title: Learning to hack
 category: careers-and-certifications
 format: article
 language: en
-tags: [career, ctf, education, soc, tls]
+tags: [career, education]
+summary: The author shares personal experiences and advice on the mindset and persistence required to learn cybersecurity and ethical hacking.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.74
+  method: llm
+  model: gemma-4-31b-it
+  confidence: 0.95
+classified_by: google:gemma-4-31b-it@2026-10-08T00:07:41Z
 ---
 
 # Learning to hack

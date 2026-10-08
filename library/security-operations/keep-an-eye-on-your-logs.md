@@ -1,16 +1,19 @@
 ---
 id: ckb-733010125309
 title: Keep an eye on your logs
-category: foundations-and-systems
-format: article
+category: security-operations
+format: guide
 language: en
-tags: [bash, databases, linux, log-analysis, privilege-escalation, tls]
+tags: [bash, hardening, linux, log-analysis]
+summary: This guide provides an overview of Linux log file locations and demonstrates how to use command-line tools and the Logwatch utility to monitor system activity.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.67
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:15:27Z
 ---
 
 # Keep an eye on your logs

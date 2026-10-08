@@ -1,16 +1,19 @@
 ---
 id: ckb-a7c0b8d66cef
 title: FinalRecon on Docker
-category: cloud-and-container-security
-format: article
+category: offensive-security
+format: guide
 language: en
-tags: [bash, containers, linux, privilege-escalation, python, tls]
+tags: [bash, containers, linux, web-security]
+summary: This guide demonstrates how to deploy and manage the FinalRecon web reconnaissance tool using Docker containers on a Linux VPS.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.72
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:12:37Z
 ---
 
 # FinalRecon on Docker

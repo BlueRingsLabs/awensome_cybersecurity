@@ -1,16 +1,19 @@
 ---
 id: ckb-331015566dbd
 title: GoAccess and real website stats
-category: foundations-and-systems
+category: security-operations
 format: article
 language: en
-tags: [anonymity, bash, log-analysis, privilege-escalation, threat-intelligence, tls]
+tags: [bash, linux, log-analysis]
+summary: This article demonstrates how to use GoAccess to analyze server logs for accurate website traffic statistics, highlighting the discrepancies between server-side logging and client-side analytics tools.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.33
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.9
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:15:22Z
 ---
 
 # GoAccess and real website stats

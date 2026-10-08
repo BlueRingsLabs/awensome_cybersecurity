@@ -4,13 +4,16 @@ title: Understanding your EKS environment - The reconnaissance phase
 category: cloud-and-container-security
 format: guide
 language: en
-tags: [aws, cloud, compliance, containers, kubernetes, networking]
+tags: [aws, cloud, containers, kubernetes, privilege-escalation, red-team]
+summary: This guide explores common attack vectors in Amazon EKS environments, including SSRF exploitation, container escapes, and supply chain compromises, while advocating for a zero-trust security model.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.77
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:12:40Z
 ---
 
 WWW.DEVSECOPSGUIDES.COM

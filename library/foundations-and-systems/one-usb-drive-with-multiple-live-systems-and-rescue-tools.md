@@ -2,15 +2,18 @@
 id: ckb-ede2dd9478c5
 title: One USB Drive with multiple live systems and rescue tools
 category: foundations-and-systems
-format: reference
+format: guide
 language: en
-tags: [bash, linux, persistence, privilege-escalation, tls, windows]
+tags: [bash, homelab, linux]
+summary: This guide demonstrates how to build a multi-boot USB drive using Ventoy containing various security, rescue, and recovery operating systems with persistent storage.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.68
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T00:15:42Z
 ---
 
 # One USB Drive with multiple live systems and rescue tools

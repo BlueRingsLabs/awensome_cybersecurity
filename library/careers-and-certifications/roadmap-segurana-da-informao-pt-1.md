@@ -2,15 +2,18 @@
 id: ckb-111ec2e499f9
 title: Roadmap Segurana da Informao Pt 1
 category: careers-and-certifications
-format: guide
+format: reference
 language: pt
-tags: [career, certification, compliance, nist, red-team, tls]
+tags: [career, certification, education, nist, owasp]
+summary: A comprehensive information security roadmap in Portuguese, covering fundamental concepts, offensive security, and recommended study resources, books, and certifications.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.62
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.95
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:12:00Z
 ---
 
 ROADMAP – SEGURANÇA DA

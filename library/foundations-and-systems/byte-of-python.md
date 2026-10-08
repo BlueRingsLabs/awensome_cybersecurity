@@ -2,15 +2,18 @@
 id: ckb-40fa49ebb2ba
 title: Byte of Python
 category: foundations-and-systems
-format: guide
+format: book
 language: en
-tags: [java, linux, macos, python, tls, windows]
+tags: [education, python]
+summary: A beginner-level book providing a tutorial and structured introduction to programming using Python 3.
 authors: [unknown]
 license: CC-BY-SA-4.0
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.95
+  method: llm
+  model: gemini-3.8-flash
+  confidence: 1.0
+classified_by: google:gemini-3.8-flash@2026-10-08T00:14:44Z
 ---
 
 1.1

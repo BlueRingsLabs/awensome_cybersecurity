@@ -1,16 +1,19 @@
 ---
 id: ckb-5cadf6ae8df1
 title: Computer Systems Security
-category: cryptography-and-privacy
+category: foundations-and-systems
 format: book
 language: en
-tags: [compliance, cryptography, malware, networking, password-security, threat-intelligence]
+tags: [cryptography, education, homelab, linux, malware, windows]
+summary: A comprehensive overview of computer systems security, covering risk management, cryptography, and malware analysis.
 authors: [unknown]
 license: CC-BY-NC-SA-4.0
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.87
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.85
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:13:52Z
 ---
 
 Computer Systems Security:

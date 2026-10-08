@@ -4,13 +4,16 @@ title: Eloquent JavaScript
 category: foundations-and-systems
 format: book
 language: en
-tags: [javascript, tls, web-security]
+tags: [javascript]
+summary: This book provides a comprehensive introduction to programming and the JavaScript language, covering fundamental concepts, data structures, and control flow.
 authors: [Thomas Palef]
 license: CC-BY-NC-3.0
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.67
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.9
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:15:15Z
 ---
 
 Eloquent JavaScript

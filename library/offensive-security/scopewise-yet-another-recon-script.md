@@ -1,16 +1,19 @@
 ---
 id: ckb-7c68868caa50
 title: ScopeWise - Yet Another Recon Script
-category: foundations-and-systems
+category: offensive-security
 format: article
 language: en
-tags: [threat-hunting]
+tags: [bash, bug-bounty, fuzzing, nmap]
+summary: This article introduces ScopeWise, a lightweight Bash script designed to automate network reconnaissance and vulnerability scanning workflows for bug bounty hunters.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.2
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T00:16:08Z
 ---
 
 # ScopeWise - Yet Another Recon Script

@@ -2,15 +2,18 @@
 id: ckb-f1bc440b3b08
 title: Offsec Certification and Courses 2024
 category: careers-and-certifications
-format: guide
-language: und
-tags: [certification]
+format: reference
+language: en
+tags: [career, certification]
+summary: A curated list of offensive security certifications and courses organized by progression layers.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.88
+  method: llm
+  model: gemma-4-31b-it
+  confidence: 1.0
+classified_by: google:gemma-4-31b-it@2026-10-08T00:08:08Z
 ---
 
 OFFENSIVE SECURITY - Certifications & Courses

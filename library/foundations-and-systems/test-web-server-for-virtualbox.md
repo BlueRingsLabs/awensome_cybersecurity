@@ -2,15 +2,18 @@
 id: ckb-39eaca706175
 title: Test web server for VirtualBox
 category: foundations-and-systems
-format: article
+format: guide
 language: en
-tags: [bash, databases, homelab, linux, tls, web-security]
+tags: [bash, hardening, homelab, linux]
+summary: This guide provides a pre-configured Debian 12 virtual machine for VirtualBox, designed to serve as a secure local development and testing environment for web applications.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.6
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:16:37Z
 ---
 
 # Test web server for VirtualBox

@@ -1,16 +1,19 @@
 ---
 id: ckb-4c225ffb53f6
 title: Backup your data
-category: foundations-and-systems
+category: general-technology
 format: article
 language: en
-tags: [cloud, containers, homelab, networking, password-security, tls]
+tags: [homelab]
+summary: This article discusses personal data backup strategies, network-attached storage devices, and general data protection practices.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.97
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 0.85
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T00:14:28Z
 ---
 
 # Backup your data

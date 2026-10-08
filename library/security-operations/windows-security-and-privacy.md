@@ -1,16 +1,19 @@
 ---
 id: ckb-28e18648660c
 title: Windows security and privacy
-category: cryptography-and-privacy
+category: security-operations
 format: article
 language: en
-tags: [git, hardening, linux, privacy, tls, windows]
+tags: [hardening, privacy, risk-management, vpn, windows]
+summary: This article provides a general overview of how to improve security and privacy on Windows 11 by establishing a threat model and applying basic system hardening.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.43
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 0.85
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T00:14:23Z
 ---
 
 # Windows security and privacy

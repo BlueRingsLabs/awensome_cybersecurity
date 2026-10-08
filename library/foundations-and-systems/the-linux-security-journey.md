@@ -2,15 +2,18 @@
 id: ckb-950907dbc3f0
 title: The Linux Security Journey
 category: foundations-and-systems
-format: guide
+format: book
 language: en
-tags: [cryptography, detection-engineering, linux, password-security, privilege-escalation, tls]
+tags: [hardening, linux, privilege-escalation]
+summary: A comprehensive guide covering Linux system internals, user identifiers, file permissions, and security mechanisms like ASLR, AppArmor, and NetFilter.
 authors: [Dr. Shlomi Boutnaru]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.61
+  method: llm
+  model: gemma-4-31b-it
+  confidence: 0.95
+classified_by: google:gemma-4-31b-it@2026-10-08T00:16:45Z
 ---
 
 The Linux ​

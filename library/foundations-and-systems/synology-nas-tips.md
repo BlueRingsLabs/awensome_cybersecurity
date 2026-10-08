@@ -2,15 +2,18 @@
 id: ckb-e610a8cb2733
 title: Synology NAS tips
 category: foundations-and-systems
-format: article
+format: guide
 language: en
-tags: [bash, dns, firewall, homelab, tls, vpn]
+tags: [bash, dns, homelab, linux]
+summary: This guide provides practical configuration tips for Synology NAS devices, including package management, cron job scheduling, and automating dynamic DNS updates via Cloudflare.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
+  method: llm
+  model: gemini-3.1-flash-lite
   confidence: 0.9
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:16:22Z
 ---
 
 # Synology NAS tips

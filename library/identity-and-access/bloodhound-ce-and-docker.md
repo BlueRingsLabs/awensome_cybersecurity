@@ -1,16 +1,19 @@
 ---
 id: ckb-7eb657af967e
 title: Bloodhound CE and Docker
-category: cloud-and-container-security
-format: article
+category: identity-and-access
+format: guide
 language: en
-tags: [active-directory, bash, containers, databases, linux, privilege-escalation]
+tags: [active-directory, bash, containers]
+summary: This article provides a practical guide on installing Docker and Docker Compose on Kali Linux to deploy the BloodHound Community Edition.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.52
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.9
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:12:34Z
 ---
 
 # Bloodhound CE and Docker

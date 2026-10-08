@@ -2,15 +2,18 @@
 id: ckb-c7ef9f7eb533
 title: Debian LEMP stack
 category: foundations-and-systems
-format: article
+format: guide
 language: en
-tags: [bash, cryptography, linux, privilege-escalation, threat-intelligence, tls]
+tags: [bash, databases, homelab, linux]
+summary: A technical guide on how to configure a Debian-based LEMP stack consisting of Nginx, MariaDB, and PHP using official repositories.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.83
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.9
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:14:59Z
 ---
 
 # Debian LEMP stack

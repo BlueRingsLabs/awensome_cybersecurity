@@ -2,15 +2,18 @@
 id: ckb-8ec07f28dfbb
 title: Auto resize X screen for Kali on KVM
 category: foundations-and-systems
-format: article
+format: guide
 language: en
-tags: [bash, linux, privilege-escalation, tls]
+tags: [bash, homelab, linux]
+summary: This guide provides a custom bash script and udev rule to automatically resize the X screen for Kali Linux running in a KVM virtual machine.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.87
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T00:14:27Z
 ---
 
 # Auto resize X screen for Kali on KVM

@@ -1,16 +1,19 @@
 ---
 id: ckb-fb06e3862f8c
 title: Penetration Testing Guide
-category: foundations-and-systems
-format: guide
+category: offensive-security
+format: book
 language: en
-tags: [linux, metasploit, networking, nmap, python, web-security]
+tags: [metasploit, nmap, python, vulnerability-management]
+summary: This book provides an introductory guide to penetration testing using NMAP, OpenVAS, and Metasploit.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.35
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T00:15:43Z
 ---
 
 Quick Start Guide

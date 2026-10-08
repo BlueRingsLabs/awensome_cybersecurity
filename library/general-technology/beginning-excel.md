@@ -1,16 +1,19 @@
 ---
 id: ckb-cfbf3d7fe1b9
 title: Beginning Excel
-category: foundations-and-systems
-format: guide
+category: general-technology
+format: book
 language: en
-tags: [career, education, hardware]
+tags: [databases]
+summary: This educational textbook provides a comprehensive introduction to Microsoft Excel, covering fundamental skills, formulas, charts, and data management techniques.
 authors: [unknown]
 license: CC-BY-4.0
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.88
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T00:14:31Z
 ---
 
 BEGINNING EXCEL

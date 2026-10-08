@@ -1,16 +1,19 @@
 ---
 id: ckb-b284c04241ca
 title: Basic Onion Check
-category: foundations-and-systems
-format: article
+category: offensive-security
+format: guide
 language: en
-tags: [anonymity, bash, burp-suite, networking, tls, web-security]
+tags: [anonymity, dark-web, web-security]
+summary: This guide outlines basic techniques for identifying configuration flaws and uncovering real IP addresses of Tor hidden services using standard penetration testing tools routed through a proxy.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.56
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T00:14:29Z
 ---
 
 # Basic Onion Check

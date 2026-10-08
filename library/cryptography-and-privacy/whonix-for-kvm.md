@@ -1,16 +1,19 @@
 ---
 id: ckb-f737ba33feff
 title: Whonix for KVM
-category: foundations-and-systems
-format: article
+category: cryptography-and-privacy
+format: guide
 language: en
-tags: [anonymity, bash, networking, privilege-escalation, threat-intelligence, tls]
+tags: [anonymity, homelab, linux, privacy]
+summary: A technical guide on how to download, configure, and install Whonix virtual machines on KVM using Virt-Manager.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.56
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.95
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:24:26Z
 ---
 
 # Whonix for KVM

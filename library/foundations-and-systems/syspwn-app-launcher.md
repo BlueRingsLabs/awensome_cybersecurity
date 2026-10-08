@@ -4,13 +4,16 @@ title: SysPwn - App Launcher
 category: foundations-and-systems
 format: article
 language: en
-tags: [python, tls]
+tags: [homelab, python, red-team]
+summary: The author describes the development of a simple Python-based application launcher designed to manage and execute portable security tools from a USB drive.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.44
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.9
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:16:24Z
 ---
 
 # SysPwn - App Launcher

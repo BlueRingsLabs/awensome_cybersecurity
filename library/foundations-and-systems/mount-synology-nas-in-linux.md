@@ -2,15 +2,18 @@
 id: ckb-b42da521f450
 title: Mount Synology NAS in Linux
 category: foundations-and-systems
-format: article
+format: guide
 language: en
-tags: [bash, homelab, linux, privilege-escalation, tls]
+tags: [homelab, linux, networking]
+summary: This technical guide provides step-by-step instructions for mounting a Synology NAS shared folder on a Linux system using SMB/CIFS or NFS protocols.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 1.0
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T00:15:40Z
 ---
 
 # Mount Synology NAS in Linux

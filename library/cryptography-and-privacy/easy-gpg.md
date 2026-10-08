@@ -2,15 +2,18 @@
 id: ckb-1bf54f941bc3
 title: Easy GPG
 category: cryptography-and-privacy
-format: article
+format: guide
 language: en
-tags: [bash, cryptography, linux, password-security, privacy, tls]
+tags: [cryptography]
+summary: This guide provides a practical introduction to using GnuPG for key management, encryption, and signing of data.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.97
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 1.0
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:13:55Z
 ---
 
 # Easy GPG

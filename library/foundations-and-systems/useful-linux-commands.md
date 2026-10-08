@@ -2,15 +2,18 @@
 id: ckb-d58576abb992
 title: Useful Linux Commands
 category: foundations-and-systems
-format: article
+format: cheatsheet
 language: en
-tags: [bash, git, linux, log-analysis, privilege-escalation, python]
+tags: [bash, linux]
+summary: A collection of basic and extended Linux terminal commands for system information, file management, permissions, and compression.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.99
+  method: llm
+  model: gemma-4-31b-it
+  confidence: 0.95
+classified_by: google:gemma-4-31b-it@2026-10-08T00:21:35Z
 ---
 
 # Useful Linux Commands

@@ -1,16 +1,19 @@
 ---
 id: ckb-e6338ab61b50
 title: The Art of Linux Persistence
-category: foundations-and-systems
+category: offensive-security
 format: guide
 language: en
-tags: [bash, git, linux, persistence, privilege-escalation, threat-intelligence]
+tags: [evasion, linux, persistence, red-team]
+summary: This guide provides a comprehensive overview of various techniques for maintaining persistence on Linux systems, ranging from standard administrative tasks to advanced security-focused methods.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.85
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:16:39Z
 ---
 
 WWW.HADESS.IO

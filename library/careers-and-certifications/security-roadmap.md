@@ -4,13 +4,16 @@ title: Security Roadmap
 category: careers-and-certifications
 format: article
 language: en
-tags: [career, certification, networking, tls]
+tags: [career, certification, education]
+summary: An article discussing career paths, the importance of certifications, and the value of basic technical foundations in the IT security industry.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 1.0
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.95
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:12:06Z
 ---
 
 # Security Roadmap

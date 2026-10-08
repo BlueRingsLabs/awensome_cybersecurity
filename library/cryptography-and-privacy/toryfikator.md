@@ -4,13 +4,16 @@ title: Toryfikator
 category: cryptography-and-privacy
 format: article
 language: en
-tags: [anonymity, git, linux, networking, tls]
+tags: [anonymity, linux, networking, python]
+summary: The author introduces Toryfikator, a simple Python script designed to route all system traffic through Tor on Kali Linux.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.18
+  method: llm
+  model: gemini-3.5-flash-lite
+  confidence: 0.9
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T00:14:21Z
 ---
 
 # Toryfikator

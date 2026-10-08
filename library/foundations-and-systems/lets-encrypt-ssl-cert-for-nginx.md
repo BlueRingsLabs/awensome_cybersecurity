@@ -1,16 +1,19 @@
 ---
 id: ckb-e38517ebc005
 title: Let’s Encrypt SSL Cert for Nginx
-category: cryptography-and-privacy
-format: article
+category: foundations-and-systems
+format: guide
 language: en
-tags: [bash, firewall, linux, privilege-escalation, tls, web-security]
+tags: [firewall, linux, tls]
+summary: This guide provides step-by-step instructions for configuring Let's Encrypt SSL certificates on an Nginx web server running on Debian.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.52
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.9
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:13:58Z
 ---
 
 # Let’s Encrypt SSL Cert for Nginx

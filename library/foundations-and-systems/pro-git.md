@@ -4,13 +4,16 @@ title: Pro Git
 category: foundations-and-systems
 format: book
 language: en
-tags: [databases, git, linux, networking, privacy, web-security]
+tags: [git]
+summary: This comprehensive book provides a detailed guide to using Git for version control, covering basics, branching, workflows, and administration.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
+  method: llm
+  model: gemini-3.5-flash-lite
   confidence: 1.0
+classified_by: google:gemini-3.5-flash-lite@2026-10-08T00:15:44Z
 ---
 
 Pro Git

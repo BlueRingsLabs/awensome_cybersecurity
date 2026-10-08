@@ -2,15 +2,18 @@
 id: ckb-a5b043b326d2
 title: Virtualenv
 category: foundations-and-systems
-format: article
+format: guide
 language: en
-tags: [bash, git, linux, python, tls]
+tags: [linux, python]
+summary: A guide on how to resolve the externally-managed-environment error in Kali Linux by using Python virtual environments.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 1.0
+  method: llm
+  model: gemma-4-31b-it
+  confidence: 0.95
+classified_by: google:gemma-4-31b-it@2026-10-08T00:24:24Z
 ---
 
 # Virtualenv

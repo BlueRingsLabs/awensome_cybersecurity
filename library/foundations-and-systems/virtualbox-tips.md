@@ -2,15 +2,18 @@
 id: ckb-aab0161196cf
 title: VirtualBox Tips
 category: foundations-and-systems
-format: article
+format: guide
 language: en
-tags: [bash, linux, powershell, tls, windows]
+tags: [homelab, linux, windows]
+summary: A technical guide providing configuration tips, disk management, and performance optimization for VirtualBox users.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
+  method: llm
+  model: gemma-4-31b-it
   confidence: 1.0
+classified_by: google:gemma-4-31b-it@2026-10-08T00:23:32Z
 ---
 
 # VirtualBox Tips

@@ -4,13 +4,16 @@ title: Swap Cab
 category: cryptography-and-privacy
 format: article
 language: en
-tags: [anonymity, blockchain, git, tls]
+tags: [anonymity, cryptography]
+summary: The author discusses their personal perspective on cryptocurrency exchanges, emphasizing the importance of privacy and anonymity in financial transactions while introducing a project for tracking exchange services.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.43
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.8
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:14:07Z
 ---
 
 # Swap Cab

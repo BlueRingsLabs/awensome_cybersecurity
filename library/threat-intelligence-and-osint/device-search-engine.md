@@ -1,16 +1,19 @@
 ---
 id: ckb-78ea9c3dd9b8
 title: Device search engine
-category: foundations-and-systems
-format: article
+category: threat-intelligence-and-osint
+format: reference
 language: en
-tags: [bash, networking, nmap, osint, tls, web-security]
+tags: [networking, nmap, osint]
+summary: This document provides an overview and usage examples for various internet-connected device search engines like Shodan, Censys, ZoomEye, FoFa, and Ivre.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.49
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:15:15Z
 ---
 
 # Device search engine

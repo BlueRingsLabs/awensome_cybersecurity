@@ -2,15 +2,18 @@
 id: ckb-664f500960f4
 title: Runas in Powershell for Windows 10
 category: foundations-and-systems
-format: article
+format: guide
 language: en
 tags: [active-directory, powershell, windows]
+summary: This guide explains how to enable and use the runas functionality in Windows 10 to execute applications as a different user via registry modifications and PowerShell scripting.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.63
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.9
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:16:02Z
 ---
 
 # Runas in Powershell for Windows 10

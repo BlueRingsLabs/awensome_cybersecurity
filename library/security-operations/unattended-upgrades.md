@@ -1,16 +1,19 @@
 ---
 id: ckb-da2c225840a2
 title: Unattended upgrades
-category: foundations-and-systems
-format: article
+category: security-operations
+format: guide
 language: en
-tags: [anonymity, bash, linux, log-analysis, privilege-escalation, threat-intelligence]
+tags: [bash, hardening, linux]
+summary: A technical guide on configuring automatic security updates using the unattended-upgrades package on Debian-based Linux systems.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.52
+  method: llm
+  model: gemma-4-31b-it
+  confidence: 0.95
+classified_by: google:gemma-4-31b-it@2026-10-08T00:19:24Z
 ---
 
 # Unattended upgrades

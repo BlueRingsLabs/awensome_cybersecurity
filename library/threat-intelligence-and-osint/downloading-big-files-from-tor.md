@@ -1,16 +1,19 @@
 ---
 id: ckb-0904da697ac8
 title: Downloading big files from Tor
-category: cryptography-and-privacy
-format: article
+category: threat-intelligence-and-osint
+format: guide
 language: en
-tags: [anonymity, bash, malware, networking, privilege-escalation, ransomware]
+tags: [bash, dark-web, linux, osint, threat-intelligence]
+summary: This guide provides a technical walkthrough for automating the download of large files from Tor hidden services using curl, screen, and Tor proxying.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.7
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.9
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:13:53Z
 ---
 
 # Downloading big files from Tor

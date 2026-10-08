@@ -1,16 +1,19 @@
 ---
 id: ckb-1f15a69fd5ef
 title: Subdomain takeover
-category: foundations-and-systems
-format: article
+category: offensive-security
+format: guide
 language: en
-tags: [bash, bug-bounty, dns, git, python, tls]
+tags: [bug-bounty, dns, osint, web-security]
+summary: This guide provides an overview of the subdomain takeover vulnerability, including methodology, recommended tools for enumeration, and resources for further learning.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.33
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:16:21Z
 ---
 
 # Subdomain takeover

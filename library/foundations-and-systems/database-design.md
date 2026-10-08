@@ -2,15 +2,18 @@
 id: ckb-bbc7f0316dbc
 title: Database Design
 category: foundations-and-systems
-format: guide
+format: book
 language: en
-tags: [databases, education, networking, tls]
+tags: [databases]
+summary: An introductory textbook covering fundamental database design concepts, data modeling, normalization, and SQL.
 authors: [unknown]
 license: CC-BY-4.0
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.96
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.95
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:14:56Z
 ---
 
 Database Design - 2nd Edition

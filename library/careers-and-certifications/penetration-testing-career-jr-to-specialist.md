@@ -3,14 +3,17 @@ id: ckb-5f1fa2f9d505
 title: Penetration Testing Career Jr to Specialist
 category: careers-and-certifications
 format: guide
-language: pt
-tags: [career, compliance, mobile, nist, owasp, tls]
+language: en
+tags: [career, nist, owasp, red-team, reporting, vulnerability-management]
+summary: A guide outlining the required knowledge and skills for penetration testers at junior, mid-level, and senior/specialist levels based on job market demands.
 authors: [Joas Antonio Dos Santos]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.41
+  method: llm
+  model: gemma-4-31b-it
+  confidence: 0.95
+classified_by: google:gemma-4-31b-it@2026-10-08T00:09:34Z
 ---
 
 Penetration Testing Career –

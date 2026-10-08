@@ -4,13 +4,16 @@ title: Anonymous Tor Phone
 category: cryptography-and-privacy
 format: article
 language: en
-tags: [anonymity, git, mobile, password-security, privacy, tls]
+tags: [android, anonymity, mobile, privacy, vpn]
+summary: A guide describing how to configure a smartphone with a custom ROM and Tor-based traffic to enhance privacy and anonymity.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.87
+  method: llm
+  model: gemma-4-26b-a4b-it
+  confidence: 0.9
+classified_by: google:gemma-4-26b-a4b-it@2026-10-08T00:13:47Z
 ---
 
 # Anonymous Tor Phone

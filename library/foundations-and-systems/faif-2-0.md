@@ -4,13 +4,16 @@ title: Faif 2 0
 category: foundations-and-systems
 format: book
 language: en
-tags: [credential-access, linux, networking, windows]
+tags: [education]
+summary: This biography chronicles the life of Richard Stallman and the historical development of the free software movement and the GNU project.
 authors: [unknown]
 license: GFDL-1.3-or-later
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.24
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.9
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:15:18Z
 ---
 
 Free as in Freedom (2.0): Richard Stallman

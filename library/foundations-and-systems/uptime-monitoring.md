@@ -4,13 +4,16 @@ title: Uptime monitoring
 category: foundations-and-systems
 format: article
 language: en
-tags: [anonymity, bash, containers, git, tls, web-security]
+tags: [homelab, linux]
+summary: The author discusses the importance of service monitoring and provides a guide on setting up Uptime Kuma for self-hosting service status checks.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.6
+  method: llm
+  model: gemma-4-31b-it
+  confidence: 0.9
+classified_by: google:gemma-4-31b-it@2026-10-08T00:20:40Z
 ---
 
 # Uptime monitoring

@@ -1,16 +1,19 @@
 ---
 id: ckb-335da84b7ace
 title: OpenSSH hardening
-category: cryptography-and-privacy
-format: article
+category: security-operations
+format: guide
 language: en
-tags: [bash, compliance, cryptography, hardening, password-security, privilege-escalation]
+tags: [bash, hardening, linux, nist]
+summary: This guide provides practical instructions for hardening OpenSSH server configurations based on CIS benchmark recommendations to improve remote access security.
 authors: [unknown]
 license: NOASSERTION
 added: 2026-10-04
 classification:
-  method: heuristic
-  confidence: 0.44
+  method: llm
+  model: gemini-3.1-flash-lite
+  confidence: 0.95
+classified_by: google:gemini-3.1-flash-lite@2026-10-08T00:14:01Z
 ---
 
 # OpenSSH hardening
